@@ -1,0 +1,10 @@
+{
+  "modid": "Corrupt the Spire",
+  "name": "Corrupt the Spire",
+  "author_list": ["modargo"],
+  "description": "TODO",
+  "version": "0.1.0",
+  "sts_version": "07-30-2020",
+  "mts_version": "3.15.0",
+  "dependencies": ["basemod"]
+}

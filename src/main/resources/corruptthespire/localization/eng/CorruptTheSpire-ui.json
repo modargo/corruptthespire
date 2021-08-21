@@ -1,0 +1,36 @@
+{
+  "CorruptTheSpire:Corruption": {
+    "TEXT": [
+      "Corruption",
+      "Corruption is gained by entering corrupted rooms, based on the type of the room (the more powerful the room, the more corruption). NL At the current level of corruption, enemy HP and damage is increased by {0}%.",
+      "You have chosen the following enemy corruptions:"
+    ]
+  },
+  "CorruptTheSpire:TreasureCorruption": {
+    "TEXT": ["Gold (corrupted relic)", "the gold", "Loot more", "Further chests will be corrupting....", "The corruption grows stronger with each chest....", "Corruption manifests", "The corruption grows"]
+  },
+  "CorruptTheSpire:VaultChest": {
+    "TEXT": ["A relic!", "Nothing.", "Gold!", "A strange fragment.", "A technique!", "Health!", "An unusual relic!", "An unusual technique!", "An upgrade!"]
+  },
+  "CorruptTheSpire:CampfireCorruption": {
+    "TEXT": ["Before resting... corruption."]
+  },
+  "CorruptTheSpire:FireRitualOption": {
+    "TEXT": ["Fire ritual", "Reduce Corruption by {0} for {1} Max HP and all your fragments"]
+  },
+  "CorruptTheSpire:GainFragmentOption": {
+    "TEXT": ["Gain fragment", "Gain a Fragment of Corruption"]
+  },
+  "CorruptTheSpire:CommonRelicOption": {
+    "TEXT": ["Common relic", "Gain a common relic for {0} fragments"]
+  },
+  "CorruptTheSpire:UncommonRelicOption": {
+    "TEXT": ["Uncommon relic", "Gain an uncommon relic for {0} fragments"]
+  },
+  "CorruptTheSpire:RareRelicOption": {
+    "TEXT": ["Rare relic", "Gain a rare relic for {0} fragments"]
+  },
+  "CorruptTheSpire:BuryFragmentOption": {
+    "TEXT": ["Bury fragment", "Reduce Corruption by {1} for {0} fragments"]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "CorruptTheSpire:FragmentOfCorruption": {
+    "NAME": "Fragment of Corruption",
+    "FLAVOR": "Both danger and power.",
+    "DESCRIPTIONS": ["Small fragment of corrupted Spirestone. Can be used at corrupted Rest Sites."]
+  },
+  "CorruptTheSpire:BlightedSpirefruit": {
+    "NAME": "Blighted Spirefruit",
+    "FLAVOR": "Infected with the Spireblight, but maybe eat it anyway?",
+    "DESCRIPTIONS": ["Reduce your Max HP by #b{0}. At the start of combat, gain {1} #yStrength."]
+  },
+  "CorruptTheSpire:BagOfTricks": {
+    "NAME": "Bag of Tricks",
+    "FLAVOR": "Trick or treat!",
+    "DESCRIPTIONS": ["At the start of each combat, gain #b{0} #yAfterimage. Draw #b{1} less cards on the first turn of each combat."]
+  },
+  "CorruptTheSpire:UnreliableCharm": {
+    "NAME": "Unreliable Charm",
+    "FLAVOR": "Sometimes it works.",
+    "DESCRIPTIONS": ["At the start of each combat, if the floor number is even, gain #b{0} #yStrength, #b{1} #yPlated #yArmor, and #b{2} #yThorns. If the floor number is odd, lose #b{0} #yStrength."]
+  },
+  "CorruptTheSpire:RustedOrichalcum": {
+    "NAME": "Rusted Orichalcum",
+    "FLAVOR": "But this metal is supposed to be indestructible....",
+    "DESCRIPTIONS": ["At the start of your first #b{0} turns, gain #b{1} Block. At the start of combat, gain #b{2} #yConstricted."]
+  },
+  "CorruptTheSpire:ObsidianShovel": {
+    "NAME": "Obsidian Shovel",
+    "FLAVOR": "Made of a special material that absorbs and neutralizes corruption.",
+    "DESCRIPTIONS": ["You can now bury Fragments of Corruption at corrupted Rest Sites."]
+  },
+  "CorruptTheSpire:CorruptedEgg": {
+    "NAME": "Corrupted Egg",
+    "FLAVOR": "",
+    "DESCRIPTIONS": ["Cards in rewards have #b+{0}% chance to be upgraded. Gain #b{1} #yCorruption every time you gain an #yupgraded card."]
+  }
+}
