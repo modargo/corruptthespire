@@ -16,11 +16,15 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import corruptthespire.Cor;
 import corruptthespire.effects.TextOverlayEffect;
 import corruptthespire.patches.treasure.VaultChestsField;
+import corruptthespire.relics.FragmentOfCorruption;
+import corruptthespire.rewards.MaxHealthReward;
+import corruptthespire.rewards.RandomUpgradeReward;
 
 import java.util.List;
 
 public class VaultChest extends AbstractChest {
     public static String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:VaultChest").TEXT;
+    private static final int MAX_HEALTH = 4;
     private VaultChestType vaultChestType;
     public float x;
     public float y;
@@ -118,7 +122,7 @@ public class VaultChest extends AbstractChest {
                 text = TEXT[2];
                 break;
             case Fragment:
-                //TODO Add reward once fragments are implemented
+                AbstractDungeon.getCurrRoom().addRelicToRewards(new FragmentOfCorruption());
                 text = TEXT[3];
                 break;
             case Card:
@@ -126,7 +130,7 @@ public class VaultChest extends AbstractChest {
                 text = TEXT[4];
                 break;
             case MaxHealth:
-                //TODO Create a CustomReward for max health
+                AbstractDungeon.getCurrRoom().rewards.add(new MaxHealthReward(MAX_HEALTH));
                 text = TEXT[5];
                 break;
             case ShopRelic:
@@ -139,7 +143,7 @@ public class VaultChest extends AbstractChest {
                 text = TEXT[7];
                 break;
             case Upgrade:
-                //TODO Create a CustomReward for a random upgrade
+                AbstractDungeon.getCurrRoom().rewards.add(new RandomUpgradeReward());
                 text = TEXT[8];
                 break;
             default:

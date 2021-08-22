@@ -11,8 +11,12 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rewards.RewardSave;
 import corruptthespire.buttons.CorruptionDisplay;
 import corruptthespire.relics.FragmentOfCorruption;
+import corruptthespire.rewards.CustomRewardTypes;
+import corruptthespire.rewards.MaxHealthReward;
+import corruptthespire.rewards.RandomUpgradeReward;
 import corruptthespire.savables.SavableCorruptedRelicPool;
 import corruptthespire.savables.SavableCorruption;
 import corruptthespire.savables.SavableRng;
@@ -55,8 +59,21 @@ public class CorruptTheSpire implements
         BaseMod.subscribe(new CorruptionHealthIncreaseOnStartBattleSubscriber());
         BaseMod.subscribe(new ResetIsBossCorruptedSubscriber());
 
+        this.registerCustomRewards();
+
         Cor.display = new CorruptionDisplay();
         BaseMod.addTopPanelItem(Cor.display);
+    }
+
+    private void registerCustomRewards() {
+        BaseMod.registerCustomReward(
+            CustomRewardTypes.CORRUPTTHESPIRE_MAXHEALTH,
+            (rewardSave) -> new MaxHealthReward(rewardSave.amount),
+            (customReward) -> new RewardSave(customReward.type.toString(), null, ((MaxHealthReward)customReward).amount, 0));
+        BaseMod.registerCustomReward(
+            CustomRewardTypes.CORRUPTTHESPIRE_RANDOMUPGRADE,
+            (rewardSave) -> new RandomUpgradeReward(),
+            (customReward) -> new RewardSave(customReward.type.toString(), null, 0, 0));
     }
 
     @Override

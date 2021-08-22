@@ -10,4 +10,5 @@ public enum VaultChestType {
     ShopRelic,
     ColorlessCard,
     Upgrade
+    //TODO Add Corrupted Card
 }

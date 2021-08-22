@@ -29,33 +29,28 @@ public class CorruptMap {
 
     public static void markCorruptedNodes() {
         int actNum = AbstractDungeon.actNum;
+        isBossCorrupted = actNum >= 3;
         ArrayList<MapRoomNode> potentialCorruptNodes = new ArrayList<>();
-        boolean hasBossRoom = false;
         for (int i = 0; i < AbstractDungeon.map.size(); i++) {
             for (int j = 0; j < AbstractDungeon.map.get(i).size(); j++) {
                 MapRoomNode node = AbstractDungeon.map.get(i).get(j);
                 logger.info("Map node (" + i + ", " + j + "): " + (node.getRoom() != null ? node.getRoom().getClass().getTypeName() : "empty"));
 
-                if ((actNum == 3 && node.y >= AbstractDungeon.map.size() - 1)
+                if (node.getRoom() instanceof MonsterRoomBoss) {
+                    //Normally, boss rooms are created dynamically and are marked as corrupted through a patch
+                    //But just in case there's one on the map, mark it properly
+                    if (isBossCorrupted) {
+                        MarkCorrupted(node);
+                    }
+                }
+                if ((actNum == 3 && node.y == AbstractDungeon.map.size() - 1)
                     || node.hasEmeraldKey) {
                     MarkCorrupted(node);
                 }
                 else if (node.hasEdges() && !(actNum == 1 && node.y == 0)) {
                     potentialCorruptNodes.add(node);
                 }
-
-                if (node.getRoom() instanceof MonsterRoomBoss) {
-                    hasBossRoom = true;
-                }
             }
-        }
-        //In normal acts, the boss room is only generated when the boss icon is clicked
-        //To handle that, add a null entry to the list to represent the boss room, and
-        //store off whether or not its corrupted so we can mark it on the map and mark
-        //the node as corrupted when it gets created
-        isBossCorrupted = false;
-        if (!hasBossRoom) {
-            potentialCorruptNodes.add(null);
         }
 
         //TODO change back when done with initial testing

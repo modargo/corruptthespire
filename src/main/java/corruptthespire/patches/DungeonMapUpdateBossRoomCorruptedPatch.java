@@ -8,7 +8,7 @@ import corruptthespire.map.CorruptMap;
 import javassist.CtBehavior;
 
 @SpirePatch(clz = DungeonMap.class, method = "update")
-public class DungeonMapUpdatePatch {
+public class DungeonMapUpdateBossRoomCorruptedPatch {
     @SpireInsertPatch(locator = Locator.class, localvars = {"node"})
     public static void MarkBossNodeAsCorrupted(DungeonMap __instance, MapRoomNode node) {
         CorruptedField.corrupted.set(node, CorruptMap.isBossCorrupted());
