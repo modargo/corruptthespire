@@ -12,14 +12,13 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.helpers.CardHelper;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardSave;
 import corruptthespire.buttons.CorruptionDisplay;
 import corruptthespire.cards.CorruptedCardColor;
+import corruptthespire.cards.CorruptedCardUtil;
 import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.rewards.CustomRewardTypes;
 import corruptthespire.rewards.MaxHealthReward;
@@ -94,7 +93,7 @@ public class CorruptTheSpire implements
 
     @Override
     public void receiveEditCards() {
-        for (AbstractCard c : Cor.getAllCorruptedCards()) {
+        for (AbstractCard c : CorruptedCardUtil.getAllCorruptedCards()) {
             BaseMod.addCard(c);
         }
     }

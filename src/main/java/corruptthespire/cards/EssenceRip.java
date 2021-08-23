@@ -44,10 +44,10 @@ public class EssenceRip extends AbstractCorruptedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        if (Cor.corruption > CORRUPTION_THRESHOLD_1) {
+        if (Cor.corruption >= CORRUPTION_THRESHOLD_1) {
             this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }
-        if (Cor.corruption > CORRUPTION_THRESHOLD_2) {
+        if (Cor.corruption >= CORRUPTION_THRESHOLD_2) {
             this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }
     }

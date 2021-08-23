@@ -2,5 +2,16 @@
   "CorruptTheSpire:DrawReductionSingleTurn": {
     "NAME": "Draw Reduction",
     "DESCRIPTIONS": ["Draw #b1 less card next turn.", "Draw #b{0} less cards next turn."]
+  },
+  "CorruptTheSpire:ForbiddenRitual": {
+    "NAME": "Forbidden Ritual",
+    "DESCRIPTIONS": ["At the start of your turn, gain !M! Strength and {0} corruptthespire:Corruption."]
+  },
+  "CorruptTheSpire:CorruptedForm": {
+    "NAME": "Corrupted Form",
+    "DESCRIPTIONS": [
+      "At the end of your turn, deal damage equal to corruptthespire:Corruption to ALL enemies.",
+      "At the end of your turn, deal damage equal to {0} times corruptthespire:Corruption to ALL enemies."
+    ]
   }
 }

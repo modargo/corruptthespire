@@ -2,9 +2,7 @@
   "CorruptTheSpire:Shadowblast": {
     "NAME": "Shadowblast",
     "DESCRIPTION": "Deal {0} damage plus !M! damage for every {1} corruptthespire:Corruption to ALL enemies.",
-    "EXTENDED_DESCRIPTION": [
-      " NL (Deals !D! damage.)"
-    ]
+    "EXTENDED_DESCRIPTION": [" NL (Deals !D! damage.)"]
   },
   "CorruptTheSpire:EssenceRip": {
     "NAME": "Essence Rip",
@@ -24,6 +22,37 @@
   },
   "CorruptTheSpire:Fragmentize": {
     "NAME": "Fragmentize",
-    "DESCRIPTION": "Deal !D! damage. NL If Fatal, gain a {0}."
+    "DESCRIPTION": "Deal !D! damage. NL If Fatal, gain a {0}. NL Exhaust."
+  },
+  "CorruptTheSpire:WickedWard": {
+    "NAME": "Wicked Ward",
+    "DESCRIPTION": "Gain !B! Block. NL corruptthespire:Corruption {0}+: Gain !M! additional Block."
+  },
+  "CorruptTheSpire:ProfaneShield": {
+    "NAME": "Profane Shield",
+    "DESCRIPTION": "Gain Block equal to half corruptthespire:Corruption.",
+    "UPGRADE_DESCRIPTION": "Gain Block equal to three-fourths corruptthespire:Corruption.",
+    "EXTENDED_DESCRIPTION": [" NL (Gains !B! Block.)"]
+  },
+  "CorruptTheSpire:VoidArmor": {
+    "NAME": "Void Armor",
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak to ALL enemies. NL Add a Void into your discard pile."
+  },
+  "CorruptTheSpire:DevilsBargain": {
+    "NAME": "Devil's Bargain",
+    "DESCRIPTION": "Draw !M! cards. NL Gain {0} corruptthespire:Corruption."
+  },
+  "CorruptTheSpire:NightsWhisper": {
+    "NAME": "Night's Whisper",
+    "DESCRIPTION": "Apply !M! Weak. corruptthespire:Corruption: NL {0}+: Enemy loses !M! Strength. NL {1}+: Apply !M! Vulnerable. NL {20}+: Double these debuffs. NL {3}+: Triple these debuffs. NL Exhaust."
+  },
+  "CorruptTheSpire:ForbiddenRitual": {
+    "NAME": "Forbidden Ritual",
+    "DESCRIPTION": "At the start of your turn, gain !M! Strength and {0} corruptthespire:Corruption."
+  },
+  "CorruptTheSpire:CorruptedForm": {
+    "NAME": "Corrupted Form",
+    "DESCRIPTION": "Ethereal. NL Gain {0} corruptthespire:Corruption. NL At the end of your turn, deal corruptthespire:Corruption damage to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Gain {0} corruptthespire:Corruption. NL At the end of your turn, deal corruptthespire:Corruption damage to ALL enemies."
   }
 }
