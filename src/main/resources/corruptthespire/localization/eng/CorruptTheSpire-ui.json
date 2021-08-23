@@ -35,5 +35,8 @@
   },
   "CorruptTheSpire:BuryFragmentOption": {
     "TEXT": ["Bury fragment", "Reduce Corruption by {1} for {0} fragments"]
+  },
+  "CorruptTheSpire:ShopCorruption": {
+    "TEXT": ["Select a Card to Transform."]
   }
 }

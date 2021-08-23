@@ -12,6 +12,7 @@ public class FragmentOfCorruption extends CustomRelic {
     public static final String ID = "CorruptTheSpire:FragmentOfCorruption";
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));
+    private static final int PRICE = 40;
 
     public FragmentOfCorruption() {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.MAGICAL);
@@ -72,6 +73,11 @@ public class FragmentOfCorruption extends CustomRelic {
         } else {
             super.obtain();
         }
+    }
+
+    @Override
+    public int getPrice() {
+        return PRICE;
     }
 
     @Override

@@ -1,11 +1,19 @@
 package corruptthespire.corruptions.shop;
 
+import basemod.ReflectionHacks;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.RelicLibrary;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.shop.ShopScreen;
+import com.megacrit.cardcrawl.shop.StoreRelic;
+import corruptthespire.Cor;
 import corruptthespire.cards.CardUtil;
 import corruptthespire.patches.CorruptedField;
 import corruptthespire.patches.shop.ShopCorruptionTypeField;
+import corruptthespire.relics.FragmentOfCorruption;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -92,8 +100,8 @@ public class ShopCorruption {
             coloredCards.add(c);
 
             colorlessCards.clear();
-            colorlessCards.add(AbstractDungeon.getColorlessCardFromPool(AbstractCard.CardRarity.RARE).makeCopy());
-            colorlessCards.add(AbstractDungeon.getColorlessCardFromPool(AbstractCard.CardRarity.RARE).makeCopy());
+            //colorlessCards.add(AbstractDungeon.getColorlessCardFromPool(AbstractCard.CardRarity.RARE).makeCopy());
+            //colorlessCards.add(AbstractDungeon.getColorlessCardFromPool(AbstractCard.CardRarity.RARE).makeCopy());
         }
     }
 
@@ -102,12 +110,47 @@ public class ShopCorruption {
                 ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
                 : null;
 
-        //TODO implement relic options
-        if (corruptionType == null) {
+        if (corruptionType != null) {
+            ArrayList<StoreRelic> relics = ReflectionHacks.getPrivate(shopScreen, ShopScreen.class, "relics");
+            relics.clear();
 
+            int numRelics = corruptionType == ShopCorruptionType.CorruptedRelicsReplacePotions ? 6 : 3;
+            for(int i = 0; i < numRelics; ++i) {
+                AbstractRelic tempRelic;
+                if ((i < 2 && corruptionType == ShopCorruptionType.Rare) || (i < 1 && corruptionType == ShopCorruptionType.TransformReplacesRemove)) {
+                    tempRelic = new FragmentOfCorruption();
+                }
+                else if (i < 2) {
+                    tempRelic = AbstractDungeon.returnRandomRelicEnd(ShopScreen.rollRelicTier());
+                } else if (i == 2) {
+                    tempRelic = AbstractDungeon.returnRandomRelicEnd(AbstractRelic.RelicTier.SHOP);
+                } else {
+                    tempRelic = RelicLibrary.getRelic(Cor.returnRandomCorruptedRelicKey()).makeCopy();
+                }
+
+                StoreRelic relic = new StoreRelic(tempRelic, i, shopScreen);
+                if (!Settings.isDailyRun) {
+                    relic.price = MathUtils.round((float)relic.price * AbstractDungeon.merchantRng.random(0.95F, 1.05F));
+                }
+
+                relics.add(relic);
+            }
             return true;
         }
 
         return false;
+    }
+
+    public static boolean handlePotions(ShopScreen shopScreen) {
+        ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())
+                ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
+                : null;
+
+        if (corruptionType == ShopCorruptionType.CorruptedRelicsReplacePotions) {
+            return true;
+        }
+
+        return false;
+
     }
 }

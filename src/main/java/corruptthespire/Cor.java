@@ -1,11 +1,13 @@
 package corruptthespire;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.Circlet;
 import com.megacrit.cardcrawl.rooms.*;
 import corruptthespire.buttons.CorruptionDisplay;
+import corruptthespire.cards.*;
 import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.relics.corrupted.*;
 import org.apache.logging.log4j.LogManager;
@@ -91,6 +93,17 @@ public class Cor {
             return Circlet.ID;
         }
         return Cor.corruptedRelicPool.remove(0);
+    }
+
+    public static ArrayList<AbstractCard> getAllCorruptedCards() {
+        ArrayList<AbstractCard> corruptedCards = new ArrayList<>();
+        corruptedCards.add(new Shadowblast());
+        corruptedCards.add(new EssenceRip());
+        corruptedCards.add(new Condemn());
+        corruptedCards.add(new Recoil());
+        corruptedCards.add(new DrainLife());
+        corruptedCards.add(new Fragmentize());
+        return corruptedCards;
     }
 
     public static ArrayList<AbstractRelic> getAllCorruptedRelics() {

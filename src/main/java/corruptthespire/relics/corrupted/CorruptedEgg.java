@@ -1,6 +1,5 @@
 package corruptthespire.relics.corrupted;
 
-import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -11,7 +10,7 @@ import corruptthespire.util.TextureLoader;
 
 import java.text.MessageFormat;
 
-public class CorruptedEgg extends CustomRelic {
+public class CorruptedEgg extends AbstractCorruptedRelic {
     public static final String ID = "CorruptTheSpire:CorruptedEgg";
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));
@@ -27,7 +26,7 @@ public class CorruptedEgg extends CustomRelic {
     }
 
     public static void afterObtainCard(AbstractCard c) {
-        if (c.upgraded) {
+        if (AbstractDungeon.player.hasRelic(ID) && c.upgraded) {
             Cor.addCorruption(CORRUPTION);
         }
     }

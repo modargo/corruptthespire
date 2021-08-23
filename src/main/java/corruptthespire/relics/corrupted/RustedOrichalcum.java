@@ -1,6 +1,5 @@
 package corruptthespire.relics.corrupted;
 
-import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -13,7 +12,7 @@ import corruptthespire.util.TextureLoader;
 
 import java.text.MessageFormat;
 
-public class RustedOrichalcum extends CustomRelic {
+public class RustedOrichalcum extends AbstractCorruptedRelic {
     public static final String ID = "CorruptTheSpire:RustedOrichalcum";
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));

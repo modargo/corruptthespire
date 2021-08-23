@@ -1,2 +1,29 @@
 {
+  "CorruptTheSpire:Shadowblast": {
+    "NAME": "Shadowblast",
+    "DESCRIPTION": "Deal {0} damage plus !M! damage for every {1} corruptthespire:Corruption to ALL enemies.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Deals !D! damage.)"
+    ]
+  },
+  "CorruptTheSpire:EssenceRip": {
+    "NAME": "Essence Rip",
+    "DESCRIPTION": "Deal !D! damage. NL corruptthespire:Corruption {0}+: Twice. NL corruptthespire:Corruption {1}+: Three times."
+  },
+  "CorruptTheSpire:Condemn": {
+    "NAME": "Condemn",
+    "DESCRIPTION": "Deal !D! damage. NL Gain {0} corruptthespire:Corruption."
+  },
+  "CorruptTheSpire:Recoil": {
+    "NAME": "Recoil",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Gain {0} Frail."
+  },
+  "CorruptTheSpire:DrainLife": {
+    "NAME": "Drain Life",
+    "DESCRIPTION": "Deal !D! damage. NL Heal !M! HP. NL Gain {0} corruptthespire:Corruption."
+  },
+  "CorruptTheSpire:Fragmentize": {
+    "NAME": "Fragmentize",
+    "DESCRIPTION": "Deal !D! damage. NL If Fatal, gain a {0}."
+  }
 }

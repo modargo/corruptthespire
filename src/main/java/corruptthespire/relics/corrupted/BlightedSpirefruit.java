@@ -1,6 +1,5 @@
 package corruptthespire.relics.corrupted;
 
-import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -12,7 +11,7 @@ import corruptthespire.util.TextureLoader;
 
 import java.text.MessageFormat;
 
-public class BlightedSpirefruit extends CustomRelic {
+public class BlightedSpirefruit extends AbstractCorruptedRelic {
     public static final String ID = "CorruptTheSpire:BlightedSpirefruit";
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));

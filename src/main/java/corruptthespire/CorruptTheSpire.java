@@ -4,15 +4,22 @@ import basemod.BaseMod;
 import basemod.ModPanel;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardSave;
 import corruptthespire.buttons.CorruptionDisplay;
+import corruptthespire.cards.CorruptedCardColor;
 import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.rewards.CustomRewardTypes;
 import corruptthespire.rewards.MaxHealthReward;
@@ -25,6 +32,8 @@ import corruptthespire.subscribers.ResetIsBossCorruptedSubscriber;
 import corruptthespire.util.TextureLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.nio.charset.StandardCharsets;
 
 import static com.megacrit.cardcrawl.core.Settings.GameLanguage;
 import static com.megacrit.cardcrawl.core.Settings.language;
@@ -40,6 +49,13 @@ public class CorruptTheSpire implements
     public static final Logger logger = LogManager.getLogger(CorruptTheSpire.class.getName());
 
     public CorruptTheSpire() {
+        BaseMod.addColor(CorruptedCardColor.CORRUPTTHESPIRE_CORRUPTED,
+                //TODO: Make all this pretty
+                Color.BLACK, Color.BLACK, Color.BLACK,
+                Color.BLACK, Color.BLACK, Color.BLACK, Color.BLACK,
+                "corruptthespire/images/corruptedcolor/corrupted_attack.png", "corruptthespire/images/corruptedcolor/corrupted_skill.png", "corruptthespire/images/corruptedcolor/corrupted_power.png", "corruptthespire/images/corruptedcolor/corrupted_energy.png",
+                "corruptthespire/images/corruptedcolor/corrupted_attack_p.png", "corruptthespire/images/corruptedcolor/corrupted_skill_p.png", "corruptthespire/images/corruptedcolor/corrupted_power_p.png",
+                "corruptthespire/images/corruptedcolor/corrupted_energy_p.png", "corruptthespire/images/corruptedcolor/corrupted_small_energy.png");
         BaseMod.subscribe(this);
     }
 
@@ -78,6 +94,9 @@ public class CorruptTheSpire implements
 
     @Override
     public void receiveEditCards() {
+        for (AbstractCard c : Cor.getAllCorruptedCards()) {
+            BaseMod.addCard(c);
+        }
     }
 
     @Override
@@ -122,6 +141,16 @@ public class CorruptTheSpire implements
 
     @Override
     public void receiveEditKeywords() {
+        Gson gson = new Gson();
+        String json = Gdx.files.internal(makeLocPath(Settings.language, "CorruptTheSpire-Keyword-Strings")).readString(String.valueOf(StandardCharsets.UTF_8));
+        Keyword[] keywords = gson.fromJson(json, Keyword[].class);
+
+        if (keywords != null) {
+            for (Keyword keyword : keywords) {
+                //The modID here must be lowercase
+                BaseMod.addKeyword("corruptthespire", keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
+            }
+        }
     }
 
     public static String cardImage(String id) {
@@ -171,5 +200,12 @@ public class CorruptTheSpire implements
         Texture tex32 = TextureLoader.getTexture(CorruptTheSpire.powerImage32(power.ID));
         power.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         power.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+    }
+
+    private static class Keyword
+    {
+        public String PROPER_NAME;
+        public String[] NAMES;
+        public String DESCRIPTION;
     }
 }
