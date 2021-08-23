@@ -106,8 +106,6 @@ public class ShopCorruption {
             coloredCards.add(c);
 
             colorlessCards.clear();
-            //colorlessCards.add(AbstractDungeon.getColorlessCardFromPool(AbstractCard.CardRarity.RARE).makeCopy());
-            //colorlessCards.add(AbstractDungeon.getColorlessCardFromPool(AbstractCard.CardRarity.RARE).makeCopy());
         }
 
         if (corruptionType == ShopCorruptionType.CorruptedCards) {
@@ -119,7 +117,14 @@ public class ShopCorruption {
 
         if (corruptionType == ShopCorruptionType.CorruptedCardAndFragment) {
             colorlessCards.clear();
-            colorlessCards.add(CorruptedCardUtil.getRandomCorruptedCard());
+            if (AbstractDungeon.cardRng.randomBoolean()) {
+                colorlessCards.add(AbstractDungeon.getColorlessCardFromPool(AbstractCard.CardRarity.UNCOMMON).makeCopy());
+                colorlessCards.add(CorruptedCardUtil.getRandomCorruptedCard());
+            }
+            else {
+                colorlessCards.add(CorruptedCardUtil.getRandomCorruptedCard());
+                colorlessCards.add(AbstractDungeon.getColorlessCardFromPool(AbstractCard.CardRarity.RARE).makeCopy());
+            }
         }
     }
 
@@ -135,7 +140,10 @@ public class ShopCorruption {
             int numRelics = corruptionType == ShopCorruptionType.CorruptedRelicsReplacePotions ? 6 : 3;
             for(int i = 0; i < numRelics; ++i) {
                 AbstractRelic tempRelic;
-                if ((i < 2 && corruptionType == ShopCorruptionType.Rare)
+                if (i < 3 && corruptionType == ShopCorruptionType.CorruptedRelics) {
+                    tempRelic = RelicLibrary.getRelic(Cor.returnRandomCorruptedRelicKey()).makeCopy();
+                }
+                else if ((i < 2 && corruptionType == ShopCorruptionType.Rare)
                     || (i < 1 && corruptionType == ShopCorruptionType.TransformReplacesRemove)
                     || (i < 1 && corruptionType == ShopCorruptionType.CorruptedCardAndFragment)
                 ) {

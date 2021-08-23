@@ -6,5 +6,6 @@ public enum ShopCorruptionType {
     CorruptedRelicsReplacePotions,
     TransformReplacesRemove,
     CorruptedCards,
-    CorruptedCardAndFragment
+    CorruptedCardAndFragment,
+    CorruptedRelics,
 }
