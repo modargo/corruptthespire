@@ -17,7 +17,8 @@ public class ShopCorruptionDistribution extends AbstractCorruptionDistribution<S
         d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.Rare, 0));
         d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.CorruptedRelicsReplacePotions, 0));
         d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.TransformReplacesRemove, 0));
-        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.CorruptedCards, 100));
+        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.CorruptedCards, 0));
+        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.CorruptedCardAndFragment, 100));
         return d;
     }
 }

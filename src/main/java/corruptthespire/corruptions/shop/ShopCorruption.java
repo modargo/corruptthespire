@@ -116,6 +116,11 @@ public class ShopCorruption {
             coloredCards.addAll(CorruptedCardUtil.getRandomCorruptedCards(2, AbstractCard.CardType.SKILL));
             coloredCards.addAll(CorruptedCardUtil.getRandomCorruptedCards(1, AbstractCard.CardType.POWER));
         }
+
+        if (corruptionType == ShopCorruptionType.CorruptedCardAndFragment) {
+            colorlessCards.clear();
+            colorlessCards.add(CorruptedCardUtil.getRandomCorruptedCard());
+        }
     }
 
     public static boolean handleRelics(ShopScreen shopScreen) {
@@ -130,7 +135,10 @@ public class ShopCorruption {
             int numRelics = corruptionType == ShopCorruptionType.CorruptedRelicsReplacePotions ? 6 : 3;
             for(int i = 0; i < numRelics; ++i) {
                 AbstractRelic tempRelic;
-                if ((i < 2 && corruptionType == ShopCorruptionType.Rare) || (i < 1 && corruptionType == ShopCorruptionType.TransformReplacesRemove)) {
+                if ((i < 2 && corruptionType == ShopCorruptionType.Rare)
+                    || (i < 1 && corruptionType == ShopCorruptionType.TransformReplacesRemove)
+                    || (i < 1 && corruptionType == ShopCorruptionType.CorruptedCardAndFragment)
+                ) {
                     tempRelic = new FragmentOfCorruption();
                 }
                 else if (i < 2) {

@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.shop.Merchant;
 import com.megacrit.cardcrawl.shop.ShopScreen;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
-import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.AbstractCorruptedCard;
 import corruptthespire.corruptions.shop.ShopCorruption;
 import corruptthespire.corruptions.shop.ShopCorruptionType;
@@ -19,13 +18,10 @@ import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import javassist.expr.ExprEditor;
 import javassist.expr.MethodCall;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 
 public class ShopPatch {
-    public static final Logger logger = LogManager.getLogger(ShopPatch.class.getName());
     public static String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:ShopCorruption").TEXT;
 
     @SpirePatch(clz = Merchant.class, method = SpirePatch.CONSTRUCTOR, paramtypez = {float.class, float.class, int.class})
@@ -124,11 +120,13 @@ public class ShopPatch {
     @SpirePatch(clz = ShopScreen.class, method = "initCards")
     public static class GetPriceForCorruptedCardsPatch {
         public static class GetPriceForCorruptedCardsExprEditor extends ExprEditor {
+            int hits = 0;
             @Override
             public void edit(MethodCall methodCall) throws CannotCompileException {
                 if (methodCall.getClassName().equals(AbstractCard.class.getName()) && methodCall.getMethodName().equals("getPrice")) {
                     //methodCall.replace(String.format("{ Integer price = %1$s.setCorruptedCardPrice((%2$s)this.coloredCards.get(i)); $_ = price != null ? (int)price : $proceed($$); }", ShopCorruption.class.getName(), AbstractCard.class.getName()));
-                    methodCall.replace(String.format("{ $_ = this.coloredCards.get(i) instanceof %1$s ? %2$s.getCorruptedCardPrice((%1$s)this.coloredCards.get(i)) : $proceed($$); }", AbstractCorruptedCard.class.getName(), ShopCorruption.class.getName()));
+                    methodCall.replace(String.format("{ $_ = this.%3$s.get(i) instanceof %1$s ? %2$s.getCorruptedCardPrice((%1$s)this.%3$s.get(i)) : $proceed($$); }", AbstractCorruptedCard.class.getName(), ShopCorruption.class.getName(), hits == 0 ? "coloredCards" : "colorlessCards"));
+                    hits++;
                 }
             }
         }
