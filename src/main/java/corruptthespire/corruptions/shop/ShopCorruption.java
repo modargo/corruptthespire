@@ -10,15 +10,21 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.shop.ShopScreen;
 import com.megacrit.cardcrawl.shop.StoreRelic;
 import corruptthespire.Cor;
+import corruptthespire.cards.AbstractCorruptedCard;
 import corruptthespire.cards.CardUtil;
+import corruptthespire.cards.CorruptedCardUtil;
 import corruptthespire.patches.CorruptedField;
 import corruptthespire.patches.shop.ShopCorruptionTypeField;
 import corruptthespire.relics.FragmentOfCorruption;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class ShopCorruption {
+    public static final Logger logger = LogManager.getLogger(ShopCorruption.class.getName());
+
     public static void handleCards(ArrayList<AbstractCard> coloredCards, ArrayList<AbstractCard> colorlessCards) {
         ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())
                 ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
@@ -103,6 +109,13 @@ public class ShopCorruption {
             //colorlessCards.add(AbstractDungeon.getColorlessCardFromPool(AbstractCard.CardRarity.RARE).makeCopy());
             //colorlessCards.add(AbstractDungeon.getColorlessCardFromPool(AbstractCard.CardRarity.RARE).makeCopy());
         }
+
+        if (corruptionType == ShopCorruptionType.CorruptedCards) {
+            coloredCards.clear();
+            coloredCards.addAll(CorruptedCardUtil.getRandomCorruptedCards(2, AbstractCard.CardType.ATTACK));
+            coloredCards.addAll(CorruptedCardUtil.getRandomCorruptedCards(2, AbstractCard.CardType.SKILL));
+            coloredCards.addAll(CorruptedCardUtil.getRandomCorruptedCards(1, AbstractCard.CardType.POWER));
+        }
     }
 
     public static boolean handleRelics(ShopScreen shopScreen) {
@@ -146,11 +159,15 @@ public class ShopCorruption {
                 ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
                 : null;
 
-        if (corruptionType == ShopCorruptionType.CorruptedRelicsReplacePotions) {
+        if (corruptionType == ShopCorruptionType.CorruptedRelicsReplacePotions || corruptionType == ShopCorruptionType.CorruptedCards) {
             return true;
         }
 
         return false;
+    }
 
+    public static int getCorruptedCardPrice(AbstractCorruptedCard card) {
+        AbstractCard.CardRarity rarity = CorruptedCardUtil.getAllCorruptedCardInfos().get(card.cardID).rarity;
+        return rarity == AbstractCard.CardRarity.COMMON ? CorruptedCardUtil.CORRUPTED_COMMON_PRICE : CorruptedCardUtil.CORRUPTED_RARE_PRICE;
     }
 }

@@ -14,6 +14,8 @@ import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rewards.chests.AbstractChest;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import corruptthespire.Cor;
+import corruptthespire.cards.CardUtil;
+import corruptthespire.cards.CorruptedCardUtil;
 import corruptthespire.effects.TextOverlayEffect;
 import corruptthespire.patches.treasure.VaultChestsField;
 import corruptthespire.relics.FragmentOfCorruption;
@@ -145,6 +147,12 @@ public class VaultChest extends AbstractChest {
             case Upgrade:
                 AbstractDungeon.getCurrRoom().rewards.add(new RandomUpgradeReward());
                 text = TEXT[8];
+                break;
+            case CorruptedCard:
+                RewardItem corruptedCardReward = new RewardItem(null, RewardItem.RewardType.CARD);
+                corruptedCardReward.cards = CorruptedCardUtil.getRandomCorruptedCards(CardUtil.getNumCardsForRewards(), null);
+                AbstractDungeon.getCurrRoom().rewards.add(corruptedCardReward);
+                text = TEXT[9];
                 break;
             default:
                 throw new RuntimeException("Unknown vault chest type: " + this.vaultChestType);

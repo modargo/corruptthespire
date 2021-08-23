@@ -13,7 +13,7 @@
     "TEXT": ["Gold (corrupted relic)", "the gold", "Loot more", "Further chests will be corrupting....", "The corruption grows stronger with each chest....", "Corruption manifests", "The corruption grows"]
   },
   "CorruptTheSpire:VaultChest": {
-    "TEXT": ["A relic!", "Nothing.", "Gold!", "A strange fragment.", "A technique!", "Health!", "An unusual relic!", "An unusual technique!", "An upgrade!"]
+    "TEXT": ["A relic!", "Nothing.", "Gold!", "A strange fragment.", "A technique!", "Health!", "An unusual relic!", "An unusual technique!", "An upgrade!", "A corrupted technique."]
   },
   "CorruptTheSpire:CampfireCorruption": {
     "TEXT": ["Before resting... corruption."]

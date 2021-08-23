@@ -9,6 +9,6 @@ public enum VaultChestType {
     MaxHealth,
     ShopRelic,
     ColorlessCard,
-    Upgrade
-    //TODO Add Corrupted Card
+    Upgrade,
+    CorruptedCard
 }

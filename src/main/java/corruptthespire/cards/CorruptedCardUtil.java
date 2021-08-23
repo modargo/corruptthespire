@@ -10,6 +10,8 @@ import java.util.stream.Collectors;
 
 public class CorruptedCardUtil {
     private static final float CORRUPTED_RARE_CHANCE = 0.2F;
+    public static final int CORRUPTED_COMMON_PRICE = 50;
+    public static final int CORRUPTED_RARE_PRICE = 125;
 
     public static ArrayList<AbstractCard> getAllCorruptedCards() {
         return getAllCorruptedCardInfos().values().stream().map(cci -> cci.card).collect(Collectors.toCollection(ArrayList::new));
@@ -17,6 +19,7 @@ public class CorruptedCardUtil {
 
     public static Map<String, CorruptedCardInfo> getAllCorruptedCardInfos() {
         ArrayList<CorruptedCardInfo> corruptedCardInfos = new ArrayList<>();
+
         //Attacks
         corruptedCardInfos.add(new CorruptedCardInfo(new Shadowblast(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new EssenceRip(), AbstractCard.CardRarity.COMMON));
@@ -40,10 +43,10 @@ public class CorruptedCardUtil {
     }
 
     public static AbstractCard getRandomCorruptedCard() {
-        return getRandomCorruptedCards(1).get(0);
+        return getRandomCorruptedCards(1, null).get(0);
     }
 
-    public static ArrayList<AbstractCard> getRandomCorruptedCards(int n) {
+    public static ArrayList<AbstractCard> getRandomCorruptedCards(int n, AbstractCard.CardType type) {
         ArrayList<AbstractCard.CardRarity> rarities = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             rarities.add(rollCorruptedRarity());
@@ -58,6 +61,7 @@ public class CorruptedCardUtil {
                 if (corruptedCommons == null) {
                     corruptedCommons = getAllCorruptedCardInfos().values().stream()
                             .filter(cci -> cci.rarity == AbstractCard.CardRarity.COMMON)
+                            .filter(cci -> type == null || cci.card.type == type)
                             .map(cci -> cci.card)
                             .collect(Collectors.toCollection(ArrayList::new));
                     Collections.shuffle(corruptedCommons, AbstractDungeon.cardRng.random);
@@ -68,6 +72,7 @@ public class CorruptedCardUtil {
                 if (corruptedRares == null) {
                     corruptedRares = getAllCorruptedCardInfos().values().stream()
                             .filter(cci -> cci.rarity == AbstractCard.CardRarity.RARE)
+                            .filter(cci -> type == null || cci.card.type == type)
                             .map(cci -> cci.card)
                             .collect(Collectors.toCollection(ArrayList::new));
                     Collections.shuffle(corruptedRares, AbstractDungeon.cardRng.random);

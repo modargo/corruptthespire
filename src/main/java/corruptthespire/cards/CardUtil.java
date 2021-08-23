@@ -5,6 +5,8 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.helpers.ModHelper;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
@@ -32,6 +34,17 @@ public class CardUtil {
             return card;
         }
         return null;
+    }
+
+    public static int getNumCardsForRewards() {
+        int numCards = 3;
+        for (AbstractRelic r : AbstractDungeon.player.relics) {
+            numCards = r.changeNumberOfCardsInReward(numCards);
+        }
+        if (ModHelper.isModEnabled("Binary")) {
+            --numCards;
+        }
+        return numCards;
     }
 
     public static AbstractCard getOtherColorCard(AbstractCard.CardRarity rarity) {

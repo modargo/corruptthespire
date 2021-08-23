@@ -44,7 +44,6 @@ public class CorruptTheSpire implements
         EditRelicsSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber {
-
     public static final Logger logger = LogManager.getLogger(CorruptTheSpire.class.getName());
 
     public CorruptTheSpire() {
