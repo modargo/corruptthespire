@@ -31,7 +31,12 @@
   },
   "CorruptTheSpire:CorruptedEgg": {
     "NAME": "Corrupted Egg",
-    "FLAVOR": "",
+    "FLAVOR": "Whatever life there once was here has been overtaken by corruption.",
     "DESCRIPTIONS": ["Cards in rewards have #b+{0}% chance to be upgraded. Gain #b{1} #yCorruption every time you gain an #yupgraded card."]
+  },
+  "CorruptTheSpire:MaskOfNightmares": {
+    "NAME": "Mask of Nightmares",
+    "FLAVOR": "Every glimpse is disturbing, in new way each time.",
+    "DESCRIPTIONS": ["Whenever you enter a corrupted room, gain {0} Max HP."]
   }
 }

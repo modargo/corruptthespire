@@ -98,6 +98,7 @@ public class Cor {
         corruptedRelics.add(new BagOfTricks());
         corruptedRelics.add(new BlightedSpirefruit());
         corruptedRelics.add(new CorruptedEgg());
+        corruptedRelics.add(new MaskOfNightmares());
         corruptedRelics.add(new ObsidianShovel());
         corruptedRelics.add(new RustedOrichalcum());
         corruptedRelics.add(new UnreliableCharm());

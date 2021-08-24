@@ -2,11 +2,13 @@ package corruptthespire.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import corruptthespire.Cor;
 import corruptthespire.map.CorruptMap;
+import corruptthespire.relics.corrupted.MaskOfNightmares;
 import javassist.CtBehavior;
 
 @SpirePatch(clz = AbstractDungeon.class, method = "nextRoomTransition", paramtypez = {SaveFile.class})
@@ -21,6 +23,10 @@ public class NextRoomTransitionPatch {
         }
         if (CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())) {
             Cor.addCorruption(AbstractDungeon.getCurrRoom());
+            AbstractRelic relic = AbstractDungeon.player.getRelic(MaskOfNightmares.ID);
+            if (relic != null) {
+                ((MaskOfNightmares)relic).onEnterCorruptedRoom(AbstractDungeon.getCurrRoom());
+            }
         }
     }
 

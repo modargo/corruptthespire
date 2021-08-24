@@ -10,8 +10,15 @@ public class ShopCorruptionDistribution extends AbstractCorruptionDistribution<S
     @Override
     protected List<CorruptionDistributionInfo<ShopCorruptionType>> getDistribution() {
         //TODO Set real distribution when done implementing and testing
-        //Fragment 50, Money 10, Extra 10, Vault 10, CorruptedRelic 10, something else 10?
-        //Something else could be the fight idea
+        //CorruptedCardAndFragment 30
+        //Prismatic 10
+        //Rare 10
+        //TransformReplacesRemove 10
+        //CorruptedRelics 10
+        //CorruptedCards 10
+        //CorruptedRelicsReplacePotions 10
+        //Something else 10
+        //TBD what something else is
         ArrayList<CorruptionDistributionInfo<ShopCorruptionType>> d = new ArrayList<>();
         d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.Prismatic, 0));
         d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.Rare, 0));
