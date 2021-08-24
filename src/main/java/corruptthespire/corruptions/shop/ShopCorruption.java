@@ -141,7 +141,7 @@ public class ShopCorruption {
             for(int i = 0; i < numRelics; ++i) {
                 AbstractRelic tempRelic;
                 if (i < 3 && corruptionType == ShopCorruptionType.CorruptedRelics) {
-                    tempRelic = RelicLibrary.getRelic(Cor.returnRandomCorruptedRelicKey()).makeCopy();
+                    tempRelic = RelicLibrary.getRelic(Cor.returnEndRandomCorruptedRelicKey()).makeCopy();
                 }
                 else if ((i < 2 && corruptionType == ShopCorruptionType.Rare)
                     || (i < 1 && corruptionType == ShopCorruptionType.TransformReplacesRemove)
@@ -154,7 +154,7 @@ public class ShopCorruption {
                 } else if (i == 2) {
                     tempRelic = AbstractDungeon.returnRandomRelicEnd(AbstractRelic.RelicTier.SHOP);
                 } else {
-                    tempRelic = RelicLibrary.getRelic(Cor.returnRandomCorruptedRelicKey()).makeCopy();
+                    tempRelic = RelicLibrary.getRelic(Cor.returnEndRandomCorruptedRelicKey()).makeCopy();
                 }
 
                 StoreRelic relic = new StoreRelic(tempRelic, i, shopScreen);

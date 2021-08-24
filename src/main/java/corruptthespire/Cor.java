@@ -1,6 +1,7 @@
 package corruptthespire;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.Circlet;
@@ -90,7 +91,22 @@ public class Cor {
         if (Cor.corruptedRelicPool.isEmpty()) {
             return Circlet.ID;
         }
-        return Cor.corruptedRelicPool.remove(0);
+        String relicKey = Cor.corruptedRelicPool.remove(0);
+        if (!RelicLibrary.getRelic(relicKey).canSpawn()) {
+            return returnRandomCorruptedRelicKey();
+        }
+        return relicKey;
+    }
+
+    public static String returnEndRandomCorruptedRelicKey() {
+        if (Cor.corruptedRelicPool.isEmpty()) {
+            return Circlet.ID;
+        }
+        String relicKey = Cor.corruptedRelicPool.remove(Cor.corruptedRelicPool.size() - 1);
+        if (!RelicLibrary.getRelic(relicKey).canSpawn()) {
+            return returnEndRandomCorruptedRelicKey();
+        }
+        return relicKey;
     }
 
     public static ArrayList<AbstractRelic> getAllCorruptedRelics() {
