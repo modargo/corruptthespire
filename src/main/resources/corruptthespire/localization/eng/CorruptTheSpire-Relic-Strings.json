@@ -38,5 +38,10 @@
     "NAME": "Mask of Nightmares",
     "FLAVOR": "Every glimpse is disturbing, in new way each time.",
     "DESCRIPTIONS": ["Whenever you enter a corrupted room, gain {0} Max HP."]
+  },
+  "CorruptTheSpire:DeckOfManyFates": {
+    "NAME": "Deck of Many Fates",
+    "FLAVOR": "The intricately drawn cards feel filled with omens and portents.",
+    "DESCRIPTIONS": ["Add a random card to your hand at the start of one of the first three turns of combat, chosen randomly. The card will be common if on turn one, uncommon if on turn two, and rare if on turn three."]
   }
 }

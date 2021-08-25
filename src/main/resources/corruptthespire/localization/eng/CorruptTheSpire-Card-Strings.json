@@ -54,5 +54,9 @@
     "NAME": "Corrupted Form",
     "DESCRIPTION": "Ethereal. NL Gain {0} corruptthespire:Corruption. NL At the end of your turn, deal corruptthespire:Corruption damage to ALL enemies.",
     "UPGRADE_DESCRIPTION": "Gain {0} corruptthespire:Corruption. NL At the end of your turn, deal corruptthespire:Corruption damage to ALL enemies."
+  },
+  "CorruptTheSpire:Fated": {
+    "NAME": "Fated",
+    "DESCRIPTION": "Unplayable. NL Remove this from your deck after winning {0} combats. (You need to win !M! more.)"
   }
 }

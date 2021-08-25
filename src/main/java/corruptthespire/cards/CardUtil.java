@@ -16,6 +16,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.*;
+
 public class CardUtil {
     public static AbstractCard upgradeRandomCard() {
         ArrayList<AbstractCard> upgradableCards = new ArrayList<>();
@@ -74,5 +76,28 @@ public class CardUtil {
         }
 
         return anyCard.getRandomCard(true, rarity).makeCopy();
+    }
+
+    public static AbstractCard returnTrulyRandomCardInCombat(AbstractCard.CardRarity rarity) {
+        ArrayList<AbstractCard> list = new ArrayList<>();
+        if (rarity == AbstractCard.CardRarity.COMMON) {
+            for (AbstractCard c : srcCommonCardPool.group) {
+                if (!c.hasTag(AbstractCard.CardTags.HEALING))
+                    list.add(c);
+            }
+        }
+        if (rarity == AbstractCard.CardRarity.UNCOMMON) {
+            for (AbstractCard c : srcUncommonCardPool.group) {
+                if (!c.hasTag(AbstractCard.CardTags.HEALING))
+                    list.add(c);
+            }
+        }
+        if (rarity == AbstractCard.CardRarity.RARE) {
+            for (AbstractCard c : srcRareCardPool.group) {
+                if (!c.hasTag(AbstractCard.CardTags.HEALING))
+                    list.add(c);
+            }
+        }
+        return list.get(cardRandomRng.random(list.size() - 1));
     }
 }

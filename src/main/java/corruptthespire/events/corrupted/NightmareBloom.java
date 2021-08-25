@@ -27,12 +27,14 @@ public class NightmareBloom extends AbstractImageEvent {
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private static final String IMG = CorruptTheSpire.eventImage(ID);
 
-    private static final int RELIC_CORRUPTION = 10;
+    private static final int RELIC_CORRUPTION = 5;
+    private static final int A15_RELIC_CORRUPTION = 10;
     private static final int UPGRADE_ALL_CORRUPTION = 50;
     private static final int GOLD_CORRUPTION = 30;
     private static final int GOLD = 666;
 
     private final AbstractRelic relic;
+    private final int relicCorruption;
 
     private int screenNum = 0;
 
@@ -40,8 +42,9 @@ public class NightmareBloom extends AbstractImageEvent {
         super(NAME, DESCRIPTIONS[0], IMG);
 
         this.relic = RelicLibrary.getRelic(Cor.returnRandomCorruptedRelicKey());
+        this.relicCorruption = AbstractDungeon.ascensionLevel >= 15 ? A15_RELIC_CORRUPTION : RELIC_CORRUPTION;
 
-        imageEventText.setDialogOption(MessageFormat.format(OPTIONS[0], this.relic.name, RELIC_CORRUPTION), this.relic);
+        imageEventText.setDialogOption(MessageFormat.format(OPTIONS[0], this.relic.name, this.relicCorruption), this.relic);
         imageEventText.setDialogOption(MessageFormat.format(OPTIONS[1], UPGRADE_ALL_CORRUPTION));
         imageEventText.setDialogOption(MessageFormat.format(OPTIONS[2], GOLD, GOLD_CORRUPTION));
     }
@@ -52,7 +55,7 @@ public class NightmareBloom extends AbstractImageEvent {
             case 0:
                 switch (buttonPressed) {
                     case 0: // Goods
-                        Cor.addCorruption(RELIC_CORRUPTION);
+                        Cor.addCorruption(this.relicCorruption);
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), relic);
                         logMetricObtainRelic(ID, "Goods", this.relic);
 

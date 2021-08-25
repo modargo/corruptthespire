@@ -2,6 +2,8 @@ package corruptthespire;
 
 import basemod.BaseMod;
 import basemod.ModPanel;
+import basemod.eventUtil.AddEventParams;
+import basemod.eventUtil.util.Condition;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -12,6 +14,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.events.beyond.MindBloom;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -19,7 +22,11 @@ import com.megacrit.cardcrawl.rewards.RewardSave;
 import corruptthespire.buttons.CorruptionDisplay;
 import corruptthespire.cards.CorruptedCardColor;
 import corruptthespire.cards.CorruptedCardUtil;
+import corruptthespire.events.CorruptedEventInfo;
+import corruptthespire.events.CorruptedEventUtil;
+import corruptthespire.patches.cards.CheckFatedPostBattleSubscriber;
 import corruptthespire.relics.FragmentOfCorruption;
+import corruptthespire.relics.chaotic.DeckOfManyFates;
 import corruptthespire.rewards.CustomRewardTypes;
 import corruptthespire.rewards.MaxHealthReward;
 import corruptthespire.rewards.RandomUpgradeReward;
@@ -33,6 +40,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Map;
 
 import static com.megacrit.cardcrawl.core.Settings.GameLanguage;
 import static com.megacrit.cardcrawl.core.Settings.language;
@@ -66,17 +74,30 @@ public class CorruptTheSpire implements
         Texture badgeTexture = new Texture("corruptthespire/images/CorruptTheSpireBadge.png");
         BaseMod.registerModBadge(badgeTexture, "Corrupt the Spire", "modargo", "TODO", new ModPanel());
 
+        addEvents();
+
         BaseMod.addSaveField(SavableCorruptedRelicPool.SaveKey, new SavableCorruptedRelicPool());
         BaseMod.addSaveField(SavableCorruption.SaveKey, new SavableCorruption());
         BaseMod.addSaveField(SavableRng.SaveKey, new SavableRng());
 
         BaseMod.subscribe(new CorruptionHealthIncreaseOnStartBattleSubscriber());
         BaseMod.subscribe(new ResetIsBossCorruptedSubscriber());
+        BaseMod.subscribe(new CheckFatedPostBattleSubscriber());
 
         this.registerCustomRewards();
 
         Cor.display = new CorruptionDisplay();
         BaseMod.addTopPanelItem(Cor.display);
+    }
+
+    private static void addEvents() {
+        // These events are only encountered through our own special logic, but we register them all here for ease of
+        // debugging (thus the conditions that make them never show up)
+        // TODO Maybe remove this before releasing?
+        for (Map.Entry<String, CorruptedEventInfo> e : CorruptedEventUtil.getAllCorruptedEvents().entrySet()) {
+            Condition alwaysFalseCondition = () -> false;
+            BaseMod.addEvent(new AddEventParams.Builder(e.getKey(), e.getValue().cls).spawnCondition(alwaysFalseCondition).bonusCondition(alwaysFalseCondition).create());
+        }
     }
 
     private void registerCustomRewards() {
@@ -100,6 +121,7 @@ public class CorruptTheSpire implements
     @Override
     public void receiveEditRelics() {
         BaseMod.addRelic(new FragmentOfCorruption(), RelicType.SHARED);
+        BaseMod.addRelic(new DeckOfManyFates(), RelicType.SHARED);
         for (AbstractRelic r : Cor.getAllCorruptedRelics()) {
             BaseMod.addRelic(r, RelicType.SHARED);
         }

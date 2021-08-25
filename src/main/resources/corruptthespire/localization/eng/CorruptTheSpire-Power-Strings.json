@@ -13,5 +13,16 @@
       "At the end of your turn, deal damage equal to corruptthespire:Corruption to ALL enemies.",
       "At the end of your turn, deal damage equal to {0} times corruptthespire:Corruption to ALL enemies."
     ]
+  },
+  "CorruptTheSpire:FatedCard": {
+    "NAME": "Fated Card",
+    "DESCRIPTIONS": [
+      "At the start of your next turn, add a random common card to your hand.",
+      "At the start of your next turn, add a random uncommon card to your hand.",
+      "At the start of your next turn, add a random rare card to your hand.",
+      "At the start of your turn {0} turns from now, add a random common card to your hand.",
+      "At the start of your turn {0} turns from now, add a random uncommon card to your hand.",
+      "At the start of your turn {0} turns from now, add a random rare card to your hand."
+    ]
   }
 }

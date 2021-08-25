@@ -48,5 +48,18 @@
       "[Reject] #gGain {0}.",
       "[Leave]"
     ]
+  },
+  "CorruptTheSpire:AStepToTheSide": {
+    "NAME": "A Step to the Side",
+    "DESCRIPTIONS": [
+      "~Confused,~ you look around. Smoke drifts through the air. You're not sure how you got here.... NL NL A voice focuses your attention. \"Oh ho, a visitor. And by the looks of it, another one from that #bSpire.\" An old woman stands before you, tools of fortune telling in her hands. NL NL \"Nothing can change the #pfate you're yoked to, my dear, but perhaps I can ease you on your way.\" What do you ask for?",
+      "The woman hands you a #gdeck #gof #gcards. \"There, a guide to aid you, only slightly #pcursed. Don't worry, it's a gift. I have other decks, and many other devices besides. Concern yourself with your own fate, climbing that #bSpire.\" NL NL You blink, and the woman fades away. The twisting passages of the #bSpire surround you, warped and alien. You begin to climb once more....",
+      "A single card is all the woman lays out. A #ywheel, with figures surrounding it. You can't see the name of the card through the smoke. NL NL As you step forward to take a closer look, everything fades away. NL NL What just happened? You shake the fog from your thoughts and pick up the small pile of #ygold in front of you before continuing."
+    ],
+    "OPTIONS": [
+      "[The Deck] #gGain {0}. #rBecome #rCursed #r- #rgoes #raway #rin #r{1} #rcombats.",
+      "[A Drawing] #gGain #g{0} #gGold.",
+      "[Leave]"
+    ]
   }
 }

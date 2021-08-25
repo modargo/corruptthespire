@@ -15,7 +15,9 @@ public class TheChoice extends AbstractImageEvent {
     private static final String IMG = CorruptTheSpire.eventImage(ID);
 
     public static int CORRUPTION_GAIN = 5;
+    public static int A15_CORRUPTION_GAIN = 5;
     public static int CORRUPTION_REDUCTION = 5;
+    public static int A15_CORRUPTION_REDUCTION = 5;
 
     private int screenNum = 0;
 
