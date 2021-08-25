@@ -37,7 +37,6 @@ public class Cor {
     public static Random rng;
     public static ArrayList<String> corruptedRelicPool;
     public static ArrayList<String> corruptedEventList;
-    public static ArrayList<String> chaoticEventList;
     public static CorruptionDisplay display;
 
     public static Integer getCorruptionDamageMultiplierPercent() {

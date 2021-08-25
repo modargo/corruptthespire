@@ -5,7 +5,7 @@ import corruptthespire.Cor;
 
 import java.util.ArrayList;
 
-public class SavableCorruptedEventList implements CustomSavable<ArrayList<String>> {
+public class SavableEventList implements CustomSavable<ArrayList<String>> {
     public final static String SaveKey = "CorruptedEventList";
 
     @Override

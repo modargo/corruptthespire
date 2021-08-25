@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.rooms.EventRoom;
 import corruptthespire.corruptions.event.EventCorruption;
 import corruptthespire.corruptions.event.EventCorruptionDistribution;
 import corruptthespire.corruptions.event.EventCorruptionType;
+import corruptthespire.events.CorruptedEventType;
 import corruptthespire.patches.CorruptedField;
 
 public class EventPatch {
@@ -30,7 +31,11 @@ public class EventPatch {
             }
 
             if (corruptionType == EventCorruptionType.CorruptedEvent) {
-                event = EventCorruption.handleCorruptedEvent();
+                event = EventCorruption.handleCorruptedEvent(CorruptedEventType.Corrupted);
+            }
+
+            if (corruptionType == EventCorruptionType.ChaoticEvent) {
+                event = EventCorruption.handleCorruptedEvent(CorruptedEventType.Chaotic);
             }
 
             if (event != null) {

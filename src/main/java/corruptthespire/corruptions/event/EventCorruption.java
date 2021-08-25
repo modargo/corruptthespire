@@ -6,8 +6,9 @@ import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.events.beyond.MindBloom;
 import com.megacrit.cardcrawl.helpers.ModHelper;
 import com.megacrit.cardcrawl.relics.PrismaticShard;
-import com.megacrit.cardcrawl.rooms.EventRoom;
 import corruptthespire.Cor;
+import corruptthespire.events.CorruptedEventInfo;
+import corruptthespire.events.CorruptedEventType;
 import corruptthespire.events.CorruptedEventUtil;
 import corruptthespire.events.FragmentOfCorruptionEvent;
 import corruptthespire.events.chaotic.MindsEye;
@@ -18,7 +19,6 @@ import org.apache.logging.log4j.Logger;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -29,23 +29,15 @@ public class EventCorruption {
         return new FragmentOfCorruptionEvent();
     }
 
-    public static AbstractEvent handleCorruptedEvent() {
-        return handleEvent(Cor.corruptedEventList, CorruptedEventUtil.getAllCorruptedEvents());
-    }
-
-    public static AbstractEvent handleChaoticEvent() {
-        return handleEvent(Cor.chaoticEventList, CorruptedEventUtil.getAllChaoticEvents());
-    }
-
-    private static AbstractEvent handleEvent(ArrayList<String> eventList, Map<String, Class<? extends AbstractEvent>> allEvents) {
-        ArrayList<String> possibleEvents = filterEvents(eventList);
+    public static AbstractEvent handleCorruptedEvent(CorruptedEventType corruptedEventType) {
+        ArrayList<String> possibleEvents = filterEvents(Cor.corruptedEventList, corruptedEventType);
 
         if (possibleEvents.isEmpty()) {
             return null;
         }
 
         String eventId = possibleEvents.remove(Cor.rng.random(possibleEvents.size() - 1));
-        Class<? extends AbstractEvent> eventClass = allEvents.get(eventId);
+        Class<? extends AbstractEvent> eventClass = CorruptedEventUtil.getAllCorruptedEvents().get(eventId).cls;
         try {
             return eventClass.getConstructor().newInstance();
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
@@ -55,8 +47,12 @@ public class EventCorruption {
         return null;
     }
 
-    private static ArrayList<String> filterEvents(ArrayList<String> corruptedEventList) {
-        return corruptedEventList.stream().filter(EventCorruption::keepEvent).collect(Collectors.toCollection(ArrayList::new));
+    private static ArrayList<String> filterEvents(ArrayList<String> corruptedEventList, CorruptedEventType corruptedEventType) {
+        Map<String, CorruptedEventInfo> allEvents = CorruptedEventUtil.getAllCorruptedEvents();
+        return corruptedEventList.stream()
+            .filter(EventCorruption::keepEvent)
+            .filter(e -> allEvents.get(e).corruptedEventType == corruptedEventType)
+            .collect(Collectors.toCollection(ArrayList::new));
     }
 
     private static boolean keepEvent(String e) {

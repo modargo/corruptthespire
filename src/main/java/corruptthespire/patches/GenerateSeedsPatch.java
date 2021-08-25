@@ -22,7 +22,5 @@ public class GenerateSeedsPatch {
         Cor.corruption = 0;
         Cor.corruptedEventList = new ArrayList<>(CorruptedEventUtil.getAllCorruptedEvents().keySet());
         Cor.corruptedEventList.sort(String::compareTo);
-        Cor.chaoticEventList = new ArrayList<>(CorruptedEventUtil.getAllChaoticEvents().keySet());
-        Cor.chaoticEventList.sort(String::compareTo);
     }
 }
