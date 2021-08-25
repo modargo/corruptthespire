@@ -1,1 +1,52 @@
-{}
+{
+  "CorruptTheSpire:FragmentOfCorruption": {
+    "NAME": "Fragment of Corruption",
+    "DESCRIPTIONS": [
+      "As you wander the corrupted passages of the Spire, you notice a small piece of #bSpirestone that's broken off from the wall. It looks like the combination of #pcorruption and #bSpirestone has #gcrystallized. NL NL Doesn't look like there's any danger to touching it, so you scoop it up as you pass by."
+    ],
+    "OPTIONS": [
+      "[Continue] Gain a {0} and continue on."
+    ]
+  },
+  "CorruptTheSpire:TheChoice": {
+    "NAME": "The Choice",
+    "DESCRIPTIONS": [
+      "TODO",
+      "TODO embrace text",
+      "TODO reject text"
+    ],
+    "OPTIONS": [
+      "[Embrace] TODO",
+      "[Reject] TODO",
+      "[Leave]"
+    ]
+  },
+  "CorruptTheSpire:NightmareBloom": {
+    "NAME": "Nightmare Bloom",
+    "DESCRIPTIONS": [
+      "As you cross an area of deep corruption within the Spire, your nightmares suddenly begin to feel very... #p~real...~. NL NL Fantasies of #gpower and #bskill surround you. NL You see now. The power could be yours. What do you reach out and seize?",
+      "A minor exchange. NL NL As the visions dissipate, you feel a faint... disappointment. You could have had so much more.",
+      "Might and mastery fill you. NL NL The corruption around you beckons you forward, and in its swirls and tendrils, there is satisfaction.",
+      "The deal is made. You will purchase power, and gold will arm and armor you. NL NL Let the corruption grow. You will reap it for wealth and glory."
+    ],
+    "OPTIONS": [
+      "[Earthly Goods] #gObtain {0}. #pGain #p{1} #pCorruption.",
+      "[Heroic Power] #gUpgrade #gall #gCards. #pGain #p{0} #pCorruption.",
+      "[Grand Wealth] #gGain #g{0} #gGold. #pGain #p{1} #pCorruption.",
+      "[Leave]"
+    ]
+  },
+  "CorruptTheSpire:MindsEye": {
+    "NAME": "Mind's Eye",
+    "DESCRIPTIONS": [
+      "Your thoughts turn inward, and the Spire disappears as you explore your own #bmind. Strange, shimmering #gideas bubble up from within, reflecting back and forth in your mind's eye. NL NL You could be doing everything so very differently, you're sure of it. You strain your mind, feeling that an #gepiphany lies just beyond these phantasms....",
+      "Of course. The countless ascents. Different bodies, yet one spirit. NL NL Come from below. Rise unto the heights, descend again with knowledge.",
+      "You close your mind to the ideas. You won't be tricked. Your mind is a fortress."
+    ],
+    "OPTIONS": [
+      "[Epiphany] #gGain {0}.",
+      "[Reject] #gGain {0}.",
+      "[Leave]"
+    ]
+  }
+}

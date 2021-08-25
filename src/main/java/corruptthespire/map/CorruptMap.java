@@ -54,6 +54,7 @@ public class CorruptMap {
         }
 
         //TODO change back when done with initial testing
+        //Maybe 30-40-50-100 for a more even increase in the first three acts
         //double percentCorrupt = actNum < 1 || actNum > 4 ? 0 : 1.0 / (5 - actNum); // 25%, 33%, 50%, 100%
         double percentCorrupt = 1.0;
         int baseCorrupt = (int)Math.ceil(potentialCorruptNodes.size() * percentCorrupt);
