@@ -23,6 +23,7 @@ public class Wheel extends AbstractImageEvent {
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private static final String IMG = CorruptTheSpire.eventImage(ID);
 
+    // No changes to this event on A15; could add a small cost, but it's okay for corrupted events to be good
     private final AbstractCard card;
 
     private int screenNum = 0;

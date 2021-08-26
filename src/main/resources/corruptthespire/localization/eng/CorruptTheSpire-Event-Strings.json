@@ -73,5 +73,19 @@
       "[Touch the Card] #gGain {0}.",
       "[Leave]"
     ]
+  },
+  "CorruptTheSpire:Divergence": {
+    "NAME": "Divergence",
+    "DESCRIPTIONS": [
+      "The #bSpire is quiet around you. For once, nothing threatening seems to be nearby. NL NL This is a perfect opportunity to engage in self-study and training improve your strength in combat. There are two ways you could approach this: #gfocus on what you already know and build on it, or #gbroaden your horizons in search of something new and different.",
+      "The technique fits well with what you already know.",
+      "How do you know all these strange things anyway? Do you learn them or... remember them?"
+    ],
+    "OPTIONS": [
+      "[Focus] #gChoose #g1 #gof #g{0} #gcards #gto #gadd #gto #gyour #gdeck.",
+      "[Broaden] #gChoose #g1 #gof #g{0} #gcards #gof #gany #gcolor #gto #gadd #gto #gyour #gdeck.",
+      "[Leave]",
+      "Add a card to your deck."
+    ]
   }
 }
