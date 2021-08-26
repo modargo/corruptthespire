@@ -1,4 +1,4 @@
-package corruptthespire.cards;
+package corruptthespire.cards.corrupted;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 

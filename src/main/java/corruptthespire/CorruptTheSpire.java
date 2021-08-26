@@ -14,14 +14,15 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.events.beyond.MindBloom;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardSave;
 import corruptthespire.buttons.CorruptionDisplay;
-import corruptthespire.cards.CorruptedCardColor;
-import corruptthespire.cards.CorruptedCardUtil;
+import corruptthespire.cards.Fated;
+import corruptthespire.cards.WheelOfFortune;
+import corruptthespire.cards.corrupted.CorruptedCardColor;
+import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.events.CorruptedEventInfo;
 import corruptthespire.events.CorruptedEventUtil;
 import corruptthespire.patches.cards.CheckFatedPostBattleSubscriber;
@@ -113,6 +114,8 @@ public class CorruptTheSpire implements
 
     @Override
     public void receiveEditCards() {
+        BaseMod.addCard(new WheelOfFortune());
+        BaseMod.addCard(new Fated());
         for (AbstractCard c : CorruptedCardUtil.getAllCorruptedCards()) {
             BaseMod.addCard(c);
         }

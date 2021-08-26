@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.rewards.chests.AbstractChest;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import corruptthespire.Cor;
 import corruptthespire.cards.CardUtil;
-import corruptthespire.cards.CorruptedCardUtil;
+import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.effects.TextOverlayEffect;
 import corruptthespire.patches.treasure.VaultChestsField;
 import corruptthespire.relics.FragmentOfCorruption;

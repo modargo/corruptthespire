@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import corruptthespire.actions.GainCorruptionAction;
-import corruptthespire.cards.ForbiddenRitual;
+import corruptthespire.cards.corrupted.ForbiddenRitual;
 
 import java.text.MessageFormat;
 

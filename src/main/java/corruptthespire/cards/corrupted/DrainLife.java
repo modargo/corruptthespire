@@ -1,36 +1,35 @@
-package corruptthespire.cards;
+package corruptthespire.cards.corrupted;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.FrailPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 import corruptthespire.CorruptTheSpire;
+import corruptthespire.actions.GainCorruptionAction;
 
 import java.text.MessageFormat;
 
-public class Recoil extends AbstractCorruptedCard {
-    public static final String ID = "CorruptTheSpire:Recoil";
+public class DrainLife extends AbstractCorruptedCard {
+    public static final String ID = "CorruptTheSpire:DrainLife";
     public static final String IMG = CorruptTheSpire.cardImage(ID);
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 1;
-    private static final int DAMAGE = 14;
-    private static final int UPGRADE_DAMAGE = 4;
-    private static final int VULNERABLE = 1;
-    private static final int UPGRADE_VULNERABLE = 1;
-    private static final int FRAIL = 2;
+    private static final int DAMAGE = 4;
+    private static final int HEAL = 4;
+    private static final int UPGRADE_DAMAGE = 1;
+    private static final int UPGRADE_HEAL = 1;
+    private static final int CORRUPTION = 1;
 
-    public Recoil() {
-        super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, FRAIL), CardType.ATTACK, CardTarget.ENEMY);
+    public DrainLife() {
+        super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, CORRUPTION), CardType.ATTACK, CardTarget.ENEMY);
         this.baseDamage = DAMAGE;
-        this.baseMagicNumber = VULNERABLE;
+        this.baseMagicNumber = HEAL;
         this.magicNumber = this.baseMagicNumber;
     }
 
@@ -38,7 +37,7 @@ public class Recoil extends AbstractCorruptedCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeDamage(UPGRADE_DAMAGE);
-            this.upgradeMagicNumber(UPGRADE_VULNERABLE);
+            this.upgradeMagicNumber(UPGRADE_HEAL);
             this.upgradeName();
         }
     }
@@ -46,7 +45,7 @@ public class Recoil extends AbstractCorruptedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        this.addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
-        this.addToBot(new ApplyPowerAction(p, p, new FrailPower(m, FRAIL, false), FRAIL));
+        this.addToBot(new HealAction(p, p, this.magicNumber));
+        this.addToBot(new GainCorruptionAction(CORRUPTION));
     }
 }

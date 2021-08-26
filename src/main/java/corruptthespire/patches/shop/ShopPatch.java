@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.shop.Merchant;
 import com.megacrit.cardcrawl.shop.ShopScreen;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
-import corruptthespire.cards.AbstractCorruptedCard;
+import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 import corruptthespire.corruptions.shop.ShopCorruption;
 import corruptthespire.corruptions.shop.ShopCorruptionType;
 import corruptthespire.patches.CorruptedField;

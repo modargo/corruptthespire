@@ -34,11 +34,6 @@ public class Fated extends CustomCard implements CustomSavable<Integer> {
     public void upgrade() {}
 
     @Override
-    public void applyPowers() {
-        super.applyPowers();
-    }
-
-    @Override
     public AbstractCard makeCopy() {
         return new Fated();
     }

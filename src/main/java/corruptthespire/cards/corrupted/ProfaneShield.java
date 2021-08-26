@@ -1,4 +1,4 @@
-package corruptthespire.cards;
+package corruptthespire.cards.corrupted;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

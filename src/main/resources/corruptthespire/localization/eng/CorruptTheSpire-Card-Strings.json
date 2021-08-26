@@ -58,5 +58,9 @@
   "CorruptTheSpire:Fated": {
     "NAME": "Fated",
     "DESCRIPTION": "Unplayable. NL Remove this from your deck after winning {0} combats. (You need to win !M! more.)"
+  },
+  "CorruptTheSpire:WheelOfFortune": {
+    "NAME": "Wheel of Fortune",
+    "DESCRIPTION": "Add !M! random cards to your hand. NL Exhaust."
   }
 }
