@@ -17,6 +17,7 @@ import corruptthespire.events.chaotic.Divergence;
 import corruptthespire.events.chaotic.MindsEye;
 import corruptthespire.events.corrupted.IncantationOfCorruption;
 import corruptthespire.events.corrupted.NightmareBloom;
+import corruptthespire.events.corrupted.StrangeMarketplace;
 import corruptthespire.events.corrupted.TheChoice;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -70,6 +71,10 @@ public class EventCorruption {
 
         if (e.equals(NightmareBloom.ID)) {
             return AbstractDungeon.actNum == 3 && AbstractDungeon.eventList.contains(MindBloom.ID);
+        }
+
+        if (e.equals(StrangeMarketplace.ID)) {
+            return AbstractDungeon.player.gold >= (AbstractDungeon.ascensionLevel >= 15 ? StrangeMarketplace.A15_GOLD : StrangeMarketplace.GOLD);
         }
 
         if (e.equals(TheChoice.ID)) {

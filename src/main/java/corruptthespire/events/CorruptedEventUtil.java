@@ -3,6 +3,7 @@ package corruptthespire.events;
 import corruptthespire.events.chaotic.*;
 import corruptthespire.events.corrupted.IncantationOfCorruption;
 import corruptthespire.events.corrupted.NightmareBloom;
+import corruptthespire.events.corrupted.StrangeMarketplace;
 import corruptthespire.events.corrupted.TheChoice;
 
 import java.util.HashMap;
@@ -18,6 +19,7 @@ public class CorruptedEventUtil {
         corruptedEvents.put(Wheel.ID, new CorruptedEventInfo(Wheel.class, CorruptedEventType.Chaotic));
         corruptedEvents.put(IncantationOfCorruption.ID, new CorruptedEventInfo(IncantationOfCorruption.class, CorruptedEventType.Corrupted));
         corruptedEvents.put(NightmareBloom.ID, new CorruptedEventInfo(NightmareBloom.class, CorruptedEventType.Corrupted));
+        corruptedEvents.put(StrangeMarketplace.ID, new CorruptedEventInfo(StrangeMarketplace.class, CorruptedEventType.Corrupted));
         corruptedEvents.put(TheChoice.ID, new CorruptedEventInfo(TheChoice.class, CorruptedEventType.Corrupted));
         return corruptedEvents;
     }

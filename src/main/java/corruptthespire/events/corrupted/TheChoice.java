@@ -12,6 +12,8 @@ import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.CardUtil;
 import corruptthespire.cards.CustomTags;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
@@ -19,6 +21,7 @@ import java.util.Collections;
 import java.util.stream.Collectors;
 
 public class TheChoice extends AbstractImageEvent {
+    public static final Logger logger = LogManager.getLogger(TheChoice.class.getName());
     public static final String ID = "CorruptTheSpire:TheChoice";
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String NAME = eventStrings.NAME;
@@ -44,12 +47,16 @@ public class TheChoice extends AbstractImageEvent {
         this.corruptionGain = AbstractDungeon.ascensionLevel >= 15 ? A15_CORRUPTION_GAIN : CORRUPTION_GAIN;
         this.corruptionReduction = AbstractDungeon.ascensionLevel >= 15 ? A15_CORRUPTION_REDUCTION : CORRUPTION_REDUCTION;
         this.corruptedCard = CardUtil.getRandomCardByTag(CustomTags.CORRUPTED.name());
+        String cardName = "";
         if (this.corruptedCard == null) {
-            throw new RuntimeException("TheChoice event can't be encountered with no corrupted cards.");
+            logger.error("TheChoice event can't be encountered with no corrupted cards.");
+        }
+        else {
+            cardName = this.corruptedCard.name;
         }
 
         imageEventText.setDialogOption(MessageFormat.format(OPTIONS[0], UPGRADES, this.corruptionGain));
-        imageEventText.setDialogOption(MessageFormat.format(OPTIONS[1], this.corruptionReduction, this.corruptedCard.name), this.corruptedCard.makeCopy());
+        imageEventText.setDialogOption(MessageFormat.format(OPTIONS[1], this.corruptionReduction, cardName), this.corruptedCard.makeCopy());
     }
 
     @Override

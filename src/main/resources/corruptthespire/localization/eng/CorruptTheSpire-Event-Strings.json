@@ -110,5 +110,17 @@
       "[Disenchant] #gGain #g{0} #gMax #gHP.",
       "[Leave]"
     ]
+  },
+  "CorruptTheSpire:StrangeMarketplace": {
+    "NAME": "Strange Marketplace",
+    "DESCRIPTIONS": [
+      "Between one step and the next, you find yourself on the edges of a #gmarketplace, shrouded in shadows and dust. All sorts of mundane and magical goods are being sold, though the offerings are a bit #pstrange compared to what you're used to. NL NL Browsing, you find something that looks like quite a #ybargain.",
+      "You hand over your #ygold and take the relic, and with your next step you find yourself in the #bSpire once more.",
+      "You turn to leave without buying anything, and with your next step you find yourself in the #bSpire once more."
+    ],
+    "OPTIONS": [
+      "[Buy] #gGain {0}. #rLose #r{1} #rGold.",
+      "[Leave]"
+    ]
   }
 }
