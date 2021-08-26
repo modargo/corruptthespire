@@ -97,5 +97,18 @@
     "OPTIONS": [
       "[Continue]"
     ]
+  },
+  "CorruptTheSpire:IncantationOfCorruption": {
+    "NAME": "Incantation of Corruption",
+    "DESCRIPTIONS": [
+      "Examining a scroll you found, you sense that it holds the power of #r~chaos~ and #r~corruption.~ From the runes and diagrams, using the scroll will give you some of that power. NL NL The cost, or downside, seems to only be that using the power it gives is likely to further increase the #rcorruption.",
+      "You speak the incantation to trigger the scroll, and a #proiling #pmass #pof #pshadows surrounds you, consuming and replacing your armor. The power it brings with it is... #rdelightful. NL NL\tYou will fight corruption with corruption. Victory is all that matters.",
+      "Rather than make use of the scroll, you drain its energy. It's not much, but after absorbing all of it, you feel more #grobust."
+    ],
+    "OPTIONS": [
+      "[Use] #gTransform #gyour #gDefends #ginto #gcorrupted #gcards.",
+      "[Disenchant] #gGain #g{0} #gMax #gHP.",
+      "[Leave]"
+    ]
   }
 }

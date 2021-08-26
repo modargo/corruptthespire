@@ -11,7 +11,9 @@ import corruptthespire.events.CorruptedEventInfo;
 import corruptthespire.events.CorruptedEventType;
 import corruptthespire.events.CorruptedEventUtil;
 import corruptthespire.events.FragmentOfCorruptionEvent;
+import corruptthespire.events.chaotic.Divergence;
 import corruptthespire.events.chaotic.MindsEye;
+import corruptthespire.events.corrupted.IncantationOfCorruption;
 import corruptthespire.events.corrupted.NightmareBloom;
 import corruptthespire.events.corrupted.TheChoice;
 import org.apache.logging.log4j.LogManager;
@@ -66,6 +68,10 @@ public class EventCorruption {
 
         if (e.equals(MindsEye.ID)) {
             return !ModHelper.isModEnabled(Diverse.ID) && !AbstractDungeon.player.hasRelic(PrismaticShard.ID);
+        }
+
+        if (e.equals(IncantationOfCorruption.ID)) {
+            return AbstractDungeon.actNum > 1;
         }
 
         return true;

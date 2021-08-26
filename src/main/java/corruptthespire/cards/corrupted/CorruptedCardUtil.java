@@ -43,7 +43,11 @@ public class CorruptedCardUtil {
     }
 
     public static AbstractCard getRandomCorruptedCard() {
-        return getRandomCorruptedCards(1, null).get(0);
+        return getRandomCorruptedCards(1).get(0);
+    }
+
+    public static ArrayList<AbstractCard> getRandomCorruptedCards(int n) {
+        return getRandomCorruptedCards(n, null);
     }
 
     public static ArrayList<AbstractCard> getRandomCorruptedCards(int n, AbstractCard.CardType type) {
