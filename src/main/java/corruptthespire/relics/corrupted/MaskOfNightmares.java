@@ -12,8 +12,7 @@ public class MaskOfNightmares extends AbstractCorruptedRelic {
     public static final String ID = "CorruptTheSpire:MaskOfNightmares";
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));
-    //TODO Should this be 2?
-    private static final int MAX_HP = 1;
+    private static final int MAX_HP = 2;
 
     public MaskOfNightmares() {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.CLINK);
