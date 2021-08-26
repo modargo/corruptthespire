@@ -1,9 +1,6 @@
 package corruptthespire.events;
 
-import corruptthespire.events.chaotic.AStepToTheSide;
-import corruptthespire.events.chaotic.Divergence;
-import corruptthespire.events.chaotic.MindsEye;
-import corruptthespire.events.chaotic.Wheel;
+import corruptthespire.events.chaotic.*;
 import corruptthespire.events.corrupted.NightmareBloom;
 import corruptthespire.events.corrupted.TheChoice;
 
@@ -16,6 +13,7 @@ public class CorruptedEventUtil {
         corruptedEvents.put(AStepToTheSide.ID, new CorruptedEventInfo(AStepToTheSide.class, CorruptedEventType.Chaotic));
         corruptedEvents.put(Divergence.ID, new CorruptedEventInfo(Divergence.class, CorruptedEventType.Chaotic));
         corruptedEvents.put(MindsEye.ID, new CorruptedEventInfo(MindsEye.class, CorruptedEventType.Chaotic));
+        corruptedEvents.put(PathsInTheSmoke.ID, new CorruptedEventInfo(PathsInTheSmoke.class, CorruptedEventType.Chaotic));
         corruptedEvents.put(Wheel.ID, new CorruptedEventInfo(Wheel.class, CorruptedEventType.Chaotic));
         corruptedEvents.put(NightmareBloom.ID, new CorruptedEventInfo(NightmareBloom.class, CorruptedEventType.Corrupted));
         corruptedEvents.put(TheChoice.ID, new CorruptedEventInfo(TheChoice.class, CorruptedEventType.Corrupted));

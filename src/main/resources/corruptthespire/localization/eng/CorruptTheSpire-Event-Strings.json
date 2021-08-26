@@ -87,5 +87,15 @@
       "[Leave]",
       "Add a card to your deck."
     ]
+  },
+  "CorruptTheSpire:PathsInTheSmoke": {
+    "NAME": "Paths in the Smoke",
+    "DESCRIPTIONS": [
+      "#pThick #pblack #psmoke billows all around you, coming from an unseen source. In front of you, the thick strands of smoke fuse into a masked form. NL NL ~\"You~ aren't supposed to be ~here.~ If you keep wandering around untethered like this, you'll disrupt @everything.@ Neow needs to keep a tighter #rleash.\" NL NL \"I'll send you on your way, and I'll even let you choose where you end up. Just go, ~quickly.\"~",
+      "At the figures gesture, three paths materialize from the smoke. Each one leads to an interesting location in the Spire. You step onto the path towards...."
+    ],
+    "OPTIONS": [
+      "[Continue]"
+    ]
   }
 }
