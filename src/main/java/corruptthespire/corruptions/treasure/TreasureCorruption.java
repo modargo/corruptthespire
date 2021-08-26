@@ -21,7 +21,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class TreasureCorruption {
-    public static String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:TreasureCorruption").TEXT;
+    public static final String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:TreasureCorruption").TEXT;
     private static final int BASE_VAULT_CHESTS = 6;
     private static final int POTENTIAL_EXTRA_VAULT_CHESTS = 2;
     public static final int VAULT_CHESTS_BEFORE_CORRUPTION = 3;
@@ -115,8 +115,8 @@ public class TreasureCorruption {
     }
 
     private static class Coordinate {
+        public final float x;
+        public final float y;
         public Coordinate(float x, float y) { this.x = x; this.y = y; }
-        public float x;
-        public float y;
     }
 }

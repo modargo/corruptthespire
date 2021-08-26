@@ -10,5 +10,5 @@ import corruptthespire.corruptions.treasure.TreasureCorruptionType;
         method = SpirePatch.CLASS
 )
 public class TreasureCorruptionTypeField {
-    public static SpireField<TreasureCorruptionType> corruptionType = new SpireField<>(() -> null);
+    public static final SpireField<TreasureCorruptionType> corruptionType = new SpireField<>(() -> null);
 }

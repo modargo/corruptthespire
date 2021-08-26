@@ -15,7 +15,7 @@ import corruptthespire.util.TextureLoader;
 import javassist.CtBehavior;
 
 public class ShowCorruptNodesOnMapPatch {
-    private static Texture IMAGE = TextureLoader.getTexture(CorruptTheSpire.uiImage("CorruptTheSpire:Corruption"));
+    private static final Texture IMAGE = TextureLoader.getTexture(CorruptTheSpire.uiImage("CorruptTheSpire:Corruption"));
     private static final int WIDTH = 64;
     private static final int HEIGHT = 64;
 

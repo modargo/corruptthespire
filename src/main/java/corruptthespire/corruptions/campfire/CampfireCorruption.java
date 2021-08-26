@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class CampfireCorruption {
-    public static String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:CampfireCorruption").TEXT;
+    public static final String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:CampfireCorruption").TEXT;
     private static final int RANDOM_OPTIONS = 2;
 
     public static void initializeCampfireInfo(CampfireInfo info) {

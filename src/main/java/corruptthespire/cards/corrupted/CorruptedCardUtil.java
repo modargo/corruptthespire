@@ -33,6 +33,7 @@ public class CorruptedCardUtil {
         corruptedCardInfos.add(new CorruptedCardInfo(new ProfaneShield(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new VoidArmor(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new DevilsBargain(), AbstractCard.CardRarity.RARE));
+        corruptedCardInfos.add(new CorruptedCardInfo(new NightsWhisper(), AbstractCard.CardRarity.RARE));
 
         //Powers
         corruptedCardInfos.add(new CorruptedCardInfo(new ForbiddenRitual(), AbstractCard.CardRarity.COMMON));

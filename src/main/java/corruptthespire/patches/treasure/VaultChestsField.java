@@ -12,5 +12,5 @@ import java.util.List;
         method = SpirePatch.CLASS
 )
 public class VaultChestsField {
-    public static SpireField<List<VaultChest>> vaultChests = new SpireField<>(() -> null);
+    public static final SpireField<List<VaultChest>> vaultChests = new SpireField<>(() -> null);
 }

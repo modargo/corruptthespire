@@ -9,5 +9,5 @@ import com.megacrit.cardcrawl.map.MapRoomNode;
         method = SpirePatch.CLASS
 )
 public class CorruptedField {
-    public static SpireField<Boolean> corrupted = new SpireField<>(() -> false);
+    public static final SpireField<Boolean> corrupted = new SpireField<>(() -> false);
 }

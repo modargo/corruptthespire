@@ -9,8 +9,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.TreasureRoom;
-import com.megacrit.cardcrawl.vfx.ChestShineEffect;
-import com.megacrit.cardcrawl.vfx.scene.SpookyChestEffect;
 import corruptthespire.corruptions.treasure.TreasureCorruption;
 import corruptthespire.corruptions.treasure.TreasureCorruptionType;
 import corruptthespire.corruptions.treasure.VaultChest;

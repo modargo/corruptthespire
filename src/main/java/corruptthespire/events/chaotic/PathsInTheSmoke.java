@@ -1,6 +1,5 @@
 package corruptthespire.events.chaotic;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -10,15 +9,9 @@ import com.megacrit.cardcrawl.events.RoomEventDialog;
 import com.megacrit.cardcrawl.helpers.EventHelper;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.random.Random;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.EventRoom;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import corruptthespire.CorruptTheSpire;
-import corruptthespire.cards.Fated;
 import corruptthespire.patches.event.PathsInTheSmokePatch;
-import corruptthespire.relics.chaotic.DeckOfManyFates;
-
-import java.text.MessageFormat;
 
 public class PathsInTheSmoke extends AbstractImageEvent {
     public static final String ID = "CorruptTheSpire:PathsInTheSmoke";

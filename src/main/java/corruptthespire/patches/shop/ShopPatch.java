@@ -22,7 +22,7 @@ import javassist.expr.MethodCall;
 import java.util.ArrayList;
 
 public class ShopPatch {
-    public static String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:ShopCorruption").TEXT;
+    public static final String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:ShopCorruption").TEXT;
 
     @SpirePatch(clz = Merchant.class, method = SpirePatch.CONSTRUCTOR, paramtypez = {float.class, float.class, int.class})
     public static class ChangeCardsPatch {

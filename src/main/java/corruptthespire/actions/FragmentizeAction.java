@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 import corruptthespire.relics.FragmentOfCorruption;
 
 public class FragmentizeAction extends AbstractGameAction {
-    private DamageInfo info;
+    private final DamageInfo info;
 
     public FragmentizeAction(AbstractCreature target, DamageInfo info) {
         this.info = info;

@@ -2,13 +2,9 @@ package corruptthespire.corruptions.campfire.options;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import corruptthespire.Cor;
-import corruptthespire.effects.campfire.CorruptedCampfireGainRelicEffect;
-import corruptthespire.relics.FragmentOfCorruption;
 
 import java.text.MessageFormat;
 

@@ -25,11 +25,11 @@ import corruptthespire.rewards.RandomUpgradeReward;
 import java.util.List;
 
 public class VaultChest extends AbstractChest {
-    public static String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:VaultChest").TEXT;
+    public static final String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:VaultChest").TEXT;
     private static final int MAX_HEALTH = 4;
-    private VaultChestType vaultChestType;
-    public float x;
-    public float y;
+    private final VaultChestType vaultChestType;
+    public final float x;
+    public final float y;
     //This might be better as a field on TreasureRoom, but easier to just put here
     public float shinyTimer;
 
@@ -169,9 +169,8 @@ public class VaultChest extends AbstractChest {
             angle = 180.0F;
         }
 
-        float xxx = this.x;
         if (this.isOpen && angle != 180.0F) {
-            sb.draw(this.openedImg, xxx - 256.0F, this.y - 256.0F, 256.0F, 256.0F, 512.0F, 512.0F, Settings.scale, Settings.scale, angle, 0, 0, 512, 512, false, false);
+            sb.draw(this.openedImg, this.x - 256.0F, this.y - 256.0F, 256.0F, 256.0F, 512.0F, 512.0F, Settings.scale, Settings.scale, angle, 0, 0, 512, 512, false, false);
         } else {
             sb.draw(this.img, this.x - 256.0F, this.y - 256.0F, 256.0F, 256.0F, 512.0F, 512.0F, Settings.scale, Settings.scale, angle, 0, 0, 512, 512, false, false);
             if (this.hb.hovered) {

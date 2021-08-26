@@ -89,7 +89,7 @@ public class ShopCorruption {
                 c = AbstractDungeon.getCardFromPool(AbstractCard.CardRarity.RARE, AbstractCard.CardType.ATTACK, true).makeCopy();
             coloredCards.add(c);
             c = AbstractDungeon.getCardFromPool(AbstractCard.CardRarity.RARE, AbstractCard.CardType.ATTACK, true).makeCopy();
-            while (Objects.equals(c.cardID, ((AbstractCard)coloredCards.get(coloredCards.size() - 1)).cardID) || c.color == AbstractCard.CardColor.COLORLESS)
+            while (Objects.equals(c.cardID, (coloredCards.get(coloredCards.size() - 1)).cardID) || c.color == AbstractCard.CardColor.COLORLESS)
                 c = AbstractDungeon.getCardFromPool(AbstractCard.CardRarity.RARE, AbstractCard.CardType.ATTACK, true).makeCopy();
             coloredCards.add(c);
             c = AbstractDungeon.getCardFromPool(AbstractCard.CardRarity.RARE, AbstractCard.CardType.SKILL, true).makeCopy();
@@ -97,7 +97,7 @@ public class ShopCorruption {
                 c = AbstractDungeon.getCardFromPool(AbstractCard.CardRarity.RARE, AbstractCard.CardType.SKILL, true).makeCopy();
             coloredCards.add(c);
             c = AbstractDungeon.getCardFromPool(AbstractCard.CardRarity.RARE, AbstractCard.CardType.SKILL, true).makeCopy();
-            while (Objects.equals(c.cardID, ((AbstractCard)coloredCards.get(coloredCards.size() - 1)).cardID) || c.color == AbstractCard.CardColor.COLORLESS)
+            while (Objects.equals(c.cardID, (coloredCards.get(coloredCards.size() - 1)).cardID) || c.color == AbstractCard.CardColor.COLORLESS)
                 c = AbstractDungeon.getCardFromPool(AbstractCard.CardRarity.RARE, AbstractCard.CardType.SKILL, true).makeCopy();
             coloredCards.add(c);
             c = AbstractDungeon.getCardFromPool(AbstractCard.CardRarity.RARE, AbstractCard.CardType.POWER, true).makeCopy();

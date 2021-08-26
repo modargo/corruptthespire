@@ -28,7 +28,7 @@ public class PathsInTheSmokePatch {
     }
 
     public static class DummyEvent extends AbstractEvent {
-        public String eventId;
+        public final String eventId;
 
         public DummyEvent(String eventId) {
             this.eventId = eventId;

@@ -10,5 +10,5 @@ import corruptthespire.corruptions.shop.ShopCorruptionType;
         method = SpirePatch.CLASS
 )
 public class ShopCorruptionTypeField {
-    public static SpireField<ShopCorruptionType> corruptionType = new SpireField<>(() -> null);
+    public static final SpireField<ShopCorruptionType> corruptionType = new SpireField<>(() -> null);
 }

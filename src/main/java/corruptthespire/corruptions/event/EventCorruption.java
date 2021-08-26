@@ -1,6 +1,5 @@
 package corruptthespire.corruptions.event;
 
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.daily.mods.Diverse;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractEvent;
@@ -13,7 +12,6 @@ import corruptthespire.events.CorruptedEventInfo;
 import corruptthespire.events.CorruptedEventType;
 import corruptthespire.events.CorruptedEventUtil;
 import corruptthespire.events.FragmentOfCorruptionEvent;
-import corruptthespire.events.chaotic.Divergence;
 import corruptthespire.events.chaotic.MindsEye;
 import corruptthespire.events.corrupted.IncantationOfCorruption;
 import corruptthespire.events.corrupted.NightmareBloom;

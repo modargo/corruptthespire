@@ -10,5 +10,5 @@ import corruptthespire.corruptions.campfire.CampfireInfo;
         method = SpirePatch.CLASS
 )
 public class CampfireInfoField {
-    public static SpireField<CampfireInfo> campfireInfo = new SpireField<>(CampfireInfo::new);
+    public static final SpireField<CampfireInfo> campfireInfo = new SpireField<>(CampfireInfo::new);
 }

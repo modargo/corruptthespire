@@ -29,11 +29,11 @@ public class TheChoice extends AbstractImageEvent {
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private static final String IMG = CorruptTheSpire.eventImage(ID);
 
-    public static int CORRUPTION_GAIN = 8;
-    public static int A15_CORRUPTION_GAIN = 10;
-    public static int UPGRADES = 2;
-    public static int CORRUPTION_REDUCTION = 10;
-    public static int A15_CORRUPTION_REDUCTION = 8;
+    public static final int CORRUPTION_GAIN = 8;
+    public static final int A15_CORRUPTION_GAIN = 10;
+    public static final int UPGRADES = 2;
+    public static final int CORRUPTION_REDUCTION = 10;
+    public static final int A15_CORRUPTION_REDUCTION = 8;
 
     private final int corruptionGain;
     private final int corruptionReduction;
@@ -56,7 +56,7 @@ public class TheChoice extends AbstractImageEvent {
         }
 
         imageEventText.setDialogOption(MessageFormat.format(OPTIONS[0], UPGRADES, this.corruptionGain));
-        imageEventText.setDialogOption(MessageFormat.format(OPTIONS[1], this.corruptionReduction, cardName), this.corruptedCard.makeCopy());
+        imageEventText.setDialogOption(MessageFormat.format(OPTIONS[1], this.corruptionReduction, cardName), this.corruptedCard != null ? this.corruptedCard.makeCopy() : null);
     }
 
     @Override

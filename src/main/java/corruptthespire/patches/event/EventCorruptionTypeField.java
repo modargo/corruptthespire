@@ -10,5 +10,5 @@ import corruptthespire.corruptions.event.EventCorruptionType;
         method = SpirePatch.CLASS
 )
 public class EventCorruptionTypeField {
-    public static SpireField<EventCorruptionType> corruptionType = new SpireField<>(() -> null);
+    public static final SpireField<EventCorruptionType> corruptionType = new SpireField<>(() -> null);
 }

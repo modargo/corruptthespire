@@ -1,23 +1,18 @@
 package corruptthespire;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.Circlet;
 import com.megacrit.cardcrawl.rooms.*;
 import corruptthespire.buttons.CorruptionDisplay;
-import corruptthespire.events.corrupted.NightmareBloom;
-import corruptthespire.events.corrupted.TheChoice;
 import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.relics.corrupted.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Cor {
     public static final Logger logger = LogManager.getLogger(Cor.class.getName());
