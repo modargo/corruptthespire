@@ -6,6 +6,11 @@
       "You have chosen the following enemy corruptions:"
     ]
   },
+  "CorruptTheSpire:CorruptedColor": {
+    "TEXT": [
+      "Corrupted"
+    ]
+  },
   "CorruptTheSpire:Rewards": {
     "TEXT": ["Gain {0} Max HP", "Upgrade a random card"]
   },
