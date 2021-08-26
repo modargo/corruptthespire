@@ -11,13 +11,13 @@
   "CorruptTheSpire:TheChoice": {
     "NAME": "The Choice",
     "DESCRIPTIONS": [
-      "TODO",
-      "TODO embrace text",
-      "TODO reject text"
+      "A crossroads. A #yfigure, cloaked. It beckons to you. NL NL The corruption within you urges you onward, promises you life, power, the world. You need only embrace it.",
+      "The #yfigure murmurs with satisfaction as the #pcorruption surges within and around you. It hums through your #rveins, in #gharmony with the song of the #bSpire's corruption. How foolish it would be to deny yourself this power.",
+      "The #yfigure advances, hissing and angry. The #pcorruption will not be thwarted so easily. If the siren's song does not suffice, perhaps force will. NL NL Reaching within yourself, knowing more is needed, you take the part of yourself that the phantasm seeks to seduce and #r@rip@ it out. NL NL The phantasm wails as you stand firm and resolute before it. It has no power over you now, and you stride forward, leaving it behind."
     ],
     "OPTIONS": [
-      "[Embrace] TODO",
-      "[Reject] TODO",
+      "[Embrace] #gGain #ga #grelic #gand #gupgrade #g{0} #grandom #gcards. #rGain #r{1} #rCorruption.",
+      "[Reject] #gReduce #gCorruption #gby #g{0}. #rLose {1}.",
       "[Leave]"
     ]
   },

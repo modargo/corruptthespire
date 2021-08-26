@@ -1,5 +1,6 @@
 package corruptthespire.corruptions.event;
 
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.daily.mods.Diverse;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractEvent;
@@ -7,6 +8,7 @@ import com.megacrit.cardcrawl.events.beyond.MindBloom;
 import com.megacrit.cardcrawl.helpers.ModHelper;
 import com.megacrit.cardcrawl.relics.PrismaticShard;
 import corruptthespire.Cor;
+import corruptthespire.cards.CustomTags;
 import corruptthespire.events.CorruptedEventInfo;
 import corruptthespire.events.CorruptedEventType;
 import corruptthespire.events.CorruptedEventUtil;
@@ -58,20 +60,20 @@ public class EventCorruption {
     }
 
     private static boolean keepEvent(String e) {
-        if (e.equals(TheChoice.ID)) {
-            return Cor.corruption >= TheChoice.CORRUPTION_REDUCTION;
-        }
-
-        if (e.equals(NightmareBloom.ID)) {
-            return AbstractDungeon.actNum == 3 && AbstractDungeon.eventList.contains(MindBloom.ID);
-        }
-
         if (e.equals(MindsEye.ID)) {
             return !ModHelper.isModEnabled(Diverse.ID) && !AbstractDungeon.player.hasRelic(PrismaticShard.ID);
         }
 
         if (e.equals(IncantationOfCorruption.ID)) {
             return AbstractDungeon.actNum > 1;
+        }
+
+        if (e.equals(NightmareBloom.ID)) {
+            return AbstractDungeon.actNum == 3 && AbstractDungeon.eventList.contains(MindBloom.ID);
+        }
+
+        if (e.equals(TheChoice.ID)) {
+            return Cor.corruption >= TheChoice.CORRUPTION_REDUCTION && AbstractDungeon.player.masterDeck.group.stream().anyMatch(c -> c.tags != null && c.hasTag(CustomTags.CORRUPTED));
         }
 
         return true;

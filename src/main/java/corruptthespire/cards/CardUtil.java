@@ -12,14 +12,17 @@ import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.*;
 
 public class CardUtil {
     public static AbstractCard upgradeRandomCard() {
+        return upgradeRandomCards(1).get(0);
+    }
+
+    public static ArrayList<AbstractCard> upgradeRandomCards(int n) {
         ArrayList<AbstractCard> upgradableCards = new ArrayList<>();
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
             if (c.canUpgrade()) {
@@ -27,15 +30,24 @@ public class CardUtil {
             }
         }
 
-        if (!upgradableCards.isEmpty()) {
-            AbstractDungeon.topLevelEffects.add(new UpgradeShineEffect((float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
-            AbstractCard card = upgradableCards.get(AbstractDungeon.miscRng.random(upgradableCards.size() - 1));
-            card.upgrade();
-            AbstractDungeon.player.bottledCardUpgradeCheck(card);
-            AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(card.makeStatEquivalentCopy()));
-            return card;
+        int cardsToUpgrade = Math.min(n, upgradableCards.size());
+        ArrayList<AbstractCard> upgradedCards = new ArrayList<>();
+        if (cardsToUpgrade > 0) {
+            Collections.shuffle(upgradableCards, AbstractDungeon.miscRng.random);
         }
-        return null;
+
+        for (int i = 0; i < cardsToUpgrade; i++) {
+            float x = (float)Settings.WIDTH * (float)(i + 1) / (float)(cardsToUpgrade + 1);
+            float y = (float)Settings.HEIGHT / 2.0F;
+            AbstractDungeon.topLevelEffects.add(new UpgradeShineEffect(x, y));
+            AbstractCard card = upgradableCards.get(i);
+            card.upgrade();
+            upgradedCards.add(card);
+            AbstractDungeon.player.bottledCardUpgradeCheck(card);
+            AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(card.makeStatEquivalentCopy(), x, y));
+        }
+
+        return upgradedCards;
     }
 
     public static int getNumCardsForRewards() {
@@ -99,5 +111,23 @@ public class CardUtil {
             }
         }
         return list.get(cardRandomRng.random(list.size() - 1));
+    }
+
+    public static AbstractCard getRandomCardByTag(String tagName) {
+        ArrayList<AbstractCard> list = new ArrayList<>();
+        for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+            for (AbstractCard.CardTags tag : c.tags) {
+                if (tag != null && tag.name().equals(tagName)) {
+                    list.add(c);
+                }
+            }
+        }
+
+        if (list.isEmpty()) {
+            return null;
+        } else {
+            Collections.shuffle(list, AbstractDungeon.miscRng.random);
+            return list.get(0);
+        }
     }
 }
