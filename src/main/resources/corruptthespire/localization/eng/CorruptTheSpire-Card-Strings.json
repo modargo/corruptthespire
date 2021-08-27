@@ -62,5 +62,10 @@
   "CorruptTheSpire:WheelOfFortune": {
     "NAME": "Wheel of Fortune",
     "DESCRIPTION": "Add !M! random cards to your hand. NL Exhaust."
+  },
+  "CorruptTheSpire:Nudge": {
+    "NAME": "Nudge",
+    "DESCRIPTION": "Gain 1 Dexterity. NL Scry 1. NL Draw 1 card. NL Draw 1 card next turn. NL Upgrade a card in your hand.",
+    "UPGRADE_DESCRIPTION": "Gain 1 Dexterity. NL Scry 1. NL Draw 1 card. NL Draw 2 cards next turn. NL Upgrade a card in your hand."
   }
 }
