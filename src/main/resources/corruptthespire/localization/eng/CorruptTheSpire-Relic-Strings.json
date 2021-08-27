@@ -37,7 +37,7 @@
   "CorruptTheSpire:MaskOfNightmares": {
     "NAME": "Mask of Nightmares",
     "FLAVOR": "Every glimpse is disturbing, in new way each time.",
-    "DESCRIPTIONS": ["Whenever you enter a corrupted room, gain {0} Max HP."]
+    "DESCRIPTIONS": ["Whenever you enter a corrupted room, gain #b{0} Max HP."]
   },
   "CorruptTheSpire:DeckOfManyFates": {
     "NAME": "Deck of Many Fates",
@@ -47,6 +47,11 @@
   "CorruptTheSpire:BurningRing": {
     "NAME": "Burning Ring",
     "FLAVOR": "Snake design. Maintains a flow of fresh blood.",
-    "DESCRIPTIONS": ["At the start of each combat, draw {0} additional card. At the end of combat, heal {1} HP."]
+    "DESCRIPTIONS": ["At the start of each combat, draw #b{0} additional card. At the end of combat, heal #b{1} HP."]
+  },
+  "CorruptTheSpire:CorruptedOmamori": {
+    "NAME": "Corrupted Omamori",
+    "FLAVOR": "A charm that protects you from one kind of harm at the cost of another.",
+    "DESCRIPTIONS": ["Negate all #rCurses you obtain and instead gain gain {0} corruption for each Curse."]
   }
 }
