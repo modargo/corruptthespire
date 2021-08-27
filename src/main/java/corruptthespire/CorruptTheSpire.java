@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.rewards.RewardSave;
 import corruptthespire.buttons.CorruptionDisplay;
 import corruptthespire.cards.Fated;
 import corruptthespire.cards.Nudge;
+import corruptthespire.cards.ShimmeringShield;
 import corruptthespire.cards.WheelOfFortune;
 import corruptthespire.cards.corrupted.CorruptedCardColor;
 import corruptthespire.cards.corrupted.CorruptedCardUtil;
@@ -119,6 +120,7 @@ public class CorruptTheSpire implements
     @Override
     public void receiveEditCards() {
         BaseMod.addCard(new Nudge());
+        BaseMod.addCard(new ShimmeringShield());
         BaseMod.addCard(new WheelOfFortune());
         BaseMod.addCard(new Fated());
         for (AbstractCard c : CorruptedCardUtil.getAllCorruptedCards()) {

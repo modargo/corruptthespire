@@ -5,13 +5,13 @@
   },
   "CorruptTheSpire:ForbiddenRitual": {
     "NAME": "Forbidden Ritual",
-    "DESCRIPTIONS": ["At the start of your turn, gain !M! Strength and {0} corruptthespire:Corruption."]
+    "DESCRIPTIONS": ["At the start of your turn, gain !M! Strength and #b{0} corruptthespire:Corruption."]
   },
   "CorruptTheSpire:CorruptedForm": {
     "NAME": "Corrupted Form",
     "DESCRIPTIONS": [
       "At the end of your turn, deal damage equal to corruptthespire:Corruption to ALL enemies.",
-      "At the end of your turn, deal damage equal to {0} times corruptthespire:Corruption to ALL enemies."
+      "At the end of your turn, deal damage equal to #b{0} times corruptthespire:Corruption to ALL enemies."
     ]
   },
   "CorruptTheSpire:FatedCard": {
@@ -20,9 +20,15 @@
       "At the start of your next turn, add a random common card to your hand.",
       "At the start of your next turn, add a random uncommon card to your hand.",
       "At the start of your next turn, add a random rare card to your hand.",
-      "At the start of your turn {0} turns from now, add a random common card to your hand.",
-      "At the start of your turn {0} turns from now, add a random uncommon card to your hand.",
-      "At the start of your turn {0} turns from now, add a random rare card to your hand."
+      "At the start of your turn #b{0} turns from now, add a random common card to your hand.",
+      "At the start of your turn #b{0} turns from now, add a random uncommon card to your hand.",
+      "At the start of your turn #b{0} turns from now, add a random rare card to your hand."
+    ]
+  },
+  "CorruptTheSpire:ShimmeringShield": {
+    "NAME": "Shimmering Shield",
+    "DESCRIPTIONS": [
+      "Whenever you play a card of a different color, deal #b{0} damage to ALL enemies and gain #b{0} Block."
     ]
   }
 }
