@@ -138,5 +138,21 @@
       "[Leave]",
       "Select Cards to Transform."
     ]
+  },
+  "CorruptTheSpire:WithoutBeginningOrEnd": {
+    "NAME": "Without Beginning or End",
+    "DESCRIPTIONS": [
+      "Ahead of you, you see a figure approach a #gjeweled #yidol on a platform. Suddenly, a trap door opens and a boulder rolls out! But something nudges the boulder out of the way, and the figure escapes unharmed, with the idol.",
+      "You approach a #gjeweled #yidol on a platform. Suddenly, a trap door opens and a boulder rolls out! But something nudges the boulder out of the way, and you escape unharmed, with the idol.",
+      "Behind you, you see a figure approach a #gjeweled #yidol on a platform. Suddenly, a trap door opens and a boulder rolls out! You could throw the idol you have in your hands to nudge the boulder out of the way, but you'd lose the idol, and you're certain you could sell it.",
+      "You throw the  idol to nudge the boulder out of the way, and the figure escapes unharmed, with the idol. NL NL You spend the next few minutes thinking about how to apply that as a #bcombat #bmaneuver.",
+      "You ignore the boulder and quickly sell the #gjeweled #yidol to a passing trader. Somehow, you feel that was #runwise."
+    ],
+    "OPTIONS": [
+      "[Throw] #gGain #g{0} {1}.",
+      "[Turn Away] #gGain #g{0} #gGold. #rBecome #rCursed #r- #rFated.",
+      "[Continue]",
+      "[Leave]"
+    ]
   }
 }
