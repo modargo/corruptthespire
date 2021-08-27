@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.events.beyond.MindBloom;
 import com.megacrit.cardcrawl.helpers.ModHelper;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.PrismaticShard;
 import corruptthespire.Cor;
 import corruptthespire.cards.CustomTags;
@@ -13,6 +14,7 @@ import corruptthespire.events.CorruptedEventType;
 import corruptthespire.events.CorruptedEventUtil;
 import corruptthespire.events.FragmentOfCorruptionEvent;
 import corruptthespire.events.chaotic.MindsEye;
+import corruptthespire.events.chaotic.TreeOfSwords;
 import corruptthespire.events.corrupted.IncantationOfCorruption;
 import corruptthespire.events.corrupted.NightmareBloom;
 import corruptthespire.events.corrupted.StrangeMarketplace;
@@ -61,6 +63,10 @@ public class EventCorruption {
     private static boolean keepEvent(String e) {
         if (e.equals(MindsEye.ID)) {
             return !ModHelper.isModEnabled(Diverse.ID) && !AbstractDungeon.player.hasRelic(PrismaticShard.ID);
+        }
+
+        if (e.equals(TreeOfSwords.ID)) {
+            return AbstractDungeon.player.masterDeck.getPurgeableCards().size() >= 2 && AbstractDungeon.player.relics.stream().anyMatch(r -> r.tier == AbstractRelic.RelicTier.STARTER) && AbstractDungeon.player.currentHealth > (AbstractDungeon.ascensionLevel >= 15 ? TreeOfSwords.A15_DAMAGE : TreeOfSwords.DAMAGE);
         }
 
         if (e.equals(IncantationOfCorruption.ID)) {

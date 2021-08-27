@@ -43,5 +43,10 @@
     "NAME": "Deck of Many Fates",
     "FLAVOR": "The intricately drawn cards feel filled with omens and portents.",
     "DESCRIPTIONS": ["Add a random card to your hand at the start of one of the first three turns of combat, chosen randomly. The card will be common if on turn one, uncommon if on turn two, and rare if on turn three."]
+  },
+  "CorruptTheSpire:BurningRing": {
+    "NAME": "Burning Ring",
+    "FLAVOR": "Snake design. Maintains a flow of fresh blood.",
+    "DESCRIPTIONS": ["At the start of each combat, draw {0} additional card. At the end of combat, heal {1} HP."]
   }
 }

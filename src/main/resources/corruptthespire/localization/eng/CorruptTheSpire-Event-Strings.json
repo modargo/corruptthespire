@@ -122,5 +122,21 @@
       "[Buy] #gGain {0}. #rLose #r{1} #rGold.",
       "[Leave]"
     ]
+  },
+  "CorruptTheSpire:TreeOfSwords": {
+    "NAME": "Tree of Swords",
+    "DESCRIPTIONS": [
+      "You stand before a tree with many weapons driven into its trunk and the ground around it. Alongside the weapons, you see the long-dead remains of what must be previous adventurers. They either came here to die, or were brought here. NL NL Some of the #bequipment here could come in handy, you see what might be a #grelic, and there are many #ycoins scattered about.",
+      "You take armor and weaponry from the fallen warriors, leaving some of your own behind in tribute. You know they would accept the trade if their spirits could speak. After all, you and they share the same doomed quest.",
+      "It looks like two fallen warriors were put to rest in the same spot here. Out of the remnants of their power, a relic formed as their bequest to the next to attempt this climb. Respectfully, you take the relic, leaving behind your own memento.",
+      "You gather up all the coins. It's hard to avoid all the sharp weapons around them, though, so you get cut a few times."
+    ],
+    "OPTIONS": [
+      "[Equipment] #gTransform #g{0} #gcards #ginto #gcards #gof #gany #gcolor.",
+      "[Relic] #gGain {0}. #rLose {1}.",
+      "[Coins] #gGain #g{0} #gGold. #rLose #r{1} #rHP.",
+      "[Leave]",
+      "Select Cards to Transform."
+    ]
   }
 }
