@@ -154,5 +154,20 @@
       "[Continue]",
       "[Leave]"
     ]
+  },
+  "CorruptTheSpire:UnderAStrangeSky": {
+    "NAME": "Under a Strange Sky",
+    "DESCRIPTIONS": [
+      "Suddenly terrible cold and an unfamiliar sky assail you. Seeking shelter, you enter the ice-covered structure in front of you. It appears to be ancient and abandoned, with little inside except more ice. NL NL The only intact thing you find is a shield, #gshimmering as it hangs on a high wall. Nearby is an old #rfire #rpit that you could get going again and rest next to. And in the depths, far enough down that it looks even colder than the rest of this place, you see a faint #yglint that might be a valuable relic.",
+      "After a careful climb, you reach the #gshield. You feel its energy flow into you as you take it; the cold of this place no longer feels as harsh.",
+      "You rest by the #rfire you created. In the coals, you find some #punusual #pfragments that you decide to take with you.",
+      "The depths are #b~terribly~ #b~cold.~ The #yrelic is where you thought it was, but you can feel the chill in your bones. There will be a #rprice #rto #rpay for this."
+    ],
+    "OPTIONS": [
+      "[Shield] #gGain {0}. #gGain #g{1} #gMax #gHP.",
+      "[Fire Pit] #gGain #g{0} {1}. #gHeal #g{2} #gHP.",
+      "[Depths] #gGain #ga #grelic. #rLose #r{0} #rMax #rHP.",
+      "[Leave]"
+    ]
   }
 }

@@ -110,7 +110,7 @@ public class TreeOfSwords extends AbstractImageEvent {
                     case 1: // Relic
                         AbstractDungeon.player.loseRelic(this.startingRelic.relicId);
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), this.relic);
-                        AbstractEvent.logMetricRelicSwap(ID, "Relic", this.relic, this.startingRelic);
+                        logMetricRelicSwap(ID, "Relic", this.relic, this.startingRelic);
 
                         this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
                         this.screenNum = 1;
