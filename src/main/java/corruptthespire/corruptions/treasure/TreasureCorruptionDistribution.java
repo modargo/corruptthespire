@@ -18,8 +18,8 @@ public class TreasureCorruptionDistribution extends AbstractCorruptionDistributi
         d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Extra, 0));
         d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Vault, 0));
         d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.CorruptedRelic, 0));
-        d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Wardens, 0));
-        d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Sealed, 100));
+        d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Wardens, 100));
+        d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Sealed, 0));
         return d;
     }
 

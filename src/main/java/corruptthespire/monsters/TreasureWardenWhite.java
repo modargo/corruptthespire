@@ -61,7 +61,7 @@ public class TreasureWardenWhite extends CustomMonster
     }
 
     public TreasureWardenWhite(final float x, final float y) {
-        super(TreasureWardenWhite.NAME, ID, HP_MAX, -5.0F, 0, 175.0f, 230.0f, IMG, x, y);
+        super(TreasureWardenWhite.NAME, ID, HP_MAX, -5.0F, 0, 340.0f, 450.0f, IMG, x, y);
         this.type = EnemyType.ELITE;
         if (AbstractDungeon.ascensionLevel >= 8) {
             this.setHp(A8_HP_MIN, A8_HP_MAX);
