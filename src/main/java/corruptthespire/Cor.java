@@ -30,6 +30,7 @@ public class Cor {
     
     public static Integer corruption;
     public static Random rng;
+    public static CorruptionFlags flags;
     public static ArrayList<String> corruptedRelicPool;
     public static ArrayList<String> corruptedEventList;
     public static CorruptionDisplay display;

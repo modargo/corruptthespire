@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.random.Random;
 import corruptthespire.Cor;
+import corruptthespire.CorruptionFlags;
 import corruptthespire.events.CorruptedEventUtil;
 
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public class GenerateSeedsPatch {
         Cor.rng = new Random(Settings.seed);
         // These could go somewhere else, but this is as good a place as any to put it
         Cor.corruption = 0;
+        Cor.flags = new CorruptionFlags();
         Cor.corruptedEventList = new ArrayList<>(CorruptedEventUtil.getAllCorruptedEvents().keySet());
         Cor.corruptedEventList.sort(String::compareTo);
     }

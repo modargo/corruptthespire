@@ -1,5 +1,6 @@
 package corruptthespire.corruptions.treasure;
 
+import corruptthespire.Cor;
 import corruptthespire.corruptions.AbstractCorruptionDistribution;
 import corruptthespire.corruptions.CorruptionDistributionInfo;
 
@@ -19,5 +20,13 @@ public class TreasureCorruptionDistribution extends AbstractCorruptionDistributi
         d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.CorruptedRelic, 0));
         d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Wardens, 100));
         return d;
+    }
+
+    @Override
+    protected List<CorruptionDistributionInfo<TreasureCorruptionType>> adjustDistribution(List<CorruptionDistributionInfo<TreasureCorruptionType>> distribution) {
+        if (Cor.flags.seenTreasureWardens) {
+            distribution.removeIf(di -> di.corruption == TreasureCorruptionType.Wardens);
+        }
+        return distribution;
     }
 }

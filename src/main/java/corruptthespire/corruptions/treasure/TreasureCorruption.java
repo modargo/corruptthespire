@@ -8,8 +8,10 @@ import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rewards.chests.AbstractChest;
+import com.megacrit.cardcrawl.rooms.EventRoom;
 import com.megacrit.cardcrawl.rooms.TreasureRoom;
 import corruptthespire.Cor;
+import corruptthespire.events.TreasureWardensEvent;
 import corruptthespire.patches.CorruptedField;
 import corruptthespire.patches.treasure.TreasureCorruptionTypeField;
 import corruptthespire.patches.treasure.VaultChestsField;
@@ -112,6 +114,20 @@ public class TreasureCorruption {
         }
 
         AbstractDungeon.overlayMenu.proceedButton.setLabel(AbstractChest.TEXT[0]);
+    }
+
+    public static void handleTreasureWardens(TreasureRoom treasureRoom) {
+        EventRoom eventRoom = new EventRoom();
+        //We deliberately don't call onPlayerEntry for the EventRoom, since that would generate a random event
+        //Instead, we set the event ourselves
+        AbstractDungeon.overlayMenu.proceedButton.hide();
+        eventRoom.setMapSymbol(treasureRoom.getMapSymbol());
+        eventRoom.setMapImg(treasureRoom.getMapImg(), treasureRoom.getMapImgOutline());
+        AbstractDungeon.getCurrMapNode().room = eventRoom;
+        //We have to instantiate the event after setting AbstractDungeon.getCurrMapNode().room,
+        //since it sets AbstractDungeon.getCurrRoom().monsters
+        eventRoom.event = new TreasureWardensEvent();
+        Cor.flags.seenTreasureWardens = true;
     }
 
     private static class Coordinate {
