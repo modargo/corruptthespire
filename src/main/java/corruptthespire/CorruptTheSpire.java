@@ -15,6 +15,8 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardSave;
@@ -27,6 +29,10 @@ import corruptthespire.cards.corrupted.CorruptedCardColor;
 import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.events.CorruptedEventInfo;
 import corruptthespire.events.CorruptedEventUtil;
+import corruptthespire.monsters.Encounters;
+import corruptthespire.monsters.MasterOfTimeAndSpace;
+import corruptthespire.monsters.TreasureWardenBlack;
+import corruptthespire.monsters.TreasureWardenWhite;
 import corruptthespire.patches.cards.CheckFatedPostBattleSubscriber;
 import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.relics.chaotic.BurningRing;
@@ -79,6 +85,7 @@ public class CorruptTheSpire implements
         Texture badgeTexture = new Texture("corruptthespire/images/CorruptTheSpireBadge.png");
         BaseMod.registerModBadge(badgeTexture, "Corrupt the Spire", "modargo", "TODO", new ModPanel());
 
+        addMonsters();
         addEvents();
 
         BaseMod.addSaveField(SavableCorruptedRelicPool.SaveKey, new SavableCorruptedRelicPool());
@@ -94,6 +101,15 @@ public class CorruptTheSpire implements
 
         Cor.display = new CorruptionDisplay();
         BaseMod.addTopPanelItem(Cor.display);
+    }
+
+    private static void addMonsters() {
+        BaseMod.addMonster(MasterOfTimeAndSpace.ID, () -> new MasterOfTimeAndSpace(-400.0F, 40.0F));
+        BaseMod.addMonster(Encounters.TREASURE_WARDENS, () -> new MonsterGroup(
+                new AbstractMonster[] {
+                        new TreasureWardenWhite(-350.0F, 100.0F),
+                        new TreasureWardenBlack(150.0F, 100.0F),
+                }));
     }
 
     private static void addEvents() {

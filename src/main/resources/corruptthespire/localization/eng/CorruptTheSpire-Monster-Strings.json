@@ -1,2 +1,28 @@
 {
+  "CorruptTheSpire:MasterOfTimeAndSpace": {
+    "MOVES": [
+      "Blast",
+      "Terrifying Gaze",
+      "Thrash",
+      "Body Slam",
+      "Call the Abyss"
+    ],
+    "NAME": "Master of Time and Space"
+  },
+  "CorruptTheSpire:TreasureWardenWhite": {
+    "MOVES": [
+      "Maelstrom",
+      "Lightning",
+      "Scorch"
+    ],
+    "NAME": "Treasure Warden"
+  },
+  "CorruptTheSpire:TreasureWardenBlack": {
+    "MOVES": [
+      "Searing Breath",
+      "Acid Breath",
+      "Black Breath"
+    ],
+    "NAME": "Treasure Warden"
+  }
 }

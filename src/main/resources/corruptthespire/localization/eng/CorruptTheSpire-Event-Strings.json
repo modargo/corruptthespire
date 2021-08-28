@@ -169,5 +169,15 @@
       "[Depths] #gGain #ga #grelic. #rLose #r{0} #rMax #rHP.",
       "[Leave]"
     ]
+  },
+  "CorruptTheSpire:TreasureWardens": {
+    "NAME": "Treasure Wardens",
+    "DESCRIPTIONS": [
+      "The flying beasts hiss in warning as you approach. This isn't what you were expecting.... NL NL They seem to be guarding the treasure. If you want it, you're in for a dangerous fight. Or you could leave, empty-handed."
+    ],
+    "OPTIONS": [
+      "[Fight] An elite fight with extra rewards",
+      "[Leave]"
+    ]
   }
 }
