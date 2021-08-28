@@ -29,27 +29,28 @@ public class TreasureWardenWhite extends CustomMonster
     public static final String[] MOVES = monsterStrings.MOVES;
     private static final String IMG = CorruptTheSpire.monsterImage(ID);
     private boolean firstMove = true;
+    private final Version version;
     private static final byte MAELSTROM_ATTACK = 1;
     private static final byte LIGHTNING_ATTACK = 2;
     private static final byte SCORCH_ATTACK = 3;
-    private static final int MAELSTROM_DAMAGE = 2;
-    private static final int A3_MAELSTROM_DAMAGE = 3;
+    private static final int[] MAELSTROM_DAMAGE = new int[] { 2, 3, 4 };
+    private static final int[] A3_MAELSTROM_DAMAGE = new int[] { 2, 4, 5 };
     private static final int MAELSTROM_HITS = 3;
     private static final int MAELSTROM_FRAIL = 1;
     private static final int A18_MAELSTROM_FRAIL = 2;
-    private static final int LIGHTNING_DAMAGE = 3;
-    private static final int A3_LIGHTNING_DAMAGE = 4;
+    private static final int[] LIGHTNING_DAMAGE = new int[] { 3, 5, 7 };
+    private static final int[] A3_LIGHTNING_DAMAGE = new int[] { 4, 6, 8 };
     private static final int LIGHTNING_HITS = 2;
     private static final int LIGHTNING_WEAK = 1;
-    private static final int SCORCH_DAMAGE = 9;
-    private static final int A3_SCORCH_DAMAGE = 10;
+    private static final int[] SCORCH_DAMAGE = new int[] { 9, 13, 17 };
+    private static final int[] A3_SCORCH_DAMAGE = new int[] { 10, 15, 19 };
     private static final int SCORCH_ENTANGLE = 1;
-    private static final int DRAGONS_HEART_AMOUNT = 2;
-    private static final int A18_DRAGONS_HEART_AMOUNT = 3;
-    private static final int HP_MIN = 60;
-    private static final int HP_MAX = 63;
-    private static final int A8_HP_MIN = 63;
-    private static final int A8_HP_MAX = 66;
+    private static final int[] DRAGONS_HEART_AMOUNT = new int[] { 2, 3, 4 };
+    private static final int[] A18_DRAGONS_HEART_AMOUNT = new int[] { 3, 4, 5 };
+    private static final int[] HP_MIN = new int[] { 60, 100, 180 };
+    private static final int[] HP_MAX = new int[] { 63, 104, 185 };
+    private static final int[] A8_HP_MIN = new int[] { 63, 104, 185 };
+    private static final int[] A8_HP_MAX = new int[] { 66, 108, 190 };
     private int maelstromDamage;
     private int maelstromFrail;
     private int lightningDamage;
@@ -57,26 +58,27 @@ public class TreasureWardenWhite extends CustomMonster
     private int dragonsHeartAmount;
 
     public TreasureWardenWhite() {
-        this(0.0f, 0.0f);
+        this(0.0f, 0.0f, Version.Act1);
     }
 
-    public TreasureWardenWhite(final float x, final float y) {
-        super(TreasureWardenWhite.NAME, ID, HP_MAX, -5.0F, 0, 340.0f, 450.0f, IMG, x, y);
+    public TreasureWardenWhite(final float x, final float y, Version version) {
+        super(TreasureWardenWhite.NAME, ID, HP_MAX[0], -5.0F, 0, 340.0f, 450.0f, IMG, x, y);
+        this.version = version;
         this.type = EnemyType.ELITE;
         if (AbstractDungeon.ascensionLevel >= 8) {
-            this.setHp(A8_HP_MIN, A8_HP_MAX);
+            this.setHp(this.v(A8_HP_MIN), this.v(A8_HP_MAX));
         } else {
-            this.setHp(HP_MIN, HP_MAX);
+            this.setHp(this.v(HP_MIN), this.v(HP_MAX));
         }
 
         if (AbstractDungeon.ascensionLevel >= 3) {
-            this.maelstromDamage = A3_MAELSTROM_DAMAGE;
-            this.lightningDamage = A3_LIGHTNING_DAMAGE;
-            this.scorchDamage = A3_SCORCH_DAMAGE;
+            this.maelstromDamage = this.v(A3_MAELSTROM_DAMAGE);
+            this.lightningDamage = this.v(A3_LIGHTNING_DAMAGE);
+            this.scorchDamage = this.v(A3_SCORCH_DAMAGE);
         } else {
-            this.maelstromDamage = MAELSTROM_DAMAGE;
-            this.lightningDamage = LIGHTNING_DAMAGE;
-            this.scorchDamage = SCORCH_DAMAGE;
+            this.maelstromDamage = this.v(MAELSTROM_DAMAGE);
+            this.lightningDamage = this.v(LIGHTNING_DAMAGE);
+            this.scorchDamage = this.v(SCORCH_DAMAGE);
         }
         this.damage.add(new DamageInfo(this, this.maelstromDamage));
         this.damage.add(new DamageInfo(this, this.lightningDamage));
@@ -84,11 +86,11 @@ public class TreasureWardenWhite extends CustomMonster
 
         if (AbstractDungeon.ascensionLevel >= 18) {
             this.maelstromFrail = A18_MAELSTROM_FRAIL;
-            this.dragonsHeartAmount = A18_DRAGONS_HEART_AMOUNT;
+            this.dragonsHeartAmount = this.v(A18_DRAGONS_HEART_AMOUNT);
         }
         else {
             this.maelstromFrail = MAELSTROM_FRAIL;
-            this.dragonsHeartAmount = DRAGONS_HEART_AMOUNT;
+            this.dragonsHeartAmount = this.v(DRAGONS_HEART_AMOUNT);
         }
     }
 
@@ -156,5 +158,19 @@ public class TreasureWardenWhite extends CustomMonster
                 this.setMove(MOVES[2], SCORCH_ATTACK, Intent.ATTACK_DEBUFF, this.scorchDamage);
                 break;
         }
+    }
+
+    private int v(int[] a) {
+        switch (this.version) {
+            case Act1: return a[0];
+            case Act2: return a[1];
+            default: return a[2];
+        }
+    }
+
+    public enum Version {
+        Act1,
+        Act2,
+        Act3
     }
 }

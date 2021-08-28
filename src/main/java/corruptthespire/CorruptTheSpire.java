@@ -105,10 +105,20 @@ public class CorruptTheSpire implements
 
     private static void addMonsters() {
         BaseMod.addMonster(MasterOfTimeAndSpace.ID, () -> new MasterOfTimeAndSpace(-400.0F, 40.0F));
-        BaseMod.addMonster(Encounters.TREASURE_WARDENS, () -> new MonsterGroup(
+        BaseMod.addMonster(Encounters.TREASURE_WARDENS_ACT1, () -> new MonsterGroup(
                 new AbstractMonster[] {
-                        new TreasureWardenWhite(-375.0F, 50.0F),
-                        new TreasureWardenBlack(175.0F, 50.0F),
+                        new TreasureWardenWhite(-375.0F, 50.0F, TreasureWardenWhite.Version.Act1),
+                        new TreasureWardenBlack(175.0F, 50.0F, TreasureWardenBlack.Version.Act1),
+                }));
+        BaseMod.addMonster(Encounters.TREASURE_WARDENS_ACT2, () -> new MonsterGroup(
+                new AbstractMonster[] {
+                        new TreasureWardenWhite(-375.0F, 50.0F, TreasureWardenWhite.Version.Act2),
+                        new TreasureWardenBlack(175.0F, 50.0F, TreasureWardenBlack.Version.Act2),
+                }));
+        BaseMod.addMonster(Encounters.TREASURE_WARDENS_ACT3, () -> new MonsterGroup(
+                new AbstractMonster[] {
+                        new TreasureWardenWhite(-375.0F, 50.0F, TreasureWardenWhite.Version.Act3),
+                        new TreasureWardenBlack(175.0F, 50.0F, TreasureWardenBlack.Version.Act3),
                 }));
     }
 

@@ -42,7 +42,7 @@ public class TreasureWardensEvent extends MaskedBandits {
         this.chestImgOpen = ImageMaster.S_CHEST_OPEN;
         this.hasDialog = true;
         this.hasFocus = true;
-        AbstractDungeon.getCurrRoom().monsters = MonsterHelper.getEncounter(Encounters.TREASURE_WARDENS);
+        AbstractDungeon.getCurrRoom().monsters = MonsterHelper.getEncounter(this.getEncounterKey());
     }
 
     @Override
@@ -79,7 +79,7 @@ public class TreasureWardensEvent extends MaskedBandits {
 
                         this.screen = 2;
                         this.enterCombat();
-                        AbstractDungeon.lastCombatMetricKey = Encounters.TREASURE_WARDENS;
+                        AbstractDungeon.lastCombatMetricKey = this.getEncounterKey();
                         break;
                     case 1:
                         logMetricIgnored(ID);
@@ -114,6 +114,14 @@ public class TreasureWardensEvent extends MaskedBandits {
             AbstractDungeon.topLevelEffects.add(new ChestShineEffect());
             AbstractDungeon.effectList.add(new SpookyChestEffect());
             AbstractDungeon.effectList.add(new SpookyChestEffect());
+        }
+    }
+
+    private String getEncounterKey() {
+        switch (AbstractDungeon.actNum) {
+            case 1: return Encounters.TREASURE_WARDENS_ACT1;
+            case 2: return Encounters.TREASURE_WARDENS_ACT2;
+            default: return Encounters.TREASURE_WARDENS_ACT3;
         }
     }
 }

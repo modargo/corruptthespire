@@ -23,25 +23,26 @@ public class TreasureWardenBlack extends CustomMonster
     public static final String[] MOVES = monsterStrings.MOVES;
     private static final String IMG = CorruptTheSpire.monsterImage(ID);
     private boolean firstMove = true;
+    private final Version version;
     private static final byte SEARING_BREATH_ATTACK = 1;
     private static final byte ACID_BREATH_ATTACK = 2;
     private static final byte BLACK_BREATH_ATTACK = 3;
-    private static final int SEARING_BREATH_DAMAGE = 2;
-    private static final int A3_SEARING_BREATH_DAMAGE = 3;
+    private static final int[] SEARING_BREATH_DAMAGE = new int[] { 2, 3, 4 };
+    private static final int[] A3_SEARING_BREATH_DAMAGE = new int[] { 2, 4, 5 };
     private static final int SEARING_BREATH_HITS = 3;
     private static final int SEARING_BREATH_BURNS = 1;
     private static final int A18_SEARING_BREATH_BURNS = 2;
-    private static final int ACID_BREATH_DAMAGE = 3;
-    private static final int A3_ACID_BREATH_DAMAGE = 4;
+    private static final int[] ACID_BREATH_DAMAGE = new int[] { 3, 5, 7 };
+    private static final int[] A3_ACID_BREATH_DAMAGE = new int[] { 4, 6, 8 };
     private static final int ACID_BREATH_HITS = 2;
-    private static final int BLACK_BREATH_DAMAGE = 9;
-    private static final int A3_BLACK_BREATH_DAMAGE = 10;
-    private static final int DRAGONS_HEART_AMOUNT = 2;
-    private static final int A18_DRAGONS_HEART_AMOUNT = 3;
-    private static final int HP_MIN = 60;
-    private static final int HP_MAX = 63;
-    private static final int A8_HP_MIN = 63;
-    private static final int A8_HP_MAX = 66;
+    private static final int[] BLACK_BREATH_DAMAGE = new int[] { 9, 13, 17 };
+    private static final int[] A3_BLACK_BREATH_DAMAGE = new int[] { 10, 15, 19 };
+    private static final int[] DRAGONS_HEART_AMOUNT = new int[] { 2, 3, 4 };
+    private static final int[] A18_DRAGONS_HEART_AMOUNT = new int[] { 3, 4, 5 };
+    private static final int[] HP_MIN = new int[] { 60, 100, 180 };
+    private static final int[] HP_MAX = new int[] { 63, 104, 185 };
+    private static final int[] A8_HP_MIN = new int[] { 63, 104, 185 };
+    private static final int[] A8_HP_MAX = new int[] { 66, 108, 190 };
     private int searingBreathDamage;
     private int searingBreathBurns;
     private int acidBreathDamage;
@@ -49,26 +50,27 @@ public class TreasureWardenBlack extends CustomMonster
     private int dragonsHeartAmount;
 
     public TreasureWardenBlack() {
-        this(0.0f, 0.0f);
+        this(0.0f, 0.0f, Version.Act1);
     }
 
-    public TreasureWardenBlack(final float x, final float y) {
-        super(TreasureWardenBlack.NAME, ID, HP_MAX, -5.0F, 0, 480.0f, 450.0f, IMG, x, y);
+    public TreasureWardenBlack(final float x, final float y, Version version) {
+        super(TreasureWardenBlack.NAME, ID, HP_MAX[0], -5.0F, 0, 480.0f, 450.0f, IMG, x, y);
+        this.version = version;
         this.type = EnemyType.ELITE;
         if (AbstractDungeon.ascensionLevel >= 8) {
-            this.setHp(A8_HP_MIN, A8_HP_MAX);
+            this.setHp(this.v(A8_HP_MIN), this.v(A8_HP_MAX));
         } else {
-            this.setHp(HP_MIN, HP_MAX);
+            this.setHp(this.v(HP_MIN), this.v(HP_MAX));
         }
 
         if (AbstractDungeon.ascensionLevel >= 3) {
-            this.searingBreathDamage = A3_SEARING_BREATH_DAMAGE;
-            this.acidBreathDamage = A3_ACID_BREATH_DAMAGE;
-            this.blackBreathDamage = A3_BLACK_BREATH_DAMAGE;
+            this.searingBreathDamage = this.v(A3_SEARING_BREATH_DAMAGE);
+            this.acidBreathDamage = this.v(A3_ACID_BREATH_DAMAGE);
+            this.blackBreathDamage = this.v(A3_BLACK_BREATH_DAMAGE);
         } else {
-            this.searingBreathDamage = SEARING_BREATH_DAMAGE;
-            this.acidBreathDamage = ACID_BREATH_DAMAGE;
-            this.blackBreathDamage = BLACK_BREATH_DAMAGE;
+            this.searingBreathDamage = this.v(SEARING_BREATH_DAMAGE);
+            this.acidBreathDamage = this.v(ACID_BREATH_DAMAGE);
+            this.blackBreathDamage = this.v(BLACK_BREATH_DAMAGE);
         }
         this.damage.add(new DamageInfo(this, this.searingBreathDamage));
         this.damage.add(new DamageInfo(this, this.acidBreathDamage));
@@ -76,11 +78,11 @@ public class TreasureWardenBlack extends CustomMonster
 
         if (AbstractDungeon.ascensionLevel >= 18) {
             this.searingBreathBurns = A18_SEARING_BREATH_BURNS;
-            this.dragonsHeartAmount = A18_DRAGONS_HEART_AMOUNT;
+            this.dragonsHeartAmount = this.v(A18_DRAGONS_HEART_AMOUNT);
         }
         else {
             this.searingBreathBurns = SEARING_BREATH_BURNS;
-            this.dragonsHeartAmount = DRAGONS_HEART_AMOUNT;
+            this.dragonsHeartAmount = this.v(DRAGONS_HEART_AMOUNT);
         }
     }
 
@@ -153,5 +155,19 @@ public class TreasureWardenBlack extends CustomMonster
                 this.setMove(MOVES[2], BLACK_BREATH_ATTACK, Intent.ATTACK_DEBUFF, this.blackBreathDamage);
                 break;
         }
+    }
+
+    private int v(int[] a) {
+        switch (this.version) {
+            case Act1: return a[0];
+            case Act2: return a[1];
+            default: return a[2];
+        }
+    }
+
+    public enum Version {
+        Act1,
+        Act2,
+        Act3
     }
 }
