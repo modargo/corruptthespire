@@ -111,9 +111,12 @@ public class SealedChestEvent extends MaskedBandits {
             case 1:
                 AbstractDungeon.getCurrRoom().rewards.clear();
                 AbstractDungeon.getCurrRoom().addGoldToRewards(GOLD);
+                AbstractDungeon.getCurrRoom().addRelicToRewards(new FragmentOfCorruption());
                 AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.UNCOMMON);
                 AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.RARE);
-                AbstractDungeon.getCurrRoom().addRelicToRewards(new FragmentOfCorruption());
+                if (Settings.isFinalActAvailable && !Settings.hasSapphireKey) {
+                    AbstractDungeon.getCurrRoom().addSapphireKey(AbstractDungeon.getCurrRoom().rewards.get(AbstractDungeon.getCurrRoom().rewards.size() - 1));
+                }
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
                 AbstractDungeon.combatRewardScreen.open();
                 this.screen = 3;

@@ -66,6 +66,9 @@ public class TreasureWardensEvent extends MaskedBandits {
 
                         AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
                         AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
+                        if (Settings.isFinalActAvailable && !Settings.hasSapphireKey) {
+                            AbstractDungeon.getCurrRoom().addSapphireKey(AbstractDungeon.getCurrRoom().rewards.get(AbstractDungeon.getCurrRoom().rewards.size() - 1));
+                        }
 
                         this.screen = 2;
                         this.enterCombat();
