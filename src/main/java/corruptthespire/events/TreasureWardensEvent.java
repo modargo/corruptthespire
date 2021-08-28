@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.MonsterHelper;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.rewards.chests.AbstractChest;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.ChestShineEffect;
 import com.megacrit.cardcrawl.vfx.scene.SpookyChestEffect;
 import corruptthespire.monsters.Encounters;
@@ -27,6 +28,7 @@ public class TreasureWardensEvent extends MaskedBandits {
 
     private int screen = 0;
     private final Texture chestImg;
+    private final Texture chestImgOpen;
     private float shinyTimer = 0.0f;
 
     public TreasureWardensEvent() {
@@ -35,6 +37,7 @@ public class TreasureWardensEvent extends MaskedBandits {
         this.roomEventText.addDialogOption(OPTIONS[0]);
         this.roomEventText.addDialogOption(OPTIONS[1]);
         this.chestImg = ImageMaster.S_CHEST;
+        this.chestImgOpen = ImageMaster.S_CHEST_OPEN;
         this.hasDialog = true;
         this.hasFocus = true;
         AbstractDungeon.getCurrRoom().monsters = MonsterHelper.getEncounter(Encounters.TREASURE_WARDENS);
@@ -87,9 +90,9 @@ public class TreasureWardensEvent extends MaskedBandits {
     public void render(SpriteBatch sb) {
         super.render(sb);
         sb.setColor(Color.WHITE);
-        sb.draw(this.chestImg, AbstractChest.CHEST_LOC_X - 256.0f, AbstractChest.CHEST_LOC_Y - 256.0f + AbstractDungeon.sceneOffsetY, 256.0f, 256.0f, 512.0f, 512.0f, Settings.scale, Settings.scale, 0.f, 0, 0, 512, 512, false, false);
+        sb.draw(AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMPLETE ? this.chestImgOpen : this.chestImg, AbstractChest.CHEST_LOC_X - 256.0f, AbstractChest.CHEST_LOC_Y - 256.0f + AbstractDungeon.sceneOffsetY, 256.0f, 256.0f, 512.0f, 512.0f, Settings.scale, Settings.scale, 0.f, 0, 0, 512, 512, false, false);
 
-        if (this.screen == 0) {
+        if (this.screen == 0 && AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMPLETE) {
             this.updateShiny();
         }
     }
