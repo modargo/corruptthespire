@@ -26,7 +26,7 @@ public class TreasureWardensEvent extends MaskedBandits {
     private static final String[] OPTIONS = eventStrings.OPTIONS;
 
     private int screen = 0;
-    private Texture chestImg;
+    private final Texture chestImg;
     private float shinyTimer = 0.0f;
 
     public TreasureWardensEvent() {
@@ -34,10 +34,10 @@ public class TreasureWardensEvent extends MaskedBandits {
         this.body = DESCRIPTIONS[0];
         this.roomEventText.addDialogOption(OPTIONS[0]);
         this.roomEventText.addDialogOption(OPTIONS[1]);
-        AbstractDungeon.getCurrRoom().monsters = MonsterHelper.getEncounter(Encounters.TREASURE_WARDENS);
         this.chestImg = ImageMaster.S_CHEST;
         this.hasDialog = true;
         this.hasFocus = true;
+        AbstractDungeon.getCurrRoom().monsters = MonsterHelper.getEncounter(Encounters.TREASURE_WARDENS);
     }
 
     @Override

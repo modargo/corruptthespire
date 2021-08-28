@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.map.MapRoomNode;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.ui.buttons.ProceedButton;
+import corruptthespire.Cor;
 import javassist.CtBehavior;
 
 @SpirePatch(
@@ -15,8 +16,7 @@ import javassist.CtBehavior;
 public class ExtraActThreeBossFightPatch {
     @SpireInsertPatch(locator = ExtraActThreeBossFightPatch.Locator.class)
     public static SpireReturn<Void> ExtraActThreeBossFight(ProceedButton __instance) {
-        //TODO: Figure out what conditions I want for this
-        if (true) {
+        if (Cor.flags.openedSealedChest) {
             // This is the same thing that BaseMod does; we reproduce it here because this patch
             // could be located before the BaseMod patch
             while (AbstractDungeon.bossList.size() > 2) {
@@ -25,7 +25,7 @@ public class ExtraActThreeBossFightPatch {
 
             if ((AbstractDungeon.ascensionLevel >= 20 && AbstractDungeon.bossList.size() == 1)
                 || (AbstractDungeon.ascensionLevel < 20 && AbstractDungeon.bossList.size() == 2)) {
-                AbstractDungeon.bossKey = AbstractDungeon.bossList.get(0);
+                AbstractDungeon.bossKey = AbstractDungeon.bossList.get(0); //TODO: Set this to the right boss
                 CardCrawlGame.music.fadeOutBGM();
                 CardCrawlGame.music.fadeOutTempBGM();
                 MapRoomNode node = new MapRoomNode(-1, 15);

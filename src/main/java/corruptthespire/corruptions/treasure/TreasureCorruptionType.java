@@ -6,5 +6,6 @@ public enum TreasureCorruptionType {
     Extra,
     Vault,
     CorruptedRelic,
-    Wardens
+    Wardens,
+    Sealed
 }

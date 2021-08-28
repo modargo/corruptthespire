@@ -173,10 +173,24 @@
   "CorruptTheSpire:TreasureWardens": {
     "NAME": "Treasure Wardens",
     "DESCRIPTIONS": [
-      "The flying beasts hiss in warning as you approach. This isn't what you were expecting.... NL NL They seem to be guarding the treasure. If you want it, you're in for a dangerous fight. Or you could leave, empty-handed."
+      "The flying beasts hiss in warning as you approach. This isn't what you were expecting.... NL NL They seem to be guarding the treasure. If you want it, you're in for a dangerous fight. Or you could leave, empty-handed.",
+      "Better not to risk it. Those fangs and claws look fierce, and who knows what kind of deadly abilities they might have?"
     ],
     "OPTIONS": [
-      "[Fight] An elite fight with extra rewards",
+      "[Fight] An elite fight with extra rewards.",
+      "[Leave]"
+    ]
+  },
+  "CorruptTheSpire:SealedChest": {
+    "NAME": "Sealed Chest",
+    "DESCRIPTIONS": [
+      "There's something unusual about this chest. It looks magnificent, large enough to contain more treasure than any chest you've ever seen. But the seals surrounding it tell you that treasure isn't the only thing inside. Whatever is sealed inside will be released if you open the chest.",
+      "As you open the chest, a wave of energy pours out! You shiver as it passes through you and flows further into the Spire. It awaits you, another trial to overcome before your quest is complete.",
+      "You decide to leave the chest alone."
+    ],
+    "OPTIONS": [
+      "[Open] Extra rewards! Fight a special additional act 3 boss.",
+      "[Loot] Take your rewards.",
       "[Leave]"
     ]
   }

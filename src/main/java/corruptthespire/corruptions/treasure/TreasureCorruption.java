@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.rewards.chests.AbstractChest;
 import com.megacrit.cardcrawl.rooms.EventRoom;
 import com.megacrit.cardcrawl.rooms.TreasureRoom;
 import corruptthespire.Cor;
+import corruptthespire.events.SealedChestEvent;
 import corruptthespire.events.TreasureWardensEvent;
 import corruptthespire.patches.CorruptedField;
 import corruptthespire.patches.treasure.TreasureCorruptionTypeField;
@@ -116,18 +117,27 @@ public class TreasureCorruption {
         AbstractDungeon.overlayMenu.proceedButton.setLabel(AbstractChest.TEXT[0]);
     }
 
-    public static void handleTreasureWardens(TreasureRoom treasureRoom) {
+    public static void handleEvent(TreasureRoom treasureRoom, TreasureCorruptionType corruptionType) {
+        if (corruptionType != TreasureCorruptionType.Wardens && corruptionType != TreasureCorruptionType.Sealed) {
+            return;
+        }
         EventRoom eventRoom = new EventRoom();
         //We deliberately don't call onPlayerEntry for the EventRoom, since that would generate a random event
-        //Instead, we set the event ourselves
+        //Instead, we set the event ourselves below
         AbstractDungeon.overlayMenu.proceedButton.hide();
         eventRoom.setMapSymbol(treasureRoom.getMapSymbol());
         eventRoom.setMapImg(treasureRoom.getMapImg(), treasureRoom.getMapImgOutline());
         AbstractDungeon.getCurrMapNode().room = eventRoom;
         //We have to instantiate the event after setting AbstractDungeon.getCurrMapNode().room,
         //since it sets AbstractDungeon.getCurrRoom().monsters
-        eventRoom.event = new TreasureWardensEvent();
-        Cor.flags.seenTreasureWardens = true;
+        if (corruptionType == TreasureCorruptionType.Wardens) {
+            eventRoom.event = new TreasureWardensEvent();
+            Cor.flags.seenTreasureWardens = true;
+        }
+        else {
+            eventRoom.event = new SealedChestEvent();
+            Cor.flags.seenSealedChest = true;
+        }
     }
 
     private static class Coordinate {

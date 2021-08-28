@@ -11,14 +11,15 @@ public class TreasureCorruptionDistribution extends AbstractCorruptionDistributi
     @Override
     protected List<CorruptionDistributionInfo<TreasureCorruptionType>> getDistribution() {
         //TODO Set real distribution when done implementing and testing
-        //Fragment 50, Money 10, Extra 10, Vault 10, CorruptedRelic 10, Wardens 10
+        //Fragment 40, Money 10, Extra 10, Vault 10, CorruptedRelic 10, Wardens 10, Sealed 10
         ArrayList<CorruptionDistributionInfo<TreasureCorruptionType>> d = new ArrayList<>();
         d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Fragment, 0));
         d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Money, 0));
         d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Extra, 0));
         d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Vault, 0));
         d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.CorruptedRelic, 0));
-        d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Wardens, 100));
+        d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Wardens, 0));
+        d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Sealed, 100));
         return d;
     }
 

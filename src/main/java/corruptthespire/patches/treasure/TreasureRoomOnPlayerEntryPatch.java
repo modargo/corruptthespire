@@ -24,8 +24,7 @@ public class TreasureRoomOnPlayerEntryPatch {
 
     @SpirePostfixPatch
     public static void SwitchToTreasureWardensEvent(TreasureRoom __instance) {
-        if(TreasureCorruptionTypeField.corruptionType.get(__instance) == TreasureCorruptionType.Wardens) {
-            TreasureCorruption.handleTreasureWardens(__instance);
-        }
+        TreasureCorruptionType corruptionType = TreasureCorruptionTypeField.corruptionType.get(__instance);
+        TreasureCorruption.handleEvent(__instance, corruptionType);
     }
 }
