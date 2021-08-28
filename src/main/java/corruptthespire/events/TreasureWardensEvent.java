@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.rewards.chests.AbstractChest;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.ChestShineEffect;
 import com.megacrit.cardcrawl.vfx.scene.SpookyChestEffect;
+import corruptthespire.Cor;
 import corruptthespire.monsters.Encounters;
 
 // We extend the MaskedBandits event because ProceedButton.java specifically checks if an event is an instance of this type
@@ -32,6 +33,7 @@ public class TreasureWardensEvent extends MaskedBandits {
     private float shinyTimer = 0.0f;
 
     public TreasureWardensEvent() {
+        this.noCardsInRewards = true;
         this.roomEventText.clear();
         this.body = DESCRIPTIONS[0];
         this.roomEventText.addDialogOption(OPTIONS[0]);
@@ -53,6 +55,10 @@ public class TreasureWardensEvent extends MaskedBandits {
 
     @Override
     protected void buttonEffect(int buttonPressed) {
+        //This is here so that it has to happen, but only happens after the room has fully loaded
+        //This is because if we set this when entering the room, it will be immediately saved, and saving and reloading
+        //won't work correctly, because it will reroll the corruption (and filter this out as an option)
+        Cor.flags.seenTreasureWardens = true;
         switch(this.screen) {
             case 0:
                 switch(buttonPressed) {
@@ -64,6 +70,7 @@ public class TreasureWardensEvent extends MaskedBandits {
                             AbstractDungeon.getCurrRoom().addGoldToRewards(AbstractDungeon.miscRng.random(25, 35));
                         }
 
+                        AbstractDungeon.getCurrRoom().addCardToRewards();
                         AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
                         AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
                         if (Settings.isFinalActAvailable && !Settings.hasSapphireKey) {

@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.rooms.TreasureRoom;
 import corruptthespire.Cor;
 import corruptthespire.events.SealedChestEvent;
 import corruptthespire.events.TreasureWardensEvent;
+import corruptthespire.events.TreasureWardensEventRoom;
 import corruptthespire.patches.CorruptedField;
 import corruptthespire.patches.treasure.TreasureCorruptionTypeField;
 import corruptthespire.patches.treasure.VaultChestsField;
@@ -121,7 +122,7 @@ public class TreasureCorruption {
         if (corruptionType != TreasureCorruptionType.Wardens && corruptionType != TreasureCorruptionType.Sealed) {
             return;
         }
-        EventRoom eventRoom = new EventRoom();
+        EventRoom eventRoom = corruptionType == TreasureCorruptionType.Wardens ? new TreasureWardensEventRoom() : new EventRoom();
         //We deliberately don't call onPlayerEntry for the EventRoom, since that would generate a random event
         //Instead, we set the event ourselves below
         AbstractDungeon.overlayMenu.proceedButton.hide();
@@ -132,11 +133,9 @@ public class TreasureCorruption {
         //since it sets AbstractDungeon.getCurrRoom().monsters
         if (corruptionType == TreasureCorruptionType.Wardens) {
             eventRoom.event = new TreasureWardensEvent();
-            Cor.flags.seenTreasureWardens = true;
         }
         else {
             eventRoom.event = new SealedChestEvent();
-            Cor.flags.seenSealedChest = true;
         }
     }
 

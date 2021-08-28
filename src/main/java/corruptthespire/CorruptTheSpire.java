@@ -107,8 +107,8 @@ public class CorruptTheSpire implements
         BaseMod.addMonster(MasterOfTimeAndSpace.ID, () -> new MasterOfTimeAndSpace(-400.0F, 40.0F));
         BaseMod.addMonster(Encounters.TREASURE_WARDENS, () -> new MonsterGroup(
                 new AbstractMonster[] {
-                        new TreasureWardenWhite(-375.0F, 100.0F),
-                        new TreasureWardenBlack(175.0F, 100.0F),
+                        new TreasureWardenWhite(-375.0F, 50.0F),
+                        new TreasureWardenBlack(175.0F, 50.0F),
                 }));
     }
 

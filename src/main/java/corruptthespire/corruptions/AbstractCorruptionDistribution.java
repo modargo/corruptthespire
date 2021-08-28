@@ -34,6 +34,6 @@ public abstract class AbstractCorruptionDistribution<T extends Enum<T>> {
                 return info;
             }
         }
-        throw new RuntimeException("Could not pick an evolution option from the distribution.");
+        throw new RuntimeException("Could not pick a corruption option from the distribution.");
     }
 }
