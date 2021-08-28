@@ -21,10 +21,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardSave;
 import corruptthespire.buttons.CorruptionDisplay;
-import corruptthespire.cards.Fated;
-import corruptthespire.cards.Nudge;
-import corruptthespire.cards.ShimmeringShield;
-import corruptthespire.cards.WheelOfFortune;
+import corruptthespire.cards.*;
 import corruptthespire.cards.corrupted.CorruptedCardColor;
 import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.events.CorruptedEventInfo;
@@ -148,6 +145,7 @@ public class CorruptTheSpire implements
         BaseMod.addCard(new Nudge());
         BaseMod.addCard(new ShimmeringShield());
         BaseMod.addCard(new WheelOfFortune());
+        BaseMod.addCard(new Bedeviled());
         BaseMod.addCard(new Fated());
         for (AbstractCard c : CorruptedCardUtil.getAllCorruptedCards()) {
             BaseMod.addCard(c);

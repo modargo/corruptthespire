@@ -72,5 +72,9 @@
     "NAME": "Shimmering Shield",
     "DESCRIPTION": "Whenever you play a card of a different color, deal !M! damage to ALL enemies and gain !M! Block.",
     "UPGRADE_DESCRIPTION": "Innate. NL Whenever you play a card of a different color, deal !M! damage to ALL enemies and gain !M! Block."
+  },
+  "CorruptTheSpire:Bedeviled": {
+    "NAME": "Bedeviled",
+    "DESCRIPTION": "Exhaust."
   }
 }
