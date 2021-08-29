@@ -102,7 +102,7 @@
     "DESCRIPTION": "Apply !M! Weak and !M! Abysstouched to ALL enemies for every 5 Corruption."
   },
   "CorruptTheSpire:EldritchFire": {
-    "NAME": "EldritchFire",
-    "DESCRIPTION": "Lose X HP. NL Deal !D! damage to ALL enemies X times. ALL enemies lose 2 (3) times X Strength this turn. NL Exhaust."
+    "NAME": "Eldritch Fire",
+    "DESCRIPTION": "Lose X HP. NL Deal !D! damage to ALL enemies X times. NL ALL enemies lose !M! times X Strength this turn. NL Exhaust."
   }
 }

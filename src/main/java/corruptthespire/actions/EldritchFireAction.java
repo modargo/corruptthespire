@@ -71,11 +71,12 @@ public class EldritchFireAction extends AbstractGameAction {
                 this.addToBot(new DamageAllEnemiesAction(this.p, this.multiDamage, this.damageType, AttackEffect.FIRE, true));
             }
 
+            int strength = this.strength * effect;
             for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 if (!m.isDying && !m.halfDead && !m.isDeadOrEscaped()) {
-                    this.addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -this.strength), -this.strength, true, AttackEffect.NONE));
+                    this.addToBot(new ApplyPowerAction(m, p, new StrengthPower(m, -strength), -strength, true, AttackEffect.NONE));
                     if (!m.hasPower(ArtifactPower.POWER_ID)) {
-                        this.addToBot(new ApplyPowerAction(m, p, new GainStrengthPower(m, this.strength), this.strength, true, AttackEffect.NONE));
+                        this.addToBot(new ApplyPowerAction(m, p, new GainStrengthPower(m, strength), strength, true, AttackEffect.NONE));
                     }
                 }
             }
