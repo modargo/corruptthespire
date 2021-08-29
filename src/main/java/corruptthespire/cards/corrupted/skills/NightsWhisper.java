@@ -1,4 +1,4 @@
-package corruptthespire.cards.corrupted;
+package corruptthespire.cards.corrupted.skills;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;
+import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 
 import java.text.MessageFormat;
 
@@ -29,8 +30,7 @@ public class NightsWhisper extends AbstractCorruptedCard {
 
     public NightsWhisper() {
         super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, CORRUPTION_THRESHOLD_STRENGTH, CORRUPTION_THRESHOLD_VULNERABLE, CORRUPTION_THRESHOLD_DOUBLE, CORRUPTION_THRESHOLD_TRIPLE), CardType.SKILL, CardTarget.ENEMY);
-        this.baseMagicNumber = AMOUNT;
-        this.magicNumber = this.baseMagicNumber;
+        this.magicNumber = this.baseMagicNumber = AMOUNT;
     }
 
     @Override

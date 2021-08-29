@@ -49,5 +49,24 @@
     "DESCRIPTIONS": [
       "Whenever you draw a card, increase its cost by #b1 this turn."
     ]
+  },
+  "CorruptTheSpire:BlackOmen": {
+    "NAME": "Tormenting Shackles",
+    "DESCRIPTIONS": [
+      "At the start of your turn, apply #b{0} Abysstouched to ALL enemies."
+    ]
+  },
+  "CorruptTheSpire:NightmareKnowledge": {
+    "NAME": "Nightmare Knowledge",
+    "DESCRIPTIONS": [
+      "Whenever you draw a corrupted card, draw #b1 card.",
+      "Whenever you draw a corrupted card, draw #b{0} cards."
+    ]
+  },
+  "CorruptTheSpire:NightmareDefense": {
+    "NAME": "Nightmare Knowledge",
+    "DESCRIPTIONS": [
+      "Whenever you play a corrupted card, gain #b{0} Block."
+    ]
   }
 }

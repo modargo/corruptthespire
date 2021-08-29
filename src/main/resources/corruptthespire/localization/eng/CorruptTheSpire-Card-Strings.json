@@ -12,9 +12,9 @@
     "NAME": "Condemn",
     "DESCRIPTION": "Deal !D! damage. NL Gain {0} corruptthespire:Corruption."
   },
-  "CorruptTheSpire:Recoil": {
-    "NAME": "Recoil",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Gain {0} Frail."
+  "CorruptTheSpire:ShadowAndFlame": {
+    "NAME": "Shadow and Flame",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Apply !M! corruptthespire:Abysstouched. NL Gain {0} Frail."
   },
   "CorruptTheSpire:DrainLife": {
     "NAME": "Drain Life",
@@ -38,8 +38,8 @@
     "NAME": "Void Armor",
     "DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak to ALL enemies. NL Add a Void into your discard pile."
   },
-  "CorruptTheSpire:DevilsBargain": {
-    "NAME": "Devil's Bargain",
+  "CorruptTheSpire:DarkLore": {
+    "NAME": "Dark Lore",
     "DESCRIPTION": "Draw !M! cards. NL Gain {0} corruptthespire:Corruption."
   },
   "CorruptTheSpire:NightsWhisper": {
@@ -76,5 +76,33 @@
   "CorruptTheSpire:Bedeviled": {
     "NAME": "Bedeviled",
     "DESCRIPTION": "Exhaust."
+  },
+  "CorruptTheSpire:DeathTouch": {
+    "NAME": "Death Touch",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! corruptthespire:Abysstouched."
+  },
+  "CorruptTheSpire:BlackOmen": {
+    "NAME": "Black Omen",
+    "DESCRIPTION": "At the start of your turn, apply !M! Abysstouched to ALL enemies."
+  },
+  "CorruptTheSpire:PoweredByNightmare": {
+    "NAME": "Powered by Nightmare",
+    "DESCRIPTION": "Whenever you draw a corrupted card, draw a card. NL Whenever you play a corrupted card, gain !M! Block."
+  },
+  "CorruptTheSpire:EldritchInsight": {
+    "NAME": "Eldritch Insight",
+    "DESCRIPTION": "Choose 1 of 3 random cards from your draw pile and put it into your hand, !M! times. NL Gain {0} Corruption."
+  },
+  "CorruptTheSpire:DevilsBargain": {
+    "NAME": "Devil's Bargain",
+    "DESCRIPTION": "Put !M! cards from your discard pile into your hand. Discard all other cards. NL Gain 3 Corruption. NL Exhaust."
+  },
+  "CorruptTheSpire:BlasphemousHymn": {
+    "NAME": "Blasphemous Hymn",
+    "DESCRIPTION": "Apply !M! Weak and !M! Abysstouched to ALL enemies for every 5 Corruption."
+  },
+  "CorruptTheSpire:EldritchFire": {
+    "NAME": "EldritchFire",
+    "DESCRIPTION": "Lose X HP. NL Deal !D! damage to ALL enemies X times. ALL enemies lose 2 (3) times X Strength this turn. NL Exhaust."
   }
 }

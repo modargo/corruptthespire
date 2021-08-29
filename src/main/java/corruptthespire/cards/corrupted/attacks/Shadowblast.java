@@ -1,4 +1,4 @@
-package corruptthespire.cards.corrupted;
+package corruptthespire.cards.corrupted.attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;
+import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 
 import java.text.MessageFormat;
 
@@ -31,8 +32,8 @@ public class Shadowblast extends AbstractCorruptedCard {
     public Shadowblast() {
         super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, DAMAGE, CORRUPTION_THRESHOLD), CardType.ATTACK, CardTarget.ALL_ENEMY);
         this.baseDamage = DAMAGE;
-        this.baseMagicNumber = AMOUNT;
-        this.magicNumber = this.baseMagicNumber;
+        this.magicNumber = this.baseMagicNumber = AMOUNT;
+        this.isMultiDamage = true;
     }
 
     @Override

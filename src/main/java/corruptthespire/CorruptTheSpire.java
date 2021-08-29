@@ -59,6 +59,8 @@ public class CorruptTheSpire implements
         EditKeywordsSubscriber {
     public static final Logger logger = LogManager.getLogger(CorruptTheSpire.class.getName());
 
+    public static final String AbyssModId = "Abyss";
+
     public CorruptTheSpire() {
         BaseMod.addColor(CorruptedCardColor.CORRUPTTHESPIRE_CORRUPTED,
                 //TODO: Make all this pretty

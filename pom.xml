@@ -37,10 +37,10 @@
         </dependency>
         <dependency>
             <groupId>com.evacipated.cardcrawl.mod</groupId>
-            <artifactId>ActLikeIt</artifactId>
-            <version>0.9.0</version>
+            <artifactId>stslib</artifactId>
+            <version>1.19.3</version>
             <scope>system</scope>
-            <systemPath>${basedir}/../lib/actlikeit.jar</systemPath>
+            <systemPath>${basedir}/../lib/StSLib.jar</systemPath>
         </dependency>
     </dependencies>
 

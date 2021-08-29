@@ -1,4 +1,4 @@
-package corruptthespire.cards.corrupted;
+package corruptthespire.cards.corrupted.attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -7,24 +7,26 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;
-import corruptthespire.actions.GainCorruptionAction;
+import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 
 import java.text.MessageFormat;
 
-public class Condemn extends AbstractCorruptedCard {
-    public static final String ID = "CorruptTheSpire:Condemn";
+public class EssenceRip extends AbstractCorruptedCard {
+    public static final String ID = "CorruptTheSpire:EssenceRip";
     public static final String IMG = CorruptTheSpire.cardImage(ID);
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    private static final int COST = 1;
-    private static final int DAMAGE = 14;
-    private static final int UPGRADE_DAMAGE = 4;
-    private static final int CORRUPTION = 1;
+    private static final int COST = 0;
+    private static final int DAMAGE = 6;
+    private static final int UPGRADE_DAMAGE = 2;
+    private static final int CORRUPTION_THRESHOLD_1 = 20;
+    private static final int CORRUPTION_THRESHOLD_2 = 40;
 
-    public Condemn() {
-        super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, CORRUPTION), CardType.ATTACK, CardTarget.ENEMY);
+    public EssenceRip() {
+        super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, CORRUPTION_THRESHOLD_1, CORRUPTION_THRESHOLD_2), CardType.ATTACK, CardTarget.ENEMY);
         this.baseDamage = DAMAGE;
     }
 
@@ -39,6 +41,11 @@ public class Condemn extends AbstractCorruptedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        this.addToBot(new GainCorruptionAction(CORRUPTION));
+        if (Cor.corruption >= CORRUPTION_THRESHOLD_1) {
+            this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        }
+        if (Cor.corruption >= CORRUPTION_THRESHOLD_2) {
+            this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        }
     }
 }
