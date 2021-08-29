@@ -68,7 +68,6 @@ public class VaultChest extends AbstractChest {
             }
         }
 
-        //TODO See if I can display the warnings separately
         //Maybe make a version of LevelTransitionTextOverlayEffect to use here?
         //Could also have that display something at the start of the room... though that would be unusual
         String overlayText = null;

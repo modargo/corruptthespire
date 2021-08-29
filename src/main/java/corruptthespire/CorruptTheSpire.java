@@ -60,7 +60,6 @@ public class CorruptTheSpire implements
 
     public CorruptTheSpire() {
         BaseMod.addColor(CorruptedCardColor.CORRUPTTHESPIRE_CORRUPTED,
-                //TODO: Make all this pretty
                 Color.BLACK, Color.BLACK, Color.BLACK,
                 Color.BLACK, Color.BLACK, Color.BLACK, Color.BLACK,
                 "corruptthespire/images/corruptedcolor/corrupted_attack.png", "corruptthespire/images/corruptedcolor/corrupted_skill.png", "corruptthespire/images/corruptedcolor/corrupted_power.png", "corruptthespire/images/corruptedcolor/corrupted_energy.png",
@@ -76,7 +75,7 @@ public class CorruptTheSpire implements
     @Override
     public void receivePostInitialize() {
         Texture badgeTexture = new Texture("corruptthespire/images/CorruptTheSpireBadge.png");
-        BaseMod.registerModBadge(badgeTexture, "Corrupt the Spire", "modargo", "TODO", new ModPanel());
+        BaseMod.registerModBadge(badgeTexture, "Corrupt the Spire", "modargo", "Adds corrupted rooms to the Spire, which have increased rewards and new encounters, at the cost of increasing the corruption of the Spire and making all enemies more dangerous.", new ModPanel());
 
         addMonsters();
         addEvents();
@@ -120,7 +119,6 @@ public class CorruptTheSpire implements
     private static void addEvents() {
         // These events are only encountered through our own special logic, but we register them all here for ease of
         // debugging (thus the conditions that make them never show up)
-        // TODO Maybe remove this before releasing?
         for (Map.Entry<String, CorruptedEventInfo> e : CorruptedEventUtil.getAllCorruptedEvents().entrySet()) {
             Condition alwaysFalseCondition = () -> false;
             BaseMod.addEvent(new AddEventParams.Builder(e.getKey(), e.getValue().cls).spawnCondition(alwaysFalseCondition).bonusCondition(alwaysFalseCondition).create());

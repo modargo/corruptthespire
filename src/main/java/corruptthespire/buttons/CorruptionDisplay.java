@@ -70,8 +70,7 @@ public class CorruptionDisplay extends TopPanelItem {
 
         if (this.getHitbox().hovered) {
             float xPos = this.x - this.hb_w;
-            String text = MessageFormat.format(STRINGS.TEXT[1], Cor.getCorruptionDamageMultiplierPercent())
-                + (true ? " NL " + STRINGS.TEXT[2] + " NL " + "TODO corruption list goes here" : "");
+            String text = MessageFormat.format(STRINGS.TEXT[1], Cor.getCorruptionDamageMultiplierPercent());
             TipHelper.renderGenericTip(xPos, tipYpos, STRINGS.TEXT[0], text);
         }
     }
