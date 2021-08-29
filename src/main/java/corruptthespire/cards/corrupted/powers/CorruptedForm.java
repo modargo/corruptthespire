@@ -31,7 +31,7 @@ public class CorruptedForm extends AbstractCorruptedCard {
         if (!this.upgraded) {
             this.isEthereal = false;
             this.upgradeName();
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            this.rawDescription = MessageFormat.format(cardStrings.UPGRADE_DESCRIPTION, CORRUPTION);
             this.initializeDescription();
         }
     }
