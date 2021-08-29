@@ -74,5 +74,9 @@
     "DESCRIPTIONS": [
       "Whenever you play a corrupted card, gain #b{0} Block."
     ]
+  },
+  "Abyss:Abysstouched": {
+    "NAME": "Abysstouched",
+    "DESCRIPTIONS": ["Take #b{0}% more damage from #yAttacks. At the end of your turn, take #b{0} damage.", "Receive #b{0}% more damage from #yAttacks. At the start of its turn, takes #b{0} damage."]
   }
 }
