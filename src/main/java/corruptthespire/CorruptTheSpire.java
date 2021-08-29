@@ -26,10 +26,7 @@ import corruptthespire.cards.corrupted.CorruptedCardColor;
 import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.events.CorruptedEventInfo;
 import corruptthespire.events.CorruptedEventUtil;
-import corruptthespire.monsters.Encounters;
-import corruptthespire.monsters.MasterOfTimeAndSpace;
-import corruptthespire.monsters.TreasureWardenBlack;
-import corruptthespire.monsters.TreasureWardenWhite;
+import corruptthespire.monsters.*;
 import corruptthespire.patches.cards.CheckFatedPostBattleSubscriber;
 import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.relics.chaotic.BurningRing;
@@ -102,6 +99,7 @@ public class CorruptTheSpire implements
 
     private static void addMonsters() {
         BaseMod.addMonster(MasterOfTimeAndSpace.ID, () -> new MasterOfTimeAndSpace(-400.0F, 40.0F));
+        BaseMod.addMonster(PandemoniumArchfiend.ID, () -> new PandemoniumArchfiend(0.0F, 0.0F));
         BaseMod.addMonster(Encounters.TREASURE_WARDENS_ACT1, () -> new MonsterGroup(
                 new AbstractMonster[] {
                         new TreasureWardenWhite(-375.0F, 50.0F, TreasureWardenWhite.Version.Act1),
