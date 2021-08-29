@@ -34,10 +34,7 @@ import corruptthespire.relics.chaotic.DeckOfManyFates;
 import corruptthespire.rewards.CustomRewardTypes;
 import corruptthespire.rewards.MaxHealthReward;
 import corruptthespire.rewards.RandomUpgradeReward;
-import corruptthespire.savables.SavableCorruptedRelicPool;
-import corruptthespire.savables.SavableCorruption;
-import corruptthespire.savables.SavableEventList;
-import corruptthespire.savables.SavableRng;
+import corruptthespire.savables.*;
 import corruptthespire.subscribers.CorruptionHealthIncreaseOnStartBattleSubscriber;
 import corruptthespire.subscribers.ResetIsBossCorruptedSubscriber;
 import corruptthespire.util.TextureLoader;
@@ -86,6 +83,7 @@ public class CorruptTheSpire implements
 
         BaseMod.addSaveField(SavableCorruptedRelicPool.SaveKey, new SavableCorruptedRelicPool());
         BaseMod.addSaveField(SavableCorruption.SaveKey, new SavableCorruption());
+        BaseMod.addSaveField(SavableCorruptionFlags.SaveKey, new SavableRng());
         BaseMod.addSaveField(SavableEventList.SaveKey, new SavableEventList());
         BaseMod.addSaveField(SavableRng.SaveKey, new SavableRng());
 
