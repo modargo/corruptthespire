@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.map.MapRoomNode;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
-import corruptthespire.Cor;
 import corruptthespire.patches.CorruptedField;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -53,20 +52,22 @@ public class CorruptMap {
             }
         }
 
-        //TODO change back when done with initial testing
-        //Maybe 30-40-50-100 for a more even increase in the first three acts
-        //double percentCorrupt = actNum < 1 || actNum > 4 ? 0 : 1.0 / (5 - actNum); // 25%, 33%, 50%, 100%
-        double percentCorrupt = 1.0;
-        int baseCorrupt = (int)Math.ceil(potentialCorruptNodes.size() * percentCorrupt);
-        int numCorrupt = Math.min(potentialCorruptNodes.size(), baseCorrupt + Cor.rng.random(RANDOM_EXTRA_CORRUPT_NODES));
-        logger.info("Corrupting act " + actNum + ": " + baseCorrupt + " nodes base, " + numCorrupt + " after adjustment");
-
         //Just like mapRng in the base game, we don't track this because it's only used in one burst at the
         //start of each act -- and when reloading the game, which recreates the map for the act from scratch,
         //we need the result to be the same
         //Like the base game, we adjust this for each act. Without doing that, if two act maps had the same
         //number of nodes and a similar layout, the pattern of corrupted nodes would also be similar
-        Collections.shuffle(potentialCorruptNodes, new Random(Settings.seed + actNum).random);
+        Random rng = new Random(Settings.seed + actNum);
+
+        //TODO change back when done with initial testing
+        //Maybe 30-40-50-100 for a more even increase in the first three acts
+        //double percentCorrupt = actNum < 1 || actNum > 4 ? 0 : 1.0 / (5 - actNum); // 25%, 33%, 50%, 100%
+        double percentCorrupt = 1.0;
+        int baseCorrupt = (int)Math.ceil(potentialCorruptNodes.size() * percentCorrupt);
+        int numCorrupt = Math.min(potentialCorruptNodes.size(), baseCorrupt + rng.random(RANDOM_EXTRA_CORRUPT_NODES));
+        logger.info("Corrupting act " + actNum + ": " + baseCorrupt + " nodes base, " + numCorrupt + " after adjustment");
+
+        Collections.shuffle(potentialCorruptNodes, rng.random);
 
         for (int i = 0; i < numCorrupt; i++) {
             MapRoomNode node = potentialCorruptNodes.get(i);
