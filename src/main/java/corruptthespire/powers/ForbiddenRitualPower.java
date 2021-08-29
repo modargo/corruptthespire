@@ -30,7 +30,7 @@ public class ForbiddenRitualPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        this.description = MessageFormat.format(DESCRIPTIONS[0], ForbiddenRitual.CORRUPTION);
+        this.description = MessageFormat.format(DESCRIPTIONS[0], this.amount, ForbiddenRitual.CORRUPTION);
     }
 
     @Override

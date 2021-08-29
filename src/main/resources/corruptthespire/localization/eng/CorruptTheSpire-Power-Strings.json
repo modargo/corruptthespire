@@ -5,7 +5,7 @@
   },
   "CorruptTheSpire:ForbiddenRitual": {
     "NAME": "Forbidden Ritual",
-    "DESCRIPTIONS": ["At the start of your turn, gain !M! Strength and #b{0} corruptthespire:Corruption."]
+    "DESCRIPTIONS": ["At the start of your turn, gain #b{0} Strength and #b{1} corruptthespire:Corruption."]
   },
   "CorruptTheSpire:CorruptedForm": {
     "NAME": "Corrupted Form",
