@@ -25,7 +25,7 @@ public class VoidArmor extends AbstractCorruptedCard {
     private static final int UPGRADE_WEAK = 1;
 
     public VoidArmor() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, CardType.SKILL, CardTarget.ENEMY);
+        super(ID, NAME, IMG, COST, DESCRIPTION, CardType.SKILL, CardTarget.ALL_ENEMY);
         this.baseBlock = BLOCK;
         this.baseMagicNumber = WEAK;
         this.magicNumber = this.baseMagicNumber;
