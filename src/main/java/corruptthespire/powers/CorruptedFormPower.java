@@ -18,7 +18,7 @@ import corruptthespire.CorruptTheSpire;
 import java.text.MessageFormat;
 
 public class CorruptedFormPower extends AbstractPower {
-    public static final String POWER_ID = "CorruptTheSpire:ForbiddenRitual";
+    public static final String POWER_ID = "CorruptTheSpire:CorruptedForm";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
