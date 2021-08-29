@@ -7,15 +7,14 @@ import com.megacrit.cardcrawl.map.MapRoomNode;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.ui.buttons.ProceedButton;
 import corruptthespire.Cor;
-import corruptthespire.monsters.PandemoniumArchfiend;
 import javassist.CtBehavior;
 
 @SpirePatch(
         clz = ProceedButton.class,
         method = "update"
 )
-public class SpecialActThreeBossFightPatch {
-    @SpireInsertPatch(locator = SpecialActThreeBossFightPatch.Locator.class)
+public class ExtraActThreeBossFightPatch {
+    @SpireInsertPatch(locator = ExtraActThreeBossFightPatch.Locator.class)
     public static SpireReturn<Void> ExtraActThreeBossFight(ProceedButton __instance) {
         if (Cor.flags.openedSealedChest) {
             // This is the same thing that BaseMod does; we reproduce it here because this patch
@@ -26,7 +25,7 @@ public class SpecialActThreeBossFightPatch {
 
             if ((AbstractDungeon.ascensionLevel >= 20 && AbstractDungeon.bossList.size() == 1)
                 || (AbstractDungeon.ascensionLevel < 20 && AbstractDungeon.bossList.size() == 2)) {
-                AbstractDungeon.bossKey = PandemoniumArchfiend.ID;
+                AbstractDungeon.bossKey = AbstractDungeon.bossList.get(0); //TODO: Set this to the right boss
                 CardCrawlGame.music.fadeOutBGM();
                 CardCrawlGame.music.fadeOutTempBGM();
                 MapRoomNode node = new MapRoomNode(-1, 15);

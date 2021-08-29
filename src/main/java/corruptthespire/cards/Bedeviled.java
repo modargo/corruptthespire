@@ -17,8 +17,7 @@ public class Bedeviled extends CustomCard {
     private static final int COST = 3;
 
     public Bedeviled() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
-        this.exhaust = true;
+        super(ID, NAME, IMG, COST, DESCRIPTION, CardType.STATUS, CardColor.CURSE, CardRarity.SPECIAL, CardTarget.NONE);
     }
 
     @Override

@@ -31,23 +31,10 @@
       "Whenever you play a card of a different color, deal #b{0} damage to ALL enemies and gain #b{0} Block."
     ]
   },
-  "CorruptTheSpire:DevilsDue": {
-    "NAME": "Devil's Due",
+  "CorruptTheSpire:DragonsHeart": {
+    "NAME": "Dragon's Heart",
     "DESCRIPTIONS": [
-      "At the start of combat, move all uncommon and rare cards to the discard pile and add #b{0} #yBedeviled to your deck.",
-      "At the start of combat, move all uncommon and rare cards to the discard pile and add #b{0} #yBedeviled to your deck and discard."
-    ]
-  },
-  "CorruptTheSpire:PriceOfKnowledge": {
-    "NAME": "Price of Knowledge",
-    "DESCRIPTIONS": [
-      "Whenever you draw a card other than your initial cards for each turn, discard a card."
-    ]
-  },
-  "CorruptTheSpire:TormentingShackles": {
-    "NAME": "Tormenting Shackles",
-    "DESCRIPTIONS": [
-      "Whenever you draw a card, increase its cost by #b1 this turn."
+      "When this enemy dies, all other enemies gain #b{0} Strength and #b{0} Metallicize."
     ]
   }
 }

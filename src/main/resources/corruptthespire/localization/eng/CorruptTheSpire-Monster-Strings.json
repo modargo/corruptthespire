@@ -24,21 +24,5 @@
       "Black Breath"
     ],
     "NAME": "Treasure Warden"
-  },
-  "CorruptTheSpire:PandemoniumArchfiend": {
-    "MOVES": [
-      "Mindshatter",
-      "Four Arm Strike",
-      "Tormenting Shackles",
-      "Infernal Power",
-      "Hellfire"
-    ],
-    "NAME": "Pandemonium Archfiend",
-    "DIALOG": [
-      "I will destroy you, and open the gates for my kindred to follow.",
-      "You have brought doom to your world by releasing me.",
-      "There is so much more out there than you know.",
-      "Hellfire and torment!"
-    ]
   }
 }
