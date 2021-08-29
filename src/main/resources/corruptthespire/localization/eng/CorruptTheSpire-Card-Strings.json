@@ -91,15 +91,15 @@
   },
   "CorruptTheSpire:EldritchInsight": {
     "NAME": "Eldritch Insight",
-    "DESCRIPTION": "Choose 1 of 3 random cards from your draw pile and put it into your hand, !M! times. NL Gain {0} Corruption."
+    "DESCRIPTION": "Choose 1 of 3 random cards from your draw pile and put it into your hand, !M! times. NL Gain {0} corruptthespire:Corruption."
   },
   "CorruptTheSpire:DevilsBargain": {
     "NAME": "Devil's Bargain",
-    "DESCRIPTION": "Put !M! cards from your discard pile into your hand. Discard all other cards. NL Gain 3 Corruption. NL Exhaust."
+    "DESCRIPTION": "Put !M! cards from your discard pile into your hand. Discard all other cards. NL Gain 3 corruptthespire:Corruption. NL Exhaust."
   },
   "CorruptTheSpire:BlasphemousHymn": {
     "NAME": "Blasphemous Hymn",
-    "DESCRIPTION": "Apply !M! Weak and !M! corruptthespire:Abysstouched to ALL enemies for every 5 Corruption."
+    "DESCRIPTION": "Apply !M! Weak and !M! corruptthespire:Abysstouched to ALL enemies for every 5 corruptthespire:Corruption."
   },
   "CorruptTheSpire:EldritchFire": {
     "NAME": "Eldritch Fire",
