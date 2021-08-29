@@ -36,7 +36,7 @@ public class DeathTouch extends AbstractCorruptedCard {
     @Override
     public void upgrade() {
         if (!this.upgraded) {
-            this.upgradeDamage(UPGRADE_ABYSSTOUCHED);
+            this.upgradeMagicNumber(UPGRADE_ABYSSTOUCHED);
             this.upgradeName();
         }
     }
