@@ -31,6 +31,7 @@ public class NightsWhisper extends AbstractCorruptedCard {
     public NightsWhisper() {
         super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, CORRUPTION_THRESHOLD_STRENGTH, CORRUPTION_THRESHOLD_VULNERABLE, CORRUPTION_THRESHOLD_DOUBLE, CORRUPTION_THRESHOLD_TRIPLE), CardType.SKILL, CardTarget.ENEMY);
         this.magicNumber = this.baseMagicNumber = AMOUNT;
+        this.exhaust = true;
     }
 
     @Override

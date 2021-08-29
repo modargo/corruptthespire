@@ -44,7 +44,7 @@
   },
   "CorruptTheSpire:NightsWhisper": {
     "NAME": "Night's Whisper",
-    "DESCRIPTION": "Apply !M! Weak. corruptthespire:Corruption: NL {0}+: Enemy loses !M! Strength. NL {1}+: Apply !M! Vulnerable. NL {20}+: Double these debuffs. NL {3}+: Triple these debuffs. NL Exhaust."
+    "DESCRIPTION": "Apply !M! Weak. NL corruptthespire:Corruption: NL {0}+: Enemy loses !M! Strength. NL {1}+: Apply !M! Vulnerable. NL {2}+: Double these debuffs. NL {3}+: Triple these debuffs. NL Exhaust."
   },
   "CorruptTheSpire:ForbiddenRitual": {
     "NAME": "Forbidden Ritual",
