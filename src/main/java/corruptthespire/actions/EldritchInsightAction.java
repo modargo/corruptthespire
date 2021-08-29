@@ -9,11 +9,11 @@ import com.megacrit.cardcrawl.screens.CardRewardScreen;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class DarkLoreAction extends AbstractGameAction {
+public class EldritchInsightAction extends AbstractGameAction {
     private static int CARD_OPTIONS = 3;
     private boolean retrieveCard = false;
 
-    public DarkLoreAction() {
+    public EldritchInsightAction() {
         this.actionType = ActionType.CARD_MANIPULATION;
         this.duration = Settings.ACTION_DUR_FAST;
     }
@@ -49,6 +49,6 @@ public class DarkLoreAction extends AbstractGameAction {
 
         Collections.shuffle(cards, AbstractDungeon.cardRandomRng.random);
 
-        return new ArrayList<>(cards.subList(0, Math.min(CARD_OPTIONS, cards.size()) - 1));
+        return new ArrayList<>(cards.subList(0, Math.min(CARD_OPTIONS, cards.size())));
     }
 }

@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import corruptthespire.CorruptTheSpire;
-import corruptthespire.actions.DarkLoreAction;
 import corruptthespire.actions.DevilsBargainAction;
 import corruptthespire.actions.GainCorruptionAction;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;

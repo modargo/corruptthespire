@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import corruptthespire.CorruptTheSpire;
-import corruptthespire.actions.DarkLoreAction;
+import corruptthespire.actions.EldritchInsightAction;
 import corruptthespire.actions.GainCorruptionAction;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 
@@ -38,7 +38,7 @@ public class EldritchInsight extends AbstractCorruptedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < this.magicNumber; i++) {
-            this.addToBot(new DarkLoreAction());
+            this.addToBot(new EldritchInsightAction());
         }
         this.addToBot(new GainCorruptionAction(CORRUPTION));
     }
