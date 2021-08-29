@@ -31,6 +31,12 @@
       "Whenever you play a card of a different color, deal #b{0} damage to ALL enemies and gain #b{0} Block."
     ]
   },
+  "CorruptTheSpire:DragonsHeart": {
+    "NAME": "Dragon's Heart",
+    "DESCRIPTIONS": [
+      "When this enemy dies, all other enemies gain #b{0} Strength and #b{0} Metallicize.."
+    ]
+  },
   "CorruptTheSpire:DevilsDue": {
     "NAME": "Devil's Due",
     "DESCRIPTIONS": [
