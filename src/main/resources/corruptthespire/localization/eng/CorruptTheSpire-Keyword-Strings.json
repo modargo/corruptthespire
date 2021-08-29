@@ -3,5 +3,10 @@
     "PROPER_NAME": "Corruption",
     "NAMES": ["corruption"],
     "DESCRIPTION": "Corruption, tracked in the upper right."
+  },
+  {
+    "PROPER_NAME": "Abysstouched",
+    "NAMES": ["abysstouched"],
+    "DESCRIPTION": "Increases attack damage taken and deals damage every turn."
   }
 ]

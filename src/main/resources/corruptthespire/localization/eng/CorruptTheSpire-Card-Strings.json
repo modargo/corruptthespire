@@ -83,7 +83,7 @@
   },
   "CorruptTheSpire:BlackOmen": {
     "NAME": "Black Omen",
-    "DESCRIPTION": "At the start of your turn, apply !M! Abysstouched to ALL enemies."
+    "DESCRIPTION": "At the start of your turn, apply !M! corruptthespire:Abysstouched to ALL enemies."
   },
   "CorruptTheSpire:PoweredByNightmare": {
     "NAME": "Powered by Nightmare",
@@ -99,7 +99,7 @@
   },
   "CorruptTheSpire:BlasphemousHymn": {
     "NAME": "Blasphemous Hymn",
-    "DESCRIPTION": "Apply !M! Weak and !M! Abysstouched to ALL enemies for every 5 Corruption."
+    "DESCRIPTION": "Apply !M! Weak and !M! corruptthespire:Abysstouched to ALL enemies for every 5 Corruption."
   },
   "CorruptTheSpire:EldritchFire": {
     "NAME": "Eldritch Fire",

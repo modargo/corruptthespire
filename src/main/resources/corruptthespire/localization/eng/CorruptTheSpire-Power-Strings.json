@@ -59,7 +59,7 @@
   "CorruptTheSpire:BlackOmen": {
     "NAME": "Tormenting Shackles",
     "DESCRIPTIONS": [
-      "At the start of your turn, apply #b{0} Abysstouched to ALL enemies."
+      "At the start of your turn, apply #b{0} corruptthespire:Abysstouched to ALL enemies."
     ]
   },
   "CorruptTheSpire:NightmareKnowledge": {
@@ -70,7 +70,7 @@
     ]
   },
   "CorruptTheSpire:NightmareDefense": {
-    "NAME": "Nightmare Knowledge",
+    "NAME": "Nightmare Defense",
     "DESCRIPTIONS": [
       "Whenever you play a corrupted card, gain #b{0} Block."
     ]
