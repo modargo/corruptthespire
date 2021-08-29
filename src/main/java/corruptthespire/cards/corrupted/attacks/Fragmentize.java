@@ -20,7 +20,7 @@ public class Fragmentize extends AbstractCorruptedCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 1;
     private static final int DAMAGE = 10;
-    private static final int UPGRADE_DAMAGE = 13;
+    private static final int UPGRADE_DAMAGE = 3;
 
     public Fragmentize() {
         super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, new FragmentOfCorruption().name), CardType.ATTACK, CardTarget.ENEMY);
