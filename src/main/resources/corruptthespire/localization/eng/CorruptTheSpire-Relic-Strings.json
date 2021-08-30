@@ -52,7 +52,7 @@
   "CorruptTheSpire:CorruptedOmamori": {
     "NAME": "Corrupted Omamori",
     "FLAVOR": "A charm that protects you from one kind of harm at the cost of another.",
-    "DESCRIPTIONS": ["Negate all #rCurses you obtain and instead gain gain {0} corruption for each Curse."]
+    "DESCRIPTIONS": ["Negate all #rCurses you obtain and instead gain gain #b{0} corruption for each Curse."]
   },
   "CorruptTheSpire:OminousBracelet": {
     "NAME": "Ominous Bracelet",
@@ -62,6 +62,6 @@
   "CorruptTheSpire:CorruptedToolbox": {
     "NAME": "Corrupted Toolbox",
     "FLAVOR": "Everyone has a price.",
-    "DESCRIPTIONS": ["At the start of each combat, choose 1 of 3 random corrupted cards and add the chosen card into your hand."]
+    "DESCRIPTIONS": ["At the start of each combat, choose #b1 of #b3 random corrupted cards and add the chosen card into your hand."]
   }
 }
