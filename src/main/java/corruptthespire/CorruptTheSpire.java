@@ -35,7 +35,8 @@ import corruptthespire.rewards.CustomRewardTypes;
 import corruptthespire.rewards.MaxHealthReward;
 import corruptthespire.rewards.RandomUpgradeReward;
 import corruptthespire.savables.*;
-import corruptthespire.subscribers.CorruptionHealthIncreaseOnStartBattleSubscriber;
+import corruptthespire.subscribers.ApplyCorruptionHealthIncreaseOnStartBattleSubscriber;
+import corruptthespire.subscribers.DetermineAndApplyCorruptionsOnStartBattleSubscriber;
 import corruptthespire.subscribers.ResetIsBossCorruptedSubscriber;
 import corruptthespire.util.TextureLoader;
 import org.apache.logging.log4j.LogManager;
@@ -86,7 +87,8 @@ public class CorruptTheSpire implements
         BaseMod.addSaveField(SavableEventList.SaveKey, new SavableEventList());
         BaseMod.addSaveField(SavableRng.SaveKey, new SavableRng());
 
-        BaseMod.subscribe(new CorruptionHealthIncreaseOnStartBattleSubscriber());
+        BaseMod.subscribe(new ApplyCorruptionHealthIncreaseOnStartBattleSubscriber());
+        BaseMod.subscribe(new DetermineAndApplyCorruptionsOnStartBattleSubscriber());
         BaseMod.subscribe(new ResetIsBossCorruptedSubscriber());
         BaseMod.subscribe(new CheckFatedPostBattleSubscriber());
 

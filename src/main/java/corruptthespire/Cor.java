@@ -2,11 +2,14 @@ package corruptthespire;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.Circlet;
 import com.megacrit.cardcrawl.rooms.*;
 import corruptthespire.buttons.CorruptionDisplay;
+import corruptthespire.corruptions.fight.FightCorruption;
+import corruptthespire.patches.CorruptedField;
 import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.relics.corrupted.*;
 import org.apache.logging.log4j.LogManager;
@@ -87,6 +90,12 @@ public class Cor {
     public static void reduceFragments(int amount) {
         FragmentOfCorruption r = (FragmentOfCorruption)AbstractDungeon.player.getRelic(FragmentOfCorruption.ID);
         r.reduce(amount);
+    }
+
+    public static void applyCorruptionHealthIncrease(AbstractMonster m) {
+        if (Cor.corruption > 0) {
+            m.increaseMaxHp((m.maxHealth * Cor.getCorruptionDamageMultiplierPercent()) / 100, false);
+        }
     }
 
     public static String returnRandomCorruptedRelicKey() {
