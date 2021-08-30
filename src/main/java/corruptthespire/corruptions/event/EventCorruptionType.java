@@ -2,6 +2,7 @@ package corruptthespire.corruptions.event;
 
 public enum EventCorruptionType {
     Fragment,
-    CorruptedEvent,
-    ChaoticEvent
+    Corrupted,
+    Chaotic,
+    Harbinger
 }

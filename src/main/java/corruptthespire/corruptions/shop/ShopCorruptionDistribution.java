@@ -1,7 +1,11 @@
 package corruptthespire.corruptions.shop;
 
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import corruptthespire.Cor;
 import corruptthespire.corruptions.AbstractCorruptionDistribution;
 import corruptthespire.corruptions.CorruptionDistributionInfo;
+import corruptthespire.corruptions.event.EventCorruptionType;
+import corruptthespire.relics.corrupted.OminousBracelet;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,5 +32,13 @@ public class ShopCorruptionDistribution extends AbstractCorruptionDistribution<S
         d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.CorruptedCardAndFragment, 0));
         d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.CorruptedRelics, 100));
         return d;
+    }
+
+    @Override
+    protected List<CorruptionDistributionInfo<ShopCorruptionType>> adjustDistribution(List<CorruptionDistributionInfo<ShopCorruptionType>> distribution) {
+        if (AbstractDungeon.player.hasRelic(OminousBracelet.ID)) {
+            distribution.removeIf(di -> di.corruption == ShopCorruptionType.CorruptedCardAndFragment);
+        }
+        return distribution;
     }
 }

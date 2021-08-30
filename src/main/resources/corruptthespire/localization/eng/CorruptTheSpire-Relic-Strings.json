@@ -53,5 +53,10 @@
     "NAME": "Corrupted Omamori",
     "FLAVOR": "A charm that protects you from one kind of harm at the cost of another.",
     "DESCRIPTIONS": ["Negate all #rCurses you obtain and instead gain gain {0} corruption for each Curse."]
+  },
+  "CorruptTheSpire:OminousBracelet": {
+    "NAME": "Ominous Bracelet",
+    "FLAVOR": "A ward that guides its bearer to greatness.",
+    "DESCRIPTIONS": ["Corrupted events, treasures, and shops no longer give the lowest reward outcomes. (The lowest reward corruption outcomes are the ones that only add Fragments of Corruption.)"]
   }
 }

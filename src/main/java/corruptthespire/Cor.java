@@ -128,6 +128,7 @@ public class Cor {
         corruptedRelics.add(new CorruptedOmamori());
         corruptedRelics.add(new MaskOfNightmares());
         corruptedRelics.add(new ObsidianShovel());
+        corruptedRelics.add(new OminousBracelet());
         corruptedRelics.add(new RustedOrichalcum());
         corruptedRelics.add(new UnreliableCharm());
         return corruptedRelics;

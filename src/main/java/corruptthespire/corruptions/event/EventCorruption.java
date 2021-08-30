@@ -9,10 +9,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.PrismaticShard;
 import corruptthespire.Cor;
 import corruptthespire.cards.CustomTags;
-import corruptthespire.events.CorruptedEventInfo;
-import corruptthespire.events.CorruptedEventType;
-import corruptthespire.events.CorruptedEventUtil;
-import corruptthespire.events.FragmentOfCorruptionEvent;
+import corruptthespire.events.*;
 import corruptthespire.events.chaotic.MindsEye;
 import corruptthespire.events.chaotic.TreeOfSwords;
 import corruptthespire.events.corrupted.IncantationOfCorruption;
@@ -32,6 +29,10 @@ public class EventCorruption {
 
     public static AbstractEvent handleFragment() {
         return new FragmentOfCorruptionEvent();
+    }
+
+    public static AbstractEvent handleHarbinger() {
+        return new HarbingerEvent();
     }
 
     public static AbstractEvent handleCorruptedEvent(CorruptedEventType corruptedEventType) {

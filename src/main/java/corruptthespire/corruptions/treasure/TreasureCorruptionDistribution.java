@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import corruptthespire.Cor;
 import corruptthespire.corruptions.AbstractCorruptionDistribution;
 import corruptthespire.corruptions.CorruptionDistributionInfo;
+import corruptthespire.relics.corrupted.OminousBracelet;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +27,9 @@ public class TreasureCorruptionDistribution extends AbstractCorruptionDistributi
 
     @Override
     protected List<CorruptionDistributionInfo<TreasureCorruptionType>> adjustDistribution(List<CorruptionDistributionInfo<TreasureCorruptionType>> distribution) {
+        if (AbstractDungeon.player.hasRelic(OminousBracelet.ID)) {
+            distribution.removeIf(di -> di.corruption == TreasureCorruptionType.Fragment);
+        }
         if (Cor.flags.seenTreasureWardens || AbstractDungeon.floorNum <= 6) {
             distribution.removeIf(di -> di.corruption == TreasureCorruptionType.Wardens);
         }

@@ -30,12 +30,16 @@ public class EventPatch {
                 event = EventCorruption.handleFragment();
             }
 
-            if (corruptionType == EventCorruptionType.CorruptedEvent) {
+            if (corruptionType == EventCorruptionType.Corrupted) {
                 event = EventCorruption.handleCorruptedEvent(CorruptedEventType.Corrupted);
             }
 
-            if (corruptionType == EventCorruptionType.ChaoticEvent) {
+            if (corruptionType == EventCorruptionType.Chaotic) {
                 event = EventCorruption.handleCorruptedEvent(CorruptedEventType.Chaotic);
+            }
+
+            if (corruptionType == EventCorruptionType.Harbinger) {
+                event = EventCorruption.handleHarbinger();
             }
 
             if (event != null) {

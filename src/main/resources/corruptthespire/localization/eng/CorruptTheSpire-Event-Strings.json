@@ -193,5 +193,17 @@
       "[Loot] Take your rewards.",
       "[Leave]"
     ]
+  },
+  "CorruptTheSpire:Harbinger": {
+    "NAME": "Harbinger",
+    "DESCRIPTIONS": [
+      "You come across an otherworldly monster, just emerged from a portal. Its gaze lands on you, eyes glinting with malicious intelligence, arcane energy suffusing its body. NL NL Fight or flight?",
+      "The monster's laughter follows you as you flee."
+    ],
+    "OPTIONS": [
+      "[Fight] An elite fight with extra rewards.",
+      "[Flee]",
+      "[Leave]"
+    ]
   }
 }
