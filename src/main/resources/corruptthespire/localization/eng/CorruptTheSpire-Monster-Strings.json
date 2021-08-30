@@ -47,5 +47,12 @@
       "Manifest"
     ],
     "NAME": "Corruption Manifest"
+  },
+  "CorruptTheSpire:Harbinger": {
+    "MOVES": [
+      "Cosmic Burst",
+      "Alien Claws"
+    ],
+    "NAME": "Harbinger"
   }
 }

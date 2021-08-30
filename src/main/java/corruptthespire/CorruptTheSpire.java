@@ -117,6 +117,7 @@ public class CorruptTheSpire implements
                         new TreasureWardenBlack(175.0F, 50.0F, TreasureWardenBlack.Version.Act3),
                 }));
         BaseMod.addMonster(CorruptionManifest.ID, (BaseMod.GetMonster) CorruptionManifest::new);
+        BaseMod.addMonster(Harbinger.ID, (BaseMod.GetMonster) Harbinger::new);
     }
 
     private static void addEvents() {

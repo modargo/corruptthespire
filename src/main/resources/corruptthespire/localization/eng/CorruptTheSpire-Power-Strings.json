@@ -75,8 +75,20 @@
       "Whenever you play a corrupted card, gain #b{0} Block."
     ]
   },
-  "Abyss:Abysstouched": {
+  "CorruptTheSpire:Abysstouched": {
     "NAME": "Abysstouched",
     "DESCRIPTIONS": ["Take #b{0}% more damage from #yAttacks. At the end of your turn, take #b{0} damage.", "Receive #b{0}% more damage from #yAttacks. At the start of its turn, takes #b{0} damage."]
+  },
+  "CorruptTheSpire:AstralCore": {
+    "NAME": "Astral Core",
+    "DESCRIPTIONS": ["For every #b{0} damage this enemy takes, it gains #b{1} #yStrength. At the end of this enemy's turn, if it has positive #yStrength, it loses #b{2} Strength."]
+  },
+  "CorruptTheSpire:AstralCoreCounter": {
+    "NAME": "Astral Core Counter",
+    "DESCRIPTIONS": ["After taking #b{0} more damage, #yAstral #yCore will trigger."]
+  },
+  "CorruptTheSpire:EldritchGrasp": {
+    "NAME": "Eldritch Grasp",
+    "DESCRIPTIONS": ["At the end of each round, apply #b{0} #yConstricted."]
   }
 }
