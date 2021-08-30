@@ -2,6 +2,7 @@ package corruptthespire.cards.corrupted;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rewards.RewardItem;
 import corruptthespire.cards.corrupted.attacks.*;
 import corruptthespire.cards.corrupted.powers.BlackOmen;
 import corruptthespire.cards.corrupted.powers.CorruptedForm;
@@ -52,6 +53,12 @@ public class CorruptedCardUtil {
 
         return corruptedCardInfos.stream()
             .collect(Collectors.toMap(cci -> cci.card.cardID, cci -> cci));
+    }
+
+    public static RewardItem getCorruptedCardReward() {
+        RewardItem reward = new RewardItem();
+        reward.cards = getRandomCorruptedCards(reward.cards.size());
+        return reward;
     }
 
     //Following the pattern of the base game, the distinction is that in combat means:

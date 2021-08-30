@@ -11,7 +11,7 @@
     ]
   },
   "CorruptTheSpire:Rewards": {
-    "TEXT": ["Gain {0} Max HP", "Upgrade a random card"]
+    "TEXT": ["Gain {0} Max HP", "Upgrade a random card", "Choose a Card"]
   },
   "CorruptTheSpire:TreasureCorruption": {
     "TEXT": ["Gold (corrupted relic)", "the gold", "Loot more", "Further chests will be corrupting....", "The corruption grows stronger with each chest....", "Corruption manifests", "The corruption grows"]

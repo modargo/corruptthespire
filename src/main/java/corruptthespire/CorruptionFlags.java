@@ -5,4 +5,5 @@ public class CorruptionFlags {
     public boolean seenSealedChest = false;
     public boolean openedSealedChest = false;
     public boolean seenHarbinger = false;
+    public boolean brokeDevice = false;
 }

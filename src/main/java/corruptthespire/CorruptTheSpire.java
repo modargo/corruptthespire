@@ -14,6 +14,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
@@ -26,6 +27,7 @@ import corruptthespire.cards.corrupted.CorruptedCardColor;
 import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.events.CorruptedEventInfo;
 import corruptthespire.events.CorruptedEventUtil;
+import corruptthespire.events.HarbingerEvent;
 import corruptthespire.monsters.*;
 import corruptthespire.patches.cards.CheckFatedPostBattleSubscriber;
 import corruptthespire.relics.FragmentOfCorruption;
@@ -123,10 +125,20 @@ public class CorruptTheSpire implements
     private static void addEvents() {
         // These events are only encountered through our own special logic, but we register them all here for ease of
         // debugging (thus the conditions that make them never show up)
+        addEvent(HarbingerEvent.ID, HarbingerEvent.class);
         for (Map.Entry<String, CorruptedEventInfo> e : CorruptedEventUtil.getAllCorruptedEvents().entrySet()) {
-            Condition alwaysFalseCondition = () -> false;
-            BaseMod.addEvent(new AddEventParams.Builder(e.getKey(), e.getValue().cls).spawnCondition(alwaysFalseCondition).bonusCondition(alwaysFalseCondition).create());
+            addEvent(e.getKey(), e.getValue().cls);
         }
+        //We leave the following events unregistered:
+        //* Fragment of Corruption event, which is a wrapper around other events rather than a real event itself
+        //* SealedChestEvent, which is a substitute for a Treasure Room
+        //* TreasureWardensEvent, which is a substitute for a Treasure Room
+    }
+
+    private static void addEvent(String eventId, Class<? extends AbstractEvent> eventClass) {
+        Condition alwaysFalseCondition = () -> false;
+        BaseMod.addEvent(new AddEventParams.Builder(eventId, eventClass).spawnCondition(alwaysFalseCondition).bonusCondition(alwaysFalseCondition).create());
+
     }
 
     private void registerCustomRewards() {

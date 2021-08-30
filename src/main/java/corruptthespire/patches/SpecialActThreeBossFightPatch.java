@@ -17,7 +17,9 @@ import javassist.CtBehavior;
 public class SpecialActThreeBossFightPatch {
     @SpireInsertPatch(locator = SpecialActThreeBossFightPatch.Locator.class)
     public static SpireReturn<Void> ExtraActThreeBossFight(ProceedButton __instance) {
-        if (Cor.flags.openedSealedChest) {
+        //TODO: Decide what happens if you have multiple extra boss flags active
+        //Do they stack? Is there a limit on the number of additional bosses?
+        if (Cor.flags.openedSealedChest || Cor.flags.brokeDevice) {
             // This is the same thing that BaseMod does; we reproduce it here because this patch
             // could be located before the BaseMod patch
             while (AbstractDungeon.bossList.size() > 2) {

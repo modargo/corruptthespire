@@ -1,10 +1,7 @@
 package corruptthespire.events;
 
 import corruptthespire.events.chaotic.*;
-import corruptthespire.events.corrupted.IncantationOfCorruption;
-import corruptthespire.events.corrupted.NightmareBloom;
-import corruptthespire.events.corrupted.StrangeMarketplace;
-import corruptthespire.events.corrupted.TheChoice;
+import corruptthespire.events.corrupted.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,6 +21,7 @@ public class CorruptedEventUtil {
         corruptedEvents.put(NightmareBloom.ID, new CorruptedEventInfo(NightmareBloom.class, CorruptedEventType.Corrupted));
         corruptedEvents.put(StrangeMarketplace.ID, new CorruptedEventInfo(StrangeMarketplace.class, CorruptedEventType.Corrupted));
         corruptedEvents.put(TheChoice.ID, new CorruptedEventInfo(TheChoice.class, CorruptedEventType.Corrupted));
+        corruptedEvents.put(TheDevice.ID, new CorruptedEventInfo(TheDevice.class, CorruptedEventType.Corrupted));
         return corruptedEvents;
     }
 }

@@ -189,7 +189,7 @@
       "You decide to leave the chest alone."
     ],
     "OPTIONS": [
-      "[Open] Extra rewards! Fight a special additional act 3 boss.",
+      "[Open] #gExtra #grewards! #rFight #ra #rspecial #radditional #ract #r3 #rboss.",
       "[Loot] Take your rewards.",
       "[Leave]"
     ]
@@ -203,6 +203,20 @@
     "OPTIONS": [
       "[Fight] An elite fight with extra rewards.",
       "[Flee]",
+      "[Leave]"
+    ]
+  },
+  "CorruptTheSpire:TheDevice": {
+    "NAME": "The Device",
+    "DESCRIPTIONS": [
+      "You examine the #bmassive #bdevice that you found along your path. There's a core powering it, and a great deal of masterfully crafted metalwork, but you barely recognize anything. Your best guess is that it operates a kind of magical seal, sealing away some #rdreadful #rmonster in a faraway place. NL NL As you puzzle over the device, you realize that it's power core has a lot of #ygold #ywiring. And the energy flowing through it is #ppowerful and #pdifferent. You could just... reach in there.",
+      "Surely nothing #r~immediately~ bad will happen if you take the gold? By the time trouble comes, you'll be long gone. You hope....",
+      "As you loot the core of the device, it flickers and stutters, clearly weakening as you make off with your ill-gotten gains.",
+      "Whatever the device is doing, it's probably better for the world if it continues. Still, that #ygold would have been nice."
+    ],
+    "OPTIONS": [
+      "[Continue]",
+      "[Take] #gGain #g{0} #gGold #gand #g{1} #gcorrupted #gcards. #rFight #ra #rspecial #radditional #ract #r3 #rboss.",
       "[Leave]"
     ]
   }
