@@ -48,6 +48,9 @@ public class FightCorruption {
     }
 
     public static void addRewards() {
+        if (AbstractDungeon.actNum >= 3 && AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) {
+            return;
+        }
         List<FightCorruptionInfo> corruptionInfos = FightCorruptionInfosField.corruptionInfos.get(AbstractDungeon.getCurrRoom());
         for (FightCorruptionInfo corruptionInfo : corruptionInfos) {
             addReward(corruptionInfo.size);
