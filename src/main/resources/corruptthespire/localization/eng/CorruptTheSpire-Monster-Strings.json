@@ -40,5 +40,12 @@
       "There is so much more out there than you know.",
       "Hellfire and torment!"
     ]
+  },
+  "CorruptTheSpire:CorruptionManifest": {
+    "MOVES": [
+      "Corrupt",
+      "Manifest"
+    ],
+    "NAME": "Corruption Manifest"
   }
 }

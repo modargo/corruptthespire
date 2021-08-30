@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 import corruptthespire.Cor;
+import corruptthespire.monsters.CorruptionManifest;
 import corruptthespire.patches.CorruptedField;
 import corruptthespire.patches.fight.FightCorruptionInfosField;
 import corruptthespire.relics.FragmentOfCorruption;
@@ -156,9 +157,12 @@ public class FightCorruption {
         float y = c.y;
         switch (corruptionInfo.corruptionType) {
             case CorruptionManifestMinion:
-                //TODO: Implement Corruption Manifest enemy
-                //AbstractMonster m = new CorruptionManifest(x, y);
-                //AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(m, false, 0));
+                CorruptionManifest.Version version = AbstractDungeon.actNum <= 1 ? CorruptionManifest.Version.Act1
+                        : AbstractDungeon.actNum == 2 ? CorruptionManifest.Version.Act2
+                        : AbstractDungeon.actNum == 3 ? CorruptionManifest.Version.Act3
+                        : CorruptionManifest.Version.Act4;
+                AbstractMonster m = new CorruptionManifest(x, y, version);
+                AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(m, false, 0));
                 break;
             case LouseMinion:
                 AbstractMonster m1 = new LouseDefensive(x, y);

@@ -116,6 +116,7 @@ public class CorruptTheSpire implements
                         new TreasureWardenWhite(-375.0F, 50.0F, TreasureWardenWhite.Version.Act3),
                         new TreasureWardenBlack(175.0F, 50.0F, TreasureWardenBlack.Version.Act3),
                 }));
+        BaseMod.addMonster(CorruptionManifest.ID, (BaseMod.GetMonster) CorruptionManifest::new);
     }
 
     private static void addEvents() {
