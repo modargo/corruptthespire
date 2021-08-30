@@ -1,8 +1,13 @@
 package corruptthespire.corruptions.fight;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.SpawnMonsterAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.beyond.Repulsor;
+import com.megacrit.cardcrawl.monsters.beyond.SnakeDagger;
+import com.megacrit.cardcrawl.monsters.city.Byrd;
+import com.megacrit.cardcrawl.monsters.exordium.*;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -146,22 +151,42 @@ public class FightCorruption {
     }
 
     private static void applyStartOfBattleCorruption(FightCorruptionInfo corruptionInfo) {
+        Coordinate c = getSpawnXY();
+        float x = c.x;
+        float y = c.y;
         switch (corruptionInfo.corruptionType) {
             case CorruptionManifestMinion:
+                //TODO: Implement Corruption Manifest enemy
+                //AbstractMonster m = new CorruptionManifest(x, y);
+                //AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(m, false, 0));
                 break;
             case LouseMinion:
+                AbstractMonster m1 = new LouseDefensive(x, y);
+                AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(m1, false, 0));
                 break;
             case SlimeMinion:
+                AbstractMonster m2 = new SpikeSlime_S(x, y, 0);
+                AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(m2, false, 0));
                 break;
             case GremlinMinion:
+                AbstractMonster m3 = new GremlinThief(x, y);
+                AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(m3, false, 0));
                 break;
             case RepulsorMinion:
+                AbstractMonster m4 = new Repulsor(x, y);
+                AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(m4, false, 0));
                 break;
             case ByrdMinion:
+                AbstractMonster m5 = new Byrd(x, y);
+                AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(m5, false, 0));
                 break;
             case SnakeDaggerMinion:
+                AbstractMonster m6 = new SnakeDagger(x, y);
+                AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(m6, false, 0));
                 break;
             case CultistMinion:
+                AbstractMonster m7 = new Cultist(x, y);
+                AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(m7, false, 0));
                 break;
         }
     }
@@ -207,15 +232,27 @@ public class FightCorruption {
                 //TODO: Implement Anger
                 break;
             case Wary:
-                //TODO: Implement Waryu
+                //TODO: Implement Wary
                 break;
             case Curiosity:
-                //TODO: Implement Curiosity
+                apa(m, new CuriosityPower(m, corruptionInfo.amount));
                 break;
         }
     }
 
+    private static Coordinate getSpawnXY() {
+        //TODO: Consider adding logic here to look at the existing monsters and figure out where is safe to spawn
+        //Nothing will be perfect, but we can have some decent heuristics
+        return new Coordinate(-600.0F, 0.0F);
+    }
+
     private static void apa(AbstractMonster m, AbstractPower power) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, power));
+    }
+
+    private static class Coordinate {
+        public final float x;
+        public final float y;
+        public Coordinate(float x, float y) { this.x = x; this.y = y; }
     }
 }
