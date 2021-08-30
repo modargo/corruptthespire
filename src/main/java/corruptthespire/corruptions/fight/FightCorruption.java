@@ -4,12 +4,17 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
+import corruptthespire.Cor;
 import corruptthespire.patches.CorruptedField;
 import corruptthespire.patches.fight.FightCorruptionInfosField;
+import corruptthespire.relics.FragmentOfCorruption;
+import corruptthespire.rewards.MaxHealthReward;
+import corruptthespire.rewards.RandomUpgradeReward;
 
 import java.util.Collections;
 import java.util.List;
@@ -40,6 +45,87 @@ public class FightCorruption {
 
         FightCorruptionInfo corruptionInfo = new FightCorruptionDistribution().roll(AbstractDungeon.actNum, fightType);
         FightCorruptionInfosField.corruptionInfos.set(room, Collections.singletonList(corruptionInfo));
+    }
+
+    public static void addRewards() {
+        List<FightCorruptionInfo> corruptionInfos = FightCorruptionInfosField.corruptionInfos.get(AbstractDungeon.getCurrRoom());
+        for (FightCorruptionInfo corruptionInfo : corruptionInfos) {
+            addReward(corruptionInfo.size);
+        }
+    }
+
+    private static void addReward(FightCorruptionSize size) {
+        switch(size) {
+            case S:
+                addSmallReward();
+                break;
+            case M:
+                addMediumReward();
+                break;
+            case L:
+                addLargeReward();
+                break;
+        }
+    }
+
+    private static void addSmallReward() {
+        AbstractRoom room = AbstractDungeon.getCurrRoom();
+        int options = 4;
+        switch (Cor.rng.random(options)) {
+            case 0:
+                room.addRelicToRewards(new FragmentOfCorruption());
+                break;
+            case 1:
+                room.addPotionToRewards(AbstractDungeon.returnRandomPotion());
+                break;
+            case 2:
+                room.rewards.add(new RandomUpgradeReward());
+                break;
+            case 3:
+                room.addGoldToRewards(25);
+                break;
+        }
+    }
+
+    private static void addMediumReward() {
+        AbstractRoom room = AbstractDungeon.getCurrRoom();
+        int options = 4;
+        switch (Cor.rng.random(options)) {
+            case 0:
+                room.addRelicToRewards(new FragmentOfCorruption());
+                room.addRelicToRewards(new FragmentOfCorruption());
+                break;
+            case 1:
+                room.addRelicToRewards(AbstractRelic.RelicTier.COMMON);
+                break;
+            case 2:
+                room.rewards.add(new MaxHealthReward(4));
+                break;
+            case 3:
+                room.addGoldToRewards(50);
+                break;
+        }
+    }
+
+    private static void addLargeReward() {
+        AbstractRoom room = AbstractDungeon.getCurrRoom();
+        int options = 4;
+        switch (Cor.rng.random(options)) {
+            case 0:
+                room.addRelicToRewards(new FragmentOfCorruption());
+                room.addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
+                break;
+            case 1:
+                room.addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
+                break;
+            case 2:
+                room.rewards.add(new MaxHealthReward(4));
+                room.rewards.add(new RandomUpgradeReward());
+                break;
+            case 3:
+                room.addGoldToRewards(75);
+                break;
+        }
     }
 
     public static void applyStartOfBattleCorruptions() {

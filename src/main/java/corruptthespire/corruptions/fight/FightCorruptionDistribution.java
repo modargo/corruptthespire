@@ -17,7 +17,7 @@ public class FightCorruptionDistribution {
         int roll = Cor.rng.random(totalWeight - 1);
         FightCorruptionDistributionInfo option = pick(distribution, roll);
 
-        return new FightCorruptionInfo(option.corruptionType, option.amount);
+        return new FightCorruptionInfo(option.corruptionType, option.amount, option.size);
     }
 
     private FightCorruptionDistributionInfo pick(List<FightCorruptionDistributionInfo> list, int roll) {
