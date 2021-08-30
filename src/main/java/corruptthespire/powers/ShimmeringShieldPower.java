@@ -43,16 +43,18 @@ public class ShimmeringShieldPower extends AbstractPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        this.flash();
-        this.addToBot(new SFXAction("ATTACK_HEAVY"));
-        if (Settings.FAST_MODE) {
-            this.addToBot(new VFXAction(new CleaveEffect()));
-            this.addToBot(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE, true));
-            this.addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.amount, true));
-        } else {
-            this.addToBot(new VFXAction(this.owner, new CleaveEffect(), 0.2F));
-            this.addToBot(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE, true));
-            this.addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.amount));
+        if (card.color != AbstractDungeon.player.getCardColor()) {
+            this.flash();
+            this.addToBot(new SFXAction("ATTACK_HEAVY"));
+            if (Settings.FAST_MODE) {
+                this.addToBot(new VFXAction(new CleaveEffect()));
+                this.addToBot(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE, true));
+                this.addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.amount, true));
+            } else {
+                this.addToBot(new VFXAction(this.owner, new CleaveEffect(), 0.2F));
+                this.addToBot(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE, true));
+                this.addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, this.amount));
+            }
         }
     }
 }
