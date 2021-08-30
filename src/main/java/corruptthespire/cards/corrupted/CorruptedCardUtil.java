@@ -9,9 +9,7 @@ import corruptthespire.cards.corrupted.powers.ForbiddenRitual;
 import corruptthespire.cards.corrupted.powers.PoweredByNightmare;
 import corruptthespire.cards.corrupted.skills.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class CorruptedCardUtil {
@@ -54,6 +52,16 @@ public class CorruptedCardUtil {
 
         return corruptedCardInfos.stream()
             .collect(Collectors.toMap(cci -> cci.card.cardID, cci -> cci));
+    }
+
+    //Following the pattern of the base game, the distinction is that in combat means:
+    //(1) It doesn't respect card rarity
+    //(2) It uses cardRandomRng instead of cardRng
+    public static ArrayList<AbstractCard> getRandomCorruptedCardsInCombat(int n) {
+        ArrayList<CorruptedCardInfo> allCorruptedCards = new ArrayList<>(getAllCorruptedCardInfos().values());
+        allCorruptedCards.sort(Comparator.comparing(o -> o.card.cardID));
+        Collections.shuffle(allCorruptedCards, AbstractDungeon.cardRandomRng.random);
+        return allCorruptedCards.stream().map(cci -> cci.card.makeCopy()).limit(n).collect(Collectors.toCollection(ArrayList::new));
     }
 
     public static AbstractCard getRandomCorruptedCard() {

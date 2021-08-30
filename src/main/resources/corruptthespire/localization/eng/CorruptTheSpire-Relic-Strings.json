@@ -58,5 +58,10 @@
     "NAME": "Ominous Bracelet",
     "FLAVOR": "A ward that guides its bearer to greatness.",
     "DESCRIPTIONS": ["Corrupted events, treasures, and shops no longer give the lowest reward outcomes. (The lowest reward corruption outcomes are the ones that only add Fragments of Corruption.)"]
+  },
+  "CorruptTheSpire:CorruptedToolbox": {
+    "NAME": "Corrupted Toolbox",
+    "FLAVOR": "Everyone has a price.",
+    "DESCRIPTIONS": ["At the start of each combat, choose 1 of 3 random corrupted cards and add the chosen card into your hand."]
   }
 }

@@ -126,6 +126,7 @@ public class Cor {
         corruptedRelics.add(new BlightedSpirefruit());
         corruptedRelics.add(new CorruptedEgg());
         corruptedRelics.add(new CorruptedOmamori());
+        corruptedRelics.add(new CorruptedToolbox());
         corruptedRelics.add(new MaskOfNightmares());
         corruptedRelics.add(new ObsidianShovel());
         corruptedRelics.add(new OminousBracelet());
