@@ -1,5 +1,6 @@
 package corruptthespire.corruptions.treasure;
 
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import corruptthespire.Cor;
 import corruptthespire.corruptions.AbstractCorruptionDistribution;
 import corruptthespire.corruptions.CorruptionDistributionInfo;
@@ -25,7 +26,7 @@ public class TreasureCorruptionDistribution extends AbstractCorruptionDistributi
 
     @Override
     protected List<CorruptionDistributionInfo<TreasureCorruptionType>> adjustDistribution(List<CorruptionDistributionInfo<TreasureCorruptionType>> distribution) {
-        if (Cor.flags.seenTreasureWardens) {
+        if (Cor.flags.seenTreasureWardens || AbstractDungeon.floorNum <= 6) {
             distribution.removeIf(di -> di.corruption == TreasureCorruptionType.Wardens);
         }
         return distribution;
