@@ -1,6 +1,7 @@
 package corruptthespire.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -21,7 +22,8 @@ public class NextRoomTransitionPatch {
         if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) {
             CorruptedField.corrupted.set(AbstractDungeon.getCurrMapNode(), CorruptMap.isBossCorrupted());
         }
-        if (CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())) {
+        boolean isLoadingPostCombatSave = CardCrawlGame.loadingSave && saveFile != null && saveFile.post_combat;
+        if (!isLoadingPostCombatSave && CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())) {
             Cor.addCorruption(AbstractDungeon.getCurrRoom());
             AbstractRelic relic = AbstractDungeon.player.getRelic(MaskOfNightmares.ID);
             if (relic != null) {
