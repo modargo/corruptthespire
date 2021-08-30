@@ -35,7 +35,7 @@ public class FightCorruption {
             //(would just have to make sure it doesn't carry over to MonsterRoomElite and MonsterRoomBoss)
             //I think I can do that easily -- might happen naturally for a postfix patch, and if not I can look for
             //the specific call.
-            fightType = FightType.Normal;
+            fightType = FightType.Easy;
         }
 
         FightCorruptionInfo corruptionInfo = new FightCorruptionDistribution().roll(AbstractDungeon.actNum, fightType);
@@ -95,13 +95,15 @@ public class FightCorruption {
                 apa(m, new PainfulStabsPower(m));
                 break;
             case Intangible:
-                //TODO: Implement Intangible
+                apa(m, new IntangiblePower(m, corruptionInfo.amount));
                 break;
             case Buffer:
                 apa(m, new BufferPower(m, corruptionInfo.amount));
                 break;
             case Ritual:
-                apa(m, new RitualPower(m, corruptionInfo.amount, false));
+                RitualPower ritualPower = new RitualPower(m, corruptionInfo.amount, false);
+                ritualPower.atEndOfRound(); //To bypass the skip first turn logic
+                apa(m, ritualPower);
                 break;
             case BeatOfDeath:
                 apa(m, new BeatOfDeathPower(m, corruptionInfo.amount));

@@ -1,8 +1,8 @@
 package corruptthespire.corruptions.fight;
 
 public enum FightType {
-    Weak,
-    Normal,
+    Easy,
+    Hard,
     Elite,
     Boss
 }

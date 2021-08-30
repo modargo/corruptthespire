@@ -1,0 +1,23 @@
+	1,Easy	1,Hard	1,Elite	1,Boss	2,Easy	2,Hard	2,Elite	2,Boss	3,Easy	3,Hard	3,Elite	3,Boss	4,Easy	4,Hard	4,Elite	4,Boss
+Metallicize	S,100,2			N				N					N	N		S,0,1
+Artifact	S,100,1			N				N					N	N		S,0,1
+Thorns	S,100,1			N				N					N	N		S,0,1
+Strength	S,100,1			N				N					N	N		S,0,1
+PainfulStabs	S,100,1			N				N					N	N		S,0,1
+Intangible	S,100,1			N				N					N	N		S,0,1
+Buffer	S,100,1			N				N					N	N		S,0,1
+Ritual	S,100,1			N				N					N	N		S,0,1
+BeatOfDeath	N			N				N					N	N		S,0,1
+ThoughtStealer	N			N				N					N	N		S,0,1
+Cleanse	N			N				N					N	N		S,0,1
+Anger	N			N				N					N	N		S,0,1
+Wary	N			N				N					N	N		S,0,1
+Curiosity	N			N				N					N	N		S,0,1
+CorruptionManifestMinion	N	S,100,1	S,100,1	N				N					N	N		S,0,1
+LouseMinion	N	N	M,100,1	N				N					N	N		S,0,1
+SlimeMinion	N	N	M,100,1	N				N					N	N		S,0,1
+GremlinMinion	N	N	M,100,1	N				N					N	N		S,0,1
+RepulsorMinion	N	N	N	N				N					N	N		S,0,1
+ByrdMinion	N	N	N	N				N					N	N		S,0,1
+SnakeDaggerMinion	N	N	N	N				N					N	N		S,0,1
+CultistMinion	N	N	N	N				N					N	N		S,0,1
