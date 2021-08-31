@@ -28,6 +28,9 @@ public class CampfireCorruption {
         if (options.contains(CampfireCorruptionOption.RareRelic)) {
             info.options.add(new RareRelicOption());
         }
+        if (options.contains(CampfireCorruptionOption.CorruptedCard)) {
+            info.options.add(new CorruptedCardOption());
+        }
         if (options.contains(CampfireCorruptionOption.BuryFragment)) {
             info.options.add(new BuryFragmentOption());
         }
@@ -44,6 +47,7 @@ public class CampfireCorruption {
         randomOptions.add(CampfireCorruptionOption.CommonRelic);
         randomOptions.add(CampfireCorruptionOption.UncommonRelic);
         randomOptions.add(CampfireCorruptionOption.RareRelic);
+        randomOptions.add(CampfireCorruptionOption.CorruptedCard);
         Collections.shuffle(randomOptions, Cor.rng.random);
         for (int i = 0; i < RANDOM_OPTIONS; i++) {
             options.add(randomOptions.get(i));

@@ -37,6 +37,9 @@
   "CorruptTheSpire:RareRelicOption": {
     "TEXT": ["Rare relic", "Gain a rare relic for {0} fragments"]
   },
+  "CorruptTheSpire:CorruptedCardOption": {
+    "TEXT": ["Corrupted card", "Choose a corrupted card", "Corrupt power"]
+  },
   "CorruptTheSpire:BuryFragmentOption": {
     "TEXT": ["Bury fragment", "Reduce Corruption by {1} for {0} fragments"]
   },

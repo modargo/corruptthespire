@@ -5,5 +5,6 @@ public enum CampfireCorruptionOption {
     CommonRelic,
     UncommonRelic,
     RareRelic,
+    CorruptedCard,
     BuryFragment
 }
