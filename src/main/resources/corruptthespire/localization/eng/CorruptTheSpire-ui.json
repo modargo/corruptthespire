@@ -40,6 +40,9 @@
   "CorruptTheSpire:CorruptedCardOption": {
     "TEXT": ["Corrupted card", "Choose a corrupted card", "Corrupt power"]
   },
+  "CorruptTheSpire:RareCardOption": {
+    "TEXT": ["Rare card", "Choose a rare card", "Great power"]
+  },
   "CorruptTheSpire:BuryFragmentOption": {
     "TEXT": ["Bury fragment", "Reduce Corruption by {1} for {0} fragments"]
   },

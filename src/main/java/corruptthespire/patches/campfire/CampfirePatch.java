@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 import com.megacrit.cardcrawl.ui.campfire.SmithOption;
 import corruptthespire.corruptions.campfire.CampfireCorruption;
 import corruptthespire.corruptions.campfire.CampfireInfo;
-import corruptthespire.corruptions.campfire.options.FireRitualOption;
+import corruptthespire.corruptions.campfire.FireRitualOption;
 import corruptthespire.patches.CorruptedField;
 import javassist.CtBehavior;
 

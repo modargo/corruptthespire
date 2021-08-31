@@ -1,4 +1,4 @@
-package corruptthespire.corruptions.campfire.options;
+package corruptthespire.corruptions.campfire;
 
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;

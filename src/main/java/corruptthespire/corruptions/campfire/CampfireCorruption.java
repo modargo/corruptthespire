@@ -16,7 +16,7 @@ public class CampfireCorruption {
     public static void initializeCampfireInfo(CampfireInfo info) {
         ArrayList<CampfireCorruptionOption> options = generateOptions();
 
-        if (options.contains(CampfireCorruptionOption.CommonRelic)) {
+        if (options.contains(CampfireCorruptionOption.GainFragment)) {
             info.options.add(new GainFragmentOption());
         }
         if (options.contains(CampfireCorruptionOption.CommonRelic)) {
@@ -31,6 +31,9 @@ public class CampfireCorruption {
         if (options.contains(CampfireCorruptionOption.CorruptedCard)) {
             info.options.add(new CorruptedCardOption());
         }
+        if (options.contains(CampfireCorruptionOption.RareCard)) {
+            info.options.add(new RareCardOption());
+        }
         if (options.contains(CampfireCorruptionOption.BuryFragment)) {
             info.options.add(new BuryFragmentOption());
         }
@@ -44,10 +47,11 @@ public class CampfireCorruption {
         }
 
         ArrayList<CampfireCorruptionOption> randomOptions = new ArrayList<>();
-        randomOptions.add(CampfireCorruptionOption.CommonRelic);
-        randomOptions.add(CampfireCorruptionOption.UncommonRelic);
-        randomOptions.add(CampfireCorruptionOption.RareRelic);
+        //randomOptions.add(CampfireCorruptionOption.CommonRelic);
+        //randomOptions.add(CampfireCorruptionOption.UncommonRelic);
+        //randomOptions.add(CampfireCorruptionOption.RareRelic);
         randomOptions.add(CampfireCorruptionOption.CorruptedCard);
+        randomOptions.add(CampfireCorruptionOption.RareCard);
         Collections.shuffle(randomOptions, Cor.rng.random);
         for (int i = 0; i < RANDOM_OPTIONS; i++) {
             options.add(randomOptions.get(i));
