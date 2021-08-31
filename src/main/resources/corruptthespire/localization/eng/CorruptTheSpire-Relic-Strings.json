@@ -52,7 +52,7 @@
   "CorruptTheSpire:CorruptedOmamori": {
     "NAME": "Corrupted Omamori",
     "FLAVOR": "A charm that protects you from one kind of harm at the cost of another.",
-    "DESCRIPTIONS": ["Negate all #rCurses you obtain and instead gain gain #b{0} #yCorruption for each Curse."]
+    "DESCRIPTIONS": ["Negate all #rCurses you obtain and instead gain #b{0} #yCorruption for each Curse."]
   },
   "CorruptTheSpire:OminousBracelet": {
     "NAME": "Ominous Bracelet",
