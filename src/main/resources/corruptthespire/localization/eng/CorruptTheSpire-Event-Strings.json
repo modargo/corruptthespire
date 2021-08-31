@@ -233,5 +233,18 @@
       "[Locked] Requires {0} Gold.",
       "[Leave]"
     ]
+  },
+  "CorruptTheSpire:AncientLaboratory": {
+    "NAME": "Ancient Laboratory",
+    "DESCRIPTIONS": [
+      "An ancient alchemist's laboratory! Unfortunately, you quickly conclude that almost all of it is worthless. All these items were drained of power long ago. One relic, however, seems to have twisted and reformed, gaining new power from #pcorruption. It would make a fine addition to your arsenal. NL NL Alternatively, perhaps there's #bsomething #belse to be found if you rummage through this mess?",
+      "No need to go looking for something else when you have a valuable find right here in front of you. The corruption #rburns a bit when you pick up the relic.",
+      "Success! Deep within the laboratory, underneath a pile of worthless junk, you find a relic! You also picked up a few bruises from digging through all that."
+    ],
+    "OPTIONS": [
+      "[Corruption] #gGain {0}. #rLose #r{1} #rHP.",
+      "[Rummage] #gGain #ga #grelic. #rLose #r{0} #rHP.",
+      "[Leave]"
+    ]
   }
 }

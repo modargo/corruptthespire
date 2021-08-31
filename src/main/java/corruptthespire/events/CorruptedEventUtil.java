@@ -17,6 +17,7 @@ public class CorruptedEventUtil {
         corruptedEvents.put(UnderAStrangeSky.ID, new CorruptedEventInfo(UnderAStrangeSky.class, CorruptedEventType.Chaotic));
         corruptedEvents.put(Wheel.ID, new CorruptedEventInfo(Wheel.class, CorruptedEventType.Chaotic));
         corruptedEvents.put(WithoutBeginningOrEnd.ID, new CorruptedEventInfo(WithoutBeginningOrEnd.class, CorruptedEventType.Chaotic));
+        corruptedEvents.put(AncientLaboratory.ID, new CorruptedEventInfo(AncientLaboratory.class, CorruptedEventType.Corrupted));
         corruptedEvents.put(IncantationOfCorruption.ID, new CorruptedEventInfo(IncantationOfCorruption.class, CorruptedEventType.Corrupted));
         corruptedEvents.put(NightmareBloom.ID, new CorruptedEventInfo(NightmareBloom.class, CorruptedEventType.Corrupted));
         corruptedEvents.put(SinisterTemple.ID, new CorruptedEventInfo(SinisterTemple.class, CorruptedEventType.Corrupted));
