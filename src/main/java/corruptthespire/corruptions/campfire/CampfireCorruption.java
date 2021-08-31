@@ -47,9 +47,9 @@ public class CampfireCorruption {
         }
 
         ArrayList<CampfireCorruptionOption> randomOptions = new ArrayList<>();
-        //randomOptions.add(CampfireCorruptionOption.CommonRelic);
-        //randomOptions.add(CampfireCorruptionOption.UncommonRelic);
-        //randomOptions.add(CampfireCorruptionOption.RareRelic);
+        randomOptions.add(CampfireCorruptionOption.CommonRelic);
+        randomOptions.add(CampfireCorruptionOption.UncommonRelic);
+        randomOptions.add(CampfireCorruptionOption.RareRelic);
         randomOptions.add(CampfireCorruptionOption.CorruptedCard);
         randomOptions.add(CampfireCorruptionOption.RareCard);
         Collections.shuffle(randomOptions, Cor.rng.random);
