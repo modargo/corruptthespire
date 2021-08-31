@@ -4,7 +4,7 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 
 public abstract class AbstractCorruptedRelic extends CustomRelic {
-    private static final int CORRUPTED_RELIC_PRICE = 200;
+    public static final int CORRUPTED_RELIC_PRICE = 200;
 
     public AbstractCorruptedRelic(String id, Texture texture, Texture outline, RelicTier tier, LandingSound sfx) {
         super(id, texture, outline, tier, sfx);

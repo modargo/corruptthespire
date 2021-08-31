@@ -219,5 +219,19 @@
       "[Take] #gGain #g{0} #gGold #gand #g{1} #gcorrupted #gcards. #rFight #ra #rspecial #radditional #ract #r3 #rboss.",
       "[Leave]"
     ]
+  },
+  "CorruptTheSpire:SinisterTemple": {
+    "NAME": "Sinister Temple",
+    "DESCRIPTIONS": [
+      "A gloom-shrouded temple greets you as you turn the corner, floating ~ominously~ above the ground. Climbing up to get a better look, at the center of the temple platform is an altar, and upon the altar is a relic, secured with #rmagical #rsafeguards. However, you recognize them, and know that they can be tricked by exchanging another #grelic #gof #gsimilar #gvalue, or a #ypile #yof #ygold. You look at what you have on hand....",
+      "You hold you breath as you carefully switch your new offering for the relic. When nothing happens, you breathe a sigh of relief and quickly leave with your prize.",
+      "The temple is sinister enough that you decide to continue on your journey without disturbing it."
+    ],
+    "OPTIONS": [
+      "[Relic] #gGain {0}. #rLose {1}.",
+      "[Gold] #gGain {0}. #rLose #r{1} #rGold.",
+      "[Locked] Requires {0} Gold.",
+      "[Leave]"
+    ]
   }
 }

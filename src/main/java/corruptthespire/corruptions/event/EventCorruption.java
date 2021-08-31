@@ -12,10 +12,7 @@ import corruptthespire.cards.CustomTags;
 import corruptthespire.events.*;
 import corruptthespire.events.chaotic.MindsEye;
 import corruptthespire.events.chaotic.TreeOfSwords;
-import corruptthespire.events.corrupted.IncantationOfCorruption;
-import corruptthespire.events.corrupted.NightmareBloom;
-import corruptthespire.events.corrupted.StrangeMarketplace;
-import corruptthespire.events.corrupted.TheChoice;
+import corruptthespire.events.corrupted.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -76,6 +73,10 @@ public class EventCorruption {
 
         if (e.equals(NightmareBloom.ID)) {
             return AbstractDungeon.actNum == 3 && AbstractDungeon.eventList.contains(MindBloom.ID);
+        }
+
+        if (e.equals(SinisterTemple.ID)) {
+            return AbstractDungeon.player.relics.stream().filter(r -> r.tier == AbstractRelic.RelicTier.COMMON).count() >= 2;
         }
 
         if (e.equals(StrangeMarketplace.ID)) {

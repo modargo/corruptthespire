@@ -19,6 +19,7 @@ public class CorruptedEventUtil {
         corruptedEvents.put(WithoutBeginningOrEnd.ID, new CorruptedEventInfo(WithoutBeginningOrEnd.class, CorruptedEventType.Chaotic));
         corruptedEvents.put(IncantationOfCorruption.ID, new CorruptedEventInfo(IncantationOfCorruption.class, CorruptedEventType.Corrupted));
         corruptedEvents.put(NightmareBloom.ID, new CorruptedEventInfo(NightmareBloom.class, CorruptedEventType.Corrupted));
+        corruptedEvents.put(SinisterTemple.ID, new CorruptedEventInfo(SinisterTemple.class, CorruptedEventType.Corrupted));
         corruptedEvents.put(StrangeMarketplace.ID, new CorruptedEventInfo(StrangeMarketplace.class, CorruptedEventType.Corrupted));
         corruptedEvents.put(TheChoice.ID, new CorruptedEventInfo(TheChoice.class, CorruptedEventType.Corrupted));
         corruptedEvents.put(TheDevice.ID, new CorruptedEventInfo(TheDevice.class, CorruptedEventType.Corrupted));
