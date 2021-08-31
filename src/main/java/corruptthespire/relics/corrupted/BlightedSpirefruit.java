@@ -3,6 +3,7 @@ package corruptthespire.relics.corrupted;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -32,6 +33,11 @@ public class BlightedSpirefruit extends AbstractCorruptedRelic {
     @Override
     public void onEquip() {
         AbstractDungeon.player.decreaseMaxHealth(MAX_HP_LOSS);
+    }
+
+    @Override
+    public boolean canSpawn() {
+        return AbstractDungeon.player.maxHealth > MAX_HP_LOSS;
     }
 
     @Override
