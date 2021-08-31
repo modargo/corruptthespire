@@ -63,5 +63,10 @@
     "NAME": "Corrupted Toolbox",
     "FLAVOR": "Everyone has a price.",
     "DESCRIPTIONS": ["At the start of each combat, choose #b1 of #b3 random corrupted cards and add the chosen card into your hand."]
+  },
+  "CorruptTheSpire:ShimmeringFan": {
+    "NAME": "Shimmering Fan",
+    "FLAVOR": "The fan responds to a mix of energies in air around it by defending its bearer.",
+    "DESCRIPTIONS": ["When you play cards of #b{0} different colors in a turn, gain #b{1} #yBlock."]
   }
 }

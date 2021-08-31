@@ -262,5 +262,21 @@
       "[Leave]",
       "Add a card to your deck."
     ]
+  },
+  "CorruptTheSpire:WorldsUponWorlds": {
+    "NAME": "Worlds Upon Worlds",
+    "DESCRIPTIONS": [
+      "Suddenly you can see them. All the worlds, thousands and thousands of them, floating like bubbles. Worlds of #glife and #ylaughter, of #rhunger and #rfear, of #bclouds and of #boceans, of #gforests and of #bstone. NL NL They pass by in a never-ending stream, just beyond your reach. You stand there for what seems like hours, captivated by the fascinating display.",
+      "Eventually you realize that three bubbles have drifted closer, close enough that you could reach out and touch them. NL NL One is a world #bfull of #ycolor and #glife of all forms. NL The second is peaceful, silent, serene. NL The third is overrun with #pcorruption, a bubble about to #rburst.",
+      "Scenes from the world within the bubble pass through your mind, too fast to recognize or remember. But you keep with you a different way of thinking, a boon, a hint of the world you briefly touched... before your vision of the bubbles vanishes. NL NL You focus once more on your quest. The #bSpire must be conquered. The memory of what you saw slowly fades...."
+    ],
+    "OPTIONS": [
+      "[Continue]",
+      "[First] #gGain {0}.",
+      "[Second] #gRemove #ga #gcard #gfrom #gyour #gdeck.",
+      "[Third] #gAdd #ga #gcorrupted #gcard #gto #gyour #gdeck.",
+      "[Leave]",
+      "Select a Card to Remove."
+    ]
   }
 }

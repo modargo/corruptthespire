@@ -1,5 +1,6 @@
 package corruptthespire.relics.chaotic;
 
+import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -7,10 +8,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.powers.FatedCardPower;
-import corruptthespire.relics.corrupted.AbstractCorruptedRelic;
 import corruptthespire.util.TextureLoader;
 
-public class DeckOfManyFates extends AbstractCorruptedRelic {
+public class DeckOfManyFates extends CustomRelic {
     public static final String ID = "CorruptTheSpire:DeckOfManyFates";
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));
