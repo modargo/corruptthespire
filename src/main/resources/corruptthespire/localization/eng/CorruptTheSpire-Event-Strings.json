@@ -278,5 +278,20 @@
       "[Leave]",
       "Select a Card to Remove."
     ]
+  },
+  "CorruptTheSpire:CorruptedShrine": {
+    "NAME": "Corrupted Shrine",
+    "DESCRIPTIONS": [
+      "The ancient altar before you is suffused with a dark, corrupted energy. The entity this place is consecrated to offers great power.",
+      "You beseech the entity for power, and are given it.",
+      "You pray to the entity for its blessing, and are granted it.",
+      "You leave the shrine alone."
+    ],
+    "OPTIONS": [
+      "[Beseech] #gAdd #g{0} #gcorrupted #gcards #gto #gyour #gdeck.",
+      "[Pray] #gDuplicate #ga #gcard #gin #gyour #gdeck.",
+      "[Leave]",
+      "Select a Card to Duplicate."
+    ]
   }
 }
