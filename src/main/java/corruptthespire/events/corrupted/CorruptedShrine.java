@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.corrupted.CorruptedCardUtil;
+import corruptthespire.patches.relics.BottledPrismPatch;
 
 import java.text.MessageFormat;
 import java.util.Collections;
@@ -49,6 +50,7 @@ public class CorruptedShrine extends AbstractImageEvent {
             c.inBottleFlame = false;
             c.inBottleLightning = false;
             c.inBottleTornado = false;
+            BottledPrismPatch.InBottledPrismField.inBottlePrism.set(c, false);
             AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             logMetricObtainCards(ID, "Pray", Collections.singletonList(c.cardID));

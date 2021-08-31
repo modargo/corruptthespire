@@ -68,5 +68,14 @@
     "NAME": "Shimmering Fan",
     "FLAVOR": "The fan responds to a mix of energies in air around it by defending its bearer.",
     "DESCRIPTIONS": ["When you play cards of #b{0} different colors in a turn, gain #b{1} #yBlock."]
+  },
+  "CorruptTheSpire:BottledPrism": {
+    "NAME": "Bottled Prism",
+    "FLAVOR": "The interaction of the bottle and the prism inside it creates fascinating rainbows.",
+    "DESCRIPTIONS": [
+      "Upon pickup, choose a card of a different color. Start each combat with this card in your hand.",
+      "Choose a card for {0}.",
+      "Start each combat with {0} in your hand."
+    ]
   }
 }

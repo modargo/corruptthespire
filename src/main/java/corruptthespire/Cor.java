@@ -122,6 +122,7 @@ public class Cor {
         ArrayList<AbstractRelic> corruptedRelics = new ArrayList<>();
         corruptedRelics.add(new BagOfTricks());
         corruptedRelics.add(new BlightedSpirefruit());
+        corruptedRelics.add(new BottledPrism());
         corruptedRelics.add(new CorruptedEgg());
         corruptedRelics.add(new CorruptedOmamori());
         corruptedRelics.add(new CorruptedToolbox());
