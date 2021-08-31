@@ -22,7 +22,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class EventCorruption {
-    public static final Logger logger = LogManager.getLogger(EventCorruption.class.getName());
+    private static final Logger logger = LogManager.getLogger(EventCorruption.class.getName());
 
     public static AbstractEvent handleFragment() {
         return new FragmentOfCorruptionEvent();

@@ -14,13 +14,10 @@ import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.relics.chaotic.ShimmeringFan;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.text.MessageFormat;
 
 public class WorldsUponWorlds extends AbstractImageEvent {
-    public static final Logger logger = LogManager.getLogger(WorldsUponWorlds.class.getName());
     public static final String ID = "CorruptTheSpire:WorldsUponWorlds";
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String NAME = eventStrings.NAME;

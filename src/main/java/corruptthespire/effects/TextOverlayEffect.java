@@ -23,8 +23,8 @@ public class TextOverlayEffect extends AbstractGameEffect {
         this.higher = false;
         this.name = name;
         this.levelNum = levelNum;
-        this.duration = 5.0F;
-        this.startingDuration = 5.0F;
+        this.duration = DUR;
+        this.startingDuration = DUR;
         this.color = Settings.GOLD_COLOR.cpy();
         this.color.a = 0.0F;
         this.higher = higher;

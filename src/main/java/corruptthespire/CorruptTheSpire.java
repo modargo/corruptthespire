@@ -58,7 +58,7 @@ public class CorruptTheSpire implements
         EditRelicsSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber {
-    public static final Logger logger = LogManager.getLogger(CorruptTheSpire.class.getName());
+    private static final Logger logger = LogManager.getLogger(CorruptTheSpire.class.getName());
 
     public static final String AbyssModId = "Abyss";
 

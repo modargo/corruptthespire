@@ -4,43 +4,34 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
-import com.megacrit.cardcrawl.audio.Sfx;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.RoomEventDialog;
 import com.megacrit.cardcrawl.events.city.MaskedBandits;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.helpers.MonsterHelper;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.chests.AbstractChest;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
-import com.megacrit.cardcrawl.vfx.ChestShineEffect;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
-import com.megacrit.cardcrawl.vfx.scene.SpookyChestEffect;
 import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.effects.VaultChestShineEffect;
 import corruptthespire.effects.VaultSpookyChestEffect;
-import corruptthespire.monsters.Encounters;
 import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.util.TextureLoader;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 // We extend the MaskedBandits event because ProceedButton.java specifically checks if an event is an instance of this type
 // (or a few other types) in the logic for what happens when you click proceed. This is easier than a patch.
 public class SealedChestEvent extends MaskedBandits {
-    public static final Logger logger = LogManager.getLogger(SealedChestEvent.class.getName());
     public static final String ID = "CorruptTheSpire:SealedChest";
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
 
-    private static int GOLD = 100;
+    private static final int GOLD = 100;
 
     private int screen = 0;
     private Texture chestImg;
@@ -58,13 +49,6 @@ public class SealedChestEvent extends MaskedBandits {
         this.hasDialog = true;
         this.hasFocus = true;
         AbstractDungeon.getCurrRoom().monsters = null;
-
-        logger.info("Settings.scale: " + Settings.scale);
-        logger.info("this.chestImg.getWidth(): " + this.chestImg.getWidth());
-        logger.info("AbstractDungeon.floorY: " + AbstractDungeon.floorY);
-        logger.info("AbstractDungeon.floorY: " + AbstractDungeon.floorY);
-        logger.info("AbstractChest.CHEST_LOC_X: " + AbstractChest.CHEST_LOC_X);
-        logger.info("AbstractChest.CHEST_LOC_Y: " + AbstractChest.CHEST_LOC_Y);
     }
 
     @Override
@@ -89,9 +73,6 @@ public class SealedChestEvent extends MaskedBandits {
                         Cor.flags.openedSealedChest = true;
                         this.chestImg = ImageMaster.L_CHEST_OPEN;
                         CardCrawlGame.sound.playV("ATTACK_PIERCING_WAIL", 1.5F);
-                        //AbstractDungeon.actionManager.addToBottom(new SFXAction("VO_AWAKENEDONE_3"));
-                        //AbstractDungeon.actionManager.addToBottom(new SFXAction("VO_NEMESIS_1C"));
-                        //AbstractDungeon.actionManager.addToBottom(new SFXAction("THUNDERCLAP"));
                         AbstractDungeon.topLevelEffects.add(new BorderLongFlashEffect(Color.PURPLE.cpy()));
                         AbstractDungeon.topLevelEffects.add(new ShockWaveEffect(AbstractChest.CHEST_LOC_X, AbstractChest.CHEST_LOC_Y, Color.NAVY, ShockWaveEffect.ShockWaveType.CHAOTIC));
                         AbstractDungeon.topLevelEffects.add(new ShockWaveEffect(AbstractChest.CHEST_LOC_X, AbstractChest.CHEST_LOC_Y, Color.BLACK, ShockWaveEffect.ShockWaveType.CHAOTIC));

@@ -12,7 +12,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 
 public class CheckFatedPostBattleSubscriber implements PostBattleSubscriber {
-    public static final Logger logger = LogManager.getLogger(CheckFatedPostBattleSubscriber.class.getName());
+    private static final Logger logger = LogManager.getLogger(CheckFatedPostBattleSubscriber.class.getName());
 
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {

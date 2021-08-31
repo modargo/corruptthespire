@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import corruptthespire.Cor;
 import corruptthespire.corruptions.AbstractCorruptionDistribution;
 import corruptthespire.corruptions.CorruptionDistributionInfo;
-import corruptthespire.corruptions.treasure.TreasureCorruptionType;
 import corruptthespire.relics.corrupted.OminousBracelet;
 
 import java.util.ArrayList;

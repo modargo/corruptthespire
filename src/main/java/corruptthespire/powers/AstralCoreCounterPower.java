@@ -16,7 +16,7 @@ public class AstralCoreCounterPower extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private AstralCorePower astralCorePower;
+    private final AstralCorePower astralCorePower;
 
     //This is separated out as its own power purely for UI reasons. We want to both have Astral Core showing the amount
     //of strength that will be gained, and to have this showing the counter of damaged left until Astral Core triggers.

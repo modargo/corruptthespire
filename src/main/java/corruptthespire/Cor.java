@@ -8,8 +8,6 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.Circlet;
 import com.megacrit.cardcrawl.rooms.*;
 import corruptthespire.buttons.CorruptionDisplay;
-import corruptthespire.corruptions.fight.FightCorruption;
-import corruptthespire.patches.CorruptedField;
 import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.relics.corrupted.*;
 import org.apache.logging.log4j.LogManager;
@@ -18,7 +16,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 
 public class Cor {
-    public static final Logger logger = LogManager.getLogger(Cor.class.getName());
+    private static final Logger logger = LogManager.getLogger(Cor.class.getName());
 
     //TODO Adjust all of these to set the right risk/reward balance
     //E.g. if fights turn out to be the riskiest, they should generate less corruption

@@ -27,7 +27,7 @@ public class AbstractChestOpenPatch {
     }
 
     @SpireInstrumentPatch
-    public static ExprEditor AbstractChestOpenPatch() {
+    public static ExprEditor abstractChestOpenPatch() {
         return new AbstractChestOpenPatchExprEditor();
     }
 }

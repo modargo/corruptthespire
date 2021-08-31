@@ -3,7 +3,6 @@ package corruptthespire.actions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import corruptthespire.Cor;
 
 import java.util.ArrayList;
 

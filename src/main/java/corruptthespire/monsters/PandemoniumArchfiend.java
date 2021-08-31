@@ -4,17 +4,13 @@ import basemod.abstracts.CustomMonster;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
-import com.megacrit.cardcrawl.actions.animations.AnimateShakeAction;
 import com.megacrit.cardcrawl.actions.animations.FastShakeAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.status.Wound;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.actions.DevilsDueAction;
@@ -23,12 +19,10 @@ import corruptthespire.powers.DevilsDuePower;
 import corruptthespire.powers.PriceOfKnowledgePower;
 import corruptthespire.powers.TormentingShacklesPower;
 
-import java.util.ArrayList;
-
 public class PandemoniumArchfiend extends CustomMonster
 {
     public static final String ID = "CorruptTheSpire:PandemoniumArchfiend";
-    private static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);;
+    private static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = PandemoniumArchfiend.monsterStrings.NAME;
     public static final String[] MOVES = PandemoniumArchfiend.monsterStrings.MOVES;
     public static final String[] DIALOG = PandemoniumArchfiend.monsterStrings.DIALOG;

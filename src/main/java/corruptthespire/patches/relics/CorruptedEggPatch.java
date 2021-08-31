@@ -24,7 +24,7 @@ public class CorruptedEggPatch {
         }
 
         @SpireInstrumentPatch
-        public static ExprEditor GetRewardCardsPatch() {
+        public static ExprEditor getRewardCardsPatch() {
             return new GetRewardCardsPatchExprEditor();
         }
     }
@@ -32,7 +32,7 @@ public class CorruptedEggPatch {
     @SpirePatch(clz = Soul.class, method = "obtain")
     public static class SoulObtainCardPatch {
         @SpirePostfixPatch
-        public static void CallAfterObtainCard(Soul __instance, AbstractCard card) {
+        public static void callAfterObtainCard(Soul __instance, AbstractCard card) {
             CorruptedEgg.afterObtainCard(card);
         }
     }

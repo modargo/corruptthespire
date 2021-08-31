@@ -17,7 +17,7 @@ public class AstralCorePower extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static int STRENGTH_DEGEN = 1;
+    private static final int STRENGTH_DEGEN = 1;
 
     public AstralCorePower(AbstractCreature owner, int amount) {
         this.name = NAME;

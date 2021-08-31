@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class EldritchInsightAction extends AbstractGameAction {
-    private static int CARD_OPTIONS = 3;
+    private static final int CARD_OPTIONS = 3;
     private boolean retrieveCard = false;
 
     public EldritchInsightAction() {

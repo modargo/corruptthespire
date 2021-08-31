@@ -1,7 +1,5 @@
 package corruptthespire.events.corrupted;
 
-import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -9,10 +7,8 @@ import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;
-import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.relics.corrupted.AbstractCorruptedRelic;
 
 import java.text.MessageFormat;

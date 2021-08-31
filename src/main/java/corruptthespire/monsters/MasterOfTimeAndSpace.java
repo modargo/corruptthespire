@@ -4,7 +4,6 @@ import basemod.abstracts.CustomMonster;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
 import com.megacrit.cardcrawl.actions.animations.FastShakeAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.Wound;
@@ -16,14 +15,13 @@ import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
-import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 import corruptthespire.CorruptTheSpire;
 
-//TODO FLesh out, right now this is just the image (everything else is copied from Deep Tyrant)
+//TODO Flesh out, right now this is just the image (everything else is copied from Deep Tyrant)
 public class MasterOfTimeAndSpace extends CustomMonster
 {
     public static final String ID = "CorruptTheSpire:MasterOfTimeAndSpace";
-    private static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);;
+    private static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = MasterOfTimeAndSpace.monsterStrings.NAME;
     public static final String[] MOVES = MasterOfTimeAndSpace.monsterStrings.MOVES;
     private static final String IMG = CorruptTheSpire.monsterImage(ID);

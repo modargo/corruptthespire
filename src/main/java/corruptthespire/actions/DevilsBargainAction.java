@@ -13,10 +13,10 @@ import java.text.MessageFormat;
 import java.util.ArrayList;
 
 public class DevilsBargainAction extends AbstractGameAction {
-    public static final String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:DevilsBargainAction").TEXT;;
-    private AbstractPlayer player;
-    private int numberOfCards;
-    private boolean optional;
+    public static final String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:DevilsBargainAction").TEXT;
+    private final AbstractPlayer player;
+    private final int numberOfCards;
+    private final boolean optional;
 
     public DevilsBargainAction(int numberOfCards, boolean optional) {
         this.actionType = ActionType.CARD_MANIPULATION;

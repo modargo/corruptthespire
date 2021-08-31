@@ -16,15 +16,11 @@ import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.patches.CorruptedField;
 import corruptthespire.patches.shop.ShopCorruptionTypeField;
 import corruptthespire.relics.FragmentOfCorruption;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class ShopCorruption {
-    public static final Logger logger = LogManager.getLogger(ShopCorruption.class.getName());
-
     public static void handleCards(ArrayList<AbstractCard> coloredCards, ArrayList<AbstractCard> colorlessCards) {
         ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())
                 ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())

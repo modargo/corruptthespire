@@ -1,10 +1,10 @@
 package corruptthespire.corruptions.fight;
 
 public class FightCorruptionDistributionInfo {
-    public FightCorruptionType corruptionType;
-    public FightCorruptionSize size;
-    public int weight;
-    public int amount;
+    public final FightCorruptionType corruptionType;
+    public final FightCorruptionSize size;
+    public final int weight;
+    public final int amount;
 
     public FightCorruptionDistributionInfo(FightCorruptionType corruptionType, FightCorruptionSize size, int weight, int amount) {
         this.corruptionType = corruptionType;

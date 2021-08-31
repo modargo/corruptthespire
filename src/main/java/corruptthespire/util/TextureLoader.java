@@ -10,7 +10,7 @@ import java.util.HashMap;
 
 public class TextureLoader {
     private static HashMap<String, Texture> textures = new HashMap<>();
-    public static final Logger logger = LogManager.getLogger(TextureLoader.class.getName());
+    private static final Logger logger = LogManager.getLogger(TextureLoader.class.getName());
 
     /**
      * @param textureString - String path to the texture you want to load relative to resources,

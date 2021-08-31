@@ -1,13 +1,6 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-
-package com.megacrit.cardcrawl.actions.unique;
+package corruptthespire.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType;
-import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -24,15 +17,14 @@ import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
-import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 
 public class EldritchFireAction extends AbstractGameAction {
-    public int[] multiDamage;
-    private boolean freeToPlayOnce = false;
-    private DamageType damageType;
-    private AbstractPlayer p;
-    private int energyOnUse = -1;
-    private int strength;
+    private final int[] multiDamage;
+    private final boolean freeToPlayOnce;
+    private final DamageType damageType;
+    private final AbstractPlayer p;
+    private final int energyOnUse;
+    private final int strength;
 
     public EldritchFireAction(AbstractPlayer p, int[] multiDamage, DamageType damageType, boolean freeToPlayOnce, int energyOnUse, int strength) {
         this.multiDamage = multiDamage;

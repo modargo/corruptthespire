@@ -10,13 +10,8 @@ import com.megacrit.cardcrawl.rooms.TreasureRoom;
 import com.megacrit.cardcrawl.screens.CombatRewardScreen;
 import corruptthespire.corruptions.treasure.TreasureCorruptionType;
 import corruptthespire.corruptions.treasure.VaultChest;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import java.util.stream.Collectors;
 
 public class CombatRewardScreenWhileInVaultPatch {
-    public static final Logger logger = LogManager.getLogger(CombatRewardScreenWhileInVaultPatch.class.getName());
 
     @SpirePatch(clz = CombatRewardScreen.class, method = "setLabel")
     public static class SetLabelPatch {
@@ -53,8 +48,6 @@ public class CombatRewardScreenWhileInVaultPatch {
             if (room instanceof TreasureRoom
                 && TreasureCorruptionTypeField.corruptionType.get(room) == TreasureCorruptionType.Vault
                 && AbstractDungeon.getCurrRoom().rewards != __instance.rewards) {
-                logger.info("CombatRewardScreen RewardItems: " + __instance.rewards.stream().map(r -> r.type.name()).collect(Collectors.joining(",")));
-                logger.info("AbstractDungeon.CurrentRoom RewardItems: " + AbstractDungeon.getCurrRoom().rewards.stream().map(r -> r.type.name()).collect(Collectors.joining(",")));
                 //We synchronize these so that the combat reward screen can be reopened without entirely resetting it
                 AbstractDungeon.getCurrRoom().rewards = __instance.rewards;
             }

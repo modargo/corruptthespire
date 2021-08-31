@@ -21,7 +21,7 @@ import java.util.Collections;
 import java.util.stream.Collectors;
 
 public class TheChoice extends AbstractImageEvent {
-    public static final Logger logger = LogManager.getLogger(TheChoice.class.getName());
+    private static final Logger logger = LogManager.getLogger(TheChoice.class.getName());
     public static final String ID = "CorruptTheSpire:TheChoice";
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String NAME = eventStrings.NAME;

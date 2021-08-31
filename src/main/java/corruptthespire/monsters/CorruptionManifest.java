@@ -19,7 +19,7 @@ public class CorruptionManifest extends CustomMonster {
     public static final String[] MOVES = CorruptionManifest.monsterStrings.MOVES;
     private static final String IMG = CorruptTheSpire.monsterImage(ID);
     private boolean firstMove = true;
-    private Version version;
+    private final Version version;
     private static final byte CORRUPT_DEBUFF = 1;
     private static final byte MANIFEST_MOVE = 2;
     private static final int CORRUPT_CORRUPTION = 1;

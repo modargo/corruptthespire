@@ -1,11 +1,11 @@
 package corruptthespire.cards.corrupted.attacks;
 
-import com.megacrit.cardcrawl.actions.unique.EldritchFireAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import corruptthespire.CorruptTheSpire;
+import corruptthespire.actions.EldritchFireAction;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 
 public class EldritchFire extends AbstractCorruptedCard {

@@ -10,13 +10,10 @@ import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.corrupted.CorruptedCardUtil;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.text.MessageFormat;
 
 public class TheDevice extends AbstractImageEvent {
-    public static final Logger logger = LogManager.getLogger(TheDevice.class.getName());
     public static final String ID = "CorruptTheSpire:TheDevice";
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String NAME = eventStrings.NAME;

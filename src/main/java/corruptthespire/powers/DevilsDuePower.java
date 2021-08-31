@@ -14,8 +14,8 @@ public class DevilsDuePower extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private int statuses;
-    private boolean discardToo;
+    private final int statuses;
+    private final boolean discardToo;
 
     public DevilsDuePower(AbstractCreature owner, int statuses, boolean discardToo) {
         this.name = NAME;

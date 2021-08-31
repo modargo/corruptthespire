@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 public class FightCorruptionDistributionReader {
-    public static final Logger logger = LogManager.getLogger(BestiaryIntegrationPatch.class.getName());
+    private static final Logger logger = LogManager.getLogger(BestiaryIntegrationPatch.class.getName());
     private static final String DISTRIBUTION_FILE = "corruptthespire/corruptions/fight.txt";
 
     private static ArrayList<FightCorruptionDistributionEntry> fightCorruptionDistributionEntries = null;

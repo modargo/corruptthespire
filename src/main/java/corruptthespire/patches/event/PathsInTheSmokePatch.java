@@ -12,7 +12,7 @@ public class PathsInTheSmokePatch {
     public static boolean isActive = false;
 
     @SpireInsertPatch(locator = Locator.class, localvars = {"tmpKey"})
-    public static SpireReturn<AbstractEvent> PathsInTheSmokePatch(String tmpKey) {
+    public static SpireReturn<AbstractEvent> pathsInTheSmokePatch(String tmpKey) {
         if (isActive && tmpKey != null) {
             return SpireReturn.Return(new DummyEvent(tmpKey));
         }

@@ -24,7 +24,7 @@ public class AncientLaboratory extends AbstractImageEvent {
     private static final int DAMAGE = 3;
     private static final int A15_DAMAGE = 5;
 
-    private int damage;
+    private final int damage;
     private final AbstractRelic corruptedRelic;
 
     private int screenNum = 0;
