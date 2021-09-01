@@ -22,6 +22,11 @@ public class Cor {
     //E.g. if fights turn out to be the riskiest, they should generate less corruption
     //TODO Consider doubling everything here so that cards can have more granular corruption gain
     //I think I need to, since the values I'm trending towards are getting quite small
+    //I want 1 corruption on a card to be "This doesn't seem too bad, but I know it builds up"
+    //I don't want 1 corruption on a card to be "Dear god, this is nearly as much as the fight I'm in"
+    //(Having 5 corruption be that is fine)
+    //So yeah, double everything here, then take a pass through the corrupted cards
+    //Corruption gains on cards are probably fine, but corruption thresholds may need to be bumped up
     public static final int CORRUPTION_FOR_NORMAL_FIGHT = 3;
     public static final int CORRUPTION_FOR_ELITE_FIGHT = 8;
     public static final int CORRUPTION_FOR_BOSS_FIGHT = 0;
