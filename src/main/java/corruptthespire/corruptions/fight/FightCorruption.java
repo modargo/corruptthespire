@@ -21,11 +21,16 @@ import corruptthespire.patches.fight.FightCorruptionInfosField;
 import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.rewards.MaxHealthReward;
 import corruptthespire.rewards.RandomUpgradeReward;
+import corruptthespire.subscribers.ResetNormalMonsterCountSubscriber;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Collections;
 import java.util.List;
 
 public class FightCorruption {
+    private static final Logger logger = LogManager.getLogger(ResetNormalMonsterCountSubscriber.class.getName());
+
     public static boolean shouldApplyCorruptions() {
         return AbstractDungeon.getCurrRoom() instanceof MonsterRoom && CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode());
     }
@@ -39,14 +44,9 @@ public class FightCorruption {
             fightType = FightType.Elite;
         }
         else {
-            //TODO: Need to separate the starting weak encounters from the normal encounters after them
-            //This is the first 3 encounters in act 1 and the first 2 in acts 2 and 3
-            //If there's no better way, just keep my own count (make another savable)
-            //Can attach a postfix to getMonsterForRoomCreation to know, or in MonsterRoom.onPlayerEntry
-            //(would just have to make sure it doesn't carry over to MonsterRoomElite and MonsterRoomBoss)
-            //I think I can do that easily -- might happen naturally for a postfix patch, and if not I can look for
-            //the specific call.
-            fightType = FightType.Easy;
+            int numEasyFights = AbstractDungeon.actNum == 1 ? 3 : 2;
+            fightType = Cor.flags.normalMonsterCount > numEasyFights ? FightType.Hard : FightType.Easy;
+            logger.info("Normal monster count: " + Cor.flags.normalMonsterCount + ", fight type: " + fightType);
         }
 
         FightCorruptionInfo corruptionInfo = new FightCorruptionDistribution().roll(AbstractDungeon.actNum, fightType);
@@ -211,9 +211,6 @@ public class FightCorruption {
                 break;
             case PainfulStabs:
                 apa(m, new PainfulStabsPower(m));
-                break;
-            case Intangible:
-                apa(m, new IntangiblePower(m, corruptionInfo.amount));
                 break;
             case Buffer:
                 apa(m, new BufferPower(m, corruptionInfo.amount));

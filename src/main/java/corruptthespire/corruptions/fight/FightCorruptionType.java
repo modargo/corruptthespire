@@ -6,7 +6,6 @@ public enum FightCorruptionType {
     Thorns,
     Strength,
     PainfulStabs,
-    Intangible,
     Buffer,
     Ritual,
     BeatOfDeath,

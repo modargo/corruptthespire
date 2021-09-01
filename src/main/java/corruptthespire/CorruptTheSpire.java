@@ -41,6 +41,7 @@ import corruptthespire.savables.*;
 import corruptthespire.subscribers.ApplyCorruptionHealthIncreaseOnStartBattleSubscriber;
 import corruptthespire.subscribers.DetermineAndApplyCorruptionsOnStartBattleSubscriber;
 import corruptthespire.subscribers.ResetIsBossCorruptedSubscriber;
+import corruptthespire.subscribers.ResetNormalMonsterCountSubscriber;
 import corruptthespire.util.TextureLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -93,6 +94,7 @@ public class CorruptTheSpire implements
         BaseMod.subscribe(new ApplyCorruptionHealthIncreaseOnStartBattleSubscriber());
         BaseMod.subscribe(new DetermineAndApplyCorruptionsOnStartBattleSubscriber());
         BaseMod.subscribe(new ResetIsBossCorruptedSubscriber());
+        BaseMod.subscribe(new ResetNormalMonsterCountSubscriber());
         BaseMod.subscribe(new CheckFatedPostBattleSubscriber());
 
         this.registerCustomRewards();

@@ -6,4 +6,6 @@ public class CorruptionFlags {
     public boolean openedSealedChest = false;
     public boolean seenHarbinger = false;
     public boolean brokeDevice = false;
+
+    public int normalMonsterCount = 0;
 }
