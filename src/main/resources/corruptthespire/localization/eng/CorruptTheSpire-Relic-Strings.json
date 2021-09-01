@@ -77,5 +77,10 @@
       "Choose a card for {0}.",
       "Start each combat with {0} in your hand."
     ]
+  },
+  "CorruptTheSpire:BlackCard": {
+    "NAME": "Black Card",
+    "FLAVOR": "For the truly elite, by invitation only.",
+    "DESCRIPTIONS": ["Shop prices are reduced by #b{0}%. Whenever you enter a shop room, gain #b{1} #yCorruption."]
   }
 }
