@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Interpolation;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.Hitbox;
@@ -26,8 +27,8 @@ public class ShowCorruptNodesOnMapPatch {
     private static final Texture IMAGE = TextureLoader.getTexture(CorruptTheSpire.uiImage("CorruptTheSpire:Corruption"));
     private static final int WIDTH = 64;
     private static final int HEIGHT = 64;
-    private static final float GLOW_CYCLE = 3.0F;
-    private static final float ALPHA_RANGE = 0.25F;
+    private static final float GLOW_CYCLE = 2.0F;
+    private static final float ALPHA_RANGE = 0.20F;
 
     @SpirePatch(clz = MapRoomNode.class, method = "render", paramtypez = {SpriteBatch.class})
     public static class RenderPatch {
@@ -47,18 +48,33 @@ public class ShowCorruptNodesOnMapPatch {
                     sb.draw(IMAGE, (float)__instance.x * spacingX + offsetX - 64.0F + __instance.offsetX + imgWidth * scale, (float)__instance.y * Settings.MAP_DST_Y + offsetY + DungeonMapScreen.offsetY - 64.0F + __instance.offsetY, 64.0F, 64.0F, 128.0F, 128.0F, scale * Settings.scale * 2.0F, scale * Settings.scale * 2.0F, 0.0F, 0, 0, 128, 128, false, false);
                 }
 
-                float halfCycle = (GLOW_CYCLE / 2.0F);
-                float tintAlpha = ((Math.abs(halfCycle - ___flameVfxTimer) / halfCycle) * ALPHA_RANGE);
-                //logger.info("Alpha: " + tintAlpha);
+
+                float tmp = Interpolation.exp10In.apply(0.0F, 4.0F, ___flameVfxTimer / 4.0F);
                 sb.setBlendFunction(770, 1);
-                sb.setColor(new Color(1.0F, 1.0F, 1.0F, tintAlpha));
+                float alpha = ___flameVfxTimer * ALPHA_RANGE;
+                sb.setColor(new Color(1.0F, 1.0F, 1.0F, alpha));
                 if (!Settings.isMobile) {
-                    sb.draw(IMAGE, (float)__instance.x * spacingX + offsetX - 64.0F + __instance.offsetX + imgWidth * scale, (float)__instance.y * Settings.MAP_DST_Y + offsetY + DungeonMapScreen.offsetY - 64.0F + __instance.offsetY, 64.0F, 64.0F, 128.0F, 128.0F, scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, 128, 128, false, false);
+                    sb.draw(IMAGE, (float)__instance.x * spacingX + offsetX - 64.0F + __instance.offsetX + imgWidth * scale, (float)__instance.y * Settings.MAP_DST_Y + offsetY + DungeonMapScreen.offsetY - 64.0F + __instance.offsetY, 64.0F, 64.0F, 128.0F, 128.0F, scale * Settings.scale + tmp, scale * Settings.scale + tmp, 0.0F, 0, 0, 128, 128, false, false);
+                    sb.draw(IMAGE, (float)__instance.x * spacingX + offsetX - 64.0F + __instance.offsetX + imgWidth * scale, (float)__instance.y * Settings.MAP_DST_Y + offsetY + DungeonMapScreen.offsetY - 64.0F + __instance.offsetY, 64.0F, 64.0F, 128.0F, 128.0F, scale * Settings.scale + tmp * 0.66F, scale * Settings.scale + tmp * 0.66F, 0.0F, 0, 0, 128, 128, false, false);
+                    sb.draw(IMAGE, (float)__instance.x * spacingX + offsetX - 64.0F + __instance.offsetX + imgWidth * scale, (float)__instance.y * Settings.MAP_DST_Y + offsetY + DungeonMapScreen.offsetY - 64.0F + __instance.offsetY, 64.0F, 64.0F, 128.0F, 128.0F, scale * Settings.scale + tmp * 0.33F, scale * Settings.scale + tmp * 0.33F, 0.0F, 0, 0, 128, 128, false, false);
                 } else {
-                    sb.draw(IMAGE, (float)__instance.x * spacingX + offsetX - 64.0F + __instance.offsetX + imgWidth * scale, (float)__instance.y * Settings.MAP_DST_Y + offsetY + DungeonMapScreen.offsetY - 64.0F + __instance.offsetY, 64.0F, 64.0F, 128.0F, 128.0F, scale * Settings.scale * 2.0F, scale * Settings.scale * 2.0F, 0.0F, 0, 0, 128, 128, false, false);
+                    sb.draw(IMAGE, (float)__instance.x * spacingX + offsetX - 64.0F + __instance.offsetX + imgWidth * scale, (float)__instance.y * Settings.MAP_DST_Y + offsetY + DungeonMapScreen.offsetY - 64.0F + __instance.offsetY, 64.0F, 64.0F, 128.0F, 128.0F, scale * Settings.scale * 2.0F + tmp, scale * Settings.scale * 2.0F + tmp, 0.0F, 0, 0, 128, 128, false, false);
+                    sb.draw(IMAGE, (float)__instance.x * spacingX + offsetX - 64.0F + __instance.offsetX + imgWidth * scale, (float)__instance.y * Settings.MAP_DST_Y + offsetY + DungeonMapScreen.offsetY - 64.0F + __instance.offsetY, 64.0F, 64.0F, 128.0F, 128.0F, scale * Settings.scale * 2.0F + tmp * 0.66F, scale * Settings.scale * 2.0F + tmp * 0.66F, 0.0F, 0, 0, 128, 128, false, false);
+                    sb.draw(IMAGE, (float)__instance.x * spacingX + offsetX - 64.0F + __instance.offsetX + imgWidth * scale, (float)__instance.y * Settings.MAP_DST_Y + offsetY + DungeonMapScreen.offsetY - 64.0F + __instance.offsetY, 64.0F, 64.0F, 128.0F, 128.0F, scale * Settings.scale * 2.0F + tmp * 0.33F, scale * Settings.scale * 2.0F + tmp * 0.33F, 0.0F, 0, 0, 128, 128, false, false);
                 }
                 sb.setBlendFunction(770, 771);
-                //float tmp = Interpolation.exp10In.apply(0.0F, 4.0F, flashTimer / FLASH_ANIM_TIME);
+
+//                float halfCycle = (GLOW_CYCLE / 2.0F);
+//                float tintAlpha = ((Math.abs(halfCycle - ___flameVfxTimer) / halfCycle) * ALPHA_RANGE);
+//                //logger.info("Alpha: " + tintAlpha);
+//                sb.setBlendFunction(770, 1);
+//                sb.setColor(new Color(1.0F, 1.0F, 1.0F, tintAlpha));
+//                if (!Settings.isMobile) {
+//                    sb.draw(IMAGE, (float)__instance.x * spacingX + offsetX - 64.0F + __instance.offsetX + imgWidth * scale, (float)__instance.y * Settings.MAP_DST_Y + offsetY + DungeonMapScreen.offsetY - 64.0F + __instance.offsetY, 64.0F, 64.0F, 128.0F, 128.0F, scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, 128, 128, false, false);
+//                } else {
+//                    sb.draw(IMAGE, (float)__instance.x * spacingX + offsetX - 64.0F + __instance.offsetX + imgWidth * scale, (float)__instance.y * Settings.MAP_DST_Y + offsetY + DungeonMapScreen.offsetY - 64.0F + __instance.offsetY, 64.0F, 64.0F, 128.0F, 128.0F, scale * Settings.scale * 2.0F, scale * Settings.scale * 2.0F, 0.0F, 0, 0, 128, 128, false, false);
+//                }
+//                sb.setBlendFunction(770, 771);
             }
         }
 
