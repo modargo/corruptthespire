@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import corruptthespire.CorruptTheSpire;
@@ -93,7 +94,7 @@ public class BottledPrism extends AbstractCorruptedRelic implements CustomBottle
             BottledPrismPatch.InBottledPrismField.inBottlePrism.set(card, true);
             AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
-            this.description = MessageFormat.format(this.DESCRIPTIONS[2], this.card.name);
+            this.description = MessageFormat.format(this.DESCRIPTIONS[2], FontHelper.colorString(this.card.name, "y"));
             this.tips.clear();
             this.tips.add(new PowerTip(this.name, this.description));
             this.initializeTips();
@@ -102,7 +103,7 @@ public class BottledPrism extends AbstractCorruptedRelic implements CustomBottle
     }
 
     public void setDescriptionAfterLoading() {
-        this.description = MessageFormat.format(this.DESCRIPTIONS[2], this.card.name);
+        this.description = MessageFormat.format(this.DESCRIPTIONS[2], FontHelper.colorString(this.card.name, "y"));
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
         this.initializeTips();
