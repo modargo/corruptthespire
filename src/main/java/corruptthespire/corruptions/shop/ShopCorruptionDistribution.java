@@ -11,24 +11,14 @@ import java.util.List;
 public class ShopCorruptionDistribution extends AbstractCorruptionDistribution<ShopCorruptionType> {
     @Override
     protected List<CorruptionDistributionInfo<ShopCorruptionType>> getDistribution() {
-        //TODO Set real distribution when done implementing and testing
-        //CorruptedCardAndFragment 30
-        //Prismatic 10
-        //Rare 10
-        //TransformReplacesRemove 10
-        //CorruptedRelics 10
-        //CorruptedCards 10
-        //CorruptedRelicsReplacePotions 10
-        //Something else 10
-        //TBD what something else is
         ArrayList<CorruptionDistributionInfo<ShopCorruptionType>> d = new ArrayList<>();
-        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.Prismatic, 0));
-        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.Rare, 0));
-        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.CorruptedRelicsReplacePotions, 0));
-        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.TransformReplacesRemove, 0));
-        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.CorruptedCards, 0));
-        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.CorruptedCardAndFragment, 0));
-        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.CorruptedRelics, 100));
+        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.CorruptedCardAndFragment, 40));
+        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.Prismatic, 10));
+        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.Rare, 10));
+        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.CorruptedRelicsReplacePotions, 10));
+        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.TransformReplacesRemove, 10));
+        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.CorruptedCards, 10));
+        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.CorruptedRelics, 10));
         return d;
     }
 

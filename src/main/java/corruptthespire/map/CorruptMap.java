@@ -59,10 +59,11 @@ public class CorruptMap {
         //number of nodes and a similar layout, the pattern of corrupted nodes would also be similar
         Random rng = new Random(Settings.seed + actNum);
 
-        //TODO change back when done with initial testing
-        //Maybe 30-40-50-100 for a more even increase in the first three acts
+        //TODO Decide where to balance this at.
+        //Having act 3 be 50% an act 4 be 100% is solid, but there's a few options for act 1 an 2
         //double percentCorrupt = actNum < 1 || actNum > 4 ? 0 : 1.0 / (5 - actNum); // 25%, 33%, 50%, 100%
-        double percentCorrupt = 1.0;
+        double percentCorrupt = actNum < 4 ? (actNum + 2) * 0.1F : 1.0F; // 30%, 40%, 50%, 100%
+        //double percentCorrupt = actNum < 4 ? (actNum + 1) * 0.125F : 1.0F; // 25%, 37.5%, 50%, 100%
         int baseCorrupt = (int)Math.ceil(potentialCorruptNodes.size() * percentCorrupt);
         int numCorrupt = Math.min(potentialCorruptNodes.size(), baseCorrupt + rng.random(RANDOM_EXTRA_CORRUPT_NODES));
         logger.info("Corrupting act " + actNum + ": " + baseCorrupt + " nodes base, " + numCorrupt + " after adjustment");

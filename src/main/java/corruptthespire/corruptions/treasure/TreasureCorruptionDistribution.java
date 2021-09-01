@@ -12,16 +12,14 @@ import java.util.List;
 public class TreasureCorruptionDistribution extends AbstractCorruptionDistribution<TreasureCorruptionType> {
     @Override
     protected List<CorruptionDistributionInfo<TreasureCorruptionType>> getDistribution() {
-        //TODO Set real distribution when done implementing and testing
-        //Fragment 40, Money 10, Extra 10, Vault 10, CorruptedRelic 10, Wardens 10, Sealed 10
         ArrayList<CorruptionDistributionInfo<TreasureCorruptionType>> d = new ArrayList<>();
-        d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Fragment, 0));
-        d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Money, 0));
-        d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Extra, 0));
-        d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Vault, 0));
-        d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.CorruptedRelic, 0));
-        d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Wardens, 100));
-        d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Sealed, 0));
+        d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Fragment, 28));
+        d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Money, 12));
+        d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Extra, 12));
+        d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Vault, 12));
+        d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.CorruptedRelic, 12));
+        d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Wardens, 12));
+        d.add(new CorruptionDistributionInfo<>(TreasureCorruptionType.Sealed, 12));
         return d;
     }
 
