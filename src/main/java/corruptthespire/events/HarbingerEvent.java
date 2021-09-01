@@ -57,6 +57,7 @@ public class HarbingerEvent extends MaskedBandits {
                         //TODO Finalize Harbinger rewards
                         AbstractDungeon.getCurrRoom().addRelicToRewards(new FragmentOfCorruption());
 
+                        AbstractDungeon.getCurrRoom().eliteTrigger = true;
                         this.enterCombat();
                         AbstractDungeon.lastCombatMetricKey = Harbinger.ID;
                         break;

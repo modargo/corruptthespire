@@ -87,5 +87,10 @@
     "NAME": "Mystifying Timepiece",
     "FLAVOR": "The time it keeps doesn't correspond to any system you know.",
     "DESCRIPTIONS": ["If you do not play any cards that cost #b{0} during your turn, draw #b{1} additional cards at the start of your next turn."]
+  },
+  "CorruptTheSpire:OozingHeart": {
+    "NAME": "Oozing Heart",
+    "FLAVOR": "Slowly leaks, but beats rapidly when danger is near.",
+    "DESCRIPTIONS": ["At the start of elite combats, heal #b{0} HP. Whenever you climb a floor, if you are above #b{1} HP, lose #b{1} HP."]
   }
 }

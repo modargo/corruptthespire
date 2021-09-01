@@ -78,6 +78,7 @@ public class TreasureWardensEvent extends MaskedBandits {
                         }
 
                         this.screen = 2;
+                        AbstractDungeon.getCurrRoom().eliteTrigger = true;
                         this.enterCombat();
                         AbstractDungeon.lastCombatMetricKey = this.getEncounterKey();
                         break;

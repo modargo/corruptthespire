@@ -131,6 +131,7 @@ public class Cor {
         corruptedRelics.add(new MystifyingTimepiece());
         corruptedRelics.add(new ObsidianShovel());
         corruptedRelics.add(new OminousBracelet());
+        corruptedRelics.add(new OozingHeart());
         corruptedRelics.add(new RustedOrichalcum());
         corruptedRelics.add(new UnreliableCharm());
         return corruptedRelics;
