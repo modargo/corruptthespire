@@ -33,7 +33,7 @@ public class CorruptMap {
         for (int i = 0; i < AbstractDungeon.map.size(); i++) {
             for (int j = 0; j < AbstractDungeon.map.get(i).size(); j++) {
                 MapRoomNode node = AbstractDungeon.map.get(i).get(j);
-                logger.info("Map node (" + i + ", " + j + "): " + (node.getRoom() != null ? node.getRoom().getClass().getTypeName() : "empty"));
+                //logger.info("Map node (" + i + ", " + j + "): " + (node.getRoom() != null ? node.getRoom().getClass().getTypeName() : "empty"));
 
                 if (node.getRoom() instanceof MonsterRoomBoss) {
                     //Normally, boss rooms are created dynamically and are marked as corrupted through a patch
