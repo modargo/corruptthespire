@@ -40,17 +40,24 @@ public class ShowCorruptNodesOnMapPatch {
                 float offsetY = ReflectionHacks.getPrivateStatic(MapRoomNode.class, "OFFSET_Y");
                 float spacingX = ReflectionHacks.getPrivateStatic(MapRoomNode.class, "SPACING_X");
 
-                float halfCycle = (GLOW_CYCLE / 2.0F);
-                float alpha = 1.0F - ((Math.abs(halfCycle - ___flameVfxTimer) / halfCycle) * ALPHA_RANGE);
-                logger.info("Alpha: " + alpha);
-                //sb.setBlendFunction(770, 1);
-                sb.setColor(new Color(1.0F, 1.0F, 1.0F, alpha));
+                sb.setColor(Color.WHITE);
                 if (!Settings.isMobile) {
                     sb.draw(IMAGE, (float)__instance.x * spacingX + offsetX - 64.0F + __instance.offsetX + imgWidth * scale, (float)__instance.y * Settings.MAP_DST_Y + offsetY + DungeonMapScreen.offsetY - 64.0F + __instance.offsetY, 64.0F, 64.0F, 128.0F, 128.0F, scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, 128, 128, false, false);
                 } else {
                     sb.draw(IMAGE, (float)__instance.x * spacingX + offsetX - 64.0F + __instance.offsetX + imgWidth * scale, (float)__instance.y * Settings.MAP_DST_Y + offsetY + DungeonMapScreen.offsetY - 64.0F + __instance.offsetY, 64.0F, 64.0F, 128.0F, 128.0F, scale * Settings.scale * 2.0F, scale * Settings.scale * 2.0F, 0.0F, 0, 0, 128, 128, false, false);
                 }
-                //sb.setBlendFunction(770, 771);
+
+                float halfCycle = (GLOW_CYCLE / 2.0F);
+                float tintAlpha = ((Math.abs(halfCycle - ___flameVfxTimer) / halfCycle) * ALPHA_RANGE);
+                //logger.info("Alpha: " + tintAlpha);
+                sb.setBlendFunction(770, 1);
+                sb.setColor(new Color(1.0F, 1.0F, 1.0F, tintAlpha));
+                if (!Settings.isMobile) {
+                    sb.draw(IMAGE, (float)__instance.x * spacingX + offsetX - 64.0F + __instance.offsetX + imgWidth * scale, (float)__instance.y * Settings.MAP_DST_Y + offsetY + DungeonMapScreen.offsetY - 64.0F + __instance.offsetY, 64.0F, 64.0F, 128.0F, 128.0F, scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, 128, 128, false, false);
+                } else {
+                    sb.draw(IMAGE, (float)__instance.x * spacingX + offsetX - 64.0F + __instance.offsetX + imgWidth * scale, (float)__instance.y * Settings.MAP_DST_Y + offsetY + DungeonMapScreen.offsetY - 64.0F + __instance.offsetY, 64.0F, 64.0F, 128.0F, 128.0F, scale * Settings.scale * 2.0F, scale * Settings.scale * 2.0F, 0.0F, 0, 0, 128, 128, false, false);
+                }
+                sb.setBlendFunction(770, 771);
                 //float tmp = Interpolation.exp10In.apply(0.0F, 4.0F, flashTimer / FLASH_ANIM_TIME);
             }
         }
