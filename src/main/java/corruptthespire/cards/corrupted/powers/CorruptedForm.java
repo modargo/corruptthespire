@@ -19,7 +19,7 @@ public class CorruptedForm extends AbstractCorruptedCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 3;
-    private static final int CORRUPTION = 5;
+    private static final int CORRUPTION = 7;
 
     public CorruptedForm() {
         super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, CORRUPTION), CardType.POWER, CardTarget.SELF);

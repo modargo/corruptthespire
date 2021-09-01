@@ -18,25 +18,16 @@ import java.util.ArrayList;
 public class Cor {
     private static final Logger logger = LogManager.getLogger(Cor.class.getName());
 
-    //TODO Adjust all of these to set the right risk/reward balance
-    //E.g. if fights turn out to be the riskiest, they should generate less corruption
-    //TODO Consider doubling everything here so that cards can have more granular corruption gain
-    //I think I need to, since the values I'm trending towards are getting quite small
-    //I want 1 corruption on a card to be "This doesn't seem too bad, but I know it builds up"
-    //I don't want 1 corruption on a card to be "Dear god, this is nearly as much as the fight I'm in"
-    //(Having 5 corruption be that is fine)
-    //So yeah, double everything here, then take a pass through the corrupted cards
-    //Corruption gains on cards are probably fine, but corruption thresholds may need to be bumped up
-    public static final int CORRUPTION_FOR_NORMAL_FIGHT = 3;
-    public static final int CORRUPTION_FOR_ELITE_FIGHT = 8;
+    public static final int CORRUPTION_FOR_NORMAL_FIGHT = 6;
+    public static final int CORRUPTION_FOR_ELITE_FIGHT = 15;
     public static final int CORRUPTION_FOR_BOSS_FIGHT = 0;
-    public static final int CORRUPTION_FOR_CHEST = 8;
-    public static final int CORRUPTION_FOR_CAMPFIRE = 4;
-    public static final int CORRUPTION_FOR_EVENT = 4;
-    public static final int CORRUPTION_FOR_SHOP = 5;
-    public static final int CORRUPTION_FOR_OTHER = 5;
+    public static final int CORRUPTION_FOR_CHEST = 16;
+    public static final int CORRUPTION_FOR_CAMPFIRE = 8;
+    public static final int CORRUPTION_FOR_EVENT = 8;
+    public static final int CORRUPTION_FOR_SHOP = 10;
+    public static final int CORRUPTION_FOR_OTHER = 10;
 
-    public static final int CORRUPTION_PER_DAMAGE_INCREASE = 2;
+    public static final int CORRUPTION_PER_DAMAGE_INCREASE = 4;
     
     public static Integer corruption;
     public static Random rng;

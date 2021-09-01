@@ -25,21 +25,21 @@ public class ShadowAndFlame extends AbstractCorruptedCard {
     private static final int COST = 1;
     private static final int DAMAGE = 10;
     private static final int UPGRADE_DAMAGE = 2;
-    private static final int VULNERABLE = 1;
-    private static final int UPGRADE_VULNERABLE = 1;
+    private static final int DEBUFFS_AMOUNT = 1;
+    private static final int UPGRADE_DEBUFFS_AMOUNT = 1;
     private static final int FRAIL = 2;
 
     public ShadowAndFlame() {
         super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, FRAIL), CardType.ATTACK, CardTarget.ENEMY);
         this.baseDamage = DAMAGE;
-        this.magicNumber = this.baseMagicNumber = VULNERABLE;
+        this.magicNumber = this.baseMagicNumber = DEBUFFS_AMOUNT;
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeDamage(UPGRADE_DAMAGE);
-            this.upgradeMagicNumber(UPGRADE_VULNERABLE);
+            this.upgradeMagicNumber(UPGRADE_DEBUFFS_AMOUNT);
             this.upgradeName();
         }
     }

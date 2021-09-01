@@ -23,10 +23,10 @@ public class NightsWhisper extends AbstractCorruptedCard {
     private static final int COST = 1;
     private static final int UPGRADE_COST = 0;
     private static final int AMOUNT = 1;
-    private static final int CORRUPTION_THRESHOLD_STRENGTH = 20;
-    private static final int CORRUPTION_THRESHOLD_VULNERABLE = 40;
-    private static final int CORRUPTION_THRESHOLD_DOUBLE = 60;
-    private static final int CORRUPTION_THRESHOLD_TRIPLE = 100;
+    private static final int CORRUPTION_THRESHOLD_STRENGTH = 30;
+    private static final int CORRUPTION_THRESHOLD_VULNERABLE = 60;
+    private static final int CORRUPTION_THRESHOLD_DOUBLE = 90;
+    private static final int CORRUPTION_THRESHOLD_TRIPLE = 120;
 
     public NightsWhisper() {
         super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, CORRUPTION_THRESHOLD_STRENGTH, CORRUPTION_THRESHOLD_VULNERABLE, CORRUPTION_THRESHOLD_DOUBLE, CORRUPTION_THRESHOLD_TRIPLE), CardType.SKILL, CardTarget.ENEMY);

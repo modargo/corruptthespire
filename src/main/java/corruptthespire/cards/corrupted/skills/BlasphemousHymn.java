@@ -23,7 +23,7 @@ public class BlasphemousHymn extends AbstractCorruptedCard {
     private static final int COST = 1;
     private static final int AMOUNT = 1;
     private static final int UPGRADE_AMOUNT = 1;
-    private static final int CORRUPTION_THRESHOLD = 5;
+    private static final int CORRUPTION_THRESHOLD = 10;
 
     public BlasphemousHymn() {
         super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, CORRUPTION_THRESHOLD), CardType.SKILL, CardTarget.ALL_ENEMY);
