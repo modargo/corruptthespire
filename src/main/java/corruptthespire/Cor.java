@@ -118,8 +118,8 @@ public class Cor {
         return relicKey;
     }
 
-    public static ArrayList<AbstractRelic> getAllCorruptedRelics() {
-        ArrayList<AbstractRelic> corruptedRelics = new ArrayList<>();
+    public static ArrayList<AbstractCorruptedRelic> getAllCorruptedRelics() {
+        ArrayList<AbstractCorruptedRelic> corruptedRelics = new ArrayList<>();
         corruptedRelics.add(new BagOfTricks());
         corruptedRelics.add(new BlackCard());
         corruptedRelics.add(new BlightedSpirefruit());

@@ -18,7 +18,7 @@ import java.text.MessageFormat;
 import java.util.function.Predicate;
 
 
-public class BottledPrism extends CustomRelic implements CustomBottleRelic, CustomSavable<Integer> {
+public class BottledPrism extends AbstractCorruptedRelic implements CustomBottleRelic, CustomSavable<Integer> {
     public static final String ID = "CorruptTheSpire:BottledPrism";
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));
