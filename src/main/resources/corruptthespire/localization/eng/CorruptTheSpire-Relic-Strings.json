@@ -92,5 +92,10 @@
     "NAME": "Oozing Heart",
     "FLAVOR": "Slowly leaks, but beats rapidly when danger is near.",
     "DESCRIPTIONS": ["At the start of elite combats, heal #b{0} HP. Whenever you climb a floor, if you are above #b{1} HP, lose #b{1} HP."]
+  },
+  "CorruptTheSpire:Gohei": {
+    "NAME": "Gohei",
+    "FLAVOR": "This tasseled rod cleanses and protects.",
+    "DESCRIPTIONS": ["Whenever you would receive #b{0} or more unblocked Attack damage, receive #b{1} less and add a #yWound to your discard pile."]
   }
 }

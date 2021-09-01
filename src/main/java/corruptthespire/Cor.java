@@ -127,6 +127,7 @@ public class Cor {
         corruptedRelics.add(new CorruptedEgg());
         corruptedRelics.add(new CorruptedOmamori());
         corruptedRelics.add(new CorruptedToolbox());
+        corruptedRelics.add(new Gohei());
         corruptedRelics.add(new MaskOfNightmares());
         corruptedRelics.add(new MystifyingTimepiece());
         corruptedRelics.add(new ObsidianShovel());
