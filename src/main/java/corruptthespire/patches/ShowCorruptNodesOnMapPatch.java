@@ -5,7 +5,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.core.Settings;
@@ -18,13 +17,10 @@ import corruptthespire.CorruptTheSpire;
 import corruptthespire.map.CorruptMap;
 import corruptthespire.util.TextureLoader;
 import javassist.CtBehavior;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 
 public class ShowCorruptNodesOnMapPatch {
-    private static final Logger logger = LogManager.getLogger(CorruptMap.class.getName());
     private static final Texture IMAGE = TextureLoader.getTexture(CorruptTheSpire.uiImage("CorruptTheSpire:Corruption"));
     private static final int WIDTH = 64;
     private static final int HEIGHT = 64;
@@ -60,7 +56,6 @@ public class ShowCorruptNodesOnMapPatch {
                 //float tmp = Interpolation.exp10In.apply(0.0F, 4.0F, p / 2.0F);
                 //float tmp = p * maxAdditionalScale;
                 float tmp = (1.0F - MathUtils.sin(___flameVfxTimer / GLOW_CYCLE * MathUtils.PI)) * maxAdditionalScale;
-                //logger.info("tmp: " + tmp);
                 sb.setBlendFunction(770, 1);
                 float alpha = p * ALPHA_RANGE;
                 sb.setColor(new Color(1.0F, 1.0F, 1.0F, alpha));
