@@ -16,7 +16,7 @@ public class BlightedSpirefruit extends AbstractCorruptedRelic {
     public static final String ID = "CorruptTheSpire:BlightedSpirefruit";
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));
-    private static final int MAX_HP_LOSS = 10;
+    private static final int MAX_HP_LOSS = 7;
     private static final int STRENGTH = 2;
 
     public BlightedSpirefruit() {
