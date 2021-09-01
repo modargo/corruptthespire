@@ -48,8 +48,7 @@ public class ShowCorruptNodesOnMapPatch {
                     sb.draw(IMAGE, (float)__instance.x * spacingX + offsetX - 64.0F + __instance.offsetX + imgWidth * scale, (float)__instance.y * Settings.MAP_DST_Y + offsetY + DungeonMapScreen.offsetY - 64.0F + __instance.offsetY, 64.0F, 64.0F, 128.0F, 128.0F, scale * Settings.scale * 2.0F, scale * Settings.scale * 2.0F, 0.0F, 0, 0, 128, 128, false, false);
                 }
 
-
-                float tmp = Interpolation.exp10In.apply(0.0F, 4.0F, ___flameVfxTimer / 4.0F);
+                float tmp = Interpolation.exp10In.apply(0.0F, 4.0F, ___flameVfxTimer / (2.0F * GLOW_CYCLE));
                 sb.setBlendFunction(770, 1);
                 float alpha = ___flameVfxTimer * ALPHA_RANGE;
                 sb.setColor(new Color(1.0F, 1.0F, 1.0F, alpha));
@@ -63,18 +62,6 @@ public class ShowCorruptNodesOnMapPatch {
                     sb.draw(IMAGE, (float)__instance.x * spacingX + offsetX - 64.0F + __instance.offsetX + imgWidth * scale, (float)__instance.y * Settings.MAP_DST_Y + offsetY + DungeonMapScreen.offsetY - 64.0F + __instance.offsetY, 64.0F, 64.0F, 128.0F, 128.0F, scale * Settings.scale * 2.0F + tmp * 0.33F, scale * Settings.scale * 2.0F + tmp * 0.33F, 0.0F, 0, 0, 128, 128, false, false);
                 }
                 sb.setBlendFunction(770, 771);
-
-//                float halfCycle = (GLOW_CYCLE / 2.0F);
-//                float tintAlpha = ((Math.abs(halfCycle - ___flameVfxTimer) / halfCycle) * ALPHA_RANGE);
-//                //logger.info("Alpha: " + tintAlpha);
-//                sb.setBlendFunction(770, 1);
-//                sb.setColor(new Color(1.0F, 1.0F, 1.0F, tintAlpha));
-//                if (!Settings.isMobile) {
-//                    sb.draw(IMAGE, (float)__instance.x * spacingX + offsetX - 64.0F + __instance.offsetX + imgWidth * scale, (float)__instance.y * Settings.MAP_DST_Y + offsetY + DungeonMapScreen.offsetY - 64.0F + __instance.offsetY, 64.0F, 64.0F, 128.0F, 128.0F, scale * Settings.scale, scale * Settings.scale, 0.0F, 0, 0, 128, 128, false, false);
-//                } else {
-//                    sb.draw(IMAGE, (float)__instance.x * spacingX + offsetX - 64.0F + __instance.offsetX + imgWidth * scale, (float)__instance.y * Settings.MAP_DST_Y + offsetY + DungeonMapScreen.offsetY - 64.0F + __instance.offsetY, 64.0F, 64.0F, 128.0F, 128.0F, scale * Settings.scale * 2.0F, scale * Settings.scale * 2.0F, 0.0F, 0, 0, 128, 128, false, false);
-//                }
-//                sb.setBlendFunction(770, 771);
             }
         }
 
@@ -91,26 +78,13 @@ public class ShowCorruptNodesOnMapPatch {
     public static class UpdatePatch {
         @SpireInsertPatch(locator = UpdatePatch.Locator.class)
         public static void updateCorruptedVfx(MapRoomNode __instance, @ByRef float[] ___flameVfxTimer, ArrayList<FlameAnimationEffect> ___fEffects, Hitbox ___hb) {
-            if (CorruptedField.corrupted.get(__instance)) {
+            //TODO: Make a separate field for the corrupted timer, because right now the node with the emerald key ends up flashing at a different rate
+            if (CorruptedField.corrupted.get(__instance) && !__instance.hasEmeraldKey) {
                 ___flameVfxTimer[0] -= Gdx.graphics.getDeltaTime();
 
                 if ( ___flameVfxTimer[0] < 0.0F) {
-                    //___flameVfxTimer[0] = MathUtils.random(0.2F, 0.4F);
                     ___flameVfxTimer[0] = GLOW_CYCLE;
-                    //___fEffects.add(new FlameAnimationEffect(___hb));
                 }
-//                Iterator<FlameAnimationEffect> i;
-//                for (i = ___fEffects.iterator(); i.hasNext(); ) {
-//                    FlameAnimationEffect e = i.next();
-//                    if (e.isDone) {
-//                        e.dispose();
-//                        i.remove();
-//                    }
-//                }
-//                for (i = ___fEffects.iterator(); i.hasNext(); ) {
-//                    FlameAnimationEffect e = i.next();
-//                    e.update();
-//                }
             }
         }
 
