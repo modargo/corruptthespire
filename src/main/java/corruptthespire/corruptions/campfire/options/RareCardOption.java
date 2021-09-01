@@ -4,17 +4,20 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import corruptthespire.Cor;
+import corruptthespire.CorruptTheSpire;
+import corruptthespire.util.TextureLoader;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
 
 public class RareCardOption extends AbstractCorruptedCampfireOption {
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:RareCardOption");
+    public static final String ID = "CorruptTheSpire:RareCardOption";
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ID);
+    private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.campfireImage(ID));
     public static final String[] TEXT = uiStrings.TEXT;
 
     @Override
@@ -34,8 +37,7 @@ public class RareCardOption extends AbstractCorruptedCampfireOption {
 
     @Override
     public Texture getImage() {
-        //TODO Change to something else
-        return ImageMaster.CAMPFIRE_DIG_BUTTON;
+        return IMG;
     }
 
     @Override

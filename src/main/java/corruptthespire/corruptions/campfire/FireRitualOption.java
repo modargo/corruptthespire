@@ -1,5 +1,6 @@
 package corruptthespire.corruptions.campfire;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -13,6 +14,7 @@ import java.text.MessageFormat;
 public class FireRitualOption extends AbstractCampfireOption {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:FireRitualOption");
     public static final String[] TEXT = uiStrings.TEXT;
+    private static final Texture IMG = ImageMaster.loadImage("images/ui/campfire/meditate.png");
     private static final int CORRUPTION_PER_FRAGMENT = 4;
     private static final int MAX_HEALTH_PER_FRAGMENT = 2;
     private final int fragmentCost;
@@ -26,8 +28,7 @@ public class FireRitualOption extends AbstractCampfireOption {
         this.usable = Cor.getFragmentCount() > 0;
         this.label = TEXT[0];
         this.description = MessageFormat.format(TEXT[1], this.corruptionReduction, this.maxHealthCost, this.fragmentCost);
-        //TODO different image
-        this.img = ImageMaster.CAMPFIRE_DIG_BUTTON;
+        this.img = IMG;
     }
 
     @Override

@@ -250,6 +250,9 @@ public class CorruptTheSpire implements
     public static String uiImage(String id) {
         return "corruptthespire/images/ui/" + removeModId(id) + ".png";
     }
+    public static String campfireImage(String id) {
+        return "corruptthespire/images/campfire/" + removeModId(id) + ".png";
+    }
 
     public static String removeModId(String id) {
         if (id.startsWith("CorruptTheSpire:")) {
