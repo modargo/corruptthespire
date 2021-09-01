@@ -10,6 +10,11 @@
       "Corrupted"
     ]
   },
+  "CorruptTheSpire:CorruptedRelic": {
+    "TEXT": [
+      "Corrupted"
+    ]
+  },
   "CorruptTheSpire:Rewards": {
     "TEXT": ["Gain {0} Max HP", "Upgrade a random card", "Choose a Card"]
   },
