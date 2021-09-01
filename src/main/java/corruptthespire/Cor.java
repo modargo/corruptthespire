@@ -20,14 +20,18 @@ public class Cor {
 
     //TODO Adjust all of these to set the right risk/reward balance
     //E.g. if fights turn out to be the riskiest, they should generate less corruption
-    public static final int CORRUPTION_FOR_NORMAL_FIGHT = 5;
-    public static final int CORRUPTION_FOR_ELITE_FIGHT = 13;
-    public static final int CORRUPTION_FOR_BOSS_FIGHT = 0; //TODO Decide if this should stay at 0 or not
-    public static final int CORRUPTION_FOR_CHEST = 15;
-    public static final int CORRUPTION_FOR_CAMPFIRE = 10;
-    public static final int CORRUPTION_FOR_EVENT = 7;
-    public static final int CORRUPTION_FOR_SHOP = 10;
-    public static final int CORRUPTION_FOR_OTHER = 10;
+    //TODO Consider doubling everything here so that cards can have more granular corruption gain
+    //I think I need to, since the values I'm trending towards are getting quite small
+    public static final int CORRUPTION_FOR_NORMAL_FIGHT = 3;
+    public static final int CORRUPTION_FOR_ELITE_FIGHT = 8;
+    public static final int CORRUPTION_FOR_BOSS_FIGHT = 0;
+    public static final int CORRUPTION_FOR_CHEST = 8;
+    public static final int CORRUPTION_FOR_CAMPFIRE = 4;
+    public static final int CORRUPTION_FOR_EVENT = 4;
+    public static final int CORRUPTION_FOR_SHOP = 5;
+    public static final int CORRUPTION_FOR_OTHER = 5;
+
+    public static final int CORRUPTION_PER_DAMAGE_INCREASE = 2;
     
     public static Integer corruption;
     public static Random rng;
@@ -37,7 +41,7 @@ public class Cor {
     public static CorruptionDisplay display;
 
     public static Integer getCorruptionDamageMultiplierPercent() {
-        return corruption / 2;
+        return corruption / CORRUPTION_PER_DAMAGE_INCREASE;
     }
 
     public static void addCorruption(AbstractRoom room) {
