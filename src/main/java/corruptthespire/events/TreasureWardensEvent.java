@@ -33,7 +33,6 @@ public class TreasureWardensEvent extends MaskedBandits {
     private float shinyTimer = 0.0f;
 
     public TreasureWardensEvent() {
-        this.noCardsInRewards = true;
         this.roomEventText.clear();
         this.body = DESCRIPTIONS[0];
         this.roomEventText.addDialogOption(OPTIONS[0]);
@@ -70,7 +69,6 @@ public class TreasureWardensEvent extends MaskedBandits {
                             AbstractDungeon.getCurrRoom().addGoldToRewards(AbstractDungeon.miscRng.random(25, 35));
                         }
 
-                        AbstractDungeon.getCurrRoom().addCardToRewards();
                         AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
                         AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
                         if (Settings.isFinalActAvailable && !Settings.hasSapphireKey) {

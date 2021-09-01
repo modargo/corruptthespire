@@ -7,11 +7,13 @@ import com.megacrit.cardcrawl.events.RoomEventDialog;
 import com.megacrit.cardcrawl.events.city.MaskedBandits;
 import com.megacrit.cardcrawl.helpers.MonsterHelper;
 import com.megacrit.cardcrawl.localization.EventStrings;
+import com.megacrit.cardcrawl.rewards.RewardItem;
 import corruptthespire.Cor;
 import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.monsters.Harbinger;
 import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.relics.chaotic.HarbingersClaw;
+import corruptthespire.relics.chaotic.HarbingersSkull;
 
 // We extend the MaskedBandits event because ProceedButton.java specifically checks if an event is an instance of this type
 // (or a few other types) in the logic for what happens when you click proceed. This is easier than a patch.
@@ -23,7 +25,6 @@ public class HarbingerEvent extends MaskedBandits {
     private int screen = 0;
 
     public HarbingerEvent() {
-        this.noCardsInRewards = true;
         this.roomEventText.clear();
         this.body = DESCRIPTIONS[0];
         this.roomEventText.addDialogOption(OPTIONS[0]);
@@ -56,12 +57,9 @@ public class HarbingerEvent extends MaskedBandits {
                             AbstractDungeon.getCurrRoom().addGoldToRewards(AbstractDungeon.miscRng.random(25, 35));
                         }
 
-                        AbstractDungeon.getCurrRoom().addCardToRewards();
-                        AbstractDungeon.getCurrRoom().addCardReward(CorruptedCardUtil.getCorruptedCardReward());
                         AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
-                        //TODO Decide if I want to add something else here
-                        //A choice between Harbinger's Claw and a relic useful even for non-attack builds would be cool
                         AbstractDungeon.getCurrRoom().addRelicToRewards(new HarbingersClaw());
+                        AbstractDungeon.getCurrRoom().addRelicToRewards(new HarbingersSkull());
 
                         AbstractDungeon.getCurrRoom().eliteTrigger = true;
                         this.enterCombat();
