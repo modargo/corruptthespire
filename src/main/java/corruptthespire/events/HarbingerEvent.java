@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.localization.EventStrings;
 import corruptthespire.Cor;
 import corruptthespire.monsters.Harbinger;
 import corruptthespire.relics.FragmentOfCorruption;
+import corruptthespire.relics.chaotic.HarbingersClaw;
 
 // We extend the MaskedBandits event because ProceedButton.java specifically checks if an event is an instance of this type
 // (or a few other types) in the logic for what happens when you click proceed. This is easier than a patch.
@@ -54,8 +55,9 @@ public class HarbingerEvent extends MaskedBandits {
                         }
 
                         AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
-                        //TODO Finalize Harbinger rewards
-                        AbstractDungeon.getCurrRoom().addRelicToRewards(new FragmentOfCorruption());
+                        //TODO Decide if I want to add something else here
+                        //A choice between Harbinger's Claw and a relic useful even for non-attack builds would be cool
+                        AbstractDungeon.getCurrRoom().addRelicToRewards(new HarbingersClaw());
 
                         AbstractDungeon.getCurrRoom().eliteTrigger = true;
                         this.enterCombat();

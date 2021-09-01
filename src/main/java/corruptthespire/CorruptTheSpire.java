@@ -33,6 +33,7 @@ import corruptthespire.patches.cards.CheckFatedPostBattleSubscriber;
 import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.relics.chaotic.BurningRing;
 import corruptthespire.relics.chaotic.DeckOfManyFates;
+import corruptthespire.relics.chaotic.HarbingersClaw;
 import corruptthespire.relics.chaotic.ShimmeringFan;
 import corruptthespire.rewards.CustomRewardTypes;
 import corruptthespire.rewards.MaxHealthReward;
@@ -171,6 +172,7 @@ public class CorruptTheSpire implements
     public void receiveEditRelics() {
         BaseMod.addRelic(new BurningRing(), RelicType.SHARED);
         BaseMod.addRelic(new DeckOfManyFates(), RelicType.SHARED);
+        BaseMod.addRelic(new HarbingersClaw(), RelicType.SHARED);
         BaseMod.addRelic(new ShimmeringFan(), RelicType.SHARED);
         BaseMod.addRelic(new FragmentOfCorruption(), RelicType.SHARED);
         for (AbstractRelic r : Cor.getAllCorruptedRelics()) {

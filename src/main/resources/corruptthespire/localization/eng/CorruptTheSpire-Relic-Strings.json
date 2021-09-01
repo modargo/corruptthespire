@@ -97,5 +97,10 @@
     "NAME": "Gohei",
     "FLAVOR": "This tasseled rod cleanses and protects.",
     "DESCRIPTIONS": ["Whenever you would receive #b{0} or more unblocked Attack damage, receive #b{1} less and add a #yWound to your discard pile."]
+  },
+  "CorruptTheSpire:HarbingersClaw": {
+    "NAME": "Harbinger's Claw",
+    "FLAVOR": "The claw of an otherworldly horror.",
+    "DESCRIPTIONS": ["#yCorruption increases your attack damage."]
   }
 }
