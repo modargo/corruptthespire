@@ -1,5 +1,6 @@
 package corruptthespire.actions;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
@@ -34,14 +35,14 @@ public class ChooseOneCorruptedAction extends AbstractGameAction {
                     disCard.upgrade();
                 disCard.current_x = -1000.0F * Settings.xScale;
                 if (this.amount == 1) {
-                    if (AbstractDungeon.player.hand.size() < 10) {
+                    if (AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
                         AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(disCard, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
                     } else {
                         AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(disCard, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
                     }
-                } else if (AbstractDungeon.player.hand.size() + this.amount <= 10) {
+                } else if (AbstractDungeon.player.hand.size() + this.amount <= BaseMod.MAX_HAND_SIZE) {
                     AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(disCard, Settings.WIDTH / 2.0F - AbstractCard.IMG_WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
-                } else if (AbstractDungeon.player.hand.size() == 9) {
+                } else if (AbstractDungeon.player.hand.size() == BaseMod.MAX_HAND_SIZE - 1) {
                     AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(disCard, Settings.WIDTH / 2.0F - AbstractCard.IMG_WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
                 } else {
                     AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(disCard, Settings.WIDTH / 2.0F - AbstractCard.IMG_WIDTH / 2.0F, Settings.HEIGHT / 2.0F));

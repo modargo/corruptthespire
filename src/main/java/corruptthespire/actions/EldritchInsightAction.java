@@ -1,5 +1,6 @@
 package corruptthespire.actions;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
@@ -27,7 +28,7 @@ public class EldritchInsightAction extends AbstractGameAction {
                 if (!this.retrieveCard) {
                     if (AbstractDungeon.cardRewardScreen.discoveryCard != null) {
                         AbstractCard card = AbstractDungeon.cardRewardScreen.discoveryCard.makeStatEquivalentCopy();
-                        if (AbstractDungeon.player.hand.size() < 10) {
+                        if (AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
                             AbstractDungeon.player.drawPile.moveToHand(card, AbstractDungeon.player.drawPile);
                         } else {
                             AbstractDungeon.player.drawPile.moveToDiscardPile(card);
