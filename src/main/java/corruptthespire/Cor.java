@@ -92,8 +92,9 @@ public class Cor {
     }
 
     public static void applyCorruptionHealthIncrease(AbstractMonster m) {
-        if (Cor.corruption > 0) {
-            m.increaseMaxHp((m.maxHealth * Cor.getCorruptionDamageMultiplierPercent()) / 100, false);
+        int amount = (m.maxHealth * Cor.getCorruptionDamageMultiplierPercent()) / 100;
+        if (amount > 0) {
+            m.increaseMaxHp(amount, false);
         }
     }
 
