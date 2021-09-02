@@ -3,6 +3,7 @@ package corruptthespire.corruptions.fight;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.SpawnMonsterAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.Repulsor;
 import com.megacrit.cardcrawl.monsters.beyond.SnakeDagger;
@@ -80,21 +81,26 @@ public class FightCorruption {
 
     private static void addSmallReward() {
         AbstractRoom room = AbstractDungeon.getCurrRoom();
-        int options = 5;
+        int options = 10;
         switch (Cor.rng.random(options)) {
             case 0:
                 room.rewards.add(new CorruptedCardReward());
                 break;
             case 1:
+            case 2:
+            case 3:
                 room.addRelicToRewards(new FragmentOfCorruption());
                 break;
-            case 2:
+            case 4:
+            case 5:
                 room.addPotionToRewards(AbstractDungeon.returnRandomPotion());
                 break;
-            case 3:
+            case 6:
+            case 7:
                 room.rewards.add(new RandomUpgradeReward());
                 break;
-            case 4:
+            case 8:
+            case 9:
                 room.addGoldToRewards(30);
                 break;
         }
@@ -102,22 +108,29 @@ public class FightCorruption {
 
     private static void addMediumReward() {
         AbstractRoom room = AbstractDungeon.getCurrRoom();
-        int options = 5;
+        int options = 10;
         switch (Cor.rng.random(options)) {
             case 0:
+            case 1:
                 room.rewards.add(new CorruptedCardReward());
                 break;
-            case 1:
-                room.addRelicToRewards(new FragmentOfCorruption());
-                room.addRelicToRewards(new FragmentOfCorruption());
-                break;
             case 2:
-                room.addRelicToRewards(AbstractRelic.RelicTier.COMMON);
-                break;
             case 3:
-                room.rewards.add(new MaxHealthReward(4));
+                room.addRelicToRewards(new FragmentOfCorruption());
+                room.addRelicToRewards(new FragmentOfCorruption());
                 break;
             case 4:
+                room.addRelicToRewards(AbstractRelic.RelicTier.COMMON);
+                break;
+            case 5:
+                room.addRelicToRewards(RelicLibrary.getRelic(Cor.returnRandomCorruptedRelicKey()));
+                break;
+            case 6:
+            case 7:
+                room.rewards.add(new MaxHealthReward(4));
+                break;
+            case 8:
+            case 9:
                 room.addGoldToRewards(60);
                 break;
         }
