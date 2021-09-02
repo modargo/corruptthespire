@@ -56,6 +56,6 @@ public class ProfaneShield extends AbstractCorruptedCard {
     }
 
     private int getBlock() {
-        return (int)(Cor.corruption * (this.upgraded ? 0.75F : 0.5F));
+        return (int)(Cor.corruption * (this.upgraded ? 0.25F : 0.20F));
     }
 }
