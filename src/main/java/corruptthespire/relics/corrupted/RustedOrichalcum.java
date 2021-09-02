@@ -38,7 +38,7 @@ public class RustedOrichalcum extends AbstractCorruptedRelic {
             this.counter++;
         }
 
-        if (this.counter <= TURNS) {
+        if (this.counter != -1 && this.counter <= TURNS) {
             this.flash();
             this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             this.addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, BLOCK));
