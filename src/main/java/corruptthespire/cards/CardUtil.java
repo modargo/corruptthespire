@@ -39,12 +39,12 @@ public class CardUtil {
         for (int i = 0; i < cardsToUpgrade; i++) {
             float x = (float)Settings.WIDTH * (float)(i + 1) / (float)(cardsToUpgrade + 1);
             float y = (float)Settings.HEIGHT / 2.0F;
-            AbstractDungeon.topLevelEffects.add(new UpgradeShineEffect(x, y));
             AbstractCard card = upgradableCards.get(i);
             card.upgrade();
             upgradedCards.add(card);
             AbstractDungeon.player.bottledCardUpgradeCheck(card);
-            AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(card.makeStatEquivalentCopy(), x, y));
+            AbstractDungeon.topLevelEffects.add(new ShowCardBrieflyEffect(card.makeStatEquivalentCopy(), x, y));
+            AbstractDungeon.topLevelEffects.add(new UpgradeShineEffect(x, y));
         }
 
         return upgradedCards;
