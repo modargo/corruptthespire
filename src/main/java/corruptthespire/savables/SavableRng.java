@@ -4,8 +4,12 @@ import basemod.abstracts.CustomSavable;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.random.Random;
 import corruptthespire.Cor;
+import corruptthespire.corruptions.fight.FightCorruptionDistribution;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class SavableRng implements CustomSavable<Integer> {
+    private static final Logger logger = LogManager.getLogger(SavableRng.class.getName());
     public final static String SaveKey = "CorruptionRng";
 
     @Override
@@ -15,6 +19,7 @@ public class SavableRng implements CustomSavable<Integer> {
 
     @Override
     public void onLoad(Integer counter) {
+        logger.info("Loading RNG. Cor.rng.counter: " + counter);
         Cor.rng = new Random(Settings.seed, counter != null ? counter : 0);
     }
 }

@@ -1,11 +1,15 @@
 package corruptthespire.corruptions.fight;
 
 import corruptthespire.Cor;
+import corruptthespire.CorruptTheSpire;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FightCorruptionDistribution {
+    private static final Logger logger = LogManager.getLogger(FightCorruptionDistribution.class.getName());
     public FightCorruptionInfo roll(int actNum, FightType fightType) {
         if (actNum < 1 || actNum > 4) {
             throw new RuntimeException("actNum must be between 1 and 4. Received: " + actNum);
@@ -14,6 +18,7 @@ public class FightCorruptionDistribution {
         ArrayList<FightCorruptionDistributionInfo> distribution = FightCorruptionDistributionReader.getFightCorruptionDistribution(actNum, fightType);
         int totalWeight = distribution.stream().map(cdi -> cdi.weight).reduce(0, Integer::sum);
 
+        logger.info("Rolling fight corruption. Cor.rng.counter: " + Cor.rng.counter);
         int roll = Cor.rng.random(totalWeight - 1);
         FightCorruptionDistributionInfo option = pick(distribution, roll);
 
