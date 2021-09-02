@@ -22,19 +22,22 @@ public class BlasphemousHymn extends AbstractCorruptedCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 1;
     private static final int AMOUNT = 1;
-    private static final int UPGRADE_AMOUNT = 1;
     private static final int CORRUPTION_THRESHOLD = 10;
 
     public BlasphemousHymn() {
         super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, CORRUPTION_THRESHOLD), CardType.SKILL, CardTarget.ALL_ENEMY);
         this.magicNumber = this.baseMagicNumber = AMOUNT;
+        this.isEthereal = true;
+        this.exhaust = true;
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
-            this.upgradeMagicNumber(UPGRADE_AMOUNT);
+            this.exhaust = false;
             this.upgradeName();
+            this.rawDescription = MessageFormat.format(cardStrings.UPGRADE_DESCRIPTION, CORRUPTION_THRESHOLD);
+            this.initializeDescription();
         }
     }
 

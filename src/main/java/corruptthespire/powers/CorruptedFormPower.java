@@ -52,7 +52,8 @@ public class CorruptedFormPower extends AbstractPower {
                     this.addToBot(new VFXAction(new OmegaFlashEffect(m.hb.cX, m.hb.cY), 0.2F));
                 }
             }
-            this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.amount * Cor.corruption, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
+            int damage = (int)(((100 - this.amount) / 100.0f) * Cor.corruption);
+            this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(damage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
         }
     }
 }

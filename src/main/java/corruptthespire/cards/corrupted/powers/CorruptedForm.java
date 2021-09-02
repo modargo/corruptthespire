@@ -19,11 +19,13 @@ public class CorruptedForm extends AbstractCorruptedCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 3;
-    private static final int CORRUPTION = 7;
+    private static final int CORRUPTION = 6;
+    private static final int PERCENT = 30;
 
     public CorruptedForm() {
         super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, CORRUPTION), CardType.POWER, CardTarget.SELF);
         this.isEthereal = true;
+        this.magicNumber = this.baseMagicNumber = PERCENT;
     }
 
     @Override
@@ -39,6 +41,6 @@ public class CorruptedForm extends AbstractCorruptedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new GainCorruptionAction(CORRUPTION));
-        this.addToBot(new ApplyPowerAction(p, p, new CorruptedFormPower(p, 1), 1));
+        this.addToBot(new ApplyPowerAction(p, p, new CorruptedFormPower(p, this.magicNumber), this.magicNumber));
     }
 }

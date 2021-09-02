@@ -10,8 +10,7 @@
   "CorruptTheSpire:CorruptedForm": {
     "NAME": "Corrupted Form",
     "DESCRIPTIONS": [
-      "At the end of your turn, deal damage equal to #yCorruption to ALL enemies.",
-      "At the end of your turn, deal damage equal to #b{0} times #yCorruption to ALL enemies."
+      "At the end of your turn, deal damage equal to {0}% #yCorruption to ALL enemies."
     ]
   },
   "CorruptTheSpire:FatedCard": {
