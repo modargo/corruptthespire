@@ -8,5 +8,10 @@
     "PROPER_NAME": "Abysstouched",
     "NAMES": ["abysstouched"],
     "DESCRIPTION": "Increases attack damage taken and deals damage every turn."
+  },
+  {
+    "PROPER_NAME": "Common Debuff",
+    "NAMES": ["common\u00a0debuff"],
+    "DESCRIPTION": "#yWeak, #yFrail, #yVulnerable, negative #yDexterity, negative #yFocus, #yConfused."
   }
 ]

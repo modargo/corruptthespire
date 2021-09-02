@@ -12,10 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.FrailPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import corruptthespire.Cor;
@@ -25,6 +22,7 @@ import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class ManiacalRage extends AbstractCorruptedCard {
@@ -100,8 +98,21 @@ public class ManiacalRage extends AbstractCorruptedCard {
         }
 
         private int countDebuffs() {
-            List<String> powerIds = Arrays.asList(WeakPower.POWER_ID, FrailPower.POWER_ID, VulnerablePower.POWER_ID);
-            return (int)AbstractDungeon.player.powers.stream().filter(p -> powerIds.contains(p.ID)).count();
+            List<String> positivePowerIds = Arrays.asList(WeakPower.POWER_ID, FrailPower.POWER_ID, VulnerablePower.POWER_ID);
+            List<String> negativePowerIds = Arrays.asList(DexterityPower.POWER_ID, FocusPower.POWER_ID);
+            List<String> numberlessPowers = Collections.singletonList(ConfusionPower.POWER_ID);
+            return AbstractDungeon.player.powers.stream().map(p -> {
+                if (positivePowerIds.contains(p.ID)) {
+                    return p.amount;
+                }
+                else if (negativePowerIds.contains(p.ID) && p.amount < 0) {
+                    return -p.amount;
+                }
+                else if (numberlessPowers.contains(p.ID)) {
+                    return 1;
+                }
+                return 0;
+            }).reduce(0, Integer::sum);
         }
     }
 

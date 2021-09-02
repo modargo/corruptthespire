@@ -107,14 +107,14 @@
   },
   "CorruptTheSpire:ManiacalRage": {
     "NAME": "Maniacal Rage",
-    "DESCRIPTION": "Gain !M! Temporary_HP. NL Choose one: Gain {0} Strength for each stack of Weak, Frail, and Vulnerable on you, or gain {0} Strength for each Status in your draw or discard pile. NL Corruption {1}+: Gain {2} additional Temporary_HP."
+    "DESCRIPTION": "Gain !M! Temporary_HP. NL Choose one: Gain {0} Strength for each corruptthespire:common\u00a0debuff stack, or gain {0} Strength for each Status in your draw or discard. NL Corruption {1}+: Gain {2} Temporary_HP."
   },
   "CorruptTheSpire:ManiacalRageDebuffsOption": {
     "NAME": "Debuffs",
-    "DESCRIPTION": "Gain {0} Strength for each stack of Weak, Frail, and Vulnerable on you. (Gains !M! Strength)."
+    "DESCRIPTION": "Gain {0} Strength for each corruptthespire:common debuff stack. (Gains !M! Strength)."
   },
   "CorruptTheSpire:ManiacalRageStatusesOption": {
     "NAME": "Statuses",
-    "DESCRIPTION": "Gain {0} Strength for each Status in your draw or discard pile. (Gains !M! Strength)."
+    "DESCRIPTION": "Gain {0} Strength for each Status in your draw or discard. (Gains !M! Strength)."
   }
 }
