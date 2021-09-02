@@ -4,10 +4,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import corruptthespire.cards.corrupted.attacks.*;
-import corruptthespire.cards.corrupted.powers.BlackOmen;
-import corruptthespire.cards.corrupted.powers.CorruptedForm;
-import corruptthespire.cards.corrupted.powers.ForbiddenRitual;
-import corruptthespire.cards.corrupted.powers.PoweredByNightmare;
+import corruptthespire.cards.corrupted.powers.*;
 import corruptthespire.cards.corrupted.skills.*;
 
 import java.util.*;
@@ -48,6 +45,7 @@ public class CorruptedCardUtil {
         //Powers
         corruptedCardInfos.add(new CorruptedCardInfo(new BlackOmen(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new ForbiddenRitual(), AbstractCard.CardRarity.COMMON));
+        corruptedCardInfos.add(new CorruptedCardInfo(new ManiacalRage(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new CorruptedForm(), AbstractCard.CardRarity.RARE));
         corruptedCardInfos.add(new CorruptedCardInfo(new PoweredByNightmare(), AbstractCard.CardRarity.RARE));
 

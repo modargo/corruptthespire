@@ -104,5 +104,17 @@
   "CorruptTheSpire:EldritchFire": {
     "NAME": "Eldritch Fire",
     "DESCRIPTION": "Lose X HP. NL Deal !D! damage to ALL enemies X times. NL ALL enemies lose !M! times X Strength this turn. NL Exhaust."
+  },
+  "CorruptTheSpire:ManiacalRage": {
+    "NAME": "Maniacal Rage",
+    "DESCRIPTION": "Gain !M! Temporary_HP. NL Choose one: Gain {0} Strength for each stack of Weak, Frail, and Vulnerable on you; or gain {0} Strength for each Status in your draw or discard pile. NL Corruption {1}+: Gain {2} additional Temporary_HP."
+  },
+  "CorruptTheSpire:ManiacalRageDebuffsOption": {
+    "NAME": "Debuffs",
+    "DESCRIPTION": "Gain {0} Strength for each stack of Weak, Frail, and Vulnerable on you. (Gains !M! Strength)."
+  },
+  "CorruptTheSpire:ManiacalRageStatusesOption": {
+    "NAME": "Statuses",
+    "DESCRIPTION": "Gain {0} Strength for each Status in your draw or discard pile. (Gains !M! Strength)."
   }
 }
