@@ -6,7 +6,7 @@
   },
   "CorruptTheSpire:EssenceRip": {
     "NAME": "Essence Rip",
-    "DESCRIPTION": "Deal !D! damage. NL corruptthespire:Corruption {0}+: Twice. NL corruptthespire:Corruption {1}+: Three times."
+    "DESCRIPTION": "Deal !D! damage. NL corruptthespire:Corruption {0}+: Twice. NL corruptthespire:Corruption {1}+: Three times. NL Corruption {2}+: Four times."
   },
   "CorruptTheSpire:Condemn": {
     "NAME": "Condemn",
