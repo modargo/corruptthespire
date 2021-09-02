@@ -32,6 +32,7 @@ import corruptthespire.monsters.*;
 import corruptthespire.patches.cards.CheckFatedPostBattleSubscriber;
 import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.relics.chaotic.*;
+import corruptthespire.rewards.CorruptedCardReward;
 import corruptthespire.rewards.CustomRewardTypes;
 import corruptthespire.rewards.MaxHealthReward;
 import corruptthespire.rewards.RandomUpgradeReward;
@@ -150,6 +151,10 @@ public class CorruptTheSpire implements
         BaseMod.registerCustomReward(
             CustomRewardTypes.CORRUPTTHESPIRE_RANDOMUPGRADE,
             (rewardSave) -> new RandomUpgradeReward(),
+            (customReward) -> new RewardSave(customReward.type.toString(), null, 0, 0));
+        BaseMod.registerCustomReward(
+            CustomRewardTypes.CORRUPTTHESPIRE_CORRUPTEDCARD,
+            (rewardSave) -> new CorruptedCardReward(),
             (customReward) -> new RewardSave(customReward.type.toString(), null, 0, 0));
     }
 

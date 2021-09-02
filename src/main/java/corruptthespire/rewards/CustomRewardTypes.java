@@ -8,4 +8,6 @@ public class CustomRewardTypes {
     public static RewardItem.RewardType CORRUPTTHESPIRE_MAXHEALTH;
     @SpireEnum
     public static RewardItem.RewardType CORRUPTTHESPIRE_RANDOMUPGRADE;
+    @SpireEnum
+    public static RewardItem.RewardType CORRUPTTHESPIRE_CORRUPTEDCARD;
 }

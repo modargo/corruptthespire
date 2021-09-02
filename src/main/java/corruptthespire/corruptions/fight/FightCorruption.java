@@ -19,6 +19,7 @@ import corruptthespire.monsters.CorruptionManifest;
 import corruptthespire.patches.CorruptedField;
 import corruptthespire.patches.fight.FightCorruptionInfosField;
 import corruptthespire.relics.FragmentOfCorruption;
+import corruptthespire.rewards.CorruptedCardReward;
 import corruptthespire.rewards.MaxHealthReward;
 import corruptthespire.rewards.RandomUpgradeReward;
 import corruptthespire.subscribers.ResetNormalMonsterCountSubscriber;
