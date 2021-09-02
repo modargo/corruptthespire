@@ -80,60 +80,70 @@ public class FightCorruption {
 
     private static void addSmallReward() {
         AbstractRoom room = AbstractDungeon.getCurrRoom();
-        int options = 4;
+        int options = 5;
         switch (Cor.rng.random(options)) {
             case 0:
-                room.addRelicToRewards(new FragmentOfCorruption());
+                room.rewards.add(new CorruptedCardReward());
                 break;
             case 1:
-                room.addPotionToRewards(AbstractDungeon.returnRandomPotion());
+                room.addRelicToRewards(new FragmentOfCorruption());
                 break;
             case 2:
-                room.rewards.add(new RandomUpgradeReward());
+                room.addPotionToRewards(AbstractDungeon.returnRandomPotion());
                 break;
             case 3:
-                room.addGoldToRewards(25);
+                room.rewards.add(new RandomUpgradeReward());
+                break;
+            case 4:
+                room.addGoldToRewards(30);
                 break;
         }
     }
 
     private static void addMediumReward() {
         AbstractRoom room = AbstractDungeon.getCurrRoom();
-        int options = 4;
+        int options = 5;
         switch (Cor.rng.random(options)) {
             case 0:
-                room.addRelicToRewards(new FragmentOfCorruption());
-                room.addRelicToRewards(new FragmentOfCorruption());
+                room.rewards.add(new CorruptedCardReward());
                 break;
             case 1:
-                room.addRelicToRewards(AbstractRelic.RelicTier.COMMON);
+                room.addRelicToRewards(new FragmentOfCorruption());
+                room.addRelicToRewards(new FragmentOfCorruption());
                 break;
             case 2:
-                room.rewards.add(new MaxHealthReward(4));
+                room.addRelicToRewards(AbstractRelic.RelicTier.COMMON);
                 break;
             case 3:
-                room.addGoldToRewards(50);
+                room.rewards.add(new MaxHealthReward(4));
+                break;
+            case 4:
+                room.addGoldToRewards(60);
                 break;
         }
     }
 
     private static void addLargeReward() {
         AbstractRoom room = AbstractDungeon.getCurrRoom();
-        int options = 4;
+        int options = 5;
         switch (Cor.rng.random(options)) {
             case 0:
                 room.addRelicToRewards(new FragmentOfCorruption());
-                room.addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
+                room.rewards.add(new CorruptedCardReward());
                 break;
             case 1:
+                room.addRelicToRewards(new FragmentOfCorruption());
                 room.addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
                 break;
             case 2:
+                room.addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
+                break;
+            case 3:
                 room.rewards.add(new MaxHealthReward(4));
                 room.rewards.add(new RandomUpgradeReward());
                 break;
-            case 3:
-                room.addGoldToRewards(75);
+            case 4:
+                room.addGoldToRewards(90);
                 break;
         }
     }
