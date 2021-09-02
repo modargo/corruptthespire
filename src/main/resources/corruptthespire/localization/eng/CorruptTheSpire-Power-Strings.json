@@ -5,13 +5,13 @@
   },
   "CorruptTheSpire:ForbiddenRitual": {
     "NAME": "Forbidden Ritual",
-    "DESCRIPTIONS": ["At the start of your turn, gain #b{0} Strength and #b{1} corruptthespire:Corruption."]
+    "DESCRIPTIONS": ["At the start of your turn, gain #b{0} Strength and #b{1} #yCorruption."]
   },
   "CorruptTheSpire:CorruptedForm": {
     "NAME": "Corrupted Form",
     "DESCRIPTIONS": [
-      "At the end of your turn, deal damage equal to corruptthespire:Corruption to ALL enemies.",
-      "At the end of your turn, deal damage equal to #b{0} times corruptthespire:Corruption to ALL enemies."
+      "At the end of your turn, deal damage equal to #yCorruption to ALL enemies.",
+      "At the end of your turn, deal damage equal to #b{0} times #yCorruption to ALL enemies."
     ]
   },
   "CorruptTheSpire:FatedCard": {
@@ -59,7 +59,7 @@
   "CorruptTheSpire:BlackOmen": {
     "NAME": "Tormenting Shackles",
     "DESCRIPTIONS": [
-      "At the start of your turn, apply #b{0} corruptthespire:Abysstouched to ALL enemies."
+      "At the start of your turn, apply #b{0} #yAbysstouched to ALL enemies."
     ]
   },
   "CorruptTheSpire:NightmareKnowledge": {
