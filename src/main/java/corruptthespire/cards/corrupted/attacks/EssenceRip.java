@@ -22,8 +22,8 @@ public class EssenceRip extends AbstractCorruptedCard {
     private static final int COST = 0;
     private static final int DAMAGE = 6;
     private static final int UPGRADE_DAMAGE = 2;
-    private static final int CORRUPTION_THRESHOLD_1 = 30;
-    private static final int CORRUPTION_THRESHOLD_2 = 60;
+    private static final int CORRUPTION_THRESHOLD_1 = 40;
+    private static final int CORRUPTION_THRESHOLD_2 = 80;
 
     public EssenceRip() {
         super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, CORRUPTION_THRESHOLD_1, CORRUPTION_THRESHOLD_2), CardType.ATTACK, CardTarget.ENEMY);
