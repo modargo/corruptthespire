@@ -25,7 +25,7 @@ public class Cor {
     public static final int CORRUPTION_FOR_CAMPFIRE = 8;
     public static final int CORRUPTION_FOR_EVENT = 8;
     public static final int CORRUPTION_FOR_SHOP = 10;
-    public static final int CORRUPTION_FOR_OTHER = 10;
+    public static final int CORRUPTION_FOR_OTHER = 4;
 
     public static final int CORRUPTION_PER_DAMAGE_INCREASE = 4;
     

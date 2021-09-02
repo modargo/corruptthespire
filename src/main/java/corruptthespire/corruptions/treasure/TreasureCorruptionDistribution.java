@@ -31,6 +31,9 @@ public class TreasureCorruptionDistribution extends AbstractCorruptionDistributi
         if (Cor.flags.seenTreasureWardens || AbstractDungeon.floorNum <= 6) {
             distribution.removeIf(di -> di.corruption == TreasureCorruptionType.Wardens);
         }
+        if (Cor.flags.seenSealedChest) {
+            distribution.removeIf(di -> di.corruption == TreasureCorruptionType.Sealed);
+        }
         return distribution;
     }
 }

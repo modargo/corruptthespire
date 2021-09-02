@@ -26,6 +26,9 @@ import java.util.List;
 
 public class TreasureCorruption {
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:TreasureCorruption").TEXT;
+    private static final int GOLD_FOR_COMMON = 200;
+    private static final int GOLD_FOR_UNCOMMON = 275;
+    private static final int GOLD_FOR_RARE = 325;
     private static final int BASE_VAULT_CHESTS = 6;
     private static final int POTENTIAL_EXTRA_VAULT_CHESTS = 2;
     public static final int VAULT_CHESTS_BEFORE_CORRUPTION = 3;
@@ -37,9 +40,9 @@ public class TreasureCorruption {
             : null;
 
         if (corruptionType == TreasureCorruptionType.Money) {
-            int baseGold = tier == AbstractRelic.RelicTier.COMMON ? 200
-                    : tier == AbstractRelic.RelicTier.UNCOMMON ? 275
-                    : 325;
+            int baseGold = tier == AbstractRelic.RelicTier.COMMON ? GOLD_FOR_COMMON
+                    : tier == AbstractRelic.RelicTier.UNCOMMON ? GOLD_FOR_UNCOMMON
+                    : GOLD_FOR_RARE;
             int gold = Math.round(AbstractDungeon.treasureRng.random(baseGold * 0.9F, baseGold * 1.1F));
             RewardItem reward = new RewardItem(gold);
             reward.text = reward.goldAmt + " " + TEXT[0];
