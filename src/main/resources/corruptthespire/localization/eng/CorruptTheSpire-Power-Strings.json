@@ -80,7 +80,7 @@
   },
   "CorruptTheSpire:AstralCore": {
     "NAME": "Astral Core",
-    "DESCRIPTIONS": ["For every #b{0} damage this enemy takes, it gains #b{1} #yStrength. At the end of this enemy's turn, if it has positive #yStrength, it loses #b{2} Strength."]
+    "DESCRIPTIONS": ["For every #b{0} damage this enemy takes, it gains #b{1} #yStrength. At the end of this enemy''s turn, if it has positive #yStrength, it loses #b{2} Strength."]
   },
   "CorruptTheSpire:AstralCoreCounter": {
     "NAME": "Astral Core Counter",
