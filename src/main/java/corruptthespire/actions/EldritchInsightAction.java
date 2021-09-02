@@ -27,7 +27,7 @@ public class EldritchInsightAction extends AbstractGameAction {
             } else {
                 if (!this.retrieveCard) {
                     if (AbstractDungeon.cardRewardScreen.discoveryCard != null) {
-                        AbstractCard card = AbstractDungeon.cardRewardScreen.discoveryCard.makeStatEquivalentCopy();
+                        AbstractCard card = AbstractDungeon.cardRewardScreen.discoveryCard;
                         if (AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
                             AbstractDungeon.player.drawPile.moveToHand(card, AbstractDungeon.player.drawPile);
                         } else {
