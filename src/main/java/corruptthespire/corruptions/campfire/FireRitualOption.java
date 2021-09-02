@@ -15,7 +15,7 @@ public class FireRitualOption extends AbstractCampfireOption {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:FireRitualOption");
     public static final String[] TEXT = uiStrings.TEXT;
     private static final Texture IMG = ImageMaster.loadImage("images/ui/campfire/meditate.png");
-    private static final int CORRUPTION_PER_FRAGMENT = 4;
+    private static final int CORRUPTION_PER_FRAGMENT = 12;
     private static final int MAX_HEALTH_PER_FRAGMENT = 2;
     private final int fragmentCost;
     private final int corruptionReduction;
