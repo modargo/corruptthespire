@@ -24,7 +24,10 @@ public class ApplyCorruptionsAndCorruptionHealthIncreaseOnSpawnMonsterPatch {
     @SpirePrefixPatch
     public static void ApplyCorruptionsOnSpawnMonster(AbstractRelic __instance, AbstractMonster m) {
         if (currentMonster != m) {
-            Cor.applyCorruptionHealthIncrease(m);
+            //For Darklings, we don't want to re-apply the health increase when they respawn
+            if (!m.halfDead) {
+                Cor.applyCorruptionHealthIncrease(m);
+            }
             if (FightCorruption.shouldApplyCorruptions()) {
                 FightCorruption.applyOnSpawnMonsterCorruptions(m);
             }
