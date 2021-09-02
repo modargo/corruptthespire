@@ -5,12 +5,14 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.map.MapRoomNode;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
+import com.megacrit.cardcrawl.rooms.TreasureRoom;
 import corruptthespire.patches.CorruptedField;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.stream.Collectors;
 
 public class CorruptMap {
     public static final Logger logger = LogManager.getLogger(CorruptMap.class.getName());
@@ -78,6 +80,13 @@ public class CorruptMap {
             if (node == null || node.getRoom() instanceof MonsterRoomBoss) {
                 isBossCorrupted = true;
             }
+        }
+
+        ArrayList<MapRoomNode> treasureNodes = potentialCorruptNodes.stream()
+                .filter(node -> node.getRoom() instanceof TreasureRoom)
+                .collect(Collectors.toCollection(ArrayList::new));
+        if (!treasureNodes.isEmpty() && treasureNodes.stream().noneMatch(CorruptedField.corrupted::get)) {
+            MarkCorrupted(treasureNodes.get(rng.random(treasureNodes.size() - 1)));
         }
     }
 
