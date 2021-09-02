@@ -36,7 +36,7 @@ public class ManiacalRage extends AbstractCorruptedCard {
     private static final int COST = 1;
     private static final int TEMPORARY_HP = 10;
     private static final int UPGRADE_TEMPORARY_HP = 4;
-    private static final int CORRUPTION_THRESHOLD = 80;
+    private static final int CORRUPTION_THRESHOLD = 100;
     private static final int CORRUPTION_TEMPORARY_HP = 4;
     private static final int STRENGTH = 1;
 

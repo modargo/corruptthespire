@@ -8,7 +8,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.Repulsor;
 import com.megacrit.cardcrawl.monsters.beyond.SnakeDagger;
 import com.megacrit.cardcrawl.monsters.city.Byrd;
-import com.megacrit.cardcrawl.monsters.exordium.*;
+import com.megacrit.cardcrawl.monsters.exordium.Cultist;
+import com.megacrit.cardcrawl.monsters.exordium.GremlinThief;
+import com.megacrit.cardcrawl.monsters.exordium.LouseDefensive;
+import com.megacrit.cardcrawl.monsters.exordium.SpikeSlime_S;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -23,7 +26,6 @@ import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.rewards.CorruptedCardReward;
 import corruptthespire.rewards.MaxHealthReward;
 import corruptthespire.rewards.RandomUpgradeReward;
-import corruptthespire.subscribers.ResetNormalMonsterCountSubscriber;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -31,7 +33,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class FightCorruption {
-    private static final Logger logger = LogManager.getLogger(ResetNormalMonsterCountSubscriber.class.getName());
+    private static final Logger logger = LogManager.getLogger(FightCorruption.class.getName());
 
     public static boolean shouldApplyCorruptions() {
         return AbstractDungeon.getCurrRoom() instanceof MonsterRoom && CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode());

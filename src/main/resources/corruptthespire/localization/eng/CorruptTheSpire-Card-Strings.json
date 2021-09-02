@@ -99,7 +99,7 @@
   },
   "CorruptTheSpire:BlasphemousHymn": {
     "NAME": "Blasphemous Hymn",
-    "DESCRIPTION": "Apply !M! Weak and !M! corruptthespire:Abysstouched to ALL enemies for every 5 corruptthespire:Corruption."
+    "DESCRIPTION": "Apply !M! Weak and !M! corruptthespire:Abysstouched to ALL enemies for every {0} corruptthespire:Corruption."
   },
   "CorruptTheSpire:EldritchFire": {
     "NAME": "Eldritch Fire",
@@ -107,7 +107,7 @@
   },
   "CorruptTheSpire:ManiacalRage": {
     "NAME": "Maniacal Rage",
-    "DESCRIPTION": "Gain !M! Temporary_HP. NL Choose one: Gain {0} Strength for each stack of Weak, Frail, and Vulnerable on you; or gain {0} Strength for each Status in your draw or discard pile. NL Corruption {1}+: Gain {2} additional Temporary_HP."
+    "DESCRIPTION": "Gain !M! Temporary_HP. NL Choose one: Gain {0} Strength for each stack of Weak, Frail, and Vulnerable on you, or gain {0} Strength for each Status in your draw or discard pile. NL Corruption {1}+: Gain {2} additional Temporary_HP."
   },
   "CorruptTheSpire:ManiacalRageDebuffsOption": {
     "NAME": "Debuffs",
