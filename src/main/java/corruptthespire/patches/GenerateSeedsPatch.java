@@ -24,5 +24,6 @@ public class GenerateSeedsPatch {
         Cor.flags = new CorruptionFlags();
         Cor.corruptedEventList = new ArrayList<>(CorruptedEventUtil.getAllCorruptedEvents().keySet());
         Cor.corruptedEventList.sort(String::compareTo);
+        Cor.corruptionPerFloor = new ArrayList<>();
     }
 }
