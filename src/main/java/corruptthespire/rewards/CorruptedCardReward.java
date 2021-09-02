@@ -6,13 +6,10 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import corruptthespire.cards.corrupted.CorruptedCardUtil;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 
 public class CorruptedCardReward extends AbstractCorruptTheSpireReward {
-    private static final Logger logger = LogManager.getLogger(CorruptedCardReward.class.getName());
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:Rewards").TEXT;
     //TODO Better icon
     private static final Texture ICON = ImageMaster.REWARD_CARD_NORMAL;
@@ -21,7 +18,6 @@ public class CorruptedCardReward extends AbstractCorruptTheSpireReward {
 
     public CorruptedCardReward() {
         super(ICON, TEXT[2], CustomRewardTypes.CORRUPTTHESPIRE_CORRUPTEDCARD);
-        logger.info("[RewardItem] In CorruptedCardReward(). AbstractDungeon.cardRng.counter: " + AbstractDungeon.cardRng.counter);
     }
 
     public void populateCards() {
