@@ -20,7 +20,7 @@ public class DevilsBargain extends AbstractCorruptedCard {
     private static final int COST = 1;
     private static final int CARDS = 3;
     private static final int UPGRADE_CARDS = 2;
-    private static final int CORRUPTION = 3;
+    private static final int CORRUPTION = 2;
 
     public DevilsBargain() {
         super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, CORRUPTION), CardType.SKILL, CardTarget.NONE);
