@@ -115,6 +115,7 @@ public class SealedChestEvent extends MaskedBandits {
                 AbstractDungeon.combatRewardScreen.open();
 
                 this.screen = 3;
+                this.roomEventText.clear();
                 break;
             default:
                 this.openMap();
