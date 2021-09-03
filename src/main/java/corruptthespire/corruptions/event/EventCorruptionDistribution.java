@@ -13,10 +13,10 @@ public class EventCorruptionDistribution extends AbstractCorruptionDistribution<
     @Override
     protected List<CorruptionDistributionInfo<EventCorruptionType>> getDistribution() {
         ArrayList<CorruptionDistributionInfo<EventCorruptionType>> d = new ArrayList<>();
-        d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Fragment, 24));
-        d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Corrupted, 12));
-        d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Chaotic, 12));
-        d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Harbinger, 52));
+        d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Fragment, 15));
+        d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Corrupted, 15));
+        d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Chaotic, 15));
+        d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Harbinger, 55));
         return d;
     }
 

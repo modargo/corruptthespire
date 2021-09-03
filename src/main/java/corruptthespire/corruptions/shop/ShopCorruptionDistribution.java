@@ -12,13 +12,13 @@ public class ShopCorruptionDistribution extends AbstractCorruptionDistribution<S
     @Override
     protected List<CorruptionDistributionInfo<ShopCorruptionType>> getDistribution() {
         ArrayList<CorruptionDistributionInfo<ShopCorruptionType>> d = new ArrayList<>();
-        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.CorruptedCardAndFragment, 40));
-        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.Prismatic, 10));
-        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.Rare, 10));
-        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.CorruptedRelicsReplacePotions, 10));
-        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.TransformReplacesRemove, 10));
-        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.CorruptedCards, 10));
-        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.CorruptedRelics, 10));
+        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.CorruptedCardAndFragment, 22));
+        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.Prismatic, 13));
+        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.Rare, 13));
+        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.CorruptedRelicsReplacePotions, 13));
+        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.TransformReplacesRemove, 13));
+        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.CorruptedCards, 13));
+        d.add(new CorruptionDistributionInfo<>(ShopCorruptionType.CorruptedRelics, 13));
         return d;
     }
 
