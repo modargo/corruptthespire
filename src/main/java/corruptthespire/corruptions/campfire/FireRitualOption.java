@@ -23,7 +23,7 @@ public class FireRitualOption extends AbstractCampfireOption {
 
     public FireRitualOption() {
         this.fragmentCost = Cor.getFragmentCount();
-        this.corruptionReduction = this.fragmentCost * CORRUPTION_PER_FRAGMENT;
+        this.corruptionReduction = Math.min(this.fragmentCost * CORRUPTION_PER_FRAGMENT, Cor.corruption);
         this.maxHealthCost = this.fragmentCost * MAX_HEALTH_PER_FRAGMENT;
         this.usable = Cor.getFragmentCount() > 0;
         this.label = TEXT[0];
