@@ -129,6 +129,6 @@
   },
   "CorruptTheSpire:AnnihilationRay": {
     "NAME": "Annihilation Ray",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Gain !M! Temporary_HP. NL When this card is exhausted, add a random corrupted card to your hand.",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Gain !M! Temporary_HP. NL When this card is exhausted, add a random corrupted card to your hand."
   }
 }
