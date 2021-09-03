@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.stream.Collectors;
 
 public class FightCorruptionDistributionReader {
@@ -28,6 +29,7 @@ public class FightCorruptionDistributionReader {
         return fightCorruptionDistributionEntries.stream()
             .filter(e -> e.actNum == actNum && e.fightType == fightType)
             .map(e -> new FightCorruptionDistributionInfo(e.corruptionType, e.size, e.weight, e.amount))
+            .sorted(Comparator.comparing(e -> e.corruptionType))
             .collect(Collectors.toCollection(ArrayList::new));
     }
 
