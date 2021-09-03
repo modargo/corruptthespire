@@ -1,6 +1,6 @@
 {
-  "CorruptTheSpire:Shadowblast": {
-    "NAME": "Shadowblast",
+  "CorruptTheSpire:BlazeFromBeyond": {
+    "NAME": "BlazeFromBeyond",
     "DESCRIPTION": "Deal {0} damage plus !M! damage for every {1} corruptthespire:Corruption to ALL enemies.",
     "EXTENDED_DESCRIPTION": [" NL (Deals !D! damage.)"]
   },
@@ -22,7 +22,7 @@
   },
   "CorruptTheSpire:Fragmentize": {
     "NAME": "Fragmentize",
-    "DESCRIPTION": "Deal !D! damage. NL If Fatal, gain a {0}. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL If Fatal and your {0} count is under {1}, gain a {0}. NL Exhaust."
   },
   "CorruptTheSpire:WickedWard": {
     "NAME": "Wicked Ward",
@@ -117,5 +117,18 @@
   "CorruptTheSpire:ManiacalRageStatusesOption": {
     "NAME": "Statuses",
     "DESCRIPTION": "Gain {0} Strength for each Status in your draw or discard. (Gains !M! Strength)."
+  },
+  "CorruptTheSpire:InnerFlame": {
+    "NAME": "Inner Flame",
+    "DESCRIPTION": "Gain !M! Strength and !M! Dexterity. Gain {0} corruptthespire:Corruption."
+  },
+  "CorruptTheSpire:MaskOfShards": {
+    "NAME": "Mask of Shards",
+    "DESCRIPTION": "Lose {0} HP. NL Gain {1} Block plus !M! damage for every {2} corruptthespire:Corruption.",
+    "EXTENDED_DESCRIPTION": [" NL (Gains !B! Block.)"]
+  },
+  "CorruptTheSpire:AnnihilationRay": {
+    "NAME": "Annihilation Ray",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Gain !M! Temporary_HP. NL When this card is exhausted, add a random corrupted card to your hand.",
   }
 }

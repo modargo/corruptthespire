@@ -21,11 +21,13 @@ public class Fragmentize extends AbstractCorruptedCard {
     private static final int COST = 1;
     private static final int DAMAGE = 12;
     private static final int UPGRADE_DAMAGE = 4;
+    public static final int FRAGMENT_LIMIT = 8;
 
     public Fragmentize() {
-        super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, new FragmentOfCorruption().name), CardType.ATTACK, CardTarget.ENEMY);
+        super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, new FragmentOfCorruption().name, FRAGMENT_LIMIT), CardType.ATTACK, CardTarget.ENEMY);
         this.baseDamage = DAMAGE;
         this.exhaust = true;
+        this.tags.add(CardTags.HEALING);
     }
 
     @Override

@@ -23,11 +23,12 @@ public class CorruptedCardUtil {
         ArrayList<CorruptedCardInfo> corruptedCardInfos = new ArrayList<>();
 
         //Attacks
+        corruptedCardInfos.add(new CorruptedCardInfo(new AnnihilationRay(), AbstractCard.CardRarity.COMMON));
+        corruptedCardInfos.add(new CorruptedCardInfo(new BlazeFromBeyond(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new Condemn(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new DeathTouch(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new EssenceRip(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new ShadowAndFlame(), AbstractCard.CardRarity.COMMON));
-        corruptedCardInfos.add(new CorruptedCardInfo(new Shadowblast(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new DrainLife(), AbstractCard.CardRarity.RARE));
         corruptedCardInfos.add(new CorruptedCardInfo(new EldritchFire(), AbstractCard.CardRarity.RARE));
         corruptedCardInfos.add(new CorruptedCardInfo(new Fragmentize(), AbstractCard.CardRarity.RARE));
@@ -38,15 +39,17 @@ public class CorruptedCardUtil {
         corruptedCardInfos.add(new CorruptedCardInfo(new ProfaneShield(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new VoidArmor(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new WickedWard(), AbstractCard.CardRarity.COMMON));
-        corruptedCardInfos.add(new CorruptedCardInfo(new DevilsBargain(), AbstractCard.CardRarity.RARE));
         corruptedCardInfos.add(new CorruptedCardInfo(new DarkLore(), AbstractCard.CardRarity.RARE));
+        corruptedCardInfos.add(new CorruptedCardInfo(new DevilsBargain(), AbstractCard.CardRarity.RARE));
+        corruptedCardInfos.add(new CorruptedCardInfo(new MaskOfShards(), AbstractCard.CardRarity.RARE));
         corruptedCardInfos.add(new CorruptedCardInfo(new NightsWhisper(), AbstractCard.CardRarity.RARE));
 
         //Powers
         corruptedCardInfos.add(new CorruptedCardInfo(new BlackOmen(), AbstractCard.CardRarity.COMMON));
-        corruptedCardInfos.add(new CorruptedCardInfo(new ForbiddenRitual(), AbstractCard.CardRarity.COMMON));
+        corruptedCardInfos.add(new CorruptedCardInfo(new InnerFlame(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new ManiacalRage(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new CorruptedForm(), AbstractCard.CardRarity.RARE));
+        corruptedCardInfos.add(new CorruptedCardInfo(new ForbiddenRitual(), AbstractCard.CardRarity.RARE));
         corruptedCardInfos.add(new CorruptedCardInfo(new PoweredByNightmare(), AbstractCard.CardRarity.RARE));
 
         return corruptedCardInfos.stream()
@@ -62,11 +65,16 @@ public class CorruptedCardUtil {
     //Following the pattern of the base game, the distinction is that in combat means:
     //(1) It doesn't respect card rarity
     //(2) It uses cardRandomRng instead of cardRng
+    //(3) It cannot return healing cards
     public static ArrayList<AbstractCard> getRandomCorruptedCardsInCombat(int n) {
         ArrayList<CorruptedCardInfo> allCorruptedCards = new ArrayList<>(getAllCorruptedCardInfos().values());
         allCorruptedCards.sort(Comparator.comparing(o -> o.card.cardID));
         Collections.shuffle(allCorruptedCards, AbstractDungeon.cardRandomRng.random);
-        return allCorruptedCards.stream().map(cci -> cci.card.makeCopy()).limit(n).collect(Collectors.toCollection(ArrayList::new));
+        return allCorruptedCards.stream()
+                .filter(cci -> !cci.card.hasTag(AbstractCard.CardTags.HEALING))
+                .map(cci -> cci.card.makeCopy())
+                .limit(n)
+                .collect(Collectors.toCollection(ArrayList::new));
     }
 
     public static AbstractCard getRandomCorruptedCard() {

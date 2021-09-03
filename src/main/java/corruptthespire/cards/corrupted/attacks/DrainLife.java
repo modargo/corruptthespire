@@ -32,6 +32,7 @@ public class DrainLife extends AbstractCorruptedCard {
         this.baseDamage = DAMAGE;
         this.baseMagicNumber = HEAL;
         this.magicNumber = this.baseMagicNumber;
+        this.tags.add(CardTags.HEALING);
     }
 
     @Override

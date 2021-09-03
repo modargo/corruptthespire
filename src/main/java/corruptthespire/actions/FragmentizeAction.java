@@ -7,7 +7,9 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.MinionPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
+import corruptthespire.cards.corrupted.attacks.Fragmentize;
 import corruptthespire.relics.FragmentOfCorruption;
 
 public class FragmentizeAction extends AbstractGameAction {
@@ -25,10 +27,13 @@ public class FragmentizeAction extends AbstractGameAction {
                 this.target != null) {
             AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AbstractGameAction.AttackEffect.NONE));
             this.target.damage(this.info);
-            if ((((AbstractMonster)this.target).isDying || this.target.currentHealth <= 0) && !this.target.halfDead &&
-                    !this.target.hasPower(MinionPower.POWER_ID)) {
-                AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), new FragmentOfCorruption());
-
+            if ((((AbstractMonster)this.target).isDying || this.target.currentHealth <= 0)
+                    && !this.target.halfDead
+                    && !this.target.hasPower(MinionPower.POWER_ID)) {
+                AbstractRelic fragment = AbstractDungeon.player.getRelic(FragmentOfCorruption.ID);
+                if (fragment == null || fragment.counter < Fragmentize.FRAGMENT_LIMIT) {
+                    AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), new FragmentOfCorruption());
+                }
             }
             if ((AbstractDungeon.getCurrRoom()).monsters.areMonstersBasicallyDead()) {
                 AbstractDungeon.actionManager.clearPostCombatActions();

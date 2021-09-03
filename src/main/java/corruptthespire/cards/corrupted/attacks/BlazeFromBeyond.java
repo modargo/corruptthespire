@@ -15,8 +15,8 @@ import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 
 import java.text.MessageFormat;
 
-public class Shadowblast extends AbstractCorruptedCard {
-    public static final String ID = "CorruptTheSpire:Shadowblast";
+public class BlazeFromBeyond extends AbstractCorruptedCard {
+    public static final String ID = "CorruptTheSpire:BlazeFromBeyond";
     public static final String IMG = CorruptTheSpire.cardImage(ID);
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
@@ -29,7 +29,7 @@ public class Shadowblast extends AbstractCorruptedCard {
     //TODO: Get corruption to be a keyword and an image
     //Check out other mods that do this -- I know that AllisonMoon's elemental types does, what else? Runesmith? Champ?
 
-    public Shadowblast() {
+    public BlazeFromBeyond() {
         super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, DAMAGE, CORRUPTION_THRESHOLD), CardType.ATTACK, CardTarget.ALL_ENEMY);
         this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = AMOUNT;
