@@ -1,5 +1,6 @@
 package corruptthespire.corruptions.fight.rewards;
 
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import corruptthespire.corruptions.AbstractCorruptionDistribution;
 import corruptthespire.corruptions.CorruptionDistributionInfo;
 
@@ -17,5 +18,13 @@ public class FightCorruptionLargeRewardDistribution extends AbstractCorruptionDi
         d.add(new CorruptionDistributionInfo<>(FightCorruptionRewardTypes.Large.MaxHealthAndUpgrade, 10));
         d.add(new CorruptionDistributionInfo<>(FightCorruptionRewardTypes.Large.Gold, 10));
         return d;
+    }
+
+    @Override
+    protected List<CorruptionDistributionInfo<FightCorruptionRewardTypes.Large>> adjustDistribution(List<CorruptionDistributionInfo<FightCorruptionRewardTypes.Large>> distribution) {
+        if (AbstractDungeon.actNum == 4) {
+            distribution.removeIf(d -> d.corruption == FightCorruptionRewardTypes.Large.Gold);
+        }
+        return distribution;
     }
 }
