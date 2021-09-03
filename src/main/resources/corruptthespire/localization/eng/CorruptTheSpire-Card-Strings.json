@@ -112,7 +112,7 @@
   },
   "CorruptTheSpire:ManiacalRageDebuffsOption": {
     "NAME": "Debuffs",
-    "DESCRIPTION": "Gain {0} Strength for each corruptthespire:common debuff stack. (Gains !M! Strength)."
+    "DESCRIPTION": "Gain {0} Strength for each corruptthespire:common\u00a0debuff stack. (Gains !M! Strength)."
   },
   "CorruptTheSpire:ManiacalRageStatusesOption": {
     "NAME": "Statuses",
