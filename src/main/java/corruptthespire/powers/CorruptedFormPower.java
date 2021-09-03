@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.OmegaFlashEffect;
 import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;
+import corruptthespire.effects.CorruptedFlashEffect;
 
 import java.text.MessageFormat;
 
@@ -46,10 +47,10 @@ public class CorruptedFormPower extends AbstractPower {
             for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
                 if (m != null && !m.isDeadOrEscaped()) {
                     if (Settings.FAST_MODE) {
-                        this.addToBot(new VFXAction(new OmegaFlashEffect(m.hb.cX, m.hb.cY)));
+                        this.addToBot(new VFXAction(new CorruptedFlashEffect(m.hb.cX, m.hb.cY)));
                         continue;
                     }
-                    this.addToBot(new VFXAction(new OmegaFlashEffect(m.hb.cX, m.hb.cY), 0.2F));
+                    this.addToBot(new VFXAction(new CorruptedFlashEffect(m.hb.cX, m.hb.cY), 0.2F));
                 }
             }
             int damage = (int)(((100 - this.amount) / 100.0f) * Cor.corruption);
