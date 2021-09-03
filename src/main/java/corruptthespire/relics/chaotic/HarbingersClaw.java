@@ -17,8 +17,7 @@ public class HarbingersClaw extends CustomRelic {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.SOLID);
     }
 
-    @Override
-    public float atDamageModify(float damage, AbstractCard c) {
+    public static float increaseDamage(float damage) {
         return damage * (1.0F + (Cor.getCorruptionDamageMultiplierPercent() / 100.0F));
     }
 
