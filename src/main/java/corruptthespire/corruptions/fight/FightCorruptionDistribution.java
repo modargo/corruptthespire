@@ -16,6 +16,9 @@ public class FightCorruptionDistribution {
         }
 
         ArrayList<FightCorruptionDistributionInfo> distribution = FightCorruptionDistributionReader.getFightCorruptionDistribution(actNum, fightType);
+        if ((fightType == FightType.Easy || fightType == FightType.Hard) && !Cor.flags.hadFirstCorruptedNormalMonsterFight) {
+            distribution.removeIf(d -> d.size != FightCorruptionSize.S);
+        }
         int totalWeight = distribution.stream().map(cdi -> cdi.weight).reduce(0, Integer::sum);
 
         logger.info("Rolling fight corruption. Cor.rng.counter: " + Cor.rng.counter);

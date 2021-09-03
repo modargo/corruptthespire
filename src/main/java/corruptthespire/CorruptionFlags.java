@@ -8,4 +8,5 @@ public class CorruptionFlags {
     public boolean brokeDevice = false;
 
     public int normalMonsterCount = 0;
+    public boolean hadFirstCorruptedNormalMonsterFight = false;
 }

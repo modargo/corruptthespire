@@ -24,6 +24,7 @@ public class SavableCorruptionFlags implements CustomSavable<CorruptionFlags> {
             logger.info("flags.seenHarbinger: " + flags.seenHarbinger);
             logger.info("flags.brokeDevice: " + flags.brokeDevice);
             logger.info("flags.normalMonsterCount: " + flags.normalMonsterCount);
+            logger.info("flags.hadFirstCorruptedNormalMonsterFight: " + flags.hadFirstCorruptedNormalMonsterFight);
         }
         Cor.flags = flags != null ? flags : new CorruptionFlags();
     }

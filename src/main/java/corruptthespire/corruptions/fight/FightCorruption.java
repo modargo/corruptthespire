@@ -41,6 +41,27 @@ public class FightCorruption {
     }
 
     public static void determineCorruptions(AbstractRoom room) {
+        FightType fightType = getFightType(room);
+        FightCorruptionInfo corruptionInfo = new FightCorruptionDistribution().roll(AbstractDungeon.actNum, fightType);
+        FightCorruptionInfosField.corruptionInfos.set(room, Collections.singletonList(corruptionInfo));
+    }
+
+    public static void addRewards() {
+        if (AbstractDungeon.actNum >= 3 && AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) {
+            return;
+        }
+        List<FightCorruptionInfo> corruptionInfos = FightCorruptionInfosField.corruptionInfos.get(AbstractDungeon.getCurrRoom());
+        for (FightCorruptionInfo corruptionInfo : corruptionInfos) {
+            FightCorruptionReward.addReward(corruptionInfo.size);
+        }
+
+        FightType fightType = getFightType(AbstractDungeon.getCurrRoom());
+        if (fightType == FightType.Easy || fightType == FightType.Hard) {
+            Cor.flags.hadFirstCorruptedNormalMonsterFight = true;
+        }
+    }
+
+    private static FightType getFightType(AbstractRoom room) {
         FightType fightType;
         if (room instanceof MonsterRoomBoss) {
             fightType = FightType.Boss;
@@ -54,18 +75,7 @@ public class FightCorruption {
             logger.info("Normal monster count: " + Cor.flags.normalMonsterCount + ", fight type: " + fightType);
         }
 
-        FightCorruptionInfo corruptionInfo = new FightCorruptionDistribution().roll(AbstractDungeon.actNum, fightType);
-        FightCorruptionInfosField.corruptionInfos.set(room, Collections.singletonList(corruptionInfo));
-    }
-
-    public static void addRewards() {
-        if (AbstractDungeon.actNum >= 3 && AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) {
-            return;
-        }
-        List<FightCorruptionInfo> corruptionInfos = FightCorruptionInfosField.corruptionInfos.get(AbstractDungeon.getCurrRoom());
-        for (FightCorruptionInfo corruptionInfo : corruptionInfos) {
-            FightCorruptionReward.addReward(corruptionInfo.size);
-        }
+        return fightType;
     }
 
     public static void applyStartOfBattleCorruptions() {
