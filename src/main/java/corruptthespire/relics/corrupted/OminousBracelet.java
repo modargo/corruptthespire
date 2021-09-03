@@ -7,18 +7,23 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.util.TextureLoader;
 
+import java.text.MessageFormat;
+
 public class OminousBracelet extends AbstractCorruptedRelic {
     public static final String ID = "CorruptTheSpire:OminousBracelet";
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));
+    public static final int CORRUPTION_REDUCTION_FOR_ROOMS = 2;
 
     public OminousBracelet() {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.MAGICAL);
     }
 
+    //All actual functionality is found in checks for the player having this relic
+
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return MessageFormat.format(DESCRIPTIONS[0], CORRUPTION_REDUCTION_FOR_ROOMS);
     }
 
     @Override

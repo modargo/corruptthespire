@@ -68,6 +68,11 @@ public class Cor {
         else {
             corruption = CORRUPTION_FOR_OTHER;
         }
+
+        if (AbstractDungeon.player.hasRelic(OminousBracelet.ID)) {
+            corruption = Math.max(corruption - OminousBracelet.CORRUPTION_REDUCTION_FOR_ROOMS, 0);
+        }
+
         addCorruption(corruption);
     }
 
