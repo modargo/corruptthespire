@@ -1,6 +1,6 @@
 {
   "CorruptTheSpire:BlazeFromBeyond": {
-    "NAME": "BlazeFromBeyond",
+    "NAME": "Blaze from Beyond",
     "DESCRIPTION": "Deal {0} damage plus !M! damage for every {1} corruptthespire:Corruption to ALL enemies.",
     "EXTENDED_DESCRIPTION": [" NL (Deals !D! damage.)"]
   },
