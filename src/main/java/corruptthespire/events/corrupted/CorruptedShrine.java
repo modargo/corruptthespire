@@ -63,8 +63,8 @@ public class CorruptedShrine extends AbstractImageEvent {
             case 0:
                 switch (buttonPressed) {
                     case 0: // Beseech
-                        this.showCardReward(CARDS);
                         logMetric(ID, "Beseech");
+                        this.showCardReward(CARDS);
 
                         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         this.screenNum = 1;
