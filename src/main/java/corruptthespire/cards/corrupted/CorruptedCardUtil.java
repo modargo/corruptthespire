@@ -2,6 +2,7 @@ package corruptthespire.cards.corrupted;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import corruptthespire.cards.corrupted.attacks.*;
 import corruptthespire.cards.corrupted.powers.*;
@@ -59,6 +60,11 @@ public class CorruptedCardUtil {
     public static RewardItem getCorruptedCardReward() {
         RewardItem reward = new RewardItem();
         reward.cards = getRandomCorruptedCards(reward.cards.size());
+        for (AbstractRelic r : AbstractDungeon.player.relics) {
+            for (AbstractCard c : reward.cards) {
+                r.onPreviewObtainCard(c);
+            }
+        }
         return reward;
     }
 
