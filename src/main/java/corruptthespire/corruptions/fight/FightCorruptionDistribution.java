@@ -22,6 +22,7 @@ public class FightCorruptionDistribution {
         int totalWeight = distribution.stream().map(cdi -> cdi.weight).reduce(0, Integer::sum);
 
         logger.info("Rolling fight corruption. Cor.rng.counter: " + Cor.rng.counter);
+        logger.info("Distribution: " + distribution.stream().map(e -> "(" + e.corruptionType + ", " + e.weight + ")").reduce("", (s1, s2) -> s1 + " " + s2));
         int roll = Cor.rng.random(totalWeight - 1);
         FightCorruptionDistributionInfo option = pick(distribution, roll);
 
