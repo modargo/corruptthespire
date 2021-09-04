@@ -54,6 +54,7 @@ public class MaskOfShards extends AbstractCorruptedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.applyPowers();
         this.addToBot(new LoseHPAction(p, p, HP_LOSS));
         this.addToBot(new GainBlockAction(p, this.block));
     }

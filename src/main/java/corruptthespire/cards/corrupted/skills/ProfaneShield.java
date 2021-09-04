@@ -52,6 +52,7 @@ public class ProfaneShield extends AbstractCorruptedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.applyPowers();
         this.addToBot(new GainBlockAction(p, this.block));
     }
 

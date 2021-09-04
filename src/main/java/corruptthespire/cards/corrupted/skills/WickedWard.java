@@ -53,6 +53,7 @@ public class WickedWard extends AbstractCorruptedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.applyPowers();
         this.addToBot(new GainBlockAction(p, Cor.corruption >= CORRUPTION_THRESHOLD ? this.block + this.magicNumber : this.block));
     }
 }
