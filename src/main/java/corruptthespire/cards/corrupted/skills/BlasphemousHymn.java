@@ -21,12 +21,13 @@ public class BlasphemousHymn extends AbstractCorruptedCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 1;
-    private static final int AMOUNT = 1;
+    private static final int WEAK = 3;
+    private static final int ABYSSTOUCHED = 1;
     private static final int CORRUPTION_THRESHOLD = 10;
 
     public BlasphemousHymn() {
-        super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, CORRUPTION_THRESHOLD), CardType.SKILL, CardTarget.ALL_ENEMY);
-        this.magicNumber = this.baseMagicNumber = AMOUNT;
+        super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, ABYSSTOUCHED, CORRUPTION_THRESHOLD), CardType.SKILL, CardTarget.ALL_ENEMY);
+        this.magicNumber = this.baseMagicNumber = WEAK;
         this.isEthereal = true;
         this.exhaust = true;
     }
@@ -36,18 +37,18 @@ public class BlasphemousHymn extends AbstractCorruptedCard {
         if (!this.upgraded) {
             this.exhaust = false;
             this.upgradeName();
-            this.rawDescription = MessageFormat.format(cardStrings.UPGRADE_DESCRIPTION, CORRUPTION_THRESHOLD);
+            this.rawDescription = MessageFormat.format(cardStrings.UPGRADE_DESCRIPTION, ABYSSTOUCHED, CORRUPTION_THRESHOLD);
             this.initializeDescription();
         }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster monster) {
-        int amount = this.magicNumber * (Cor.corruption / CORRUPTION_THRESHOLD);
+        int abysstouched = ABYSSTOUCHED * (Cor.corruption / CORRUPTION_THRESHOLD);
         for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!m.isDying && !m.halfDead && !m.isDeadOrEscaped()) {
-                this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, amount, false), amount));
-                this.addToBot(new ApplyPowerAction(m, p, PowerUtil.abysstouched(m, amount), amount));
+                this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
+                this.addToBot(new ApplyPowerAction(m, p, PowerUtil.abysstouched(m, abysstouched), abysstouched));
             }
         }
     }
