@@ -60,9 +60,8 @@ public class BottledPrism extends AbstractCorruptedRelic implements CustomBottle
 
     @Override
     public void onEquip() {
-        CardGroup differentColorCards = AbstractDungeon.player.masterDeck.getPurgeableCards();
-        differentColorCards.group.removeIf(c -> c.color == AbstractDungeon.player.getCardColor() || c.type == AbstractCard.CardType.CURSE);
-        if (differentColorCards.size() > 0) {
+        CardGroup eligibleCards = this.getEligibleCards();
+        if (eligibleCards.size() > 0) {
             this.cardSelected = false;
             if (AbstractDungeon.isScreenUp) {
                 AbstractDungeon.dynamicBanner.hide();
@@ -71,7 +70,7 @@ public class BottledPrism extends AbstractCorruptedRelic implements CustomBottle
             }
 
             AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.INCOMPLETE;
-            AbstractDungeon.gridSelectScreen.open(differentColorCards, 1, String.format(DESCRIPTIONS[1], this.name), false, false, false, false);
+            AbstractDungeon.gridSelectScreen.open(eligibleCards, 1, MessageFormat.format(DESCRIPTIONS[1], this.name), false, false, false, false);
         }
     }
 
@@ -117,12 +116,7 @@ public class BottledPrism extends AbstractCorruptedRelic implements CustomBottle
 
     @Override
     public boolean canSpawn() {
-        for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-            if (c.color != AbstractDungeon.player.getCardColor() && c.type != AbstractCard.CardType.CURSE) {
-                return true;
-            }
-        }
-        return false;
+        return this.getEligibleCards().group.size() > 0;
     }
 
     @Override
@@ -132,5 +126,11 @@ public class BottledPrism extends AbstractCorruptedRelic implements CustomBottle
 
     public AbstractCard getCard() {
         return this.card.makeCopy();
+    }
+
+    private CardGroup getEligibleCards() {
+        CardGroup differentColorCards = AbstractDungeon.player.masterDeck.getPurgeableCards();
+        differentColorCards.group.removeIf(c -> c.color == AbstractDungeon.player.getCardColor() || c.type == AbstractCard.CardType.CURSE || c.inBottleFlame || c.inBottleLightning || c.inBottleTornado);
+        return differentColorCards;
     }
 }
