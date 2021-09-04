@@ -27,7 +27,7 @@ public class Cor {
     public static final int CORRUPTION_FOR_SHOP = 10;
     public static final int CORRUPTION_FOR_OTHER = 4;
 
-    public static final int CORRUPTION_PER_DAMAGE_INCREASE = 4;
+    public static final int CORRUPTION_PER_DAMAGE_INCREASE = 5;
     
     public static Integer corruption;
     public static Random rng;
