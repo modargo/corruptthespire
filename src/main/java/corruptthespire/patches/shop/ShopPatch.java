@@ -104,7 +104,7 @@ public class ShopPatch {
                         CardCrawlGame.metricData.addPurgedItem(card.getMetricID());
                         AbstractDungeon.player.masterDeck.removeCard(card);
                         AbstractDungeon.transformCard(card, false, AbstractDungeon.miscRng);
-                        AbstractDungeon.effectsQueue.add(new ShowCardAndObtainEffect(card, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+                        AbstractDungeon.topLevelEffectsQueue.add(new ShowCardAndObtainEffect(AbstractDungeon.transformedCard, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
                     }
 
                     AbstractDungeon.gridSelectScreen.selectedCards.clear();
