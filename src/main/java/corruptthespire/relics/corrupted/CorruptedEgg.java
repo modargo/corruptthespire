@@ -2,6 +2,7 @@ package corruptthespire.relics.corrupted;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import corruptthespire.Cor;
@@ -34,6 +35,11 @@ public class CorruptedEgg extends AbstractCorruptedRelic {
     @Override
     public String getUpdatedDescription() {
         return MessageFormat.format(DESCRIPTIONS[0], UPGRADE_CHANCE_INCREASE, CORRUPTION);
+    }
+    
+    @Override
+    public boolean canSpawn() {
+        return Settings.isEndless || AbstractDungeon.floorNum <= 48;
     }
 
     @Override
