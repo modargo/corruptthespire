@@ -124,7 +124,7 @@
   },
   "CorruptTheSpire:MaskOfShards": {
     "NAME": "Mask of Shards",
-    "DESCRIPTION": "Lose {0} HP. NL Gain {1} Block plus !M! damage for every {2} corruptthespire:Corruption.",
+    "DESCRIPTION": "Lose {0} HP. NL Gain {1} Block plus !M! Block for every {2} corruptthespire:Corruption.",
     "EXTENDED_DESCRIPTION": [" NL (Gains !B! Block.)"]
   },
   "CorruptTheSpire:AnnihilationRay": {
