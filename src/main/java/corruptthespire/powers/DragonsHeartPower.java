@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.MetallicizePower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import corruptthespire.CorruptTheSpire;
@@ -40,7 +41,12 @@ public class DragonsHeartPower extends AbstractPower {
         this.flash();
         for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (m != this.owner && !m.isDying && !m.halfDead && !m.isDeadOrEscaped()) {
-                this.addToBot(new ApplyPowerAction(m, m, new StrengthPower(m, this.amount), this.amount));
+                if (AbstractDungeon.actionManager.turnHasEnded) {
+                    this.addToBot(new ApplyPowerAction(m, m, new GainStrengthPower(m, this.amount), this.amount));
+                }
+                else {
+                    this.addToBot(new ApplyPowerAction(m, m, new StrengthPower(m, this.amount), this.amount));
+                }
                 this.addToBot(new ApplyPowerAction(m, m, new MetallicizePower(m, this.amount), this.amount));
             }
         }
