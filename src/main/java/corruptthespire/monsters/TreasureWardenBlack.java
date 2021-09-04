@@ -39,10 +39,10 @@ public class TreasureWardenBlack extends CustomMonster
     private static final int[] A3_BLACK_BREATH_DAMAGE = { 10, 15, 19 };
     private static final int[] DRAGONS_HEART_AMOUNT = { 2, 3, 4 };
     private static final int[] A18_DRAGONS_HEART_AMOUNT = { 3, 4, 5 };
-    private static final int[] HP_MIN = { 60, 100, 180 };
-    private static final int[] HP_MAX = { 63, 104, 185 };
-    private static final int[] A8_HP_MIN = { 63, 104, 185 };
-    private static final int[] A8_HP_MAX = { 66, 108, 190 };
+    private static final int[] HP_MIN = { 55, 92, 166 };
+    private static final int[] HP_MAX = { 58, 96, 171 };
+    private static final int[] A8_HP_MIN = { 57, 95, 170 };
+    private static final int[] A8_HP_MAX = { 60, 99, 175 };
     private int searingBreathDamage;
     private int searingBreathBurns;
     private int acidBreathDamage;
