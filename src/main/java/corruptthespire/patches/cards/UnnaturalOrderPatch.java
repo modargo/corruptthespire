@@ -16,12 +16,8 @@ import corruptthespire.powers.AbysstouchedPower;
 import corruptthespire.powers.PowerUtil;
 import corruptthespire.powers.UnnaturalOrderPower;
 import javassist.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class UnnaturalOrderPatch {
-    private static final Logger logger = LogManager.getLogger(UnnaturalOrderPatch.class.getName());
-
     @SpirePatch(
             clz = ApplyPowerAction.class,
             method = SpirePatch.CONSTRUCTOR,
@@ -48,13 +44,9 @@ public class UnnaturalOrderPatch {
 
         @SpirePostfixPatch
         public static void convertAbysstouchedToPoison(ApplyPowerAction __instance, AbstractCreature target, AbstractCreature source, AbstractPower powerToApply, int stackAmount, boolean isFast, AbstractGameAction.AttackEffect effect, @ByRef AbstractPower[] ___powerToApply) {
-            logger.info("Checking whether to convert abysstouched to poison");
             if (AbstractDungeon.player.hasPower(UnnaturalOrderPower.POWER_ID) && isAbysstouched(___powerToApply[0].ID)) {
-                logger.info("Converting abysstouched to poison");
                 AbstractPower p = ReflectionHacks.getPrivate(__instance, ApplyPowerAction.class, "powerToApply");
                 ReflectionHacks.setPrivate(__instance, ApplyPowerAction.class, "powerToApply", new PoisonPower(target, source, p.amount));
-                p = ReflectionHacks.getPrivate(__instance, ApplyPowerAction.class, "powerToApply");
-                logger.info("p.ID: " + p.ID + ", p.amount:" + p.amount);
             }
         }
     }
