@@ -89,5 +89,9 @@
   "CorruptTheSpire:EldritchGrasp": {
     "NAME": "Eldritch Grasp",
     "DESCRIPTIONS": ["At the end of each round, apply #b{0} #yConstricted."]
+  },
+  "CorruptTheSpire:UnnaturalOrder": {
+    "NAME": "Unnatural Order",
+    "DESCRIPTIONS": ["Poison gains all the benefits of #yAbysstouched. NL Convert all #yAbysstouched to Poison. NL When you apply Poison or corruptthespire:Abysstouched, apply {0} more."]
   }
 }

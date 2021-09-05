@@ -46,7 +46,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import static com.megacrit.cardcrawl.core.Settings.GameLanguage;
 import static com.megacrit.cardcrawl.core.Settings.language;
@@ -166,7 +168,12 @@ public class CorruptTheSpire implements
         BaseMod.addCard(new WheelOfFortune());
         BaseMod.addCard(new Bedeviled());
         BaseMod.addCard(new Fated());
-        for (AbstractCard c : CorruptedCardUtil.getAllCorruptedCards()) {
+        ArrayList<AbstractCard> corruptedCards = CorruptedCardUtil.getAllCorruptedCardInfos(true)
+                .values()
+                .stream()
+                .map(cci -> cci.card)
+                .collect(Collectors.toCollection(ArrayList::new));
+        for (AbstractCard c : corruptedCards) {
             BaseMod.addCard(c);
         }
     }

@@ -130,5 +130,35 @@
   "CorruptTheSpire:AnnihilationRay": {
     "NAME": "Annihilation Ray",
     "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Gain !M! Temporary_HP. NL When this card is exhausted, add a random corrupted card to your hand."
+  },
+  "CorruptTheSpire:LightningBlood": {
+    "NAME": "Lightning Blood",
+    "DESCRIPTION": "Lose {0} HP. NL Gain !M! Strength. NL Gain !M! corruptthespire:Metallicize."
+  },
+  "CorruptTheSpire:UnnaturalOrder": {
+    "NAME": "Unnatural Order",
+    "DESCRIPTION": "Poison gains all the benefits of corruptthespire:Abysstouched. NL Convert all corruptthespire:Abysstouched to Poison. NL When you apply Poison or corruptthespire:Abysstouched, apply !M! more.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Poison gains all the benefits of corruptthespire:Abysstouched. NL Convert all corruptthespire:Abysstouched to Poison. NL When you apply Poison or corruptthespire:Abysstouched, apply !M! more."
+  },
+  "CorruptTheSpire:GuidingStar": {
+    "NAME": "Guiding Star",
+    "DESCRIPTION": "Gain !M! Focus. NL Gain 1 Orb slot.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Focus. NL Gain 1 Orb slot. NL Choose one: Channel 1 Lightning, Frost, or Dark."
+  },
+  "CorruptTheSpire:GuidingStarLightningOption": {
+    "NAME": "Lightning",
+    "DESCRIPTION": "Channel !M! Lightning."
+  },
+  "CorruptTheSpire:GuidingStarFrostOption": {
+    "NAME": "Frost",
+    "DESCRIPTION": "Channel !M! Frost."
+  },
+  "CorruptTheSpire:GuidingStarDarkOption": {
+    "NAME": "Dark",
+    "DESCRIPTION": "Channel !M! Dark."
+  },
+  "CorruptTheSpire:DivineStrike": {
+    "NAME": "Divine Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Mantra. NL Shuffle this card into your draw pile."
   }
 }

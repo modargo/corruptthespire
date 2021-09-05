@@ -16,11 +16,11 @@ public class CorruptedCardUtil {
     public static final int CORRUPTED_COMMON_PRICE = 50;
     public static final int CORRUPTED_RARE_PRICE = 125;
 
-    public static ArrayList<AbstractCard> getAllCorruptedCards() {
-        return getAllCorruptedCardInfos().values().stream().map(cci -> cci.card).collect(Collectors.toCollection(ArrayList::new));
+    public static Map<String, CorruptedCardInfo> getAllCorruptedCardInfos() {
+        return getAllCorruptedCardInfos(false);
     }
 
-    public static Map<String, CorruptedCardInfo> getAllCorruptedCardInfos() {
+    public static Map<String, CorruptedCardInfo> getAllCorruptedCardInfos(boolean ignoreClass) {
         ArrayList<CorruptedCardInfo> corruptedCardInfos = new ArrayList<>();
 
         //Attacks
@@ -52,6 +52,20 @@ public class CorruptedCardUtil {
         corruptedCardInfos.add(new CorruptedCardInfo(new CorruptedForm(), AbstractCard.CardRarity.RARE));
         corruptedCardInfos.add(new CorruptedCardInfo(new ForbiddenRitual(), AbstractCard.CardRarity.RARE));
         corruptedCardInfos.add(new CorruptedCardInfo(new PoweredByNightmare(), AbstractCard.CardRarity.RARE));
+
+        //Class-specific
+        if (ignoreClass || AbstractDungeon.player.getCardColor() == AbstractCard.CardColor.RED) {
+            corruptedCardInfos.add(new CorruptedCardInfo(new LightningBlood(), AbstractCard.CardRarity.COMMON));
+        }
+        if (ignoreClass || AbstractDungeon.player.getCardColor() == AbstractCard.CardColor.GREEN) {
+            corruptedCardInfos.add(new CorruptedCardInfo(new UnnaturalOrder(), AbstractCard.CardRarity.COMMON));
+        }
+        if (ignoreClass || AbstractDungeon.player.getCardColor() == AbstractCard.CardColor.BLUE) {
+            corruptedCardInfos.add(new CorruptedCardInfo(new GuidingStar(), AbstractCard.CardRarity.COMMON));
+        }
+        if (ignoreClass || AbstractDungeon.player.getCardColor() == AbstractCard.CardColor.PURPLE) {
+            corruptedCardInfos.add(new CorruptedCardInfo(new DivineStrike(), AbstractCard.CardRarity.COMMON));
+        }
 
         return corruptedCardInfos.stream()
             .collect(Collectors.toMap(cci -> cci.card.cardID, cci -> cci));

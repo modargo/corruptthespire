@@ -13,5 +13,15 @@
     "PROPER_NAME": "Common Debuff",
     "NAMES": ["common\u00a0debuff"],
     "DESCRIPTION": "#yWeak, #yFrail, #yVulnerable, negative #yDexterity, negative #yFocus, #yConfused."
+  },
+  {
+    "PROPER_NAME": "Metallicize",
+    "NAMES": ["metallicize"],
+    "DESCRIPTION": "Gain #yBlock at the end of your turn."
+  },
+  {
+    "PROPER_NAME": "Constricted",
+    "NAMES": ["constricted"],
+    "DESCRIPTION": "Deals damage to you at the end of your turn."
   }
 ]

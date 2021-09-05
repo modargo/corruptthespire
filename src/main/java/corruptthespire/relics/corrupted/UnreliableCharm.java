@@ -20,6 +20,7 @@ public class UnreliableCharm extends AbstractCorruptedRelic {
     private static final int STRENGTH = 1;
     private static final int PLATED_ARMOR = 1;
     private static final int THORNS = 1;
+    private static final int NEGATIVE_STRENGTH = 1;
 
     public UnreliableCharm() {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.CLINK);
@@ -29,12 +30,12 @@ public class UnreliableCharm extends AbstractCorruptedRelic {
     public void atBattleStart() {
         this.flash();
         if (AbstractDungeon.floorNum % 2 == 0) {
-            this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, STRENGTH), STRENGTH));
-            this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PlatedArmorPower(AbstractDungeon.player, PLATED_ARMOR), PLATED_ARMOR));
             this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ThornsPower(AbstractDungeon.player, THORNS), THORNS));
+            this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PlatedArmorPower(AbstractDungeon.player, PLATED_ARMOR), PLATED_ARMOR));
+            this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, STRENGTH), STRENGTH));
         }
         else {
-            this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, -STRENGTH), -STRENGTH));
+            this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, -NEGATIVE_STRENGTH), -NEGATIVE_STRENGTH));
         }
         this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
     }
