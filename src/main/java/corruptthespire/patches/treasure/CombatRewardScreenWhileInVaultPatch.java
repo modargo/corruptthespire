@@ -12,7 +12,6 @@ import corruptthespire.corruptions.treasure.TreasureCorruptionType;
 import corruptthespire.corruptions.treasure.VaultChest;
 
 public class CombatRewardScreenWhileInVaultPatch {
-
     @SpirePatch(clz = CombatRewardScreen.class, method = "setLabel")
     public static class SetLabelPatch {
         @SpirePrefixPatch

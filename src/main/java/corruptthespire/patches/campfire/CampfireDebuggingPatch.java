@@ -15,11 +15,11 @@ public class CampfireDebuggingPatch {
         @SpirePostfixPatch
         public static void campfireSmithEffectUpdateLog(CampfireSmithEffect __instance) {
             logger.info("AbstractDungeon.isScreenUp: " + AbstractDungeon.isScreenUp);
+            logger.info("AbstractDungeon.screen: " + AbstractDungeon.screen);
+            logger.info("AbstractDungeon.previousScreen: " + AbstractDungeon.previousScreen);
             logger.info("__instance.duration: " + __instance.duration);
             logger.info("AbstractDungeon.effectsQueue.size(): " + AbstractDungeon.effectsQueue.size());
             logger.info("AbstractDungeon.getCurrRoom().phase: " + AbstractDungeon.getCurrRoom().phase);
-
         }
-
     }
 }

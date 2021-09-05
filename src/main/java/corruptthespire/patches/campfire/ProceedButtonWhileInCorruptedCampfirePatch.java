@@ -48,6 +48,7 @@ public class ProceedButtonWhileInCorruptedCampfirePatch {
 
             AbstractDungeon.overlayMenu.proceedButton.hide();
             AbstractDungeon.closeCurrentScreen();
+            AbstractDungeon.previousScreen = null;
             campfireUI.reopen();
 
             return SpireReturn.Return(null);

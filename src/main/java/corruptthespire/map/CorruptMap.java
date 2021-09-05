@@ -44,8 +44,7 @@ public class CorruptMap {
                         MarkCorrupted(node);
                     }
                 }
-                if ((actNum == 3 && node.y == AbstractDungeon.map.size() - 1)
-                    || node.hasEmeraldKey) {
+                if (actNum == 3 && node.y == AbstractDungeon.map.size() - 1) {
                     MarkCorrupted(node);
                 }
                 else if (node.hasEdges() && !(actNum == 1 && node.y == 0)) {
@@ -80,6 +79,14 @@ public class CorruptMap {
             }
             if (node == null || node.getRoom() instanceof MonsterRoomBoss) {
                 isBossCorrupted = true;
+            }
+        }
+
+        //Doing this after the primary assignment of corrupted notes is important for reload stability if the emerald
+        //elite has been killed
+        for (MapRoomNode node : potentialCorruptNodes) {
+            if (node.hasEmeraldKey) {
+                MarkCorrupted(node);
             }
         }
 
