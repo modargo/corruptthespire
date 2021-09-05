@@ -17,7 +17,7 @@
   "CorruptTheSpire:UnreliableCharm": {
     "NAME": "Unreliable Charm",
     "FLAVOR": "Sometimes it works.",
-    "DESCRIPTIONS": ["At the start of each combat, if the floor number is even, gain #b{0} #yStrength, #b{1} #yPlated #yArmor, and #b{2} #yThorns. If the floor number is odd, lose #b{0} #yStrength."]
+    "DESCRIPTIONS": ["At the start of each combat, if the floor number is even, gain #b{0} #yStrength and #b{1} #yBuffer. If the floor number is odd, gain #b{2} #yDexterity and #b{3} #yThorns."]
   },
   "CorruptTheSpire:RustedOrichalcum": {
     "NAME": "Rusted Orichalcum",

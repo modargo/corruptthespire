@@ -4,9 +4,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.PlatedArmorPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.powers.ThornsPower;
+import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.util.TextureLoader;
@@ -18,9 +16,9 @@ public class UnreliableCharm extends AbstractCorruptedRelic {
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));
     private static final int STRENGTH = 1;
-    private static final int PLATED_ARMOR = 1;
+    private static final int BUFFER = 1;
+    private static final int DEXTERITY = 1;
     private static final int THORNS = 1;
-    private static final int NEGATIVE_STRENGTH = 1;
 
     public UnreliableCharm() {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.CLINK);
@@ -30,19 +28,19 @@ public class UnreliableCharm extends AbstractCorruptedRelic {
     public void atBattleStart() {
         this.flash();
         if (AbstractDungeon.floorNum % 2 == 0) {
-            this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ThornsPower(AbstractDungeon.player, THORNS), THORNS));
-            this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PlatedArmorPower(AbstractDungeon.player, PLATED_ARMOR), PLATED_ARMOR));
+            this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new BufferPower(AbstractDungeon.player, BUFFER), BUFFER));
             this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, STRENGTH), STRENGTH));
         }
         else {
-            this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, -NEGATIVE_STRENGTH), -NEGATIVE_STRENGTH));
+            this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ThornsPower(AbstractDungeon.player, THORNS), THORNS));
+            this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, DEXTERITY), DEXTERITY));
         }
         this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
     }
 
     @Override
     public String getUpdatedDescription() {
-        return MessageFormat.format(DESCRIPTIONS[0], STRENGTH, PLATED_ARMOR, THORNS);
+        return MessageFormat.format(DESCRIPTIONS[0], STRENGTH, BUFFER, DEXTERITY, THORNS);
     }
 
     @Override
