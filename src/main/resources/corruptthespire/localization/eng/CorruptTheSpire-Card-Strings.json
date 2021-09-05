@@ -10,7 +10,7 @@
   },
   "CorruptTheSpire:Condemn": {
     "NAME": "Condemn",
-    "DESCRIPTION": "Deal !D! damage. NL Gain {0} corruptthespire:Corruption."
+    "DESCRIPTION": "Deal !D! damage. NL Enemy loses HP equal to !M!% of their Max HP. NL Gain {0} corruptthespire:Corruption."
   },
   "CorruptTheSpire:ShadowAndFlame": {
     "NAME": "Shadow and Flame",
