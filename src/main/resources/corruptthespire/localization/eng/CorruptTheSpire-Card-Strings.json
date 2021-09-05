@@ -95,7 +95,7 @@
   },
   "CorruptTheSpire:DevilsBargain": {
     "NAME": "Devil's Bargain",
-    "DESCRIPTION": "Put !M! cards from your discard pile into your hand. Discard all other cards. NL Gain 3 corruptthespire:Corruption. NL Exhaust."
+    "DESCRIPTION": "Put !M! cards from your discard pile into your hand. Discard all other cards. NL Gain {0} corruptthespire:Corruption. NL Exhaust."
   },
   "CorruptTheSpire:BlasphemousHymn": {
     "NAME": "Blasphemous Hymn",
