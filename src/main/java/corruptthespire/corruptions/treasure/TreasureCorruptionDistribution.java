@@ -34,6 +34,9 @@ public class TreasureCorruptionDistribution extends AbstractCorruptionDistributi
         if (Cor.flags.seenSealedChest) {
             distribution.removeIf(di -> di.corruption == TreasureCorruptionType.Sealed);
         }
+        if (Cor.flags.seenVault) {
+            distribution.removeIf(di -> di.corruption == TreasureCorruptionType.Vault);
+        }
         return distribution;
     }
 }

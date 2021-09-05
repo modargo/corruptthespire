@@ -4,6 +4,7 @@ public class CorruptionFlags {
     public boolean seenTreasureWardens = false;
     public boolean seenSealedChest = false;
     public boolean openedSealedChest = false;
+    public boolean seenVault = false;
     public boolean seenHarbinger = false;
     public boolean brokeDevice = false;
 

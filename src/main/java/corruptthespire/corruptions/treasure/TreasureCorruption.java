@@ -77,6 +77,8 @@ public class TreasureCorruption {
     }
 
     public static void setUpVault(TreasureRoom room) {
+        Cor.flags.seenVault = true;
+
         int numChests = BASE_VAULT_CHESTS + Cor.rng.random(POTENTIAL_EXTRA_VAULT_CHESTS);
         List<VaultChestType> vaultChestTypes = new ArrayList<>();
         vaultChestTypes.add(VaultChestType.RelicAndSapphireKey);

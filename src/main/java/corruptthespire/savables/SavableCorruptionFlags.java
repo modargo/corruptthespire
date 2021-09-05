@@ -21,6 +21,7 @@ public class SavableCorruptionFlags implements CustomSavable<CorruptionFlags> {
             logger.info("flags.seenTreasureWardens: " + flags.seenTreasureWardens);
             logger.info("flags.seenSealedChest: " + flags.seenSealedChest);
             logger.info("flags.openedSealedChest: " + flags.openedSealedChest);
+            logger.info("flags.seenVault: " + flags.seenVault);
             logger.info("flags.seenHarbinger: " + flags.seenHarbinger);
             logger.info("flags.brokeDevice: " + flags.brokeDevice);
             logger.info("flags.normalMonsterCount: " + flags.normalMonsterCount);
