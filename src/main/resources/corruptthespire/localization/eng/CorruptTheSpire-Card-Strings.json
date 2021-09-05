@@ -99,7 +99,7 @@
   },
   "CorruptTheSpire:BlasphemousHymn": {
     "NAME": "Blasphemous Hymn",
-    "DESCRIPTION": "Ethereal. NL Apply !M! Weak to ALL enemies. Apply {0} corruptthespire:Abysstouched to ALL enemies for every {1} corruptthespire:Corruption. NL Exhaust.",
+    "DESCRIPTION": "Ethereal. NL Apply !M! Weak to ALL enemies. NL Apply {0} corruptthespire:Abysstouched to ALL enemies for every {1} corruptthespire:Corruption. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Ethereal. NL Apply !M! Weak to ALL enemies. NL Apply {0} corruptthespire:Abysstouched to ALL enemies for every {1} corruptthespire:Corruption."
   },
   "CorruptTheSpire:EldritchFire": {
