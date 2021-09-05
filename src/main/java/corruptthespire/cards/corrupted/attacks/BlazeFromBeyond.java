@@ -6,12 +6,16 @@ import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.BlizzardEffect;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;
+import corruptthespire.effects.combat.BlazeFromBeyondEffect;
 
 import java.text.MessageFormat;
 
@@ -47,8 +51,12 @@ public class BlazeFromBeyond extends AbstractCorruptedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.applyPowers();
-        this.addToBot(new SFXAction("ATTACK_HEAVY"));
-        this.addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
+        int blazeCount = Cor.getCorruptionDamageMultiplierPercent();
+        if (Settings.FAST_MODE) {
+            this.addToBot(new VFXAction(new BlazeFromBeyondEffect(blazeCount, AbstractDungeon.getMonsters().shouldFlipVfx()), 0.25F));
+        } else {
+            this.addToBot(new VFXAction(new BlazeFromBeyondEffect(blazeCount, AbstractDungeon.getMonsters().shouldFlipVfx()), 1.0F));
+        }
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
     }
 

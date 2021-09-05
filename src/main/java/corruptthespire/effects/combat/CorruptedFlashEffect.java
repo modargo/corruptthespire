@@ -1,5 +1,5 @@
 
-package corruptthespire.effects;
+package corruptthespire.effects.combat;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;

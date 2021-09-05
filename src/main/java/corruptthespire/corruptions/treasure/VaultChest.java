@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import corruptthespire.Cor;
 import corruptthespire.cards.CardUtil;
 import corruptthespire.cards.corrupted.CorruptedCardUtil;
-import corruptthespire.effects.TextOverlayEffect;
+import corruptthespire.effects.room.TextOverlayEffect;
 import corruptthespire.patches.treasure.VaultChestsField;
 import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.rewards.MaxHealthReward;

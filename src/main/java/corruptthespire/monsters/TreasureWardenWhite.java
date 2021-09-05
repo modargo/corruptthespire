@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.powers.EntanglePower;
 import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import corruptthespire.CorruptTheSpire;
-import corruptthespire.effects.SmallColorLaserEffect;
+import corruptthespire.effects.combat.SmallColorLaserEffect;
 import corruptthespire.powers.DragonsHeartPower;
 
 public class TreasureWardenWhite extends CustomMonster

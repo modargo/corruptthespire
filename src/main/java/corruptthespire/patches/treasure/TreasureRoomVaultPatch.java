@@ -12,8 +12,8 @@ import com.megacrit.cardcrawl.rooms.TreasureRoom;
 import corruptthespire.corruptions.treasure.TreasureCorruption;
 import corruptthespire.corruptions.treasure.TreasureCorruptionType;
 import corruptthespire.corruptions.treasure.VaultChest;
-import corruptthespire.effects.VaultChestShineEffect;
-import corruptthespire.effects.VaultSpookyChestEffect;
+import corruptthespire.effects.room.VaultChestShineEffect;
+import corruptthespire.effects.room.VaultSpookyChestEffect;
 
 import java.util.List;
 

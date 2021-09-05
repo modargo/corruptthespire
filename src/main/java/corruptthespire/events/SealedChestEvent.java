@@ -18,8 +18,8 @@ import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;
-import corruptthespire.effects.VaultChestShineEffect;
-import corruptthespire.effects.VaultSpookyChestEffect;
+import corruptthespire.effects.room.VaultChestShineEffect;
+import corruptthespire.effects.room.VaultSpookyChestEffect;
 import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.util.TextureLoader;
 

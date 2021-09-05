@@ -264,6 +264,9 @@ public class CorruptTheSpire implements
     public static String campfireImage(String id) {
         return "corruptthespire/images/campfire/" + removeModId(id) + ".png";
     }
+    public static String effectImage(String id) {
+        return "corruptthespire/images/effects/" + removeModId(id) + ".png";
+    }
 
     public static String removeModId(String id) {
         if (id.startsWith("CorruptTheSpire:")) {

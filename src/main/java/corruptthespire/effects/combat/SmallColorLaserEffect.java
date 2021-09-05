@@ -1,4 +1,4 @@
-package corruptthespire.effects;
+package corruptthespire.effects.combat;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
