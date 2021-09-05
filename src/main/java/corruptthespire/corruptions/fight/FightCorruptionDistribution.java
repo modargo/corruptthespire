@@ -23,8 +23,11 @@ public class FightCorruptionDistribution {
 
         logger.info("Rolling fight corruption. Cor.rng.counter: " + Cor.rng.counter);
         logger.info("Distribution: " + distribution.stream().map(e -> "(" + e.corruptionType + ", " + e.weight + ")").reduce("", (s1, s2) -> s1 + " " + s2));
+        logger.info("Total weight: " + totalWeight);
         int roll = Cor.rng.random(totalWeight - 1);
+        logger.info("Roll: " + roll);
         FightCorruptionDistributionInfo option = pick(distribution, roll);
+        logger.info("Picked: " + option.corruptionType);
 
         return new FightCorruptionInfo(option.corruptionType, option.amount, option.size);
     }
