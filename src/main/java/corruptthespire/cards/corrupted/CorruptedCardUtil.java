@@ -50,7 +50,8 @@ public class CorruptedCardUtil {
         corruptedCardInfos.add(new CorruptedCardInfo(new InnerFlame(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new ManiacalRage(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new CorruptedForm(), AbstractCard.CardRarity.RARE));
-        corruptedCardInfos.add(new CorruptedCardInfo(new ForbiddenRitual(), AbstractCard.CardRarity.RARE));
+        //TODO: Decide if this disabling is permanent
+        //corruptedCardInfos.add(new CorruptedCardInfo(new ForbiddenRitual(), AbstractCard.CardRarity.RARE));
         corruptedCardInfos.add(new CorruptedCardInfo(new PoweredByNightmare(), AbstractCard.CardRarity.RARE));
 
         //Class-specific
