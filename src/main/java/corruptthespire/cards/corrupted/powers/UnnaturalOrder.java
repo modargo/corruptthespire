@@ -17,7 +17,7 @@ public class UnnaturalOrder extends AbstractCorruptedCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final int COST = 0;
-    private static final int INCREASE = 1;
+    private static final int INCREASE = 2;
 
     public UnnaturalOrder() {
         super(ID, NAME, IMG, COST, DESCRIPTION, CardType.POWER, CardTarget.SELF);
