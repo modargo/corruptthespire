@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
+import com.megacrit.cardcrawl.events.GenericEventDialog;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -44,6 +45,11 @@ public class FragmentOfCorruptionEvent extends AbstractImageEvent {
         EventRoom room = ((EventRoom)AbstractDungeon.getCurrRoom());
         Random eventRngDuplicate = new Random(Settings.seed, AbstractDungeon.eventRng.counter);
         room.event = AbstractDungeon.generateEvent(eventRngDuplicate);
+        if (!(room.event instanceof AbstractImageEvent)) {
+            GenericEventDialog.hide();
+            CardCrawlGame.fadeIn(1.5F);
+            AbstractDungeon.rs = AbstractDungeon.RenderScene.NORMAL;
+        }
         room.event.onEnterRoom();
     }
 
