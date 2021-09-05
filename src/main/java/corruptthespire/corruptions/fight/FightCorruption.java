@@ -30,6 +30,7 @@ import corruptthespire.rewards.RandomUpgradeReward;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -79,60 +80,13 @@ public class FightCorruption {
     }
 
     public static void applyStartOfBattleCorruptions() {
-        List<FightCorruptionInfo> corruptionInfos = FightCorruptionInfosField.corruptionInfos.get(AbstractDungeon.getCurrRoom());
-        for (FightCorruptionInfo corruptionInfo : corruptionInfos) {
-            applyStartOfBattleCorruption(corruptionInfo);
-        }
+        //None of these exist yet, and unsure if they will exist, but this is here as scaffolding
     }
 
     public static void applyOnSpawnMonsterCorruptions(AbstractMonster m) {
         List<FightCorruptionInfo> corruptionInfos = FightCorruptionInfosField.corruptionInfos.get(AbstractDungeon.getCurrRoom());
         for (FightCorruptionInfo corruptionInfo : corruptionInfos) {
             applyOnSpawnMonsterCorruption(corruptionInfo, m);
-        }
-    }
-
-    private static void applyStartOfBattleCorruption(FightCorruptionInfo corruptionInfo) {
-        Coordinate c = getSpawnXY();
-        float x = c.x;
-        float y = c.y;
-        switch (corruptionInfo.corruptionType) {
-            case CorruptionManifestMinion:
-                CorruptionManifest.Version version = AbstractDungeon.actNum <= 1 ? CorruptionManifest.Version.Act1
-                        : AbstractDungeon.actNum == 2 ? CorruptionManifest.Version.Act2
-                        : AbstractDungeon.actNum == 3 ? CorruptionManifest.Version.Act3
-                        : CorruptionManifest.Version.Act4;
-                AbstractMonster m = new CorruptionManifest(x, y, version);
-                AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(m, false, 0));
-                break;
-            case LouseMinion:
-                AbstractMonster m1 = new LouseDefensive(x, y);
-                AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(m1, false, 0));
-                break;
-            case SlimeMinion:
-                AbstractMonster m2 = new SpikeSlime_S(x, y, 0);
-                AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(m2, false, 0));
-                break;
-            case GremlinMinion:
-                AbstractMonster m3 = new GremlinThief(x, y);
-                AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(m3, false, 0));
-                break;
-            case RepulsorMinion:
-                AbstractMonster m4 = new Repulsor(x, y);
-                AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(m4, false, 0));
-                break;
-            case ByrdMinion:
-                AbstractMonster m5 = new Byrd(x, y);
-                AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(m5, false, 0));
-                break;
-            case SnakeDaggerMinion:
-                AbstractMonster m6 = new SnakeDagger(x, y);
-                AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(m6, false, 0));
-                break;
-            case CultistMinion:
-                AbstractMonster m7 = new Cultist(x, y);
-                AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(m7, false, 0));
-                break;
         }
     }
 
@@ -182,14 +136,56 @@ public class FightCorruption {
         }
     }
 
+    private static void apa(AbstractMonster m, AbstractPower power) {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, power));
+    }
+
+    public static ArrayList<AbstractMonster> getExtraMonsterCorruptions() {
+        ArrayList<AbstractMonster> monsters = new ArrayList<>();
+        List<FightCorruptionInfo> corruptionInfos = FightCorruptionInfosField.corruptionInfos.get(AbstractDungeon.getCurrRoom());
+        for (FightCorruptionInfo corruptionInfo : corruptionInfos) {
+            AbstractMonster m = getExtraMonsterCorruption(corruptionInfo);
+            if (m != null) {
+                monsters.add(m);
+            }
+        }
+        return monsters;
+    }
+
+    private static AbstractMonster getExtraMonsterCorruption(FightCorruptionInfo corruptionInfo) {
+        Coordinate c = getSpawnXY();
+        float x = c.x;
+        float y = c.y;
+        switch (corruptionInfo.corruptionType) {
+            case CorruptionManifestMinion:
+                CorruptionManifest.Version version = AbstractDungeon.actNum <= 1 ? CorruptionManifest.Version.Act1
+                        : AbstractDungeon.actNum == 2 ? CorruptionManifest.Version.Act2
+                        : AbstractDungeon.actNum == 3 ? CorruptionManifest.Version.Act3
+                        : CorruptionManifest.Version.Act4;
+                return new CorruptionManifest(x, y, version);
+            case LouseMinion:
+                return new LouseDefensive(x, y);
+            case SlimeMinion:
+                return new SpikeSlime_S(x, y, 0);
+            case GremlinMinion:
+                return new GremlinThief(x, y);
+            case RepulsorMinion:
+                return new Repulsor(x, y);
+            case ByrdMinion:
+                return new Byrd(x, y);
+            case SnakeDaggerMinion:
+                return new SnakeDagger(x, y);
+            case CultistMinion:
+                return new Cultist(x, y);
+            default:
+                return null;
+        }
+    }
+
     private static Coordinate getSpawnXY() {
         //TODO: Consider adding logic here to look at the existing monsters and figure out where is safe to spawn
         //Nothing will be perfect, but we can have some decent heuristics
         return new Coordinate(-600.0F, 0.0F);
-    }
-
-    private static void apa(AbstractMonster m, AbstractPower power) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, power));
     }
 
     private static class Coordinate {
