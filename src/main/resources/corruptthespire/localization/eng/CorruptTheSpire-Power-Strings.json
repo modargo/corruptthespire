@@ -52,7 +52,7 @@
   "CorruptTheSpire:TormentingShackles": {
     "NAME": "Tormenting Shackles",
     "DESCRIPTIONS": [
-      "Whenever you draw a card, increase its cost by #b1 this turn."
+      "Whenever you draw a card, {0}% chance to increase its cost by #b1 this turn."
     ]
   },
   "CorruptTheSpire:BlackOmen": {
