@@ -14,10 +14,11 @@ import java.util.ArrayList;
 @SpirePatch(clz = MonsterRoom.class, method = "onPlayerEntry")
 @SpirePatch(clz = MonsterRoomElite.class, method = "onPlayerEntry")
 @SpirePatch(clz = MonsterRoomBoss.class, method = "onPlayerEntry")
-public class ApplySpawnEnemyCorruptionsPatch {
+public class DetermineCorruptionsAndApplyEnemySpawnCorruptionsPatch {
     @SpirePostfixPatch
     public static void applySpawnEnemyCorruptions(AbstractRoom __instance) {
         if (FightCorruption.shouldApplyCorruptions()) {
+            FightCorruption.determineCorruptions(__instance);
             ArrayList<AbstractMonster> monsters = FightCorruption.getExtraMonsterCorruptions();
             for (AbstractMonster m : monsters) {
                 __instance.monsters.addMonster(0, m);
