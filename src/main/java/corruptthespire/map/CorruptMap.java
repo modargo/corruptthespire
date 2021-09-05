@@ -44,7 +44,7 @@ public class CorruptMap {
                         MarkCorrupted(node);
                     }
                 }
-                if (actNum == 3 && node.y == AbstractDungeon.map.size() - 1) {
+                if (actNum == 3 && (node.y == AbstractDungeon.map.size() - 1 || node.getRoom() instanceof TreasureRoom)) {
                     MarkCorrupted(node);
                 }
                 else if (node.hasEdges() && !(actNum == 1 && node.y == 0)) {
