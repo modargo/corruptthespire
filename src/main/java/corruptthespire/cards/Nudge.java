@@ -30,9 +30,9 @@ public class Nudge extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 1), 1));
-        this.addToBot(new ScryAction(3));
+        this.addToBot(new ScryAction(this.upgraded ? 4 : 3));
         this.addToBot(new DrawCardAction(1));
-        this.addToBot(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, this.upgraded ? 2 : 1), this.upgraded ? 2 : 1));
+        this.addToBot(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, this.upgraded ? 2 : 1)));
         this.addToBot(new ArmamentsAction(false));
     }
 

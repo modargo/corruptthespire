@@ -66,7 +66,7 @@
   "CorruptTheSpire:Nudge": {
     "NAME": "Nudge",
     "DESCRIPTION": "Gain 1 Dexterity. NL Scry 3. NL Draw 1 card. NL Draw 1 card next turn. NL Upgrade a card in your hand.",
-    "UPGRADE_DESCRIPTION": "Gain 1 Dexterity. NL Scry 3. NL Draw 1 card. NL Draw 2 cards next turn. NL Upgrade a card in your hand."
+    "UPGRADE_DESCRIPTION": "Gain 1 Dexterity. NL Scry 4. NL Draw 1 card. NL Draw 2 cards next turn. NL Upgrade a card in your hand."
   },
   "CorruptTheSpire:ShimmeringShield": {
     "NAME": "Shimmering Shield",
