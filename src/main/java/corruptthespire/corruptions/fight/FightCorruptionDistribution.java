@@ -40,7 +40,7 @@ public class FightCorruptionDistribution {
     }
 
     private FightCorruptionDistributionInfo pick(List<FightCorruptionDistributionInfo> list, float roll) {
-        int currentWeight = 0;
+        float currentWeight = 0;
 
         for (FightCorruptionDistributionInfo info : list) {
             currentWeight += info.adjustedWeight;
