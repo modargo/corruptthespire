@@ -46,8 +46,8 @@ public class AstralCoreCounterPower extends AbstractPower {
                 this.astralCorePower.trigger();
             }
             this.amount += Harbinger.ASTRAL_CORE_DAMAGE_THRESHOLD * triggers;
-            this.updateDescription();
         }
+        this.updateDescription();
         return damageAmount;
     }
 }
