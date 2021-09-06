@@ -24,7 +24,10 @@ public class CorruptedShrine extends AbstractImageEvent {
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private static final String IMG = CorruptTheSpire.eventImage(ID);
 
-    private static final int CARDS = 2;
+    private static final int CARDS = 3;
+    private static final int A15_CARDS = 2;
+
+    private final int cards;
 
     private int screenNum = 0;
 
@@ -32,7 +35,9 @@ public class CorruptedShrine extends AbstractImageEvent {
         super(NAME, DESCRIPTIONS[0], IMG);
         this.noCardsInRewards = true;
 
-        imageEventText.setDialogOption(MessageFormat.format(OPTIONS[0], CARDS));
+        this.cards = AbstractDungeon.ascensionLevel >= 15 ? A15_CARDS : CARDS;
+
+        imageEventText.setDialogOption(MessageFormat.format(OPTIONS[0], this.cards));
         imageEventText.setDialogOption(OPTIONS[1]);
         imageEventText.setDialogOption(OPTIONS[2]);
     }
@@ -64,7 +69,7 @@ public class CorruptedShrine extends AbstractImageEvent {
                 switch (buttonPressed) {
                     case 0: // Beseech
                         logMetric(ID, "Beseech");
-                        this.showCardReward(CARDS);
+                        this.showCardReward(this.cards);
 
                         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         this.screenNum = 1;
