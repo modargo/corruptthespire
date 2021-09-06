@@ -27,13 +27,13 @@ public class Harbinger extends CustomMonster
     private boolean firstMove = true;
     private static final byte COSMIC_BURST_ATTACK = 1;
     private static final byte ALIEN_CLAWS_ATTACK = 2;
-    private static final int COSMIC_BURST_DAMAGE = 18;
-    private static final int A3_COSMIC_BURST_DAMAGE = 20;
+    private static final int COSMIC_BURST_DAMAGE = 16;
+    private static final int A3_COSMIC_BURST_DAMAGE = 18;
     private static final int ALIEN_CLAWS_DAMAGE = 2;
     private static final int A3_ALIEN_CLAWS_DAMAGE = 3;
     private static final int ALIEN_CLAWS_HITS = 5;
-    private static final int ASTRAL_CORE_STRENGTH = 3;
-    private static final int A18_ASTRAL_CORE_STRENGTH = 4;
+    private static final int ASTRAL_CORE_STRENGTH = 2;
+    private static final int A18_ASTRAL_CORE_STRENGTH = 3;
     public static final int ASTRAL_CORE_DAMAGE_THRESHOLD = 30;
     private static final int PULSE = 1;
     private static final int A18_PULSE = 2;
