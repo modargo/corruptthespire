@@ -14,17 +14,17 @@ import corruptthespire.CorruptTheSpire;
 import corruptthespire.util.TextureLoader;
 
 public class FallingBlazeEffect extends AbstractGameEffect {
-    private static Texture BLAZE_LEFT = TextureLoader.getTexture(CorruptTheSpire.effectImage("blazeLeft"));
-    private static Texture BLAZE_MID = TextureLoader.getTexture(CorruptTheSpire.effectImage("blazeMid"));
-    private static Texture BLAZE_RIGHT = TextureLoader.getTexture(CorruptTheSpire.effectImage("blazeRight"));
+    private static final Texture BLAZE_LEFT = TextureLoader.getTexture(CorruptTheSpire.effectImage("blazeLeft"));
+    private static final Texture BLAZE_MID = TextureLoader.getTexture(CorruptTheSpire.effectImage("blazeMid"));
+    private static final Texture BLAZE_RIGHT = TextureLoader.getTexture(CorruptTheSpire.effectImage("blazeRight"));
     private float waitTimer;
     private float x;
     private float y;
     private float vX;
     private float vY;
     private float floorY;
-    private Texture img;
-    private int blazeCount;
+    private final Texture img;
+    private final int blazeCount;
 
     public FallingBlazeEffect(int blazeCount, boolean flipped) {
         this.blazeCount = blazeCount;

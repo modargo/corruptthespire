@@ -21,7 +21,7 @@ public class ShimmeringFan extends CustomRelic {
     private static final int COLORS = 3;
     private static final int BLOCK = 8;
 
-    private ArrayList<AbstractCard.CardColor> colorsPlayed = new ArrayList<>();
+    private final ArrayList<AbstractCard.CardColor> colorsPlayed = new ArrayList<>();
 
     public ShimmeringFan() {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.FLAT);

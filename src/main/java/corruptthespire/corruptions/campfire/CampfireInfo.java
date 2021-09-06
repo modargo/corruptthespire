@@ -6,5 +6,5 @@ import java.util.ArrayList;
 
 public class CampfireInfo {
     public boolean isDone = false;
-    public ArrayList<AbstractCorruptedCampfireOption> options = new ArrayList<>();
+    public final ArrayList<AbstractCorruptedCampfireOption> options = new ArrayList<>();
 }

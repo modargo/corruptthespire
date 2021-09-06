@@ -9,7 +9,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 public class PowerUtil {
-    public static String AbysstouchedPowerId = "Abyss:Abysstouched";
+    public static final String AbysstouchedPowerId = "Abyss:Abysstouched";
     private static Constructor<?> abysstouchedConstructor = null;
 
     public static AbstractPower abysstouched(AbstractCreature owner, int amount) {

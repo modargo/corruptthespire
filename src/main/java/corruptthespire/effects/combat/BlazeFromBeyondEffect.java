@@ -10,16 +10,12 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 
 public class BlazeFromBeyondEffect extends AbstractGameEffect {
-    private int blazeCount;
-    private boolean flipped;
+    private final int blazeCount;
+    private final boolean flipped;
 
     public BlazeFromBeyondEffect(int blazeCount, boolean flipped) {
-        this.blazeCount = 5 + blazeCount;
+        this.blazeCount = 5 + Math.min(blazeCount, 45);
         this.flipped = flipped;
-        if (this.blazeCount > 50) {
-            this.blazeCount = 50;
-        }
-
     }
 
     public void update() {

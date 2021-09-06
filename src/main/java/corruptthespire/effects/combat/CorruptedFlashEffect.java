@@ -12,11 +12,11 @@ import corruptthespire.powers.CorruptedFormPower;
 import corruptthespire.util.TextureLoader;
 
 public class CorruptedFlashEffect extends AbstractGameEffect {
-    private float x;
-    private float y;
-    private Texture img;
+    private final float x;
+    private final float y;
+    private final Texture img;
     private boolean playedSound = false;
-    private static Texture IMG = TextureLoader.getTexture(CorruptTheSpire.powerImage84(CorruptedFormPower.POWER_ID));
+    private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.powerImage84(CorruptedFormPower.POWER_ID));
 
     public CorruptedFlashEffect(float x, float y) {
         this.img = IMG;

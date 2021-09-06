@@ -15,7 +15,7 @@ public class BlazeShatterEffect extends AbstractGameEffect {
     private float y;
     private float vX;
     private float vY;
-    private Texture img;
+    private final Texture img;
 
     public BlazeShatterEffect(float x, float y) {
         if (MathUtils.randomBoolean()) {

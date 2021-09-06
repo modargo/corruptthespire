@@ -15,7 +15,7 @@ import javassist.expr.FieldAccess;
 public class BottledPrismPatch {
     @SpirePatch(clz = AbstractCard.class, method = SpirePatch.CLASS)
     public static class InBottledPrismField {
-        public static SpireField<Boolean> inBottlePrism = new SpireField<>(() -> false);
+        public static final SpireField<Boolean> inBottlePrism = new SpireField<>(() -> false);
     }
 
     @SpirePatch(clz = AbstractCard.class, method = "makeStatEquivalentCopy")

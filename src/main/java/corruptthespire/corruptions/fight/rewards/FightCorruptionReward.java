@@ -12,10 +12,10 @@ import corruptthespire.rewards.MaxHealthReward;
 import corruptthespire.rewards.RandomUpgradeReward;
 
 public class FightCorruptionReward {
-    private static int GOLD_SMALL = 40;
-    private static int GOLD_MEDIUM = 90;
-    private static int GOLD_LARGE = 150;
-    private static int MAX_HEALTH = 4;
+    private static final int GOLD_SMALL = 40;
+    private static final int GOLD_MEDIUM = 90;
+    private static final int GOLD_LARGE = 150;
+    private static final int MAX_HEALTH = 4;
 
     public static void addReward(FightCorruptionSize size) {
         switch(size) {
