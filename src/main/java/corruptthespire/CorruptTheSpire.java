@@ -37,10 +37,7 @@ import corruptthespire.rewards.CustomRewardTypes;
 import corruptthespire.rewards.MaxHealthReward;
 import corruptthespire.rewards.RandomUpgradeReward;
 import corruptthespire.savables.*;
-import corruptthespire.subscribers.ApplyCorruptionHealthIncreaseOnStartBattleSubscriber;
-import corruptthespire.subscribers.ApplyCorruptionsOnStartBattleSubscriber;
-import corruptthespire.subscribers.ResetIsBossCorruptedSubscriber;
-import corruptthespire.subscribers.ResetNormalMonsterCountSubscriber;
+import corruptthespire.subscribers.*;
 import corruptthespire.util.TextureLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -95,9 +92,10 @@ public class CorruptTheSpire implements
 
         BaseMod.subscribe(new ApplyCorruptionHealthIncreaseOnStartBattleSubscriber());
         BaseMod.subscribe(new ApplyCorruptionsOnStartBattleSubscriber());
+        BaseMod.subscribe(new CheckFatedPostBattleSubscriber());
+        BaseMod.subscribe(new IncreaseInvincibleOnStartBattleSubscriber());
         BaseMod.subscribe(new ResetIsBossCorruptedSubscriber());
         BaseMod.subscribe(new ResetNormalMonsterCountSubscriber());
-        BaseMod.subscribe(new CheckFatedPostBattleSubscriber());
 
         this.registerCustomRewards();
 
