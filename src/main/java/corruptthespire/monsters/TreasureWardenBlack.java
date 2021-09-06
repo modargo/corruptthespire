@@ -30,13 +30,19 @@ public class TreasureWardenBlack extends CustomMonster
     private static final int[] SEARING_BREATH_DAMAGE = { 2, 3, 4 };
     private static final int[] A3_SEARING_BREATH_DAMAGE = { 2, 4, 5 };
     private static final int SEARING_BREATH_HITS = 3;
-    private static final int SEARING_BREATH_BURNS = 1;
-    private static final int A18_SEARING_BREATH_BURNS = 2;
+    private static final int[] SEARING_BREATH_BURNS = { 0, 1, 1 };
+    private static final int[] A18_SEARING_BREATH_BURNS = { 1, 2, 2 };
     private static final int[] ACID_BREATH_DAMAGE = { 3, 5, 7 };
     private static final int[] A3_ACID_BREATH_DAMAGE = { 4, 6, 8 };
     private static final int ACID_BREATH_HITS = 2;
+    private static final int ACID_BREATH_WOUNDS = 1;
+    private static final int A18_ACID_BREATH_WOUNDS = 2;
     private static final int[] BLACK_BREATH_DAMAGE = { 9, 13, 17 };
     private static final int[] A3_BLACK_BREATH_DAMAGE = { 10, 15, 19 };
+    private static final int[] BLACK_BREATH_DRAW_VOIDS = { 0, 1, 1 };
+    private static final int[] A18_BLACK_BREATH_DRAW_VOIDS = { 1, 1, 1};
+    private static final int[] BLACK_BREATH_DISCARD_VOIDS = { 1, 0, 0 };
+    private static final int[] A18_BLACK_BREATH_DISCARD_VOIDS = { 0, 0, 1};
     private static final int[] DRAGONS_HEART_AMOUNT = { 2, 3, 4 };
     private static final int[] A18_DRAGONS_HEART_AMOUNT = { 3, 4, 5 };
     private static final int[] HP_MIN = { 55, 92, 166 };
@@ -45,8 +51,11 @@ public class TreasureWardenBlack extends CustomMonster
     private static final int[] A8_HP_MAX = { 60, 99, 175 };
     private int searingBreathDamage;
     private int searingBreathBurns;
+    private int acidBreathWounds;
     private int acidBreathDamage;
     private int blackBreathDamage;
+    private int blackBreathDrawVoids;
+    private int blackBreathDiscardVoids;
     private int dragonsHeartAmount;
 
     public TreasureWardenBlack() {
@@ -77,12 +86,18 @@ public class TreasureWardenBlack extends CustomMonster
         this.damage.add(new DamageInfo(this, this.blackBreathDamage));
 
         if (AbstractDungeon.ascensionLevel >= 18) {
-            this.searingBreathBurns = A18_SEARING_BREATH_BURNS;
+            this.searingBreathBurns = this.v(A18_SEARING_BREATH_BURNS);
+            this.acidBreathWounds = A18_ACID_BREATH_WOUNDS;
             this.dragonsHeartAmount = this.v(A18_DRAGONS_HEART_AMOUNT);
+            this.blackBreathDrawVoids = this.v(A18_BLACK_BREATH_DRAW_VOIDS);
+            this.blackBreathDiscardVoids = this.v(A18_BLACK_BREATH_DISCARD_VOIDS);
         }
         else {
-            this.searingBreathBurns = SEARING_BREATH_BURNS;
+            this.searingBreathBurns = this.v(SEARING_BREATH_BURNS);
+            this.acidBreathWounds = ACID_BREATH_WOUNDS;
             this.dragonsHeartAmount = this.v(DRAGONS_HEART_AMOUNT);
+            this.blackBreathDrawVoids = this.v(BLACK_BREATH_DRAW_VOIDS);
+            this.blackBreathDiscardVoids = this.v(BLACK_BREATH_DISCARD_VOIDS);
         }
     }
 
@@ -102,24 +117,27 @@ public class TreasureWardenBlack extends CustomMonster
                 for (int i = 0; i < SEARING_BREATH_HITS; i++) {
                     AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
                 }
-                this.addToBot(new MakeTempCardInDiscardAction(new Burn(), this.searingBreathBurns));
+                if (this.searingBreathBurns > 0) {
+                    this.addToBot(new MakeTempCardInDiscardAction(new Burn(), this.searingBreathBurns));
+                }
                 break;
             case ACID_BREATH_ATTACK:
                 this.addToBot(new AnimateFastAttackAction(this));
                 for (int i = 0; i < ACID_BREATH_HITS; i++) {
                     AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
                 }
-                this.addToBot(new MakeTempCardInDiscardAction(new Wound(), 1));
-                if (AbstractDungeon.ascensionLevel >= 18) {
-                    this.addToBot(new MakeTempCardInDiscardAction(new Wound(), 1));
+                if (this.acidBreathWounds > 0) {
+                    this.addToBot(new MakeTempCardInDiscardAction(new Wound(), this.acidBreathWounds));
                 }
                 break;
             case BLACK_BREATH_ATTACK:
                 this.addToBot(new AnimateSlowAttackAction(this));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.NONE));
-                this.addToBot(new MakeTempCardInDrawPileAction(new VoidCard(), 1, true, true));
-                if (AbstractDungeon.ascensionLevel >= 18) {
-                    this.addToBot(new MakeTempCardInDiscardAction(new VoidCard(), 1));
+                if (this.blackBreathDrawVoids > 0) {
+                    this.addToBot(new MakeTempCardInDrawPileAction(new VoidCard(), this.blackBreathDrawVoids, true, true));
+                }
+                if (this.blackBreathDiscardVoids > 0) {
+                    this.addToBot(new MakeTempCardInDiscardAction(new VoidCard(), this.blackBreathDiscardVoids));
                 }
                 break;
         }
@@ -146,7 +164,7 @@ public class TreasureWardenBlack extends CustomMonster
 
         switch (move) {
             case SEARING_BREATH_ATTACK:
-                this.setMove(MOVES[0], SEARING_BREATH_ATTACK, Intent.ATTACK_DEBUFF, this.searingBreathDamage, SEARING_BREATH_HITS, true);
+                this.setMove(MOVES[0], SEARING_BREATH_ATTACK, this.searingBreathBurns > 0 ? Intent.ATTACK_DEBUFF : Intent.ATTACK, this.searingBreathDamage, SEARING_BREATH_HITS, true);
                 break;
             case ACID_BREATH_ATTACK:
                 this.setMove(MOVES[1], ACID_BREATH_ATTACK, Intent.ATTACK_DEBUFF, this.acidBreathDamage, ACID_BREATH_HITS, true);

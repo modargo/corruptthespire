@@ -14,11 +14,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.powers.EntanglePower;
 import com.megacrit.cardcrawl.powers.FrailPower;
+import com.megacrit.cardcrawl.powers.NoDrawPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.effects.combat.SmallColorLaserEffect;
+import corruptthespire.powers.DelayedNoDrawPower;
 import corruptthespire.powers.DragonsHeartPower;
 
 public class TreasureWardenWhite extends CustomMonster
@@ -41,10 +42,10 @@ public class TreasureWardenWhite extends CustomMonster
     private static final int[] LIGHTNING_DAMAGE = { 3, 5, 7 };
     private static final int[] A3_LIGHTNING_DAMAGE = { 4, 6, 8 };
     private static final int LIGHTNING_HITS = 2;
-    private static final int LIGHTNING_WEAK = 1;
+    private static final int[] LIGHTNING_WEAK = {0, 1, 1 };
     private static final int[] SCORCH_DAMAGE = { 9, 13, 17 };
     private static final int[] A3_SCORCH_DAMAGE = { 10, 15, 19 };
-    private static final int SCORCH_ENTANGLE = 1;
+    private static final int SCORCH_NO_DRAW = 1;
     private static final int[] DRAGONS_HEART_AMOUNT = { 2, 3, 4 };
     private static final int[] A18_DRAGONS_HEART_AMOUNT = { 3, 4, 5 };
     private static final int[] HP_MIN = { 55, 92, 166 };
@@ -54,6 +55,7 @@ public class TreasureWardenWhite extends CustomMonster
     private int maelstromDamage;
     private int maelstromFrail;
     private int lightningDamage;
+    private int lightningWeak;
     private int scorchDamage;
     private int dragonsHeartAmount;
 
@@ -92,6 +94,8 @@ public class TreasureWardenWhite extends CustomMonster
             this.maelstromFrail = MAELSTROM_FRAIL;
             this.dragonsHeartAmount = this.v(DRAGONS_HEART_AMOUNT);
         }
+
+        this.lightningWeak = this.v(LIGHTNING_WEAK);
     }
 
     @Override
@@ -117,13 +121,17 @@ public class TreasureWardenWhite extends CustomMonster
                 for (int i = 0; i < LIGHTNING_HITS; i++) {
                     AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
                 }
-                this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, LIGHTNING_WEAK, true), LIGHTNING_WEAK));
+                if (this.lightningWeak > 0) {
+                    this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, this.lightningWeak, true), this.lightningWeak));
+                }
                 break;
             case SCORCH_ATTACK:
                 AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new SmallColorLaserEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, this.hb.cX, this.hb.cY, Color.RED), Settings.FAST_MODE ? 0.1F : 0.3F));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.NONE));
-                this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new EntanglePower(AbstractDungeon.player), SCORCH_ENTANGLE));
+                if (SCORCH_NO_DRAW > 0) {
+                    this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new DelayedNoDrawPower(AbstractDungeon.player, SCORCH_NO_DRAW)));
+                }
                 break;
         }
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
@@ -152,7 +160,7 @@ public class TreasureWardenWhite extends CustomMonster
                 this.setMove(MOVES[0], MAELSTROM_ATTACK, Intent.ATTACK_DEBUFF, this.maelstromDamage, MAELSTROM_HITS, true);
                 break;
             case LIGHTNING_ATTACK:
-                this.setMove(MOVES[1], LIGHTNING_ATTACK, Intent.ATTACK_DEBUFF, this.lightningDamage, LIGHTNING_HITS, true);
+                this.setMove(MOVES[1], LIGHTNING_ATTACK, this.lightningWeak > 0 ? Intent.ATTACK_DEBUFF : Intent.ATTACK, this.lightningDamage, LIGHTNING_HITS, true);
                 break;
             case SCORCH_ATTACK:
                 this.setMove(MOVES[2], SCORCH_ATTACK, Intent.ATTACK_DEBUFF, this.scorchDamage);
