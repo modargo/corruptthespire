@@ -22,9 +22,16 @@ public class FightCorruptionDistribution {
         int totalWeight = distribution.stream().map(cdi -> cdi.weight).reduce(0, Integer::sum);
 
         logger.info("Rolling fight corruption. Cor.rng.counter: " + Cor.rng.counter);
-        logger.info("Distribution: " + distribution.stream().map(e -> "(" + e.corruptionType + ", " + e.weight + ")").reduce("", (s1, s2) -> s1 + " " + s2));
-        logger.info("Total weight: " + totalWeight);
-        int roll = Cor.rng.random(totalWeight - 1);
+        //logger.info("Distribution: " + distribution.stream().map(e -> "(" + e.corruptionType + ", " + e.weight + ")").reduce("", (s1, s2) -> s1 + " " + s2));
+        //logger.info("Total weight: " + totalWeight);
+        //int roll = Cor.rng.random(totalWeight - 1);
+
+        for (FightCorruptionDistributionInfo fightCorruptionDistributionInfo : distribution) {
+            fightCorruptionDistributionInfo.adjustedWeight = fightCorruptionDistributionInfo.weight / (float) totalWeight;
+        }
+        logger.info("Distribution: " + distribution.stream().map(e -> "(" + e.corruptionType + ", " + e.adjustedWeight + ")").reduce("", (s1, s2) -> s1 + " " + s2));
+
+        float roll = Cor.rng.random();
         logger.info("Roll: " + roll);
         FightCorruptionDistributionInfo option = pick(distribution, roll);
         logger.info("Picked: " + option.corruptionType);
@@ -32,11 +39,11 @@ public class FightCorruptionDistribution {
         return new FightCorruptionInfo(option.corruptionType, option.amount, option.size);
     }
 
-    private FightCorruptionDistributionInfo pick(List<FightCorruptionDistributionInfo> list, int roll) {
+    private FightCorruptionDistributionInfo pick(List<FightCorruptionDistributionInfo> list, float roll) {
         int currentWeight = 0;
 
         for (FightCorruptionDistributionInfo info : list) {
-            currentWeight += info.weight;
+            currentWeight += info.adjustedWeight;
             if (roll < currentWeight) {
                 return info;
             }
