@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.actions.GainCorruptionAction;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;
-import corruptthespire.powers.BlackOmenPower;
 
 import java.text.MessageFormat;
 

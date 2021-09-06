@@ -4,12 +4,9 @@ import basemod.abstracts.CustomSavable;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.random.Random;
 import corruptthespire.Cor;
-import corruptthespire.corruptions.fight.FightCorruptionDistribution;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.function.Consumer;
 
 public class SavableRng implements CustomSavable<Integer> {

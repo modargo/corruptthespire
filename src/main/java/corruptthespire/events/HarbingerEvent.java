@@ -7,11 +7,8 @@ import com.megacrit.cardcrawl.events.RoomEventDialog;
 import com.megacrit.cardcrawl.events.city.MaskedBandits;
 import com.megacrit.cardcrawl.helpers.MonsterHelper;
 import com.megacrit.cardcrawl.localization.EventStrings;
-import com.megacrit.cardcrawl.rewards.RewardItem;
 import corruptthespire.Cor;
-import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.monsters.Harbinger;
-import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.relics.chaotic.HarbingersClaw;
 import corruptthespire.relics.chaotic.HarbingersSkull;
 

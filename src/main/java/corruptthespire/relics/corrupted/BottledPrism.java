@@ -1,7 +1,6 @@
 package corruptthespire.relics.corrupted;
 
 import basemod.abstracts.CustomBottleRelic;
-import basemod.abstracts.CustomRelic;
 import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;

@@ -2,7 +2,6 @@ package corruptthespire.relics.chaotic;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;

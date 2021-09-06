@@ -9,11 +9,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import corruptthespire.CorruptTheSpire;
-import corruptthespire.actions.GainCorruptionAction;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 import corruptthespire.powers.PowerUtil;
-
-import java.text.MessageFormat;
 
 public class DeathTouch extends AbstractCorruptedCard {
     public static final String ID = "CorruptTheSpire:DeathTouch";

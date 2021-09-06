@@ -1,7 +1,6 @@
 package corruptthespire.corruptions.fight;
 
 import corruptthespire.Cor;
-import corruptthespire.CorruptTheSpire;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

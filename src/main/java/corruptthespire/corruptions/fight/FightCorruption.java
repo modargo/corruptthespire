@@ -1,9 +1,7 @@
 package corruptthespire.corruptions.fight;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.SpawnMonsterAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.Repulsor;
 import com.megacrit.cardcrawl.monsters.beyond.SnakeDagger;
@@ -13,7 +11,6 @@ import com.megacrit.cardcrawl.monsters.exordium.GremlinThief;
 import com.megacrit.cardcrawl.monsters.exordium.LouseDefensive;
 import com.megacrit.cardcrawl.monsters.exordium.SpikeSlime_S;
 import com.megacrit.cardcrawl.powers.*;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
@@ -23,10 +20,6 @@ import corruptthespire.corruptions.fight.rewards.FightCorruptionReward;
 import corruptthespire.monsters.CorruptionManifest;
 import corruptthespire.patches.CorruptedField;
 import corruptthespire.patches.fight.FightCorruptionInfosField;
-import corruptthespire.relics.FragmentOfCorruption;
-import corruptthespire.rewards.CorruptedCardReward;
-import corruptthespire.rewards.MaxHealthReward;
-import corruptthespire.rewards.RandomUpgradeReward;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
