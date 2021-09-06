@@ -13,7 +13,7 @@ import corruptthespire.relics.corrupted.MaskOfNightmares;
 import javassist.CtBehavior;
 
 @SpirePatch(clz = AbstractDungeon.class, method = "nextRoomTransition", paramtypez = {SaveFile.class})
-public class NextRoomTransitionPatch {
+public class NextRoomTransitionAddCorruptionPatch {
     @SpireInsertPatch(locator = Locator.class)
     public static void AddCorruption(AbstractDungeon __instance, SaveFile saveFile) {
         //Due to how boss nodes are constructed on the fly (when the boss node is clicked or the save file is loaded)
