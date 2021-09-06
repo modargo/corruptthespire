@@ -34,7 +34,7 @@ public class Harbinger extends CustomMonster
     private static final int ALIEN_CLAWS_HITS = 5;
     private static final int ASTRAL_CORE_STRENGTH = 2;
     private static final int A18_ASTRAL_CORE_STRENGTH = 3;
-    public static final int ASTRAL_CORE_DAMAGE_THRESHOLD = 30;
+    public static final int ASTRAL_CORE_DAMAGE_THRESHOLD = 40;
     private static final int PULSE = 1;
     private static final int A18_PULSE = 2;
     private static final int REGEN = 5;
