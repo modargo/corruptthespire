@@ -23,8 +23,8 @@ public class WithoutBeginningOrEnd extends AbstractImageEvent {
     private static final String IMG = CorruptTheSpire.eventImage(ID);
 
     private static final int CARDS = 2;
-    private static final int GOLD = 50;
-    private static final int A15_GOLD = 25;
+    private static final int GOLD = 100;
+    private static final int A15_GOLD = 75;
 
     private final AbstractCard card;
     private final AbstractCard curse;
