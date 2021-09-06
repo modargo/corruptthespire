@@ -18,7 +18,7 @@ import java.util.ArrayList;
 @SpirePatch(clz = ProceedButton.class, method = "update")
 public class ProceedButtonWhileInCorruptedCampfirePatch {
     @SpireInsertPatch(locator = Locator.class)
-    public static SpireReturn ReturnToTreasureRoom(ProceedButton __instance) {
+    public static SpireReturn<Void> ReturnToTreasureRoom(ProceedButton __instance) {
         AbstractRoom room = AbstractDungeon.getCurrRoom();
         if (room instanceof RestRoom
             && CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())
@@ -51,7 +51,7 @@ public class ProceedButtonWhileInCorruptedCampfirePatch {
             AbstractDungeon.previousScreen = null;
             campfireUI.reopen();
 
-            return SpireReturn.Return(null);
+            return SpireReturn.Return();
         }
 
         return SpireReturn.Continue();

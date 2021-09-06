@@ -15,12 +15,12 @@ public class CombatRewardScreenWhileInVaultPatch {
     @SpirePatch(clz = CombatRewardScreen.class, method = "setLabel")
     public static class SetLabelPatch {
         @SpirePrefixPatch
-        public static SpireReturn FixButtons(CombatRewardScreen __instance) {
+        public static SpireReturn<Void> FixButtons(CombatRewardScreen __instance) {
             AbstractRoom room = AbstractDungeon.getCurrRoom();
             if (room instanceof TreasureRoom
                 && TreasureCorruptionTypeField.corruptionType.get(room) == TreasureCorruptionType.Vault) {
                 VaultChest.FixButtons();
-                return SpireReturn.Return(null);
+                return SpireReturn.Return();
             }
 
             return SpireReturn.Continue();

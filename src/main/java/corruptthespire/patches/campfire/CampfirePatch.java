@@ -18,7 +18,7 @@ public class CampfirePatch {
     @SpirePatch(clz = CampfireUI.class, method = "initializeButtons")
     public static class InitializeButtonsPatch {
         @SpirePrefixPatch
-        public static SpireReturn InitializeCorruptedCampfireButtons(CampfireUI __instance) {
+        public static SpireReturn<Void> InitializeCorruptedCampfireButtons(CampfireUI __instance) {
             if (!CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())) {
                 return SpireReturn.Continue();
             }
@@ -29,7 +29,7 @@ public class CampfirePatch {
             CampfireCorruption.initializeCampfireInfo(campfireInfo);
             ArrayList<AbstractCampfireOption> buttons = ReflectionHacks.getPrivate(__instance, CampfireUI.class, "buttons");
             buttons.addAll(campfireInfo.options);
-            return SpireReturn.Return(null);
+            return SpireReturn.Return();
         }
 
         @SpireInsertPatch(locator = Locator.class)

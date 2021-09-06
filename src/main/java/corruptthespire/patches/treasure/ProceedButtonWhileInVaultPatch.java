@@ -17,7 +17,7 @@ import java.util.List;
 @SpirePatch(clz = ProceedButton.class, method = "update")
 public class ProceedButtonWhileInVaultPatch {
     @SpireInsertPatch(locator = Locator.class)
-    public static SpireReturn ReturnToTreasureRoom(ProceedButton __instance) {
+    public static SpireReturn<Void> ReturnToTreasureRoom(ProceedButton __instance) {
         AbstractRoom room = AbstractDungeon.getCurrRoom();
         if (room instanceof TreasureRoom
             && TreasureCorruptionTypeField.corruptionType.get(room) == TreasureCorruptionType.Vault
@@ -36,7 +36,7 @@ public class ProceedButtonWhileInVaultPatch {
             AbstractDungeon.overlayMenu.proceedButton.setLabel(AbstractChest.TEXT[0]);
             AbstractDungeon.overlayMenu.proceedButton.show();
 
-            return SpireReturn.Return(null);
+            return SpireReturn.Return();
         }
 
         return SpireReturn.Continue();

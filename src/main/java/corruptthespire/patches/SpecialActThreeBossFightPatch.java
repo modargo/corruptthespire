@@ -37,7 +37,7 @@ public class SpecialActThreeBossFightPatch {
                 AbstractDungeon.closeCurrentScreen();
                 AbstractDungeon.nextRoomTransitionStart();
                 __instance.hide();
-                return SpireReturn.Return(null);
+                return SpireReturn.Return();
             }
         }
         return SpireReturn.Continue();

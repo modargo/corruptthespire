@@ -16,7 +16,7 @@ public class EventPatch {
     @SpirePatch(clz = EventRoom.class, method = "onPlayerEntry")
     public static class EventRoomOnPlayerEntry {
         @SpirePrefixPatch
-        public static SpireReturn EventRoomOnPlayerEntryPatch(EventRoom __instance) {
+        public static SpireReturn<Void> EventRoomOnPlayerEntryPatch(EventRoom __instance) {
             EventCorruptionType corruptionType = null;
             if (CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())) {
                 corruptionType = new EventCorruptionDistribution().roll();
@@ -45,7 +45,7 @@ public class EventPatch {
             if (event != null) {
                 __instance.event = event;
                 event.onEnterRoom();
-                return SpireReturn.Return(null);
+                return SpireReturn.Return();
             }
 
             return SpireReturn.Continue();

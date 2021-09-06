@@ -45,7 +45,7 @@ public class TreasureRoomVaultPatch {
     @SpirePatch(clz = TreasureRoom.class, method = "updateShiny")
     public static class VaultUpdateShinyPatch {
         @SpirePrefixPatch
-        public static SpireReturn updateVaultChests(TreasureRoom __instance) {
+        public static SpireReturn<Void> updateVaultChests(TreasureRoom __instance) {
             List<VaultChest> vaultChests = VaultChestsField.vaultChests.get(__instance);
             if (vaultChests != null) {
                 int numOpenedChests = (int)vaultChests.stream().filter(c -> c.isOpen).count();
@@ -64,7 +64,7 @@ public class TreasureRoomVaultPatch {
             }
 
             if (__instance.chest == null) {
-                return SpireReturn.Return(null);
+                return SpireReturn.Return();
             }
             return SpireReturn.Continue();
         }

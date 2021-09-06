@@ -45,9 +45,9 @@ public class ShopPatch {
     @SpirePatch(clz = ShopScreen.class, method = "initRelics")
     public static class ChangeRelicsPatch {
         @SpirePrefixPatch
-        public static SpireReturn changeRelics(ShopScreen __instance) {
+        public static SpireReturn<Void> changeRelics(ShopScreen __instance) {
             if (ShopCorruption.handleRelics(__instance)) {
-                return SpireReturn.Return(null);
+                return SpireReturn.Return();
             }
 
             return SpireReturn.Continue();
@@ -57,9 +57,9 @@ public class ShopPatch {
     @SpirePatch(clz = ShopScreen.class, method = "initPotions")
     public static class ChangePotionsPatch {
         @SpirePrefixPatch
-        public static SpireReturn changePotions(ShopScreen __instance) {
+        public static SpireReturn<Void> changePotions(ShopScreen __instance) {
             if (ShopCorruption.handlePotions(__instance)) {
-                return SpireReturn.Return(null);
+                return SpireReturn.Return();
             }
 
             return SpireReturn.Continue();
@@ -69,7 +69,7 @@ public class ShopPatch {
     @SpirePatch(clz = ShopScreen.class, method = "purchasePurge")
     public static class PurchaseTransformPatch {
         @SpirePrefixPatch
-        public static SpireReturn purchaseTransform(ShopScreen __instance) {
+        public static SpireReturn<Void> purchaseTransform(ShopScreen __instance) {
             ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())
                     ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
                     : null;
@@ -82,7 +82,7 @@ public class ShopPatch {
                     __instance.playCantBuySfx();
                     __instance.createSpeech(ShopScreen.getCantBuyMsg());
                 }
-                return SpireReturn.Return(null);
+                return SpireReturn.Return();
             }
 
             return SpireReturn.Continue();
@@ -93,7 +93,7 @@ public class ShopPatch {
     @SpirePatch(clz = ShopScreen.class, method = "updatePurge")
     public static class UpdateTransformPatch {
         @SpirePrefixPatch
-        public static SpireReturn updateTransform(ShopScreen __instance) {
+        public static SpireReturn<Void> updateTransform(ShopScreen __instance) {
             ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())
                     ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
                     : null;
@@ -110,7 +110,7 @@ public class ShopPatch {
                     AbstractDungeon.gridSelectScreen.selectedCards.clear();
                     AbstractDungeon.shopScreen.purgeAvailable = false;
                 }
-                return SpireReturn.Return(null);
+                return SpireReturn.Return();
             }
 
             return SpireReturn.Continue();
