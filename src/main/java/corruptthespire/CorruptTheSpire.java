@@ -29,7 +29,7 @@ import corruptthespire.events.CorruptedEventInfo;
 import corruptthespire.events.CorruptedEventUtil;
 import corruptthespire.events.HarbingerEvent;
 import corruptthespire.monsters.*;
-import corruptthespire.patches.cards.CheckFatedPostBattleSubscriber;
+import corruptthespire.subscribers.CheckFatedPostBattleSubscriber;
 import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.relics.chaotic.*;
 import corruptthespire.rewards.CorruptedCardReward;

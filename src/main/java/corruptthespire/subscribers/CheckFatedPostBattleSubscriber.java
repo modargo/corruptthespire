@@ -1,4 +1,4 @@
-package corruptthespire.patches.cards;
+package corruptthespire.subscribers;
 
 import basemod.interfaces.PostBattleSubscriber;
 import com.megacrit.cardcrawl.cards.AbstractCard;
