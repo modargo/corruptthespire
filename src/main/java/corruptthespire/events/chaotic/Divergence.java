@@ -23,10 +23,10 @@ public class Divergence extends AbstractImageEvent {
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private static final String IMG = CorruptTheSpire.eventImage(ID);
 
-    private static final int CARDS_CLASS = 16;
-    private static final int A15_CARDS_CLASS = 12;
-    private static final int CARDS_ANY = 20;
-    private static final int A15_CARDS_ANY = 16;
+    private static final int CARDS_CLASS = 25;
+    private static final int A15_CARDS_CLASS = 20;
+    private static final int CARDS_ANY = 30;
+    private static final int A15_CARDS_ANY = 25;
 
     private final int cardsClass;
     private final int cardsAny;
