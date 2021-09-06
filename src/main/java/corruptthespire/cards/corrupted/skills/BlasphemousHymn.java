@@ -48,7 +48,9 @@ public class BlasphemousHymn extends AbstractCorruptedCard {
         for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!m.isDying && !m.halfDead && !m.isDeadOrEscaped()) {
                 this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
-                this.addToBot(new ApplyPowerAction(m, p, PowerUtil.abysstouched(m, abysstouched), abysstouched));
+                if (abysstouched > 0) {
+                    this.addToBot(new ApplyPowerAction(m, p, PowerUtil.abysstouched(m, abysstouched), abysstouched));
+                }
             }
         }
     }
