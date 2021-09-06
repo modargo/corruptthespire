@@ -1,6 +1,7 @@
 package corruptthespire.cards;
 
 import basemod.abstracts.CustomCard;
+import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.unique.ArmamentsAction;
@@ -30,6 +31,7 @@ public class Nudge extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 1), 1));
+        this.addToBot(new AddTemporaryHPAction(p, p, this.upgraded ? 2 : 1));
         this.addToBot(new ScryAction(this.upgraded ? 4 : 3));
         this.addToBot(new DrawCardAction(1));
         this.addToBot(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, this.upgraded ? 2 : 1)));
