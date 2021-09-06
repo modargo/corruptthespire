@@ -47,9 +47,10 @@ public class CorruptedFormPower extends AbstractPower {
                 if (m != null && !m.isDeadOrEscaped()) {
                     if (Settings.FAST_MODE) {
                         this.addToBot(new VFXAction(new CorruptedFlashEffect(m.hb.cX, m.hb.cY)));
-                        continue;
                     }
-                    this.addToBot(new VFXAction(new CorruptedFlashEffect(m.hb.cX, m.hb.cY), 0.2F));
+                    else {
+                        this.addToBot(new VFXAction(new CorruptedFlashEffect(m.hb.cX, m.hb.cY), 0.2F));
+                    }
                 }
             }
             int damage = (int)(((100 - this.amount) / 100.0f) * Cor.corruption);

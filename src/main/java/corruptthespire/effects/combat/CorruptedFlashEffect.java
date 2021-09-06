@@ -41,8 +41,8 @@ public class CorruptedFlashEffect extends AbstractGameEffect {
     public void render(SpriteBatch sb) {
         sb.setBlendFunction(770, 1);
         sb.setColor(this.color);
-        sb.draw(this.img, this.x, this.y, (float)this.img.getWidth() / 2.0F, (float)this.img.getHeight() / 2.0F, (float)this.img.getWidth(), (float)this.img.getHeight(), this.scale * MathUtils.random(2.9F, 3.1F), this.scale * MathUtils.random(2.9F, 3.1F), this.rotation, this.img.getWidth() / 2, this.img.getHeight() / 2, this.img.getWidth(), this.img.getHeight(), false, false);
-        sb.draw(this.img, this.x, this.y, (float)this.img.getWidth() / 2.0F, (float)this.img.getHeight() / 2.0F, (float)this.img.getWidth(), (float)this.img.getHeight(), this.scale * MathUtils.random(2.9F, 3.1F), this.scale * MathUtils.random(2.9F, 3.1F), this.rotation, this.img.getWidth() / 2, this.img.getHeight() / 2, this.img.getWidth(), this.img.getHeight(), false, false);
+        sb.draw(this.img, this.x, this.y, (float)this.img.getWidth() / 2.0F, (float)this.img.getHeight() / 2.0F, (float)this.img.getWidth(), (float)this.img.getHeight(), this.scale * MathUtils.random(2.9F, 3.1F), this.scale * MathUtils.random(2.9F, 3.1F), this.rotation, 0, 0, this.img.getWidth(), this.img.getHeight(), false, false);
+        sb.draw(this.img, this.x, this.y, (float)this.img.getWidth() / 2.0F, (float)this.img.getHeight() / 2.0F, (float)this.img.getWidth(), (float)this.img.getHeight(), this.scale * MathUtils.random(2.9F, 3.1F), this.scale * MathUtils.random(2.9F, 3.1F), this.rotation, 0, 0, this.img.getWidth(), this.img.getHeight(), false, false);
         sb.setBlendFunction(770, 771);
     }
 
