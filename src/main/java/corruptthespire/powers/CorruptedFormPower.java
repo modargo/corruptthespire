@@ -36,7 +36,7 @@ public class CorruptedFormPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        this.description = this.amount == 1 ? DESCRIPTIONS[0] : MessageFormat.format(DESCRIPTIONS[1], this.amount);
+        this.description = MessageFormat.format(DESCRIPTIONS[0], this.amount);
     }
 
     @Override
