@@ -71,6 +71,10 @@ public class EventCorruption {
             return AbstractDungeon.actNum > 1;
         }
 
+        if (e.equals(CorruptedShrine.ID)) {
+            return AbstractDungeon.actNum > 1;
+        }
+
         if (e.equals(NightmareBloom.ID)) {
             return AbstractDungeon.actNum == 3 && AbstractDungeon.eventList.contains(MindBloom.ID);
         }
