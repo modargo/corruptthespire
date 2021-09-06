@@ -21,7 +21,7 @@ public class IncreaseInvincibleAction extends AbstractGameAction {
                 AbstractPower power = m.getPower(InvinciblePower.POWER_ID);
                 if (power != null) {
                     int maxAmt = ReflectionHacks.getPrivate(power, InvinciblePower.class, "maxAmt");
-                    int newMaxAmt = (maxAmt * Cor.getCorruptionDamageMultiplierPercent()) / 100;
+                    int newMaxAmt = maxAmt + (maxAmt * Cor.getCorruptionDamageMultiplierPercent()) / 100;
                     ReflectionHacks.setPrivate(power, InvinciblePower.class, "maxAmt", newMaxAmt);
                     power.amount = newMaxAmt;
                     power.updateDescription();
