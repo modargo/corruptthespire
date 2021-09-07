@@ -41,11 +41,11 @@
     "DESCRIPTIONS": [
       "Your thoughts turn inward, and the Spire disappears as you explore your own #bmind. Strange, shimmering #gideas bubble up from within, reflecting back and forth in your mind's eye. NL NL You could be doing everything so very differently, you're sure of it. You strain your mind, feeling that an #gepiphany lies just beyond these phantasms....",
       "Of course. The countless ascents. Different bodies, yet one spirit. NL NL Come from below. Rise unto the heights, descend again with knowledge.",
-      "You close your mind to the ideas. You won't be tricked. Your mind is a fortress."
+      "You close your mind to the ideas. You won't be tricked. You are a fortress."
     ],
     "OPTIONS": [
       "[Epiphany] #gGain {0}.",
-      "[Reject] #gGain {0}.",
+      "[Reject] #gGain #g{0} #gMax #gHP.",
       "[Leave]"
     ]
   },
