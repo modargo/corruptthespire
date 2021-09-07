@@ -47,6 +47,9 @@ public class ProceedButtonWhileInCorruptedCampfirePatch {
             ReflectionHacks.setPrivate(campfireUI, CampfireUI.class, "bubbleMsg", campMessage);
 
             AbstractDungeon.overlayMenu.proceedButton.hide();
+            AbstractDungeon.getCurrRoom().rewards.clear();
+            AbstractDungeon.combatRewardScreen.clear();
+            AbstractDungeon.getCurrRoom().rewardTime = false;
             AbstractDungeon.closeCurrentScreen();
             AbstractDungeon.previousScreen = null;
             campfireUI.reopen();

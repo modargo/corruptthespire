@@ -20,6 +20,7 @@ public class CampfireDebuggingPatch {
             logger.info("__instance.duration: " + __instance.duration);
             logger.info("AbstractDungeon.effectsQueue.size(): " + AbstractDungeon.effectsQueue.size());
             logger.info("AbstractDungeon.getCurrRoom().phase: " + AbstractDungeon.getCurrRoom().phase);
+            logger.info("AbstractDungeon.getCurrRoom().rewardTime: " + AbstractDungeon.getCurrRoom().rewardTime);
         }
     }
 }
