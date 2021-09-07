@@ -60,6 +60,7 @@ public class CorruptedCardUtil {
         }
         if (ignoreClass || AbstractDungeon.player.getCardColor() == AbstractCard.CardColor.GREEN) {
             corruptedCardInfos.add(new CorruptedCardInfo(new UnnaturalOrder(), AbstractCard.CardRarity.COMMON));
+            corruptedCardInfos.add(new CorruptedCardInfo(new JourneyBeyond(), AbstractCard.CardRarity.COMMON));
         }
         if (ignoreClass || AbstractDungeon.player.getCardColor() == AbstractCard.CardColor.BLUE) {
             corruptedCardInfos.add(new CorruptedCardInfo(new GuidingStar(), AbstractCard.CardRarity.COMMON));

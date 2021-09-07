@@ -160,5 +160,9 @@
   "CorruptTheSpire:DivineStrike": {
     "NAME": "Divine Strike",
     "DESCRIPTION": "Deal !D! damage. NL Gain !M! Mantra. NL Shuffle this card into your draw pile."
+  },
+  "CorruptTheSpire:JourneyBeyond": {
+    "NAME": "Journey Beyond",
+    "DESCRIPTION": "Gain !M! Dexterity. NL Choose 1 of 3 random cards to add into your hand. It costs {0} less this combat."
   }
 }
