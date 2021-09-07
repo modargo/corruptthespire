@@ -13,6 +13,7 @@ import corruptthespire.events.*;
 import corruptthespire.events.chaotic.Divergence;
 import corruptthespire.events.chaotic.MindsEye;
 import corruptthespire.events.chaotic.TreeOfSwords;
+import corruptthespire.events.chaotic.WorldsUponWorlds;
 import corruptthespire.events.corrupted.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -82,6 +83,10 @@ public class EventCorruption {
 
         if (e.equals(TheChoice.ID)) {
             return Cor.corruption >= TheChoice.CORRUPTION_REDUCTION && AbstractDungeon.player.masterDeck.group.stream().anyMatch(c -> c.tags != null && c.hasTag(CustomTags.CORRUPTED));
+        }
+
+        if (e.equals(WorldsUponWorlds.ID)) {
+            return Cor.corruption >= (AbstractDungeon.ascensionLevel >= 15 ? WorldsUponWorlds.A15_CORRUPTION_REDUCTION : WorldsUponWorlds.CORRUPTION_REDUCTION);
         }
 
         if (e.equals(IncantationOfCorruption.ID)) {

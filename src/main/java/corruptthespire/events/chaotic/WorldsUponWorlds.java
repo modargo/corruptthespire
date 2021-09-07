@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
+import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.relics.chaotic.ShimmeringFan;
@@ -25,7 +26,11 @@ public class WorldsUponWorlds extends AbstractImageEvent {
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private static final String IMG = CorruptTheSpire.eventImage(ID);
 
+    public static final int CORRUPTION_REDUCTION = 5;
+    public static final int A15_CORRUPTION_REDUCTION = 3;
+
     private final AbstractRelic relic;
+    private final int corruptionReduction;
 
     private int screenNum = 0;
 
@@ -34,6 +39,7 @@ public class WorldsUponWorlds extends AbstractImageEvent {
         this.noCardsInRewards = true;
 
         this.relic = new ShimmeringFan();
+        this.corruptionReduction = AbstractDungeon.ascensionLevel >= 15 ? A15_CORRUPTION_REDUCTION : CORRUPTION_REDUCTION;
 
         imageEventText.setDialogOption(OPTIONS[0]);
     }
@@ -57,7 +63,7 @@ public class WorldsUponWorlds extends AbstractImageEvent {
                 this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
                 this.screenNum = 1;
                 this.imageEventText.clearAllDialogs();
-                this.imageEventText.setDialogOption(MessageFormat.format(OPTIONS[1], this.relic.name), this.relic);
+                this.imageEventText.setDialogOption(MessageFormat.format(OPTIONS[1], this.relic.name, this.corruptionReduction), this.relic);
                 this.imageEventText.setDialogOption(OPTIONS[2]);
                 this.imageEventText.setDialogOption(OPTIONS[3]);
                 break;
@@ -65,6 +71,7 @@ public class WorldsUponWorlds extends AbstractImageEvent {
                 switch (buttonPressed) {
                     case 0: // First
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), this.relic);
+                        Cor.addCorruption(-this.corruptionReduction);
                         logMetricObtainRelic(ID, "First", this.relic);
 
                         this.imageEventText.updateBodyText(DESCRIPTIONS[2]);

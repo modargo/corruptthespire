@@ -272,7 +272,7 @@
     ],
     "OPTIONS": [
       "[Continue]",
-      "[First] #gGain {0}.",
+      "[First] #gGain {0}. #gReduce #gCorruption #gby #g{1}.",
       "[Second] #gRemove #ga #gcard #gfrom #gyour #gdeck.",
       "[Third] #gAdd #ga #gcorrupted #gcard #gto #gyour #gdeck.",
       "[Leave]",
