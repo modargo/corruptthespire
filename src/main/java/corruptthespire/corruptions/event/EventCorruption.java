@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.relics.PrismaticShard;
 import corruptthespire.Cor;
 import corruptthespire.cards.CustomTags;
 import corruptthespire.events.*;
+import corruptthespire.events.chaotic.Divergence;
 import corruptthespire.events.chaotic.MindsEye;
 import corruptthespire.events.chaotic.TreeOfSwords;
 import corruptthespire.events.corrupted.*;
@@ -67,14 +68,6 @@ public class EventCorruption {
             return AbstractDungeon.player.masterDeck.getPurgeableCards().size() >= 2 && AbstractDungeon.player.relics.stream().anyMatch(r -> r.tier == AbstractRelic.RelicTier.STARTER) && AbstractDungeon.player.currentHealth > (AbstractDungeon.ascensionLevel >= 15 ? TreeOfSwords.A15_DAMAGE : TreeOfSwords.DAMAGE);
         }
 
-        if (e.equals(IncantationOfCorruption.ID)) {
-            return AbstractDungeon.actNum > 1;
-        }
-
-        if (e.equals(CorruptedShrine.ID)) {
-            return AbstractDungeon.actNum > 1;
-        }
-
         if (e.equals(NightmareBloom.ID)) {
             return AbstractDungeon.actNum == 3 && AbstractDungeon.eventList.contains(MindBloom.ID);
         }
@@ -89,6 +82,26 @@ public class EventCorruption {
 
         if (e.equals(TheChoice.ID)) {
             return Cor.corruption >= TheChoice.CORRUPTION_REDUCTION && AbstractDungeon.player.masterDeck.group.stream().anyMatch(c -> c.tags != null && c.hasTag(CustomTags.CORRUPTED));
+        }
+
+        if (e.equals(IncantationOfCorruption.ID)) {
+            return AbstractDungeon.actNum > 1;
+        }
+
+        if (e.equals(CorruptedShrine.ID)) {
+            return AbstractDungeon.actNum > 1;
+        }
+
+        if (e.equals(TheDevice.ID)) {
+            return AbstractDungeon.floorNum > 6;
+        }
+
+        if (e.equals(Divergence.ID)) {
+            return AbstractDungeon.floorNum > 6;
+        }
+
+        if (e.equals(ForbiddenLibrary.ID)) {
+            return AbstractDungeon.floorNum > 6;
         }
 
         return true;
