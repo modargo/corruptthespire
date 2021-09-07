@@ -48,6 +48,7 @@ public class CorruptedCardUtil {
         //Powers
         corruptedCardInfos.add(new CorruptedCardInfo(new BlackOmen(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new InnerFlame(), AbstractCard.CardRarity.COMMON));
+        corruptedCardInfos.add(new CorruptedCardInfo(new JourneyBeyond(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new ManiacalRage(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new CorruptedForm(), AbstractCard.CardRarity.RARE));
         //TODO: Decide if this disabling is permanent
@@ -60,7 +61,6 @@ public class CorruptedCardUtil {
         }
         if (ignoreClass || AbstractDungeon.player.getCardColor() == AbstractCard.CardColor.GREEN) {
             corruptedCardInfos.add(new CorruptedCardInfo(new UnnaturalOrder(), AbstractCard.CardRarity.COMMON));
-            corruptedCardInfos.add(new CorruptedCardInfo(new JourneyBeyond(), AbstractCard.CardRarity.COMMON));
         }
         if (ignoreClass || AbstractDungeon.player.getCardColor() == AbstractCard.CardColor.BLUE) {
             corruptedCardInfos.add(new CorruptedCardInfo(new GuidingStar(), AbstractCard.CardRarity.COMMON));
