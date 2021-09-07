@@ -17,7 +17,7 @@ public class BagOfTricks extends AbstractCorruptedRelic {
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));
     private static final int AFTERIMAGE = 1;
-    private static final int DRAW_REDUCTION = 2;
+    private static final int DRAW_REDUCTION = 1;
 
     public BagOfTricks() {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.FLAT);
