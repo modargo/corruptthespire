@@ -18,13 +18,13 @@ import java.util.ArrayList;
 public class Cor {
     private static final Logger logger = LogManager.getLogger(Cor.class.getName());
 
-    public static final int CORRUPTION_FOR_NORMAL_FIGHT = 6;
-    public static final int CORRUPTION_FOR_ELITE_FIGHT = 12;
+    public static final int CORRUPTION_FOR_NORMAL_FIGHT = 5;
+    public static final int CORRUPTION_FOR_ELITE_FIGHT = 10;
     public static final int CORRUPTION_FOR_BOSS_FIGHT = 0;
-    public static final int CORRUPTION_FOR_CHEST = 13;
-    public static final int CORRUPTION_FOR_CAMPFIRE = 8;
-    public static final int CORRUPTION_FOR_EVENT = 8;
-    public static final int CORRUPTION_FOR_SHOP = 10;
+    public static final int CORRUPTION_FOR_CHEST = 12;
+    public static final int CORRUPTION_FOR_CAMPFIRE = 7;
+    public static final int CORRUPTION_FOR_EVENT = 7;
+    public static final int CORRUPTION_FOR_SHOP = 9;
     public static final int CORRUPTION_FOR_OTHER = 4;
 
     public static final int CORRUPTION_PER_DAMAGE_INCREASE = 5;
