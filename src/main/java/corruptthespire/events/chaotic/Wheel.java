@@ -11,6 +11,7 @@ import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.WheelOfFortune;
 
 import java.text.MessageFormat;
+import java.util.Collections;
 
 public class Wheel extends AbstractImageEvent {
     public static final String ID = "CorruptTheSpire:Wheel";
@@ -20,7 +21,10 @@ public class Wheel extends AbstractImageEvent {
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private static final String IMG = CorruptTheSpire.eventImage(ID);
 
-    // No changes to this event on A15; could add a small cost, but it's okay for corrupted events to be good
+    private static final int MAX_HEALTH = 2;
+    private static final int A15_MAX_HEALTH = 1;
+
+    private final int maxHealth;
     private final AbstractCard card;
 
     private int screenNum = 0;
@@ -28,9 +32,10 @@ public class Wheel extends AbstractImageEvent {
     public Wheel() {
         super(NAME, DESCRIPTIONS[0], IMG);
 
+        this.maxHealth = AbstractDungeon.ascensionLevel >= 15 ? A15_MAX_HEALTH : MAX_HEALTH;
         this.card = new WheelOfFortune();
 
-        imageEventText.setDialogOption(MessageFormat.format(OPTIONS[0], this.card.name), this.card);
+        imageEventText.setDialogOption(MessageFormat.format(OPTIONS[0], this.card.name, this.maxHealth), this.card);
         imageEventText.setDialogOption(OPTIONS[1]);
     }
 
@@ -41,7 +46,8 @@ public class Wheel extends AbstractImageEvent {
                 switch (buttonPressed) {
                     case 0: // Touch
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(this.card, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
-                        logMetricObtainCard(ID, "Touch", this.card);
+                        AbstractDungeon.player.increaseMaxHp(this.maxHealth, true);
+                        logMetric(ID, "Touch", Collections.singletonList(this.card.cardID), null, null, null, null, null, null, 0, 0, 0, this.maxHealth, 0, 0);
 
                         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         this.screenNum = 1;

@@ -70,7 +70,7 @@
       "You resist the temptation to touch the card. You will win free of this place using your own power."
     ],
     "OPTIONS": [
-      "[Touch the Card] #gGain {0}.",
+      "[Touch the Card] #gGain {0}. #gGain #g{1} #gMax #gHP.",
       "[Leave]"
     ]
   },
