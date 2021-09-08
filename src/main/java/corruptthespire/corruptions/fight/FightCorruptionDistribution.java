@@ -15,9 +15,7 @@ public class FightCorruptionDistribution {
         }
 
         ArrayList<FightCorruptionDistributionInfo> distribution = FightCorruptionDistributionReader.getFightCorruptionDistribution(actNum, fightType);
-        if ((fightType == FightType.Easy || fightType == FightType.Hard) && !Cor.flags.hadFirstCorruptedNormalMonsterFight) {
-            distribution.removeIf(d -> d.size != FightCorruptionSize.S);
-        }
+        distribution = this.adjustDistribution(distribution, actNum, fightType);
         int totalWeight = distribution.stream().map(cdi -> cdi.weight).reduce(0, Integer::sum);
 
         logger.info("Rolling fight corruption. Cor.rng.counter: " + Cor.rng.counter);
@@ -36,6 +34,13 @@ public class FightCorruptionDistribution {
         logger.info("Picked: " + option.corruptionType);
 
         return new FightCorruptionInfo(option.corruptionType, option.amount, option.size);
+    }
+
+    private ArrayList<FightCorruptionDistributionInfo> adjustDistribution(ArrayList<FightCorruptionDistributionInfo> distribution, int actNum, FightType fightType) {
+        if ((fightType == FightType.Easy || fightType == FightType.Hard) && !Cor.flags.hadFirstCorruptedNormalMonsterFight) {
+            distribution.removeIf(d -> d.size != FightCorruptionSize.S);
+        }
+        return distribution;
     }
 
     private FightCorruptionDistributionInfo pick(List<FightCorruptionDistributionInfo> list, float roll) {

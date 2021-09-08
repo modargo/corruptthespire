@@ -77,8 +77,6 @@ public class FightCorruption {
         for (FightCorruptionInfo corruptionInfo : corruptionInfos) {
             applyStartOfBattleCorruption(corruptionInfo);
         }
-
-
     }
 
     private static void applyStartOfBattleCorruption(FightCorruptionInfo corruptionInfo) {
