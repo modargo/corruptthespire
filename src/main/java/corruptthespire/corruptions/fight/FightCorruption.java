@@ -73,7 +73,31 @@ public class FightCorruption {
     }
 
     public static void applyStartOfBattleCorruptions() {
-        //None of these exist yet, and unsure if they will exist, but this is here as scaffolding
+        List<FightCorruptionInfo> corruptionInfos = FightCorruptionInfosField.corruptionInfos.get(AbstractDungeon.getCurrRoom());
+        for (FightCorruptionInfo corruptionInfo : corruptionInfos) {
+            applyStartOfBattleCorruption(corruptionInfo);
+        }
+
+
+    }
+
+    private static void applyStartOfBattleCorruption(FightCorruptionInfo corruptionInfo) {
+        switch (corruptionInfo.corruptionType) {
+            case BeatOfDeath:
+                AbstractMonster primaryMonster = getPrimaryMonster();
+                apa(primaryMonster, new BeatOfDeathPower(primaryMonster, corruptionInfo.amount));
+                break;
+        }
+    }
+
+    private static AbstractMonster getPrimaryMonster() {
+        AbstractMonster primaryMonster = null;
+        for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (primaryMonster == null || m.currentHealth >= primaryMonster.currentHealth) {
+                primaryMonster = m;
+            }
+        }
+        return primaryMonster;
     }
 
     public static void applyOnSpawnMonsterCorruptions(AbstractMonster m) {
@@ -107,9 +131,6 @@ public class FightCorruption {
                 RitualPower ritualPower = new RitualPower(m, corruptionInfo.amount, false);
                 ritualPower.atEndOfRound(); //To bypass the skip first turn logic
                 apa(m, ritualPower);
-                break;
-            case BeatOfDeath:
-                apa(m, new BeatOfDeathPower(m, corruptionInfo.amount));
                 break;
             case ThoughtStealer:
                 //TODO: Implement Thought Stealer
