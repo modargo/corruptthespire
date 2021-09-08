@@ -24,11 +24,16 @@ public class BagOfTricks extends AbstractCorruptedRelic {
     }
 
     @Override
+    public void atBattleStartPreDraw() {
+        AbstractDungeon.player.gameHandSize -= DRAW_REDUCTION;
+    }
+
+    @Override
     public void atBattleStart() {
         this.flash();
         this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new AfterImagePower(AbstractDungeon.player, AFTERIMAGE), AFTERIMAGE));
-        this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DrawReductionSingleTurnPower(AbstractDungeon.player, DRAW_REDUCTION), DRAW_REDUCTION));
         this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        AbstractDungeon.player.gameHandSize += DRAW_REDUCTION;
     }
 
     @Override
