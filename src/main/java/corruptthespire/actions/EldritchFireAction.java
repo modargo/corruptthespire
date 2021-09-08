@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -49,6 +50,8 @@ public class EldritchFireAction extends AbstractGameAction {
         }
 
         if (effect > 0) {
+            this.addToBot(new LoseHPAction(this.p, this.p, effect));
+
             for(int i = 0; i < effect; ++i) {
                 if (i == 0) {
                     if (Settings.FAST_MODE) {
