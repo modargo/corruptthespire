@@ -1,6 +1,7 @@
 package corruptthespire.corruptions.fight;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.ending.CorruptHeart;
 import corruptthespire.Cor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -43,6 +44,20 @@ public class FightCorruptionDistribution {
         }
         if (AbstractDungeon.getCurrRoom().monsters.monsters.size() >= 3) {
             distribution.removeIf(d -> isMinionCorruption(d.corruptionType));
+        }
+        if (actNum == 4 && fightType == FightType.Boss && AbstractDungeon.getCurrRoom().monsters.monsters.stream().noneMatch(m -> m.id.equals(CorruptHeart.ID))) {
+            FightCorruptionDistributionInfo strengthCorruption = null;
+            for (FightCorruptionDistributionInfo d : distribution) {
+                if (d.corruptionType == FightCorruptionType.Strength) {
+                    strengthCorruption = d;
+                    break;
+                }
+            }
+            if (strengthCorruption != null) {
+                int strengthMultiplierForNonHeartBosses = 3;
+                distribution.remove(strengthCorruption);
+                distribution.add(new FightCorruptionDistributionInfo(strengthCorruption.corruptionType, strengthCorruption.size, strengthCorruption.weight, strengthCorruption.amount * strengthMultiplierForNonHeartBosses));
+            }
         }
 
         return distribution;
