@@ -1,5 +1,6 @@
 package corruptthespire.corruptions.fight;
 
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import corruptthespire.Cor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -40,7 +41,23 @@ public class FightCorruptionDistribution {
         if ((fightType == FightType.Easy || fightType == FightType.Hard) && !Cor.flags.hadFirstCorruptedNormalMonsterFight) {
             distribution.removeIf(d -> d.size != FightCorruptionSize.S);
         }
+        if (AbstractDungeon.getCurrRoom().monsters.monsters.size() >= 3) {
+            distribution.removeIf(d -> isMinionCorruption(d.corruptionType));
+        }
+
         return distribution;
+    }
+
+    private static boolean isMinionCorruption(FightCorruptionType f) {
+        return f == FightCorruptionType.CorruptionManifestMinion
+            || f == FightCorruptionType.LouseMinion
+            || f == FightCorruptionType.SlimeMinion
+            || f == FightCorruptionType.GremlinMinion
+            || f == FightCorruptionType.RepulsorMinion
+            || f == FightCorruptionType.ByrdMinion
+            || f == FightCorruptionType.SnakeDaggerMinion
+            || f == FightCorruptionType.CultistMinion;
+
     }
 
     private FightCorruptionDistributionInfo pick(List<FightCorruptionDistributionInfo> list, float roll) {
