@@ -2,17 +2,14 @@ package corruptthespire.corruptions.fight;
 
 public enum FightCorruptionType {
     Metallicize,
+    Malleable,
     Artifact,
     Thorns,
     Strength,
-    PainfulStabs,
     Buffer,
     Ritual,
     BeatOfDeath,
     ThoughtStealer,
-    Cleanse,
-    Anger,
-    Wary,
     Curiosity,
     CorruptionManifestMinion,
     LouseMinion,

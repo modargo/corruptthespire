@@ -2,7 +2,6 @@ package corruptthespire.corruptions.fight.rewards;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import corruptthespire.Cor;
 import corruptthespire.corruptions.fight.FightCorruptionSize;
@@ -12,9 +11,10 @@ import corruptthespire.rewards.MaxHealthReward;
 import corruptthespire.rewards.RandomUpgradeReward;
 
 public class FightCorruptionReward {
-    private static final int GOLD_SMALL = 40;
-    private static final int GOLD_MEDIUM = 90;
-    private static final int GOLD_LARGE = 150;
+    private static final float GOLD_FUZZ_FACTOR = 0.9F;
+    private static final int GOLD_SMALL = 50;
+    private static final int GOLD_MEDIUM = 100;
+    private static final int GOLD_LARGE = 200;
     private static final int MAX_HEALTH = 4;
 
     public static void addReward(FightCorruptionSize size) {
@@ -41,14 +41,14 @@ public class FightCorruptionReward {
             case Fragment:
                 room.addRelicToRewards(new FragmentOfCorruption());
                 break;
-            case Potion:
-                room.addPotionToRewards(AbstractDungeon.returnRandomPotion());
-                break;
             case Upgrade:
                 room.rewards.add(new RandomUpgradeReward());
                 break;
+            case MaxHealth:
+                room.rewards.add(new MaxHealthReward(MAX_HEALTH));
+                break;
             case Gold:
-                room.addGoldToRewards(GOLD_SMALL);
+                room.addGoldToRewards(fuzzGold(GOLD_SMALL));
                 break;
         }
     }
@@ -64,20 +64,12 @@ public class FightCorruptionReward {
                 room.addRelicToRewards(new FragmentOfCorruption());
                 room.addRelicToRewards(new FragmentOfCorruption());
                 break;
-            case CommonRelic:
-                room.addRelicToRewards(AbstractRelic.RelicTier.COMMON);
-                break;
-            case CorruptedRelic:
-                room.addRelicToRewards(RelicLibrary.getRelic(Cor.returnRandomCorruptedRelicKey()));
-                break;
-            case Upgrade:
+            case MaxHealthAndUpgrade:
+                room.rewards.add(new MaxHealthReward(MAX_HEALTH));
                 room.rewards.add(new RandomUpgradeReward());
                 break;
-            case MaxHealth:
-                room.rewards.add(new MaxHealthReward(MAX_HEALTH));
-                break;
             case Gold:
-                room.addGoldToRewards(GOLD_MEDIUM);
+                room.addGoldToRewards(fuzzGold(GOLD_MEDIUM));
                 break;
         }
     }
@@ -90,23 +82,16 @@ public class FightCorruptionReward {
                 room.addRelicToRewards(new FragmentOfCorruption());
                 room.rewards.add(new CorruptedCardReward());
                 break;
-            case Relic:
-                room.addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
-                break;
             case CorruptedRelic:
                 room.addRelicToRewards(RelicLibrary.getRelic(Cor.returnRandomCorruptedRelicKey()));
                 break;
-            case FragmentAndRelic:
-                room.addRelicToRewards(new FragmentOfCorruption());
-                room.addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
-                break;
-            case MaxHealthAndUpgrade:
-                room.rewards.add(new MaxHealthReward(MAX_HEALTH));
-                room.rewards.add(new RandomUpgradeReward());
-                break;
             case Gold:
-                room.addGoldToRewards(GOLD_LARGE);
+                room.addGoldToRewards(fuzzGold(GOLD_LARGE));
                 break;
         }
+    }
+
+    private static int fuzzGold(int gold) {
+        return Cor.rng.random((int)(gold * GOLD_FUZZ_FACTOR), gold);
     }
 }

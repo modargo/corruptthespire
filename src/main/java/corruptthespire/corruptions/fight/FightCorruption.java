@@ -20,6 +20,7 @@ import corruptthespire.corruptions.fight.rewards.FightCorruptionReward;
 import corruptthespire.monsters.CorruptionManifest;
 import corruptthespire.patches.CorruptedField;
 import corruptthespire.patches.fight.FightCorruptionInfosField;
+import corruptthespire.powers.ThoughtStealerPower;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -80,10 +81,13 @@ public class FightCorruption {
     }
 
     private static void applyStartOfBattleCorruption(FightCorruptionInfo corruptionInfo) {
+        AbstractMonster primaryMonster = getPrimaryMonster();
         switch (corruptionInfo.corruptionType) {
             case BeatOfDeath:
-                AbstractMonster primaryMonster = getPrimaryMonster();
                 apa(primaryMonster, new BeatOfDeathPower(primaryMonster, corruptionInfo.amount));
+                break;
+            case ThoughtStealer:
+                apa(primaryMonster, new ThoughtStealerPower(primaryMonster));
                 break;
         }
     }
@@ -110,6 +114,9 @@ public class FightCorruption {
             case Metallicize:
                 apa(m, new MetallicizePower(m, corruptionInfo.amount));
                 break;
+            case Malleable:
+                apa(m, new MalleablePower(m, corruptionInfo.amount));
+                break;
             case Artifact:
                 apa(m, new ArtifactPower(m, corruptionInfo.amount));
                 break;
@@ -119,9 +126,6 @@ public class FightCorruption {
             case Strength:
                 apa(m, new StrengthPower(m, corruptionInfo.amount));
                 break;
-            case PainfulStabs:
-                apa(m, new PainfulStabsPower(m));
-                break;
             case Buffer:
                 apa(m, new BufferPower(m, corruptionInfo.amount));
                 break;
@@ -129,18 +133,6 @@ public class FightCorruption {
                 RitualPower ritualPower = new RitualPower(m, corruptionInfo.amount, false);
                 ritualPower.atEndOfRound(); //To bypass the skip first turn logic
                 apa(m, ritualPower);
-                break;
-            case ThoughtStealer:
-                //TODO: Implement Thought Stealer
-                break;
-            case Cleanse:
-                //TODO: Implement Cleanse
-                break;
-            case Anger:
-                //TODO: Implement Anger
-                break;
-            case Wary:
-                //TODO: Implement Wary
                 break;
             case Curiosity:
                 apa(m, new CuriosityPower(m, corruptionInfo.amount));

@@ -23,10 +23,10 @@ public class CorruptionManifest extends CustomMonster {
     private static final byte CORRUPT_DEBUFF = 1;
     private static final byte MANIFEST_MOVE = 2;
     private static final int CORRUPT_CORRUPTION = 1;
-    private static final int[] HP_MIN = { 27, 45, 63, 81 };
-    private static final int[] HP_MAX = { 30, 50, 70, 90 };
-    private static final int[] A9_HP_MIN = { 30, 50, 70, 90 };
-    private static final int[] A9_HP_MAX = { 33, 55, 77, 99 };
+    private static final int[] HP_MIN = { 20, 35, 50, 65 };
+    private static final int[] HP_MAX = { 23, 38, 54, 69 };
+    private static final int[] A9_HP_MIN = { 22, 37, 53, 68 };
+    private static final int[] A9_HP_MAX = { 25, 41, 57, 72 };
 
     public CorruptionManifest() {
         this(0.0f, 0.0f, Version.Act1);

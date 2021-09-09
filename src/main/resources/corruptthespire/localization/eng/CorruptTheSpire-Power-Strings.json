@@ -97,5 +97,9 @@
   "CorruptTheSpire:DelayedNoDraw": {
     "NAME": "Delayed No Draw",
     "DESCRIPTIONS": ["At the start of your turn, after you draw your initial cards, gain #yNo #yDraw."]
+  },
+  "CorruptTheSpire:ThoughtStealer": {
+    "NAME": "Thought Stealer",
+    "DESCRIPTIONS": ["Gains a charge for every card drawn past your first #b{0} each turn. At #b{1} charges, ALL enemies gain #b{2} #yStrength."]
   }
 }

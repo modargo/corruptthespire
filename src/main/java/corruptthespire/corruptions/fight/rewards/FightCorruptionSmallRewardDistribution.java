@@ -14,8 +14,8 @@ public class FightCorruptionSmallRewardDistribution extends AbstractCorruptionDi
         ArrayList<CorruptionDistributionInfo<FightCorruptionRewardTypes.Small>> d = new ArrayList<>();
         d.add(new CorruptionDistributionInfo<>(FightCorruptionRewardTypes.Small.CorruptedCard, 20));
         d.add(new CorruptionDistributionInfo<>(FightCorruptionRewardTypes.Small.Fragment, 20));
-        d.add(new CorruptionDistributionInfo<>(FightCorruptionRewardTypes.Small.Potion, 20));
         d.add(new CorruptionDistributionInfo<>(FightCorruptionRewardTypes.Small.Upgrade, 20));
+        d.add(new CorruptionDistributionInfo<>(FightCorruptionRewardTypes.Small.MaxHealth, 20));
         d.add(new CorruptionDistributionInfo<>(FightCorruptionRewardTypes.Small.Gold, 20));
         return d;
     }

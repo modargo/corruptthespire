@@ -95,6 +95,7 @@ public class CorruptTheSpire implements
         BaseMod.subscribe(new IncreaseInvincibleOnStartBattleSubscriber());
         BaseMod.subscribe(new ResetIsBossCorruptedSubscriber());
         BaseMod.subscribe(new ResetNormalMonsterCountSubscriber());
+        BaseMod.subscribe(new TriggerThoughtStealerPostDrawSubscriber());
 
         this.registerCustomRewards();
 

@@ -165,7 +165,7 @@ public class PandemoniumArchfiend extends CustomMonster
                 move = FOUR_ARM_STRIKE_ATTACK;
                 break;
             case 2:
-                move = this.moveHistory.get(this.moveHistory.size() - 2) == MINDSHATTER_DEBUFF ? TORMENTING_SHACKLES_ATTACK : MINDSHATTER_DEBUFF;
+                move = MonsterUtil.lastMoveX(this, MINDSHATTER_DEBUFF, 2) ? TORMENTING_SHACKLES_ATTACK : MINDSHATTER_DEBUFF;
                 break;
             case 3:
                 move = !this.usedInfernalPower ? INFERNAL_POWER_ATTACK : HELLFIRE_ATTACK;

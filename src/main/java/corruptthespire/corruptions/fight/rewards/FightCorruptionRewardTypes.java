@@ -4,27 +4,21 @@ public class FightCorruptionRewardTypes {
     public enum Small {
         CorruptedCard,
         Fragment,
-        Potion,
         Upgrade,
+        MaxHealth,
         Gold
     }
 
     public enum Medium {
         CorruptedCard,
         Fragments,
-        CommonRelic,
-        CorruptedRelic,
-        Upgrade,
-        MaxHealth,
+        MaxHealthAndUpgrade,
         Gold
     }
 
     public enum Large {
         CorruptedCardAndFragment,
-        Relic,
         CorruptedRelic,
-        FragmentAndRelic,
-        MaxHealthAndUpgrade,
         Gold
     }
 }

@@ -18,8 +18,8 @@ import java.util.ArrayList;
 public class Cor {
     private static final Logger logger = LogManager.getLogger(Cor.class.getName());
 
-    public static final int CORRUPTION_FOR_NORMAL_FIGHT = 5;
-    public static final int CORRUPTION_FOR_ELITE_FIGHT = 10;
+    public static final int CORRUPTION_FOR_NORMAL_FIGHT = 6;
+    public static final int CORRUPTION_FOR_ELITE_FIGHT = 12;
     public static final int CORRUPTION_FOR_BOSS_FIGHT = 0;
     public static final int CORRUPTION_FOR_CHEST = 12;
     public static final int CORRUPTION_FOR_CAMPFIRE = 7;
@@ -132,7 +132,8 @@ public class Cor {
         corruptedRelics.add(new BlightedSpirefruit());
         corruptedRelics.add(new BottledPrism());
         corruptedRelics.add(new CorruptedEgg());
-        corruptedRelics.add(new CorruptedOmamori());
+        //TODO: Disabled because it wasn't impactful enough. Decide if this disabling is permanent or not.
+        //corruptedRelics.add(new CorruptedOmamori());
         corruptedRelics.add(new CorruptedToolbox());
         corruptedRelics.add(new Gohei());
         corruptedRelics.add(new MaskOfNightmares());
