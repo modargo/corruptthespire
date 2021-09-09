@@ -17,7 +17,10 @@ public class FightCorruptionDistribution {
         }
 
         ArrayList<FightCorruptionDistributionInfo> distribution = FightCorruptionDistributionReader.getFightCorruptionDistribution(actNum, fightType);
-        distribution = this.adjustDistribution(distribution, actNum, fightType);
+        this.adjustDistribution(distribution, actNum, fightType);
+        if (distribution.isEmpty()) {
+            throw new RuntimeException("No fight corruptions to choose from.");
+        }
         int totalWeight = distribution.stream().map(cdi -> cdi.weight).reduce(0, Integer::sum);
 
         logger.info("Rolling fight corruption. Cor.rng.counter: " + Cor.rng.counter);
@@ -38,7 +41,7 @@ public class FightCorruptionDistribution {
         return new FightCorruptionInfo(option.corruptionType, option.amount, option.size);
     }
 
-    private ArrayList<FightCorruptionDistributionInfo> adjustDistribution(ArrayList<FightCorruptionDistributionInfo> distribution, int actNum, FightType fightType) {
+    private void adjustDistribution(ArrayList<FightCorruptionDistributionInfo> distribution, int actNum, FightType fightType) {
         if ((fightType == FightType.Easy || fightType == FightType.Hard) && !Cor.flags.hadFirstCorruptedNormalMonsterFight) {
             distribution.removeIf(d -> d.size != FightCorruptionSize.S);
         }
@@ -60,7 +63,6 @@ public class FightCorruptionDistribution {
             }
         }
 
-        return distribution;
     }
 
     private static boolean isMinionCorruption(FightCorruptionType f) {
