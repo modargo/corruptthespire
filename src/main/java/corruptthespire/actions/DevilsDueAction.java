@@ -17,7 +17,7 @@ public class DevilsDueAction extends AbstractGameAction {
         if (this.duration == this.startDuration) {
             ArrayList<AbstractCard> cardsToMove = new ArrayList<>();
             for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-                if (c.rarity == AbstractCard.CardRarity.UNCOMMON || c.rarity == AbstractCard.CardRarity.RARE) {
+                if (c.rarity != AbstractCard.CardRarity.BASIC && c.rarity != AbstractCard.CardRarity.COMMON && c.rarity != AbstractCard.CardRarity.CURSE) {
                     cardsToMove.add(c);
                 }
             }
