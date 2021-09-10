@@ -184,21 +184,30 @@ public class ShopCorruption {
         return rarity == AbstractCard.CardRarity.COMMON ? CorruptedCardUtil.CORRUPTED_COMMON_PRICE : CorruptedCardUtil.CORRUPTED_RARE_PRICE;
     }
 
-    public static boolean handleCourier(ShopScreen shopScreen, AbstractCard card, AbstractCard newCard) {
+    public static boolean handleCourier(ShopScreen shopScreen, AbstractCard card) {
         if (card.color != CorruptedCardColor.CORRUPTTHESPIRE_CORRUPTED) {
             return false;
         }
 
         int coloredIndex = shopScreen.coloredCards.indexOf(card);
         if (coloredIndex != -1) {
-            shopScreen.coloredCards.set(coloredIndex, newCard);
+            shopScreen.coloredCards.set(coloredIndex, getCorruptedCardForShop());
         }
 
         int colorlessIndex = shopScreen.colorlessCards.indexOf(card);
         if (colorlessIndex != -1) {
-            shopScreen.colorlessCards.set(colorlessIndex, newCard);
+            shopScreen.colorlessCards.set(colorlessIndex, getCorruptedCardForShop());
         }
 
         return true;
+    }
+
+    private static AbstractCard getCorruptedCardForShop() {
+        AbstractCorruptedCard c = (AbstractCorruptedCard)CorruptedCardUtil.getRandomCorruptedCard();
+        for (AbstractRelic r : AbstractDungeon.player.relics) {
+            r.onPreviewObtainCard(c);
+        }
+        c.price = getCorruptedCardPrice(c);
+        return c;
     }
 }

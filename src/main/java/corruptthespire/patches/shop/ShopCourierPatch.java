@@ -16,7 +16,7 @@ public class ShopCourierPatch {
         @Override
         public void edit(MethodCall methodCall) throws CannotCompileException {
             if (methodCall.getClassName().equals(ArrayList.class.getName()) && methodCall.getMethodName().equals("set")) {
-                methodCall.replace(String.format("{ if (%1$s.handleCourier(this, hoveredCard, c)) { $_ = hoveredCard; } else { $_ = $proceed($$); } }", ShopCorruption.class.getName()));
+                methodCall.replace(String.format("{ if (%1$s.handleCourier(this, hoveredCard)) { $_ = hoveredCard; } else { $_ = $proceed($$); } }", ShopCorruption.class.getName()));
             }
         }
     }
