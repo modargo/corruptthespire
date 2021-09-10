@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.shop.StoreRelic;
 import corruptthespire.Cor;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 import corruptthespire.cards.CardUtil;
+import corruptthespire.cards.corrupted.CorruptedCardColor;
 import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.patches.CorruptedField;
 import corruptthespire.patches.shop.ShopCorruptionTypeField;
@@ -181,5 +182,23 @@ public class ShopCorruption {
     public static int getCorruptedCardPrice(AbstractCorruptedCard card) {
         AbstractCard.CardRarity rarity = CorruptedCardUtil.getAllCorruptedCardInfos().get(card.cardID).rarity;
         return rarity == AbstractCard.CardRarity.COMMON ? CorruptedCardUtil.CORRUPTED_COMMON_PRICE : CorruptedCardUtil.CORRUPTED_RARE_PRICE;
+    }
+
+    public static boolean handleCourier(ShopScreen shopScreen, AbstractCard card, AbstractCard newCard) {
+        if (card.color != CorruptedCardColor.CORRUPTTHESPIRE_CORRUPTED) {
+            return false;
+        }
+
+        int coloredIndex = shopScreen.coloredCards.indexOf(card);
+        if (coloredIndex != -1) {
+            shopScreen.coloredCards.set(coloredIndex, newCard);
+        }
+
+        int colorlessIndex = shopScreen.colorlessCards.indexOf(card);
+        if (colorlessIndex != -1) {
+            shopScreen.colorlessCards.set(colorlessIndex, newCard);
+        }
+
+        return true;
     }
 }
