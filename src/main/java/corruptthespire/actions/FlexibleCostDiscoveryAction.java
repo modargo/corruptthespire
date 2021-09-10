@@ -126,21 +126,18 @@ public class FlexibleCostDiscoveryAction extends AbstractGameAction {
     }
 
     private ArrayList<AbstractCard> generateCardChoices(CardType type) {
-        ArrayList derp = new ArrayList();
+        ArrayList<AbstractCard> derp = new ArrayList<>();
 
         while(derp.size() != 3) {
             boolean dupe = false;
-            AbstractCard tmp = null;
+            AbstractCard tmp;
             if (type == null) {
                 tmp = AbstractDungeon.returnTrulyRandomCardInCombat();
             } else {
                 tmp = AbstractDungeon.returnTrulyRandomCardInCombat(type);
             }
 
-            Iterator var5 = derp.iterator();
-
-            while(var5.hasNext()) {
-                AbstractCard c = (AbstractCard)var5.next();
+            for (AbstractCard c : derp) {
                 if (c.cardID.equals(tmp.cardID)) {
                     dupe = true;
                     break;

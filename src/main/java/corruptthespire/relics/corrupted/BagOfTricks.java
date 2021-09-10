@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AfterImagePower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import corruptthespire.CorruptTheSpire;
-import corruptthespire.powers.DrawReductionSingleTurnPower;
 import corruptthespire.util.TextureLoader;
 
 import java.text.MessageFormat;
