@@ -60,9 +60,7 @@ public class CorruptMap {
         //number of nodes and a similar layout, the pattern of corrupted nodes would also be similar
         Random rng = new Random(Settings.seed + actNum);
 
-        //The original idea for act 3 was to be at 50%, but with all treasures and the last campfire corrupted, 45% is fine
-        double percentCorrupt = actNum == 1 ? 0.3F : actNum == 2 ? 0.4F : actNum == 3 ? 0.45F : 1.0F;
-        //double percentCorrupt = actNum < 4 ? (actNum + 2) * 0.1F : 1.0F; // 30%, 40%, 50%, 100%
+        double percentCorrupt = actNum < 4 ? (actNum + 2) * 0.1F : 1.0F; // 30%, 40%, 50%, 100%
         //double percentCorrupt = actNum < 1 || actNum > 4 ? 0 : 1.0 / (5 - actNum); // 25%, 33%, 50%, 100%
         //double percentCorrupt = actNum < 4 ? (actNum + 1) * 0.125F : 1.0F; // 25%, 37.5%, 50%, 100%
         //double percentCorrupt = 1.0F;
