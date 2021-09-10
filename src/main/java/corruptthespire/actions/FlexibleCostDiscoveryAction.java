@@ -65,13 +65,15 @@ public class FlexibleCostDiscoveryAction extends AbstractGameAction {
                         disCard2.setCostForTurn(0);
                     }
                     else {
-                        int newCost = disCard.cost - this.costReduction;
-                        disCard.cost = newCost;
-                        disCard.costForTurn = newCost;
-                        disCard.isCostModified = true;
-                        disCard2.cost = newCost;
-                        disCard2.costForTurn = newCost;
-                        disCard2.isCostModified = true;
+                        int newCost = Math.max(disCard.cost - this.costReduction, 0);
+                        if (newCost != disCard.cost) {
+                            disCard.cost = newCost;
+                            disCard.costForTurn = newCost;
+                            disCard.isCostModified = true;
+                            disCard2.cost = newCost;
+                            disCard2.costForTurn = newCost;
+                            disCard2.isCostModified = true;
+                        }
                     }
                     disCard.current_x = -1000.0F * Settings.xScale;
                     disCard2.current_x = -1000.0F * Settings.xScale + AbstractCard.IMG_HEIGHT_S;
