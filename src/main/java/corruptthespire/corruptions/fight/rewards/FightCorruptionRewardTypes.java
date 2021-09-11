@@ -10,15 +10,14 @@ public class FightCorruptionRewardTypes {
     }
 
     public enum Medium {
-        CorruptedCard,
+        CorruptedCardAndFragment,
         Fragments,
         MaxHealthAndUpgrade,
         Gold
     }
 
     public enum Large {
-        CorruptedCardAndFragment,
-        CorruptedRelic,
-        Gold
+        CorruptedCardAndRelic,
+        CorruptedRelic
     }
 }

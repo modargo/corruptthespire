@@ -11,17 +11,8 @@ public class FightCorruptionLargeRewardDistribution extends AbstractCorruptionDi
     @Override
     protected List<CorruptionDistributionInfo<FightCorruptionRewardTypes.Large>> getDistribution() {
         ArrayList<CorruptionDistributionInfo<FightCorruptionRewardTypes.Large>> d = new ArrayList<>();
-        d.add(new CorruptionDistributionInfo<>(FightCorruptionRewardTypes.Large.CorruptedCardAndFragment, 25));
+        d.add(new CorruptionDistributionInfo<>(FightCorruptionRewardTypes.Large.CorruptedCardAndRelic, 50));
         d.add(new CorruptionDistributionInfo<>(FightCorruptionRewardTypes.Large.CorruptedRelic, 50));
-        d.add(new CorruptionDistributionInfo<>(FightCorruptionRewardTypes.Large.Gold, 25));
         return d;
-    }
-
-    @Override
-    protected List<CorruptionDistributionInfo<FightCorruptionRewardTypes.Large>> adjustDistribution(List<CorruptionDistributionInfo<FightCorruptionRewardTypes.Large>> distribution) {
-        if (AbstractDungeon.actNum == 4) {
-            distribution.removeIf(d -> d.corruption == FightCorruptionRewardTypes.Large.Gold);
-        }
-        return distribution;
     }
 }

@@ -14,7 +14,6 @@ public class FightCorruptionReward {
     private static final float GOLD_FUZZ_FACTOR = 0.9F;
     private static final int GOLD_SMALL = 50;
     private static final int GOLD_MEDIUM = 100;
-    private static final int GOLD_LARGE = 200;
     private static final int MAX_HEALTH = 4;
 
     public static void addReward(FightCorruptionSize size) {
@@ -57,7 +56,8 @@ public class FightCorruptionReward {
         FightCorruptionRewardTypes.Medium rewardType = new FightCorruptionMediumRewardDistribution().roll();
         AbstractRoom room = AbstractDungeon.getCurrRoom();
         switch (rewardType) {
-            case CorruptedCard:
+            case CorruptedCardAndFragment:
+                room.addRelicToRewards(new FragmentOfCorruption());
                 room.rewards.add(new CorruptedCardReward());
                 break;
             case Fragments:
@@ -78,15 +78,12 @@ public class FightCorruptionReward {
         FightCorruptionRewardTypes.Large rewardType = new FightCorruptionLargeRewardDistribution().roll();
         AbstractRoom room = AbstractDungeon.getCurrRoom();
         switch (rewardType) {
-            case CorruptedCardAndFragment:
-                room.addRelicToRewards(new FragmentOfCorruption());
+            case CorruptedCardAndRelic:
                 room.rewards.add(new CorruptedCardReward());
+                room.addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
                 break;
             case CorruptedRelic:
                 room.addRelicToRewards(RelicLibrary.getRelic(Cor.returnRandomCorruptedRelicKey()));
-                break;
-            case Gold:
-                room.addGoldToRewards(fuzzGold(GOLD_LARGE));
                 break;
         }
     }
