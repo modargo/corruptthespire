@@ -1,21 +1,28 @@
 {
   "CorruptTheSpire:MasterOfTimeAndSpace": {
     "MOVES": [
-      "Blast",
-      "Terrifying Gaze",
-      "Thrash",
-      "Body Slam",
-      "Call the Abyss"
+      "Chaos Zone",
+      "Rain Destruction",
+      "Dark Will",
+      "Dark Flame's Embrace"
     ],
     "NAME": "Master of Time and Space"
   },
-  "CorruptTheSpire:TreasureWardenWhite": {
+  "CorruptTheSpire:SpatialPhantasm": {
     "MOVES": [
-      "Maelstrom",
-      "Lightning",
-      "Scorch"
+      "Spatial Rend",
+      "Mend",
+      "Dimensional Rip"
     ],
-    "NAME": "Treasure Warden"
+    "NAME": "Spatial Phantasm"
+  },
+  "CorruptTheSpire:TemporalPhantasm": {
+    "MOVES": [
+      "Impermanence",
+      "Gradual Decay",
+      "Temporal Distortion"
+    ],
+    "NAME": "Temporal Phantasm"
   },
   "CorruptTheSpire:TreasureWardenBlack": {
     "MOVES": [

@@ -104,7 +104,12 @@ public class CorruptTheSpire implements
     }
 
     private static void addMonsters() {
-        BaseMod.addMonster(MasterOfTimeAndSpace.ID, () -> new MasterOfTimeAndSpace(-400.0F, 40.0F));
+        BaseMod.addMonster(Encounters.TIME_AND_SPACE, () -> new MonsterGroup(
+                new AbstractMonster[] {
+                        new MasterOfTimeAndSpace(-350.0F, 40.0F),
+                        new SpatialPhantasm(250.0F, 400.0F),
+                        new TemporalPhantasm(250.0F, 0.0F)
+                }));
         BaseMod.addMonster(PandemoniumArchfiend.ID, () -> new PandemoniumArchfiend(0.0F, 0.0F));
         BaseMod.addMonster(Encounters.TREASURE_WARDENS_ACT1, () -> new MonsterGroup(
                 new AbstractMonster[] {

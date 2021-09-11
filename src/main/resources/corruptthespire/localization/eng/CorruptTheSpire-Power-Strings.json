@@ -101,5 +101,44 @@
   "CorruptTheSpire:ThoughtStealer": {
     "NAME": "Thought Stealer",
     "DESCRIPTIONS": ["Gains a charge for every card drawn past your first #b{0} each turn. At #b{1} charges, ALL enemies gain #b{2} #yStrength."]
+  },
+  "CorruptTheSpire:SpacetimeMastery": {
+    "NAME": "Spacetime Mastery",
+    "DESCRIPTIONS": [
+      "Rotates between gaining #b1 #yStrength for each attack played, card drawn, skill played, and energy gained during your turn.",
+      "Rotates between gaining #b1 #yStrength for each attack played, card drawn, skill played, and energy gained during your turn. #rTwo buffs will be active at once."
+    ]
+  },
+  "CorruptTheSpire:Wary": {
+    "NAME": "Wary",
+    "DESCRIPTIONS": ["Whenever you play an #yAttack, gains #b{0} Strength."]
+  },
+  "CorruptTheSpire:Thoughtful": {
+    "NAME": "Thoughtful",
+    "DESCRIPTIONS": ["Whenever you draw a card, gains #b{0} Strength."]
+  },
+  "CorruptTheSpire:Restless": {
+    "NAME": "Wary",
+    "DESCRIPTIONS": ["Whenever you gain an energy, gains #b{0} Strength."]
+  },
+  "CorruptTheSpire:Cleanse": {
+    "NAME": "Cleanse",
+    "DESCRIPTIONS": ["Reduce all debuffs by #b{0} at the end of each turn.", "Wears off after this turn."]
+  },
+  "CorruptTheSpire:WarpAura": {
+    "NAME": "Warp Aura",
+    "DESCRIPTIONS": ["When this enemy takes damage, add a #yDazed to your discard pile."]
+  },
+  "CorruptTheSpire:TemporalFissure": {
+    "NAME": "Temporal Fissure",
+    "DESCRIPTIONS": ["When this enemy dies, #pMaster #pof #pTime #pand #pSpace gains #yCleanse #b{0} and you gain #yFrail #b{1}."]
+  },
+  "CorruptTheSpire:SpatialFissure": {
+    "NAME": "Spatial Fissure",
+    "DESCRIPTIONS": ["When this enemy dies, #pMaster #pof #pTime #pand #pSpace starts adding a #yBurn to your draw pile at the end of each turn and ALL enemies heal #b{0}."]
+  },
+  "CorruptTheSpire:WorldAblaze": {
+    "NAME": "World Ablaze",
+    "DESCRIPTIONS": ["At the end of each round, shuffle #b{0} #yBurn into your draw pile."]
   }
 }

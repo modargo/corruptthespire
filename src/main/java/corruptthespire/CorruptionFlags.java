@@ -8,6 +8,9 @@ public class CorruptionFlags {
     public boolean seenHarbinger = false;
     public boolean brokeDevice = false;
 
+    public boolean foughtArchfiend = false;
+    public boolean foughtMaster = false;
+
     public int normalMonsterCount = 0;
     public boolean hadFirstCorruptedNormalMonsterFight = false;
 }

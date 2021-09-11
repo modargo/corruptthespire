@@ -1,23 +1,31 @@
 package corruptthespire.monsters;
 
 import basemod.abstracts.CustomMonster;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
 import com.megacrit.cardcrawl.actions.animations.FastShakeAction;
-import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
+import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.status.Wound;
+import com.megacrit.cardcrawl.cards.status.Slimed;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.ArtifactPower;
-import com.megacrit.cardcrawl.powers.FrailPower;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
+import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 import corruptthespire.CorruptTheSpire;
+import corruptthespire.effects.combat.BlazeFromBeyondEffect;
+import corruptthespire.powers.SpacetimeMasteryPower;
 
-//TODO Flesh out, right now this is just the image (everything else is copied from Deep Tyrant)
 public class MasterOfTimeAndSpace extends CustomMonster
 {
     public static final String ID = "CorruptTheSpire:MasterOfTimeAndSpace";
@@ -26,54 +34,34 @@ public class MasterOfTimeAndSpace extends CustomMonster
     public static final String[] MOVES = MasterOfTimeAndSpace.monsterStrings.MOVES;
     private static final String IMG = CorruptTheSpire.monsterImage(ID);
     private boolean firstMove = true;
-    private static final byte BLAST_ATTACK = 1;
-    private static final byte TERRIFYING_GAZE_DEBUFF = 2;
-    private static final byte THRASH_ATTACK = 3;
-    private static final byte BODY_SLAM_ATTACK = 4;
-    private static final byte CALL_THE_ABYSS_MOVE = 5;
-    private static final int BLAST_DAMAGE = 22;
-    private static final int A4_BLAST_DAMAGE = 24;
-    private static final int BLAST_WOUNDS = 2;
-    private static final int ABYSSAL_GAZE_WEAK_FRAIL = 2;
-    private static final int A19_ABYSSAL_GAZE_WEAK_FRAIL = 2;
-    private static final int ABYSSAL_GAZE_AMOUNT = 7;
-    private static final int A19_ABYSSAL_GAZE_AMOUNT = 10;
-    private static final int THRASH_DAMAGE = 12;
-    private static final int A4_THRASH_DAMAGE = 14;
-    private static final int THRASH_HITS = 2;
-    private static final int THRASH_STRENGTH = 1;
-    private static final int A19_THRASH_STRENGTH = 1;
-    private static final int THRASH_ARTIFACT = 1;
-    private static final int A19_THRASH_ARTIFACT = 1;
-    private static final int BODY_SLAM_DAMAGE = 27;
-    private static final int A4_BODY_SLAM_DAMAGE = 30;
-    private static final int CALL_THE_ABYSS_SUMMONS = 2;
-    private static final int A19_CALL_THE_ABYSS_SUMMONS = 3;
-    private static final int STARTING_ARTIFACT = 1;
-    private static final int A19_STARTING_ARTIFACT = 2;
-    private static final int HP = 475;
-    private static final int A9_HP = 500;
-    private int blastDamage;
-    private int terrifyingGazeWeakFrail;
-    private int terrifyingGazeAmount;
-    private int thrashDamage;
-    private int thrashStrength;
-    private int thrashArtifact;
-    private int bodySlamDamage;
-    private int callTheAbyssSummons;
-    private int startingArtifact;
-
-    private boolean summoned;
+    private static final byte CHAOS_ZONE_ATTACK = 1;
+    private static final byte RAIN_DESTRUCTION_ATTACK = 2;
+    private static final byte DARK_WILL_BUFF = 3;
+    private static final byte DARK_FLAMES_EMBRACE = 4;
+    private static final int CHAOS_ZONE_DAMAGE = 1;
+    private static final int A4_CHAOS_ZONE_DAMAGE = 2;
+    private static final int CHAOS_ZONE_WEAK = 1;
+    private static final int CHAOS_ZONE_STATUSES = 1;
+    private static final int RAIN_DESTRUCTION_DAMAGE = 5;
+    private static final int A4_RAIN_DESTRUCTION_DAMAGE = 6;
+    private static final int DARK_WILL_STRENGTH = 2;
+    private static final int A19_DARK_WILL_STRENGTH = 3;
+    private static final int DARK_FLAMES_EMBRACE_DAMAGE = 15;
+    private static final int A4_DARK_FLAMES_EMBRACE_DAMAGE = 17;
+    private static final int HP = 375;
+    private static final int A9_HP = 400;
+    private final int chaosZoneDamage;
+    private final int rainDestructionDamage;
+    private final int darkWillStrength;
+    private final int darkFlamesEmbraceDamage;
 
     public MasterOfTimeAndSpace() {
         this(0.0f, 0.0f);
     }
 
     public MasterOfTimeAndSpace(final float x, final float y) {
-        //super(MasterOfTimeAndSpace.NAME, ID, HP, -5.0F, 0, 1370.0f, 775.0f, IMG, x, y);
         super(MasterOfTimeAndSpace.NAME, ID, HP, -5.0F, 0, 1000.0f, 560.0f, IMG, x, y);
         this.type = EnemyType.BOSS;
-        this.summoned = false;
         if (AbstractDungeon.ascensionLevel >= 9) {
             this.setHp(A9_HP);
         } else {
@@ -81,33 +69,23 @@ public class MasterOfTimeAndSpace extends CustomMonster
         }
 
         if (AbstractDungeon.ascensionLevel >= 4) {
-            this.blastDamage = A4_BLAST_DAMAGE;
-            this.thrashDamage = A4_THRASH_DAMAGE;
-            this.bodySlamDamage = A4_BODY_SLAM_DAMAGE;
+            this.chaosZoneDamage = A4_CHAOS_ZONE_DAMAGE;
+            this.rainDestructionDamage = A4_RAIN_DESTRUCTION_DAMAGE;
+            this.darkFlamesEmbraceDamage = A4_DARK_FLAMES_EMBRACE_DAMAGE;
         } else {
-            this.blastDamage = BLAST_DAMAGE;
-            this.thrashDamage = THRASH_DAMAGE;
-            this.bodySlamDamage = BODY_SLAM_DAMAGE;
+            this.chaosZoneDamage = CHAOS_ZONE_DAMAGE;
+            this.rainDestructionDamage = RAIN_DESTRUCTION_DAMAGE;
+            this.darkFlamesEmbraceDamage = DARK_FLAMES_EMBRACE_DAMAGE;
         }
-        this.damage.add(new DamageInfo(this, this.blastDamage));
-        this.damage.add(new DamageInfo(this, this.thrashDamage));
-        this.damage.add(new DamageInfo(this, this.bodySlamDamage));
+        this.damage.add(new DamageInfo(this, this.chaosZoneDamage));
+        this.damage.add(new DamageInfo(this, this.rainDestructionDamage));
+        this.damage.add(new DamageInfo(this, this.darkFlamesEmbraceDamage));
 
         if (AbstractDungeon.ascensionLevel >= 19) {
-            this.terrifyingGazeWeakFrail = A19_ABYSSAL_GAZE_WEAK_FRAIL;
-            this.terrifyingGazeAmount = A19_ABYSSAL_GAZE_AMOUNT;
-            this.thrashStrength = A19_THRASH_STRENGTH;
-            this.thrashArtifact = A19_THRASH_ARTIFACT;
-            this.callTheAbyssSummons = A19_CALL_THE_ABYSS_SUMMONS;
-            this.startingArtifact = A19_STARTING_ARTIFACT;
+            this.darkWillStrength = A19_DARK_WILL_STRENGTH;
         }
         else {
-            this.terrifyingGazeWeakFrail = ABYSSAL_GAZE_WEAK_FRAIL;
-            this.terrifyingGazeAmount = ABYSSAL_GAZE_AMOUNT;
-            this.thrashStrength = THRASH_STRENGTH;
-            this.thrashArtifact = THRASH_ARTIFACT;
-            this.callTheAbyssSummons = CALL_THE_ABYSS_SUMMONS;
-            this.startingArtifact = STARTING_ARTIFACT;
+            this.darkWillStrength = DARK_WILL_STRENGTH;
         }
     }
 
@@ -117,7 +95,7 @@ public class MasterOfTimeAndSpace extends CustomMonster
         AbstractDungeon.scene.fadeOutAmbiance();
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_BEYOND");
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArtifactPower(this, this.startingArtifact)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new SpacetimeMasteryPower(this, AbstractDungeon.ascensionLevel >= 19)));
     }
 
     @Override
@@ -126,40 +104,41 @@ public class MasterOfTimeAndSpace extends CustomMonster
             this.firstMove = false;
         }
         switch (this.nextMove) {
-            case BLAST_ATTACK:
-                AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.FIRE));
-                if (AbstractDungeon.ascensionLevel >= 19) {
-                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Wound(), BLAST_WOUNDS, true, true));
-                }
-                else {
-                    AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Wound(), BLAST_WOUNDS));
-                }
+            case CHAOS_ZONE_ATTACK:
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(this, new ShockWaveEffect(this.hb.cX, this.hb.cY, Settings.RED_TEXT_COLOR, ShockWaveEffect.ShockWaveType.CHAOTIC), 0.75F));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.NONE));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, CHAOS_ZONE_WEAK, true)));
+                int statuses = CHAOS_ZONE_STATUSES + this.countLivingPhantasms() == 0 ? 1 : 0;
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Slimed(), statuses));
                 break;
-            case TERRIFYING_GAZE_DEBUFF:
+            case RAIN_DESTRUCTION_ATTACK:
+                if (Settings.FAST_MODE) {
+                    this.addToBot(new VFXAction(new BlazeFromBeyondEffect(35,true), 0.25F));
+                } else {
+                    this.addToBot(new VFXAction(new BlazeFromBeyondEffect(35, true), 1.0F));
+                }
                 AbstractDungeon.actionManager.addToBottom(new FastShakeAction(this, 0.5F, 0.2F));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, this.terrifyingGazeWeakFrail, true), this.terrifyingGazeWeakFrail));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, this.terrifyingGazeWeakFrail, true), this.terrifyingGazeWeakFrail));
-                //AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new AbysstouchedPower(AbstractDungeon.player, this.terrifyingGazeAmount), this.terrifyingGazeAmount));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.NONE));
                 break;
-            case THRASH_ATTACK:
-                AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
-                for (int i = 0; i < THRASH_HITS; i++) {
-                    AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+            case DARK_WILL_BUFF:
+                this.addToBot(new VFXAction(new BorderLongFlashEffect(Color.PURPLE, true)));
+                for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                    if (!m.isDead && !m.isDying) {
+                        if (m == this) {
+                            this.addToBot(new ApplyPowerAction(m, this, new StrengthPower(m, this.darkWillStrength)));
+                        }
+                        else {
+                            AbstractPower gainStrengthPower = new GainStrengthPower(m, this.darkWillStrength);
+                            gainStrengthPower.type = AbstractPower.PowerType.BUFF;
+                            this.addToBot(new ApplyPowerAction(m, this, gainStrengthPower));
+                        }
+                    }
                 }
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, this.thrashStrength), this.thrashStrength));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArtifactPower(this, this.thrashArtifact), this.thrashArtifact));
                 break;
-            case BODY_SLAM_ATTACK:
-                AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-                break;
-            case CALL_THE_ABYSS_MOVE:
-                for (int i = 0; i < this.callTheAbyssSummons; i++) {
-                    //Manifestation manifestation = new Manifestation(-325.0F, i * 200.0F);
-                    //AbstractDungeon.actionManager.addToBottom(new SpawnMonsterAction(manifestation, true));
-                }
-                this.summoned = true;
+            case DARK_FLAMES_EMBRACE:
+                this.addToBot(new VFXAction(new BorderLongFlashEffect(Color.RED, true)));
+                this.addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.FIRE));
+                this.addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, this.darkWillStrength)));
                 break;
         }
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
@@ -167,36 +146,30 @@ public class MasterOfTimeAndSpace extends CustomMonster
 
     @Override
     protected void getMove(final int num) {
-        if (this.firstMove || this.lastMove(BODY_SLAM_ATTACK)) {
-            this.setMove(MOVES[0], BLAST_ATTACK, Intent.ATTACK_DEBUFF, this.blastDamage);
+        if (this.firstMove || this.lastMove(DARK_WILL_BUFF) || this.lastMove(DARK_FLAMES_EMBRACE)) {
+            this.setMove(MOVES[0], CHAOS_ZONE_ATTACK, Intent.ATTACK_DEBUFF, this.chaosZoneDamage);
         }
-        else if (this.lastMove(BLAST_ATTACK) && !this.summoned) {
-            this.setMove(MOVES[4], CALL_THE_ABYSS_MOVE, Intent.UNKNOWN);
+        else if (this.lastMove(CHAOS_ZONE_ATTACK)) {
+            this.setMove(MOVES[1], RAIN_DESTRUCTION_ATTACK, Intent.ATTACK, this.rainDestructionDamage);
         }
-        else if (this.lastMove(BLAST_ATTACK) || this.lastMove(CALL_THE_ABYSS_MOVE)) {
-            this.setMove(MOVES[1], TERRIFYING_GAZE_DEBUFF, Intent.STRONG_DEBUFF);
+        else if (this.lastMove(RAIN_DESTRUCTION_ATTACK)) {
+            if (this.countLivingPhantasms() > 0) {
+                this.setMove(MOVES[2], DARK_WILL_BUFF, Intent.BUFF);
+            }
+            else {
+                this.setMove(MOVES[3], DARK_FLAMES_EMBRACE, Intent.ATTACK_BUFF, this.darkFlamesEmbraceDamage);
+            }
         }
-        else if (this.lastMove(TERRIFYING_GAZE_DEBUFF)) {
-            this.setMove(MOVES[2], THRASH_ATTACK, Intent.ATTACK_BUFF, this.thrashDamage, THRASH_HITS, true);
-        }
-        else {
-            this.setMove(MOVES[3], BODY_SLAM_ATTACK, Intent.ATTACK, this.bodySlamDamage);
-        }
+    }
+
+    private int countLivingPhantasms() {
+        return (int)AbstractDungeon.getCurrRoom().monsters.monsters.stream().filter(m -> m.id.equals(SpatialPhantasm.ID) || m.id.equals(TemporalPhantasm.ID)).count();
     }
 
     @Override
     public void die() {
         super.die();
-        boolean allMonstersBasicallyDead = true;
-        for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            //allMonstersBasicallyDead = allMonstersBasicallyDead && (m == this || m.id.equals(Manifestation.ID));
-            //if (m.id.equals(Manifestation.ID) && !m.isDying) {
-            //    //TODO See if I can change the color of the explosion
-            //    AbstractDungeon.actionManager.addToBottom(new VFXAction(new ExplosionSmallEffect(m.hb.cX, m.hb.cY), 0.1F));
-            //    AbstractDungeon.actionManager.addToBottom(new SuicideAction(m));
-            //}
-        }
-        if (allMonstersBasicallyDead) {
+        if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.useFastShakeAnimation(5.0F);
             CardCrawlGame.screenShake.rumble(4.0F);
             this.onBossVictoryLogic();
