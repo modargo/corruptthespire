@@ -48,8 +48,8 @@ public class MasterOfTimeAndSpace extends CustomMonster
     private static final int A19_DARK_WILL_STRENGTH = 3;
     private static final int DARK_FLAMES_EMBRACE_DAMAGE = 15;
     private static final int A4_DARK_FLAMES_EMBRACE_DAMAGE = 17;
-    private static final int HP = 325;
-    private static final int A9_HP = 350;
+    private static final int HP = 275;
+    private static final int A9_HP = 300;
     private final int chaosZoneDamage;
     private final int rainDestructionDamage;
     private final int darkWillStrength;
