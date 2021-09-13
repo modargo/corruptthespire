@@ -35,6 +35,11 @@ public class FatedCardPower extends AbstractPower {
     }
 
     @Override
+    public void onInitialApplication() {
+        this.atStartOfTurn();
+    }
+
+    @Override
     public void updateDescription() {
         int offset = this.amount == 1 ? 0 : 3;
         String description = this.rarity == AbstractCard.CardRarity.COMMON ? DESCRIPTIONS[offset] : this.rarity == AbstractCard.CardRarity.UNCOMMON ? DESCRIPTIONS[1 + offset] : DESCRIPTIONS[2 + offset];
