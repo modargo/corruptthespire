@@ -38,7 +38,7 @@ public class AStepToTheSide extends AbstractImageEvent {
         this.curse = new Fated();
         this.gold = AbstractDungeon.ascensionLevel >= 15 ? A15_GOLD : GOLD;
 
-        imageEventText.setDialogOption(MessageFormat.format(OPTIONS[0], this.relic.name, Fated.COMBATS), this.relic);
+        imageEventText.setDialogOption(MessageFormat.format(OPTIONS[0], this.relic.name), this.curse, this.relic);
         imageEventText.setDialogOption(MessageFormat.format(OPTIONS[1], this.gold));
     }
 
