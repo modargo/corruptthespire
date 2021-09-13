@@ -2,7 +2,12 @@ package corruptthespire.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.exordium.AcidSlime_L;
+import com.megacrit.cardcrawl.monsters.exordium.AcidSlime_M;
+import com.megacrit.cardcrawl.monsters.exordium.SpikeSlime_L;
+import com.megacrit.cardcrawl.monsters.exordium.SpikeSlime_M;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import corruptthespire.Cor;
 import corruptthespire.corruptions.fight.FightCorruption;
@@ -25,7 +30,7 @@ public class ApplyCorruptionsAndCorruptionHealthIncreaseOnSpawnMonsterPatch {
     public static void ApplyCorruptionsOnSpawnMonster(AbstractRelic __instance, AbstractMonster m) {
         if (currentMonster != m) {
             //For Darklings, we don't want to re-apply the health increase when they respawn
-            if (!m.halfDead) {
+            if (!m.halfDead && !isSlimeBossSlime(m)) {
                 Cor.applyCorruptionHealthIncrease(m);
             }
             if (FightCorruption.shouldApplyCorruptions()) {
@@ -33,5 +38,10 @@ public class ApplyCorruptionsAndCorruptionHealthIncreaseOnSpawnMonsterPatch {
             }
             currentMonster = m;
         }
+    }
+
+    private static boolean isSlimeBossSlime(AbstractMonster m) {
+        return AbstractDungeon.lastCombatMetricKey.equals("Slime Boss")
+            && (m.id.equals(SpikeSlime_L.ID) || m.id.equals(AcidSlime_L.ID) || m.id.equals(SpikeSlime_M.ID) || m.id.equals(AcidSlime_M.ID));
     }
 }
