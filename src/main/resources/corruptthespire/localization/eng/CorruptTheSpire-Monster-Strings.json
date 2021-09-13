@@ -24,6 +24,14 @@
     ],
     "NAME": "Temporal Phantasm"
   },
+  "CorruptTheSpire:TreasureWardenWhite": {
+    "MOVES": [
+      "Maelstrom",
+      "Lightning",
+      "Scorch"
+    ],
+    "NAME": "Treasure Warden"
+  },
   "CorruptTheSpire:TreasureWardenBlack": {
     "MOVES": [
       "Searing Breath",
