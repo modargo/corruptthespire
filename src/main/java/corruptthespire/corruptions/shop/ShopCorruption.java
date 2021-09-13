@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.shop.ShopScreen;
+import com.megacrit.cardcrawl.shop.StorePotion;
 import com.megacrit.cardcrawl.shop.StoreRelic;
 import corruptthespire.Cor;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;
@@ -173,6 +174,7 @@ public class ShopCorruption {
                 : null;
 
         if (corruptionType == ShopCorruptionType.CorruptedRelicsReplacePotions || corruptionType == ShopCorruptionType.CorruptedCards) {
+            ReflectionHacks.setPrivate(shopScreen, ShopScreen.class, "potions", new ArrayList<StorePotion>());
             return true;
         }
 
