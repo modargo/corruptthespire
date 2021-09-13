@@ -30,7 +30,8 @@ public class ApplyCorruptionsAndCorruptionHealthIncreaseOnSpawnMonsterPatch {
     public static void ApplyCorruptionsOnSpawnMonster(AbstractRelic __instance, AbstractMonster m) {
         if (currentMonster != m) {
             //For Darklings, we don't want to re-apply the health increase when they respawn
-            if (!m.halfDead && !isSlimeBossSlime(m)) {
+            //We also exclude the slimes that come from splitting, since the parent slime already got a health increaase
+            if (!m.halfDead && !isSlime(m)) {
                 Cor.applyCorruptionHealthIncrease(m);
             }
             if (FightCorruption.shouldApplyCorruptions()) {
@@ -40,8 +41,7 @@ public class ApplyCorruptionsAndCorruptionHealthIncreaseOnSpawnMonsterPatch {
         }
     }
 
-    private static boolean isSlimeBossSlime(AbstractMonster m) {
-        return AbstractDungeon.lastCombatMetricKey.equals("Slime Boss")
-            && (m.id.equals(SpikeSlime_L.ID) || m.id.equals(AcidSlime_L.ID) || m.id.equals(SpikeSlime_M.ID) || m.id.equals(AcidSlime_M.ID));
+    private static boolean isSlime(AbstractMonster m) {
+        return m.id.equals(SpikeSlime_L.ID) || m.id.equals(AcidSlime_L.ID) || m.id.equals(SpikeSlime_M.ID) || m.id.equals(AcidSlime_M.ID);
     }
 }
