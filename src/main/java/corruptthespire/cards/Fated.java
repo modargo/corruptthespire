@@ -49,6 +49,7 @@ public class Fated extends CustomCard implements CustomSavable<Integer> {
     }
 
     public void decrementMisc() {
+        this.misc--;
         this.baseMagicNumber = this.misc;
         this.magicNumber = this.baseMagicNumber;
         this.initializeDescription();
