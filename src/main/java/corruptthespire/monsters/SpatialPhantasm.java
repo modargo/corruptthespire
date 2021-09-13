@@ -28,14 +28,14 @@ public class SpatialPhantasm extends CustomMonster
     private static final byte SPATIAL_REND_ATTACK = 1;
     private static final byte MEND_BUFF = 2;
     private static final byte DIMENSIONAL_RIP_ATTACK = 3;
-    private static final int SPATIAL_REND_DAMAGE = 7;
-    private static final int A4_SPATIAL_REND_DAMAGE = 8;
+    private static final int SPATIAL_REND_DAMAGE = 2;
+    private static final int A4_SPATIAL_REND_DAMAGE = 3;
     private static final int MEND_HEAL = 20;
     private static final int A19_MEND_HEAL = 30;
-    private static final int DIMENSIONAL_RIP_DAMAGE = 20;
-    private static final int A4_DIMENSIONAL_RIP_DAMAGE = 22;
-    private static final int HP = 110;
-    private static final int A9_HP = 120;
+    private static final int DIMENSIONAL_RIP_DAMAGE = 14;
+    private static final int A4_DIMENSIONAL_RIP_DAMAGE = 16;
+    private static final int HP = 90;
+    private static final int A9_HP = 100;
     private final int spatialRendDamage;
     private final int mendHeal;
     private final int dimensionalRipDamage;
@@ -89,6 +89,8 @@ public class SpatialPhantasm extends CustomMonster
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
                 AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
                 break;
             case MEND_HEAL:
                 for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
