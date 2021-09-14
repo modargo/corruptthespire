@@ -1,5 +1,6 @@
 package corruptthespire;
 
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -14,6 +15,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.stream.Collectors;
 
 public class Cor {
     private static final Logger logger = LogManager.getLogger(Cor.class.getName());
@@ -105,6 +108,9 @@ public class Cor {
 
     public static String returnRandomCorruptedRelicKey() {
         if (Cor.corruptedRelicPool.isEmpty()) {
+            fillCorruptedRelicPool(true);
+        }
+        if (Cor.corruptedRelicPool.isEmpty()) {
             return Circlet.ID;
         }
         String relicKey = Cor.corruptedRelicPool.remove(0);
@@ -116,6 +122,9 @@ public class Cor {
 
     public static String returnEndRandomCorruptedRelicKey() {
         if (Cor.corruptedRelicPool.isEmpty()) {
+            fillCorruptedRelicPool(true);
+        }
+        if (Cor.corruptedRelicPool.isEmpty()) {
             return Circlet.ID;
         }
         String relicKey = Cor.corruptedRelicPool.remove(Cor.corruptedRelicPool.size() - 1);
@@ -123,6 +132,15 @@ public class Cor {
             return returnEndRandomCorruptedRelicKey();
         }
         return relicKey;
+    }
+
+    public static void fillCorruptedRelicPool(boolean checkPlayerRelics) {
+        ArrayList<String> corruptedRelics = Cor.getAllCorruptedRelics().stream()
+                .filter(r -> !checkPlayerRelics || !AbstractDungeon.player.hasRelic(r.relicId))
+                .map(r -> r.relicId)
+                .collect(Collectors.toCollection(ArrayList::new));
+        Collections.shuffle(corruptedRelics, new Random(Settings.seed).random);
+        Cor.corruptedRelicPool = corruptedRelics;
     }
 
     public static ArrayList<AbstractCorruptedRelic> getAllCorruptedRelics() {
