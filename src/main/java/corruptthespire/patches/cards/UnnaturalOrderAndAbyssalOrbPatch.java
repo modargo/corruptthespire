@@ -12,12 +12,14 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.PoisonPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import corruptthespire.powers.AbysstouchedPower;
 import corruptthespire.powers.PowerUtil;
 import corruptthespire.powers.UnnaturalOrderPower;
+import corruptthespire.relics.corrupted.AbyssalOrb;
 import javassist.*;
 
-public class UnnaturalOrderPatch {
+public class UnnaturalOrderAndAbyssalOrbPatch {
     @SpirePatch(
             clz = ApplyPowerAction.class,
             method = SpirePatch.CONSTRUCTOR,
@@ -30,6 +32,13 @@ public class UnnaturalOrderPatch {
                 AbstractPower power = AbstractDungeon.player.getPower(UnnaturalOrderPower.POWER_ID);
                 power.flash();
                 powerToApply.amount += power.amount;
+                __instance.amount = powerToApply.amount;
+            }
+
+            AbstractRelic abyssalOrb = AbstractDungeon.player.getRelic(AbyssalOrb.ID);
+            if (abyssalOrb != null && source != null && source.isPlayer && target != source && isAbysstouched(powerToApply.ID)) {
+                abyssalOrb.flash();
+                powerToApply.amount += AbyssalOrb.ABYSSTOUCHED_INCREASE;
                 __instance.amount = powerToApply.amount;
             }
         }

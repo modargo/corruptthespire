@@ -107,5 +107,10 @@
     "NAME": "Harbinger's Skull",
     "FLAVOR": "The skull of an otherworldly horror.",
     "DESCRIPTIONS": ["If you do not play any #yPowers during your turn, gain #b{0} Block at the end of your turn and draw #b{1} additional card at the start of your next turn."]
+  },
+  "CorruptTheSpire:AbyssalOrb": {
+    "NAME": "Abyssal Orb",
+    "FLAVOR": "It gazes back at you.",
+    "DESCRIPTIONS": ["At the start of your turn, apply #b{0} #yAbysstouched to a random enemy. Whenever you apply #yAbysstouched, apply #b{1} additional #yAbysstouched."]
   }
 }

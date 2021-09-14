@@ -145,6 +145,7 @@ public class Cor {
 
     public static ArrayList<AbstractCorruptedRelic> getAllCorruptedRelics() {
         ArrayList<AbstractCorruptedRelic> corruptedRelics = new ArrayList<>();
+        corruptedRelics.add(new AbyssalOrb());
         corruptedRelics.add(new BagOfTricks());
         corruptedRelics.add(new BlackCard());
         corruptedRelics.add(new BlightedSpirefruit());
