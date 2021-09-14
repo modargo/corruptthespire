@@ -3,10 +3,6 @@
     "NAME": "Draw Reduction",
     "DESCRIPTIONS": ["Draw #b1 less card next turn.", "Draw #b{0} less cards next turn."]
   },
-  "CorruptTheSpire:ForbiddenRitual": {
-    "NAME": "Forbidden Ritual",
-    "DESCRIPTIONS": ["At the start of your turn, gain #b{0} Strength and #b{1} #yCorruption."]
-  },
   "CorruptTheSpire:CorruptedForm": {
     "NAME": "Corrupted Form",
     "DESCRIPTIONS": [
