@@ -132,8 +132,6 @@ public class Cor {
         corruptedRelics.add(new BlightedSpirefruit());
         corruptedRelics.add(new BottledPrism());
         corruptedRelics.add(new CorruptedEgg());
-        //TODO: Disabled because it wasn't impactful enough. Decide if this disabling is permanent or not.
-        //corruptedRelics.add(new CorruptedOmamori());
         corruptedRelics.add(new CorruptedToolbox());
         corruptedRelics.add(new Gohei());
         corruptedRelics.add(new MaskOfNightmares());
