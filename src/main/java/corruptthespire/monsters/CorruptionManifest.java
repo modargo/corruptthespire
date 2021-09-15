@@ -62,7 +62,7 @@ public class CorruptionManifest extends CustomMonster {
 
     @Override
     protected void getMove(final int num) {
-        if (AbstractDungeon.ascensionLevel < 17) {
+        if (this.firstMove && AbstractDungeon.ascensionLevel < 17) {
             this.setMove(MOVES[1], MANIFEST_MOVE, Intent.UNKNOWN);
         }
 
