@@ -64,7 +64,6 @@ public class PandemoniumArchfiend extends CustomMonster
     }
 
     public PandemoniumArchfiend(final float x, final float y) {
-        //super(MasterOfTimeAndSpace.NAME, ID, HP, -5.0F, 0, 1370.0f, 775.0f, IMG, x, y);
         super(PandemoniumArchfiend.NAME, ID, HP, -5.0F, 0, 425.0f, 555.0f, IMG, x, y);
         this.type = EnemyType.BOSS;
         if (AbstractDungeon.ascensionLevel >= 9) {
