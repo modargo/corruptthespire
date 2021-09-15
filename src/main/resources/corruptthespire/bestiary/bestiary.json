@@ -1,4 +1,79 @@
 {
 	"monsters": [
+		{
+			"name": "Corruption Manifest",
+			"id": "CorruptTheSpire:CorruptionManifest",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Starts with #wManifest, then repeats #wCorruption.",
+					"hp": "(20 - 23 / 35 - 38 / 50 - 54 HP)",
+					"notes": "HP varies by act (act 1 / act 2 / act 3).",
+					"moves": [
+						{
+							"name": "Corrupt",
+							"effects": [
+								{
+									"name": "Corruption 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Manifest",
+							"effects": [
+								{
+									"name": "Skip turn",
+									"color": "SKIP"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 7,
+					"desc": "Starts with #wManifest, then repeats #wCorruption.",
+					"hp": "(22 - 25 / 37 - 41 / 53 - 57 HP)",
+					"notes": "HP varies by act (act 1 / act 2 / act 3).",
+					"moves": [
+						{
+							"name": "Corrupt",
+							"effects": [
+								{
+									"name": "Corruption 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Manifest",
+							"effects": [
+								{
+									"name": "Skip turn",
+									"color": "SKIP"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 17,
+					"desc": "Repeats #wCorruption.",
+					"hp": "(22 - 25 / 37 - 41 / 53 - 57 HP)",
+					"notes": "HP varies by act (act 1 / act 2 / act 3).",
+					"moves": [
+						{
+							"name": "Corrupt",
+							"effects": [
+								{
+									"name": "Corruption 1",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				}
+			]
+		}	
 	]
 }
