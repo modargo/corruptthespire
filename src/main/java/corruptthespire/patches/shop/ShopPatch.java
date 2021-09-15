@@ -1,6 +1,7 @@
 package corruptthespire.patches.shop;
 
 import basemod.ReflectionHacks;
+import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -10,10 +11,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.shop.Merchant;
 import com.megacrit.cardcrawl.shop.ShopScreen;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 import corruptthespire.corruptions.shop.ShopCorruption;
 import corruptthespire.corruptions.shop.ShopCorruptionType;
 import corruptthespire.patches.CorruptedField;
+import corruptthespire.util.TextureLoader;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import javassist.expr.ExprEditor;
@@ -66,6 +69,19 @@ public class ShopPatch {
         }
     }
 
+    @SpirePatch(clz = ShopScreen.class, method = "init")
+    public static class SetTransformImagePatch {
+        @SpirePostfixPatch
+        public static void setTransformImage(ShopScreen __instance, ArrayList<AbstractCard> coloredCards, ArrayList<AbstractCard> colorlessCards, @ByRef Texture[] ___removeServiceImg) {
+            ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())
+                    ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
+                    : null;
+            if (corruptionType == ShopCorruptionType.TransformReplacesRemove) {
+                ___removeServiceImg[0] = TextureLoader.getTexture(CorruptTheSpire.uiImage("ShopTransform"));
+            }
+        }
+    }
+
     @SpirePatch(clz = ShopScreen.class, method = "purchasePurge")
     public static class PurchaseTransformPatch {
         @SpirePrefixPatch
@@ -89,7 +105,6 @@ public class ShopPatch {
         }
     }
 
-    //TODO also patch the remove card image
     @SpirePatch(clz = ShopScreen.class, method = "updatePurge")
     public static class UpdateTransformPatch {
         @SpirePrefixPatch
