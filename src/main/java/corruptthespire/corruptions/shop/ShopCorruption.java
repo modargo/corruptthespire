@@ -3,14 +3,18 @@ package corruptthespire.corruptions.shop;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
+import com.megacrit.cardcrawl.helpers.TipHelper;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.shop.ShopScreen;
 import com.megacrit.cardcrawl.shop.StorePotion;
 import com.megacrit.cardcrawl.shop.StoreRelic;
 import corruptthespire.Cor;
+import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 import corruptthespire.cards.CardUtil;
 import corruptthespire.cards.corrupted.CorruptedCardColor;
@@ -18,11 +22,15 @@ import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.patches.CorruptedField;
 import corruptthespire.patches.shop.ShopCorruptionTypeField;
 import corruptthespire.relics.FragmentOfCorruption;
+import corruptthespire.util.TextureLoader;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class ShopCorruption {
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:ShopCorruption");
+    private static final String[] TEXT = uiStrings.TEXT;
+
     public static void handleCards(ArrayList<AbstractCard> coloredCards, ArrayList<AbstractCard> colorlessCards) {
         ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())
                 ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
@@ -175,6 +183,18 @@ public class ShopCorruption {
 
         if (corruptionType == ShopCorruptionType.CorruptedRelicsReplacePotions || corruptionType == ShopCorruptionType.CorruptedCards) {
             ReflectionHacks.setPrivate(shopScreen, ShopScreen.class, "potions", new ArrayList<StorePotion>());
+            return true;
+        }
+
+        return false;
+    }
+
+    public static boolean handlePurgeCardTooltip(float x, float y) {
+        ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())
+                ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
+                : null;
+        if (corruptionType == ShopCorruptionType.TransformReplacesRemove) {
+            TipHelper.renderGenericTip(x, y, TEXT[1], TEXT[2].replace("{0}", "25"));
             return true;
         }
 

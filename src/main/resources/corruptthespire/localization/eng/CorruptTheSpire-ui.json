@@ -52,7 +52,7 @@
     "TEXT": ["Bury fragment", "Reduce Corruption by {1} for {0} fragments"]
   },
   "CorruptTheSpire:ShopCorruption": {
-    "TEXT": ["Select a Card to Transform."]
+    "TEXT": ["Select a Card to Transform.", "Card Transform Service", "Transform a card in your deck. The cost of the removal and transform service increases by #b{0} for the rest of this run."]
   },
   "CorruptTheSpire:DevilsBargainAction": {
     "TEXT": ["Select a Card to Return to Your Hand.", "Select {0} Cards to Return to Your Hand."]

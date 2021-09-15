@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.TipHelper;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.shop.Merchant;
 import com.megacrit.cardcrawl.shop.ShopScreen;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
@@ -15,7 +17,9 @@ import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 import corruptthespire.corruptions.shop.ShopCorruption;
 import corruptthespire.corruptions.shop.ShopCorruptionType;
+import corruptthespire.corruptions.treasure.TreasureCorruption;
 import corruptthespire.patches.CorruptedField;
+import corruptthespire.patches.treasure.AbstractChestOpenPatch;
 import corruptthespire.util.TextureLoader;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
@@ -79,6 +83,22 @@ public class ShopPatch {
             if (corruptionType == ShopCorruptionType.TransformReplacesRemove) {
                 ___removeServiceImg[0] = TextureLoader.getTexture(CorruptTheSpire.uiImage("ShopTransform"));
             }
+        }
+    }
+    @SpirePatch(clz = ShopScreen.class, method = "updatePurgeCard")
+    public static class TransformImageTooltipPatch {
+        public static class TransformImageTooltipPatchExprEditor extends ExprEditor {
+            @Override
+            public void edit(MethodCall methodCall) throws CannotCompileException {
+                if (methodCall.getClassName().equals(TipHelper.class.getName()) && methodCall.getMethodName().equals("renderGenericTip")) {
+                    methodCall.replace(String.format("{ if (!%1$s.handlePurgeCardTooltip($1, $2)) { $proceed($$); } }", ShopCorruption.class.getName()));
+                }
+            }
+        }
+
+        @SpireInstrumentPatch
+        public static ExprEditor transformImageTooltipPatch() {
+            return new TransformImageTooltipPatchExprEditor();
         }
     }
 
