@@ -110,7 +110,7 @@ public class SpatialPhantasm extends CustomMonster
     @Override
     protected void getMove(final int num) {
         if (this.firstMove || this.lastMove(DIMENSIONAL_RIP_ATTACK)) {
-            this.setMove(MOVES[0], SPATIAL_REND_ATTACK, Intent.ATTACK_DEBUFF, this.spatialRendDamage, 2, true);
+            this.setMove(MOVES[0], SPATIAL_REND_ATTACK, Intent.ATTACK, this.spatialRendDamage, 3, true);
         }
         else if (this.lastMove(SPATIAL_REND_ATTACK)) {
             this.setMove(MOVES[1], MEND_BUFF, Intent.BUFF);
