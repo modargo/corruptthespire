@@ -25,8 +25,8 @@ public class CorruptionManifest extends CustomMonster {
     private static final int CORRUPT_CORRUPTION = 1;
     private static final int[] HP_MIN = { 20, 35, 50, 65 };
     private static final int[] HP_MAX = { 23, 38, 54, 69 };
-    private static final int[] A9_HP_MIN = { 22, 37, 53, 68 };
-    private static final int[] A9_HP_MAX = { 25, 41, 57, 72 };
+    private static final int[] A7_HP_MIN = { 22, 37, 53, 68 };
+    private static final int[] A7_HP_MAX = { 25, 41, 57, 72 };
 
     public CorruptionManifest() {
         this(0.0f, 0.0f, Version.Act1);
@@ -36,8 +36,8 @@ public class CorruptionManifest extends CustomMonster {
         super(CorruptionManifest.NAME, ID, HP_MAX[0], -5.0F, 0, 105.0f, 105.0f, IMG, x, y);
         this.type = EnemyType.NORMAL;
         this.version = version;
-        if (AbstractDungeon.ascensionLevel >= 9) {
-            this.setHp(this.v(A9_HP_MIN), this.v(A9_HP_MAX));
+        if (AbstractDungeon.ascensionLevel >= 7) {
+            this.setHp(this.v(A7_HP_MIN), this.v(A7_HP_MAX));
         } else {
             this.setHp(this.v(HP_MIN), this.v(HP_MAX));
         }
