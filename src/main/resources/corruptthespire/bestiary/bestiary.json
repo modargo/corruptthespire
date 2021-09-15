@@ -588,6 +588,256 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Pandemonium Archfiend",
+			"id": "CorruptTheSpire:PandemoniumArchfiend",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Starts with #wMindshatter, then #wFour #wArm #wStrike, then #wTormenting #wShackles, then #wInfernal #wPower. Afterwards, cycles #wMindshatter or #wTormenting #wShackles -> #wFour #wArm #wStrike -> the other -> #wHellfire.",
+					"hp": "(425 HP)",
+					"notes": "Innate #uDevil's #uDue",
+					"moves": [
+						{
+							"name": "Mindshatter",
+							"effects": [
+								{
+									"name": "Price of Knowledge 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Four Arm Strike",
+							"effects": [
+								{
+									"name": "3x4",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Tormenting Shackles",
+							"effects": [
+								{
+									"name": "30",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Tormenting Shackles 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Infernal Power",
+							"effects": [
+								{
+									"name": "22",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Ritual 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Hellfire",
+							"effects": [
+								{
+									"name": "12x2",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 4,
+					"desc": "Starts with #wMindshatter, then #wFour #wArm #wStrike, then #wTormenting #wShackles, then #wInfernal #wPower. Afterwards, cycles #wMindshatter or #wTormenting #wShackles -> #wFour #wArm #wStrike -> the other -> #wHellfire.",
+					"hp": "(425 HP)",
+					"notes": "Innate #uDevil's #uDue",
+					"moves": [
+						{
+							"name": "Mindshatter",
+							"effects": [
+								{
+									"name": "Price of Knowledge 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Four Arm Strike",
+							"effects": [
+								{
+									"name": "4x4",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Tormenting Shackles",
+							"effects": [
+								{
+									"name": "33",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Tormenting Shackles 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Infernal Power",
+							"effects": [
+								{
+									"name": "24",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Ritual 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Hellfire",
+							"effects": [
+								{
+									"name": "14x2",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 9,
+					"desc": "Starts with #wMindshatter, then #wFour #wArm #wStrike, then #wTormenting #wShackles, then #wInfernal #wPower. Afterwards, cycles #wMindshatter or #wTormenting #wShackles -> #wFour #wArm #wStrike -> the other -> #wHellfire.",
+					"hp": "(450 HP)",
+					"notes": "Innate #uDevil's #uDue",
+					"moves": [
+						{
+							"name": "Mindshatter",
+							"effects": [
+								{
+									"name": "Price of Knowledge 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Four Arm Strike",
+							"effects": [
+								{
+									"name": "4x4",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Tormenting Shackles",
+							"effects": [
+								{
+									"name": "33",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Tormenting Shackles 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Infernal Power",
+							"effects": [
+								{
+									"name": "24",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Ritual 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Hellfire",
+							"effects": [
+								{
+									"name": "14x2",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 19,
+					"desc": "Starts with #wMindshatter, then #wFour #wArm #wStrike, then #wTormenting #wShackles, then #wInfernal #wPower. Afterwards, cycles #wMindshatter or #wTormenting #wShackles -> #wFour #wArm #wStrike -> the other -> #wHellfire.",
+					"hp": "(450 HP)",
+					"notes": "Innate #uDevil's #uDue",
+					"moves": [
+						{
+							"name": "Mindshatter",
+							"effects": [
+								{
+									"name": "Price of Knowledge 2",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Four Arm Strike",
+							"effects": [
+								{
+									"name": "4x4",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Tormenting Shackles",
+							"effects": [
+								{
+									"name": "33",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Tormenting Shackles 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Infernal Power",
+							"effects": [
+								{
+									"name": "24",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Ritual 2",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Hellfire",
+							"effects": [
+								{
+									"name": "14x2",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
 		}
 	]
 }
