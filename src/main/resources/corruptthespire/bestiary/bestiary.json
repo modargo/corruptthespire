@@ -597,7 +597,7 @@
 					"min_asc": 0,
 					"desc": "Starts with #wMindshatter, then #wFour #wArm #wStrike, then #wTormenting #wShackles, then #wInfernal #wPower. Afterwards, cycles #wMindshatter or #wTormenting #wShackles -> #wFour #wArm #wStrike -> the other -> #wHellfire.",
 					"hp": "(425 HP)",
-					"notes": "Innate #uDevil's #uDue",
+					"notes": "Innate #uDevil's #uDue.",
 					"moves": [
 						{
 							"name": "Mindshatter",
@@ -658,7 +658,7 @@
 					"min_asc": 4,
 					"desc": "Starts with #wMindshatter, then #wFour #wArm #wStrike, then #wTormenting #wShackles, then #wInfernal #wPower. Afterwards, cycles #wMindshatter or #wTormenting #wShackles -> #wFour #wArm #wStrike -> the other -> #wHellfire.",
 					"hp": "(425 HP)",
-					"notes": "Innate #uDevil's #uDue",
+					"notes": "Innate #uDevil's #uDue.",
 					"moves": [
 						{
 							"name": "Mindshatter",
@@ -719,7 +719,7 @@
 					"min_asc": 9,
 					"desc": "Starts with #wMindshatter, then #wFour #wArm #wStrike, then #wTormenting #wShackles, then #wInfernal #wPower. Afterwards, cycles #wMindshatter or #wTormenting #wShackles -> #wFour #wArm #wStrike -> the other -> #wHellfire.",
 					"hp": "(450 HP)",
-					"notes": "Innate #uDevil's #uDue",
+					"notes": "Innate #uDevil's #uDue.",
 					"moves": [
 						{
 							"name": "Mindshatter",
@@ -780,7 +780,7 @@
 					"min_asc": 19,
 					"desc": "Starts with #wMindshatter, then #wFour #wArm #wStrike, then #wTormenting #wShackles, then #wInfernal #wPower. Afterwards, cycles #wMindshatter or #wTormenting #wShackles -> #wFour #wArm #wStrike -> the other -> #wHellfire.",
 					"hp": "(450 HP)",
-					"notes": "Innate #uDevil's #uDue",
+					"notes": "Innate #uDevil's #uDue.",
 					"moves": [
 						{
 							"name": "Mindshatter",
@@ -832,6 +832,236 @@
 								{
 									"name": "14x2",
 									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Master of Time and Space",
+			"id": "CorruptTheSpire:MasterOfTimeAndSpace",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Cycles #wChaos #wZone -> #wRain #wDestruction -> #wDark #wWill (if either Spatial Phantasm or Temporal Phantasm are alive) or #wDark #wFlame's #wEmbrace (otherwise).",
+					"hp": "(275 HP)",
+					"notes": "Innate #uSpacetime #uMastery. NL NL Slimed status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Chaos Zone",
+							"effects": [
+								{
+									"name": "0",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Weak 1",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Slimed 1 (2 if both phantasms dead)",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Rain Destruction",
+							"effects": [
+								{
+									"name": "4",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Dark Will",
+							"effects": [
+								{
+									"name": "Party Strength 2",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Dark Flame's Embrace",
+							"effects": [
+								{
+									"name": "15",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 2",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 4,
+					"desc": "Cycles #wChaos #wZone -> #wRain #wDestruction -> #wDark #wWill (if either Spatial Phantasm or Temporal Phantasm are alive) or #wDark #wFlame's #wEmbrace (otherwise).",
+					"hp": "(275 HP)",
+					"notes": "Innate #uSpacetime #uMastery. NL NL Slimed status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Chaos Zone",
+							"effects": [
+								{
+									"name": "1",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Weak 1",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Slimed 1 (2 if both phantasms dead)",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Rain Destruction",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Dark Will",
+							"effects": [
+								{
+									"name": "Party Strength 2",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Dark Flame's Embrace",
+							"effects": [
+								{
+									"name": "17",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 2",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 9,
+					"desc": "Cycles #wChaos #wZone -> #wRain #wDestruction -> #wDark #wWill (if either Spatial Phantasm or Temporal Phantasm are alive) or #wDark #wFlame's #wEmbrace (otherwise).",
+					"hp": "(300 HP)",
+					"notes": "Innate #uSpacetime #uMastery. NL NL Slimed status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Chaos Zone",
+							"effects": [
+								{
+									"name": "1",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Weak 1",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Slimed 1 (2 if both phantasms dead)",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Rain Destruction",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Dark Will",
+							"effects": [
+								{
+									"name": "Party Strength 2",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Dark Flame's Embrace",
+							"effects": [
+								{
+									"name": "17",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 2",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 19,
+					"desc": "Cycles #wChaos #wZone -> #wRain #wDestruction -> #wDark #wWill (if either Spatial Phantasm or Temporal Phantasm are alive) or #wDark #wFlame's #wEmbrace (otherwise).",
+					"hp": "(300 HP)",
+					"notes": "Innate #uSpacetime #uMastery with two buffs active at once. NL NL Slimed status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Chaos Zone",
+							"effects": [
+								{
+									"name": "1",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Weak 1",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Slimed 1 (2 if both phantasms dead)",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Rain Destruction",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Dark Will",
+							"effects": [
+								{
+									"name": "Party Strength 3",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Dark Flame's Embrace",
+							"effects": [
+								{
+									"name": "17",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 3",
+									"color": "BUFF"
 								}
 							]
 						}
