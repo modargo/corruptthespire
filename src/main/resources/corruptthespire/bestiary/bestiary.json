@@ -74,6 +74,116 @@
 					]
 				}
 			]
-		}	
+		},
+		{
+			"name": "Harbinger",
+			"id": "CorruptTheSpire:Harbinger",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Cycles #wCosmic #wBurst -> #wAlien #wClaws.",
+					"hp": "(160 HP)",
+					"notes": "Innate #uAstral #uCore 2. Innate #uRegenerate 5. Innate #uEldritch #uGrasp 1.",
+					"moves": [
+						{
+							"name": "Cosmic Burst",
+							"effects": [
+								{
+									"name": "16",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Alien Claws",
+							"effects": [
+								{
+									"name": "2x5",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 3,
+					"desc": "Cycles #wCosmic #wBurst -> #wAlien #wClaws.",
+					"hp": "(160 HP)",
+					"notes": "Innate #uAstral #uCore 2. Innate #uRegenerate 5. Innate #uEldritch #uGrasp 1.",
+					"moves": [
+						{
+							"name": "Cosmic Burst",
+							"effects": [
+								{
+									"name": "18",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Alien Claws",
+							"effects": [
+								{
+									"name": "3x5",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 8,
+					"desc": "Cycles #wCosmic #wBurst -> #wAlien #wClaws.",
+					"hp": "(180 HP)",
+					"notes": "Innate #uAstral #uCore 2. Innate #uRegenerate 5. Innate #uEldritch #uGrasp 1.",
+					"moves": [
+						{
+							"name": "Cosmic Burst",
+							"effects": [
+								{
+									"name": "18",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Alien Claws",
+							"effects": [
+								{
+									"name": "3x5",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 18,
+					"desc": "Cycles #wCosmic #wBurst -> #wAlien #wClaws.",
+					"hp": "(180 HP)",
+					"notes": "Innate #uAstral #uCore 3. Innate #uRegenerate 5. Innate #uEldritch #uGrasp 2.",
+					"moves": [
+						{
+							"name": "Cosmic Burst",
+							"effects": [
+								{
+									"name": "18",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Alien Claws",
+							"effects": [
+								{
+									"name": "3x5",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
 	]
 }
