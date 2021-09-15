@@ -129,7 +129,8 @@
   },
   "CorruptTheSpire:LightningBlood": {
     "NAME": "Lightning Blood",
-    "DESCRIPTION": "Lose {0} HP. NL Gain !M! Strength. NL Gain !M! corruptthespire:Metallicize."
+    "DESCRIPTION": "Lose {0} HP. NL Gain !M! Strength. NL Gain !M! corruptthespire:Metallicize. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Lose {0} HP. NL Gain !M! Strength. NL Gain !M! corruptthespire:Metallicize."
   },
   "CorruptTheSpire:UnnaturalOrder": {
     "NAME": "Unnatural Order",
