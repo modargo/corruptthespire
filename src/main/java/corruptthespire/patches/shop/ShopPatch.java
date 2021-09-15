@@ -159,7 +159,6 @@ public class ShopPatch {
             @Override
             public void edit(MethodCall methodCall) throws CannotCompileException {
                 if (methodCall.getClassName().equals(AbstractCard.class.getName()) && methodCall.getMethodName().equals("getPrice")) {
-                    //methodCall.replace(String.format("{ Integer price = %1$s.setCorruptedCardPrice((%2$s)this.coloredCards.get(i)); $_ = price != null ? (int)price : $proceed($$); }", ShopCorruption.class.getName(), AbstractCard.class.getName()));
                     methodCall.replace(String.format("{ $_ = this.%3$s.get(i) instanceof %1$s ? %2$s.getCorruptedCardPrice((%1$s)this.%3$s.get(i)) : $proceed($$); }", AbstractCorruptedCard.class.getName(), ShopCorruption.class.getName(), hits == 0 ? "coloredCards" : "colorlessCards"));
                     hits++;
                 }
