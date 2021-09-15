@@ -1,6 +1,7 @@
 package corruptthespire.corruptions.fight;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
 import com.megacrit.cardcrawl.monsters.ending.CorruptHeart;
 import com.megacrit.cardcrawl.powers.CuriosityPower;
 import corruptthespire.Cor;
@@ -49,10 +50,10 @@ public class FightCorruptionDistribution {
         if (AbstractDungeon.getCurrRoom().monsters.monsters.size() >= 3) {
             distribution.removeIf(d -> isMinionCorruption(d.corruptionType));
         }
-        if (AbstractDungeon.getCurrRoom().monsters.monsters.stream().anyMatch(m -> m.hasPower(CuriosityPower.POWER_ID))) {
+        if (AbstractDungeon.getCurrRoom().monsters.monsters.stream().anyMatch(m -> m.id.equals(AwakenedOne.ID))) {
             distribution.removeIf(d -> d.corruptionType == FightCorruptionType.Curiosity);
         }
-        if (AbstractDungeon.getCurrRoom().monsters.monsters.stream().anyMatch(m -> m.hasPower("Abyss:ThoughtStealer"))) {
+        if (AbstractDungeon.getCurrRoom().monsters.monsters.stream().anyMatch(m -> m.id.equals("Abyss:VoidHerald"))) {
             distribution.removeIf(d -> d.corruptionType == FightCorruptionType.ThoughtStealer);
         }
         if (actNum == 4 && fightType == FightType.Boss && AbstractDungeon.getCurrRoom().monsters.monsters.stream().noneMatch(m -> m.id.equals(CorruptHeart.ID))) {
