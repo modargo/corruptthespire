@@ -30,6 +30,7 @@ public class RustedOrichalcum extends AbstractCorruptedRelic {
         this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ConstrictedPower(AbstractDungeon.player, AbstractDungeon.player, CONSTRICTED), CONSTRICTED));
         this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         this.counter = 0;
+        this.grayscale = false;
     }
 
     @Override
