@@ -49,10 +49,8 @@ public class AbysstouchedPower extends AbstractPower implements HealthBarRenderP
 
     @Override
     public float atDamageReceive(float damage, DamageInfo.DamageType type) {
-        if (AbstractDungeon.player.hasPower(UnnaturalOrderPower.POWER_ID) && !this.owner.isPlayer) {
-            if (type == DamageInfo.DamageType.NORMAL) {
-                return damage * (1 + this.amount / 100.0F);
-            }
+        if (type == DamageInfo.DamageType.NORMAL) {
+            return damage * (1 + this.amount / 100.0F);
         }
         return damage;
     }
