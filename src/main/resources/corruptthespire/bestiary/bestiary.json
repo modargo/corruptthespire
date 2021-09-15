@@ -1214,6 +1214,200 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Temporal Phantasm",
+			"id": "CorruptTheSpire:TemporalPhantasm",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Cycles #wImpermanence -> #wGradual #wDecay -> #wTemporal #wDistortion.",
+					"hp": "(60 HP)",
+					"notes": "Innate #uMetallicize 10, #uCleanse 3, #wTemporal #wFissure. NL NL Wound status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Impermanence",
+							"effects": [
+								{
+									"name": "4",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Vulnerable 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Gradual Decay",
+							"effects": [
+								{
+									"name": "3x2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Wound 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Temporal Distortion",
+							"effects": [
+								{
+									"name": "10",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Block 15",
+									"color": "BLOCK"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 4,
+					"desc": "Cycles #wImpermanence -> #wGradual #wDecay -> #wTemporal #wDistortion.",
+					"hp": "(60 HP)",
+					"notes": "Innate #uMetallicize 10, #uCleanse 3, #wTemporal #wFissure. NL NL Wound status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Impermanence",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Vulnerable 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Gradual Decay",
+							"effects": [
+								{
+									"name": "4x2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Wound 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Temporal Distortion",
+							"effects": [
+								{
+									"name": "12",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Block 15",
+									"color": "BLOCK"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 9,
+					"desc": "Cycles #wImpermanence -> #wGradual #wDecay -> #wTemporal #wDistortion.",
+					"hp": "(70 HP)",
+					"notes": "Innate #uMetallicize 15, #uCleanse 3, #wTemporal #wFissure. NL NL Wound status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Impermanence",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Vulnerable 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Gradual Decay",
+							"effects": [
+								{
+									"name": "4x2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Wound 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Temporal Distortion",
+							"effects": [
+								{
+									"name": "12",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Block 20",
+									"color": "BLOCK"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 19,
+					"desc": "Cycles #wImpermanence -> #wGradual #wDecay -> #wTemporal #wDistortion.",
+					"hp": "(70 HP)",
+					"notes": "Innate #uMetallicize 15, #uCleanse 4, #wTemporal #wFissure. NL NL Wound status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Impermanence",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Vulnerable 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Gradual Decay",
+							"effects": [
+								{
+									"name": "4x2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Wound 2",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Temporal Distortion",
+							"effects": [
+								{
+									"name": "12",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Block 20",
+									"color": "BLOCK"
+								}
+							]
+						}
+					]
+				}
+			]
 		}
 	]
 }
