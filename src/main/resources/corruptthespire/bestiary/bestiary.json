@@ -1068,6 +1068,152 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Spatial Phantasm",
+			"id": "CorruptTheSpire:SpatialPhantasm",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Cycles #wSpatial #wRend -> #wMend -> #wDimensional #wRip.",
+					"hp": "(90 HP)",
+					"notes": "Innate #uWarp #uAura, #wSpatial #wFissure.",
+					"moves": [
+						{
+							"name": "Spatial Rend",
+							"effects": [
+								{
+									"name": "2x3",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Mend",
+							"effects": [
+								{
+									"name": "Party Heal 20",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Dimensional Rip",
+							"effects": [
+								{
+									"name": "14",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 4,
+					"desc": "Cycles #wSpatial #wRend -> #wMend -> #wDimensional #wRip.",
+					"hp": "(90 HP)",
+					"notes": "Innate #uWarp #uAura, #wSpatial #wFissure.",
+					"moves": [
+						{
+							"name": "Spatial Rend",
+							"effects": [
+								{
+									"name": "3x3",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Mend",
+							"effects": [
+								{
+									"name": "Party Heal 20",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Dimensional Rip",
+							"effects": [
+								{
+									"name": "16",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 9,
+					"desc": "Cycles #wSpatial #wRend -> #wMend -> #wDimensional #wRip.",
+					"hp": "(100 HP)",
+					"notes": "Innate #uWarp #uAura, #wSpatial #wFissure.",
+					"moves": [
+						{
+							"name": "Spatial Rend",
+							"effects": [
+								{
+									"name": "3x3",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Mend",
+							"effects": [
+								{
+									"name": "Party Heal 20",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Dimensional Rip",
+							"effects": [
+								{
+									"name": "16",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 19,
+					"desc": "Cycles #wSpatial #wRend -> #wMend -> #wDimensional #wRip.",
+					"hp": "(100 HP)",
+					"notes": "Innate #uWarp #uAura, #wSpatial #wFissure.",
+					"moves": [
+						{
+							"name": "Spatial Rend",
+							"effects": [
+								{
+									"name": "3x3",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Mend",
+							"effects": [
+								{
+									"name": "Party Heal 30",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Dimensional Rip",
+							"effects": [
+								{
+									"name": "16",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
 		}
 	]
 }
