@@ -1,19 +1,19 @@
 	1,Easy	1,Hard	1,Elite	1,Boss	2,Easy	2,Hard	2,Elite	2,Boss	3,Easy	3,Hard	3,Elite	3,Boss	4,Easy	4,Hard	4,Elite	4,Boss
 Metallicize	S,25,2	S,25,2	M,25,4	N	S,25,4	S,25,4	M,25,6	N	S,25,6	S,25,6	M,25,8	N	N	N	N	N
 Malleable	S,25,1	S,25,1	M,25,2	N	S,25,2	S,25,2	M,25,3	N	S,25,3	S,25,3	M,25,3	N	N	N	N	N
-Artifact	S,50,1	S,50,1	M,50,2	N	S,50,2	S,50,2	M,50,2	N	S,50,2	S,50,2	M,50,3	S,100,3	N	N	L,100,3	L,100,3
+Artifact	S,50,1	S,50,1	M,50,2	N	S,50,2	S,50,2	M,50,2	N	S,50,2	S,50,2	M,50,3	L,100,3	N	N	L,100,3	L,100,3
 Thorns	S,25,1	S,25,1	M,25,1	N	S,25,2	S,25,2	N	N	S,25,2	S,25,2	N	N	N	N	N	N
-Strength	S,50,2	S,50,2	M,50,2	N	S,25,2	S,25,2	M,50,2	N	S,25,2	S,25,2	M,50,3	S,100,2	N	N	L,100,2	L,100,1
+Strength	S,50,2	S,50,2	M,50,2	N	S,25,2	S,25,2	M,50,2	N	S,25,2	S,25,2	M,50,3	L,100,2	N	N	L,100,2	L,100,1
 Buffer	S,25,1	S,25,1	M,25,1	N	S,25,1	S,25,1	N	N	N	N	N	N	N	N	N	N
 Ritual	S,50,1	S,50,1	L,50,1	N	M,25,1	M,25,1	L,25,1	N	M,25,1	M,25,1	L,25,1	N	N	N	N	N
-BeatOfDeath	N	N	N	N	N	N	L,25,1	N	M,25,1	M,25,1	L,25,1	S,100,1	N	N	L,100,1	N
+BeatOfDeath	N	N	N	N	N	N	L,25,1	N	M,25,1	M,25,1	L,25,1	L,100,1	N	N	L,100,1	N
 ThoughtStealer	N	N	N	N	S,25,1	S,25,1	M,25,1	N	S,25,1	S,25,1	M,25,1	N	N	N	L,100,1	N
-Curiosity	N	N	N	N	S,25,1	S,25,1	M,25,1	N	S,25,1	S,25,1	M,25,1	S,100,1	N	N	L,100,1	N
+Curiosity	N	N	N	N	S,25,1	S,25,1	M,25,1	N	S,25,1	S,25,1	M,25,1	L,100,1	N	N	L,100,1	N
 CorruptionManifestMinion	N	S,100,1	M,25,1	N	S,100,1	S,25,1	M,50,1	N	S,50,1	S,50,1	M,50,1	N	N	N	N	N
 LouseMinion	N	N	M,25,1	N	N	S,25,1	N	N	N	N	N	N	N	N	N	N
 SlimeMinion	N	N	M,25,1	N	N	S,25,1	N	N	N	N	N	N	N	N	N	N
 GremlinMinion	N	N	M,25,1	N	N	S,25,1	N	N	N	N	N	N	N	N	N	N
 RepulsorMinion	N	N	N	N	N	N	M,50,1	N	N	N	M,25,1	N	N	N	N	N
 ByrdMinion	N	N	N	N	N	N	N	N	N	N	N	N	N	N	N	N
-SnakeDaggerMinion	N	N	N	N	N	N	N	N	M,50,1	M,50,1	N	S,100,1	N	N	N	N
-CultistMinion	N	N	N	N	N	N	N	N	N	N	L,25,1	S,100,1	N	N	N	L,100,1
+SnakeDaggerMinion	N	N	N	N	N	N	N	N	M,50,1	M,50,1	N	L,100,1	N	N	N	N
+CultistMinion	N	N	N	N	N	N	N	N	N	N	L,25,1	L,100,1	N	N	N	L,100,1
