@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.shop.ShopScreen;
 import com.megacrit.cardcrawl.shop.StorePotion;
 import com.megacrit.cardcrawl.shop.StoreRelic;
 import corruptthespire.Cor;
-import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 import corruptthespire.cards.CardUtil;
 import corruptthespire.cards.corrupted.CorruptedCardColor;
@@ -22,7 +21,6 @@ import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.patches.CorruptedField;
 import corruptthespire.patches.shop.ShopCorruptionTypeField;
 import corruptthespire.relics.FragmentOfCorruption;
-import corruptthespire.util.TextureLoader;
 
 import java.util.ArrayList;
 import java.util.Objects;
