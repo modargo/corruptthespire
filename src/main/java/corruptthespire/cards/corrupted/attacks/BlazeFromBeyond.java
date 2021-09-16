@@ -24,8 +24,8 @@ public class BlazeFromBeyond extends AbstractCorruptedCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 2;
     private static final int DAMAGE = 12;
+    private static final int UPGRADE_DAMAGE = 16;
     private static final int AMOUNT = 1;
-    private static final int UPGRADE_AMOUNT = 1;
     private static final int CORRUPTION_THRESHOLD = 10;
     //TODO: Get corruption to be a keyword and an image
     //Check out other mods that do this -- I know that AllisonMoon's elemental types does, what else? Runesmith? Champ?
@@ -40,7 +40,7 @@ public class BlazeFromBeyond extends AbstractCorruptedCard {
     @Override
     public void upgrade() {
         if (!this.upgraded) {
-            this.upgradeMagicNumber(UPGRADE_AMOUNT);
+            this.upgradeDamage(UPGRADE_DAMAGE);
             this.upgradeName();
         }
     }

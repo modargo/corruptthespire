@@ -32,10 +32,10 @@ public class ManiacalRage extends AbstractCorruptedCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 1;
-    private static final int TEMPORARY_HP = 10;
-    private static final int UPGRADE_TEMPORARY_HP = 4;
-    private static final int CORRUPTION_THRESHOLD = 100;
-    private static final int CORRUPTION_TEMPORARY_HP = 4;
+    private static final int TEMPORARY_HP = 8;
+    private static final int UPGRADE_TEMPORARY_HP = 3;
+    private static final int CORRUPTION_THRESHOLD = 150;
+    private static final int CORRUPTION_TEMPORARY_HP = 3;
     private static final int STRENGTH = 1;
 
     public ManiacalRage() {
