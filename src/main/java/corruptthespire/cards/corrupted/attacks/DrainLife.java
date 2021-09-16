@@ -25,7 +25,7 @@ public class DrainLife extends AbstractCorruptedCard {
     private static final int HEAL = 5;
     private static final int UPGRADE_DAMAGE = 1;
     private static final int UPGRADE_HEAL = 1;
-    private static final int CORRUPTION = 2;
+    private static final int CORRUPTION = 1;
 
     public DrainLife() {
         super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, CORRUPTION), CardType.ATTACK, CardTarget.ENEMY);
