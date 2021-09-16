@@ -2,6 +2,7 @@ package corruptthespire.corruptions.fight;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
+import com.megacrit.cardcrawl.monsters.beyond.Donu;
 import com.megacrit.cardcrawl.monsters.ending.CorruptHeart;
 import corruptthespire.Cor;
 import org.apache.logging.log4j.LogManager;
@@ -51,6 +52,9 @@ public class FightCorruptionDistribution {
         }
         if (AbstractDungeon.getCurrRoom().monsters.monsters.stream().anyMatch(m -> m.id.equals(AwakenedOne.ID))) {
             distribution.removeIf(d -> d.corruptionType == FightCorruptionType.Curiosity);
+        }
+        if (AbstractDungeon.getCurrRoom().monsters.monsters.stream().anyMatch(m -> m.id.equals(Donu.ID))) {
+            distribution.removeIf(d -> d.corruptionType == FightCorruptionType.Artifact);
         }
         if (AbstractDungeon.getCurrRoom().monsters.monsters.stream().anyMatch(m -> m.id.equals("Abyss:VoidHerald"))) {
             distribution.removeIf(d -> d.corruptionType == FightCorruptionType.ThoughtStealer);
