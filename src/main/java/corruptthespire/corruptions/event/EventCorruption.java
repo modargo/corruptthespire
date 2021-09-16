@@ -42,6 +42,7 @@ public class EventCorruption {
         }
 
         String eventId = possibleEvents.remove(Cor.rng.random(possibleEvents.size() - 1));
+        Cor.corruptedEventList.remove(eventId);
         Class<? extends AbstractEvent> eventClass = CorruptedEventUtil.getAllCorruptedEvents().get(eventId).cls;
         try {
             return eventClass.getConstructor().newInstance();
