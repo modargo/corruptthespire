@@ -1,9 +1,15 @@
 package corruptthespire.corruptions.campfire;
 
+import basemod.ReflectionHacks;
+import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rooms.CampfireUI;
+import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 import corruptthespire.Cor;
 import corruptthespire.corruptions.campfire.options.*;
+import corruptthespire.patches.CorruptedField;
+import corruptthespire.patches.campfire.CampfireInfoField;
 import corruptthespire.relics.corrupted.ObsidianShovel;
 
 import java.util.ArrayList;
@@ -58,5 +64,17 @@ public class CampfireCorruption {
         }
 
         return options;
+    }
+
+    public static boolean handleInitializeButtons(CampfireUI campfireUI) {
+        if (!CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())) {
+            return false;
+        }
+        CampfireInfo campfireInfo = CampfireInfoField.campfireInfo.get(campfireUI);
+        CampfireCorruption.initializeCampfireInfo(campfireInfo);
+        ArrayList<AbstractCampfireOption> buttons = ReflectionHacks.getPrivate(campfireUI, CampfireUI.class, "buttons");
+        buttons.addAll(campfireInfo.options);
+        return true;
+
     }
 }

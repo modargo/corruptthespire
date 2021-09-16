@@ -10,28 +10,31 @@ import corruptthespire.corruptions.campfire.CampfireCorruption;
 import corruptthespire.corruptions.campfire.CampfireInfo;
 import corruptthespire.corruptions.campfire.FireRitualOption;
 import corruptthespire.patches.CorruptedField;
+import javassist.CannotCompileException;
 import javassist.CtBehavior;
+import javassist.expr.ExprEditor;
+import javassist.expr.MethodCall;
 
 import java.util.ArrayList;
 
 public class CampfirePatch {
-    @SpirePatch(clz = CampfireUI.class, method = "initializeButtons")
-    public static class InitializeButtonsPatch {
-        @SpirePrefixPatch
-        public static SpireReturn<Void> InitializeCorruptedCampfireButtons(CampfireUI __instance) {
-            if (!CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())) {
-                return SpireReturn.Continue();
+    @SpirePatch(clz = CampfireUI.class, method = SpirePatch.CONSTRUCTOR)
+    public static class InitializeCorruptedCampfireButtonsExprEditor extends ExprEditor {
+        @Override
+        public void edit(MethodCall methodCall) throws CannotCompileException {
+            if (methodCall.getClassName().equals(CampfireUI.class.getName()) && methodCall.getMethodName().equals("initializeButtons")) {
+                methodCall.replace(String.format("{ if (!%1$s.handleInitializeButtons(this)) { $proceed($$); } }", CampfireCorruption.class.getName()));
             }
-            CampfireInfo campfireInfo = CampfireInfoField.campfireInfo.get(__instance);
-            if (campfireInfo.isDone) {
-                return SpireReturn.Continue();
-            }
-            CampfireCorruption.initializeCampfireInfo(campfireInfo);
-            ArrayList<AbstractCampfireOption> buttons = ReflectionHacks.getPrivate(__instance, CampfireUI.class, "buttons");
-            buttons.addAll(campfireInfo.options);
-            return SpireReturn.Return();
         }
 
+        @SpireInstrumentPatch
+        public static ExprEditor initializeCorruptedCampfireButtons() {
+            return new InitializeCorruptedCampfireButtonsExprEditor();
+        }
+    }
+
+    @SpirePatch(clz = CampfireUI.class, method = "initializeButtons")
+    public static class InitializeButtonsPatch {
         @SpireInsertPatch(locator = Locator.class)
         public static void AddFireRitualOption(CampfireUI __instance) {
             if (CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())) {
