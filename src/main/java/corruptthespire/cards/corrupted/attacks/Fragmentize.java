@@ -20,7 +20,7 @@ public class Fragmentize extends AbstractCorruptedCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 1;
     private static final int DAMAGE = 12;
-    private static final int UPGRADE_DAMAGE = 4;
+    private static final int UPGRADE_DAMAGE = 3;
     public static final int FRAGMENT_LIMIT = 8;
 
     public Fragmentize() {
