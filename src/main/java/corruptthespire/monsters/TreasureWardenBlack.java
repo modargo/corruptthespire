@@ -49,14 +49,14 @@ public class TreasureWardenBlack extends CustomMonster
     private static final int[] HP_MAX = { 58, 96, 171 };
     private static final int[] A8_HP_MIN = { 57, 95, 170 };
     private static final int[] A8_HP_MAX = { 60, 99, 175 };
-    private int searingBreathDamage;
-    private int searingBreathBurns;
-    private int acidBreathWounds;
-    private int acidBreathDamage;
-    private int blackBreathDamage;
-    private int blackBreathDrawVoids;
-    private int blackBreathDiscardVoids;
-    private int dragonsHeartAmount;
+    private final int searingBreathDamage;
+    private final int searingBreathBurns;
+    private final int acidBreathWounds;
+    private final int acidBreathDamage;
+    private final int blackBreathDamage;
+    private final int blackBreathDrawVoids;
+    private final int blackBreathDiscardVoids;
+    private final int dragonsHeartAmount;
 
     public TreasureWardenBlack() {
         this(0.0f, 0.0f, Version.Act1);

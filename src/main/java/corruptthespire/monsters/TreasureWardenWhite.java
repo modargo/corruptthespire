@@ -51,12 +51,12 @@ public class TreasureWardenWhite extends CustomMonster
     private static final int[] HP_MAX = { 58, 96, 171 };
     private static final int[] A8_HP_MIN = { 57, 95, 170 };
     private static final int[] A8_HP_MAX = { 60, 99, 175 };
-    private int maelstromDamage;
-    private int maelstromFrail;
-    private int lightningDamage;
-    private int lightningWeak;
-    private int scorchDamage;
-    private int dragonsHeartAmount;
+    private final int maelstromDamage;
+    private final int maelstromFrail;
+    private final int lightningDamage;
+    private final int lightningWeak;
+    private final int scorchDamage;
+    private final int dragonsHeartAmount;
 
     public TreasureWardenWhite() {
         this(0.0f, 0.0f, Version.Act1);

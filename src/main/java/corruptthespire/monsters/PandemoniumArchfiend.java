@@ -52,12 +52,12 @@ public class PandemoniumArchfiend extends CustomMonster
     private static final int HELLFIRE_HITS = 2;
     private static final int HP = 425;
     private static final int A9_HP = 450;
-    private int mindshatterAmount;
-    private int fourArmStrikeDamage;
-    private int tormentingShacklesDamage;
-    private int infernalPowerDamage;
-    private int infernalPowerRitual;
-    private int hellfireDamage;
+    private final int mindshatterAmount;
+    private final int fourArmStrikeDamage;
+    private final int tormentingShacklesDamage;
+    private final int infernalPowerDamage;
+    private final int infernalPowerRitual;
+    private final int hellfireDamage;
 
     public PandemoniumArchfiend() {
         this(0.0f, 0.0f);

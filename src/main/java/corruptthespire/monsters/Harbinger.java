@@ -42,10 +42,10 @@ public class Harbinger extends CustomMonster
     private static final int HP_MAX = 160;
     private static final int A8_HP_MIN = 180;
     private static final int A8_HP_MAX = 180;
-    private int cosmicBurstDamage;
-    private int alienClawsDamage;
-    private int astralCoreStrength;
-    private int pulse;
+    private final int cosmicBurstDamage;
+    private final int alienClawsDamage;
+    private final int astralCoreStrength;
+    private final int pulse;
 
     public Harbinger() {
         this(0.0f, 0.0f);
