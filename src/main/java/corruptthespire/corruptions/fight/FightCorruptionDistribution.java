@@ -56,9 +56,6 @@ public class FightCorruptionDistribution {
         if (AbstractDungeon.getCurrRoom().monsters.monsters.stream().anyMatch(m -> m.id.equals(Donu.ID))) {
             distribution.removeIf(d -> d.corruptionType == FightCorruptionType.Artifact);
         }
-        if (AbstractDungeon.getCurrRoom().monsters.monsters.stream().anyMatch(m -> m.id.equals("Abyss:VoidHerald"))) {
-            distribution.removeIf(d -> d.corruptionType == FightCorruptionType.ThoughtStealer);
-        }
         if (actNum == 4 && fightType == FightType.Boss && AbstractDungeon.getCurrRoom().monsters.monsters.stream().noneMatch(m -> m.id.equals(CorruptHeart.ID))) {
             FightCorruptionDistributionInfo strengthCorruption = null;
             for (FightCorruptionDistributionInfo d : distribution) {
