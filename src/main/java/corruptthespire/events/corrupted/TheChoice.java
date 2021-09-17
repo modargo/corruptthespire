@@ -21,7 +21,6 @@ import java.util.Collections;
 import java.util.stream.Collectors;
 
 public class TheChoice extends AbstractImageEvent {
-    private static final Logger logger = LogManager.getLogger(TheChoice.class.getName());
     public static final String ID = "CorruptTheSpire:TheChoice";
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String NAME = eventStrings.NAME;
@@ -47,16 +46,16 @@ public class TheChoice extends AbstractImageEvent {
         this.corruptionGain = AbstractDungeon.ascensionLevel >= 15 ? A15_CORRUPTION_GAIN : CORRUPTION_GAIN;
         this.corruptionReduction = AbstractDungeon.ascensionLevel >= 15 ? A15_CORRUPTION_REDUCTION : CORRUPTION_REDUCTION;
         this.corruptedCard = CardUtil.getRandomCardByTag(CustomTags.CORRUPTED.name());
-        String cardName = "";
+        String cardName;
         if (this.corruptedCard == null) {
-            logger.error("TheChoice event can't be encountered with no corrupted cards.");
+            throw new RuntimeException("TheChoice event requires at least one corrupted card.");
         }
         else {
             cardName = this.corruptedCard.name;
         }
 
         imageEventText.setDialogOption(MessageFormat.format(OPTIONS[0], UPGRADES, this.corruptionGain));
-        imageEventText.setDialogOption(MessageFormat.format(OPTIONS[1], this.corruptionReduction, cardName), this.corruptedCard != null ? this.corruptedCard.makeCopy() : null);
+        imageEventText.setDialogOption(MessageFormat.format(OPTIONS[1], this.corruptionReduction, cardName), this.corruptedCard.makeCopy());
     }
 
     @Override

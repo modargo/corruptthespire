@@ -34,7 +34,7 @@ public class TextureLoader {
      *
      * @param textureString - String path to the texture you want to load relative to resources,
      *                      Example: "corruptthespire/images/missing_texture.png"
-     * @throws GdxRuntimeException
+     * @throws GdxRuntimeException GdxRuntimeException
      */
     private static void loadTexture(final String textureString) throws GdxRuntimeException {
         logger.info("Loading Texture: " + textureString);

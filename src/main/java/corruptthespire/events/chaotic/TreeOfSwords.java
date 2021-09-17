@@ -15,6 +15,7 @@ import corruptthespire.relics.chaotic.BurningRing;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -42,7 +43,11 @@ public class TreeOfSwords extends AbstractImageEvent {
         super(NAME, DESCRIPTIONS[0], IMG);
 
         this.relic = new BurningRing();
-        this.startingRelic = AbstractDungeon.player.relics.stream().filter(r -> r.tier == AbstractRelic.RelicTier.STARTER).findFirst().get();
+        ArrayList<AbstractRelic> starterRelics = AbstractDungeon.player.relics.stream().filter(r -> r.tier == AbstractRelic.RelicTier.STARTER).collect(Collectors.toCollection(ArrayList::new));
+        if (starterRelics.isEmpty()) {
+            throw new RuntimeException("Tree of Swords event requires at least one starter relic");
+        }
+        this.startingRelic = starterRelics.get(0);
         this.damage = AbstractDungeon.ascensionLevel >= 15 ? A15_DAMAGE : DAMAGE;
 
         imageEventText.setDialogOption(MessageFormat.format(OPTIONS[0], TRANSFORM_CARDS));

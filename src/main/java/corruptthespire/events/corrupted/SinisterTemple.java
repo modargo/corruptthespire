@@ -39,6 +39,9 @@ public class SinisterTemple extends AbstractImageEvent {
         super(NAME, DESCRIPTIONS[0], IMG);
 
         ArrayList<AbstractRelic> commonRelics = AbstractDungeon.player.relics.stream().filter(r -> r.tier == AbstractRelic.RelicTier.COMMON).collect(Collectors.toCollection(ArrayList::new));
+        if (commonRelics.size() < 2) {
+            throw new RuntimeException("Sinister Temple event requires at least two common relics");
+        }
         Collections.shuffle(commonRelics, AbstractDungeon.miscRng.random);
         this.relic1 = commonRelics.get(0);
         this.relic2 = commonRelics.get(1);

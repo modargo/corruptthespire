@@ -2,7 +2,6 @@ package corruptthespire.relics.corrupted;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.util.TextureLoader;
 
