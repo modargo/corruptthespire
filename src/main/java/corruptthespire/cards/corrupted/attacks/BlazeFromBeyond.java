@@ -49,7 +49,6 @@ public class BlazeFromBeyond extends AbstractCorruptedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.applyPowers();
         int blazeCount = Cor.getCorruptionDamageMultiplierPercent();
         if (Settings.FAST_MODE) {
             this.addToBot(new VFXAction(new BlazeFromBeyondEffect(blazeCount, AbstractDungeon.getMonsters().shouldFlipVfx()), 0.25F));
@@ -68,6 +67,14 @@ public class BlazeFromBeyond extends AbstractCorruptedCard {
 
         this.rawDescription = MessageFormat.format(DESCRIPTION, damage, CORRUPTION_THRESHOLD) + cardStrings.EXTENDED_DESCRIPTION[0];
         this.initializeDescription();
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster m) {
+        int damage = this.getDamage();
+        this.baseDamage = damage + (this.magicNumber * (Cor.corruption / CORRUPTION_THRESHOLD));
+
+        super.calculateCardDamage(m);
     }
 
     private int getDamage() {
