@@ -12,8 +12,6 @@ import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.CardUtil;
 import corruptthespire.cards.CustomTags;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
