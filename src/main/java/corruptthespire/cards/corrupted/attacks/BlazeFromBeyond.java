@@ -27,8 +27,6 @@ public class BlazeFromBeyond extends AbstractCorruptedCard {
     private static final int UPGRADE_DAMAGE = 4;
     private static final int AMOUNT = 1;
     private static final int CORRUPTION_THRESHOLD = 10;
-    //TODO: Get corruption to be a keyword and an image
-    //Check out other mods that do this -- I know that AllisonMoon's elemental types does, what else? Runesmith? Champ?
 
     public BlazeFromBeyond() {
         super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, DAMAGE, CORRUPTION_THRESHOLD), CardType.ATTACK, CardTarget.ALL_ENEMY);
