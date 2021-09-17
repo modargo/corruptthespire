@@ -37,7 +37,6 @@ public class VaultChestShineEffect extends AbstractGameEffect {
     public void update() {
         if (this.vY != 0.0F) {
             this.y += this.vY * Gdx.graphics.getDeltaTime();
-            MathUtils.lerp(this.vY, 0.0F, Gdx.graphics.getDeltaTime() * 10.0F);
             if (this.vY < 0.5F) {
                 this.vY = 0.0F;
             }
