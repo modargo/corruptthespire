@@ -53,7 +53,7 @@ public class TreasureCorruption {
         return false;
     }
 
-    public static void handleExtraRewards(boolean bossChest) {
+    public static void handleExtraRewards() {
         TreasureCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())
                 ? TreasureCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
                 : null;

@@ -14,7 +14,7 @@ import javassist.expr.MethodCall;
 public class AbstractChestOpenPatch {
     @SpirePrefixPatch
     public static void handleExtraRewards(AbstractChest __instance, boolean bossChest) {
-        TreasureCorruption.handleExtraRewards(bossChest);
+        TreasureCorruption.handleExtraRewards();
     }
 
     public static class AbstractChestOpenPatchExprEditor extends ExprEditor {
