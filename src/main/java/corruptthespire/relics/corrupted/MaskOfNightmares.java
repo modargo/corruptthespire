@@ -23,7 +23,7 @@ public class MaskOfNightmares extends AbstractCorruptedRelic {
         return MessageFormat.format(DESCRIPTIONS[0], MAX_HP);
     }
 
-    public void onEnterCorruptedRoom(AbstractRoom room) {
+    public void onEnterCorruptedRoom() {
         AbstractDungeon.player.increaseMaxHp(MAX_HP, true);
     }
 }

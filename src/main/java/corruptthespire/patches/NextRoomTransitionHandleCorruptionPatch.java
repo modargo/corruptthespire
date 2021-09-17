@@ -53,7 +53,7 @@ public class NextRoomTransitionHandleCorruptionPatch {
                 Cor.addCorruption(AbstractDungeon.getCurrRoom());
                 AbstractRelic relic = AbstractDungeon.player.getRelic(MaskOfNightmares.ID);
                 if (relic != null) {
-                    ((MaskOfNightmares)relic).onEnterCorruptedRoom(AbstractDungeon.getCurrRoom());
+                    ((MaskOfNightmares)relic).onEnterCorruptedRoom();
                 }
             }
         }
