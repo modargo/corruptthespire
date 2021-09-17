@@ -12,7 +12,6 @@ public class TextOverlayEffect extends AbstractGameEffect {
     private String name;
     private String levelNum;
     private static final float DUR = 5.0F;
-    private float alpha = 0.0F;
     private Color c1;
     private Color c2;
     private boolean higher;
@@ -35,10 +34,11 @@ public class TextOverlayEffect extends AbstractGameEffect {
     }
 
     public void update() {
+        float alpha;
         if (this.duration > 4.0F) {
-            this.alpha = Interpolation.pow5Out.apply(1.0F, 0.0F, (this.duration - 4.0F) / 4.0F);
+            alpha = Interpolation.pow5Out.apply(1.0F, 0.0F, (this.duration - 4.0F) / 4.0F);
         } else {
-            this.alpha = Interpolation.fade.apply(0.0F, 1.0F, this.duration / 2.5F);
+            alpha = Interpolation.fade.apply(0.0F, 1.0F, this.duration / 2.5F);
         }
 
         this.duration -= Gdx.graphics.getDeltaTime();
@@ -46,8 +46,8 @@ public class TextOverlayEffect extends AbstractGameEffect {
             this.isDone = true;
         }
 
-        this.c1.a = this.alpha;
-        this.c2.a = this.alpha;
+        this.c1.a = alpha;
+        this.c2.a = alpha;
     }
 
     public void render(SpriteBatch sb) {
