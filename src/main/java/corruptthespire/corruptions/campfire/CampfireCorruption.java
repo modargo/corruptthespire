@@ -1,7 +1,6 @@
 package corruptthespire.corruptions.campfire;
 
 import basemod.ReflectionHacks;
-import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.CampfireUI;
