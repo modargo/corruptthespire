@@ -104,8 +104,12 @@ public class TreasureCorruption {
         List<Coordinate> potentialCoordinates = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 3; j++) {
-                float x = Settings.WIDTH - (350.0F + 250.0F * i + random.random(200)) * Settings.scale;
-                float y = AbstractDungeon.floorY + (100.0F + 250.0F * j + random.random(200)) * Settings.scale;
+                if (i == 3 && j == 0) {
+                    //We skip this one because it's too likely to overlap with the proceed button
+                    continue;
+                }
+                float x = Settings.WIDTH - (300.0F + 250.0F * i + random.random(200)) * Settings.scale;
+                float y = AbstractDungeon.floorY + (0.0F + 250.0F * j + random.random(200)) * Settings.scale;
                 potentialCoordinates.add(new Coordinate(x, y));
             }
         }
