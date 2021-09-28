@@ -7,7 +7,7 @@
   "CorruptTheSpire:BlightedSpirefruit": {
     "NAME": "Blighted Spirefruit",
     "FLAVOR": "Infected with the Spireblight, but maybe eat it anyway?",
-    "DESCRIPTIONS": ["Reduce your Max HP by #b{0}. At the start of combat, gain {1} #yStrength."]
+    "DESCRIPTIONS": ["Upon pickup, reduce your Max HP by #b{0}. Start each combat with {1} #yStrength."]
   },
   "CorruptTheSpire:BagOfTricks": {
     "NAME": "Bag of Tricks",
