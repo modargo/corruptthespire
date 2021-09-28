@@ -204,30 +204,34 @@ public class ShopCorruption {
         return rarity == AbstractCard.CardRarity.COMMON ? CorruptedCardUtil.CORRUPTED_COMMON_PRICE : CorruptedCardUtil.CORRUPTED_RARE_PRICE;
     }
 
-    public static boolean handleCourier(ShopScreen shopScreen, AbstractCard card) {
-        if (card.color != CorruptedCardColor.CORRUPTTHESPIRE_CORRUPTED) {
+    public static boolean handleCourier(ShopScreen shopScreen, AbstractCard purchasedCard) {
+        if (purchasedCard.color != CorruptedCardColor.CORRUPTTHESPIRE_CORRUPTED) {
             return false;
         }
 
-        int coloredIndex = shopScreen.coloredCards.indexOf(card);
+        int coloredIndex = shopScreen.coloredCards.indexOf(purchasedCard);
         if (coloredIndex != -1) {
-            shopScreen.coloredCards.set(coloredIndex, getCorruptedCardForShop());
+            shopScreen.coloredCards.set(coloredIndex, getCorruptedCardForShop(purchasedCard));
         }
 
-        int colorlessIndex = shopScreen.colorlessCards.indexOf(card);
+        int colorlessIndex = shopScreen.colorlessCards.indexOf(purchasedCard);
         if (colorlessIndex != -1) {
-            shopScreen.colorlessCards.set(colorlessIndex, getCorruptedCardForShop());
+            shopScreen.colorlessCards.set(colorlessIndex, getCorruptedCardForShop(purchasedCard));
         }
 
         return true;
     }
 
-    private static AbstractCard getCorruptedCardForShop() {
+    private static AbstractCard getCorruptedCardForShop(AbstractCard purchasedCard) {
         AbstractCorruptedCard c = (AbstractCorruptedCard)CorruptedCardUtil.getRandomCorruptedCard();
         for (AbstractRelic r : AbstractDungeon.player.relics) {
             r.onPreviewObtainCard(c);
         }
         c.price = getCorruptedCardPrice(c);
+        c.current_x = purchasedCard.current_x;
+        c.current_y = purchasedCard.current_y;
+        c.target_x = c.current_x;
+        c.target_y = c.current_y;
         return c;
     }
 }
