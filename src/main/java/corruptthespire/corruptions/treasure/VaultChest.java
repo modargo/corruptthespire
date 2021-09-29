@@ -8,8 +8,10 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.Orrery;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rewards.chests.AbstractChest;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
@@ -135,7 +137,12 @@ public class VaultChest extends AbstractChest {
                 text = TEXT[5];
                 break;
             case ShopRelic:
-                AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.SHOP);
+                String shopRelicKey = AbstractDungeon.returnRandomRelicKey(AbstractRelic.RelicTier.SHOP);
+                //Orrery causes crashes when picked in the treasure vault rewards screen
+                if (shopRelicKey.equals(Orrery.ID)) {
+                    shopRelicKey = AbstractDungeon.returnRandomRelicKey(AbstractRelic.RelicTier.SHOP);
+                }
+                AbstractDungeon.getCurrRoom().addRelicToRewards(RelicLibrary.getRelic(shopRelicKey));
                 text = TEXT[6];
                 break;
             case ColorlessCard:
