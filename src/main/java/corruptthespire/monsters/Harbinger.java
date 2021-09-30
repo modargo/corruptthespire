@@ -30,22 +30,26 @@ public class Harbinger extends CustomMonster
     private static final int COSMIC_BURST_DAMAGE = 16;
     private static final int A3_COSMIC_BURST_DAMAGE = 18;
     private static final int ALIEN_CLAWS_DAMAGE = 2;
-    private static final int A3_ALIEN_CLAWS_DAMAGE = 3;
-    private static final int ALIEN_CLAWS_HITS = 5;
+    private static final int A3_ALIEN_CLAWS_DAMAGE = 2;
+    private static final int ALIEN_CLAWS_HITS = 4;
+    private static final int A3_ALIEN_CLAWS_HITS = 5;
     private static final int ASTRAL_CORE_STRENGTH = 2;
     private static final int A18_ASTRAL_CORE_STRENGTH = 3;
     public static final int ASTRAL_CORE_DAMAGE_THRESHOLD = 40;
     private static final int PULSE = 1;
-    private static final int A18_PULSE = 2;
-    private static final int REGEN = 5;
-    private static final int HP_MIN = 160;
-    private static final int HP_MAX = 160;
-    private static final int A8_HP_MIN = 180;
-    private static final int A8_HP_MAX = 180;
+    private static final int A18_PULSE = 1;
+    private static final int REGEN = 3;
+    private static final int A18_REGEN = 5;
+    private static final int HP_MIN = 150;
+    private static final int HP_MAX = 150;
+    private static final int A8_HP_MIN = 165;
+    private static final int A8_HP_MAX = 165;
     private final int cosmicBurstDamage;
     private final int alienClawsDamage;
+    private final int alienClawsHits;
     private final int astralCoreStrength;
     private final int pulse;
+    private final int regen;
 
     public Harbinger() {
         this(0.0f, 0.0f);
@@ -63,9 +67,11 @@ public class Harbinger extends CustomMonster
         if (AbstractDungeon.ascensionLevel >= 3) {
             this.cosmicBurstDamage = A3_COSMIC_BURST_DAMAGE;
             this.alienClawsDamage = A3_ALIEN_CLAWS_DAMAGE;
+            this.alienClawsHits = A3_ALIEN_CLAWS_HITS;
         } else {
             this.cosmicBurstDamage = COSMIC_BURST_DAMAGE;
             this.alienClawsDamage = ALIEN_CLAWS_DAMAGE;
+            this.alienClawsHits = ALIEN_CLAWS_HITS;
         }
         this.damage.add(new DamageInfo(this, this.cosmicBurstDamage));
         this.damage.add(new DamageInfo(this, this.alienClawsDamage));
@@ -73,10 +79,12 @@ public class Harbinger extends CustomMonster
         if (AbstractDungeon.ascensionLevel >= 18) {
             this.astralCoreStrength = A18_ASTRAL_CORE_STRENGTH;
             this.pulse = A18_PULSE;
+            this.regen = A18_REGEN;
         }
         else {
             this.astralCoreStrength = ASTRAL_CORE_STRENGTH;
             this.pulse = PULSE;
+            this.regen = REGEN;
         }
     }
 
@@ -85,7 +93,7 @@ public class Harbinger extends CustomMonster
         AstralCorePower astralCorePower = new AstralCorePower(this, this.astralCoreStrength);
         this.addToBot(new ApplyPowerAction(this, this, astralCorePower));
         this.addToBot(new ApplyPowerAction(this, this, new AstralCoreCounterPower(this, astralCorePower)));
-        this.addToBot(new ApplyPowerAction(this, this, new RegenerateMonsterPower(this, REGEN)));
+        this.addToBot(new ApplyPowerAction(this, this, new RegenerateMonsterPower(this, this.regen)));
         this.addToBot(new ApplyPowerAction(this, this, new EldritchGraspPower(this, this.pulse)));
     }
 
@@ -101,7 +109,7 @@ public class Harbinger extends CustomMonster
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.NONE));
                 break;
             case ALIEN_CLAWS_ATTACK:
-                for (int i = 0; i < ALIEN_CLAWS_HITS; i++) {
+                for (int i = 0; i < this.alienClawsHits; i++) {
                     AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
                     AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
                 }
@@ -116,7 +124,7 @@ public class Harbinger extends CustomMonster
             this.setMove(MOVES[0], COSMIC_BURST_ATTACK, Intent.ATTACK, this.cosmicBurstDamage);
         }
         else {
-            this.setMove(MOVES[1], ALIEN_CLAWS_ATTACK, Intent.ATTACK, this.alienClawsDamage, ALIEN_CLAWS_HITS, true);
+            this.setMove(MOVES[1], ALIEN_CLAWS_ATTACK, Intent.ATTACK, this.alienClawsDamage, this.alienClawsHits, true);
         }
     }
 }
