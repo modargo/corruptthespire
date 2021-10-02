@@ -1,8 +1,10 @@
 package corruptthespire.cards.corrupted.attacks;
 
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -28,11 +30,16 @@ public class BlazeFromBeyond extends AbstractCorruptedCard {
     private static final int AMOUNT = 1;
     private static final int CORRUPTION_THRESHOLD = 10;
 
+    private int lastBaseDamage;
+
     public BlazeFromBeyond() {
         super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, DAMAGE, CORRUPTION_THRESHOLD), CardType.ATTACK, CardTarget.ALL_ENEMY);
         this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = AMOUNT;
         this.isMultiDamage = true;
+        this.rawDescription = MessageFormat.format(DESCRIPTION, this.baseDamage, CORRUPTION_THRESHOLD);
+        this.initializeDescription();
+        this.lastBaseDamage = this.baseDamage;
     }
 
     @Override
@@ -40,6 +47,8 @@ public class BlazeFromBeyond extends AbstractCorruptedCard {
         if (!this.upgraded) {
             this.upgradeDamage(UPGRADE_DAMAGE);
             this.upgradeName();
+            this.rawDescription = MessageFormat.format(DESCRIPTION, this.baseDamage, CORRUPTION_THRESHOLD);
+            this.initializeDescription();
         }
     }
 
@@ -77,5 +86,38 @@ public class BlazeFromBeyond extends AbstractCorruptedCard {
 
         this.isDamageModified = this.isDamageModified || this.baseDamage > storedBaseDamage;
         this.baseDamage = storedBaseDamage;
+    }
+
+    @Override
+    public AbstractCard makeStatEquivalentCopy() {
+        AbstractCard c = super.makeStatEquivalentCopy();
+        ((BlazeFromBeyond)c).checkBaseDamageChanged();
+        return c;
+    }
+
+    @Override
+    public void render(SpriteBatch sb, boolean selected) {
+        this.checkBaseDamageChanged();
+        super.render(sb, selected);
+    }
+
+    @Override
+    public void renderInLibrary(SpriteBatch sb) {
+        this.checkBaseDamageChanged();
+        super.renderInLibrary(sb);
+    }
+
+    @Override
+    public void renderWithSelections(SpriteBatch sb) {
+        this.checkBaseDamageChanged();
+        super.renderWithSelections(sb);
+    }
+
+    public void checkBaseDamageChanged() {
+        if (this.baseDamage != this.lastBaseDamage) {
+            this.rawDescription = MessageFormat.format(DESCRIPTION, this.baseDamage, CORRUPTION_THRESHOLD);
+            this.initializeDescription();
+            this.lastBaseDamage = this.baseDamage;
+        }
     }
 }
