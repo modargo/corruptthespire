@@ -40,8 +40,6 @@ public class BlazeFromBeyond extends AbstractCorruptedCard {
         if (!this.upgraded) {
             this.upgradeDamage(UPGRADE_DAMAGE);
             this.upgradeName();
-            this.rawDescription = MessageFormat.format(DESCRIPTION, this.getDamage(), CORRUPTION_THRESHOLD);
-            this.initializeDescription();
         }
     }
 
@@ -58,24 +56,26 @@ public class BlazeFromBeyond extends AbstractCorruptedCard {
 
     @Override
     public void applyPowers() {
-        int damage = this.getDamage();
-        this.baseDamage = damage + (this.magicNumber * (Cor.corruption / CORRUPTION_THRESHOLD));
+        int storedBaseDamage = this.baseDamage;
+        this.baseDamage = this.baseDamage + (this.magicNumber * (Cor.corruption / CORRUPTION_THRESHOLD));
 
         super.applyPowers();
 
-        this.rawDescription = MessageFormat.format(DESCRIPTION, damage, CORRUPTION_THRESHOLD) + cardStrings.EXTENDED_DESCRIPTION[0];
+        this.isDamageModified = this.isDamageModified || this.baseDamage > storedBaseDamage;
+        this.baseDamage = storedBaseDamage;
+
+        this.rawDescription = MessageFormat.format(DESCRIPTION, this.baseDamage, CORRUPTION_THRESHOLD) + cardStrings.EXTENDED_DESCRIPTION[0];
         this.initializeDescription();
     }
 
     @Override
     public void calculateCardDamage(AbstractMonster m) {
-        int damage = this.getDamage();
-        this.baseDamage = damage + (this.magicNumber * (Cor.corruption / CORRUPTION_THRESHOLD));
+        int storedBaseDamage = this.baseDamage;
+        this.baseDamage = this.baseDamage + (this.magicNumber * (Cor.corruption / CORRUPTION_THRESHOLD));
 
         super.calculateCardDamage(m);
-    }
 
-    private int getDamage() {
-        return DAMAGE + (this.upgraded ? UPGRADE_DAMAGE : 0);
+        this.isDamageModified = this.isDamageModified || this.baseDamage > storedBaseDamage;
+        this.baseDamage = storedBaseDamage;
     }
 }
