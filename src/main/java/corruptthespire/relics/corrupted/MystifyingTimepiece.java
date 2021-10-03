@@ -16,7 +16,7 @@ public class MystifyingTimepiece extends AbstractCorruptedRelic {
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));
     private static final int COST = 0;
-    private static final int CARDS = 2;
+    private static final int CARDS = 1;
 
     private boolean firstTurn = true;
 
