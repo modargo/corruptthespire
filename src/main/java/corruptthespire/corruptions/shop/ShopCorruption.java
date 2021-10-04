@@ -205,29 +205,36 @@ public class ShopCorruption {
     }
 
     public static boolean handleCourier(ShopScreen shopScreen, AbstractCard purchasedCard) {
-        if (purchasedCard.color != CorruptedCardColor.CORRUPTTHESPIRE_CORRUPTED) {
+        boolean cardIsCorrupted = purchasedCard.color == CorruptedCardColor.CORRUPTTHESPIRE_CORRUPTED;
+        boolean shopIsPrismatic = ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom()) == ShopCorruptionType.Prismatic;
+        if (!cardIsCorrupted && !shopIsPrismatic) {
             return false;
         }
 
         int coloredIndex = shopScreen.coloredCards.indexOf(purchasedCard);
         if (coloredIndex != -1) {
-            shopScreen.coloredCards.set(coloredIndex, getCorruptedCardForShop(purchasedCard));
+            shopScreen.coloredCards.set(coloredIndex, getCardForShop(purchasedCard));
         }
 
         int colorlessIndex = shopScreen.colorlessCards.indexOf(purchasedCard);
         if (colorlessIndex != -1) {
-            shopScreen.colorlessCards.set(colorlessIndex, getCorruptedCardForShop(purchasedCard));
+            shopScreen.colorlessCards.set(colorlessIndex, getCardForShop(purchasedCard));
         }
 
         return true;
     }
 
-    private static AbstractCard getCorruptedCardForShop(AbstractCard purchasedCard) {
-        AbstractCorruptedCard c = (AbstractCorruptedCard)CorruptedCardUtil.getRandomCorruptedCard();
-        for (AbstractRelic r : AbstractDungeon.player.relics) {
-            r.onPreviewObtainCard(c);
+    public static AbstractCard getCardForShop(AbstractCard purchasedCard) {
+        boolean cardIsCorrupted = purchasedCard.color == CorruptedCardColor.CORRUPTTHESPIRE_CORRUPTED;
+        AbstractCard c;
+        if (cardIsCorrupted) {
+            c = CorruptedCardUtil.getRandomCorruptedCard();
+            c.price = getCorruptedCardPrice((AbstractCorruptedCard)c);
         }
-        c.price = getCorruptedCardPrice(c);
+        else {
+            c = CardUtil.getOtherColorCard(AbstractDungeon.rollRarity(), new ArrayList<>(), purchasedCard.type);
+            c.price = AbstractCard.getPrice(c.rarity);
+        }
         c.current_x = purchasedCard.current_x;
         c.current_y = purchasedCard.current_y;
         c.target_x = c.current_x;
