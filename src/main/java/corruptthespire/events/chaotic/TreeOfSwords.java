@@ -51,7 +51,7 @@ public class TreeOfSwords extends AbstractImageEvent {
 
         imageEventText.setDialogOption(MessageFormat.format(OPTIONS[0], TRANSFORM_CARDS));
         imageEventText.setDialogOption(MessageFormat.format(OPTIONS[1], this.relic.name, this.startingRelic.name), this.relic);
-        imageEventText.setDialogOption(MessageFormat.format(OPTIONS[2], GOLD, DAMAGE));
+        imageEventText.setDialogOption(MessageFormat.format(OPTIONS[2], GOLD, this.damage));
     }
 
     @Override
