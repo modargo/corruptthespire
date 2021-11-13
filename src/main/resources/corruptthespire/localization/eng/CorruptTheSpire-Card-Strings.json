@@ -30,8 +30,7 @@
   },
   "CorruptTheSpire:ProfaneShield": {
     "NAME": "Profane Shield",
-    "DESCRIPTION": "Gain Block equal to one-fifth corruptthespire:Corruption. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain Block equal to one-fourth corruptthespire:Corruption. NL Exhaust.",
+    "DESCRIPTION": "Gain Block equal to NL !M!% corruptthespire:Corruption. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [" NL (Gains !B! Block.)"]
   },
   "CorruptTheSpire:VoidArmor": {

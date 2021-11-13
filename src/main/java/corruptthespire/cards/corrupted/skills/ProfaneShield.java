@@ -15,12 +15,14 @@ public class ProfaneShield extends AbstractCorruptedCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final int COST = 1;
+    private static final int PERCENT = 20;
+    private static final int UPGRADE_PERCENT = 5;
 
     public ProfaneShield() {
         super(ID, NAME, IMG, COST, DESCRIPTION, CardType.SKILL, CardTarget.SELF);
         this.baseBlock = 0;
+        this.magicNumber = this.baseMagicNumber = PERCENT;
         this.exhaust = true;
     }
 
@@ -28,7 +30,7 @@ public class ProfaneShield extends AbstractCorruptedCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            this.upgradeMagicNumber(UPGRADE_PERCENT);
             this.initializeDescription();
         }
     }
@@ -39,13 +41,7 @@ public class ProfaneShield extends AbstractCorruptedCard {
 
         super.applyPowers();
 
-        if (!this.upgraded) {
-            this.rawDescription = cardStrings.DESCRIPTION;
-        } else {
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-        }
-
-        this.rawDescription = this.rawDescription + cardStrings.EXTENDED_DESCRIPTION[0];
+        this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
         this.initializeDescription();
     }
 
@@ -57,6 +53,6 @@ public class ProfaneShield extends AbstractCorruptedCard {
     }
 
     private int getBlock() {
-        return (int)(Cor.corruption * (this.upgraded ? 0.25F : 0.20F));
+        return (int)(Cor.corruption * this.magicNumber);
     }
 }
