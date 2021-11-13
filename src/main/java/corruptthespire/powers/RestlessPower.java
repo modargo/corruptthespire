@@ -25,10 +25,10 @@ public class RestlessPower extends AbstractPower {
         this.loadRegion("deva2");
     }
 
-    public void onGainEnergy() {
+    public void onGainEnergy(int energyGain) {
         if (!AbstractDungeon.actionManager.turnHasEnded) {
             this.flash();
-            this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.amount), this.amount));
+            this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.amount * energyGain)));
         }
     }
 

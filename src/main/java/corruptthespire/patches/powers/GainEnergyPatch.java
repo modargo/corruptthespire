@@ -15,10 +15,10 @@ import java.util.List;
 )
 public class GainEnergyPatch {
     @SpirePostfixPatch
-    public static void CallRestlessPower(AbstractPlayer __instance, int e) {
+    public static void CallRestlessPower(AbstractPlayer __instance, int amount) {
         List<AbstractPower> powers = MonsterUtil.getMonsterPowers(RestlessPower.POWER_ID);
         for (AbstractPower p : powers) {
-            ((RestlessPower)p).onGainEnergy();
+            ((RestlessPower)p).onGainEnergy(amount);
         }
     }
 }
