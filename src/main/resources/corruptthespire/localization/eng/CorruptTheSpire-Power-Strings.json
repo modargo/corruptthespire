@@ -131,7 +131,7 @@
   },
   "CorruptTheSpire:SpatialFissure": {
     "NAME": "Spatial Fissure",
-    "DESCRIPTIONS": ["When this enemy dies, #pMaster #pof #pTime #pand #pSpace starts adding a #yBurn to your draw pile at the end of each turn and ALL enemies heal #b{0}."]
+    "DESCRIPTIONS": ["When this enemy dies, #pMaster #pof #pTime #pand #pSpace starts adding a #yBurn to your draw pile at the end of each round and ALL enemies heal #b{0}."]
   },
   "CorruptTheSpire:WorldAblaze": {
     "NAME": "World Ablaze",
