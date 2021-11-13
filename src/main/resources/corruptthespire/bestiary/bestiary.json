@@ -845,7 +845,7 @@
 			"ai": [
 				{
 					"min_asc": 0,
-					"desc": "Cycles #wChaos #wZone -> #wRain #wDestruction -> #wDark #wWill (if either Spatial Phantasm or Temporal Phantasm are alive) or #wDark #wFlame's #wEmbrace (otherwise).",
+					"desc": "Cycles #wChaos #wZone -> #wRain #wDestruction -> #wDark #wWill (if either Spatial Phantasm or Temporal Phantasm are alive) or #wDark #wFlame's #wEmbrace (otherwise). NL If both phantasms are dead, #wChaos #wZone adds an extra Slimed status card.",
 					"hp": "(275 HP)",
 					"notes": "Innate #uSpacetime #uMastery. NL NL Slimed status cards go into the discard pile.",
 					"moves": [
@@ -861,7 +861,7 @@
 									"color": "DEBUFF"
 								},
 								{
-									"name": "Slimed 1 (2 if both phantasms dead)",
+									"name": "Slimed 1",
 									"color": "DEBUFF"
 								}
 							]
@@ -901,7 +901,7 @@
 				},
 				{
 					"min_asc": 4,
-					"desc": "Cycles #wChaos #wZone -> #wRain #wDestruction -> #wDark #wWill (if either Spatial Phantasm or Temporal Phantasm are alive) or #wDark #wFlame's #wEmbrace (otherwise).",
+					"desc": "Cycles #wChaos #wZone -> #wRain #wDestruction -> #wDark #wWill (if either Spatial Phantasm or Temporal Phantasm are alive) or #wDark #wFlame's #wEmbrace (otherwise). NL If both phantasms are dead, #wChaos #wZone adds an extra Slimed status card.",
 					"hp": "(275 HP)",
 					"notes": "Innate #uSpacetime #uMastery. NL NL Slimed status cards go into the discard pile.",
 					"moves": [
@@ -917,7 +917,7 @@
 									"color": "DEBUFF"
 								},
 								{
-									"name": "Slimed 1 (2 if both phantasms dead)",
+									"name": "Slimed 1",
 									"color": "DEBUFF"
 								}
 							]
@@ -957,7 +957,7 @@
 				},
 				{
 					"min_asc": 9,
-					"desc": "Cycles #wChaos #wZone -> #wRain #wDestruction -> #wDark #wWill (if either Spatial Phantasm or Temporal Phantasm are alive) or #wDark #wFlame's #wEmbrace (otherwise).",
+					"desc": "Cycles #wChaos #wZone -> #wRain #wDestruction -> #wDark #wWill (if either Spatial Phantasm or Temporal Phantasm are alive) or #wDark #wFlame's #wEmbrace (otherwise). NL If both phantasms are dead, #wChaos #wZone adds an extra Slimed status card.",
 					"hp": "(300 HP)",
 					"notes": "Innate #uSpacetime #uMastery. NL NL Slimed status cards go into the discard pile.",
 					"moves": [
@@ -973,7 +973,7 @@
 									"color": "DEBUFF"
 								},
 								{
-									"name": "Slimed 1 (2 if both phantasms dead)",
+									"name": "Slimed 1",
 									"color": "DEBUFF"
 								}
 							]
@@ -1013,7 +1013,7 @@
 				},
 				{
 					"min_asc": 19,
-					"desc": "Cycles #wChaos #wZone -> #wRain #wDestruction -> #wDark #wWill (if either Spatial Phantasm or Temporal Phantasm are alive) or #wDark #wFlame's #wEmbrace (otherwise).",
+					"desc": "Cycles #wChaos #wZone -> #wRain #wDestruction -> #wDark #wWill (if either Spatial Phantasm or Temporal Phantasm are alive) or #wDark #wFlame's #wEmbrace (otherwise). NL If both phantasms are dead, #wChaos #wZone adds an extra Slimed status card.",
 					"hp": "(300 HP)",
 					"notes": "Innate #uSpacetime #uMastery with two buffs active at once. NL NL Slimed status cards go into the discard pile.",
 					"moves": [
@@ -1029,7 +1029,7 @@
 									"color": "DEBUFF"
 								},
 								{
-									"name": "Slimed 1 (2 if both phantasms dead)",
+									"name": "Slimed 1",
 									"color": "DEBUFF"
 								}
 							]
