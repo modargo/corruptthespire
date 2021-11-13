@@ -57,9 +57,9 @@ public class AStepToTheSide extends AbstractImageEvent {
                         this.imageEventText.updateDialogOption(0, OPTIONS[2]);
                         this.imageEventText.clearRemainingOptions();
                         break;
-                    case 1: // Drawing
+                    case 1: // Reading
                         AbstractDungeon.player.gainGold(this.gold);
-                        logMetricGainGold(ID, "Drawing", this.gold);
+                        logMetricGainGold(ID, "Reading", this.gold);
 
                         this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
                         this.screenNum = 1;

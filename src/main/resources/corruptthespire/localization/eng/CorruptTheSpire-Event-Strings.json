@@ -58,7 +58,7 @@
     ],
     "OPTIONS": [
       "[The Deck] #gGain {0}. #rBecome #rCursed #r- #rFated.",
-      "[A Drawing] #gGain #g{0} #gGold.",
+      "[A Reading] #gGain #g{0} #gGold.",
       "[Leave]"
     ]
   },
