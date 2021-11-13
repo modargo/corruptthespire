@@ -10,8 +10,8 @@ import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 import corruptthespire.powers.NightmareDefensePower;
 import corruptthespire.powers.NightmareKnowledgePower;
 
-public class PoweredByNightmare extends AbstractCorruptedCard {
-    public static final String ID = "CorruptTheSpire:PoweredByNightmare";
+public class LordOfNightmare extends AbstractCorruptedCard {
+    public static final String ID = "CorruptTheSpire:LordOfNightmare";
     public static final String IMG = CorruptTheSpire.cardImage(ID);
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
@@ -21,7 +21,7 @@ public class PoweredByNightmare extends AbstractCorruptedCard {
     private static final int DRAW = 1;
     private static final int BLOCK = 6;
 
-    public PoweredByNightmare() {
+    public LordOfNightmare() {
         super(ID, NAME, IMG, COST, DESCRIPTION, CardType.POWER, CardTarget.SELF);
         this.magicNumber = this.baseMagicNumber = BLOCK;
     }

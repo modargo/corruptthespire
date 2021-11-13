@@ -81,8 +81,8 @@
     "NAME": "Black Omen",
     "DESCRIPTION": "At the start of your turn, apply !M! corruptthespire:Abysstouched to ALL enemies."
   },
-  "CorruptTheSpire:PoweredByNightmare": {
-    "NAME": "Powered by Nightmare",
+  "CorruptTheSpire:LordOfNightmare": {
+    "NAME": "Lord of Nightmare",
     "DESCRIPTION": "Whenever you draw a corrupted card, draw a card. NL Whenever you play a corrupted card, gain !M! Block."
   },
   "CorruptTheSpire:EldritchInsight": {

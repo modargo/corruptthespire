@@ -51,7 +51,7 @@ public class CorruptedCardUtil {
         corruptedCardInfos.add(new CorruptedCardInfo(new JourneyBeyond(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new ManiacalRage(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new CorruptedForm(), AbstractCard.CardRarity.RARE));
-        corruptedCardInfos.add(new CorruptedCardInfo(new PoweredByNightmare(), AbstractCard.CardRarity.RARE));
+        corruptedCardInfos.add(new CorruptedCardInfo(new LordOfNightmare(), AbstractCard.CardRarity.RARE));
 
         //Class-specific
         if (ignoreClass || AbstractDungeon.player.getCardColor() == AbstractCard.CardColor.RED) {
