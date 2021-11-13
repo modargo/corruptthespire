@@ -37,12 +37,12 @@ public class TemporalPhantasm extends CustomMonster
     private static final int A19_GRADUAL_DECAY_WOUNDS = 2;
     private static final int TEMPORAL_DISTORTION_DAMAGE = 10;
     private static final int A4_TEMPORAL_DISTORTION_DAMAGE = 12;
-    private static final int TEMPORAL_DISTORTION_BLOCK = 15;
-    private static final int A9_TEMPORAL_DISTORTION_BLOCK = 20;
-    private static final int CLEANSE = 3;
-    private static final int A19_CLEANSE = 4;
-    private static final int METALLICIZE = 10;
-    private static final int A9_METALLICIZE = 15;
+    private static final int TEMPORAL_DISTORTION_BLOCK = 10;
+    private static final int A9_TEMPORAL_DISTORTION_BLOCK = 15;
+    private static final int CLEANSE = 2;
+    private static final int A19_CLEANSE = 3;
+    private static final int METALLICIZE = 8;
+    private static final int A9_METALLICIZE = 12;
     private static final int HP = 60;
     private static final int A9_HP = 70;
     private final int impermanenceDamage;

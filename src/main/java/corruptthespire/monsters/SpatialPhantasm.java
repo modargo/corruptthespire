@@ -30,8 +30,8 @@ public class SpatialPhantasm extends CustomMonster
     private static final byte DIMENSIONAL_RIP_ATTACK = 3;
     private static final int SPATIAL_REND_DAMAGE = 2;
     private static final int A4_SPATIAL_REND_DAMAGE = 3;
-    private static final int MEND_HEAL = 20;
-    private static final int A19_MEND_HEAL = 30;
+    private static final int MEND_HEAL = 15;
+    private static final int A19_MEND_HEAL = 20;
     private static final int DIMENSIONAL_RIP_DAMAGE = 14;
     private static final int A4_DIMENSIONAL_RIP_DAMAGE = 16;
     private static final int HP = 90;

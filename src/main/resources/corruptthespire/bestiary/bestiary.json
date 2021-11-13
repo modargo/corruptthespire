@@ -845,8 +845,8 @@
 			"ai": [
 				{
 					"min_asc": 0,
-					"desc": "Cycles #wChaos #wZone -> #wRain #wDestruction -> #wDark #wWill (if either Spatial Phantasm or Temporal Phantasm are alive) or #wDark #wFlame's #wEmbrace (otherwise). NL If both phantasms are dead, #wChaos #wZone adds an extra Slimed status card.",
-					"hp": "(275 HP)",
+					"desc": "Cycles #wChaos #wZone -> #wRain #wDestruction -> #wDark #wWill (if either Spatial Phantasm or Temporal Phantasm are alive) or #wDark #wFlame's #wEmbrace (otherwise). NL NL If both phantasms are dead, #wChaos #wZone adds an extra Slimed status card.",
+					"hp": "(250 HP)",
 					"notes": "Innate #uSpacetime #uMastery. NL NL Slimed status cards go into the discard pile.",
 					"moves": [
 						{
@@ -888,7 +888,7 @@
 							"name": "Dark Flame's Embrace",
 							"effects": [
 								{
-									"name": "15",
+									"name": "11",
 									"color": "DAMAGE"
 								},
 								{
@@ -901,7 +901,63 @@
 				},
 				{
 					"min_asc": 4,
-					"desc": "Cycles #wChaos #wZone -> #wRain #wDestruction -> #wDark #wWill (if either Spatial Phantasm or Temporal Phantasm are alive) or #wDark #wFlame's #wEmbrace (otherwise). NL If both phantasms are dead, #wChaos #wZone adds an extra Slimed status card.",
+					"desc": "Cycles #wChaos #wZone -> #wRain #wDestruction -> #wDark #wWill (if either Spatial Phantasm or Temporal Phantasm are alive) or #wDark #wFlame's #wEmbrace (otherwise). NL NL If both phantasms are dead, #wChaos #wZone adds an extra Slimed status card.",
+					"hp": "(250 HP)",
+					"notes": "Innate #uSpacetime #uMastery. NL NL Slimed status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Chaos Zone",
+							"effects": [
+								{
+									"name": "1",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Weak 1",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Slimed 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Rain Destruction",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Dark Will",
+							"effects": [
+								{
+									"name": "Party Strength 2",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Dark Flame's Embrace",
+							"effects": [
+								{
+									"name": "13",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 2",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 9,
+					"desc": "Cycles #wChaos #wZone -> #wRain #wDestruction -> #wDark #wWill (if either Spatial Phantasm or Temporal Phantasm are alive) or #wDark #wFlame's #wEmbrace (otherwise). NL NL If both phantasms are dead, #wChaos #wZone adds an extra Slimed status card.",
 					"hp": "(275 HP)",
 					"notes": "Innate #uSpacetime #uMastery. NL NL Slimed status cards go into the discard pile.",
 					"moves": [
@@ -944,63 +1000,7 @@
 							"name": "Dark Flame's Embrace",
 							"effects": [
 								{
-									"name": "17",
-									"color": "DAMAGE"
-								},
-								{
-									"name": "Strength 2",
-									"color": "BUFF"
-								}
-							]
-						}
-					]
-				},
-				{
-					"min_asc": 9,
-					"desc": "Cycles #wChaos #wZone -> #wRain #wDestruction -> #wDark #wWill (if either Spatial Phantasm or Temporal Phantasm are alive) or #wDark #wFlame's #wEmbrace (otherwise). NL If both phantasms are dead, #wChaos #wZone adds an extra Slimed status card.",
-					"hp": "(300 HP)",
-					"notes": "Innate #uSpacetime #uMastery. NL NL Slimed status cards go into the discard pile.",
-					"moves": [
-						{
-							"name": "Chaos Zone",
-							"effects": [
-								{
-									"name": "1",
-									"color": "DAMAGE"
-								},
-								{
-									"name": "Weak 1",
-									"color": "DEBUFF"
-								},
-								{
-									"name": "Slimed 1",
-									"color": "DEBUFF"
-								}
-							]
-						},
-						{
-							"name": "Rain Destruction",
-							"effects": [
-								{
-									"name": "5",
-									"color": "DAMAGE"
-								}
-							]
-						},
-						{
-							"name": "Dark Will",
-							"effects": [
-								{
-									"name": "Party Strength 2",
-									"color": "BUFF"
-								}
-							]
-						},
-						{
-							"name": "Dark Flame's Embrace",
-							"effects": [
-								{
-									"name": "17",
+									"name": "13",
 									"color": "DAMAGE"
 								},
 								{
@@ -1013,8 +1013,8 @@
 				},
 				{
 					"min_asc": 19,
-					"desc": "Cycles #wChaos #wZone -> #wRain #wDestruction -> #wDark #wWill (if either Spatial Phantasm or Temporal Phantasm are alive) or #wDark #wFlame's #wEmbrace (otherwise). NL If both phantasms are dead, #wChaos #wZone adds an extra Slimed status card.",
-					"hp": "(300 HP)",
+					"desc": "Cycles #wChaos #wZone -> #wRain #wDestruction -> #wDark #wWill (if either Spatial Phantasm or Temporal Phantasm are alive) or #wDark #wFlame's #wEmbrace (otherwise). NL NL If both phantasms are dead, #wChaos #wZone adds an extra Slimed status card.",
+					"hp": "(275 HP)",
 					"notes": "Innate #uSpacetime #uMastery with two buffs active at once. NL NL Slimed status cards go into the discard pile.",
 					"moves": [
 						{
@@ -1056,7 +1056,7 @@
 							"name": "Dark Flame's Embrace",
 							"effects": [
 								{
-									"name": "17",
+									"name": "13",
 									"color": "DAMAGE"
 								},
 								{
@@ -1092,7 +1092,7 @@
 							"name": "Mend",
 							"effects": [
 								{
-									"name": "Party Heal 20",
+									"name": "Party Heal 15",
 									"color": "BLOCK"
 								}
 							]
@@ -1127,7 +1127,7 @@
 							"name": "Mend",
 							"effects": [
 								{
-									"name": "Party Heal 20",
+									"name": "Party Heal 15",
 									"color": "BLOCK"
 								}
 							]
@@ -1162,7 +1162,7 @@
 							"name": "Mend",
 							"effects": [
 								{
-									"name": "Party Heal 20",
+									"name": "Party Heal 15",
 									"color": "BLOCK"
 								}
 							]
@@ -1197,7 +1197,7 @@
 							"name": "Mend",
 							"effects": [
 								{
-									"name": "Party Heal 30",
+									"name": "Party Heal 20",
 									"color": "BLOCK"
 								}
 							]
@@ -1223,7 +1223,7 @@
 					"min_asc": 0,
 					"desc": "Cycles #wImpermanence -> #wGradual #wDecay -> #wTemporal #wDistortion.",
 					"hp": "(60 HP)",
-					"notes": "Innate #uMetallicize 10, #uCleanse 3, #uTemporal #uFissure. NL NL Wound status cards go into the discard pile.",
+					"notes": "Innate #uMetallicize 8, #uCleanse 2, #uTemporal #uFissure. NL NL Wound status cards go into the discard pile.",
 					"moves": [
 						{
 							"name": "Impermanence",
@@ -1270,7 +1270,7 @@
 					"min_asc": 4,
 					"desc": "Cycles #wImpermanence -> #wGradual #wDecay -> #wTemporal #wDistortion.",
 					"hp": "(60 HP)",
-					"notes": "Innate #uMetallicize 10, #uCleanse 3, #uTemporal #uFissure. NL NL Wound status cards go into the discard pile.",
+					"notes": "Innate #uMetallicize 8, #uCleanse 2, #uTemporal #uFissure. NL NL Wound status cards go into the discard pile.",
 					"moves": [
 						{
 							"name": "Impermanence",
@@ -1317,7 +1317,7 @@
 					"min_asc": 9,
 					"desc": "Cycles #wImpermanence -> #wGradual #wDecay -> #wTemporal #wDistortion.",
 					"hp": "(70 HP)",
-					"notes": "Innate #uMetallicize 15, #uCleanse 3, #uTemporal #uFissure. NL NL Wound status cards go into the discard pile.",
+					"notes": "Innate #uMetallicize 12, #uCleanse 2, #uTemporal #uFissure. NL NL Wound status cards go into the discard pile.",
 					"moves": [
 						{
 							"name": "Impermanence",
@@ -1364,7 +1364,7 @@
 					"min_asc": 19,
 					"desc": "Cycles #wImpermanence -> #wGradual #wDecay -> #wTemporal #wDistortion.",
 					"hp": "(70 HP)",
-					"notes": "Innate #uMetallicize 15, #uCleanse 4, #uTemporal #uFissure. NL NL Wound status cards go into the discard pile.",
+					"notes": "Innate #uMetallicize 12, #uCleanse 3, #uTemporal #uFissure. NL NL Wound status cards go into the discard pile.",
 					"moves": [
 						{
 							"name": "Impermanence",

@@ -123,7 +123,7 @@
   },
   "CorruptTheSpire:WarpAura": {
     "NAME": "Warp Aura",
-    "DESCRIPTIONS": ["When this enemy takes damage, add a #yDazed to your discard pile."]
+    "DESCRIPTIONS": ["When this enemy takes {0} or more damage, add a #yDazed to your discard pile."]
   },
   "CorruptTheSpire:TemporalFissure": {
     "NAME": "Temporal Fissure",

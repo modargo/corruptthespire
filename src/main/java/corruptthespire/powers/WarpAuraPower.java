@@ -10,23 +10,26 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import corruptthespire.CorruptTheSpire;
 
+import java.text.MessageFormat;
+
 public class WarpAuraPower extends AbstractPower {
     public static final String POWER_ID = "CorruptTheSpire:WarpAura";
     private static final PowerStrings powerStrings;
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
+    private static final int DAMAGE_THRESHOLD = 20;
 
     public WarpAuraPower(AbstractCreature owner) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        this.description = DESCRIPTIONS[0];
+        this.description = MessageFormat.format(DESCRIPTIONS[0], DAMAGE_THRESHOLD);
         CorruptTheSpire.LoadPowerImage(this);
     }
 
     @Override
     public void wasHPLost(DamageInfo info, int damageAmount) {
-        if (damageAmount > 0) {
+        if (damageAmount > DAMAGE_THRESHOLD) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Dazed(), 1));
         }
