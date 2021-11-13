@@ -1077,7 +1077,7 @@
 					"min_asc": 0,
 					"desc": "Cycles #wSpatial #wRend -> #wMend -> #wDimensional #wRip.",
 					"hp": "(90 HP)",
-					"notes": "Innate #uWarp #uAura, #wSpatial #wFissure.",
+					"notes": "Innate #uWarp #uAura, #uSpatial #uFissure.",
 					"moves": [
 						{
 							"name": "Spatial Rend",
@@ -1112,7 +1112,7 @@
 					"min_asc": 4,
 					"desc": "Cycles #wSpatial #wRend -> #wMend -> #wDimensional #wRip.",
 					"hp": "(90 HP)",
-					"notes": "Innate #uWarp #uAura, #wSpatial #wFissure.",
+					"notes": "Innate #uWarp #uAura, #uSpatial #uFissure.",
 					"moves": [
 						{
 							"name": "Spatial Rend",
@@ -1147,7 +1147,7 @@
 					"min_asc": 9,
 					"desc": "Cycles #wSpatial #wRend -> #wMend -> #wDimensional #wRip.",
 					"hp": "(100 HP)",
-					"notes": "Innate #uWarp #uAura, #wSpatial #wFissure.",
+					"notes": "Innate #uWarp #uAura, #uSpatial #uFissure.",
 					"moves": [
 						{
 							"name": "Spatial Rend",
@@ -1182,7 +1182,7 @@
 					"min_asc": 19,
 					"desc": "Cycles #wSpatial #wRend -> #wMend -> #wDimensional #wRip.",
 					"hp": "(100 HP)",
-					"notes": "Innate #uWarp #uAura, #wSpatial #wFissure.",
+					"notes": "Innate #uWarp #uAura, #uSpatial #uFissure.",
 					"moves": [
 						{
 							"name": "Spatial Rend",
@@ -1223,7 +1223,7 @@
 					"min_asc": 0,
 					"desc": "Cycles #wImpermanence -> #wGradual #wDecay -> #wTemporal #wDistortion.",
 					"hp": "(60 HP)",
-					"notes": "Innate #uMetallicize 10, #uCleanse 3, #wTemporal #wFissure. NL NL Wound status cards go into the discard pile.",
+					"notes": "Innate #uMetallicize 10, #uCleanse 3, #uTemporal #uFissure. NL NL Wound status cards go into the discard pile.",
 					"moves": [
 						{
 							"name": "Impermanence",
@@ -1270,7 +1270,7 @@
 					"min_asc": 4,
 					"desc": "Cycles #wImpermanence -> #wGradual #wDecay -> #wTemporal #wDistortion.",
 					"hp": "(60 HP)",
-					"notes": "Innate #uMetallicize 10, #uCleanse 3, #wTemporal #wFissure. NL NL Wound status cards go into the discard pile.",
+					"notes": "Innate #uMetallicize 10, #uCleanse 3, #uTemporal #uFissure. NL NL Wound status cards go into the discard pile.",
 					"moves": [
 						{
 							"name": "Impermanence",
@@ -1317,7 +1317,7 @@
 					"min_asc": 9,
 					"desc": "Cycles #wImpermanence -> #wGradual #wDecay -> #wTemporal #wDistortion.",
 					"hp": "(70 HP)",
-					"notes": "Innate #uMetallicize 15, #uCleanse 3, #wTemporal #wFissure. NL NL Wound status cards go into the discard pile.",
+					"notes": "Innate #uMetallicize 15, #uCleanse 3, #uTemporal #uFissure. NL NL Wound status cards go into the discard pile.",
 					"moves": [
 						{
 							"name": "Impermanence",
@@ -1364,7 +1364,7 @@
 					"min_asc": 19,
 					"desc": "Cycles #wImpermanence -> #wGradual #wDecay -> #wTemporal #wDistortion.",
 					"hp": "(70 HP)",
-					"notes": "Innate #uMetallicize 15, #uCleanse 4, #wTemporal #wFissure. NL NL Wound status cards go into the discard pile.",
+					"notes": "Innate #uMetallicize 15, #uCleanse 4, #uTemporal #uFissure. NL NL Wound status cards go into the discard pile.",
 					"moves": [
 						{
 							"name": "Impermanence",
