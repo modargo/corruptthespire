@@ -114,7 +114,7 @@
     "DESCRIPTIONS": ["Whenever you draw a card, gains #b{0} Strength."]
   },
   "CorruptTheSpire:Restless": {
-    "NAME": "Wary",
+    "NAME": "Restless",
     "DESCRIPTIONS": ["Whenever you gain an energy, gains #b{0} Strength."]
   },
   "CorruptTheSpire:Cleanse": {
