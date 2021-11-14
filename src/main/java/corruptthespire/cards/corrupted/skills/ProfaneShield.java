@@ -53,6 +53,6 @@ public class ProfaneShield extends AbstractCorruptedCard {
     }
 
     private int getBlock() {
-        return (int)(Cor.corruption * this.magicNumber);
+        return (int)(Cor.corruption * this.magicNumber / 100.0F);
     }
 }
