@@ -16,7 +16,7 @@ public class ProfaneShield extends AbstractCorruptedCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 1;
-    private static final int PERCENT = 20;
+    private static final int PERCENT = 15;
     private static final int UPGRADE_PERCENT = 5;
 
     public ProfaneShield() {
