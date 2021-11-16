@@ -114,7 +114,6 @@ public class ShowCorruptNodesOnMapPatch {
                     float mapOffsetY = ReflectionHacks.getPrivateStatic(DungeonMap.class, "mapOffsetY");
                     float bossOffsetY = ReflectionHacks.getPrivateStatic(DungeonMap.class, "BOSS_OFFSET_Y");
                     Color baseMapColor = ReflectionHacks.getPrivate(__instance, DungeonMap.class, "baseMapColor");
-                    //sb.draw(IMAGE, (float)Settings.WIDTH / 2.0F - bossW / 2.0F, DungeonMapScreen.offsetY + mapOffsetY + bossOffsetY, bossW, bossW);
                     sb.setColor(new Color(1.0F, 1.0F, 1.0F, baseMapColor.a));
                     sb.draw(IMAGE, (float)Settings.WIDTH / 2.0F + bossW  * 3.0F / 8.0F, DungeonMapScreen.offsetY + mapOffsetY + bossOffsetY + bossH, WIDTH, HEIGHT);
                 }
