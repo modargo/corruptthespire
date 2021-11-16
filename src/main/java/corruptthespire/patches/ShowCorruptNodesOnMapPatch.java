@@ -85,7 +85,6 @@ public class ShowCorruptNodesOnMapPatch {
     public static class UpdatePatch {
         @SpireInsertPatch(locator = UpdatePatch.Locator.class)
         public static void updateCorruptedVfx(MapRoomNode __instance, @ByRef float[] ___flameVfxTimer, ArrayList<FlameAnimationEffect> ___fEffects, Hitbox ___hb) {
-            //TODO: Make a separate field for the corrupted timer, because right now the node with the emerald key ends up flashing at a different rate
             if (CorruptedField.corrupted.get(__instance) && !__instance.hasEmeraldKey) {
                 ___flameVfxTimer[0] -= Gdx.graphics.getDeltaTime();
 
