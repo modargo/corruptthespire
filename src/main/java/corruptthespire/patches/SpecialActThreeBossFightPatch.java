@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.ui.buttons.ProceedButton;
 import corruptthespire.Cor;
 import corruptthespire.monsters.Encounters;
 import corruptthespire.monsters.PandemoniumArchfiend;
+import corruptthespire.util.Downfall;
 import javassist.CtBehavior;
 
 @SpirePatch(
@@ -26,7 +27,8 @@ public class SpecialActThreeBossFightPatch {
             }
 
             if ((AbstractDungeon.ascensionLevel >= 20 && AbstractDungeon.bossList.size() == 1)
-                || (AbstractDungeon.ascensionLevel < 20 && AbstractDungeon.bossList.size() == 2)) {
+                || (AbstractDungeon.ascensionLevel < 20 && AbstractDungeon.bossList.size() == 2)
+                || Downfall.isDownfallMode()) {
                 AbstractDungeon.bossKey = getSpecialBoss();
                 if (AbstractDungeon.bossKey.equals(PandemoniumArchfiend.ID)) {
                     Cor.flags.foughtArchfiend = true;

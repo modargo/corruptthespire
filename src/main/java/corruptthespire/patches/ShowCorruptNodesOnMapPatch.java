@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.screens.DungeonMapScreen;
 import com.megacrit.cardcrawl.vfx.FlameAnimationEffect;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.map.CorruptMap;
+import corruptthespire.util.Downfall;
 import corruptthespire.util.TextureLoader;
 import javassist.CtBehavior;
 
@@ -117,16 +118,11 @@ public class ShowCorruptNodesOnMapPatch {
                     float bossOffsetY = ReflectionHacks.getPrivateStatic(DungeonMap.class, "BOSS_OFFSET_Y");
                     float baseBossIconPosition = DungeonMapScreen.offsetY + mapOffsetY + bossOffsetY;
 
-                    if (Loader.isModLoaded("downfall")) {
+                    if (Downfall.isDownfallMode()) {
                         try {
-                            Class<?> clz = Class.forName("downfall.patches.EvilModeCharacterSelect");
-                            Field f = clz.getField("evilMode");
-                            boolean isDownfall = f.getBoolean(null);
-                            if (isDownfall) {
-                                Class<?> clz2 = Class.forName("downfall.patches.ui.map.FlipMap$BossStuff");
-                                Field f2 = clz2.getField("BOSS_OFFSET");
-                                baseBossIconPosition = DungeonMapScreen.offsetY + f2.getFloat(null);
-                            }
+                            Class<?> clz2 = Class.forName("downfall.patches.ui.map.FlipMap$BossStuff");
+                            Field f2 = clz2.getField("BOSS_OFFSET");
+                            baseBossIconPosition = DungeonMapScreen.offsetY + f2.getFloat(null);
                         } catch (ClassNotFoundException | NoSuchFieldException | IllegalAccessException e) {
                             e.printStackTrace();
                         }
