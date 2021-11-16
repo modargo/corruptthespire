@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.TipHelper;
+import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.shop.Merchant;
 import com.megacrit.cardcrawl.shop.ShopScreen;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
@@ -34,6 +35,24 @@ public class ShopPatch {
         public static void changeCards(Merchant __instance, float x, float y, int newShopScreen) {
             ArrayList<AbstractCard> coloredCards = ReflectionHacks.getPrivate(__instance, Merchant.class, "cards1");
             ArrayList<AbstractCard> colorlessCards = ReflectionHacks.getPrivate(__instance, Merchant.class, "cards2");
+            ShopCorruption.handleCards(coloredCards, colorlessCards);
+        }
+
+        private static class Locator extends SpireInsertLocator {
+            @Override
+            public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
+                Matcher finalMatcher = new Matcher.MethodCallMatcher(ShopScreen.class, "init");
+                return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
+            }
+        }
+    }
+
+    @SpirePatch(cls = "downfall.util.HeartMerchant", method = SpirePatch.CONSTRUCTOR, paramtypez = {float.class, float.class, int.class}, optional = true)
+    public static class DownfallChangeCardsPatch {
+        @SpireInsertPatch(locator = Locator.class)
+        public static void changeCards(Object __instance, float x, float y, int newShopScreen) {
+            ArrayList<AbstractCard> coloredCards = ReflectionHacks.getPrivate(__instance, __instance.getClass(), "cards1");
+            ArrayList<AbstractCard> colorlessCards = ReflectionHacks.getPrivate(__instance, __instance.getClass(), "cards2");
             ShopCorruption.handleCards(coloredCards, colorlessCards);
         }
 
@@ -165,6 +184,24 @@ public class ShopPatch {
         @SpireInstrumentPatch
         public static ExprEditor getPriceForCorruptedCards() {
             return new GetPriceForCorruptedCardsExprEditor();
+        }
+    }
+
+    @SpirePatch(cls = "expansioncontent.patches.ShopBossPatch", method = "Postfix", optional = true)
+    public static class DownfallPreventShopBossPatchExprEditor extends ExprEditor {
+        private static int counter = 0;
+        @Override
+        public void edit(MethodCall methodCall) throws CannotCompileException {
+            // With shop corruptions, the colorless cards that Downfall expects to exist may no longer be there
+            if (methodCall.getClassName().equals(Random.class.getName()) && methodCall.getMethodName().equals("randomBoolean")) {
+                methodCall.replace("{ $_ = $proceed($$) && colorlessCards.size() > " + counter + "; }");
+                counter++;
+            }
+        }
+
+        @SpireInstrumentPatch
+        public static ExprEditor preventCrash() {
+            return new DownfallPreventShopBossPatchExprEditor();
         }
     }
 }

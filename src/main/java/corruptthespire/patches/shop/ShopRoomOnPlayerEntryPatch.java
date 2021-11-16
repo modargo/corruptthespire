@@ -9,6 +9,7 @@ import corruptthespire.corruptions.shop.ShopCorruptionType;
 import corruptthespire.patches.CorruptedField;
 
 @SpirePatch(clz = ShopRoom.class, method = "onPlayerEntry")
+@SpirePatch(cls = "downfall.rooms.HeartShopRoom", method = "onPlayerEntry", optional = true)
 public class ShopRoomOnPlayerEntryPatch {
     @SpirePrefixPatch
     public static void determineCorruptionType(ShopRoom __instance) {
