@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.Hitbox;
@@ -18,6 +19,7 @@ import corruptthespire.map.CorruptMap;
 import corruptthespire.util.TextureLoader;
 import javassist.CtBehavior;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 public class ShowCorruptNodesOnMapPatch {
@@ -113,9 +115,26 @@ public class ShowCorruptNodesOnMapPatch {
                     float bossH = (512.0F * 3/4) * Settings.scale;
                     float mapOffsetY = ReflectionHacks.getPrivateStatic(DungeonMap.class, "mapOffsetY");
                     float bossOffsetY = ReflectionHacks.getPrivateStatic(DungeonMap.class, "BOSS_OFFSET_Y");
+                    float baseBossIconPosition = DungeonMapScreen.offsetY + mapOffsetY + bossOffsetY;
+
+                    if (Loader.isModLoaded("downfall")) {
+                        try {
+                            Class<?> clz = Class.forName("downfall.patches.EvilModeCharacterSelect");
+                            Field f = clz.getField("evilMode");
+                            boolean isDownfall = f.getBoolean(null);
+                            if (isDownfall) {
+                                Class<?> clz2 = Class.forName("downfall.patches.ui.map.FlipMap$BossStuff");
+                                Field f2 = clz2.getField("BOSS_OFFSET");
+                                baseBossIconPosition = DungeonMapScreen.offsetY + f2.getFloat(null);
+                            }
+                        } catch (ClassNotFoundException | NoSuchFieldException | IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
                     Color baseMapColor = ReflectionHacks.getPrivate(__instance, DungeonMap.class, "baseMapColor");
                     sb.setColor(new Color(1.0F, 1.0F, 1.0F, baseMapColor.a));
-                    sb.draw(IMAGE, (float)Settings.WIDTH / 2.0F + bossW  * 3.0F / 8.0F, DungeonMapScreen.offsetY + mapOffsetY + bossOffsetY + bossH, WIDTH, HEIGHT);
+                    sb.draw(IMAGE, (float)Settings.WIDTH / 2.0F + bossW  * 3.0F / 8.0F, baseBossIconPosition + bossH, WIDTH, HEIGHT);
                 }
             }
         }
