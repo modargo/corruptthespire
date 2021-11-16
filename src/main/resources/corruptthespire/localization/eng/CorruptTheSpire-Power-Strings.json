@@ -1,8 +1,4 @@
 {
-  "CorruptTheSpire:DrawReductionSingleTurn": {
-    "NAME": "Draw Reduction",
-    "DESCRIPTIONS": ["Draw #b1 less card next turn.", "Draw #b{0} less cards next turn."]
-  },
   "CorruptTheSpire:CorruptedForm": {
     "NAME": "Corrupted Form",
     "DESCRIPTIONS": [
