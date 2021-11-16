@@ -11,7 +11,6 @@ import java.util.ArrayList;
 
 public class CorruptedCardReward extends AbstractCorruptTheSpireReward {
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:Rewards").TEXT;
-    //TODO Better icon
     private static final Texture ICON = ImageMaster.REWARD_CARD_NORMAL;
 
     public ArrayList<AbstractCard> cards;

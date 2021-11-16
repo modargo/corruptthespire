@@ -17,7 +17,6 @@ import java.util.stream.Collectors;
 public class CorruptMap {
     public static final Logger logger = LogManager.getLogger(CorruptMap.class.getName());
     private static final int RANDOM_EXTRA_CORRUPT_NODES = 3;
-    //TODO: Test that resetting this when starting a new act works
     private static boolean isBossCorrupted = false;
 
     public static boolean isBossCorrupted() {
