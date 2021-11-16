@@ -20,10 +20,10 @@ public class EssenceRip extends AbstractCorruptedCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 0;
-    private static final int DAMAGE = 6;
+    private static final int DAMAGE = 5;
     private static final int UPGRADE_DAMAGE = 2;
-    private static final int CORRUPTION_THRESHOLD_1 = 40;
-    private static final int CORRUPTION_THRESHOLD_2 = 80;
+    private static final int CORRUPTION_THRESHOLD_1 = 50;
+    private static final int CORRUPTION_THRESHOLD_2 = 100;
     private static final int CORRUPTION_THRESHOLD_3 = 200;
 
     public EssenceRip() {
