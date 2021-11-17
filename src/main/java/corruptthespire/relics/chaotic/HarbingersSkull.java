@@ -17,7 +17,7 @@ public class HarbingersSkull extends CustomRelic {
     public static final String ID = "CorruptTheSpire:HarbingersSkull";
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));
-    private static final int BLOCK = 4;
+    private static final int BLOCK = 3;
     private static final int CARDS = 1;
 
     private boolean firstTurn = true;
