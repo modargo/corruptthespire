@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import corruptthespire.relics.chaotic.HarbingersClaw;
 import javassist.CtBehavior;
 
@@ -131,6 +132,19 @@ public class HarbingersClawPatch {
             public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
                 Matcher finalMatcher = new Matcher.MethodCallMatcher(MathUtils.class, "floor");
                 return LineFinder.findAllInOrder(ctMethodToPatch, finalMatcher);
+            }
+        }
+    }
+
+    @SpirePatch(cls = "eatyourbeets.cards.base.EYBCard", method = "UpdateDamage", optional = true)
+    public static class AnimatorHarbingersClawPatch {
+        @SpirePrefixPatch
+        public static void ApplyDamageIncrease(AbstractCard __instance, @ByRef float[] amount) {
+            amount[0] = increaseDamage(__instance, amount[0]);
+            // Might as well fix Hubris's Pure Nail (reforged Old Nail) while we're at it
+            AbstractRelic hubrisOldNail = AbstractDungeon.player.getRelic("hubris:OldNail");
+            if (hubrisOldNail != null && hubrisOldNail.counter == -42 && __instance.damageTypeForTurn == DamageInfo.DamageType.NORMAL) {
+                amount[0] *= 2;
             }
         }
     }
