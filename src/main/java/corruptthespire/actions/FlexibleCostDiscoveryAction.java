@@ -77,7 +77,7 @@ public class FlexibleCostDiscoveryAction extends AbstractGameAction {
                     disCard.current_x = -1000.0F * Settings.xScale;
                     disCard2.current_x = -1000.0F * Settings.xScale + AbstractCard.IMG_HEIGHT_S;
                     if (this.amount == 1) {
-                        if (AbstractDungeon.player.hand.size() < 10) {
+                        if (AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
                             AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(disCard, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
                         } else {
                             AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(disCard, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
