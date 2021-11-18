@@ -14,7 +14,9 @@ public class TreasureWardensEventRoom extends EventRoom {
         super.endBattle();
 
         for (AbstractRelic r : AbstractDungeon.player.relics) {
-            r.onChestOpenAfter(false);
+            if (!r.relicId.equals("hubris:Towel")) {
+                r.onChestOpenAfter(false);
+            }
         }
     }
 }
