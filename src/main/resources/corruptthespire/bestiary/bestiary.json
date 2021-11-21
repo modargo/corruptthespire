@@ -1229,7 +1229,7 @@
 							"name": "Impermanence",
 							"effects": [
 								{
-									"name": "4",
+									"name": "6",
 									"color": "DAMAGE"
 								},
 								{
@@ -1255,7 +1255,7 @@
 							"name": "Temporal Distortion",
 							"effects": [
 								{
-									"name": "10",
+									"name": "11",
 									"color": "DAMAGE"
 								},
 								{
@@ -1276,7 +1276,7 @@
 							"name": "Impermanence",
 							"effects": [
 								{
-									"name": "5",
+									"name": "7",
 									"color": "DAMAGE"
 								},
 								{
@@ -1302,7 +1302,7 @@
 							"name": "Temporal Distortion",
 							"effects": [
 								{
-									"name": "12",
+									"name": "13",
 									"color": "DAMAGE"
 								},
 								{
@@ -1323,7 +1323,7 @@
 							"name": "Impermanence",
 							"effects": [
 								{
-									"name": "5",
+									"name": "7",
 									"color": "DAMAGE"
 								},
 								{
@@ -1349,7 +1349,7 @@
 							"name": "Temporal Distortion",
 							"effects": [
 								{
-									"name": "12",
+									"name": "13",
 									"color": "DAMAGE"
 								},
 								{
@@ -1370,7 +1370,7 @@
 							"name": "Impermanence",
 							"effects": [
 								{
-									"name": "5",
+									"name": "7",
 									"color": "DAMAGE"
 								},
 								{
@@ -1396,7 +1396,7 @@
 							"name": "Temporal Distortion",
 							"effects": [
 								{
-									"name": "12",
+									"name": "13",
 									"color": "DAMAGE"
 								},
 								{
