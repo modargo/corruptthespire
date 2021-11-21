@@ -34,7 +34,7 @@ public class PandemoniumArchfiend extends CustomMonster
     private static final byte TORMENTING_SHACKLES_ATTACK = 3;
     private static final byte INFERNAL_POWER_ATTACK = 4;
     private static final byte HELLFIRE_ATTACK = 5;
-    private static final int DEVILS_DUE_STATUSES = 4;
+    private static final int DEVILS_DUE_STATUSES = 5;
     private static final int MINDSHATTER_AMOUNT = 1;
     private static final int A19_MINDSHATTER_AMOUNT = 2;
     private static final int FOUR_ARM_STRIKE_DAMAGE = 3;
