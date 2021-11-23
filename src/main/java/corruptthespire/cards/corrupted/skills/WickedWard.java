@@ -22,7 +22,7 @@ public class WickedWard extends AbstractCorruptedCard {
     private static final int UPGRADE_BLOCK = 2;
     private static final int ADDITIONAL_BLOCK = 4;
     private static final int UPGRADE_ADDITIONAL_BLOCK = 1;
-    private static final int CORRUPTION_THRESHOLD = 50;
+    private static final int CORRUPTION_THRESHOLD = 60;
 
     public WickedWard() {
         super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, CORRUPTION_THRESHOLD), CardType.SKILL, CardTarget.SELF);
