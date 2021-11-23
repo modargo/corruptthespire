@@ -19,7 +19,7 @@ public class ShimmeringFan extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));
     private static final int COLORS = 3;
-    private static final int BLOCK = 8;
+    private static final int BLOCK = 7;
 
     private final ArrayList<AbstractCard.CardColor> colorsPlayed = new ArrayList<>();
 
