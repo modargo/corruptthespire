@@ -22,8 +22,8 @@ public class AStepToTheSide extends AbstractImageEvent {
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private static final String IMG = CorruptTheSpire.eventImage(ID);
 
-    private static final int GOLD = 150;
-    private static final int A15_GOLD = 125;
+    private static final int GOLD = 125;
+    private static final int A15_GOLD = 100;
 
     private final AbstractRelic relic;
     private final AbstractCard curse;
