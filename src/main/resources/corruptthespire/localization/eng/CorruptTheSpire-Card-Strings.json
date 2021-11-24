@@ -159,6 +159,7 @@
   },
   "CorruptTheSpire:JourneyBeyond": {
     "NAME": "Journey Beyond",
-    "DESCRIPTION": "Gain !M! Dexterity. NL Choose 1 of 3 random cards to add into your hand. It costs {0} less this combat."
+    "DESCRIPTION": "Gain !M! Dexterity. NL Choose 1 of 3 random cards to add into your hand.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Dexterity. NL Choose 1 of 3 random cards to add into your hand. It costs {0} less this combat."
   }
 }

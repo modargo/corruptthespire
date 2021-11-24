@@ -18,27 +18,29 @@ public class JourneyBeyond extends AbstractCorruptedCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final int COST = 1;
-    private static final int UPGRADE_COST = 0;
     private static final int DEXTERITY = 2;
-    private static final int COST_REDUCTION = 1;
+    private static final int COST_REDUCTION = 0;
+    private static final int UPGRADE_COST_REDUCTION = 1;
 
     public JourneyBeyond() {
-        super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, COST_REDUCTION), CardType.POWER, CardTarget.SELF);
+        super(ID, NAME, IMG, COST, DESCRIPTION, CardType.POWER, CardTarget.SELF);
         this.magicNumber = this.baseMagicNumber = DEXTERITY;
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
-            this.upgradeBaseCost(UPGRADE_COST);
             this.upgradeName();
+            this.rawDescription = MessageFormat.format(UPGRADE_DESCRIPTION, UPGRADE_COST_REDUCTION);
+            this.initializeDescription();
         }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
-        this.addToBot(new FlexibleCostDiscoveryAction(COST_REDUCTION));
+        this.addToBot(new FlexibleCostDiscoveryAction(this.upgraded ? UPGRADE_COST_REDUCTION : COST_REDUCTION));
     }
 }
