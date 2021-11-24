@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
 import com.megacrit.cardcrawl.monsters.beyond.Donu;
 import com.megacrit.cardcrawl.monsters.ending.CorruptHeart;
+import com.megacrit.cardcrawl.monsters.exordium.Cultist;
 import corruptthespire.Cor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -49,6 +50,9 @@ public class FightCorruptionDistribution {
         }
         if (AbstractDungeon.getCurrRoom().monsters.monsters.size() >= 3) {
             distribution.removeIf(d -> isMinionCorruption(d.corruptionType));
+        }
+        if (AbstractDungeon.getCurrRoom().monsters.monsters.stream().anyMatch(m -> m.id.equals(Cultist.ID))) {
+            distribution.removeIf(d -> d.corruptionType == FightCorruptionType.Ritual);
         }
         if (AbstractDungeon.getCurrRoom().monsters.monsters.stream().anyMatch(m -> m.id.equals(AwakenedOne.ID))) {
             distribution.removeIf(d -> d.corruptionType == FightCorruptionType.Curiosity);
