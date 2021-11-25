@@ -20,7 +20,7 @@ public class AnnihilationRay extends AbstractCorruptedCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 2;
-    private static final int DAMAGE = 21;
+    private static final int DAMAGE = 20;
     private static final int UPGRADE_DAMAGE = 4;
     private static final int TEMPORARY_HP = 4;
     private static final int UPGRADE_TEMPORARY_HP = 1;
