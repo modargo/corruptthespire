@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.shop.Merchant;
@@ -98,6 +99,42 @@ public class ShopPatch {
                     : null;
             if (corruptionType == ShopCorruptionType.TransformReplacesRemove) {
                 ___removeServiceImg[0] = TextureLoader.getTexture(CorruptTheSpire.uiImage("ShopTransform"));
+            }
+            else {
+                switch(Settings.language) {
+                    case DEU:
+                        ___removeServiceImg[0] = ImageMaster.loadImage("images/npcs/purge/deu.png");
+                        break;
+                    case EPO:
+                        ___removeServiceImg[0] = ImageMaster.loadImage("images/npcs/purge/epo.png");
+                        break;
+                    case FRA:
+                        ___removeServiceImg[0] = ImageMaster.loadImage("images/npcs/purge/fra.png");
+                        break;
+                    case ITA:
+                        ___removeServiceImg[0] = ImageMaster.loadImage("images/npcs/purge/ita.png");
+                        break;
+                    case JPN:
+                        ___removeServiceImg[0] = ImageMaster.loadImage("images/npcs/purge/jpn.png");
+                        break;
+                    case KOR:
+                        ___removeServiceImg[0] = ImageMaster.loadImage("images/npcs/purge/kor.png");
+                        break;
+                    case RUS:
+                        ___removeServiceImg[0] = ImageMaster.loadImage("images/npcs/purge/rus.png");
+                        break;
+                    case THA:
+                        ___removeServiceImg[0] = ImageMaster.loadImage("images/npcs/purge/tha.png");
+                        break;
+                    case UKR:
+                        ___removeServiceImg[0] = ImageMaster.loadImage("images/npcs/purge/ukr.png");
+                        break;
+                    case ZHS:
+                        ___removeServiceImg[0] = ImageMaster.loadImage("images/npcs/purge/zhs.png");
+                        break;
+                    default:
+                        ___removeServiceImg[0] = ImageMaster.loadImage("images/npcs/purge/eng.png");
+                }
             }
         }
     }
