@@ -48,8 +48,8 @@
   "CorruptTheSpire:RareCardOption": {
     "TEXT": ["Rare card", "Choose a rare card for {0} fragments", "Great power"]
   },
-  "CorruptTheSpire:BuryFragmentOption": {
-    "TEXT": ["Bury fragment", "Reduce Corruption by {1} for {0} fragment"]
+  "CorruptTheSpire:CorruptedRelicOption": {
+    "TEXT": ["Corrupted relic", "Gain a corrupted relic and {0} corruption for {1} fragments"]
   },
   "CorruptTheSpire:ShopCorruption": {
     "TEXT": ["Select a Card to Transform.", "Card Transform Service", "Transform a card in your deck. The cost of the removal and transform service increases by #b{0} for the rest of this run."]

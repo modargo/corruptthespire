@@ -26,8 +26,8 @@
   },
   "CorruptTheSpire:ObsidianShovel": {
     "NAME": "Obsidian Shovel",
-    "FLAVOR": "Made of a special material that absorbs and neutralizes corruption.",
-    "DESCRIPTIONS": ["You can now bury Fragments of Corruption at corrupted Rest Sites to reduce #yCorruption."]
+    "FLAVOR": "Made of a special material that absorbs corruption.",
+    "DESCRIPTIONS": ["You can now gain corrupted relics at corrupted Rest Sites."]
   },
   "CorruptTheSpire:CorruptedEgg": {
     "NAME": "Corrupted Egg",

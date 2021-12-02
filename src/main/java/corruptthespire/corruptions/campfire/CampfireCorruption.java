@@ -39,8 +39,8 @@ public class CampfireCorruption {
         if (options.contains(CampfireCorruptionOption.RareCard)) {
             info.options.add(new RareCardOption());
         }
-        if (options.contains(CampfireCorruptionOption.BuryFragment)) {
-            info.options.add(new BuryFragmentOption());
+        if (options.contains(CampfireCorruptionOption.CorruptedRelic)) {
+            info.options.add(new CorruptedRelicOption());
         }
     }
 
@@ -48,7 +48,7 @@ public class CampfireCorruption {
         ArrayList<CampfireCorruptionOption> options = new ArrayList<>();
         options.add(CampfireCorruptionOption.GainFragment);
         if (AbstractDungeon.player.hasRelic(ObsidianShovel.ID)) {
-            options.add(CampfireCorruptionOption.BuryFragment);
+            options.add(CampfireCorruptionOption.CorruptedRelic);
         }
 
         ArrayList<CampfireCorruptionOption> randomOptions = new ArrayList<>();
