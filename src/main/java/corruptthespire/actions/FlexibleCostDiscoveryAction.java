@@ -63,7 +63,7 @@ public class FlexibleCostDiscoveryAction extends AbstractGameAction {
                         disCard.setCostForTurn(0);
                         disCard2.setCostForTurn(0);
                     }
-                    else {
+                    else if (this.costReduction > 0 && disCard.cost > 0){
                         int newCost = Math.max(disCard.cost - this.costReduction, 0);
                         if (newCost != disCard.cost) {
                             disCard.cost = newCost;
