@@ -16,10 +16,12 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.stream.Collectors;
 
 public class Cor {
     private static final Logger logger = LogManager.getLogger(Cor.class.getName());
+    private static final HashSet<AbstractMonster> handledMonsters = new HashSet<>();
 
     public static final int CORRUPTION_FOR_NORMAL_FIGHT = 6;
     public static final int CORRUPTION_FOR_ELITE_FIGHT = 12;
@@ -100,9 +102,12 @@ public class Cor {
     }
 
     public static void applyCorruptionHealthIncrease(AbstractMonster m) {
-        int amount = (m.maxHealth * Cor.getCorruptionDamageMultiplierPercent()) / 100;
-        if (amount > 0) {
-            m.increaseMaxHp(amount, false);
+        if (!handledMonsters.contains(m)) {
+            int amount = (m.maxHealth * Cor.getCorruptionDamageMultiplierPercent()) / 100;
+            if (amount > 0) {
+                m.increaseMaxHp(amount, false);
+            }
+            handledMonsters.add(m);
         }
     }
 

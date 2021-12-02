@@ -26,10 +26,12 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 
 public class FightCorruption {
     private static final Logger logger = LogManager.getLogger(FightCorruption.class.getName());
+    private static final HashSet<AbstractMonster> handledMonsters = new HashSet<>();
 
     public static boolean shouldApplyCorruptions() {
         return AbstractDungeon.getCurrRoom() instanceof MonsterRoom && CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode());
@@ -103,9 +105,12 @@ public class FightCorruption {
     }
 
     public static void applyOnSpawnMonsterCorruptions(AbstractMonster m) {
-        List<FightCorruptionInfo> corruptionInfos = FightCorruptionInfosField.corruptionInfos.get(AbstractDungeon.getCurrRoom());
-        for (FightCorruptionInfo corruptionInfo : corruptionInfos) {
-            applyOnSpawnMonsterCorruption(corruptionInfo, m);
+        if (!handledMonsters.contains(m)) {
+            List<FightCorruptionInfo> corruptionInfos = FightCorruptionInfosField.corruptionInfos.get(AbstractDungeon.getCurrRoom());
+            for (FightCorruptionInfo corruptionInfo : corruptionInfos) {
+                applyOnSpawnMonsterCorruption(corruptionInfo, m);
+            }
+            handledMonsters.add(m);
         }
     }
 
