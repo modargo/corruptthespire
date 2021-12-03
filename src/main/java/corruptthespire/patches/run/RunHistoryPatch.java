@@ -55,7 +55,7 @@ public class RunHistoryPatch {
                     c = (Integer) corruption;
                 }
                 else {
-                    logger.error("Unrecognized corruption_per_floor data: " + corruption);
+                    logger.warn("Unrecognized corruption_per_floor data: " + corruption);
                 }
                 CorruptionField.corruption.set(element, c);
             }
