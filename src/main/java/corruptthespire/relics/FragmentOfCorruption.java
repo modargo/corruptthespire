@@ -41,9 +41,9 @@ public class FragmentOfCorruption extends CustomRelic {
     @Override
     public void instantObtain() {
         if (AbstractDungeon.player.hasRelic(ID)) {
-            FragmentOfCorruption occultBall = (FragmentOfCorruption) AbstractDungeon.player.getRelic(ID);
-            occultBall.increment();
-            occultBall.flash();
+            FragmentOfCorruption fragment = (FragmentOfCorruption) AbstractDungeon.player.getRelic(ID);
+            fragment.increment();
+            fragment.flash();
         } else {
             super.instantObtain();
         }
@@ -52,9 +52,9 @@ public class FragmentOfCorruption extends CustomRelic {
     @Override
     public void instantObtain(AbstractPlayer p, int slot, boolean callOnEquip) {
         if (AbstractDungeon.player.hasRelic(ID)) {
-            FragmentOfCorruption occultBall = (FragmentOfCorruption) AbstractDungeon.player.getRelic(ID);
-            occultBall.increment();
-            occultBall.flash();
+            FragmentOfCorruption fragment = (FragmentOfCorruption) AbstractDungeon.player.getRelic(ID);
+            fragment.increment();
+            fragment.flash();
 
             isDone = true;
             isObtained = true;
@@ -67,9 +67,9 @@ public class FragmentOfCorruption extends CustomRelic {
     @Override
     public void obtain() {
         if (AbstractDungeon.player.hasRelic(ID)) {
-            FragmentOfCorruption occultBall = (FragmentOfCorruption) AbstractDungeon.player.getRelic(ID);
-            occultBall.increment();
-            occultBall.flash();
+            FragmentOfCorruption fragment = (FragmentOfCorruption) AbstractDungeon.player.getRelic(ID);
+            fragment.increment();
+            fragment.flash();
         } else {
             super.obtain();
         }
