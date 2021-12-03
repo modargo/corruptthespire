@@ -212,8 +212,6 @@ public class CorruptTheSpire implements
         BaseMod.loadCustomStringsFile(RelicStrings.class, makeLocPath(language, "CorruptTheSpire-Relic-Strings"));
         BaseMod.loadCustomStringsFile(PowerStrings.class, makeLocPath(language, "CorruptTheSpire-Power-Strings"));
         BaseMod.loadCustomStringsFile(UIStrings.class, makeLocPath(language, "CorruptTheSpire-ui"));
-        // We use the orb strings file as a convenient place to put other text
-        BaseMod.loadCustomStringsFile(OrbStrings.class, makeLocPath(language, "CorruptTheSpire-Orb-Strings"));
     }
 
     @Override
