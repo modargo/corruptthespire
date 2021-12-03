@@ -146,7 +146,6 @@ public class CorruptTheSpire implements
     private static void addEvent(String eventId, Class<? extends AbstractEvent> eventClass) {
         Condition alwaysFalseCondition = () -> false;
         BaseMod.addEvent(new AddEventParams.Builder(eventId, eventClass).spawnCondition(alwaysFalseCondition).bonusCondition(alwaysFalseCondition).create());
-
     }
 
     private void registerCustomRewards() {
