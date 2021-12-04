@@ -120,9 +120,7 @@ public class PandemoniumArchfiend extends CustomMonster
         switch (this.nextMove) {
             case MINDSHATTER_DEBUFF:
                 this.addToBot(new FastShakeAction(this, 0.5F, 0.2F));
-                for (int i = 0; i < this.mindshatterAmount; i++) {
-                    this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new PriceOfKnowledgePower(AbstractDungeon.player, 1), 1));
-                }
+                this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new PriceOfKnowledgePower(AbstractDungeon.player, this.mindshatterAmount), this.mindshatterAmount));
                 break;
             case FOUR_ARM_STRIKE_ATTACK:
                 for (int i = 0; i < FOUR_ARM_STRIKE_HITS; i++) {
