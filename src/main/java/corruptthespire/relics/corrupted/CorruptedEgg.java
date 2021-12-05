@@ -15,7 +15,7 @@ public class CorruptedEgg extends AbstractCorruptedRelic {
     public static final String ID = "CorruptTheSpire:CorruptedEgg";
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));
-    private static final float UPGRADE_CHANCE_INCREASE = 25;
+    private static final float UPGRADE_CHANCE_INCREASE = 33;
     private static final int CORRUPTION = 1;
 
     public CorruptedEgg() {
