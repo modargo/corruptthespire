@@ -102,6 +102,7 @@ public class PathsInTheSmoke extends AbstractImageEvent {
     }
 
     private void goToEvent(String eventId) {
+        GenericEventDialog.hide();
         EventRoom room = ((EventRoom)AbstractDungeon.getCurrRoom());
         room.event = EventHelper.getEvent(eventId);
         room.event.onEnterRoom();
