@@ -17,8 +17,8 @@ public class RustedOrichalcum extends AbstractCorruptedRelic {
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));
     private static final int TURNS = 3;
-    private static final int BLOCK = 12;
-    private static final int CONSTRICTED = 4;
+    private static final int BLOCK = 11;
+    private static final int CONSTRICTED = 3;
 
     public RustedOrichalcum() {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.HEAVY);
