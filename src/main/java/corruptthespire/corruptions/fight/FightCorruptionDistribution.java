@@ -54,6 +54,11 @@ public class FightCorruptionDistribution {
         if (AbstractDungeon.getCurrRoom().monsters.monsters.stream().anyMatch(m -> m.id.equals(Cultist.ID))) {
             distribution.removeIf(d -> d.corruptionType == FightCorruptionType.Ritual);
         }
+        if (AbstractDungeon.getCurrRoom().monsters.monsters.stream().anyMatch(m -> m.id.equals("Menagerie:MaskedSummoner"))) {
+            distribution.removeIf(d -> d.corruptionType == FightCorruptionType.Metallicize);
+            distribution.removeIf(d -> d.corruptionType == FightCorruptionType.Malleable);
+            distribution.removeIf(d -> d.corruptionType == FightCorruptionType.Buffer);
+        }
         if (AbstractDungeon.getCurrRoom().monsters.monsters.stream().anyMatch(m -> m.id.equals(AwakenedOne.ID))) {
             distribution.removeIf(d -> d.corruptionType == FightCorruptionType.Curiosity);
         }
