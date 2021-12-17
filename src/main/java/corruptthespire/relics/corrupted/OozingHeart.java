@@ -18,7 +18,7 @@ public class OozingHeart extends AbstractCorruptedRelic {
     public static final String ID = "CorruptTheSpire:OozingHeart";
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));
-    private static final int HEAL = 18;
+    private static final int HEAL = 16;
     private static final int HEALTH_LOSS = 1;
 
     public OozingHeart() {
