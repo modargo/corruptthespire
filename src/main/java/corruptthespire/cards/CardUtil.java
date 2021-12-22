@@ -19,7 +19,8 @@ import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.*;
 
 public class CardUtil {
     public static AbstractCard upgradeRandomCard() {
-        return upgradeRandomCards(1).get(0);
+        ArrayList<AbstractCard> upgrade = upgradeRandomCards(1);
+        return upgrade.isEmpty() ? null : upgrade.get(0);
     }
 
     public static ArrayList<AbstractCard> upgradeRandomCards(int n) {
