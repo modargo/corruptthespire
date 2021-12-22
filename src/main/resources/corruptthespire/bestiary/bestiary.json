@@ -7,8 +7,8 @@
 				{
 					"min_asc": 0,
 					"desc": "Starts with #wManifest, then repeats #wCorruption.",
-					"hp": "(20 - 23 / 35 - 38 / 50 - 54 HP)",
-					"notes": "HP varies by act (act 1 / act 2 / act 3).",
+					"hp": "(20 - 23 / 35 - 38 / 50 - 54 HP / 65 - 69 HP)",
+					"notes": "HP varies by act (act 1 / act 2 / act 3 / act 4).",
 					"moves": [
 						{
 							"name": "Corrupt",
@@ -33,8 +33,8 @@
 				{
 					"min_asc": 7,
 					"desc": "Starts with #wManifest, then repeats #wCorruption.",
-					"hp": "(22 - 25 / 37 - 41 / 53 - 57 HP)",
-					"notes": "HP varies by act (act 1 / act 2 / act 3).",
+					"hp": "(22 - 25 / 37 - 41 / 53 - 57 HP / 68 - 72 HP)",
+					"notes": "HP varies by act (act 1 / act 2 / act 3 / act 4).",
 					"moves": [
 						{
 							"name": "Corrupt",
@@ -59,8 +59,8 @@
 				{
 					"min_asc": 17,
 					"desc": "Repeats #wCorruption.",
-					"hp": "(22 - 25 / 37 - 41 / 53 - 57 HP)",
-					"notes": "HP varies by act (act 1 / act 2 / act 3).",
+					"hp": "(22 - 25 / 37 - 41 / 53 - 57 HP / 68 - 72 HP)",
+					"notes": "HP varies by act (act 1 / act 2 / act 3 / act 4).",
 					"moves": [
 						{
 							"name": "Corrupt",
