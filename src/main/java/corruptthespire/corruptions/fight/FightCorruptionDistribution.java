@@ -50,24 +50,24 @@ public class FightCorruptionDistribution {
         if ((fightType == FightType.Easy || fightType == FightType.Hard) && !Cor.flags.hadFirstCorruptedNormalMonsterFight) {
             distribution.removeIf(d -> d.size != FightCorruptionSize.S);
         }
-        if (AbstractDungeon.getCurrRoom().monsters.monsters.size() >= 3) {
+        if (AbstractDungeon.getCurrRoom().monsters.monsters.size() >= 3 || hasMonster("Elementarium:ElementalPortal") || hasMonster("Abyss:PrimevalQueen")) {
             distribution.removeIf(d -> isMinionCorruption(d.corruptionType));
         }
         if (AbstractDungeon.getCurrRoom().monsters.monsters.stream().anyMatch(m -> m.id.equals(Cultist.ID))) {
             distribution.removeIf(d -> d.corruptionType == FightCorruptionType.Ritual);
         }
-        if (AbstractDungeon.getCurrRoom().monsters.monsters.stream().anyMatch(m -> m.id.equals("Menagerie:MaskedSummoner"))) {
+        if (hasMonster("Menagerie:MaskedSummoner")) {
             distribution.removeIf(d -> d.corruptionType == FightCorruptionType.Metallicize);
             distribution.removeIf(d -> d.corruptionType == FightCorruptionType.Malleable);
             distribution.removeIf(d -> d.corruptionType == FightCorruptionType.Buffer);
         }
-        if (AbstractDungeon.getCurrRoom().monsters.monsters.stream().anyMatch(m -> m.id.equals(AwakenedOne.ID))) {
+        if (hasMonster(AwakenedOne.ID)) {
             distribution.removeIf(d -> d.corruptionType == FightCorruptionType.Curiosity);
         }
-        if (AbstractDungeon.getCurrRoom().monsters.monsters.stream().anyMatch(m -> m.id.equals(Donu.ID))) {
+        if (hasMonster(Donu.ID)) {
             distribution.removeIf(d -> d.corruptionType == FightCorruptionType.Artifact);
         }
-        if (actNum == 4 && fightType == FightType.Boss && AbstractDungeon.getCurrRoom().monsters.monsters.stream().noneMatch(m -> m.id.equals(CorruptHeart.ID))) {
+        if (actNum == 4 && fightType == FightType.Boss && !hasMonster(CorruptHeart.ID)) {
             FightCorruptionDistributionInfo strengthCorruption = null;
             for (FightCorruptionDistributionInfo d : distribution) {
                 if (d.corruptionType == FightCorruptionType.Strength) {
@@ -81,7 +81,10 @@ public class FightCorruptionDistribution {
                 distribution.add(new FightCorruptionDistributionInfo(strengthCorruption.corruptionType, strengthCorruption.size, strengthCorruption.weight, strengthCorruption.amount * strengthMultiplierForNonHeartBosses));
             }
         }
+    }
 
+    private static boolean hasMonster(String id) {
+        return AbstractDungeon.getCurrRoom().monsters.monsters.stream().anyMatch(m -> m.id.equals(id));
     }
 
     private static boolean isMinionCorruption(FightCorruptionType f) {
