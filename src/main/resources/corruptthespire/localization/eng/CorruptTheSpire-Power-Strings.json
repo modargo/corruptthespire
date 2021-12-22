@@ -38,7 +38,7 @@
   "CorruptTheSpire:PriceOfKnowledge": {
     "NAME": "Price of Knowledge",
     "DESCRIPTIONS": [
-      "Whenever you draw a card other than your initial cards for each turn, discard a card."
+      "Whenever you draw a card other than your initial cards for each turn, discard a card. If your hand becomes empty, you cannot draw cards this turn."
     ]
   },
   "CorruptTheSpire:TormentingShackles": {

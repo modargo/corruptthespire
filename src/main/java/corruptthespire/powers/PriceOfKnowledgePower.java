@@ -1,5 +1,6 @@
 package corruptthespire.powers;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -9,6 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.NoDrawPower;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.actions.EnablePriceOfKnowledgeAction;
 
@@ -52,6 +54,16 @@ public class PriceOfKnowledgePower extends AbstractPower {
     public void onCardDraw(AbstractCard c) {
         if (this.active) {
             this.addToTop(new DiscardAction(AbstractDungeon.player, AbstractDungeon.player, 1, false));
+        }
+    }
+
+    public void onEmptyHand() {
+        if (this.active) {
+            AbstractPower noDrawPower = new NoDrawPower(AbstractDungeon.player);
+            // Because this is an extension of the Price of Knowledge debuff that is already on the player,
+            // we want this to bypass artifact and always be applied
+            noDrawPower.type = PowerType.BUFF;
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, noDrawPower));
         }
     }
 
