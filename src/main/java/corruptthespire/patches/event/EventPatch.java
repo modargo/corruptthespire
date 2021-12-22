@@ -32,10 +32,16 @@ public class EventPatch {
 
             if (corruptionType == EventCorruptionType.Corrupted) {
                 event = EventCorruption.handleCorruptedEvent(CorruptedEventType.Corrupted);
+                if (event == null) {
+                    event = EventCorruption.handleFragment();
+                }
             }
 
             if (corruptionType == EventCorruptionType.Chaotic) {
                 event = EventCorruption.handleCorruptedEvent(CorruptedEventType.Chaotic);
+                if (event == null) {
+                    event = EventCorruption.handleFragment();
+                }
             }
 
             if (corruptionType == EventCorruptionType.Harbinger) {

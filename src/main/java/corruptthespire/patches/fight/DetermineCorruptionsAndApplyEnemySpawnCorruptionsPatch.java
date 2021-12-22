@@ -14,6 +14,9 @@ import java.util.ArrayList;
 @SpirePatch(clz = MonsterRoom.class, method = "onPlayerEntry")
 @SpirePatch(clz = MonsterRoomElite.class, method = "onPlayerEntry")
 @SpirePatch(clz = MonsterRoomBoss.class, method = "onPlayerEntry")
+@SpirePatch(cls = "ruina.rooms.RuinaMonsterRoom", method = "onPlayerEntry", optional = true)
+@SpirePatch(cls = "paleoftheancients.rooms.FixedMonsterRoom", method = "onPlayerEntry", optional = true)
+@SpirePatch(cls = "infinitespire.rooms.NightmareEliteRoom", method = "onPlayerEntry", optional = true)
 public class DetermineCorruptionsAndApplyEnemySpawnCorruptionsPatch {
     @SpirePostfixPatch
     public static void applySpawnEnemyCorruptions(AbstractRoom __instance) {

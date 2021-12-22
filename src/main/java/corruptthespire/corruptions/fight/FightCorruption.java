@@ -39,12 +39,12 @@ public class FightCorruption {
 
     public static void determineCorruptions(AbstractRoom room) {
         FightType fightType = getFightType(room);
-        FightCorruptionInfo corruptionInfo = new FightCorruptionDistribution().roll(AbstractDungeon.actNum, fightType);
+        FightCorruptionInfo corruptionInfo = new FightCorruptionDistribution().roll(Cor.getActNum(), fightType);
         FightCorruptionInfosField.corruptionInfos.set(room, Collections.singletonList(corruptionInfo));
     }
 
     public static void addRewards() {
-        if (AbstractDungeon.actNum >= 3 && AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) {
+        if (Cor.getActNum() >= 3 && AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) {
             return;
         }
         List<FightCorruptionInfo> corruptionInfos = FightCorruptionInfosField.corruptionInfos.get(AbstractDungeon.getCurrRoom());
@@ -67,8 +67,8 @@ public class FightCorruption {
             fightType = FightType.Elite;
         }
         else {
-            int numEasyFights = AbstractDungeon.actNum == 1 ? 3 : 2;
-            fightType = Cor.flags.normalMonsterCount > numEasyFights ? FightType.Hard : FightType.Easy;
+            int numEasyFights = Cor.getRealActNum() == 1 ? 3 : 2;
+            fightType = Cor.getActNum() == 4 || Cor.flags.normalMonsterCount > numEasyFights ? FightType.Hard : FightType.Easy;
             logger.info("Normal monster count: " + Cor.flags.normalMonsterCount + ", fight type: " + fightType);
         }
 
@@ -167,9 +167,10 @@ public class FightCorruption {
         float y = c.y;
         switch (corruptionInfo.corruptionType) {
             case CorruptionManifestMinion:
-                CorruptionManifest.Version version = AbstractDungeon.actNum <= 1 ? CorruptionManifest.Version.Act1
-                        : AbstractDungeon.actNum == 2 ? CorruptionManifest.Version.Act2
-                        : AbstractDungeon.actNum == 3 ? CorruptionManifest.Version.Act3
+                int actNum = Cor.getActNum();
+                CorruptionManifest.Version version = actNum <= 1 ? CorruptionManifest.Version.Act1
+                        : actNum == 2 ? CorruptionManifest.Version.Act2
+                        : actNum == 3 ? CorruptionManifest.Version.Act3
                         : CorruptionManifest.Version.Act4;
                 return new CorruptionManifest(x, y, version);
             case LouseMinion:

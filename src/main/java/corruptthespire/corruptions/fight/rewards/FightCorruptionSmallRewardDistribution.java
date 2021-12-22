@@ -25,7 +25,7 @@ public class FightCorruptionSmallRewardDistribution extends AbstractCorruptionDi
         if (!Cor.flags.hadFirstCorruptedNormalMonsterFight) {
             distribution.removeIf(d -> d.corruption != FightCorruptionRewardTypes.Small.CorruptedCard);
         }
-        if (AbstractDungeon.actNum == 4) {
+        if (Cor.getActNum() == 4) {
             distribution.removeIf(d -> d.corruption == FightCorruptionRewardTypes.Small.Fragment || d.corruption == FightCorruptionRewardTypes.Small.Gold);
         }
         return distribution;

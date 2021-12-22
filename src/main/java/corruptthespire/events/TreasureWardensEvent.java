@@ -117,7 +117,7 @@ public class TreasureWardensEvent extends MaskedBandits {
     }
 
     private String getEncounterKey() {
-        switch (AbstractDungeon.actNum) {
+        switch (Cor.getActNum()) {
             case 1: return Encounters.TREASURE_WARDENS_ACT1;
             case 2: return Encounters.TREASURE_WARDENS_ACT2;
             default: return Encounters.TREASURE_WARDENS_ACT3;

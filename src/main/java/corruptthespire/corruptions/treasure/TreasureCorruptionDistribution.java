@@ -25,13 +25,14 @@ public class TreasureCorruptionDistribution extends AbstractCorruptionDistributi
 
     @Override
     protected List<CorruptionDistributionInfo<TreasureCorruptionType>> adjustDistribution(List<CorruptionDistributionInfo<TreasureCorruptionType>> distribution) {
+        boolean isAct4 = Cor.getActNum() == 4;
         if (AbstractDungeon.player.hasRelic(OminousBracelet.ID)) {
             distribution.removeIf(di -> di.corruption == TreasureCorruptionType.Fragment);
         }
-        if (Cor.flags.seenTreasureWardens || AbstractDungeon.floorNum <= 6) {
+        if (Cor.flags.seenTreasureWardens || AbstractDungeon.floorNum <= 6 || isAct4) {
             distribution.removeIf(di -> di.corruption == TreasureCorruptionType.Wardens);
         }
-        if (Cor.flags.seenSealedChest) {
+        if (Cor.flags.seenSealedChest || isAct4) {
             distribution.removeIf(di -> di.corruption == TreasureCorruptionType.Sealed);
         }
         if (Cor.flags.seenVault) {

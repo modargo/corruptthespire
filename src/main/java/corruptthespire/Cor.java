@@ -1,7 +1,8 @@
 package corruptthespire;
 
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.random.Random;
@@ -14,6 +15,8 @@ import corruptthespire.relics.corrupted.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -49,10 +52,10 @@ public class Cor {
     public static void addCorruption(AbstractRoom room) {
         int corruption;
         Class<? extends AbstractRoom> c = room.getClass();
-        if (c == MonsterRoom.class) {
+        if (c == MonsterRoom.class || c.getName().equals("ruina.rooms.RuinaMonsterRoom") || c.getName().equals("paleoftheancients.rooms.FixedMonsterRoom")) {
             corruption = CORRUPTION_FOR_NORMAL_FIGHT;
         }
-        else if (c == MonsterRoomElite.class) {
+        else if (c == MonsterRoomElite.class || c.getName().equals("infinitespire.rooms.NightmareEliteRoom")) {
             corruption = CORRUPTION_FOR_ELITE_FIGHT;
         }
         else if (c == MonsterRoomBoss.class) {
@@ -89,6 +92,69 @@ public class Cor {
         Cor.corruption += corruption;
         Cor.display.update();
         Cor.display.flash();
+    }
+
+    //Gets the act number that we want to use for most purposes
+    //This is always in the range 1-4, using the following logic:
+    //* Acts with number >4 return 4
+    //* Acts 1-3 in the second cycle and beyond of endless mode return 3
+    //* Everything else returns the normal act number
+    public static int getActNum() {
+        return getActNumInfo().corruptionActNum;
+    }
+
+    public static int getRealActNum() {
+        return getActNumInfo().realActNum;
+    }
+
+    private static ActNumInfo getActNumInfo() {
+        ActNumInfo actNumInfo = new ActNumInfo();
+        if (Loader.isModLoaded("actlikeit")) {
+            // If ActLikeIt is loaded, it has the real act number for us, and
+            // we can check that against AbstractDungeon.actNum
+            int realActNum;
+            try {
+                Class<?> clz = Class.forName("actlikeit.savefields.BehindTheScenesActNum");
+                Method m = clz.getMethod("getActNum");
+                realActNum = (int)m.invoke(null);
+            } catch (IllegalAccessException | ClassNotFoundException | NoSuchMethodException | InvocationTargetException e) {
+                e.printStackTrace();
+                throw new RuntimeException("Failed when trying to call BehindTheScenesActNum.getActNum()", e);
+            }
+            if (realActNum != AbstractDungeon.actNum) {
+                actNumInfo.corruptionActNum = realActNum < 4 ? 3 : 4;
+            }
+            else {
+                actNumInfo.corruptionActNum = Math.min(AbstractDungeon.actNum, 4);
+            }
+            actNumInfo.realActNum = realActNum;
+        }
+        else {
+            // If ActLikeIt isn't loaded, we can safely enumerate the possible acts
+            // and use that to determine the corruption and real act numbers
+            actNumInfo.corruptionActNum = AbstractDungeon.id.equals(TheEnding.ID) ? 4
+                : AbstractDungeon.actNum < 4 ? AbstractDungeon.actNum
+                : 3;
+            switch (AbstractDungeon.id) {
+                case Exordium.ID:
+                    actNumInfo.realActNum = 1;
+                    break;
+                case TheCity.ID:
+                case "theJungle:Jungle":
+                    actNumInfo.realActNum = 2;
+                    break;
+                case TheBeyond.ID:
+                    actNumInfo.realActNum = 3;
+                    break;
+                case TheEnding.ID:
+                    actNumInfo.realActNum = 4;
+                    break;
+                default:
+                    throw new RuntimeException("Unrecognized act ID: " + AbstractDungeon.id + ". When ActLikeIt isn't loaded, the only possible acts should be the vanilla four and The Jungle.");
+            }
+        }
+
+        return actNumInfo;
     }
 
     public static int getFragmentCount() {
@@ -140,6 +206,12 @@ public class Cor {
     }
 
     public static void fillCorruptedRelicPool(boolean checkPlayerRelics) {
+        if (checkPlayerRelics) {
+            logger.info("Refilling corrupted relic pool with relics the player doesn't already have");
+        }
+        else {
+            logger.info("Initializing corrupted relic pool");
+        }
         ArrayList<String> corruptedRelics = Cor.getAllCorruptedRelics().stream()
                 .filter(r -> !checkPlayerRelics || !AbstractDungeon.player.hasRelic(r.relicId))
                 .map(r -> r.relicId)
@@ -166,5 +238,10 @@ public class Cor {
         corruptedRelics.add(new RustedOrichalcum());
         corruptedRelics.add(new UnreliableCharm());
         return corruptedRelics;
+    }
+
+    private static class ActNumInfo {
+        public int corruptionActNum;
+        public int realActNum;
     }
 }

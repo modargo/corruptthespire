@@ -19,6 +19,26 @@ import corruptthespire.map.CorruptMap;
         method = "makeMap",
         optional = true
 )
+@SpirePatch(
+        cls = "ruina.dungeons.UninvitedGuests",
+        method = "makeMap",
+        optional = true
+)
+@SpirePatch(
+        cls = "ruina.dungeons.UninvitedGuestsShort",
+        method = "makeMap",
+        optional = true
+)
+@SpirePatch(
+        cls = "ruina.dungeons.BlackSilence",
+        method = "makeMap",
+        optional = true
+)
+@SpirePatch(
+        cls = "paleoftheancients.dungeons.PaleOfTheAncients",
+        method = "makeMap",
+        optional = true
+)
 public class GenerateMapPatch {
     @SpirePostfixPatch
     public static void MarkCorruptedNodes() {

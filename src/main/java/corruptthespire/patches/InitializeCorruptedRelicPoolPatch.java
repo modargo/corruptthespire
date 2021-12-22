@@ -9,6 +9,8 @@ import corruptthespire.Cor;
 public class InitializeCorruptedRelicPoolPatch {
     @SpirePostfixPatch
     public static void InitializeCorruptedRelicPool(AbstractDungeon __instance) {
-        Cor.fillCorruptedRelicPool(false);
+        if (AbstractDungeon.floorNum < 1) {
+            Cor.fillCorruptedRelicPool(false);
+        }
     }
 }

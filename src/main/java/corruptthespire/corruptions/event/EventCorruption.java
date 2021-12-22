@@ -62,6 +62,7 @@ public class EventCorruption {
     }
 
     private static boolean keepEvent(String e) {
+        int actNum = Cor.getActNum();
         if (e.equals(MindsEye.ID)) {
             return !ModHelper.isModEnabled(Diverse.ID) && !AbstractDungeon.player.hasRelic(PrismaticShard.ID);
         }
@@ -71,7 +72,7 @@ public class EventCorruption {
         }
 
         if (e.equals(NightmareBloom.ID)) {
-            return AbstractDungeon.actNum == 3 && AbstractDungeon.eventList.contains(MindBloom.ID);
+            return Cor.getRealActNum() == 3 && AbstractDungeon.eventList.contains(MindBloom.ID);
         }
 
         if (e.equals(SinisterTemple.ID)) {
@@ -91,15 +92,15 @@ public class EventCorruption {
         }
 
         if (e.equals(IncantationOfCorruption.ID)) {
-            return AbstractDungeon.actNum > 1;
+            return actNum > 1;
         }
 
         if (e.equals(CorruptedShrine.ID)) {
-            return AbstractDungeon.actNum > 1;
+            return actNum > 1;
         }
 
         if (e.equals(TheDevice.ID)) {
-            return AbstractDungeon.floorNum > 6;
+            return AbstractDungeon.floorNum > 6 && actNum != 4;
         }
 
         if (e.equals(Divergence.ID)) {

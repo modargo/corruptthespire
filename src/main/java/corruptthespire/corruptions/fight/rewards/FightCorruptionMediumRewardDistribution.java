@@ -1,6 +1,7 @@
 package corruptthespire.corruptions.fight.rewards;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import corruptthespire.Cor;
 import corruptthespire.corruptions.AbstractCorruptionDistribution;
 import corruptthespire.corruptions.CorruptionDistributionInfo;
 
@@ -20,7 +21,7 @@ public class FightCorruptionMediumRewardDistribution extends AbstractCorruptionD
 
     @Override
     protected List<CorruptionDistributionInfo<FightCorruptionRewardTypes.Medium>> adjustDistribution(List<CorruptionDistributionInfo<FightCorruptionRewardTypes.Medium>> distribution) {
-        if (AbstractDungeon.actNum == 4) {
+        if (Cor.getActNum() == 4) {
             distribution.removeIf(d -> d.corruption == FightCorruptionRewardTypes.Medium.Fragments || d.corruption == FightCorruptionRewardTypes.Medium.Gold);
         }
         return distribution;

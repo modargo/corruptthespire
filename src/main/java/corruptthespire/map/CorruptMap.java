@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.map.MapRoomNode;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.rooms.TreasureRoom;
+import corruptthespire.Cor;
 import corruptthespire.patches.CorruptedField;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -28,7 +29,7 @@ public class CorruptMap {
     }
 
     public static void markCorruptedNodes() {
-        int actNum = AbstractDungeon.actNum;
+        int actNum = Cor.getActNum();
         isBossCorrupted = actNum >= 3;
         ArrayList<MapRoomNode> potentialCorruptNodes = new ArrayList<>();
         for (int i = 0; i < AbstractDungeon.map.size(); i++) {

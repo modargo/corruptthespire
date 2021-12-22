@@ -25,7 +25,7 @@ public class EventCorruptionDistribution extends AbstractCorruptionDistribution<
         if (AbstractDungeon.player.hasRelic(OminousBracelet.ID)) {
             distribution.removeIf(di -> di.corruption == EventCorruptionType.Fragment);
         }
-        if (Cor.flags.seenHarbinger || AbstractDungeon.actNum != 2) {
+        if (Cor.flags.seenHarbinger || Cor.getRealActNum() != 2) {
             distribution.removeIf(di -> di.corruption == EventCorruptionType.Harbinger);
         }
         return distribution;

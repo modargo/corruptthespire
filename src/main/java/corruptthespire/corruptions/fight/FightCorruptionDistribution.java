@@ -15,6 +15,8 @@ import java.util.List;
 public class FightCorruptionDistribution {
     private static final Logger logger = LogManager.getLogger(FightCorruptionDistribution.class.getName());
     public FightCorruptionInfo roll(int actNum, FightType fightType) {
+        logger.info("Rolling corruption for act and fight type: " + actNum + ", " + fightType.name());
+
         if (actNum < 1 || actNum > 4) {
             throw new RuntimeException("actNum must be between 1 and 4. Received: " + actNum);
         }
