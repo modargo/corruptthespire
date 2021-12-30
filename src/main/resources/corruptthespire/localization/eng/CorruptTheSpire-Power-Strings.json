@@ -31,8 +31,8 @@
   "CorruptTheSpire:DevilsDue": {
     "NAME": "Devil's Due",
     "DESCRIPTIONS": [
-      "At the start of combat, move all cards other than basics, commons, and curses to the discard pile, then add #b{0} #yBedeviled to your draw pile.",
-      "At the start of combat, move all cards other than basics, commons, and curses to the discard pile, then add #b{0} #yBedeviled to your draw and discard piles."
+      "At the start of combat, move all cards other than #yBasics, #yCommons, and #yCurses to the discard pile, then add #b{0} #yBedeviled to your draw pile.",
+      "At the start of combat, move all cards other than #yBasics, #yCommons, and #yCurses to the discard pile, then add #b{0} #yBedeviled to your draw and discard piles."
     ]
   },
   "CorruptTheSpire:PriceOfKnowledge": {
