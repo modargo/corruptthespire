@@ -25,7 +25,7 @@
   "CorruptTheSpire:DragonsHeart": {
     "NAME": "Dragon's Heart",
     "DESCRIPTIONS": [
-      "When this enemy dies, all other enemies gain #b{0} Strength and #b{0} Metallicize."
+      "When this enemy dies, all other enemies gain #b{0} #yStrength and #b{0} #yMetallicize."
     ]
   },
   "CorruptTheSpire:DevilsDue": {
