@@ -8,12 +8,12 @@
   "CorruptTheSpire:FatedCard": {
     "NAME": "Fated Card",
     "DESCRIPTIONS": [
-      "At the start of your next turn, add a random common card to your hand.",
-      "At the start of your next turn, add a random uncommon card to your hand.",
-      "At the start of your next turn, add a random rare card to your hand.",
-      "At the start of your turn #b{0} turns from now, add a random common card to your hand.",
-      "At the start of your turn #b{0} turns from now, add a random uncommon card to your hand.",
-      "At the start of your turn #b{0} turns from now, add a random rare card to your hand."
+      "At the start of your next turn, add a random #yCommon card to your hand.",
+      "At the start of your next turn, add a random #yUncommon card to your hand.",
+      "At the start of your next turn, add a random #yRare card to your hand.",
+      "At the start of your turn #b{0} turns from now, add a random #yCommon card to your hand.",
+      "At the start of your turn #b{0} turns from now, add a random #yUncommon card to your hand.",
+      "At the start of your turn #b{0} turns from now, add a random #yRare card to your hand."
     ]
   },
   "CorruptTheSpire:ShimmeringShield": {
