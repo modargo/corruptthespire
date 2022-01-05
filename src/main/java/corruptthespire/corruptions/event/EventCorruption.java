@@ -34,6 +34,10 @@ public class EventCorruption {
         return new HarbingerEvent();
     }
 
+    public static AbstractEvent handleDevourer() {
+        return new DevourerEvent();
+    }
+
     public static AbstractEvent handleCorruptedEvent(CorruptedEventType corruptedEventType) {
         ArrayList<String> possibleEvents = filterEvents(Cor.corruptedEventList, corruptedEventType);
 

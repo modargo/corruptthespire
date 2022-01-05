@@ -4,5 +4,6 @@ public enum EventCorruptionType {
     Fragment,
     Corrupted,
     Chaotic,
-    Harbinger
+    Harbinger,
+    Devourer
 }

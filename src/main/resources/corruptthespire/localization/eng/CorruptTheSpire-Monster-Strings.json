@@ -69,5 +69,37 @@
       "Alien Claws"
     ],
     "NAME": "Harbinger"
+  },
+  "CorruptTheSpire:TranscendentDevourer": {
+    "MOVES": [
+      "Salivate",
+      "Nibble",
+      "Gorge"
+    ],
+    "NAME": "Transcendent Devourer"
+  },
+  "CorruptTheSpire:LesserDevourerBlue": {
+    "MOVES": [
+      "Chomp",
+      "Bad Breath",
+      "Digest"
+    ],
+    "NAME": "Lesser Devourer"
+  },
+  "CorruptTheSpire:LesserDevourerBrown": {
+    "MOVES": [
+      "Chomp",
+      "Bad Breath",
+      "Digest"
+    ],
+    "NAME": "Lesser Devourer"
+  },
+  "CorruptTheSpire:LesserDevourerGreen": {
+    "MOVES": [
+      "Chomp",
+      "Bad Breath",
+      "Digest"
+    ],
+    "NAME": "Lesser Devourer"
   }
 }

@@ -161,5 +161,13 @@
     "NAME": "Journey Beyond",
     "DESCRIPTION": "Gain !M! Dexterity. NL Choose 1 of 3 random cards to add into your hand.",
     "UPGRADE_DESCRIPTION": "Gain !M! Dexterity. NL Choose 1 of 3 random cards to add into your hand. It costs {0} less this combat."
+  },
+  "CorruptTheSpire:Contagion": {
+    "NAME": "Contagion",
+    "DESCRIPTION": "Exhaust. NL At the end of your turn, add a *Contagion to your discard pile."
+  },
+  "CorruptTheSpire:BadBreath": {
+    "NAME": "Bad Breath",
+    "DESCRIPTION": "Ethereal. NL Exhaust. NL At the end of your turn, gain 1 Frail."
   }
 }

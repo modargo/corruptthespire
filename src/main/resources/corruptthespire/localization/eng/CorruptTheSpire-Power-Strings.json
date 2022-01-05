@@ -132,5 +132,16 @@
   "CorruptTheSpire:WorldAblaze": {
     "NAME": "World Ablaze",
     "DESCRIPTIONS": ["At the end of each round, shuffle #b{0} #yBurn into your draw pile."]
+  },
+  "CorruptTheSpire:ProtectiveMaw": {
+    "NAME": "Protective Maw",
+    "DESCRIPTIONS": ["Takes #b{0}% less damage. Killing #yLesser #yDevourers will reduce this protection."]
+  },
+  "CorruptTheSpire:FetidBody": {
+    "NAME": "Fetid Body",
+    "DESCRIPTIONS": [
+      "For every #b{0} damage this enemy takes, shuffle #b1 #ySlimed into your draw pile.",
+      "For every #b{0} damage this enemy takes, add #b1 #ySlimed to the top of your draw pile."
+    ]
   }
 }

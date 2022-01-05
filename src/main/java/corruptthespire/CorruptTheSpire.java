@@ -27,6 +27,7 @@ import corruptthespire.cards.corrupted.CorruptedCardColor;
 import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.events.CorruptedEventInfo;
 import corruptthespire.events.CorruptedEventUtil;
+import corruptthespire.events.DevourerEvent;
 import corruptthespire.events.HarbingerEvent;
 import corruptthespire.monsters.*;
 import corruptthespire.relics.FragmentOfCorruption;
@@ -110,6 +111,13 @@ public class CorruptTheSpire implements
                         new SpatialPhantasm(250.0F, 400.0F),
                         new TemporalPhantasm(250.0F, 0.0F)
                 }));
+        BaseMod.addMonster(Encounters.DEVOURER, () -> new MonsterGroup(
+                new AbstractMonster[] {
+                        new LesserDevourerGreen(-500.0F, 0.0F),
+                        new LesserDevourerBrown(-300.0F, 0.0F),
+                        new LesserDevourerBlue(-100.0F, 0.0F),
+                        new TranscendentDevourer(160.0F, 0.0F)
+                }));
         BaseMod.addMonster(PandemoniumArchfiend.ID, () -> new PandemoniumArchfiend(0.0F, 0.0F));
         BaseMod.addMonster(Encounters.TREASURE_WARDENS_ACT1, () -> new MonsterGroup(
                 new AbstractMonster[] {
@@ -134,6 +142,7 @@ public class CorruptTheSpire implements
         // These events are only encountered through our own special logic, but we register them all here for ease of
         // debugging (thus the conditions that make them never show up)
         addEvent(HarbingerEvent.ID, HarbingerEvent.class);
+        addEvent(DevourerEvent.ID, DevourerEvent.class);
         for (Map.Entry<String, CorruptedEventInfo> e : CorruptedEventUtil.getAllCorruptedEvents().entrySet()) {
             addEvent(e.getKey(), e.getValue().cls);
         }
@@ -170,6 +179,8 @@ public class CorruptTheSpire implements
         BaseMod.addCard(new WheelOfFortune());
         BaseMod.addCard(new Bedeviled());
         BaseMod.addCard(new Fated());
+        BaseMod.addCard(new Contagion());
+        BaseMod.addCard(new BadBreath());
         ArrayList<AbstractCard> corruptedCards = CorruptedCardUtil.getAllCorruptedCardInfos(true)
                 .values()
                 .stream()
@@ -187,6 +198,8 @@ public class CorruptTheSpire implements
         BaseMod.addRelic(new HarbingersClaw(), RelicType.SHARED);
         BaseMod.addRelic(new HarbingersSkull(), RelicType.SHARED);
         BaseMod.addRelic(new ShimmeringFan(), RelicType.SHARED);
+        BaseMod.addRelic(new TranscendentEye(), RelicType.SHARED);
+        BaseMod.addRelic(new TranscendentPet(), RelicType.SHARED);
         BaseMod.addRelic(new FragmentOfCorruption(), RelicType.SHARED);
         for (AbstractRelic r : Cor.getAllCorruptedRelics()) {
             BaseMod.addRelic(r, RelicType.SHARED);

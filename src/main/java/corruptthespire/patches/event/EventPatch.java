@@ -48,6 +48,10 @@ public class EventPatch {
                 event = EventCorruption.handleHarbinger();
             }
 
+            if (corruptionType == EventCorruptionType.Devourer) {
+                event = EventCorruption.handleDevourer();
+            }
+
             if (event != null) {
                 __instance.event = event;
                 event.onEnterRoom();

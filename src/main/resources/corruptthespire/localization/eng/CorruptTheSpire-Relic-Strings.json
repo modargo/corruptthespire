@@ -112,5 +112,15 @@
     "NAME": "Abyssal Orb",
     "FLAVOR": "It gazes back at you.",
     "DESCRIPTIONS": ["At the start of your turn, apply #b{0} #yAbysstouched to a random enemy. Whenever you apply #yAbysstouched, apply #b{1} additional #yAbysstouched."]
+  },
+  "CorruptTheSpire:TranscendentPet": {
+    "NAME": "Transcendent Pet",
+    "FLAVOR": "Surprisingly cute, in a grotesque sort of way.",
+    "DESCRIPTIONS": ["At the start of your 2nd turn, apply #b{0} Weak, #b{1} Vulnerable, and #b{2} Abysstouched to ALL enemies."]
+  },
+  "CorruptTheSpire:TranscendentEye": {
+    "NAME": "Transcendent Eye",
+    "FLAVOR": "The creature's eye still seeks out prey.",
+    "DESCRIPTIONS": ["At the start of your 3nd turn, Scry #b{0} and draw #b{1} card."]
   }
 }

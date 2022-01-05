@@ -16,7 +16,8 @@ public class EventCorruptionDistribution extends AbstractCorruptionDistribution<
         d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Fragment, 10));
         d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Corrupted, 20));
         d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Chaotic, 20));
-        d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Harbinger, 50));
+        d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Harbinger, 25));
+        d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Devourer, 25));
         return d;
     }
 
@@ -27,6 +28,7 @@ public class EventCorruptionDistribution extends AbstractCorruptionDistribution<
         }
         if (Cor.flags.seenHarbinger || Cor.getRealActNum() != 2) {
             distribution.removeIf(di -> di.corruption == EventCorruptionType.Harbinger);
+            distribution.removeIf(di -> di.corruption == EventCorruptionType.Devourer);
         }
         return distribution;
     }
