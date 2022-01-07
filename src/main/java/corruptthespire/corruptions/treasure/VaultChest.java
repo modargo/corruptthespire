@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.Cauldron;
 import com.megacrit.cardcrawl.relics.Orrery;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rewards.chests.AbstractChest;
@@ -138,8 +139,8 @@ public class VaultChest extends AbstractChest {
                 break;
             case ShopRelic:
                 String shopRelicKey = AbstractDungeon.returnRandomRelicKey(AbstractRelic.RelicTier.SHOP);
-                //Orrery causes crashes when picked in the treasure vault rewards screen
-                if (shopRelicKey.equals(Orrery.ID)) {
+                //Orrery and Cauldron cause crashes when picked in the treasure vault rewards screen
+                while (shopRelicKey.equals(Orrery.ID) || shopRelicKey.equals(Cauldron.ID)) {
                     shopRelicKey = AbstractDungeon.returnRandomRelicKey(AbstractRelic.RelicTier.SHOP);
                 }
                 AbstractDungeon.getCurrRoom().addRelicToRewards(RelicLibrary.getRelic(shopRelicKey));
