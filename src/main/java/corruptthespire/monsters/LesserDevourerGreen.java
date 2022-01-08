@@ -26,14 +26,14 @@ public class LesserDevourerGreen extends CustomMonster
     private static final byte BAD_BREATH_MOVE = 2;
     private static final byte DIGEST_MOVE = 3;
     private static final int CHOMP_DAMAGE = 5;
-    private static final int A3_CHOMP_DAMAGE = 6;
+    private static final int A2_CHOMP_DAMAGE = 6;
     private static final int CHOMP_DAZED = 1;
     private static final int BAD_BREATH_STATUSES = 1;
     private static final int DIGEST_BLOCK = 6;
-    private static final int A8_DIGEST_BLOCK = 8;
+    private static final int A7_DIGEST_BLOCK = 8;
     private static final int DIGEST_WEAK = 1;
     private static final int HP = 30;
-    private static final int A8_HP = 35;
+    private static final int A7_HP = 35;
     private final int chompDamage;
     private final int digestBlock;
 
@@ -45,15 +45,15 @@ public class LesserDevourerGreen extends CustomMonster
         super(LesserDevourerGreen.NAME, ID, HP, -5.0F, 0, 130.0f, 130.0f, IMG, x, y);
         this.type = EnemyType.ELITE;
         if (AbstractDungeon.ascensionLevel >= 8) {
-            this.setHp(A8_HP);
-            this.digestBlock = A8_DIGEST_BLOCK;
+            this.setHp(A7_HP);
+            this.digestBlock = A7_DIGEST_BLOCK;
         } else {
             this.setHp(HP);
             this.digestBlock = DIGEST_BLOCK;
         }
 
         if (AbstractDungeon.ascensionLevel >= 3) {
-            this.chompDamage = A3_CHOMP_DAMAGE;
+            this.chompDamage = A2_CHOMP_DAMAGE;
         } else {
             this.chompDamage = CHOMP_DAMAGE;
         }
@@ -69,7 +69,7 @@ public class LesserDevourerGreen extends CustomMonster
             case CHOMP_MOVE:
                 this.addToBot(new AnimateFastAttackAction(this));
                 this.addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.POISON));
-                if (AbstractDungeon.ascensionLevel >= 18) {
+                if (AbstractDungeon.ascensionLevel >= 17) {
                     this.addToBot(new MakeTempCardInDrawPileAction(new Dazed(), CHOMP_DAZED, true, true));
                 }
                 else {

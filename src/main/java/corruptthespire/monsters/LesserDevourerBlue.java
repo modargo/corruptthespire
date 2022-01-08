@@ -27,15 +27,15 @@ public class LesserDevourerBlue extends CustomMonster
     private static final byte BAD_BREATH_MOVE = 2;
     private static final byte DIGEST_MOVE = 3;
     private static final int CHOMP_DAMAGE = 5;
-    private static final int A3_CHOMP_DAMAGE = 6;
+    private static final int A2_CHOMP_DAMAGE = 6;
     private static final int CHOMP_BLOCK = 6;
-    private static final int A8_CHOMP_BLOCK = 8;
+    private static final int A7_CHOMP_BLOCK = 8;
     private static final int BAD_BREATH_HEAL = 2;
-    private static final int A18_BAD_BREATH_HEAL = 4;
+    private static final int A17_BAD_BREATH_HEAL = 4;
     private static final int DIGEST_DAMAGE = 7;
-    private static final int A3_DIGEST_DAMAGE = 8;
+    private static final int A2_DIGEST_DAMAGE = 8;
     private static final int HP = 30;
-    private static final int A8_HP = 35;
+    private static final int A7_HP = 35;
     private final int chompDamage;
     private final int chompBlock;
     private final int badBreathHeal;
@@ -47,18 +47,18 @@ public class LesserDevourerBlue extends CustomMonster
 
     public LesserDevourerBlue(final float x, final float y) {
         super(LesserDevourerBlue.NAME, ID, HP, -5.0F, 0, 130.0f, 130.0f, IMG, x, y);
-        this.type = EnemyType.ELITE;
-        if (AbstractDungeon.ascensionLevel >= 8) {
-            this.setHp(A8_HP);
-            this.chompBlock = A8_CHOMP_BLOCK;
+        this.type = EnemyType.NORMAL;
+        if (AbstractDungeon.ascensionLevel >= 7) {
+            this.setHp(A7_HP);
+            this.chompBlock = A7_CHOMP_BLOCK;
         } else {
             this.setHp(HP);
             this.chompBlock = CHOMP_BLOCK;
         }
 
-        if (AbstractDungeon.ascensionLevel >= 3) {
-            this.chompDamage = A3_CHOMP_DAMAGE;
-            this.digestDamage = A3_DIGEST_DAMAGE;
+        if (AbstractDungeon.ascensionLevel >= 2) {
+            this.chompDamage = A2_CHOMP_DAMAGE;
+            this.digestDamage = A2_DIGEST_DAMAGE;
         } else {
             this.chompDamage = CHOMP_DAMAGE;
             this.digestDamage = DIGEST_DAMAGE;
@@ -66,8 +66,8 @@ public class LesserDevourerBlue extends CustomMonster
         this.damage.add(new DamageInfo(this, this.chompDamage));
         this.damage.add(new DamageInfo(this, this.digestDamage));
 
-        if (AbstractDungeon.ascensionLevel >= 18) {
-            this.badBreathHeal = A18_BAD_BREATH_HEAL;
+        if (AbstractDungeon.ascensionLevel >= 17) {
+            this.badBreathHeal = A17_BAD_BREATH_HEAL;
         }
         else {
             this.badBreathHeal = BAD_BREATH_HEAL;
