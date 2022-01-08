@@ -14,6 +14,5 @@ LouseMinion	N	N	M,25,1	N	N	S,25,1	N	N	N	N	N	N	N	N	N	N
 SlimeMinion	N	N	M,25,1	N	N	S,25,1	N	N	N	N	N	N	N	N	N	N
 GremlinMinion	N	N	M,25,1	N	N	S,25,1	N	N	N	N	N	N	N	N	N	N
 RepulsorMinion	N	N	N	N	N	N	M,50,1	N	N	N	M,25,1	N	N	N	N	N
-ByrdMinion	N	N	N	N	N	N	N	N	N	N	N	N	N	N	N	N
 SnakeDaggerMinion	N	N	N	N	N	N	N	N	M,50,1	M,50,1	N	L,100,1	N	N	N	N
 CultistMinion	N	N	N	N	N	N	N	N	N	N	L,25,1	L,100,1	N	N	N	L,100,1

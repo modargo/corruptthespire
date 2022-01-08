@@ -16,7 +16,6 @@ public enum FightCorruptionType {
     SlimeMinion,
     GremlinMinion,
     RepulsorMinion,
-    ByrdMinion,
     SnakeDaggerMinion,
     CultistMinion
 

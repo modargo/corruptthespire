@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.Repulsor;
 import com.megacrit.cardcrawl.monsters.beyond.SnakeDagger;
-import com.megacrit.cardcrawl.monsters.city.Byrd;
 import com.megacrit.cardcrawl.monsters.exordium.Cultist;
 import com.megacrit.cardcrawl.monsters.exordium.GremlinThief;
 import com.megacrit.cardcrawl.monsters.exordium.LouseDefensive;
@@ -181,8 +180,6 @@ public class FightCorruption {
                 return new GremlinThief(x, y);
             case RepulsorMinion:
                 return new Repulsor(x, y);
-            case ByrdMinion:
-                return new Byrd(x, y);
             case SnakeDaggerMinion:
                 return new SnakeDagger(x, y);
             case CultistMinion:

@@ -93,7 +93,6 @@ public class FightCorruptionDistribution {
             || f == FightCorruptionType.SlimeMinion
             || f == FightCorruptionType.GremlinMinion
             || f == FightCorruptionType.RepulsorMinion
-            || f == FightCorruptionType.ByrdMinion
             || f == FightCorruptionType.SnakeDaggerMinion
             || f == FightCorruptionType.CultistMinion;
 
