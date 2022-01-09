@@ -147,5 +147,9 @@
   "CorruptTheSpire:FieryDemise": {
     "NAME": "Fiery Demise",
     "DESCRIPTIONS": ["On death, shuffles #b{0} #yBurn into your draw pile."]
+  },
+  "CorruptTheSpire:HandOfTheAbyss": {
+    "NAME": "Hand of the Abyss",
+    "DESCRIPTIONS": ["Whenever you deal unblocked attack damage, apply #b{0} #yAbysstouched."]
   }
 }

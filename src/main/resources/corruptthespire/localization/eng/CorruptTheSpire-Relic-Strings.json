@@ -122,5 +122,10 @@
     "NAME": "Transcendent Eye",
     "FLAVOR": "The creature's eye still seeks out prey.",
     "DESCRIPTIONS": ["At the start of your 3nd turn, Scry #b{0} and draw #b{1} card."]
+  },
+  "CorruptTheSpire:HideousStatue": {
+    "NAME": "Hideous Statue",
+    "FLAVOR": "A large stone statue of a creature you hope to never see.",
+    "DESCRIPTIONS": ["After every #b{0} combats, receive a corrupted potion reward."]
   }
 }

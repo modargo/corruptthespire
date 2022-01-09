@@ -14,12 +14,18 @@ import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import java.util.ArrayList;
 
 public class ChooseOneCorruptedAction extends AbstractGameAction {
+    private final boolean zeroCost;
     private boolean retrieveCard = false;
 
     public ChooseOneCorruptedAction() {
+        this(1, false);
+    }
+
+    public ChooseOneCorruptedAction(int amount, boolean zeroCost) {
         this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.duration = Settings.ACTION_DUR_FAST;
-        this.amount = 1;
+        this.amount = amount;
+        this.zeroCost = zeroCost;
     }
 
     public void update() {
@@ -30,22 +36,27 @@ public class ChooseOneCorruptedAction extends AbstractGameAction {
         }
         if (!this.retrieveCard) {
             if (AbstractDungeon.cardRewardScreen.discoveryCard != null) {
-                AbstractCard disCard = AbstractDungeon.cardRewardScreen.discoveryCard.makeStatEquivalentCopy();
-                if (AbstractDungeon.player.hasPower(MasterRealityPower.POWER_ID))
-                    disCard.upgrade();
-                disCard.current_x = -1000.0F * Settings.xScale;
-                if (this.amount == 1) {
-                    if (AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(disCard, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
-                    } else {
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(disCard, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+                ArrayList<AbstractCard> cards = new ArrayList<>();
+                for (int i = 0; i < this.amount; i++) {
+                    AbstractCard c = AbstractDungeon.cardRewardScreen.discoveryCard.makeStatEquivalentCopy();
+                    if (AbstractDungeon.player.hasPower(MasterRealityPower.POWER_ID)) {
+                        c.upgrade();
                     }
-                } else if (AbstractDungeon.player.hand.size() + this.amount <= BaseMod.MAX_HAND_SIZE) {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(disCard, Settings.WIDTH / 2.0F - AbstractCard.IMG_WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
-                } else if (AbstractDungeon.player.hand.size() == BaseMod.MAX_HAND_SIZE - 1) {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(disCard, Settings.WIDTH / 2.0F - AbstractCard.IMG_WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
-                } else {
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(disCard, Settings.WIDTH / 2.0F - AbstractCard.IMG_WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+                    if (this.zeroCost) {
+                        c.setCostForTurn(0);
+                    }
+                    c.current_x = -1000.0F * Settings.xScale;
+                    cards.add(c);
+                }
+
+                int handSize = AbstractDungeon.player.hand.size();
+                for (int i = 0; i < cards.size(); i++) {
+                    if (handSize + i + 1 <= BaseMod.MAX_HAND_SIZE) {
+                        AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(cards.get(i), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+                    }
+                    else {
+                        AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(cards.get(i), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+                    }
                 }
                 AbstractDungeon.cardRewardScreen.discoveryCard = null;
             }

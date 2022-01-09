@@ -1,0 +1,21 @@
+{
+  "CorruptTheSpire:AbyssalBrew": {
+    "NAME": "Abyssal Brew",
+    "DESCRIPTIONS": ["Apply #b{0} #yAbysstouched to ALL enemies."]
+  },
+  "CorruptTheSpire:CorruptedPotion": {
+    "NAME": "Corrupted Potion",
+    "DESCRIPTIONS": [
+      "Choose #b1 of #b3 random corrupted cards to add to your hand, it costs #b0 this turn.",
+      "Choose #b1 of #b3 random corrupted cards and add #b{0} copies to your hand, they cost #b0 this turn."
+    ]
+  },
+  "CorruptTheSpire:VoidBomb": {
+    "NAME": "Void Bomb",
+    "DESCRIPTIONS": ["Deal #b{0}% #yCorruption damage."]
+  },
+  "CorruptTheSpire:DarkElixir": {
+    "NAME": "Dark Elixir",
+    "DESCRIPTIONS": ["Gain #b{0} #yStrength and #b{0} #yDexterity. Gain #b{0} #yCorruption."]
+  }
+}

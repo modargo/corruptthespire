@@ -23,5 +23,10 @@
     "PROPER_NAME": "Constricted",
     "NAMES": ["constricted"],
     "DESCRIPTION": "Deals damage to you at the end of your turn."
+  },
+  {
+    "PROPER_NAME": "Hand of the Abyss",
+    "NAMES": ["hand\u00a0of\u00a0the\u00a0abyss"],
+    "DESCRIPTION": "Whenever you deal unblocked attack damage, apply #yAbysstouched."
   }
 ]

@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
+import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardSave;
@@ -25,11 +26,14 @@ import corruptthespire.buttons.CorruptionDisplay;
 import corruptthespire.cards.*;
 import corruptthespire.cards.corrupted.CorruptedCardColor;
 import corruptthespire.cards.corrupted.CorruptedCardUtil;
+import corruptthespire.cards.corrupted.skills.VoidArmor;
 import corruptthespire.events.CorruptedEventInfo;
 import corruptthespire.events.CorruptedEventUtil;
 import corruptthespire.events.DevourerEvent;
 import corruptthespire.events.HarbingerEvent;
 import corruptthespire.monsters.*;
+import corruptthespire.patches.potions.FilterOutCorruptedPotionsPatch;
+import corruptthespire.potions.*;
 import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.relics.chaotic.*;
 import corruptthespire.rewards.CorruptedCardReward;
@@ -82,6 +86,7 @@ public class CorruptTheSpire implements
 
         addMonsters();
         addEvents();
+        addPotions();
 
         BaseMod.addSaveField(SavableCorruptedRelicPool.SaveKey, new SavableCorruptedRelicPool());
         BaseMod.addSaveField(SavableCorruption.SaveKey, new SavableCorruption());
@@ -173,6 +178,21 @@ public class CorruptTheSpire implements
             (customReward) -> new RewardSave(customReward.type.toString(), null, 0, 0));
     }
 
+    private static void addPotions() {
+        addPotion(AbyssalBrew.class, Color.BLACK.cpy(), null, null, AbyssalBrew.POTION_ID);
+        addPotion(CorruptedPotion.class, Color.PURPLE.cpy(), null, null, CorruptedPotion.POTION_ID);
+        addPotion(VoidBomb.class, Color.PURPLE.cpy(), Color.BLACK.cpy(), null, VoidBomb.POTION_ID);
+        addPotion(DarkElixir.class, Color.BLACK.cpy(), null, Color.PURPLE.cpy(), DarkElixir.POTION_ID);
+        addPotion(ProfaneMixture.class, Color.BLACK.cpy(), Color.PURPLE.cpy(), null, ProfaneMixture.POTION_ID);
+    }
+
+    private static void addPotion(Class<? extends AbstractPotion> potionClass, Color liquidColor, Color hybridColor, Color spotsColor, String potionID) {
+        if (!PotionUtil.corruptedPotionIds.contains(potionID)) {
+            throw new RuntimeException("Must add new PotionID to list of corruptedPotionIds to filter out: " + potionID);
+        }
+        BaseMod.addPotion(potionClass, liquidColor, hybridColor, spotsColor, potionID);
+    }
+
     @Override
     public void receiveEditCards() {
         BaseMod.addCard(new Nudge());
@@ -225,6 +245,7 @@ public class CorruptTheSpire implements
         BaseMod.loadCustomStringsFile(MonsterStrings.class, makeLocPath(language, "CorruptTheSpire-Monster-Strings"));
         BaseMod.loadCustomStringsFile(RelicStrings.class, makeLocPath(language, "CorruptTheSpire-Relic-Strings"));
         BaseMod.loadCustomStringsFile(PowerStrings.class, makeLocPath(language, "CorruptTheSpire-Power-Strings"));
+        BaseMod.loadCustomStringsFile(PotionStrings.class, makeLocPath(language, "CorruptTheSpire-Potion-Strings"));
         BaseMod.loadCustomStringsFile(UIStrings.class, makeLocPath(language, "CorruptTheSpire-ui"));
     }
 

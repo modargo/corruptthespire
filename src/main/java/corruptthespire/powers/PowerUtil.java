@@ -11,6 +11,7 @@ import java.lang.reflect.InvocationTargetException;
 public class PowerUtil {
     public static final String AbysstouchedPowerId = "Abyss:Abysstouched";
     private static Constructor<?> abysstouchedConstructor = null;
+    private static Constructor<?> handOfTheAbyssConstructor = null;
 
     public static AbstractPower abysstouched(AbstractCreature owner, int amount) {
         if (Loader.isModLoaded(CorruptTheSpire.AbyssModId)) {
@@ -25,5 +26,20 @@ public class PowerUtil {
             }
         }
         return new AbysstouchedPower(owner, amount);
+    }
+
+    public static AbstractPower handOfTheAbyss(AbstractCreature owner, int amount) {
+        if (Loader.isModLoaded(CorruptTheSpire.AbyssModId)) {
+            try {
+                if (handOfTheAbyssConstructor == null) {
+                    handOfTheAbyssConstructor = Class.forName("abyss.powers.HandOfTheAbyssPower").getConstructor(AbstractCreature.class, int.class);
+                }
+                return (AbstractPower)handOfTheAbyssConstructor.newInstance(owner, amount);
+            } catch (NoSuchMethodException | ClassNotFoundException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
+                e.printStackTrace();
+                throw new RuntimeException("Could not create HandOfTheAbyssPower");
+            }
+        }
+        return new HandOfTheAbyssPower(owner, amount);
     }
 }

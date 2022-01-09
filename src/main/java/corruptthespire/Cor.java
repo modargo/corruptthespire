@@ -230,6 +230,7 @@ public class Cor {
         corruptedRelics.add(new CorruptedEgg());
         corruptedRelics.add(new CorruptedToolbox());
         corruptedRelics.add(new Gohei());
+        corruptedRelics.add(new HideousStatue());
         corruptedRelics.add(new MaskOfNightmares());
         corruptedRelics.add(new MystifyingTimepiece());
         corruptedRelics.add(new ObsidianShovel());
