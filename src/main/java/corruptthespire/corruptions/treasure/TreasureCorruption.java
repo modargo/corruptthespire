@@ -94,6 +94,7 @@ public class TreasureCorruption {
         potentialVaultChestTypes.add(VaultChestType.ColorlessCard);
         potentialVaultChestTypes.add(VaultChestType.Upgrade);
         potentialVaultChestTypes.add(VaultChestType.CorruptedCard);
+        potentialVaultChestTypes.add(VaultChestType.CorruptedPotions);
         Collections.shuffle(potentialVaultChestTypes, Cor.rng.random);
 
         int chestTypesToAdd = numChests - vaultChestTypes.size();

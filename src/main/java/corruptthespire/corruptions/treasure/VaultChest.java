@@ -21,6 +21,7 @@ import corruptthespire.cards.CardUtil;
 import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.effects.room.TextOverlayEffect;
 import corruptthespire.patches.treasure.VaultChestsField;
+import corruptthespire.potions.PotionUtil;
 import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.rewards.MaxHealthReward;
 import corruptthespire.rewards.RandomUpgradeReward;
@@ -160,6 +161,11 @@ public class VaultChest extends AbstractChest {
                 corruptedCardReward.cards = CorruptedCardUtil.getRandomCorruptedCards(CardUtil.getNumCardsForRewards(), null);
                 AbstractDungeon.getCurrRoom().rewards.add(corruptedCardReward);
                 text = TEXT[9];
+                break;
+            case CorruptedPotions:
+                AbstractDungeon.getCurrRoom().rewards.add(new RewardItem(PotionUtil.getRandomCorruptedPotion(Cor.rng)));
+                AbstractDungeon.getCurrRoom().rewards.add(new RewardItem(PotionUtil.getRandomCorruptedPotion(Cor.rng)));
+                text = TEXT[10];
                 break;
             default:
                 throw new RuntimeException("Unknown vault chest type: " + this.vaultChestType);

@@ -37,9 +37,7 @@ public class HideousStatue extends AbstractCorruptedRelic {
 
         HideousStatue r = (HideousStatue)AbstractDungeon.player.getRelic(HideousStatue.ID);
         if (r.counter + 1 >= FIGHTS_PER_POTION) {
-            String potionId = PotionUtil.corruptedPotionIds.get(Cor.rng.random(PotionUtil.corruptedPotionIds.size() - 1));
-            AbstractPotion potion = PotionHelper.getPotion(potionId);
-            AbstractDungeon.getCurrRoom().rewards.add(new RewardItem(potion));
+            AbstractDungeon.getCurrRoom().rewards.add(new RewardItem(PotionUtil.getRandomCorruptedPotion(Cor.rng)));
             r.counter = 0;
         }
         else {
