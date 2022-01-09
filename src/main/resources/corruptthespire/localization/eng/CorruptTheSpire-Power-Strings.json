@@ -143,5 +143,9 @@
       "For every #b{0} damage this enemy takes, shuffle #b1 #ySlimed into your draw pile.",
       "For every #b{0} damage this enemy takes, add #b1 #ySlimed to the top of your draw pile."
     ]
+  },
+  "CorruptTheSpire:FieryDemise": {
+    "NAME": "Fiery Demise",
+    "DESCRIPTIONS": ["On death, shuffles #b{0} #yBurn into your draw pile."]
   }
 }

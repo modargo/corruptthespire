@@ -101,5 +101,13 @@
       "Digest"
     ],
     "NAME": "Lesser Devourer"
+  },
+  "CorruptTheSpire:BurningRevenant": {
+    "MOVES": [
+      "Big Burn",
+      "Small Burn",
+      "Fierce Burn"
+    ],
+    "NAME": "Burning Revenant"
   }
 }

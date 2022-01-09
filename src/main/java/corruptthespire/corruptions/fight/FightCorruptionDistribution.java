@@ -3,6 +3,7 @@ package corruptthespire.corruptions.fight;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
 import com.megacrit.cardcrawl.monsters.beyond.Donu;
+import com.megacrit.cardcrawl.monsters.beyond.Nemesis;
 import com.megacrit.cardcrawl.monsters.ending.CorruptHeart;
 import com.megacrit.cardcrawl.monsters.exordium.Cultist;
 import corruptthespire.Cor;
@@ -53,6 +54,9 @@ public class FightCorruptionDistribution {
         if (AbstractDungeon.getCurrRoom().monsters.monsters.size() >= 3 || hasMonster("Elementarium:ElementalPortal") || hasMonster("Abyss:PrimevalQueen")) {
             distribution.removeIf(d -> isMinionCorruption(d.corruptionType));
         }
+        if (hasMonster(Nemesis.ID)) {
+            distribution.removeIf(d -> d.corruptionType == FightCorruptionType.BurningRevenantMinion);
+        }
         if (AbstractDungeon.getCurrRoom().monsters.monsters.stream().anyMatch(m -> m.id.equals(Cultist.ID))) {
             distribution.removeIf(d -> d.corruptionType == FightCorruptionType.Ritual);
         }
@@ -89,10 +93,11 @@ public class FightCorruptionDistribution {
 
     private static boolean isMinionCorruption(FightCorruptionType f) {
         return f == FightCorruptionType.CorruptionManifestMinion
-            || f == FightCorruptionType.LouseMinion
+            || f == FightCorruptionType.BurningRevenantMinion
             || f == FightCorruptionType.SlimeMinion
             || f == FightCorruptionType.GremlinMinion
             || f == FightCorruptionType.RepulsorMinion
+            || f == FightCorruptionType.DevourerMinion
             || f == FightCorruptionType.SnakeDaggerMinion
             || f == FightCorruptionType.CultistMinion;
 

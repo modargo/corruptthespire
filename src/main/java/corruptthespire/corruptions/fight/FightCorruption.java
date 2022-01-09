@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.monsters.beyond.Repulsor;
 import com.megacrit.cardcrawl.monsters.beyond.SnakeDagger;
 import com.megacrit.cardcrawl.monsters.exordium.Cultist;
 import com.megacrit.cardcrawl.monsters.exordium.GremlinThief;
-import com.megacrit.cardcrawl.monsters.exordium.LouseDefensive;
 import com.megacrit.cardcrawl.monsters.exordium.SpikeSlime_S;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.random.Random;
@@ -18,10 +17,7 @@ import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 import corruptthespire.Cor;
 import corruptthespire.corruptions.fight.rewards.FightCorruptionReward;
-import corruptthespire.monsters.CorruptionManifest;
-import corruptthespire.monsters.LesserDevourerBlue;
-import corruptthespire.monsters.LesserDevourerBrown;
-import corruptthespire.monsters.LesserDevourerGreen;
+import corruptthespire.monsters.*;
 import corruptthespire.patches.CorruptedField;
 import corruptthespire.patches.fight.FightCorruptionInfosField;
 import corruptthespire.powers.ThoughtStealerPower;
@@ -190,14 +186,9 @@ public class FightCorruption {
     private static AbstractMonster getSingleMonster(FightCorruptionInfo corruptionInfo, float x, float y) {
         switch (corruptionInfo.corruptionType) {
             case CorruptionManifestMinion:
-                int actNum = Cor.getActNum();
-                CorruptionManifest.Version version = actNum <= 1 ? CorruptionManifest.Version.Act1
-                        : actNum == 2 ? CorruptionManifest.Version.Act2
-                        : actNum == 3 ? CorruptionManifest.Version.Act3
-                        : CorruptionManifest.Version.Act4;
-                return new CorruptionManifest(x, y, version);
-            case LouseMinion:
-                return new LouseDefensive(x, y);
+                return new CorruptionManifest(x, y, getCorruptionManifestVersion());
+            case BurningRevenantMinion:
+                return new BurningRevenant(x, y, getBurningRevenantVersion());
             case SlimeMinion:
                 return new SpikeSlime_S(x, y, 0);
             case GremlinMinion:
@@ -211,6 +202,21 @@ public class FightCorruption {
             default:
                 return null;
         }
+    }
+
+    private static CorruptionManifest.Version getCorruptionManifestVersion() {
+        int actNum = Cor.getActNum();
+        return actNum <= 1 ? CorruptionManifest.Version.Act1
+                : actNum == 2 ? CorruptionManifest.Version.Act2
+                : actNum == 3 ? CorruptionManifest.Version.Act3
+                : CorruptionManifest.Version.Act4;
+    }
+
+    private static BurningRevenant.Version getBurningRevenantVersion() {
+        int actNum = Cor.getActNum();
+        return actNum <= 1 ? BurningRevenant.Version.Act1
+                : actNum == 2 ? BurningRevenant.Version.Act2
+                : BurningRevenant.Version.Act3;
     }
 
     private static AbstractMonster getDevourer(float x, float y, String excludedId) {
