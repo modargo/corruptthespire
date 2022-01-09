@@ -1,6 +1,7 @@
 package corruptthespire.corruptions.fight;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.Repulsor;
@@ -10,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.exordium.GremlinThief;
 import com.megacrit.cardcrawl.monsters.exordium.LouseDefensive;
 import com.megacrit.cardcrawl.monsters.exordium.SpikeSlime_S;
 import com.megacrit.cardcrawl.powers.*;
+import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
@@ -17,6 +19,9 @@ import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 import corruptthespire.Cor;
 import corruptthespire.corruptions.fight.rewards.FightCorruptionReward;
 import corruptthespire.monsters.CorruptionManifest;
+import corruptthespire.monsters.LesserDevourerBlue;
+import corruptthespire.monsters.LesserDevourerBrown;
+import corruptthespire.monsters.LesserDevourerGreen;
 import corruptthespire.patches.CorruptedField;
 import corruptthespire.patches.fight.FightCorruptionInfosField;
 import corruptthespire.powers.ThoughtStealerPower;
@@ -180,12 +185,31 @@ public class FightCorruption {
                 return new GremlinThief(x, y);
             case RepulsorMinion:
                 return new Repulsor(x, y);
+            case DevourerMinion:
+                return getDevourerMinion(x, y);
             case SnakeDaggerMinion:
                 return new SnakeDagger(x, y);
             case CultistMinion:
                 return new Cultist(x, y);
             default:
                 return null;
+        }
+    }
+
+    public static AbstractMonster getDevourerMinion(float x, float y) {
+        Random rng = new Random(Settings.seed + AbstractDungeon.floorNum);
+        List<String> options = new ArrayList<>();
+        options.add(LesserDevourerGreen.ID);
+        options.add(LesserDevourerBrown.ID);
+        options.add(LesserDevourerBlue.ID);
+
+        Collections.shuffle(options, rng.random);
+        String id = options.get(0);
+        switch (id) {
+            case LesserDevourerGreen.ID: return new LesserDevourerGreen(x, y);
+            case LesserDevourerBrown.ID: return new LesserDevourerBrown(x, y);
+            case LesserDevourerBlue.ID: return new LesserDevourerBlue(x, y);
+            default: throw new RuntimeException("Unrecognized ID for a Devourer: " + id);
         }
     }
 
