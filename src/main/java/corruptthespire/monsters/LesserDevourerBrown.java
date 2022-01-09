@@ -105,7 +105,7 @@ public class LesserDevourerBrown extends CustomMonster
             this.setMove(MOVES[1], BAD_BREATH_MOVE, Intent.ATTACK, this.badBreathDamage);
         }
         else if (this.lastMove(BAD_BREATH_MOVE)) {
-            this.setMove(MOVES[2], DIGEST_MOVE, Intent.ATTACK, this.digestDamage);
+            this.setMove(MOVES[2], DIGEST_MOVE, Intent.ATTACK, this.digestDamage, DIGEST_HITS, true);
         }
         else {
             this.setMove(MOVES[0], CHOMP_MOVE, Intent.ATTACK_BUFF, this.chompDamage);
