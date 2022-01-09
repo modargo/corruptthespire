@@ -50,7 +50,7 @@ public class BurningRevenant extends CustomMonster
     }
 
     public BurningRevenant(final float x, final float y, Version version) {
-        super(BurningRevenant.NAME, ID, HP_MAX[0], -5.0F, 0, 480.0f, 450.0f, IMG, x, y);
+        super(BurningRevenant.NAME, ID, HP_MAX[0], -5.0F, 0, 145.0f, 195.0f, IMG, x, y);
         this.version = version;
         this.type = EnemyType.ELITE;
         if (AbstractDungeon.ascensionLevel >= 7) {
