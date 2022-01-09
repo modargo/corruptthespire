@@ -159,6 +159,7 @@ public class FightCorruption {
                 }
             }
         }
+        Collections.reverse(monsters);
         return monsters;
     }
 
