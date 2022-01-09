@@ -157,18 +157,37 @@ public class FightCorruption {
         ArrayList<AbstractMonster> monsters = new ArrayList<>();
         List<FightCorruptionInfo> corruptionInfos = FightCorruptionInfosField.corruptionInfos.get(AbstractDungeon.getCurrRoom());
         for (FightCorruptionInfo corruptionInfo : corruptionInfos) {
-            AbstractMonster m = getExtraMonsterCorruption(corruptionInfo);
-            if (m != null) {
-                monsters.add(m);
+            for (AbstractMonster m : getExtraMonsterCorruption(corruptionInfo)) {
+                if (m != null) {
+                    monsters.add(m);
+                }
             }
         }
         return monsters;
     }
 
-    private static AbstractMonster getExtraMonsterCorruption(FightCorruptionInfo corruptionInfo) {
+    private static List<AbstractMonster> getExtraMonsterCorruption(FightCorruptionInfo corruptionInfo) {
         Coordinate c = getSpawnXY();
         float x = c.x;
         float y = c.y;
+        List<AbstractMonster> r = new ArrayList<>();
+        switch (corruptionInfo.corruptionType) {
+            case DevourerMinion:
+                int actNum = Cor.getActNum();
+                AbstractMonster devourer = getDevourer(x, y, null);
+                r.add(devourer);
+                if (actNum == 4) {
+                    r.add(getDevourer(x + 200.0f, y, devourer.id));
+                }
+            default:
+                r.add(getSingleMonster(corruptionInfo, x, y));
+                break;
+        }
+
+        return r;
+    }
+
+    private static AbstractMonster getSingleMonster(FightCorruptionInfo corruptionInfo, float x, float y) {
         switch (corruptionInfo.corruptionType) {
             case CorruptionManifestMinion:
                 int actNum = Cor.getActNum();
@@ -185,8 +204,6 @@ public class FightCorruption {
                 return new GremlinThief(x, y);
             case RepulsorMinion:
                 return new Repulsor(x, y);
-            case DevourerMinion:
-                return getDevourerMinion(x, y);
             case SnakeDaggerMinion:
                 return new SnakeDagger(x, y);
             case CultistMinion:
@@ -196,12 +213,15 @@ public class FightCorruption {
         }
     }
 
-    public static AbstractMonster getDevourerMinion(float x, float y) {
+    private static AbstractMonster getDevourer(float x, float y, String excludedId) {
         Random rng = new Random(Settings.seed + AbstractDungeon.floorNum);
         List<String> options = new ArrayList<>();
         options.add(LesserDevourerGreen.ID);
         options.add(LesserDevourerBrown.ID);
         options.add(LesserDevourerBlue.ID);
+        if (excludedId != null) {
+            options.remove(excludedId);
+        }
 
         Collections.shuffle(options, rng.random);
         String id = options.get(0);
