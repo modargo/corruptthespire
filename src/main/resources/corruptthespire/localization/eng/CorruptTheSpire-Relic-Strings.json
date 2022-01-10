@@ -127,5 +127,10 @@
     "NAME": "Hideous Statue",
     "FLAVOR": "A large stone statue of a creature you hope to never see.",
     "DESCRIPTIONS": ["After every #b{0} combats, receive a corrupted potion reward."]
+  },
+  "CorruptTheSpire:HeavySword": {
+    "NAME": "Heavy Sword",
+    "FLAVOR": "It was too big to be called a sword. Massive, thick, heavy, and far too rough. Indeed, it was a heap of raw iron.",
+    "DESCRIPTIONS": ["At the start of your 4th turn, gain #b{0} #yStrength."]
   }
 }
