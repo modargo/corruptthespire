@@ -49,6 +49,6 @@ public class ShadowAndFlame extends AbstractCorruptedCard {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         this.addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
         this.addToBot(new ApplyPowerAction(m, p, PowerUtil.abysstouched(m, this.magicNumber), this.magicNumber));
-        this.addToBot(new ApplyPowerAction(p, p, new FrailPower(m, FRAIL, false), FRAIL));
+        this.addToBot(new ApplyPowerAction(p, p, new FrailPower(p, FRAIL, false), FRAIL));
     }
 }
