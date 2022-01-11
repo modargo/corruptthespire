@@ -55,7 +55,7 @@ public class FightCorruptionDistribution {
             distribution.removeIf(d -> isMinionCorruption(d.corruptionType));
         }
         if (hasMonster(Nemesis.ID)) {
-            distribution.removeIf(d -> d.corruptionType == FightCorruptionType.BurningRevenantMinion);
+            distribution.removeIf(d -> d.corruptionType == FightCorruptionType.FlameManifestMinion);
         }
         if (AbstractDungeon.getCurrRoom().monsters.monsters.stream().anyMatch(m -> m.id.equals(Cultist.ID))) {
             distribution.removeIf(d -> d.corruptionType == FightCorruptionType.Ritual);
@@ -93,7 +93,7 @@ public class FightCorruptionDistribution {
 
     private static boolean isMinionCorruption(FightCorruptionType f) {
         return f == FightCorruptionType.CorruptionManifestMinion
-            || f == FightCorruptionType.BurningRevenantMinion
+            || f == FightCorruptionType.FlameManifestMinion
             || f == FightCorruptionType.SlimeMinion
             || f == FightCorruptionType.GremlinMinion
             || f == FightCorruptionType.RepulsorMinion

@@ -10,7 +10,7 @@ BeatOfDeath	N	N	N	N	N	N	L,25,1	N	M,25,1	M,25,1	L,25,1	L,50,1	N	S,100,1	L,100,1	N
 ThoughtStealer	N	N	N	N	S,25,1	S,25,1	M,25,1	N	S,25,1	S,25,1	M,25,1	N	N	S,100,1	L,100,1	N
 Curiosity	N	N	N	N	S,25,1	S,25,1	M,25,1	N	S,25,1	S,25,1	M,25,1	L,50,1	N	N	N	N
 CorruptionManifestMinion	N	S,100,1	M,25,1	N	S,100,1	S,25,1	M,50,1	N	S,25,1	S,25,1	M,25,1	N	N	N	N	N
-BurningRevenantMinion	N	N	M,25,1	N	N	M,25,1	M,25,1	N	S,25,1	S,25,1	M,25,1	L,25,1	N	N	N	N
+FlameManifestMinion	N	N	M,25,1	N	N	M,25,1	M,25,1	N	S,25,1	S,25,1	M,25,1	L,25,1	N	N	N	N
 SlimeMinion	N	N	M,25,1	N	N	S,25,1	N	N	N	N	N	N	N	N	N	N
 GremlinMinion	N	N	M,25,1	N	N	S,25,1	N	N	N	N	N	N	N	N	N	N
 RepulsorMinion	N	N	N	N	N	N	M,25,1	N	N	N	M,25,1	N	N	N	N	N

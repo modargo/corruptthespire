@@ -12,7 +12,7 @@ public enum FightCorruptionType {
     ThoughtStealer,
     Curiosity,
     CorruptionManifestMinion,
-    BurningRevenantMinion,
+    FlameManifestMinion,
     SlimeMinion,
     GremlinMinion,
     RepulsorMinion,

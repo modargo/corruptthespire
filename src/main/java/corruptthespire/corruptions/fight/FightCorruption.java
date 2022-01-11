@@ -188,8 +188,8 @@ public class FightCorruption {
         switch (corruptionInfo.corruptionType) {
             case CorruptionManifestMinion:
                 return new CorruptionManifest(x, y, getCorruptionManifestVersion());
-            case BurningRevenantMinion:
-                return new BurningRevenant(x, y, getBurningRevenantVersion());
+            case FlameManifestMinion:
+                return new FlameManifest(x, y, getFlameManifestVersion());
             case SlimeMinion:
                 return new SpikeSlime_S(x, y, 0);
             case GremlinMinion:
@@ -213,11 +213,11 @@ public class FightCorruption {
                 : CorruptionManifest.Version.Act4;
     }
 
-    private static BurningRevenant.Version getBurningRevenantVersion() {
+    private static FlameManifest.Version getFlameManifestVersion() {
         int actNum = Cor.getActNum();
-        return actNum <= 1 ? BurningRevenant.Version.Act1
-                : actNum == 2 ? BurningRevenant.Version.Act2
-                : BurningRevenant.Version.Act3;
+        return actNum <= 1 ? FlameManifest.Version.Act1
+                : actNum == 2 ? FlameManifest.Version.Act2
+                : FlameManifest.Version.Act3;
     }
 
     private static AbstractMonster getDevourer(float x, float y, String excludedId) {

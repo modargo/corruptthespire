@@ -102,12 +102,12 @@
     ],
     "NAME": "Lesser Devourer"
   },
-  "CorruptTheSpire:BurningRevenant": {
+  "CorruptTheSpire:FlameManifest": {
     "MOVES": [
       "Big Burn",
       "Small Burn",
       "Fierce Burn"
     ],
-    "NAME": "Burning Revenant"
+    "NAME": "Flame Manifest"
   }
 }

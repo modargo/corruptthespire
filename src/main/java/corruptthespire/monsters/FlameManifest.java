@@ -17,9 +17,9 @@ import com.megacrit.cardcrawl.localization.MonsterStrings;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.powers.FieryDemisePower;
 
-public class BurningRevenant extends CustomMonster
+public class FlameManifest extends CustomMonster
 {
-    public static final String ID = "CorruptTheSpire:BurningRevenant";
+    public static final String ID = "CorruptTheSpire:FlameManifest";
     private static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterStrings.NAME;
     public static final String[] MOVES = monsterStrings.MOVES;
@@ -45,12 +45,12 @@ public class BurningRevenant extends CustomMonster
     private final int smallBurnDamage;
     private final int fierceBurnDamage;
 
-    public BurningRevenant() {
+    public FlameManifest() {
         this(0.0f, 0.0f, Version.Act1);
     }
 
-    public BurningRevenant(final float x, final float y, Version version) {
-        super(BurningRevenant.NAME, ID, HP_MAX[0], -5.0F, 0, 145.0f, 195.0f, IMG, x, y);
+    public FlameManifest(final float x, final float y, Version version) {
+        super(FlameManifest.NAME, ID, HP_MAX[0], -5.0F, 0, 155.0f, 180.0f, IMG, x, y);
         this.version = version;
         this.type = EnemyType.ELITE;
         if (AbstractDungeon.ascensionLevel >= 7) {
