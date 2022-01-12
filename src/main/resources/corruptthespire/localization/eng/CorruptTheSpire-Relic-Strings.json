@@ -121,7 +121,7 @@
   "CorruptTheSpire:TranscendentEye": {
     "NAME": "Transcendent Eye",
     "FLAVOR": "The creature's eye still seeks out prey.",
-    "DESCRIPTIONS": ["At the start of your 3nd turn, Scry #b{0} and draw #b{1} card."]
+    "DESCRIPTIONS": ["At the start of your 3rd turn, Scry #b{0} and draw #b{1} card."]
   },
   "CorruptTheSpire:HideousStatue": {
     "NAME": "Hideous Statue",
