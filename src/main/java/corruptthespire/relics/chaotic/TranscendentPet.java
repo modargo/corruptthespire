@@ -44,7 +44,7 @@ public class TranscendentPet extends CustomRelic {
             this.counter = -1;
             this.grayscale = true;
         }
-        else {
+        else if (!this.grayscale) {
             this.counter++;
         }
     }
