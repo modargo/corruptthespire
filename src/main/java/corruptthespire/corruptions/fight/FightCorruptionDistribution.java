@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
 import com.megacrit.cardcrawl.monsters.beyond.Donu;
 import com.megacrit.cardcrawl.monsters.beyond.Nemesis;
+import com.megacrit.cardcrawl.monsters.city.Byrd;
 import com.megacrit.cardcrawl.monsters.ending.CorruptHeart;
 import com.megacrit.cardcrawl.monsters.exordium.Cultist;
 import corruptthespire.Cor;
@@ -71,19 +72,27 @@ public class FightCorruptionDistribution {
         if (hasMonster(Donu.ID)) {
             distribution.removeIf(d -> d.corruptionType == FightCorruptionType.Artifact);
         }
+        if (AbstractDungeon.getCurrRoom().monsters.monsters.stream().filter(c -> c.id.equals(Byrd.ID)).count() >= 3) {
+            this.adjustStrengthCorruption(distribution, 0.5f);
+        }
+
         if (actNum == 4 && fightType == FightType.Boss && !hasMonster(CorruptHeart.ID)) {
-            FightCorruptionDistributionInfo strengthCorruption = null;
-            for (FightCorruptionDistributionInfo d : distribution) {
-                if (d.corruptionType == FightCorruptionType.Strength) {
-                    strengthCorruption = d;
-                    break;
-                }
+            this.adjustStrengthCorruption(distribution, 3.0f);
+        }
+    }
+
+    private void adjustStrengthCorruption(ArrayList<FightCorruptionDistributionInfo> distribution, float strengthMultiplier) {
+        FightCorruptionDistributionInfo strengthCorruption = null;
+        for (FightCorruptionDistributionInfo d : distribution) {
+            if (d.corruptionType == FightCorruptionType.Strength) {
+                strengthCorruption = d;
+                break;
             }
-            if (strengthCorruption != null) {
-                int strengthMultiplierForNonHeartBosses = 3;
-                distribution.remove(strengthCorruption);
-                distribution.add(new FightCorruptionDistributionInfo(strengthCorruption.corruptionType, strengthCorruption.size, strengthCorruption.weight, strengthCorruption.amount * strengthMultiplierForNonHeartBosses));
-            }
+        }
+        if (strengthCorruption != null) {
+            int newStrength = (int)(strengthCorruption.amount * strengthMultiplier);
+            FightCorruptionDistributionInfo di = new FightCorruptionDistributionInfo(strengthCorruption.corruptionType, strengthCorruption.size, strengthCorruption.weight, newStrength);
+            distribution.set(distribution.indexOf(strengthCorruption), di);
         }
     }
 
