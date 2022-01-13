@@ -22,6 +22,7 @@ import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardSave;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import corruptthespire.buttons.CorruptionDisplay;
 import corruptthespire.cards.*;
 import corruptthespire.cards.corrupted.CorruptedCardColor;
@@ -193,36 +194,46 @@ public class CorruptTheSpire implements
 
     @Override
     public void receiveEditCards() {
-        BaseMod.addCard(new Nudge());
-        BaseMod.addCard(new ShimmeringShield());
-        BaseMod.addCard(new WheelOfFortune());
-        BaseMod.addCard(new Bedeviled());
-        BaseMod.addCard(new Fated());
-        BaseMod.addCard(new Contagion());
-        BaseMod.addCard(new BadBreath());
+        addCard(new Nudge());
+        addCard(new ShimmeringShield());
+        addCard(new WheelOfFortune());
+        addCard(new Bedeviled());
+        addCard(new Fated());
+        addCard(new Contagion());
+        addCard(new BadBreath());
         ArrayList<AbstractCard> corruptedCards = CorruptedCardUtil.getAllCorruptedCardInfos(true)
                 .values()
                 .stream()
                 .map(cci -> cci.card)
                 .collect(Collectors.toCollection(ArrayList::new));
         for (AbstractCard c : corruptedCards) {
-            BaseMod.addCard(c);
+            addCard(c);
         }
+    }
+
+    private void addCard(AbstractCard c) {
+        BaseMod.addCard(c);
+        UnlockTracker.markCardAsSeen(c.cardID);
     }
 
     @Override
     public void receiveEditRelics() {
-        BaseMod.addRelic(new BurningRing(), RelicType.SHARED);
-        BaseMod.addRelic(new DeckOfManyFates(), RelicType.SHARED);
-        BaseMod.addRelic(new HarbingersClaw(), RelicType.SHARED);
-        BaseMod.addRelic(new HarbingersSkull(), RelicType.SHARED);
-        BaseMod.addRelic(new ShimmeringFan(), RelicType.SHARED);
-        BaseMod.addRelic(new TranscendentEye(), RelicType.SHARED);
-        BaseMod.addRelic(new TranscendentPet(), RelicType.SHARED);
-        BaseMod.addRelic(new FragmentOfCorruption(), RelicType.SHARED);
+        addRelic(new BurningRing(), RelicType.SHARED);
+        addRelic(new DeckOfManyFates(), RelicType.SHARED);
+        addRelic(new HarbingersClaw(), RelicType.SHARED);
+        addRelic(new HarbingersSkull(), RelicType.SHARED);
+        addRelic(new ShimmeringFan(), RelicType.SHARED);
+        addRelic(new TranscendentEye(), RelicType.SHARED);
+        addRelic(new TranscendentPet(), RelicType.SHARED);
+        addRelic(new FragmentOfCorruption(), RelicType.SHARED);
         for (AbstractRelic r : Cor.getAllCorruptedRelics()) {
-            BaseMod.addRelic(r, RelicType.SHARED);
+            addRelic(r, RelicType.SHARED);
         }
+    }
+
+    private void addRelic(AbstractRelic relic, RelicType type) {
+        BaseMod.addRelic(relic, type);
+        UnlockTracker.markRelicAsSeen(relic.relicId);
     }
 
     private static String makeLocPath(Settings.GameLanguage language, String filename)
