@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
 import com.megacrit.cardcrawl.actions.animations.FastShakeAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -108,6 +109,7 @@ public class PandemoniumArchfiend extends CustomMonster
         this.addToBot(new DevilsDueAction());
         this.addToBot(new MakeTempCardInDrawPileAction(new Bedeviled(), DEVILS_DUE_STATUSES, true, true));
         if (AbstractDungeon.ascensionLevel >= 19) {
+            this.addToBot(new WaitAction(0.1f));
             this.addToBot(new MakeTempCardInDiscardAction(new Bedeviled(), DEVILS_DUE_STATUSES));
         }
     }
