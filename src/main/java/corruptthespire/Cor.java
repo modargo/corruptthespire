@@ -238,6 +238,7 @@ public class Cor {
         corruptedRelics.add(new OminousBracelet());
         corruptedRelics.add(new OozingHeart());
         corruptedRelics.add(new RustedOrichalcum());
+        corruptedRelics.add(new SlimeShield());
         corruptedRelics.add(new UnreliableCharm());
         return corruptedRelics;
     }

@@ -132,5 +132,10 @@
     "NAME": "Heavy Sword",
     "FLAVOR": "It was too big to be called a sword. Massive, thick, heavy, and far too rough. Indeed, it was a heap of raw iron.",
     "DESCRIPTIONS": ["At the start of your 4th turn, gain #b{0} #yStrength."]
+  },
+  "CorruptTheSpire:SlimeShield": {
+    "NAME": "Slime Shield",
+    "FLAVOR": "Good defense, but very slippery.",
+    "DESCRIPTIONS": ["At the start of each combat, gain #b{0} #yArtifact, #b{1} #yMetallicize, and #b{2} #yPlated Armor, and shuffled #b{3} #ySlimed into your draw pile."]
   }
 }
