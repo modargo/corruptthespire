@@ -74,6 +74,5 @@ public class CampfireCorruption {
         ArrayList<AbstractCampfireOption> buttons = ReflectionHacks.getPrivate(campfireUI, CampfireUI.class, "buttons");
         buttons.addAll(campfireInfo.options);
         return true;
-
     }
 }

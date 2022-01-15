@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.random.Random;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.shop.Merchant;
 import com.megacrit.cardcrawl.shop.ShopScreen;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
@@ -94,7 +95,7 @@ public class ShopPatch {
     public static class SetTransformImagePatch {
         @SpirePostfixPatch
         public static void setTransformImage(ShopScreen __instance, ArrayList<AbstractCard> coloredCards, ArrayList<AbstractCard> colorlessCards, @ByRef Texture[] ___removeServiceImg) {
-            ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())
+            ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && AbstractDungeon.getCurrRoom() instanceof ShopRoom
                     ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
                     : null;
             if (corruptionType == ShopCorruptionType.TransformReplacesRemove) {
@@ -159,7 +160,7 @@ public class ShopPatch {
     public static class PurchaseTransformPatch {
         @SpirePrefixPatch
         public static SpireReturn<Void> purchaseTransform(ShopScreen __instance) {
-            ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())
+            ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && AbstractDungeon.getCurrRoom() instanceof ShopRoom
                     ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
                     : null;
             if (corruptionType == ShopCorruptionType.TransformReplacesRemove) {
@@ -182,7 +183,7 @@ public class ShopPatch {
     public static class UpdateTransformPatch {
         @SpirePrefixPatch
         public static SpireReturn<Void> updateTransform(ShopScreen __instance) {
-            ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())
+            ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && AbstractDungeon.getCurrRoom() instanceof ShopRoom
                     ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
                     : null;
             if (corruptionType == ShopCorruptionType.TransformReplacesRemove) {

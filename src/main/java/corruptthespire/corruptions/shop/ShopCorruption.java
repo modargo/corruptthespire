@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.shop.ShopScreen;
 import com.megacrit.cardcrawl.shop.StorePotion;
 import com.megacrit.cardcrawl.shop.StoreRelic;
@@ -30,7 +31,7 @@ public class ShopCorruption {
     private static final String[] TEXT = uiStrings.TEXT;
 
     public static void handleCards(ArrayList<AbstractCard> coloredCards, ArrayList<AbstractCard> colorlessCards) {
-        ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())
+        ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && AbstractDungeon.getCurrRoom() instanceof ShopRoom
                 ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
                 : null;
 
@@ -133,7 +134,7 @@ public class ShopCorruption {
     }
 
     public static boolean handleRelics(ShopScreen shopScreen) {
-        ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())
+        ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && AbstractDungeon.getCurrRoom() instanceof ShopRoom
                 ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
                 : null;
 
@@ -175,7 +176,7 @@ public class ShopCorruption {
     }
 
     public static boolean handlePotions(ShopScreen shopScreen) {
-        ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())
+        ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && AbstractDungeon.getCurrRoom() instanceof ShopRoom
                 ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
                 : null;
 
@@ -188,7 +189,7 @@ public class ShopCorruption {
     }
 
     public static boolean handlePurgeCardTooltip(float x, float y) {
-        ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())
+        ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && AbstractDungeon.getCurrRoom() instanceof ShopRoom
                 ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
                 : null;
         if (corruptionType == ShopCorruptionType.TransformReplacesRemove) {
@@ -206,7 +207,7 @@ public class ShopCorruption {
 
     public static boolean handleCourier(ShopScreen shopScreen, AbstractCard purchasedCard) {
         boolean cardIsCorrupted = purchasedCard.color == CorruptedCardColor.CORRUPTTHESPIRE_CORRUPTED;
-        boolean shopIsPrismatic = ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom()) == ShopCorruptionType.Prismatic;
+        boolean shopIsPrismatic = AbstractDungeon.getCurrRoom() instanceof ShopRoom && ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom()) == ShopCorruptionType.Prismatic;
         if (!cardIsCorrupted && !shopIsPrismatic) {
             return false;
         }

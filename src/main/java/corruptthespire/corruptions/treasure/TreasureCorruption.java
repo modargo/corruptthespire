@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rewards.chests.AbstractChest;
 import com.megacrit.cardcrawl.rooms.EventRoom;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.rooms.TreasureRoom;
 import corruptthespire.Cor;
 import corruptthespire.events.SealedChestEvent;
@@ -35,7 +36,7 @@ public class TreasureCorruption {
     public static final List<Integer> VaultChestCorruption = Arrays.asList(1, 2, 3, 4, 5);
 
     public static boolean handleRelic(AbstractRelic.RelicTier tier) {
-        TreasureCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())
+        TreasureCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && AbstractDungeon.getCurrRoom() instanceof TreasureRoom
             ? TreasureCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
             : null;
 
@@ -54,7 +55,7 @@ public class TreasureCorruption {
     }
 
     public static void handleExtraRewards() {
-        TreasureCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())
+        TreasureCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && AbstractDungeon.getCurrRoom() instanceof TreasureRoom
                 ? TreasureCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
                 : null;
 
