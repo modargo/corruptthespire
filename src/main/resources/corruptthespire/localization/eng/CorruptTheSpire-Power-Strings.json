@@ -119,7 +119,7 @@
   },
   "CorruptTheSpire:WarpAura": {
     "NAME": "Warp Aura",
-    "DESCRIPTIONS": ["When this enemy takes #b{0} or more damage, add a #yDazed to your discard pile."]
+    "DESCRIPTIONS": ["When this enemy takes #b{0} or more damage, add #b1 #yDazed to your discard pile."]
   },
   "CorruptTheSpire:TemporalFissure": {
     "NAME": "Temporal Fissure",
@@ -127,7 +127,7 @@
   },
   "CorruptTheSpire:SpatialFissure": {
     "NAME": "Spatial Fissure",
-    "DESCRIPTIONS": ["When this enemy dies, #pMaster #pof #pTime #pand #pSpace starts adding a #yBurn to your draw pile at the end of each round and ALL enemies heal #b{0}."]
+    "DESCRIPTIONS": ["When this enemy dies, #pMaster #pof #pTime #pand #pSpace starts shuffling #b1 #yBurn into your draw pile at the end of each round and ALL enemies heal #b{0}."]
   },
   "CorruptTheSpire:WorldAblaze": {
     "NAME": "World Ablaze",
