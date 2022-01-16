@@ -15,7 +15,7 @@ public class TranscendentEye extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));
 
-    private static final int SCRY = 3;
+    private static final int SCRY = 4;
     private static final int DRAW = 1;
 
     public TranscendentEye() {
