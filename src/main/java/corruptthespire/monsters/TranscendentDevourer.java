@@ -41,7 +41,7 @@ public class TranscendentDevourer extends CustomMonster
     private static final int A18_SALIVATE_STRENGTH = 2;
     private static final int NIBBLE_DAMAGE = 10;
     private static final int A3_NIBBLE_DAMAGE = 12;
-    private static final int GORGE_DAMAGE = 2;
+    private static final int GORGE_DAMAGE = 3;
     private static final int GORGE_BASE_HITS = 4;
     private static final int A3_GORGE_BASE_HITS = 5;
     public static final int FETID_BODY_DAMAGE_THRESHOLD = 30;
@@ -49,8 +49,8 @@ public class TranscendentDevourer extends CustomMonster
     public static final int PROTECTIVE_MAW = 15;
     public static final int A18_PROTECTIVE_MAW = 20;
     private static final int VULNERABILITY = 5;
-    private static final int HP = 80;
-    private static final int A8_HP = 90;
+    private static final int HP = 100;
+    private static final int A8_HP = 110;
     private final int salivateStrength;
     private final int nibbleDamage;
     private final int gorgeBaseHits;
