@@ -28,5 +28,10 @@
     "PROPER_NAME": "Hand of the Abyss",
     "NAMES": ["hand\u00a0of\u00a0the\u00a0abyss"],
     "DESCRIPTION": "Whenever you deal unblocked attack damage, apply #yAbysstouched."
+  },
+  {
+    "PROPER_NAME": "Fragment of Corruption",
+    "NAMES": ["fragment\u00a0of\u00a0corruption"],
+    "DESCRIPTION": "Small fragment of corrupted Spirestone. Can be used at corrupted Rest Sites."
   }
 ]

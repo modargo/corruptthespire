@@ -22,7 +22,7 @@
   },
   "CorruptTheSpire:Fragmentize": {
     "NAME": "Fragmentize",
-    "DESCRIPTION": "Deal !D! damage. NL If Fatal and your {0} count is under {1}, gain a {0}. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL If Fatal and your corruptthespire:Fragment\u00a0of\u00a0Corruption count is under {0}, gain a corruptthespire:Fragment\u00a0of\u00a0Corruption. NL Exhaust."
   },
   "CorruptTheSpire:WickedWard": {
     "NAME": "Wicked Ward",

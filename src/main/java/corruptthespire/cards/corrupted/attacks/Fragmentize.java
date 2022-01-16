@@ -24,7 +24,7 @@ public class Fragmentize extends AbstractCorruptedCard {
     public static final int FRAGMENT_LIMIT = 8;
 
     public Fragmentize() {
-        super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, new FragmentOfCorruption().name, FRAGMENT_LIMIT), CardType.ATTACK, CardTarget.ENEMY);
+        super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, FRAGMENT_LIMIT), CardType.ATTACK, CardTarget.ENEMY);
         this.baseDamage = DAMAGE;
         this.exhaust = true;
         this.tags.add(CardTags.HEALING);
