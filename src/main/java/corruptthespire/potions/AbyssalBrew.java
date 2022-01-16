@@ -20,7 +20,7 @@ public class AbyssalBrew extends CustomPotion {
     public static final String POTION_ID = "CorruptTheSpire:AbyssalBrew";
     private static final PotionStrings potionStrings = CardCrawlGame.languagePack.getPotionString(POTION_ID);
 
-    private static final int AYBSSTOUCHED = 5;
+    private static final int AYBSSTOUCHED = 6;
 
     public AbyssalBrew() {
         super(potionStrings.NAME, POTION_ID, CorruptedPotionRarityEnum.CORRUPTED, PotionSize.H, PotionColor.SMOKE);
