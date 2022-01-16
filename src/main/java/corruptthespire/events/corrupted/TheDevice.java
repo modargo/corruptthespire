@@ -21,8 +21,8 @@ public class TheDevice extends AbstractImageEvent {
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private static final String IMG = CorruptTheSpire.eventImage(ID);
 
-    public static final int GOLD = 450;
-    public static final int A15_GOLD = 400;
+    public static final int GOLD = 350;
+    public static final int A15_GOLD = 300;
     public static final int CORRUPTED_CARDS = 3;
     public static final int A15_CORRUPTED_CARDS = 2;
 
