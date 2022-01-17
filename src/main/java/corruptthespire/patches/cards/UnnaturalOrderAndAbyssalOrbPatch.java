@@ -27,19 +27,25 @@ public class UnnaturalOrderAndAbyssalOrbPatch {
     )
     public static class ApplyPowerActionConstructorPatch {
         @SpireInsertPatch(locator = Locator.class)
-        public static void increasePoisonAbysstouchedAmount(ApplyPowerAction __instance, AbstractCreature target, AbstractCreature source, AbstractPower powerToApply, int stackAmount, boolean isFast, AbstractGameAction.AttackEffect effect) {
-            if (AbstractDungeon.player.hasPower(UnnaturalOrderPower.POWER_ID) && source != null && source.isPlayer && target != source && isPoisonAbysstouched(powerToApply.ID)) {
+        public static void increasePoisonAbysstouchedAmount(ApplyPowerAction __instance, AbstractCreature target, AbstractCreature source, @ByRef AbstractPower[] powerToApply, int stackAmount, boolean isFast, AbstractGameAction.AttackEffect effect) {
+            if (AbstractDungeon.player.hasPower(UnnaturalOrderPower.POWER_ID) && source != null && source.isPlayer && target != source && isPoisonAbysstouched(powerToApply[0].ID)) {
                 AbstractPower power = AbstractDungeon.player.getPower(UnnaturalOrderPower.POWER_ID);
                 power.flash();
-                powerToApply.amount += power.amount;
-                __instance.amount = powerToApply.amount;
+                powerToApply[0].amount += power.amount;
+                __instance.amount = powerToApply[0].amount;
             }
 
             AbstractRelic abyssalOrb = AbstractDungeon.player.getRelic(AbyssalOrb.ID);
-            if (abyssalOrb != null && source != null && source.isPlayer && target != source && isAbysstouched(powerToApply.ID)) {
+            if (abyssalOrb != null && source != null && source.isPlayer && target != source && isAbysstouched(powerToApply[0].ID)) {
                 abyssalOrb.flash();
-                powerToApply.amount += AbyssalOrb.ABYSSTOUCHED_INCREASE;
-                __instance.amount = powerToApply.amount;
+                powerToApply[0].amount += AbyssalOrb.ABYSSTOUCHED_INCREASE;
+                __instance.amount = powerToApply[0].amount;
+            }
+
+            if (AbstractDungeon.player.hasPower(UnnaturalOrderPower.POWER_ID) && isAbysstouched(powerToApply[0].ID)) {
+                PoisonPower p = new PoisonPower(target, source, powerToApply[0].amount);
+                ReflectionHacks.setPrivate(__instance, ApplyPowerAction.class, "powerToApply", p);
+                powerToApply[0] = p;
             }
         }
 
@@ -48,14 +54,6 @@ public class UnnaturalOrderAndAbyssalOrbPatch {
             public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
                 Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractPlayer.class, "hasRelic");
                 return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
-            }
-        }
-
-        @SpirePostfixPatch
-        public static void convertAbysstouchedToPoison(ApplyPowerAction __instance, AbstractCreature target, AbstractCreature source, AbstractPower powerToApply, int stackAmount, boolean isFast, AbstractGameAction.AttackEffect effect, @ByRef AbstractPower[] ___powerToApply) {
-            if (AbstractDungeon.player.hasPower(UnnaturalOrderPower.POWER_ID) && isAbysstouched(___powerToApply[0].ID)) {
-                AbstractPower p = ReflectionHacks.getPrivate(__instance, ApplyPowerAction.class, "powerToApply");
-                ReflectionHacks.setPrivate(__instance, ApplyPowerAction.class, "powerToApply", new PoisonPower(target, source, p.amount));
             }
         }
     }
