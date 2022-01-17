@@ -21,6 +21,11 @@
       "Relics that can only be obtained through corrupted rooms."
     ]
   },
+  "CorruptTheSpire:RunHistory": {
+    "TEXT": [
+      "#bFire #bRitual {0}"
+    ]
+  },
   "CorruptTheSpire:Rewards": {
     "TEXT": ["Gain {0} Max HP", "Upgrade a random card", "Add a corrupted card to your deck", "Choose a corrupted card"]
   },

@@ -21,6 +21,8 @@ public class FireRitualOption extends AbstractCampfireOption {
     private final int corruptionReduction;
     private final int maxHealthCost;
 
+    public static final String METRIC_KEY = "FIRE_RITUAL";
+
     public FireRitualOption() {
         this.fragmentCost = Cor.getFragmentCount();
         this.corruptionReduction = Math.min(this.fragmentCost * CORRUPTION_PER_FRAGMENT, Cor.corruption);
@@ -33,7 +35,7 @@ public class FireRitualOption extends AbstractCampfireOption {
 
     @Override
     public void useOption() {
-        //TODO wrap this in an effect so it looks less jarring
+        CardCrawlGame.metricData.addCampfireChoiceData(METRIC_KEY, this.corruptionReduction + "");
         Cor.reduceFragments(this.fragmentCost);
         Cor.addCorruption(-this.corruptionReduction);
         AbstractDungeon.player.decreaseMaxHealth(this.maxHealthCost);
