@@ -39,7 +39,7 @@
     "TEXT": ["Before resting... corruption."]
   },
   "CorruptTheSpire:FireRitualOption": {
-    "TEXT": ["Fire ritual", "                              Reduce Corruption by {0} for {1} Max HP and all your fragments"]
+    "TEXT": ["Fire ritual", "                                   Reduce Corruption by {0} for {1} Max HP and all your fragments"]
   },
   "CorruptTheSpire:GainFragmentOption": {
     "TEXT": ["Gain fragment", "Gain a Fragment of Corruption"]
