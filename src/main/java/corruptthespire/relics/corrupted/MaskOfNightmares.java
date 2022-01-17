@@ -1,6 +1,7 @@
 package corruptthespire.relics.corrupted;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.util.TextureLoader;
@@ -24,5 +25,10 @@ public class MaskOfNightmares extends AbstractCorruptedRelic {
 
     public void onEnterCorruptedRoom() {
         AbstractDungeon.player.increaseMaxHp(MAX_HP, true);
+    }
+
+    @Override
+    public boolean canSpawn() {
+        return Settings.isEndless || AbstractDungeon.floorNum <= 48;
     }
 }
