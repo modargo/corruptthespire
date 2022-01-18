@@ -103,15 +103,7 @@
   },
   "CorruptTheSpire:ManiacalRage": {
     "NAME": "Maniacal Rage",
-    "DESCRIPTION": "Gain !M! Temporary_HP. NL Choose one: Gain {0} Strength for each corruptthespire:common\u00a0debuff stack, or gain {0} Strength for each Status in your draw or discard. NL corruptthespire:Corruption {1}+: Gain {2} Temporary_HP."
-  },
-  "CorruptTheSpire:ManiacalRageDebuffsOption": {
-    "NAME": "Debuffs",
-    "DESCRIPTION": "Gain {0} Strength for each corruptthespire:common\u00a0debuff stack. (Gains !M! Strength)."
-  },
-  "CorruptTheSpire:ManiacalRageStatusesOption": {
-    "NAME": "Statuses",
-    "DESCRIPTION": "Gain {0} Strength for each Status in your draw or discard. (Gains !M! Strength)."
+    "DESCRIPTION": "Gain !M! Temporary_HP. NL Choose one: Gain Strength equal to the larger of your corruptthespire:common\u00a0debuff stacks the number of Status cards in your draw or discard. NL corruptthespire:Corruption {1}+: Gain {2} Temporary_HP."
   },
   "CorruptTheSpire:InnerFlame": {
     "NAME": "Inner Flame",

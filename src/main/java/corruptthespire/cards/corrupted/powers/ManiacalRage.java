@@ -55,106 +55,34 @@ public class ManiacalRage extends AbstractCorruptedCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int temporaryHp = this.magicNumber + (Cor.corruption >= CORRUPTION_THRESHOLD ? CORRUPTION_TEMPORARY_HP: 0);
         this.addToBot(new AddTemporaryHPAction(p, p, temporaryHp));
-        ArrayList<AbstractCard> choices = new ArrayList<>();
-        choices.add(new ManiacalRageDebuffsOption());
-        choices.add(new ManiacalRageStatusesOption());
-        this.addToBot(new ChooseOneAction(choices));
-    }
-
-    private static class ManiacalRageDebuffsOption extends CustomCard {
-        public static final String ID = "CorruptTheSpire:ManiacalRageDebuffsOption";
-        public static final String IMG = ManiacalRage.IMG;
-        private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-        public static final String NAME = cardStrings.NAME;
-        public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-        private static final int COST = -2;
-
-        public ManiacalRageDebuffsOption() {
-            super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, STRENGTH), CardType.POWER, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF);
-            this.magicNumber = this.baseMagicNumber = this.countDebuffs();
-        }
-
-        @Override
-        public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-            this.onChoseThisOption();
-        }
-
-        @Override
-        public void onChoseThisOption() {
-            AbstractPlayer p = AbstractDungeon.player;
-            if (this.magicNumber > 0) {
-                this.addToBot(new VFXAction(new BorderLongFlashEffect(Color.FIREBRICK, true)));
-                this.addToBot(new VFXAction(p, new InflameEffect(p), 1.0F));
-                this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
-            }
-        }
-
-        @Override
-        public void upgrade() {}
-
-        @Override
-        public AbstractCard makeCopy() {
-            return new ManiacalRageDebuffsOption();
-        }
-
-        private int countDebuffs() {
-            List<String> positivePowerIds = Arrays.asList(WeakPower.POWER_ID, FrailPower.POWER_ID, VulnerablePower.POWER_ID);
-            List<String> negativePowerIds = Arrays.asList(DexterityPower.POWER_ID, FocusPower.POWER_ID);
-            List<String> numberlessPowers = Collections.singletonList(ConfusionPower.POWER_ID);
-            return AbstractDungeon.player.powers.stream().map(p -> {
-                if (positivePowerIds.contains(p.ID)) {
-                    return p.amount;
-                }
-                else if (negativePowerIds.contains(p.ID) && p.amount < 0) {
-                    return -p.amount;
-                }
-                else if (numberlessPowers.contains(p.ID)) {
-                    return 1;
-                }
-                return 0;
-            }).reduce(0, Integer::sum);
+        int strength = Math.max(this.countDebuffs(), this.countStatuses());
+        if (strength > 0) {
+            this.addToBot(new VFXAction(new BorderLongFlashEffect(Color.FIREBRICK, true)));
+            this.addToBot(new VFXAction(p, new InflameEffect(p), 1.0F));
+            this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, strength), strength));
         }
     }
 
-    private static class ManiacalRageStatusesOption extends CustomCard {
-        public static final String ID = "CorruptTheSpire:ManiacalRageStatusesOption";
-        public static final String IMG = ManiacalRage.IMG;
-        private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-        public static final String NAME = cardStrings.NAME;
-        public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-        private static final int COST = -2;
-
-        public ManiacalRageStatusesOption() {
-            super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, STRENGTH), CardType.POWER, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF);
-            this.magicNumber = this.baseMagicNumber = this.countStatuses();
-        }
-
-        @Override
-        public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-            this.onChoseThisOption();
-        }
-
-        @Override
-        public void onChoseThisOption() {
-            AbstractPlayer p = AbstractDungeon.player;
-            if (this.magicNumber > 0) {
-                this.addToBot(new VFXAction(new BorderLongFlashEffect(Color.FIREBRICK, true)));
-                this.addToBot(new VFXAction(p, new InflameEffect(p), 1.0F));
-                this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
+    private int countDebuffs() {
+        List<String> positivePowerIds = Arrays.asList(WeakPower.POWER_ID, FrailPower.POWER_ID, VulnerablePower.POWER_ID);
+        List<String> negativePowerIds = Arrays.asList(DexterityPower.POWER_ID, FocusPower.POWER_ID);
+        List<String> numberlessPowers = Collections.singletonList(ConfusionPower.POWER_ID);
+        return AbstractDungeon.player.powers.stream().map(p -> {
+            if (positivePowerIds.contains(p.ID)) {
+                return p.amount;
             }
-        }
+            else if (negativePowerIds.contains(p.ID) && p.amount < 0) {
+                return -p.amount;
+            }
+            else if (numberlessPowers.contains(p.ID)) {
+                return 1;
+            }
+            return 0;
+        }).reduce(0, Integer::sum);
+    }
 
-        @Override
-        public void upgrade() {}
-
-        @Override
-        public AbstractCard makeCopy() {
-            return new ManiacalRageStatusesOption();
-        }
-
-        private int countStatuses() {
-            return (int)(AbstractDungeon.player.drawPile.group.stream().filter(c -> c.type == CardType.STATUS).count()
+    private int countStatuses() {
+        return (int)(AbstractDungeon.player.drawPile.group.stream().filter(c -> c.type == CardType.STATUS).count()
                 + AbstractDungeon.player.discardPile.group.stream().filter(c -> c.type == CardType.STATUS).count());
-        }
     }
 }
