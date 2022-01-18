@@ -39,7 +39,7 @@ public class ManiacalRage extends AbstractCorruptedCard {
     private static final int STRENGTH = 1;
 
     public ManiacalRage() {
-        super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, STRENGTH, CORRUPTION_THRESHOLD, CORRUPTION_TEMPORARY_HP), CardType.POWER, CardTarget.SELF);
+        super(ID, NAME, IMG, COST, getFormattedDescription(DESCRIPTION, null), CardType.POWER, CardTarget.SELF);
         this.magicNumber = this.baseMagicNumber = TEMPORARY_HP;
     }
 
@@ -55,12 +55,23 @@ public class ManiacalRage extends AbstractCorruptedCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         int temporaryHp = this.magicNumber + (Cor.corruption >= CORRUPTION_THRESHOLD ? CORRUPTION_TEMPORARY_HP: 0);
         this.addToBot(new AddTemporaryHPAction(p, p, temporaryHp));
-        int strength = Math.max(this.countDebuffs(), this.countStatuses());
+        int strength = this.getStrength();
         if (strength > 0) {
             this.addToBot(new VFXAction(new BorderLongFlashEffect(Color.FIREBRICK, true)));
             this.addToBot(new VFXAction(p, new InflameEffect(p), 1.0F));
             this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, strength), strength));
         }
+    }
+
+    @Override
+    public void applyPowers() {
+        int strength = this.getStrength();
+        this.rawDescription = getFormattedDescription(cardStrings.EXTENDED_DESCRIPTION[0], strength);
+        this.initializeDescription();
+    }
+
+    private int getStrength() {
+        return Math.max(this.countDebuffs(), this.countStatuses());
     }
 
     private int countDebuffs() {
@@ -84,5 +95,9 @@ public class ManiacalRage extends AbstractCorruptedCard {
     private int countStatuses() {
         return (int)(AbstractDungeon.player.drawPile.group.stream().filter(c -> c.type == CardType.STATUS).count()
                 + AbstractDungeon.player.discardPile.group.stream().filter(c -> c.type == CardType.STATUS).count());
+    }
+
+    private static String getFormattedDescription(String description, Integer strength) {
+        return MessageFormat.format(description, STRENGTH, CORRUPTION_THRESHOLD, CORRUPTION_TEMPORARY_HP, strength);
     }
 }
