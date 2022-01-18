@@ -60,7 +60,7 @@ public class MasterOfTimeAndSpace extends CustomMonster
     }
 
     public MasterOfTimeAndSpace(final float x, final float y) {
-        super(MasterOfTimeAndSpace.NAME, ID, HP, -5.0F, 0, 1000.0f, 560.0f, IMG, x, y);
+        super(MasterOfTimeAndSpace.NAME, ID, HP, -5.0F, 0, 900.0f, 500.0f, IMG, x, y);
         this.type = EnemyType.BOSS;
         if (AbstractDungeon.ascensionLevel >= 9) {
             this.setHp(A9_HP);
