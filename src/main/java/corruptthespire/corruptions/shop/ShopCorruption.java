@@ -2,6 +2,7 @@ package corruptthespire.corruptions.shop;
 
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.math.MathUtils;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -15,6 +16,7 @@ import com.megacrit.cardcrawl.shop.ShopScreen;
 import com.megacrit.cardcrawl.shop.StorePotion;
 import com.megacrit.cardcrawl.shop.StoreRelic;
 import corruptthespire.Cor;
+import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 import corruptthespire.cards.CardUtil;
 import corruptthespire.cards.corrupted.CorruptedCardColor;
@@ -22,6 +24,8 @@ import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.patches.CorruptedField;
 import corruptthespire.patches.shop.ShopCorruptionTypeField;
 import corruptthespire.relics.FragmentOfCorruption;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -142,7 +146,7 @@ public class ShopCorruption {
             ArrayList<StoreRelic> relics = ReflectionHacks.getPrivate(shopScreen, ShopScreen.class, "relics");
             relics.clear();
 
-            int numRelics = corruptionType == ShopCorruptionType.CorruptedRelicsReplacePotions ? 6 : 3;
+            int numRelics = corruptionType == ShopCorruptionType.CorruptedRelicsReplacePotions || Loader.isModLoaded("spicyShops") ? 6 : 3;
             for(int i = 0; i < numRelics; ++i) {
                 AbstractRelic tempRelic;
                 if (i < 3 && corruptionType == ShopCorruptionType.CorruptedRelics) {
@@ -159,7 +163,12 @@ public class ShopCorruption {
                 } else if (i == 2) {
                     tempRelic = AbstractDungeon.returnRandomRelicEnd(AbstractRelic.RelicTier.SHOP);
                 } else {
-                    tempRelic = RelicLibrary.getRelic(Cor.returnEndRandomCorruptedRelicKey()).makeCopy();
+                    if (corruptionType == ShopCorruptionType.CorruptedRelicsReplacePotions) {
+                        tempRelic = RelicLibrary.getRelic(Cor.returnEndRandomCorruptedRelicKey()).makeCopy();
+                    }
+                    else {
+                        tempRelic = AbstractDungeon.returnRandomRelicEnd(ShopScreen.rollRelicTier());
+                    }
                 }
 
                 StoreRelic relic = new StoreRelic(tempRelic, i, shopScreen);

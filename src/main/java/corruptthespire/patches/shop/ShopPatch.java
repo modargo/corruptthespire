@@ -2,6 +2,7 @@ package corruptthespire.patches.shop;
 
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -26,6 +27,7 @@ import javassist.CtBehavior;
 import javassist.expr.ExprEditor;
 import javassist.expr.MethodCall;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 public class ShopPatch {
@@ -72,6 +74,20 @@ public class ShopPatch {
         @SpirePrefixPatch
         public static SpireReturn<Void> changeRelics(ShopScreen __instance) {
             if (ShopCorruption.handleRelics(__instance)) {
+                if (Loader.isModLoaded("spicyShops")) {
+                    //This field is normally set in a prefix patch to initRelics in SpicyShops
+                    //However, if our prefix patch goes first, and terminates with this SpireReturn.Return(),
+                    //the SpicyShops prefix patch may never be called.
+                    //The symptom of this not being set is that potions don't show up, because lowestYPos is used to
+                    //position the potions and it never gets initialized
+                    try {
+                        Class<?> clz = Class.forName("SpicyShops.patches.ExtraRelicChoicePatches");
+                        Field f = clz.getField("lowestYPos");
+                        f.set(null, 2.14748365E9F);
+                    } catch (IllegalAccessException | NoSuchFieldException | ClassNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                }
                 return SpireReturn.Return();
             }
 

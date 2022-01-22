@@ -10,10 +10,11 @@ import javassist.CtBehavior;
 public class StoreRelicUpdatePatch {
     @SpireInsertPatch(locator = Locator.class)
     public static void FixPositionForSecondRow(StoreRelic __instance, float rugY, int ___slot) {
-        if (___slot > 2) {
-            __instance.relic.currentX -= 150.0F * 3 * Settings.xScale;
-            __instance.relic.currentY -= 200.0F * Settings.yScale;
-        }
+        // This is deliberately the exact same as Spicy Shops, to maintain consistency and avoid issues
+        int relicRow = (___slot + 1) / 3 - (((___slot + 1) % 3 > 0) ? 0 : 1);
+        __instance.relic.currentX = 1000.0F * Settings.scale + 150.0F * (___slot - 3 * relicRow) * Settings.scale;
+        __instance.relic.currentY = rugY + (418.0F - 128.0F * relicRow) * Settings.scale;
+
     }
 
     private static class Locator extends SpireInsertLocator {
