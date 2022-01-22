@@ -1408,6 +1408,816 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Transcendent Devourer",
+			"id": "CorruptTheSpire:TranscendentDevourer",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Starts with #wGorge, then #wNibble and #wSalivate in either order. Afterwards, cycles all three moves in a random order each time.",
+					"hp": "(100 HP)",
+					"notes": "Innate #uProtective #uMaw 45, #uFetid #uBody, #uSpore #uCloud 5. NL NL Contagion status cards go into the discard pile. NL NL #rN = 4 minus the number of living Lesser Devourers.",
+					"moves": [
+						{
+							"name": "Salivate",
+							"effects": [
+								{
+									"name": "Party Strength 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Nibble",
+							"effects": [
+								{
+									"name": "10",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Contagion 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Gorge",
+							"effects": [
+								{
+									"name": "3xN",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 3,
+					"desc": "Starts with #wGorge, then #wNibble and #wSalivate in either order. Afterwards, cycles all three moves in a random order each time.",
+					"hp": "(100 HP)",
+					"notes": "Innate #uProtective #uMaw 45, #uFetid #uBody, #uSpore #uCloud 5. NL NL Contagion status cards go into the discard pile. NL NL #rN = 5 minus the number of living Lesser Devourers.",
+					"moves": [
+						{
+							"name": "Salivate",
+							"effects": [
+								{
+									"name": "Party Strength 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Nibble",
+							"effects": [
+								{
+									"name": "12",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Contagion 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Gorge",
+							"effects": [
+								{
+									"name": "3xN",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 8,
+					"desc": "Starts with #wGorge, then #wNibble and #wSalivate in either order. Afterwards, cycles all three moves in a random order each time.",
+					"hp": "(110 HP)",
+					"notes": "Innate #uProtective #uMaw 45, #uFetid #uBody, #uSpore #uCloud 5. NL NL Contagion status cards go into the discard pile. NL NL #rN = 5 minus the number of living Lesser Devourers.",
+					"moves": [
+						{
+							"name": "Salivate",
+							"effects": [
+								{
+									"name": "Party Strength 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Nibble",
+							"effects": [
+								{
+									"name": "12",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Contagion 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Gorge",
+							"effects": [
+								{
+									"name": "3xN",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 18,
+					"desc": "Starts with #wGorge, then #wNibble and #wSalivate in either order. Afterwards, cycles all three moves in a random order each time.",
+					"hp": "(110 HP)",
+					"notes": "Innate #uProtective #uMaw 60, #uFetid #uBody, #uSpore #uCloud 5. NL NL Contagion status cards go into the draw pile. NL NL #rN = 5 minus the number of living Lesser Devourers.",
+					"moves": [
+						{
+							"name": "Salivate",
+							"effects": [
+								{
+									"name": "Party Strength 2",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Nibble",
+							"effects": [
+								{
+									"name": "12",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Contagion 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Gorge",
+							"effects": [
+								{
+									"name": "3xN",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Lesser Devourer",
+			"id": "CorruptTheSpire:LesserDevourerGreen",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Cycles #wChomp -> #wBad #wBreath -> #wDigest.",
+					"hp": "(30 HP)",
+					"notes": "Dazed status cards go into the discard pile. Bad Breath status cards go into the hand.",
+					"moves": [
+						{
+							"name": "Chomp",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Dazed 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Bad Breath",
+							"effects": [
+								{
+									"name": "Bad Breath 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Digest",
+							"effects": [
+								{
+									"name": "Block 6",
+									"color": "BLOCK"
+								},
+								{
+									"name": "Weak 1",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 2,
+					"desc": "Cycles #wChomp -> #wBad #wBreath -> #wDigest.",
+					"hp": "(30 HP)",
+					"notes": "Dazed status cards go into the discard pile. Bad Breath status cards go into the hand.",
+					"moves": [
+						{
+							"name": "Chomp",
+							"effects": [
+								{
+									"name": "6",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Dazed 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Bad Breath",
+							"effects": [
+								{
+									"name": "Bad Breath 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Digest",
+							"effects": [
+								{
+									"name": "Block 6",
+									"color": "BLOCK"
+								},
+								{
+									"name": "Weak 1",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 7,
+					"desc": "Cycles #wChomp -> #wBad #wBreath -> #wDigest.",
+					"hp": "(35 HP)",
+					"notes": "Dazed status cards go into the discard pile. Bad Breath status cards go into the hand.",
+					"moves": [
+						{
+							"name": "Chomp",
+							"effects": [
+								{
+									"name": "6",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Dazed 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Bad Breath",
+							"effects": [
+								{
+									"name": "Bad Breath 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Digest",
+							"effects": [
+								{
+									"name": "Block 8",
+									"color": "BLOCK"
+								},
+								{
+									"name": "Weak 1",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 17,
+					"desc": "Cycles #wChomp -> #wBad #wBreath -> #wDigest.",
+					"hp": "(35 HP)",
+					"notes": "Dazed status cards go into the draw pile. Bad Breath status cards go into the hand.",
+					"moves": [
+						{
+							"name": "Chomp",
+							"effects": [
+								{
+									"name": "6",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Dazed 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Bad Breath",
+							"effects": [
+								{
+									"name": "Bad Breath 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Digest",
+							"effects": [
+								{
+									"name": "Block 8",
+									"color": "BLOCK"
+								},
+								{
+									"name": "Weak 1",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Lesser Devourer",
+			"id": "CorruptTheSpire:LesserDevourerBrown",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Cycles #wChomp -> #wBad #wBreath -> #wDigest.",
+					"hp": "(40 HP)",
+					"notes": "",
+					"moves": [
+						{
+							"name": "Chomp",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Bad Breath",
+							"effects": [
+								{
+									"name": "10",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Digest",
+							"effects": [
+								{
+									"name": "2x2",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 2,
+					"desc": "Cycles #wChomp -> #wBad #wBreath -> #wDigest.",
+					"hp": "(40 HP)",
+					"notes": "",
+					"moves": [
+						{
+							"name": "Chomp",
+							"effects": [
+								{
+									"name": "6",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Bad Breath",
+							"effects": [
+								{
+									"name": "12",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Digest",
+							"effects": [
+								{
+									"name": "3x2",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 7,
+					"desc": "Cycles #wChomp -> #wBad #wBreath -> #wDigest.",
+					"hp": "(45 HP)",
+					"notes": "",
+					"moves": [
+						{
+							"name": "Chomp",
+							"effects": [
+								{
+									"name": "6",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Bad Breath",
+							"effects": [
+								{
+									"name": "12",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Digest",
+							"effects": [
+								{
+									"name": "3x2",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 17,
+					"desc": "Cycles #wChomp -> #wBad #wBreath -> #wDigest.",
+					"hp": "(45 HP)",
+					"notes": "",
+					"moves": [
+						{
+							"name": "Chomp",
+							"effects": [
+								{
+									"name": "6",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 2",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Bad Breath",
+							"effects": [
+								{
+									"name": "12",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Digest",
+							"effects": [
+								{
+									"name": "3x2",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Lesser Devourer",
+			"id": "CorruptTheSpire:LesserDevourerBlue",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Cycles #wChomp -> #wBad #wBreath -> #wDigest.",
+					"hp": "(30 HP)",
+					"notes": "",
+					"moves": [
+						{
+							"name": "Chomp",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Block 6",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Bad Breath",
+							"effects": [
+								{
+									"name": "Party Heal 2",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Digest",
+							"effects": [
+								{
+									"name": "7",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 2,
+					"desc": "Cycles #wChomp -> #wBad #wBreath -> #wDigest.",
+					"hp": "(30 HP)",
+					"notes": "",
+					"moves": [
+						{
+							"name": "Chomp",
+							"effects": [
+								{
+									"name": "6",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Block 6",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Bad Breath",
+							"effects": [
+								{
+									"name": "Party Heal 2",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Digest",
+							"effects": [
+								{
+									"name": "8",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 7,
+					"desc": "Cycles #wChomp -> #wBad #wBreath -> #wDigest.",
+					"hp": "(35 HP)",
+					"notes": "",
+					"moves": [
+						{
+							"name": "Chomp",
+							"effects": [
+								{
+									"name": "6",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Block 8",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Bad Breath",
+							"effects": [
+								{
+									"name": "Party Heal 2",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Digest",
+							"effects": [
+								{
+									"name": "8",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 17,
+					"desc": "Cycles #wChomp -> #wBad #wBreath -> #wDigest.",
+					"hp": "(35 HP)",
+					"notes": "",
+					"moves": [
+						{
+							"name": "Chomp",
+							"effects": [
+								{
+									"name": "6",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Block 8",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Bad Breath",
+							"effects": [
+								{
+									"name": "Party Heal 4",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Digest",
+							"effects": [
+								{
+									"name": "8",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Flame Manifest",
+			"id": "CorruptTheSpire:FlameManifest",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Starts with #wBig #wBurn, then cycles #wSmall #wBurn -> #wFierce #wBurn.",
+					"hp": "(13 - 15 / 20 - 22 / 27 - 29 HP)",
+					"notes": "Innate #uFiery #uDemise 1. NL NL Burn status cards go into the draw pile. NL NL HP and move effects vary by act (act 1 / act 2 / act 3).",
+					"moves": [
+						{
+							"name": "Big Burn",
+							"effects": [
+								{
+									"name": "Burn 1 / 2 / 3",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Small Burn",
+							"effects": [
+								{
+									"name": "2 / 4 / 6",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Fierce Burn",
+							"effects": [
+								{
+									"name": "2x2 / 2x3 / 2x4",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 2,
+					"desc": "Starts with #wBig #wBurn, then cycles #wSmall #wBurn -> #wFierce #wBurn.",
+					"hp": "(13 - 15 / 20 - 22 / 27 - 29 HP)",
+					"notes": "Innate #uFiery #uDemise 1. NL NL Burn status cards go into the draw pile. NL NL HP and move effects vary by act (act 1 / act 2 / act 3).",
+					"moves": [
+						{
+							"name": "Big Burn",
+							"effects": [
+								{
+									"name": "Burn 1 / 2 / 3",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Small Burn",
+							"effects": [
+								{
+									"name": "3 / 5 / 7",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Fierce Burn",
+							"effects": [
+								{
+									"name": "3x2 / 3x3 / 3x4",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 7,
+					"desc": "Starts with #wBig #wBurn, then cycles #wSmall #wBurn -> #wFierce #wBurn.",
+					"hp": "(14 - 16 / 22 - 24 / 30 - 32 HP)",
+					"notes": "Innate #uFiery #uDemise 1. NL NL Burn status cards go into the draw pile. NL NL HP and move effects vary by act (act 1 / act 2 / act 3).",
+					"moves": [
+						{
+							"name": "Big Burn",
+							"effects": [
+								{
+									"name": "Burn 1 / 2 / 3",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Small Burn",
+							"effects": [
+								{
+									"name": "3 / 5 / 7",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Fierce Burn",
+							"effects": [
+								{
+									"name": "3x2 / 3x3 / 3x4",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 17,
+					"desc": "Starts with #wBig #wBurn, then cycles #wSmall #wBurn -> #wFierce #wBurn.",
+					"hp": "(14 - 16 / 22 - 24 / 30 - 32 HP)",
+					"notes": "Innate #uFiery #uDemise 1. NL NL Burn status cards go into the draw pile. NL NL HP and move effects vary by act (act 1 / act 2 / act 3).",
+					"moves": [
+						{
+							"name": "Big Burn",
+							"effects": [
+								{
+									"name": "Burn 2 / 3 / 4",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Small Burn",
+							"effects": [
+								{
+									"name": "3 / 5 / 7",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Fierce Burn",
+							"effects": [
+								{
+									"name": "3x2 / 3x3 / 3x4",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
 		}
 	]
 }
