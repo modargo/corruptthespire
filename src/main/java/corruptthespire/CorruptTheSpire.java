@@ -76,6 +76,7 @@ public class CorruptTheSpire implements
 
     public static void initialize() {
         new CorruptTheSpire();
+        Config.initialize();
     }
 
     @Override

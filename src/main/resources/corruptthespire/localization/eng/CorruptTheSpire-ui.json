@@ -15,6 +15,12 @@
       "Corrupted"
     ]
   },
+  "CorruptTheSpire:CharacterSelectScreen": {
+    "TEXT": [
+      "Corrupt the Spire",
+      "Adds corrupted rooms to the Spire, which have increased rewards and new encounters."
+    ]
+  },
   "CorruptTheSpire:RelicViewScreen": {
     "TEXT": [
       "Corrupted:",

@@ -44,6 +44,9 @@ public class CorruptionDisplay extends TopPanelItem {
 
     @Override
     public void render(SpriteBatch sb) {
+        if (!Cor.active) {
+            return;
+        }
         super.render(sb);
         renderFlash(sb);
         renderCount(sb);

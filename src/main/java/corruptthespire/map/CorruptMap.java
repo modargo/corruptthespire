@@ -29,6 +29,11 @@ public class CorruptMap {
     }
 
     public static void markCorruptedNodes() {
+        if (!Cor.active) {
+            isBossCorrupted = false;
+            return;
+        }
+
         int actNum = Cor.getActNum();
         isBossCorrupted = actNum >= 3;
         ArrayList<MapRoomNode> potentialCorruptNodes = new ArrayList<>();
