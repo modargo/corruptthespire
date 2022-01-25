@@ -5,7 +5,7 @@ import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.unique.ArmamentsAction;
+import com.megacrit.cardcrawl.actions.common.UpgradeRandomCardAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -38,7 +38,7 @@ public class Nudge extends CustomCard {
         this.addToBot(new ScryAction(this.upgraded ? 3 : 2));
         this.addToBot(new DrawCardAction(1));
         this.addToBot(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, this.upgraded ? 2 : 1)));
-        this.addToBot(new ArmamentsAction(false));
+        this.addToBot(new UpgradeRandomCardAction());
     }
 
     @Override
