@@ -14,9 +14,8 @@ import java.util.ArrayList;
 
 public class FlexibleCostDiscoveryAction extends AbstractGameAction {
     private boolean retrieveCard = false;
-    private boolean returnColorless = false;
     private CardType cardType = null;
-    private Integer costReduction = null;
+    private Integer costReduction;
 
     public FlexibleCostDiscoveryAction(Integer costReduction) {
         this.actionType = ActionType.CARD_MANIPULATION;
@@ -25,27 +24,8 @@ public class FlexibleCostDiscoveryAction extends AbstractGameAction {
         this.costReduction = costReduction;
     }
 
-    public FlexibleCostDiscoveryAction(CardType type, int amount) {
-        this.actionType = ActionType.CARD_MANIPULATION;
-        this.duration = Settings.ACTION_DUR_FAST;
-        this.amount = amount;
-        this.cardType = type;
-    }
-
-    public FlexibleCostDiscoveryAction(boolean colorless, int amount) {
-        this.actionType = ActionType.CARD_MANIPULATION;
-        this.duration = Settings.ACTION_DUR_FAST;
-        this.amount = amount;
-        this.returnColorless = colorless;
-    }
-
     public void update() {
-        ArrayList<AbstractCard> generatedCards;
-        if (this.returnColorless) {
-            generatedCards = this.generateColorlessCardChoices();
-        } else {
-            generatedCards = this.generateCardChoices(this.cardType);
-        }
+        ArrayList<AbstractCard> generatedCards = this.generateCardChoices(this.cardType);
 
         if (this.duration == Settings.ACTION_DUR_FAST) {
             AbstractDungeon.cardRewardScreen.customCombatOpen(generatedCards, CardRewardScreen.TEXT[1], this.cardType != null);
@@ -101,27 +81,6 @@ public class FlexibleCostDiscoveryAction extends AbstractGameAction {
         }
 
         this.tickDuration();
-    }
-
-    private ArrayList<AbstractCard> generateColorlessCardChoices() {
-        ArrayList<AbstractCard> derp = new ArrayList<>();
-
-        while(derp.size() != 3) {
-            boolean dupe = false;
-            AbstractCard tmp = AbstractDungeon.returnTrulyRandomColorlessCardInCombat();
-            for (AbstractCard c : derp) {
-                if (c.cardID.equals(tmp.cardID)) {
-                    dupe = true;
-                    break;
-                }
-            }
-
-            if (!dupe) {
-                derp.add(tmp.makeCopy());
-            }
-        }
-
-        return derp;
     }
 
     private ArrayList<AbstractCard> generateCardChoices(CardType type) {

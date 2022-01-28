@@ -63,7 +63,7 @@ public class CardUtil {
     }
 
     public static AbstractCard getOtherColorCard(AbstractCard.CardRarity rarity) {
-        return getOtherColorCard(rarity, new ArrayList<>(), null);
+        return getOtherColorCard(rarity, new ArrayList<>());
     }
 
     public static AbstractCard getOtherColorCard(AbstractCard.CardRarity rarity, List<AbstractCard.CardColor> excludedColors) {

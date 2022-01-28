@@ -323,14 +323,6 @@ public class CorruptTheSpire implements
         }
     }
 
-    public static String addModId(String id) {
-        if (id.startsWith("CorruptTheSpire:")) {
-            return id;
-        } else {
-            return "CorruptTheSpire:" + id;
-        }
-    }
-
     public static void LoadPowerImage(AbstractPower power) {
         Texture tex84 = TextureLoader.getTexture(CorruptTheSpire.powerImage84(power.ID));
         Texture tex32 = TextureLoader.getTexture(CorruptTheSpire.powerImage32(power.ID));
