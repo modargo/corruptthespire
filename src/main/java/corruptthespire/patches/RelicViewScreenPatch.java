@@ -15,8 +15,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class RelicViewScreenPatch {
-    private static String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:RelicViewScreen").TEXT;
-    private static ArrayList<AbstractCorruptedRelic> allCorruptedRelics = Cor.getAllCorruptedRelics();
+    private static final String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:RelicViewScreen").TEXT;
+    private static final ArrayList<AbstractCorruptedRelic> allCorruptedRelics = Cor.getAllCorruptedRelics();
     static {
         for (AbstractCorruptedRelic r : allCorruptedRelics) {
             r.isSeen = true;

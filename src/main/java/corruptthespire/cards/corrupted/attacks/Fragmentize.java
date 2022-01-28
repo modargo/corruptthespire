@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.actions.FragmentizeAction;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;
-import corruptthespire.relics.FragmentOfCorruption;
 
 import java.text.MessageFormat;
 

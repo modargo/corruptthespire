@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class Config {
-    private static String ACTIVE = "active";
+    private static final String ACTIVE = "active";
     public static SpireConfig config = null;
 
     public static boolean active() {

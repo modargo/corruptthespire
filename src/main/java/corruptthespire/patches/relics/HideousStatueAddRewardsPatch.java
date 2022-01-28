@@ -2,7 +2,6 @@ package corruptthespire.patches.relics;
 
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import corruptthespire.corruptions.fight.FightCorruption;
 import corruptthespire.relics.corrupted.HideousStatue;
 import javassist.CtBehavior;
 

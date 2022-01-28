@@ -10,9 +10,6 @@ import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-import corruptthespire.actions.GainCorruptionAction;
 import corruptthespire.patches.potions.CorruptedPotionRarityEnum;
 import corruptthespire.powers.PowerUtil;
 

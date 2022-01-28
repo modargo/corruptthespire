@@ -3,7 +3,6 @@ package corruptthespire.potions;
 import com.megacrit.cardcrawl.helpers.PotionHelper;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.random.Random;
-import corruptthespire.Cor;
 
 import java.util.Arrays;
 import java.util.List;

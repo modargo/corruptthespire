@@ -1,6 +1,5 @@
 package corruptthespire.corruptions.fight.rewards;
 
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import corruptthespire.Cor;
 import corruptthespire.corruptions.AbstractCorruptionDistribution;
 import corruptthespire.corruptions.CorruptionDistributionInfo;
