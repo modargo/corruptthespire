@@ -146,7 +146,7 @@ public class FightCorruption {
     }
 
     private static void apa(AbstractMonster m, AbstractPower power) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, power));
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, m, power));
     }
 
     public static ArrayList<AbstractMonster> getExtraMonsterCorruptions() {
