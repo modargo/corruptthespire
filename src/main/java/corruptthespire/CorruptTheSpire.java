@@ -88,6 +88,7 @@ public class CorruptTheSpire implements
         addEvents();
         addPotions();
 
+        BaseMod.addSaveField(SavableActive.SaveKey, new SavableActive());
         BaseMod.addSaveField(SavableCorruptedRelicPool.SaveKey, new SavableCorruptedRelicPool());
         BaseMod.addSaveField(SavableCorruption.SaveKey, new SavableCorruption());
         BaseMod.addSaveField(SavableCorruptionPerFloor.SaveKey, new SavableCorruptionPerFloor());
