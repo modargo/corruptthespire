@@ -26,8 +26,8 @@ public class LesserDevourerBlue extends CustomMonster
     private static final byte CHOMP_MOVE = 1;
     private static final byte BAD_BREATH_MOVE = 2;
     private static final byte DIGEST_MOVE = 3;
-    private static final int CHOMP_DAMAGE = 5;
-    private static final int A2_CHOMP_DAMAGE = 6;
+    private static final int CHOMP_DAMAGE = 6;
+    private static final int A2_CHOMP_DAMAGE = 7;
     private static final int CHOMP_BLOCK = 6;
     private static final int A7_CHOMP_BLOCK = 8;
     private static final int BAD_BREATH_HEAL = 2;
