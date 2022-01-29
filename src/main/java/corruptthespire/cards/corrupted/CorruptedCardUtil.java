@@ -1,8 +1,14 @@
 package corruptthespire.cards.corrupted;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.daily.mods.BlueCards;
+import com.megacrit.cardcrawl.daily.mods.GreenCards;
+import com.megacrit.cardcrawl.daily.mods.PurpleCards;
+import com.megacrit.cardcrawl.daily.mods.RedCards;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ModHelper;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.PrismaticShard;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import corruptthespire.cards.corrupted.attacks.*;
 import corruptthespire.cards.corrupted.powers.*;
@@ -54,16 +60,16 @@ public class CorruptedCardUtil {
         corruptedCardInfos.add(new CorruptedCardInfo(new LordOfNightmare(), AbstractCard.CardRarity.RARE));
 
         //Class-specific
-        if (ignoreClass || AbstractDungeon.player.getCardColor() == AbstractCard.CardColor.RED) {
+        if (ignoreClass || AbstractDungeon.player.hasRelic(PrismaticShard.ID) || AbstractDungeon.player.getCardColor() == AbstractCard.CardColor.RED || ModHelper.isModEnabled(RedCards.ID)) {
             corruptedCardInfos.add(new CorruptedCardInfo(new LightningBlood(), AbstractCard.CardRarity.COMMON));
         }
-        if (ignoreClass || AbstractDungeon.player.getCardColor() == AbstractCard.CardColor.GREEN) {
+        if (ignoreClass || AbstractDungeon.player.hasRelic(PrismaticShard.ID) || AbstractDungeon.player.getCardColor() == AbstractCard.CardColor.GREEN || ModHelper.isModEnabled(GreenCards.ID)) {
             corruptedCardInfos.add(new CorruptedCardInfo(new UnnaturalOrder(), AbstractCard.CardRarity.COMMON));
         }
-        if (ignoreClass || AbstractDungeon.player.getCardColor() == AbstractCard.CardColor.BLUE) {
+        if (ignoreClass || AbstractDungeon.player.hasRelic(PrismaticShard.ID) || AbstractDungeon.player.getCardColor() == AbstractCard.CardColor.BLUE || ModHelper.isModEnabled(BlueCards.ID)) {
             corruptedCardInfos.add(new CorruptedCardInfo(new GuidingStar(), AbstractCard.CardRarity.COMMON));
         }
-        if (ignoreClass || AbstractDungeon.player.getCardColor() == AbstractCard.CardColor.PURPLE) {
+        if (ignoreClass || AbstractDungeon.player.hasRelic(PrismaticShard.ID) || AbstractDungeon.player.getCardColor() == AbstractCard.CardColor.PURPLE || ModHelper.isModEnabled(PurpleCards.ID)) {
             corruptedCardInfos.add(new CorruptedCardInfo(new DivineStrike(), AbstractCard.CardRarity.COMMON));
         }
 
