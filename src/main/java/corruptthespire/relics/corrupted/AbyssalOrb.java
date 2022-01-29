@@ -27,8 +27,8 @@ public class AbyssalOrb extends AbstractCorruptedRelic {
     public void atTurnStart() {
         this.flash();
         AbstractMonster m = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
-        this.addToTop(new ApplyPowerAction(m, AbstractDungeon.player, PowerUtil.abysstouched(m, ABYSSTOUCHED_AT_START_OF_TURN)));
-        this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        this.addToBot(new ApplyPowerAction(m, AbstractDungeon.player, PowerUtil.abysstouched(m, ABYSSTOUCHED_AT_START_OF_TURN)));
+        this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
     }
 
     @Override
