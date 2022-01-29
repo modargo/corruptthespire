@@ -155,10 +155,10 @@ public class TranscendentDevourer extends CustomMonster
             potentialMoves.remove((Object)SALIVATE_BUFF);
             potentialMoves.remove((Object)NIBBLE_ATTACK);
         }
-        if (s > 0) {
+        if (movesToCheck > 0) {
             potentialMoves.remove(this.moveHistory.get(s - 1));
         }
-        if (movesToCheck > 1 && s > 1) {
+        if (movesToCheck > 1) {
             potentialMoves.remove(this.moveHistory.get(s - 2));
         }
 
