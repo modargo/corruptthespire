@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.powers.PowerUtil;
@@ -19,9 +18,8 @@ public class TranscendentPet extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));
 
-    private static final int WEAK = 1;
     private static final int VULNERABLE = 1;
-    private static final int ABYSSTOUCHED = 1;
+    private static final int ABYSSTOUCHED = 2;
 
     public TranscendentPet() {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.HEAVY);
@@ -37,7 +35,6 @@ public class TranscendentPet extends CustomRelic {
         if (this.counter == 1) {
             this.flash();
             for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-                this.addToBot(new ApplyPowerAction(m, AbstractDungeon.player, new WeakPower(m, WEAK, false)));
                 this.addToBot(new ApplyPowerAction(m, AbstractDungeon.player, new VulnerablePower(m, VULNERABLE, false)));
                 this.addToBot(new ApplyPowerAction(m, AbstractDungeon.player, PowerUtil.abysstouched(m, ABYSSTOUCHED)));
             }
@@ -57,7 +54,7 @@ public class TranscendentPet extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return MessageFormat.format(DESCRIPTIONS[0], WEAK, VULNERABLE, ABYSSTOUCHED);
+        return MessageFormat.format(DESCRIPTIONS[0], VULNERABLE, ABYSSTOUCHED);
     }
 
     @Override
