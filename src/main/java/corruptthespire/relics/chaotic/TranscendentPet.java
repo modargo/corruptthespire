@@ -18,7 +18,7 @@ public class TranscendentPet extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));
 
-    private static final int VULNERABLE = 1;
+    private static final int VULNERABLE = 2;
     private static final int ABYSSTOUCHED = 2;
 
     public TranscendentPet() {
