@@ -116,12 +116,12 @@
   "CorruptTheSpire:TranscendentPet": {
     "NAME": "Transcendent Pet",
     "FLAVOR": "Surprisingly cute, in a grotesque sort of way.",
-    "DESCRIPTIONS": ["At the start of your 2nd turn, apply #b{0} Vulnerable and #b{1} Abysstouched to ALL enemies."]
+    "DESCRIPTIONS": ["At the start of your 2nd turn, apply #b{0} #yVulnerable and #b{1} #yAbysstouched to ALL enemies."]
   },
   "CorruptTheSpire:TranscendentEye": {
     "NAME": "Transcendent Eye",
     "FLAVOR": "The creature's eye still seeks out prey.",
-    "DESCRIPTIONS": ["At the start of your 2nd turn, Scry #b{0} and draw #b{1} card."]
+    "DESCRIPTIONS": ["At the start of your 2nd turn, #yScry #b{0} and draw #b{1} card."]
   },
   "CorruptTheSpire:HideousStatue": {
     "NAME": "Hideous Statue",
