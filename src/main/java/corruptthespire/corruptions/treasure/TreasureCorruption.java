@@ -72,7 +72,7 @@ public class TreasureCorruption {
         }
 
         if (corruptionType == TreasureCorruptionType.CorruptedRelic) {
-            AbstractDungeon.getCurrRoom().addRelicToRewards(RelicLibrary.getRelic(Cor.returnRandomCorruptedRelicKey()).makeCopy());
+            AbstractDungeon.getCurrRoom().addRelicToRewards(Cor.returnRandomCorruptedRelic());
         }
     }
 

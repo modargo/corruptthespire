@@ -45,6 +45,6 @@ public class CorruptedRelicOption extends AbstractCorruptedCampfireOption {
         //TODO wrap this in an effect so it looks less jarring
         Cor.reduceFragments(this.getFragmentCost());
         Cor.addCorruption(CORRUPTION);
-        AbstractDungeon.effectList.add(new CorruptedCampfireGainRelicEffect(RelicLibrary.getRelic(Cor.returnRandomCorruptedRelicKey())));
+        AbstractDungeon.effectList.add(new CorruptedCampfireGainRelicEffect(Cor.returnRandomCorruptedRelic()));
     }
 }

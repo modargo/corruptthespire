@@ -47,7 +47,7 @@ public class SinisterTemple extends AbstractImageEvent {
         this.relic2 = commonRelics.get(1);
         float discount = AbstractDungeon.ascensionLevel >= 15 ? A15_DISCOUNT : DISCOUNT;
         this.gold = AbstractDungeon.miscRng.random((int)((discount - RANGE) * AbstractCorruptedRelic.CORRUPTED_RELIC_PRICE), (int)(discount * AbstractCorruptedRelic.CORRUPTED_RELIC_PRICE));
-        this.rewardRelic = RelicLibrary.getRelic(Cor.returnRandomCorruptedRelicKey());
+        this.rewardRelic = Cor.returnRandomCorruptedRelic();
 
         imageEventText.setDialogOption(MessageFormat.format(OPTIONS[0], this.rewardRelic.name, this.relic1.name), this.rewardRelic);
         imageEventText.setDialogOption(MessageFormat.format(OPTIONS[0], this.rewardRelic.name, this.relic2.name), this.rewardRelic);

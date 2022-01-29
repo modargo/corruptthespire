@@ -33,7 +33,7 @@ public class AncientLaboratory extends AbstractImageEvent {
         super(NAME, DESCRIPTIONS[0], IMG);
 
         this.damage = AbstractDungeon.ascensionLevel >= 15 ? A15_DAMAGE : DAMAGE;
-        this.corruptedRelic = RelicLibrary.getRelic(Cor.returnRandomCorruptedRelicKey());
+        this.corruptedRelic = Cor.returnRandomCorruptedRelic();
 
         imageEventText.setDialogOption(MessageFormat.format(OPTIONS[0], this.corruptedRelic.name, this.damage), this.corruptedRelic);
         imageEventText.setDialogOption(MessageFormat.format(OPTIONS[1], this.damage));

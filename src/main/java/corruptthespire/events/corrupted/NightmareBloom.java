@@ -41,7 +41,7 @@ public class NightmareBloom extends AbstractImageEvent {
     public NightmareBloom() {
         super(NAME, DESCRIPTIONS[0], IMG);
 
-        this.relic = RelicLibrary.getRelic(Cor.returnRandomCorruptedRelicKey());
+        this.relic = Cor.returnRandomCorruptedRelic();
         this.relicCorruption = AbstractDungeon.ascensionLevel >= 15 ? A15_RELIC_CORRUPTION : RELIC_CORRUPTION;
 
         imageEventText.setDialogOption(MessageFormat.format(OPTIONS[0], this.relic.name, this.relicCorruption), this.relic);

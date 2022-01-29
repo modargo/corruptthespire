@@ -83,7 +83,7 @@ public class FightCorruptionReward {
                 room.addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
                 break;
             case CorruptedRelic:
-                room.addRelicToRewards(RelicLibrary.getRelic(Cor.returnRandomCorruptedRelicKey()));
+                room.addRelicToRewards(Cor.returnRandomCorruptedRelic());
                 break;
         }
     }

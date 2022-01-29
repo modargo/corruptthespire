@@ -178,7 +178,15 @@ public class Cor {
         }
     }
 
-    public static String returnRandomCorruptedRelicKey() {
+    public static AbstractRelic returnRandomCorruptedRelic() {
+        return RelicLibrary.getRelic(returnRandomCorruptedRelicKey()).makeCopy();
+    }
+
+    public static AbstractRelic returnEndRandomCorruptedRelic() {
+        return RelicLibrary.getRelic(returnEndRandomCorruptedRelicKey()).makeCopy();
+    }
+
+    private static String returnRandomCorruptedRelicKey() {
         if (Cor.corruptedRelicPool.isEmpty()) {
             fillCorruptedRelicPool(true);
         }
@@ -192,7 +200,7 @@ public class Cor {
         return relicKey;
     }
 
-    public static String returnEndRandomCorruptedRelicKey() {
+    private static String returnEndRandomCorruptedRelicKey() {
         if (Cor.corruptedRelicPool.isEmpty()) {
             fillCorruptedRelicPool(true);
         }

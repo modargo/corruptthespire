@@ -39,7 +39,7 @@ public class StrangeMarketplace extends AbstractImageEvent {
         super(NAME, DESCRIPTIONS[0], IMG);
         this.noCardsInRewards = true;
 
-        this.relic = RelicLibrary.getRelic(Cor.returnRandomCorruptedRelicKey());
+        this.relic = Cor.returnRandomCorruptedRelic();
         this.gold = AbstractDungeon.ascensionLevel >= 15 ? A15_GOLD : GOLD;
         this.potions = AbstractDungeon.ascensionLevel >= 15 ? A15_POTIONS : POTIONS;
 
