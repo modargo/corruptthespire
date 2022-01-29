@@ -32,8 +32,8 @@ public class LesserDevourerGreen extends CustomMonster
     private static final int DIGEST_BLOCK = 6;
     private static final int A7_DIGEST_BLOCK = 8;
     private static final int DIGEST_WEAK = 1;
-    private static final int HP = 30;
-    private static final int A7_HP = 35;
+    private static final int HP = 35;
+    private static final int A7_HP = 40;
     private final int chompDamage;
     private final int digestBlock;
 

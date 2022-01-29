@@ -33,8 +33,8 @@ public class LesserDevourerBrown extends CustomMonster
     private static final int DIGEST_DAMAGE = 2;
     private static final int A2_DIGEST_DAMAGE = 3;
     private static final int DIGEST_HITS = 2;
-    private static final int HP = 40;
-    private static final int A7_HP = 45;
+    private static final int HP = 45;
+    private static final int A7_HP = 50;
     private final int chompDamage;
     private final int chompStrength;
     private final int badBreathDamage;

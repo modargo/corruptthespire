@@ -34,8 +34,8 @@ public class LesserDevourerBlue extends CustomMonster
     private static final int A17_BAD_BREATH_HEAL = 4;
     private static final int DIGEST_DAMAGE = 7;
     private static final int A2_DIGEST_DAMAGE = 8;
-    private static final int HP = 30;
-    private static final int A7_HP = 35;
+    private static final int HP = 35;
+    private static final int A7_HP = 40;
     private final int chompDamage;
     private final int chompBlock;
     private final int badBreathHeal;
