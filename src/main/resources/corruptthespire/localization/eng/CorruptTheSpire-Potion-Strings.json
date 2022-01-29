@@ -17,5 +17,9 @@
   "CorruptTheSpire:DarkElixir": {
     "NAME": "Dark Elixir",
     "DESCRIPTIONS": ["Gain #b{0} #yStrength and #b{0} #yDexterity. Gain #b{0} #yCorruption."]
+  },
+  "CorruptTheSpire:ProfaneMixture": {
+    "NAME": "Profane Mixture",
+    "DESCRIPTIONS": ["Gain #b{0} #yHand #yof #ythe #yAbyss."]
   }
 }
