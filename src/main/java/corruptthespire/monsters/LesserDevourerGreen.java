@@ -44,7 +44,7 @@ public class LesserDevourerGreen extends CustomMonster
     public LesserDevourerGreen(final float x, final float y) {
         super(LesserDevourerGreen.NAME, ID, HP, -5.0F, 0, 130.0f, 130.0f, IMG, x, y);
         this.type = EnemyType.ELITE;
-        if (AbstractDungeon.ascensionLevel >= 8) {
+        if (AbstractDungeon.ascensionLevel >= 7) {
             this.setHp(A7_HP);
             this.digestBlock = A7_DIGEST_BLOCK;
         } else {
@@ -52,7 +52,7 @@ public class LesserDevourerGreen extends CustomMonster
             this.digestBlock = DIGEST_BLOCK;
         }
 
-        if (AbstractDungeon.ascensionLevel >= 3) {
+        if (AbstractDungeon.ascensionLevel >= 2) {
             this.chompDamage = A2_CHOMP_DAMAGE;
         } else {
             this.chompDamage = CHOMP_DAMAGE;
