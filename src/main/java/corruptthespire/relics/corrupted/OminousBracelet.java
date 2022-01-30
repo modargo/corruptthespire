@@ -21,6 +21,7 @@ public class OminousBracelet extends AbstractCorruptedRelic {
     public OminousBracelet() {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.MAGICAL);
         this.tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("corruptthespire:corruption")), BaseMod.getKeywordDescription("corruptthespire:corruption")));
+        this.tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("corruptthespire:lowest\u00a0reward\u00a0outcomes")), BaseMod.getKeywordDescription("corruptthespire:lowest\u00a0reward\u00a0outcomes")));
     }
 
     //All actual functionality is found in checks for the player having this relic

@@ -57,7 +57,7 @@
   "CorruptTheSpire:OminousBracelet": {
     "NAME": "Ominous Bracelet",
     "FLAVOR": "A ward that guides its bearer to greatness.",
-    "DESCRIPTIONS": ["Reduce #yCorruption gained by entering rooms by #b{0}. Corrupted events, treasures, and shops no longer give the lowest reward outcomes. (The lowest reward corruption outcomes are the ones that only add #yFragments #yof #yCorruption.)"]
+    "DESCRIPTIONS": ["Reduce #yCorruption gained by entering rooms by #b{0}. Corrupted events, treasures, and shops no longer give the #ylowest #yreward #youtcomes."]
   },
   "CorruptTheSpire:CorruptedToolbox": {
     "NAME": "Corrupted Toolbox",

@@ -48,5 +48,10 @@
     "PROPER_NAME": "Buffer",
     "NAMES": ["buffer"],
     "DESCRIPTION": "Prevent the next HP loss."
+  },
+  {
+    "PROPER_NAME": "Lowest Reward Outcomes",
+    "NAMES": ["lowest\u00a0reward\u00a0outcomes"],
+    "DESCRIPTION": "Outcomes that only add #yFragments #yof #yCorruption."
   }
 ]
