@@ -1,10 +1,13 @@
 package corruptthespire.relics.corrupted;
 
+import basemod.BaseMod;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.powers.ConstrictedPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import corruptthespire.CorruptTheSpire;
@@ -22,6 +25,7 @@ public class RustedOrichalcum extends AbstractCorruptedRelic {
 
     public RustedOrichalcum() {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.HEAVY);
+        this.tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("corruptthespire:constricted")), BaseMod.getKeywordDescription("corruptthespire:constricted")));
     }
 
     @Override
