@@ -38,5 +38,10 @@
     "PROPER_NAME": "After Image",
     "NAMES": ["after\u00a0image"],
     "DESCRIPTION": "Whenever you play a card, gain #yBlock."
+  },
+  {
+    "PROPER_NAME": "Buffer",
+    "NAMES": ["buffer"],
+    "DESCRIPTION": "Prevents the next time you would lose HP in combat."
   }
 ]
