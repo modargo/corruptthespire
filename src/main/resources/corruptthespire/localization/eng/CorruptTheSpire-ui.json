@@ -27,6 +27,12 @@
       "Relics that can only be obtained through corrupted rooms."
     ]
   },
+  "CorruptTheSpire:PotionViewScreen": {
+    "TEXT": [
+      "Corrupted:",
+      "Potions that can only be obtained through corrupted rooms."
+    ]
+  },
   "CorruptTheSpire:RunHistory": {
     "TEXT": [
       "#bFire #bRitual {0}"
