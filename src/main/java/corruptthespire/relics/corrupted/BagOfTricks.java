@@ -1,9 +1,12 @@
 package corruptthespire.relics.corrupted;
 
+import basemod.BaseMod;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.powers.AfterImagePower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import corruptthespire.CorruptTheSpire;
@@ -20,6 +23,7 @@ public class BagOfTricks extends AbstractCorruptedRelic {
 
     public BagOfTricks() {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.FLAT);
+        this.resetTips();
     }
 
     @Override
@@ -43,5 +47,12 @@ public class BagOfTricks extends AbstractCorruptedRelic {
     @Override
     public AbstractRelic makeCopy() {
         return new BagOfTricks();
+    }
+
+    private void resetTips() {
+        this.tips.clear();
+        this.tips.add(new PowerTip(this.name, this.description));
+        this.tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("corruptthespire:after\u00a0image")), BaseMod.getKeywordDescription("corruptthespire:after\u00a0image")));
+        this.initializeTips();
     }
 }

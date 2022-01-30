@@ -33,5 +33,10 @@
     "PROPER_NAME": "Fragment of Corruption",
     "NAMES": ["fragment\u00a0of\u00a0corruption"],
     "DESCRIPTION": "Small fragment of corrupted Spirestone. Can be used at corrupted Rest Sites."
+  },
+  {
+    "PROPER_NAME": "After Image",
+    "NAMES": ["after\u00a0image"],
+    "DESCRIPTION": "Whenever you play a card, gain #yBlock."
   }
 ]
