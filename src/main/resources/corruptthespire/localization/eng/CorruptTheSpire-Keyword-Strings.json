@@ -20,6 +20,11 @@
     "DESCRIPTION": "Gain #yBlock at the end of your turn."
   },
   {
+    "PROPER_NAME": "Plated Armor",
+    "NAMES": ["plated\u00a0armor"],
+    "DESCRIPTION": "Gain #yBlock at the end of you turn. Reduced by receiving unblocked attack damage."
+  },
+  {
     "PROPER_NAME": "Constricted",
     "NAMES": ["constricted"],
     "DESCRIPTION": "Deals damage to you at the end of your turn."
@@ -42,6 +47,6 @@
   {
     "PROPER_NAME": "Buffer",
     "NAMES": ["buffer"],
-    "DESCRIPTION": "Prevents the next time you would lose HP in combat."
+    "DESCRIPTION": "Prevent the next HP loss."
   }
 ]
