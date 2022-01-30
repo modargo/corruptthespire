@@ -1,9 +1,12 @@
 package corruptthespire.relics.corrupted;
 
+import basemod.BaseMod;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;
@@ -20,6 +23,7 @@ public class CorruptedEgg extends AbstractCorruptedRelic {
 
     public CorruptedEgg() {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.SOLID);
+        this.tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("corruptthespire:corruption")), BaseMod.getKeywordDescription("corruptthespire:corruption")));
     }
 
     public static float modifyUpgradeChance(float chance) {
