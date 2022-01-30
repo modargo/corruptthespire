@@ -23,7 +23,7 @@ public class BagOfTricks extends AbstractCorruptedRelic {
 
     public BagOfTricks() {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.FLAT);
-        this.resetTips();
+        this.tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("corruptthespire:after\u00a0image")), BaseMod.getKeywordDescription("corruptthespire:after\u00a0image")));
     }
 
     @Override
@@ -47,12 +47,5 @@ public class BagOfTricks extends AbstractCorruptedRelic {
     @Override
     public AbstractRelic makeCopy() {
         return new BagOfTricks();
-    }
-
-    private void resetTips() {
-        this.tips.clear();
-        this.tips.add(new PowerTip(this.name, this.description));
-        this.tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("corruptthespire:after\u00a0image")), BaseMod.getKeywordDescription("corruptthespire:after\u00a0image")));
-        this.initializeTips();
     }
 }

@@ -24,7 +24,7 @@ public class AbyssalOrb extends AbstractCorruptedRelic {
 
     public AbyssalOrb() {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.FLAT);
-        this.resetTips();
+        this.tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("corruptthespire:abysstouched")), BaseMod.getKeywordDescription("corruptthespire:abysstouched")));
     }
 
     @Override
@@ -43,12 +43,5 @@ public class AbyssalOrb extends AbstractCorruptedRelic {
     @Override
     public AbstractRelic makeCopy() {
         return new AbyssalOrb();
-    }
-
-    private void resetTips() {
-        this.tips.clear();
-        this.tips.add(new PowerTip(this.name, this.description));
-        this.tips.add(new PowerTip(TipHelper.capitalize(BaseMod.getKeywordTitle("corruptthespire:abysstouched")), BaseMod.getKeywordDescription("corruptthespire:abysstouched")));
-        this.initializeTips();
     }
 }
