@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
 import corruptthespire.corruptions.shop.ShopCorruptionDistribution;
 import corruptthespire.corruptions.shop.ShopCorruptionType;
-import corruptthespire.patches.CorruptedField;
+import corruptthespire.patches.core.CorruptedField;
 
 @SpirePatch(clz = ShopRoom.class, method = "onPlayerEntry")
 @SpirePatch(cls = "downfall.rooms.HeartShopRoom", method = "onPlayerEntry", optional = true)

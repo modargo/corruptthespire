@@ -1,4 +1,4 @@
-package corruptthespire.patches;
+package corruptthespire.patches.core;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;

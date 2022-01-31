@@ -1,4 +1,4 @@
-package corruptthespire.patches;
+package corruptthespire.patches.misc;
 
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;

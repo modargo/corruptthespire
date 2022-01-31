@@ -1,6 +1,6 @@
 package corruptthespire.corruptions.fight;
 
-import corruptthespire.patches.BestiaryIntegrationPatch;
+import corruptthespire.patches.misc.BestiaryIntegrationPatch;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

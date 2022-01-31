@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.ui.buttons.ProceedButton;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 import corruptthespire.corruptions.campfire.CampfireInfo;
-import corruptthespire.patches.CorruptedField;
+import corruptthespire.patches.core.CorruptedField;
 import javassist.CtBehavior;
 
 import java.util.ArrayList;

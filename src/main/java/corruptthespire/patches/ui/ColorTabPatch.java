@@ -1,4 +1,4 @@
-package corruptthespire.patches;
+package corruptthespire.patches.ui;
 
 import basemod.ReflectionHacks;
 import basemod.patches.com.megacrit.cardcrawl.screens.mainMenu.ColorTabBar.ColorTabBarFix;

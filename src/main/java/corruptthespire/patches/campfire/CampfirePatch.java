@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.ui.campfire.SmithOption;
 import corruptthespire.corruptions.campfire.CampfireCorruption;
 import corruptthespire.corruptions.campfire.CampfireInfo;
 import corruptthespire.corruptions.campfire.FireRitualOption;
-import corruptthespire.patches.CorruptedField;
+import corruptthespire.patches.core.CorruptedField;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import javassist.expr.ExprEditor;

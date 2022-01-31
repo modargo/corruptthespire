@@ -1,4 +1,4 @@
-package corruptthespire.patches;
+package corruptthespire.patches.ui;
 
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Color;

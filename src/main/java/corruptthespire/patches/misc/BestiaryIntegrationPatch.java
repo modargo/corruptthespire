@@ -1,4 +1,4 @@
-package corruptthespire.patches;
+package corruptthespire.patches.misc;
 
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.google.gson.JsonArray;

@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 import corruptthespire.Cor;
 import corruptthespire.corruptions.fight.rewards.FightCorruptionReward;
 import corruptthespire.monsters.*;
-import corruptthespire.patches.CorruptedField;
+import corruptthespire.patches.core.CorruptedField;
 import corruptthespire.patches.fight.FightCorruptionInfosField;
 import corruptthespire.powers.ThoughtStealerPower;
 import org.apache.logging.log4j.LogManager;

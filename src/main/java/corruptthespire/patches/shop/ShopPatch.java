@@ -20,7 +20,7 @@ import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 import corruptthespire.corruptions.shop.ShopCorruption;
 import corruptthespire.corruptions.shop.ShopCorruptionType;
-import corruptthespire.patches.CorruptedField;
+import corruptthespire.patches.core.CorruptedField;
 import corruptthespire.util.TextureLoader;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;

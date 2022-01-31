@@ -1,4 +1,4 @@
-package corruptthespire.patches;
+package corruptthespire.patches.event;
 
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;

@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -20,7 +19,7 @@ import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 import corruptthespire.cards.CardUtil;
 import corruptthespire.cards.corrupted.CorruptedCardColor;
 import corruptthespire.cards.corrupted.CorruptedCardUtil;
-import corruptthespire.patches.CorruptedField;
+import corruptthespire.patches.core.CorruptedField;
 import corruptthespire.patches.shop.ShopCorruptionTypeField;
 import corruptthespire.relics.FragmentOfCorruption;
 

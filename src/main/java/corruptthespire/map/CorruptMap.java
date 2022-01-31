@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.rooms.TreasureRoom;
 import corruptthespire.Cor;
-import corruptthespire.patches.CorruptedField;
+import corruptthespire.patches.core.CorruptedField;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

@@ -1,4 +1,4 @@
-package corruptthespire.patches;
+package corruptthespire.patches.core;
 
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.Gdx;

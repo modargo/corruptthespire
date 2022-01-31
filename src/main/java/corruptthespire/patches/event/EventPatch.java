@@ -10,7 +10,7 @@ import corruptthespire.corruptions.event.EventCorruption;
 import corruptthespire.corruptions.event.EventCorruptionDistribution;
 import corruptthespire.corruptions.event.EventCorruptionType;
 import corruptthespire.events.CorruptedEventType;
-import corruptthespire.patches.CorruptedField;
+import corruptthespire.patches.core.CorruptedField;
 
 public class EventPatch {
     @SpirePatch(clz = EventRoom.class, method = "onPlayerEntry")

@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.rooms.CampfireUI;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 import corruptthespire.Cor;
 import corruptthespire.corruptions.campfire.options.*;
-import corruptthespire.patches.CorruptedField;
+import corruptthespire.patches.core.CorruptedField;
 import corruptthespire.patches.campfire.CampfireInfoField;
 import corruptthespire.relics.corrupted.ObsidianShovel;
 

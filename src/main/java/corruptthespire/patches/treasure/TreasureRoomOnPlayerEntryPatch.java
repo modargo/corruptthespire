@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.rooms.TreasureRoom;
 import corruptthespire.corruptions.treasure.TreasureCorruption;
 import corruptthespire.corruptions.treasure.TreasureCorruptionDistribution;
 import corruptthespire.corruptions.treasure.TreasureCorruptionType;
-import corruptthespire.patches.CorruptedField;
+import corruptthespire.patches.core.CorruptedField;
 
 @SpirePatch(clz = TreasureRoom.class, method = "onPlayerEntry")
 public class TreasureRoomOnPlayerEntryPatch {
