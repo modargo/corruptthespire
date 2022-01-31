@@ -3,7 +3,6 @@ package corruptthespire.corruptions.campfire.options;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;

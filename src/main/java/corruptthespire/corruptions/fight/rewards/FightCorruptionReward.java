@@ -1,7 +1,6 @@
 package corruptthespire.corruptions.fight.rewards;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import corruptthespire.Cor;
 import corruptthespire.corruptions.fight.FightCorruptionSize;
