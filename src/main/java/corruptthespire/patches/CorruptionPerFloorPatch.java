@@ -13,7 +13,7 @@ public class CorruptionPerFloorPatch {
     public static class IncrementFloorBasedMetricsPatch {
         @SpirePostfixPatch
         public static void incrementFloorBasedMetricsPatch(AbstractDungeon __instance) {
-            if (AbstractDungeon.floorNum != 0) {
+            if (AbstractDungeon.floorNum != 0 && Cor.active) {
                 Cor.corruptionPerFloor.add(Cor.corruption);
             }
         }
@@ -23,11 +23,13 @@ public class CorruptionPerFloorPatch {
     public static class GatherAllDataPatch {
         @SpirePostfixPatch
         public static void gatherAllDataPatch(Metrics __instance, boolean death, boolean trueVictor, MonsterGroup monsters) {
-            if (death) {
-                Cor.corruptionPerFloor.add(Cor.corruption);
+            if (Cor.active) {
+                if (death) {
+                    Cor.corruptionPerFloor.add(Cor.corruption);
+                }
+                ReflectionHacks.privateMethod(Metrics.class, "addData", Object.class, Object.class)
+                        .invoke(__instance, "corruption_per_floor", Cor.corruptionPerFloor);
             }
-            ReflectionHacks.privateMethod(Metrics.class, "addData", Object.class, Object.class)
-                    .invoke(__instance, "corruption_per_floor", Cor.corruptionPerFloor);
         }
     }
 }
