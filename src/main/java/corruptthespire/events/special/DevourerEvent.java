@@ -1,4 +1,4 @@
-package corruptthespire.events;
+package corruptthespire.events.special;
 
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -8,27 +8,27 @@ import com.megacrit.cardcrawl.events.city.MaskedBandits;
 import com.megacrit.cardcrawl.helpers.MonsterHelper;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import corruptthespire.Cor;
-import corruptthespire.monsters.Harbinger;
-import corruptthespire.relics.chaotic.HarbingersClaw;
-import corruptthespire.relics.chaotic.HarbingersSkull;
+import corruptthespire.monsters.Encounters;
+import corruptthespire.relics.chaotic.TranscendentEye;
+import corruptthespire.relics.chaotic.TranscendentPet;
 
 // We extend the MaskedBandits event because ProceedButton.java specifically checks if an event is an instance of this type
 // (or a few other types) in the logic for what happens when you click proceed. This is easier than a patch.
-public class HarbingerEvent extends MaskedBandits {
-    public static final String ID = "CorruptTheSpire:Harbinger";
+public class DevourerEvent extends MaskedBandits {
+    public static final String ID = "CorruptTheSpire:Devourer";
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private int screen = 0;
 
-    public HarbingerEvent() {
+    public DevourerEvent() {
         this.roomEventText.clear();
         this.body = DESCRIPTIONS[0];
         this.roomEventText.addDialogOption(OPTIONS[0]);
         this.roomEventText.addDialogOption(OPTIONS[1]);
         this.hasDialog = true;
         this.hasFocus = true;
-        AbstractDungeon.getCurrRoom().monsters = MonsterHelper.getEncounter(Harbinger.ID);
+        AbstractDungeon.getCurrRoom().monsters = MonsterHelper.getEncounter(Encounters.DEVOURER);
     }
 
     @Override
@@ -55,12 +55,12 @@ public class HarbingerEvent extends MaskedBandits {
                         }
 
                         AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
-                        AbstractDungeon.getCurrRoom().addRelicToRewards(new HarbingersClaw());
-                        AbstractDungeon.getCurrRoom().addRelicToRewards(new HarbingersSkull());
+                        AbstractDungeon.getCurrRoom().addRelicToRewards(new TranscendentEye());
+                        AbstractDungeon.getCurrRoom().addRelicToRewards(new TranscendentPet());
 
                         AbstractDungeon.getCurrRoom().eliteTrigger = true;
                         this.enterCombat();
-                        AbstractDungeon.lastCombatMetricKey = Harbinger.ID;
+                        AbstractDungeon.lastCombatMetricKey = Encounters.DEVOURER;
                         break;
                     case 1:
                         logMetricIgnored(ID);

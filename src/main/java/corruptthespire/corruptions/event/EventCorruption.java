@@ -15,6 +15,8 @@ import corruptthespire.events.chaotic.MindsEye;
 import corruptthespire.events.chaotic.TreeOfSwords;
 import corruptthespire.events.chaotic.WorldsUponWorlds;
 import corruptthespire.events.corrupted.*;
+import corruptthespire.events.special.DevourerEvent;
+import corruptthespire.events.special.HarbingerEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

@@ -1,4 +1,4 @@
-package corruptthespire.events;
+package corruptthespire.events.special;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
