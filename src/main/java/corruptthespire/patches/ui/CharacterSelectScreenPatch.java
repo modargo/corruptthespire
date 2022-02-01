@@ -23,7 +23,7 @@ public class CharacterSelectScreenPatch {
 
     private static float getSpacing() {
         float ascensionLevelTextWidth = ReflectionHacks.getPrivateStatic(CharacterSelectScreen.class, "ASC_RIGHT_W");
-        return 170.0F + ascensionLevelTextWidth;
+        return 255.0F * Settings.scale + ascensionLevelTextWidth;
     }
 
     private static float getCheckboxX() {
