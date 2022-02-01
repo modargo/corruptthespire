@@ -163,7 +163,7 @@ public class MasterOfTimeAndSpace extends CustomMonster
     }
 
     private int countLivingPhantasms() {
-        return (int)AbstractDungeon.getCurrRoom().monsters.monsters.stream().filter(m -> m.id.equals(SpatialPhantasm.ID) || m.id.equals(TemporalPhantasm.ID)).count();
+        return (int)AbstractDungeon.getCurrRoom().monsters.monsters.stream().filter(m -> !m.isDead && !m.isDying).filter(m -> m.id.equals(SpatialPhantasm.ID) || m.id.equals(TemporalPhantasm.ID)).count();
     }
 
     @Override
