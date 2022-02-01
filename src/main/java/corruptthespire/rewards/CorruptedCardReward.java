@@ -5,13 +5,15 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.corrupted.CorruptedCardUtil;
+import corruptthespire.util.TextureLoader;
 
 import java.util.ArrayList;
 
 public class CorruptedCardReward extends AbstractCorruptTheSpireReward {
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:Rewards").TEXT;
-    private static final Texture ICON = ImageMaster.REWARD_CARD_NORMAL;
+    private static final Texture ICON = TextureLoader.getTexture(CorruptTheSpire.uiImage("CorruptedCardReward"));
 
     public ArrayList<AbstractCard> cards;
 
