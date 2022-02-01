@@ -16,6 +16,11 @@ import javassist.CtBehavior;
         clz = ProceedButton.class,
         method = "update"
 )
+@SpirePatch(
+        cls = "actlikeit.patches.ContinueOntoHeartPatch",
+        method = "Insert",
+        optional = true
+)
 public class SpecialActThreeBossFightPatch {
     @SpireInsertPatch(locator = SpecialActThreeBossFightPatch.Locator.class)
     public static SpireReturn<Void> SpecialActThreeBossFight(ProceedButton __instance) {
