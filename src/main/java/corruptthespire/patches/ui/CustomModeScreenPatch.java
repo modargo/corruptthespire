@@ -1,6 +1,7 @@
 package corruptthespire.patches.ui;
 
 import basemod.ReflectionHacks;
+import basemod.patches.com.megacrit.cardcrawl.screens.custom.CustomModeScreen.PositionCharacterButtons;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
@@ -26,6 +27,11 @@ public class CustomModeScreenPatch {
     private static final float CHECKBOX_Y = 400.0F;
     private static final String EXTRA_SPACE = "60.0F";
 
+    private static float getCheckboxY(CustomModeScreen screen) {
+        int rows = screen.options.size() / (int)ReflectionHacks.getPrivateStatic(PositionCharacterButtons.class, "MAX_BUTTONS_PER_ROW");
+        return CHECKBOX_Y - rows * 100;
+    }
+
     @SpirePatch(clz = CustomModeScreen.class, method = SpirePatch.CLASS)
     public static class HitboxField {
         public static final SpireField<Hitbox> hitbox = new SpireField<>(() -> null);
@@ -36,7 +42,7 @@ public class CustomModeScreenPatch {
         @SpirePostfixPatch
         public static void initializeHitbox(CustomModeScreen __instance, float ___scrollY) {
             Hitbox hitbox = new Hitbox(80.0F * Settings.scale, 80.0F * Settings.scale);
-            hitbox.move(CustomModeScreen.screenX + 130.0F * Settings.xScale, ___scrollY + CHECKBOX_Y * Settings.scale);
+            hitbox.move(CustomModeScreen.screenX + 130.0F * Settings.xScale, ___scrollY + getCheckboxY(__instance) * Settings.scale);
             CustomModeScreenPatch.HitboxField.hitbox.set(__instance, hitbox);
         }
     }
@@ -57,7 +63,7 @@ public class CustomModeScreenPatch {
                 sb.draw(ImageMaster.CHECKBOX, hb.cX - 32.0F, hb.cY - 32.0F, 32.0F, 32.0F, 64.0F, 64.0F, ___imageScale, ___imageScale, 0.0F, 0, 0, 64, 64, false, false);
             }
 
-            FontHelper.renderFontCentered(sb, FontHelper.charDescFont, TEXT[0], CustomModeScreen.screenX + 310.0F * Settings.scale, ___scrollY + CHECKBOX_Y * Settings.scale, hb.hovered ? Settings.PURPLE_COLOR : Color.PURPLE);
+            FontHelper.renderFontCentered(sb, FontHelper.charDescFont, TEXT[0], CustomModeScreen.screenX + 310.0F * Settings.scale, ___scrollY + getCheckboxY(__instance) * Settings.scale, hb.hovered ? Settings.PURPLE_COLOR : Color.PURPLE);
 
             if (Config.active()) {
                 sb.setColor(Color.WHITE);
@@ -73,7 +79,7 @@ public class CustomModeScreenPatch {
         @SpirePostfixPatch
         private static void updateCheckbox(CustomModeScreen __instance, float ___scrollY) {
             Hitbox hb = HitboxField.hitbox.get(__instance);
-            hb.moveY(___scrollY + CHECKBOX_Y * Settings.scale);
+            hb.moveY(___scrollY + CHECKBOX_Y * Settings.scale); // Doesn't need to use getCheckboxY because we're inside a block that's already affected by BaseMod's FixEverythingPosition patch
             hb.update();
             if (hb.justHovered) {
                 ReflectionHacks.privateMethod(CustomModeScreen.class, "playHoverSound").invoke(__instance);
