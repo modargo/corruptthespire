@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.corrupted.CorruptedCardUtil;
+import corruptthespire.rewards.CorruptedCardReward;
 
 import java.text.MessageFormat;
 
@@ -85,8 +86,7 @@ public class TheDevice extends AbstractImageEvent {
     private void showCardReward(int numRewards) {
         AbstractDungeon.getCurrRoom().rewards.clear();
         for(int i = 0; i < numRewards; ++i) {
-            RewardItem reward = CorruptedCardUtil.getCorruptedCardReward();
-            AbstractDungeon.getCurrRoom().addCardReward(reward);
+            AbstractDungeon.getCurrRoom().rewards.add(new CorruptedCardReward());
         }
 
         AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;

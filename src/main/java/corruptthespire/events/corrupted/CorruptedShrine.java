@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.patches.relics.BottledPrismPatch;
+import corruptthespire.rewards.CorruptedCardReward;
 
 import java.text.MessageFormat;
 import java.util.Collections;
@@ -103,8 +104,7 @@ public class CorruptedShrine extends AbstractImageEvent {
     private void showCardReward(int numRewards) {
         AbstractDungeon.getCurrRoom().rewards.clear();
         for(int i = 0; i < numRewards; ++i) {
-            RewardItem reward = CorruptedCardUtil.getCorruptedCardReward();
-            AbstractDungeon.getCurrRoom().addCardReward(reward);
+            AbstractDungeon.getCurrRoom().rewards.add(new CorruptedCardReward());
         }
 
         AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
