@@ -43,7 +43,7 @@ public class CorruptedCampfireGainRelicEffect extends AbstractGameEffect {
             this.hasDug = true;
             CardCrawlGame.sound.play("SHOVEL");
             AbstractDungeon.getCurrRoom().rewards.clear();
-            AbstractDungeon.getCurrRoom().rewards.add(new RewardItem(this.relic != null ? this.relic : AbstractDungeon.returnRandomRelic(this.tier)));
+            AbstractDungeon.getCurrRoom().rewards.add(new RewardItem(this.relic != null ? this.relic : this.getRelic()));
             AbstractDungeon.combatRewardScreen.open();
         }
 
@@ -51,7 +51,15 @@ public class CorruptedCampfireGainRelicEffect extends AbstractGameEffect {
             this.isDone = true;
             ((RestRoom)AbstractDungeon.getCurrRoom()).fadeIn();
         }
+    }
 
+    private AbstractRelic getRelic() {
+        AbstractRelic r = null;
+        // The command relics open a relic select screen, which soft locks the corrupted campfire, so we exclude them
+        while (r == null || r.relicId.startsWith("jedi:command")) {
+            r = AbstractDungeon.returnRandomRelic(this.tier);
+        }
+        return r;
     }
 
     private void updateBlackScreenColor() {
