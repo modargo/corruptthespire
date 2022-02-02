@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.rooms.RestRoom;
 import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.corrupted.CorruptedCardUtil;
+import corruptthespire.rewards.CorruptedCardReward;
 import corruptthespire.util.TextureLoader;
 
 import java.text.MessageFormat;
@@ -43,7 +44,7 @@ public class CorruptedCardOption extends AbstractCorruptedCampfireOption {
         Cor.reduceFragments(this.getFragmentCost());
         //TODO Should I put this in an effect? If so can share with RareCardOption
         AbstractDungeon.getCurrRoom().rewards.clear();
-        AbstractDungeon.getCurrRoom().addCardReward(CorruptedCardUtil.getCorruptedCardReward());
+        AbstractDungeon.getCurrRoom().rewards.add(new CorruptedCardReward());
         AbstractDungeon.combatRewardScreen.open();
         ((RestRoom)AbstractDungeon.getCurrRoom()).fadeIn();
     }
