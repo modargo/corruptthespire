@@ -101,7 +101,7 @@
   "CorruptTheSpire:HarbingersClaw": {
     "NAME": "Harbinger's Claw",
     "FLAVOR": "The claw of an otherworldly horror.",
-    "DESCRIPTIONS": ["#yCorruption increases your attack damage."]
+    "DESCRIPTIONS": ["#yCorruption increases your attack damage by the same percent that it increases enemy attack damage."]
   },
   "CorruptTheSpire:HarbingersSkull": {
     "NAME": "Harbinger's Skull",
