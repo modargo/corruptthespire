@@ -42,7 +42,7 @@ public class TormentingShacklesPower extends AbstractPower {
 
     @Override
     public void onCardDraw(AbstractCard card) {
-        if (card.cost >= 0 && AbstractDungeon.cardRandomRng.random(100) < PERCENT) {
+        if (card.cost >= 0 && AbstractDungeon.cardRandomRng.random(99) < PERCENT) {
             card.setCostForTurn(Math.max(card.cost, card.costForTurn) + ADDITIONAL_COST);
         }
     }
