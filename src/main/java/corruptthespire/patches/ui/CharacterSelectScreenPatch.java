@@ -61,7 +61,7 @@ public class CharacterSelectScreenPatch {
                 float checkBoxX = getCheckboxX();
                 sb.draw(ImageMaster.OPTION_TOGGLE, checkBoxX, hb.cY - 16.0F, 16.0F, 16.0F, 32.0F, 32.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 32, 32, false, false);
 
-                FontHelper.renderFontCentered(sb, FontHelper.cardTitleFont, TEXT[0], checkBoxX + 30.0F * Settings.scale + getTextWidth() / 2.0F + 16.0F, hb.cY, hb.hovered ? Settings.PURPLE_COLOR : Color.PURPLE);
+                FontHelper.renderFontCentered(sb, FontHelper.cardTitleFont, TEXT[0], checkBoxX + 30.0F * Settings.scale + getTextWidth() / 2.0F + 16.0F, hb.cY, hb.hovered ? new Color(-293409025) : new Color(-1608453889));
                 if (hb.hovered) {
                     TipHelper.renderGenericTip((float) InputHelper.mX - 140.0F * Settings.scale, (float)InputHelper.mY + 340.0F * Settings.scale, TEXT[0], TEXT[1]);
                 }

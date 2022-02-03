@@ -63,7 +63,7 @@ public class CustomModeScreenPatch {
                 sb.draw(ImageMaster.CHECKBOX, hb.cX - 32.0F, hb.cY - 32.0F, 32.0F, 32.0F, 64.0F, 64.0F, ___imageScale, ___imageScale, 0.0F, 0, 0, 64, 64, false, false);
             }
 
-            FontHelper.renderFontCentered(sb, FontHelper.charDescFont, TEXT[0], CustomModeScreen.screenX + 310.0F * Settings.scale, ___scrollY + getCheckboxY(__instance) * Settings.scale, hb.hovered ? Settings.PURPLE_COLOR : Color.PURPLE);
+            FontHelper.renderFontCentered(sb, FontHelper.charDescFont, TEXT[0], CustomModeScreen.screenX + 310.0F * Settings.scale, ___scrollY + getCheckboxY(__instance) * Settings.scale, hb.hovered ? new Color(-293409025) : new Color(-1608453889));
 
             if (Config.active()) {
                 sb.setColor(Color.WHITE);
