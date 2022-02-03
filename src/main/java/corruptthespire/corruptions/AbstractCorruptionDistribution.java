@@ -5,10 +5,12 @@ import corruptthespire.Cor;
 import java.util.List;
 
 public abstract class AbstractCorruptionDistribution<T extends Enum<T>> {
+    private static final int DEFAULT_TOTAL_WEIGHT = 100;
+
     public T roll() {
         List<CorruptionDistributionInfo<T>> distribution = this.getDistribution();
         int totalWeight = distribution.stream().map(cdi -> cdi.weight).reduce(0, Integer::sum);
-        if (totalWeight != 100) {
+        if (totalWeight != this.getTotalWeight()) {
             throw new RuntimeException("Excepted total weight to be 100, was " + totalWeight);
         }
 
@@ -21,6 +23,10 @@ public abstract class AbstractCorruptionDistribution<T extends Enum<T>> {
     }
 
     protected abstract List<CorruptionDistributionInfo<T>> getDistribution();
+
+    protected int getTotalWeight() {
+        return DEFAULT_TOTAL_WEIGHT;
+    }
 
     protected List<CorruptionDistributionInfo<T>> adjustDistribution(List<CorruptionDistributionInfo<T>> distribution) {
         return distribution;
