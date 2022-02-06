@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.events.GenericEventDialog;
+import com.megacrit.cardcrawl.events.shrines.Lab;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
@@ -15,7 +16,8 @@ import corruptthespire.potions.PotionUtil;
 
 import java.text.MessageFormat;
 
-public class StrangeMarketplace extends AbstractImageEvent {
+// This extends Lab to piggyback off the special logic in ProceedButton
+public class StrangeMarketplace extends Lab {
     public static final String ID = "CorruptTheSpire:StrangeMarketplace";
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
     private static final String NAME = eventStrings.NAME;
@@ -35,7 +37,12 @@ public class StrangeMarketplace extends AbstractImageEvent {
     private int screenNum = 0;
 
     public StrangeMarketplace() {
-        super(NAME, DESCRIPTIONS[0], IMG);
+        super();
+        this.imageEventText.clear();
+        this.roomEventText.clear();
+        this.title = NAME;
+        this.body = DESCRIPTIONS[0];
+        this.imageEventText.loadImage(IMG);
         this.noCardsInRewards = true;
 
         this.relic = Cor.returnRandomCorruptedRelic();
@@ -45,6 +52,9 @@ public class StrangeMarketplace extends AbstractImageEvent {
         imageEventText.setDialogOption(MessageFormat.format(OPTIONS[0], this.relic.name, this.gold), this.relic);
         imageEventText.setDialogOption(MessageFormat.format(OPTIONS[1], this.potions));
     }
+
+    @Override
+    public void onEnterRoom() {}
 
     @Override
     protected void buttonEffect(int buttonPressed) {
