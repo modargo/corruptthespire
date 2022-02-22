@@ -258,4 +258,22 @@ public class ShopPatch {
             return new DownfallPreventShopBossPatchExprEditor();
         }
     }
+
+    @SpirePatch(cls = "expansioncontent.patches.ShopBossPatch", method = "getReplacement", optional = true)
+    public static class DownfallFixShopBossPatchRarityPatch {
+        @SpireInsertPatch(locator = Locator.class)
+        public static void DownfallFixShopBossPatchRarity(@ByRef AbstractCard.CardRarity[] rarity) {
+            if (rarity[0] == AbstractCard.CardRarity.SPECIAL) {
+                rarity[0] = AbstractCard.CardRarity.RARE;
+            }
+        }
+
+        private static class Locator extends SpireInsertLocator {
+            @Override
+            public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
+                Matcher finalMatcher = new Matcher.NewExprMatcher(ArrayList.class);
+                return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
+            }
+        }
+    }
 }
