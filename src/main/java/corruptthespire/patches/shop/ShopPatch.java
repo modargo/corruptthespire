@@ -2,6 +2,7 @@ package corruptthespire.patches.shop;
 
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -20,6 +21,8 @@ import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 import corruptthespire.corruptions.shop.ShopCorruption;
 import corruptthespire.corruptions.shop.ShopCorruptionType;
+import corruptthespire.corruptions.shop.ShopScreenServiceInfo;
+import corruptthespire.corruptions.shop.ShopServiceType;
 import corruptthespire.patches.core.CorruptedField;
 import corruptthespire.util.TextureLoader;
 import javassist.CannotCompileException;
@@ -32,6 +35,19 @@ import java.util.ArrayList;
 
 public class ShopPatch {
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:ShopCorruption").TEXT;
+
+    @SpirePatch(clz = ShopScreen.class, method = "init")
+    public static class InitFieldsPatch {
+        @SpirePostfixPatch
+        public static void initFields(ShopScreen __instance, ArrayList<AbstractCard> coloredCards, ArrayList<AbstractCard> colorlessCards) {
+            ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && AbstractDungeon.getCurrRoom() instanceof ShopRoom
+                    ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
+                    : null;
+            if (corruptionType == ShopCorruptionType.Service) {
+                ShopScreenServiceInfoField.serviceInfo.set(__instance, new ShopScreenServiceInfo());
+            }
+        }
+    }
 
     @SpirePatch(clz = Merchant.class, method = SpirePatch.CONSTRUCTOR, paramtypez = {float.class, float.class, int.class})
     public static class ChangeCardsPatch {
@@ -107,6 +123,14 @@ public class ShopPatch {
         }
     }
 
+    @SpirePatch(clz = ShopScreen.class, method = "renderPurge")
+    public static class RenderServicesPatch {
+        @SpirePostfixPatch
+        public static void renderServices(ShopScreen __instance, SpriteBatch sb) {
+            ShopCorruption.renderServices(__instance, sb);
+        }
+    }
+
     @SpirePatch(clz = ShopScreen.class, method = "init")
     public static class SetTransformImagePatch {
         @SpirePostfixPatch
@@ -115,7 +139,7 @@ public class ShopPatch {
                     ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
                     : null;
             if (corruptionType == ShopCorruptionType.TransformReplacesRemove) {
-                ___removeServiceImg[0] = TextureLoader.getTexture(CorruptTheSpire.uiImage("ShopTransform"));
+                ___removeServiceImg[0] = TextureLoader.getTexture(CorruptTheSpire.uiImage("CorruptTheSpire:ShopTransform"));
             }
             else {
                 switch(Settings.language) {
@@ -196,7 +220,7 @@ public class ShopPatch {
     }
 
     @SpirePatch(clz = ShopScreen.class, method = "updatePurge")
-    public static class UpdateTransformPatch {
+    public static class UpdateTransformAndServicesPatch {
         @SpirePrefixPatch
         public static SpireReturn<Void> updateTransform(ShopScreen __instance) {
             ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && AbstractDungeon.getCurrRoom() instanceof ShopRoom
@@ -218,7 +242,25 @@ public class ShopPatch {
                 return SpireReturn.Return();
             }
 
+            if (corruptionType == ShopCorruptionType.Service) {
+                ShopServiceType currentService = ShopScreenServiceInfoField.serviceInfo.get(__instance).currentService;
+                if (currentService == null) {
+                    return SpireReturn.Continue();
+                }
+
+                ShopCorruption.performService(__instance, currentService);
+                return SpireReturn.Return();
+            }
+
             return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(clz = ShopScreen.class, method = "updatePurgeCard")
+    public static class UpdateServicesUserInterfacePatch {
+        @SpirePostfixPatch
+        public static void updateServicesUserInterface(ShopScreen __instance) {
+            ShopCorruption.updateServicesUserInterface(__instance);
         }
     }
 

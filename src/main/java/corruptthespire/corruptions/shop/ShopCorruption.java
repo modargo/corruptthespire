@@ -1,34 +1,58 @@
 package corruptthespire.corruptions.shop;
 
 import basemod.ReflectionHacks;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.TipHelper;
+import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
+import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.shop.ShopScreen;
 import com.megacrit.cardcrawl.shop.StorePotion;
 import com.megacrit.cardcrawl.shop.StoreRelic;
+import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import corruptthespire.Cor;
+import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 import corruptthespire.cards.CardUtil;
 import corruptthespire.cards.corrupted.CorruptedCardColor;
 import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.patches.core.CorruptedField;
+import corruptthespire.patches.relics.BottledPrismPatch;
 import corruptthespire.patches.shop.ShopCorruptionTypeField;
+import corruptthespire.patches.shop.ShopScreenServiceInfoField;
 import corruptthespire.relics.FragmentOfCorruption;
+import corruptthespire.util.TextureLoader;
 
-import java.util.ArrayList;
-import java.util.Objects;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class ShopCorruption {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:ShopCorruption");
+    private static final UIStrings serviceUiStrings = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:ShopService");
     private static final String[] TEXT = uiStrings.TEXT;
+    private static final String[] STEXT = serviceUiStrings.TEXT;
+
+    private static final Texture shopTransformImage = TextureLoader.getTexture(CorruptTheSpire.uiImage("CorruptTheSpire:ShopTransform"));
+    private static final Texture shopUpgradeImage = TextureLoader.getTexture(CorruptTheSpire.uiImage("CorruptTheSpire:ShopUpgrade"));
+    private static final Texture shopDuplicateImage = TextureLoader.getTexture(CorruptTheSpire.uiImage("CorruptTheSpire:ShopDuplicate"));
+    private static final Texture shopCorruptImage = TextureLoader.getTexture(CorruptTheSpire.uiImage("CorruptTheSpire:ShopCorrupt"));
 
     public static void handleCards(ArrayList<AbstractCard> coloredCards, ArrayList<AbstractCard> colorlessCards) {
         ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && AbstractDungeon.getCurrRoom() instanceof ShopRoom
@@ -131,6 +155,10 @@ public class ShopCorruption {
                 colorlessCards.add(AbstractDungeon.getColorlessCardFromPool(AbstractCard.CardRarity.RARE).makeCopy());
             }
         }
+
+        if (corruptionType == ShopCorruptionType.Service) {
+            colorlessCards.clear();
+        }
     }
 
     public static boolean handleRelics(ShopScreen shopScreen) {
@@ -142,7 +170,9 @@ public class ShopCorruption {
             ArrayList<StoreRelic> relics = ReflectionHacks.getPrivate(shopScreen, ShopScreen.class, "relics");
             relics.clear();
 
-            int numRelics = corruptionType == ShopCorruptionType.CorruptedRelicsReplacePotions || Loader.isModLoaded("spicyShops") ? 6 : 3;
+            int numRelics = corruptionType == ShopCorruptionType.Service ? 0
+                : corruptionType == ShopCorruptionType.CorruptedRelicsReplacePotions || Loader.isModLoaded("spicyShops") ? 6
+                : 3;
             for(int i = 0; i < numRelics; ++i) {
                 AbstractRelic tempRelic;
                 if (i < 3 && corruptionType == ShopCorruptionType.CorruptedRelics) {
@@ -185,7 +215,7 @@ public class ShopCorruption {
                 ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
                 : null;
 
-        if (corruptionType == ShopCorruptionType.CorruptedRelicsReplacePotions || corruptionType == ShopCorruptionType.CorruptedCards) {
+        if (corruptionType == ShopCorruptionType.CorruptedRelicsReplacePotions || corruptionType == ShopCorruptionType.CorruptedCards || corruptionType == ShopCorruptionType.Service) {
             ReflectionHacks.setPrivate(shopScreen, ShopScreen.class, "potions", new ArrayList<StorePotion>());
             return true;
         }
@@ -228,6 +258,255 @@ public class ShopCorruption {
         }
 
         return true;
+    }
+
+    public static void renderServices(ShopScreen shopScreen, SpriteBatch sb) {
+        ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && AbstractDungeon.getCurrRoom() instanceof ShopRoom
+                ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
+                : null;
+        if (corruptionType != ShopCorruptionType.Service) {
+            return;
+        }
+
+        ShopScreenServiceInfo screenInfo = ShopScreenServiceInfoField.serviceInfo.get(shopScreen);
+        float purgeCardY = getPurgeCardY(shopScreen);
+
+        for (ShopServiceInfo info : getShopServiceInfos()) {
+            float scale = screenInfo.serviceScales.containsKey(info.type) ? screenInfo.serviceScales.get(info.type) : getBaseServiceScale();
+            renderService(shopScreen, sb, info.img, info.x, purgeCardY, scale, info.cost, !screenInfo.usedServices.contains(info.type));
+        }
+    }
+
+    private static void renderService(ShopScreen shopScreen, SpriteBatch sb, Texture img, float x, float y, float scale, int cost, boolean available) {
+        float GOLD_IMG_OFFSET_X = -50.0F * Settings.scale;
+        float GOLD_IMG_OFFSET_Y = -215.0F * Settings.scale;
+        float PRICE_TEXT_OFFSET_X = 16.0F * Settings.scale;
+        float PRICE_TEXT_OFFSET_Y = -180.0F * Settings.scale;
+        float GOLD_IMG_SIZE = (float)ImageMaster.UI_GOLD.getWidth() * Settings.scale;
+        sb.setColor(Settings.QUARTER_TRANSPARENT_BLACK_COLOR);
+        TextureAtlas.AtlasRegion tmpImg = ImageMaster.CARD_SKILL_BG_SILHOUETTE;
+        sb.draw(tmpImg, x + 18.0F * Settings.scale + tmpImg.offsetX - (float)tmpImg.originalWidth / 2.0F, y - 14.0F * Settings.scale + tmpImg.offsetY - (float)tmpImg.originalHeight / 2.0F, (float)tmpImg.originalWidth / 2.0F - tmpImg.offsetX, (float)tmpImg.originalHeight / 2.0F - tmpImg.offsetY, (float)tmpImg.packedWidth, (float)tmpImg.packedHeight, scale, scale, 0.0F);
+        sb.setColor(Color.WHITE);
+        if (available) {
+            sb.draw(img, x - 256.0F, y - 256.0F, 256.0F, 256.0F, 512.0F, 512.0F, scale, scale, 0.0F, 0, 0, 512, 512, false, false);
+            sb.draw(ImageMaster.UI_GOLD, x + GOLD_IMG_OFFSET_X, y + GOLD_IMG_OFFSET_Y - (scale / Settings.scale - 0.75F) * 200.0F * Settings.scale, GOLD_IMG_SIZE, GOLD_IMG_SIZE);
+            Color color = Color.WHITE;
+            if (cost > AbstractDungeon.player.gold) {
+                color = Color.SALMON;
+            }
+
+            FontHelper.renderFontLeftTopAligned(sb, FontHelper.tipHeaderFont, Integer.toString(cost), x + PRICE_TEXT_OFFSET_X, y + PRICE_TEXT_OFFSET_Y - (scale / Settings.scale - 0.75F) * 200.0F * Settings.scale, color);
+        } else {
+            sb.draw(ReflectionHacks.getPrivate(shopScreen, ShopScreen.class, "soldOutImg"), x - 256.0F, y - 256.0F, 256.0F, 256.0F, 512.0F, 512.0F, scale, scale, 0.0F, 0, 0, 512, 512, false, false);
+        }
+    }
+
+    public static void updateServicesUserInterface(ShopScreen shopScreen) {
+        ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && AbstractDungeon.getCurrRoom() instanceof ShopRoom
+                ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
+                : null;
+        if (corruptionType != ShopCorruptionType.Service) {
+            return;
+        }
+
+        ShopScreenServiceInfo screenInfo = ShopScreenServiceInfoField.serviceInfo.get(shopScreen);
+        float purgeCardY = getPurgeCardY(shopScreen);
+        boolean hovered = false;
+        boolean touched = false;
+        for (ShopServiceInfo info : getShopServiceInfos()) {
+            if (!screenInfo.usedServices.contains(info.type)) {
+                float CARD_W = 110.0F * Settings.scale;
+                float CARD_H = 150.0F * Settings.scale;
+                if ((float) InputHelper.mX > info.x - CARD_W && (float)InputHelper.mX < info.x + CARD_W && (float)InputHelper.mY > purgeCardY - CARD_H && (float)InputHelper.mY < purgeCardY + CARD_H) {
+                    screenInfo.hoveredService = info.type;
+                    hovered = true;
+                    shopScreen.moveHand(info.x - AbstractCard.IMG_WIDTH / 2.0F, purgeCardY);
+                    ReflectionHacks.setPrivate(shopScreen, ShopScreen.class, "somethingHovered", true);
+                    screenInfo.serviceScales.put(info.type, Settings.scale);
+                }
+
+                if (info.type != screenInfo.hoveredService) {
+                    float currentScale = screenInfo.serviceScales.containsKey(info.type) ? screenInfo.serviceScales.get(info.type) : getBaseServiceScale();
+                    screenInfo.serviceScales.put(info.type, MathHelper.cardScaleLerpSnap(currentScale, getBaseServiceScale()));
+                } else {
+                    if (InputHelper.justReleasedClickLeft || CInputActionSet.select.isJustPressed()) {
+                        if (!Settings.isTouchScreen) {
+                            CInputActionSet.select.unpress();
+                            purchaseService(shopScreen, info);
+                        } else if (info.type != screenInfo.touchedService) {
+                            if (AbstractDungeon.player.gold < info.cost) {
+                                shopScreen.playCantBuySfx();
+                                shopScreen.createSpeech(ShopScreen.getCantBuyMsg());
+                            } else {
+                                shopScreen.confirmButton.hideInstantly();
+                                shopScreen.confirmButton.show();
+                                shopScreen.confirmButton.hb.clickStarted = false;
+                                shopScreen.confirmButton.isDisabled = false;
+                                screenInfo.touchedService = info.type;
+                                touched = true;
+                            }
+                        }
+                    }
+
+                    TipHelper.renderGenericTip((float)InputHelper.mX - 360.0F * Settings.scale, (float)InputHelper.mY - 70.0F * Settings.scale, getServiceLabel(info.type), getServiceText(info.type));
+                }
+            } else {
+                float currentScale = screenInfo.serviceScales.containsKey(info.type) ? screenInfo.serviceScales.get(info.type) : getBaseServiceScale();
+                screenInfo.serviceScales.put(info.type, MathHelper.cardScaleLerpSnap(currentScale, getBaseServiceScale()));
+            }
+        }
+
+        if (!hovered) {
+            screenInfo.hoveredService = null;
+        }
+
+        if (!touched) {
+            screenInfo.touchedService = null;
+        }
+    }
+
+    private static void purchaseService(ShopScreen shopScreen, ShopServiceInfo info) {
+        ShopScreenServiceInfo screenInfo = ShopScreenServiceInfoField.serviceInfo.get(shopScreen);
+        screenInfo.hoveredService = null;
+        if (AbstractDungeon.player.gold >= info.cost) {
+            AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.SHOP;
+            CardGroup group;
+            switch (info.type) {
+                case Transform:
+                case Corrupt:
+                    group = CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards());
+                    break;
+                case Upgrade:
+                    group = AbstractDungeon.player.masterDeck.getUpgradableCards();
+                    break;
+                case Duplicate:
+                    group = AbstractDungeon.player.masterDeck;
+                    break;
+                default:
+                    throw new RuntimeException("Unrecognized shop service type " + info.type.name());
+            }
+            AbstractDungeon.gridSelectScreen.open(group, 1, getServiceSelectScreenText(info.type), info.type == ShopServiceType.Upgrade, info.type == ShopServiceType.Transform, true, false);
+            screenInfo.currentService = info.type;
+        } else {
+            shopScreen.playCantBuySfx();
+            shopScreen.createSpeech(ShopScreen.getCantBuyMsg());
+        }
+    }
+
+    public static void performService(ShopScreen shopScreen, ShopServiceType type) {
+        ShopScreenServiceInfo screenInfo = ShopScreenServiceInfoField.serviceInfo.get(shopScreen);
+        if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
+            AbstractDungeon.player.loseGold(getShopServiceInfo(type).cost);
+            for (AbstractCard card : AbstractDungeon.gridSelectScreen.selectedCards) {
+                switch (type) {
+                    case Transform:
+                        CardCrawlGame.metricData.addPurgedItem(card.getMetricID());
+                        AbstractDungeon.player.masterDeck.removeCard(card);
+                        AbstractDungeon.transformCard(card, false, AbstractDungeon.miscRng);
+                        AbstractDungeon.topLevelEffectsQueue.add(new ShowCardAndObtainEffect(AbstractDungeon.transformedCard, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+                        break;
+                    case Upgrade:
+                        card.upgrade();
+                        AbstractDungeon.player.bottledCardUpgradeCheck(card);
+                        AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(card.makeStatEquivalentCopy()));
+                        AbstractDungeon.topLevelEffects.add(new UpgradeShineEffect((float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+                        break;
+                    case Duplicate:
+                        AbstractCard newCard = card.makeStatEquivalentCopy();
+                        newCard.inBottleFlame = false;
+                        newCard.inBottleLightning = false;
+                        newCard.inBottleTornado = false;
+                        BottledPrismPatch.InBottledPrismField.inBottlePrism.set(newCard, false);
+                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(newCard, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+                        break;
+                    case Corrupt:
+                        CardCrawlGame.metricData.addPurgedItem(card.getMetricID());
+                        AbstractDungeon.player.masterDeck.removeCard(card);
+                        AbstractCard corruptedCard = CorruptedCardUtil.getRandomCorruptedCard();
+                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(corruptedCard, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+                        break;
+                    default:
+                        throw new RuntimeException("Unrecognized shop service type " + type.name());
+                }
+            }
+
+            AbstractDungeon.gridSelectScreen.selectedCards.clear();
+            screenInfo.usedServices.add(type);
+        }
+    }
+
+    private static List<ShopServiceInfo> getShopServiceInfos() {
+        float DRAW_START_X = (float)Settings.WIDTH * 0.16F;
+        int tmp = (int)((float)Settings.WIDTH - DRAW_START_X * 2.0F - AbstractCard.IMG_WIDTH_S * 5.0F) / 4;
+        float padX = (float)((int)((float)tmp + AbstractCard.IMG_WIDTH_S)) + 10.0F * Settings.scale;
+        float purgeCardX = 1554.0F * Settings.xScale;
+        ShopServiceInfo transformInfo = new ShopServiceInfo(ShopServiceType.Transform, 100, shopTransformImage);
+        ShopServiceInfo upgradeInfo = new ShopServiceInfo(ShopServiceType.Upgrade, 100, shopUpgradeImage);
+        ShopServiceInfo duplicateInfo = new ShopServiceInfo(ShopServiceType.Duplicate, 200, shopDuplicateImage);
+        ShopServiceInfo corruptInfo = new ShopServiceInfo(ShopServiceType.Corrupt, 150, shopCorruptImage);
+        List<ShopServiceInfo> infos = Arrays.asList(transformInfo, upgradeInfo, duplicateInfo, corruptInfo);
+        for (int i = 0; i < infos.size(); i++) {
+            infos.get(i).x = purgeCardX - (i + 1) * padX;
+        }
+        return infos;
+    }
+
+    private static ShopServiceInfo getShopServiceInfo(ShopServiceType type) {
+        return getShopServiceInfos().stream().filter(i -> i.type == type).collect(Collectors.toList()).get(0);
+    }
+
+    private static float getPurgeCardY(ShopScreen shopScreen) {
+        float BOTTOM_ROW_Y = 337.0F * Settings.yScale;
+        return (float)ReflectionHacks.getPrivate(shopScreen, ShopScreen.class, "rugY") + BOTTOM_ROW_Y;
+    }
+
+    private static float getBaseServiceScale() {
+        return 0.75F * Settings.scale;
+    }
+
+    private static String getServiceLabel(ShopServiceType type) {
+        switch (type) {
+            case Transform:
+                return STEXT[0];
+            case Upgrade:
+                return STEXT[3];
+            case Duplicate:
+                return STEXT[6];
+            case Corrupt:
+                return STEXT[9];
+            default:
+                throw new RuntimeException("Unrecognized shop service type " + type.name());
+        }
+    }
+
+    private static String getServiceText(ShopServiceType type) {
+        switch (type) {
+            case Transform:
+                return STEXT[1];
+            case Upgrade:
+                return STEXT[4];
+            case Duplicate:
+                return STEXT[7];
+            case Corrupt:
+                return STEXT[10];
+            default:
+                throw new RuntimeException("Unrecognized shop service type " + type.name());
+        }
+    }
+
+    private static String getServiceSelectScreenText(ShopServiceType type) {
+        switch (type) {
+            case Transform:
+                return STEXT[2];
+            case Upgrade:
+                return STEXT[5];
+            case Duplicate:
+                return STEXT[8];
+            case Corrupt:
+                return STEXT[11];
+            default:
+                throw new RuntimeException("Unrecognized shop service type " + type.name());
+        }
     }
 
     public static AbstractCard getCardForShop(AbstractCard purchasedCard) {

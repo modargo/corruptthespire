@@ -79,5 +79,21 @@
   },
   "CorruptTheSpire:DevilsBargainAction": {
     "TEXT": ["Select a Card to Return to Your Hand.", "Select {0} Cards to Return to Your Hand."]
+  },
+  "CorruptTheSpire:ShopService" : {
+    "TEXT": [
+      "Card Transformation Service",
+      "Transform a card in your deck.",
+      "Select a card to transform",
+      "Card Upgrade Service",
+      "Upgrade a card in your deck.",
+      "Select a card to upgrade",
+      "Card Duplication Service",
+      "Duplicate a card in your deck.",
+      "Select a card to duplicate",
+      "Card Corruption Service",
+      "Transform a card in your deck into a corrupted card.",
+      "Select a card to corrupt"
+    ]
   }
 }

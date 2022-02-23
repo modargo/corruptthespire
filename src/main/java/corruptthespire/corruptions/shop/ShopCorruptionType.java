@@ -8,4 +8,5 @@ public enum ShopCorruptionType {
     TransformReplacesRemove,
     CorruptedCards,
     CorruptedRelics,
+    Service
 }
