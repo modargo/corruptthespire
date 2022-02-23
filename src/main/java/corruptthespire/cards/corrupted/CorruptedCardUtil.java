@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.daily.mods.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ModHelper;
+import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.PrismaticShard;
 import com.megacrit.cardcrawl.rewards.RewardItem;
@@ -11,7 +12,10 @@ import corruptthespire.cards.corrupted.attacks.*;
 import corruptthespire.cards.corrupted.powers.*;
 import corruptthespire.cards.corrupted.skills.*;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class CorruptedCardUtil {
@@ -107,11 +111,14 @@ public class CorruptedCardUtil {
     public static ArrayList<AbstractCard> getRandomCorruptedCards(int n) {
         return getRandomCorruptedCards(n, null);
     }
-
     public static ArrayList<AbstractCard> getRandomCorruptedCards(int n, AbstractCard.CardType type) {
+        return getRandomCorruptedCards(n, type, AbstractDungeon.cardRng);
+    }
+
+    public static ArrayList<AbstractCard> getRandomCorruptedCards(int n, AbstractCard.CardType type, Random rng) {
         ArrayList<AbstractCard.CardRarity> rarities = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            rarities.add(rollCorruptedRarity());
+            rarities.add(rollCorruptedRarity(rng));
         }
 
         ArrayList<AbstractCard> cards = new ArrayList<>();
@@ -126,7 +133,7 @@ public class CorruptedCardUtil {
                             .filter(cci -> type == null || cci.card.type == type)
                             .map(cci -> cci.card)
                             .collect(Collectors.toCollection(ArrayList::new));
-                    Collections.shuffle(corruptedCommons, AbstractDungeon.cardRng.random);
+                    Collections.shuffle(corruptedCommons, rng.random);
                 }
                 card = corruptedCommons.remove(0);
             }
@@ -137,7 +144,7 @@ public class CorruptedCardUtil {
                             .filter(cci -> type == null || cci.card.type == type)
                             .map(cci -> cci.card)
                             .collect(Collectors.toCollection(ArrayList::new));
-                    Collections.shuffle(corruptedRares, AbstractDungeon.cardRng.random);
+                    Collections.shuffle(corruptedRares, rng.random);
                 }
                 card = corruptedRares.remove(0);
             }
@@ -147,7 +154,7 @@ public class CorruptedCardUtil {
         return cards;
     }
 
-    private static AbstractCard.CardRarity rollCorruptedRarity() {
-        return AbstractDungeon.cardRng.randomBoolean(CORRUPTED_RARE_CHANCE) ? AbstractCard.CardRarity.RARE : AbstractCard.CardRarity.COMMON;
+    private static AbstractCard.CardRarity rollCorruptedRarity(Random rng) {
+        return rng.randomBoolean(CORRUPTED_RARE_CHANCE) ? AbstractCard.CardRarity.RARE : AbstractCard.CardRarity.COMMON;
     }
 }
