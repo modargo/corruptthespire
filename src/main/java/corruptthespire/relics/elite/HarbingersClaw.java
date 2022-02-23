@@ -1,4 +1,4 @@
-package corruptthespire.relics.chaotic;
+package corruptthespire.relics.elite;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;

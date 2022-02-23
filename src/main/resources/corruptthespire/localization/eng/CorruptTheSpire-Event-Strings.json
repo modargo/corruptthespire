@@ -218,6 +218,18 @@
       "[Leave]"
     ]
   },
+  "CorruptTheSpire:Doom": {
+    "NAME": "Doom",
+    "DESCRIPTIONS": [
+      "You come across a monstrous demon, causing decay from its presence. The creature drifts towards you and you feel the malevolent aura grow stronger. NL NL Confront your fate or evade it?",
+      "The monster's unearthly gaze follows you as you flee."
+    ],
+    "OPTIONS": [
+      "[Confront] An elite fight with extra rewards.",
+      "[Evade]",
+      "[Leave]"
+    ]
+  },
   "CorruptTheSpire:TheDevice": {
     "NAME": "The Device",
     "DESCRIPTIONS": [

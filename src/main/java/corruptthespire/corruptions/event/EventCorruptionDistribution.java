@@ -13,11 +13,12 @@ public class EventCorruptionDistribution extends AbstractCorruptionDistribution<
     @Override
     protected List<CorruptionDistributionInfo<EventCorruptionType>> getDistribution() {
         ArrayList<CorruptionDistributionInfo<EventCorruptionType>> d = new ArrayList<>();
-        d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Fragment, 10));
-        d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Corrupted, 20));
-        d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Chaotic, 20));
-        d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Harbinger, 25));
-        d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Devourer, 25));
+        d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Fragment, 30));
+        d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Corrupted, 60));
+        d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Chaotic, 60));
+        d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Harbinger, 50));
+        d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Devourer, 50));
+        d.add(new CorruptionDistributionInfo<>(EventCorruptionType.Doom, 50));
         return d;
     }
 
@@ -29,7 +30,14 @@ public class EventCorruptionDistribution extends AbstractCorruptionDistribution<
         if (Cor.flags.seenHarbinger || Cor.getRealActNum() != 2) {
             distribution.removeIf(di -> di.corruption == EventCorruptionType.Harbinger);
             distribution.removeIf(di -> di.corruption == EventCorruptionType.Devourer);
+            distribution.removeIf(di -> di.corruption == EventCorruptionType.Doom);
         }
         return distribution;
+    }
+
+    @Override
+    protected int getTotalWeight() {
+        int TOTAL_WEIGHT = 300;
+        return TOTAL_WEIGHT;
     }
 }

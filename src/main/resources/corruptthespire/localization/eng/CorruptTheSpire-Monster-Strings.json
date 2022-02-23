@@ -109,5 +109,13 @@
       "Fierce Burn"
     ],
     "NAME": "Flame Manifest"
+  },
+  "CorruptTheSpire:Doom": {
+    "MOVES": [
+      "Dark Claw",
+      "Deathbeam",
+      "Karmic Judgement"
+    ],
+    "NAME": "Doom"
   }
 }

@@ -30,11 +30,13 @@ import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.events.CorruptedEventInfo;
 import corruptthespire.events.CorruptedEventUtil;
 import corruptthespire.events.special.DevourerEvent;
+import corruptthespire.events.special.DoomEvent;
 import corruptthespire.events.special.HarbingerEvent;
 import corruptthespire.monsters.*;
 import corruptthespire.potions.*;
 import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.relics.chaotic.*;
+import corruptthespire.relics.elite.*;
 import corruptthespire.rewards.CorruptedCardReward;
 import corruptthespire.rewards.CustomRewardTypes;
 import corruptthespire.rewards.MaxHealthReward;
@@ -102,7 +104,7 @@ public class CorruptTheSpire implements
         BaseMod.subscribe(new IncreaseInvincibleOnStartBattleSubscriber());
         BaseMod.subscribe(new ResetIsBossCorruptedSubscriber());
         BaseMod.subscribe(new ResetNormalMonsterCountSubscriber());
-        BaseMod.subscribe(new TriggerThoughtStealerPostDrawSubscriber());
+        BaseMod.subscribe(new TriggerMonsterPowersPostDrawSubscriber());
 
         this.registerCustomRewards();
 
@@ -143,6 +145,7 @@ public class CorruptTheSpire implements
         BaseMod.addMonster(CorruptionManifest.ID, (BaseMod.GetMonster) CorruptionManifest::new);
         BaseMod.addMonster(FlameManifest.ID, (BaseMod.GetMonster) FlameManifest::new);
         BaseMod.addMonster(Harbinger.ID, (BaseMod.GetMonster) Harbinger::new);
+        BaseMod.addMonster(Doom.ID, () -> new Doom(0.0F, 150.0F));
     }
 
     private static void addEvents() {
@@ -150,6 +153,7 @@ public class CorruptTheSpire implements
         // debugging (thus the conditions that make them never show up)
         addEvent(HarbingerEvent.ID, HarbingerEvent.class);
         addEvent(DevourerEvent.ID, DevourerEvent.class);
+        addEvent(DoomEvent.ID, DoomEvent.class);
         for (Map.Entry<String, CorruptedEventInfo> e : CorruptedEventUtil.getAllCorruptedEvents().entrySet()) {
             addEvent(e.getKey(), e.getValue().cls);
         }
@@ -222,6 +226,8 @@ public class CorruptTheSpire implements
     public void receiveEditRelics() {
         addRelic(new BurningRing(), RelicType.SHARED);
         addRelic(new DeckOfManyFates(), RelicType.SHARED);
+        addRelic(new DoomSight(), RelicType.SHARED);
+        addRelic(new DoomWing(), RelicType.SHARED);
         addRelic(new HarbingersClaw(), RelicType.SHARED);
         addRelic(new HarbingersSkull(), RelicType.SHARED);
         addRelic(new ShimmeringFan(), RelicType.SHARED);

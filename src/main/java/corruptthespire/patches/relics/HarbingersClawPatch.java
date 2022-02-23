@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import corruptthespire.relics.chaotic.HarbingersClaw;
+import corruptthespire.relics.elite.HarbingersClaw;
 import javassist.CtBehavior;
 
 import java.util.ArrayList;

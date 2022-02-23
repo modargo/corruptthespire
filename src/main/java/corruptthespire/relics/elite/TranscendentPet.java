@@ -1,4 +1,4 @@
-package corruptthespire.relics.chaotic;
+package corruptthespire.relics.elite;
 
 import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;

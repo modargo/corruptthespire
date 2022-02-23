@@ -5,5 +5,6 @@ public enum EventCorruptionType {
     Corrupted,
     Chaotic,
     Harbinger,
-    Devourer
+    Devourer,
+    Doom
 }

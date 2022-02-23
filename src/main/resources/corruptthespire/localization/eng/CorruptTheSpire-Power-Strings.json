@@ -151,5 +151,13 @@
   "CorruptTheSpire:HandOfTheAbyss": {
     "NAME": "Hand of the Abyss",
     "DESCRIPTIONS": ["Whenever you deal unblocked attack damage, apply #b{0} #yAbysstouched."]
+  },
+  "CorruptTheSpire:Pressure": {
+    "NAME": "Pressure",
+    "DESCRIPTIONS": ["Whenever you draw a card, it costs #b1 more this turn. If you keep a card in your hand without #yRetaining it, it costs #b1 more next turn."]
+  },
+  "CorruptTheSpire:ImpendingDoom": {
+    "NAME": "Impending Doom",
+    "DESCRIPTIONS": ["When brought to half HP, applies #b{0} #yVulnerable and loses this at the end of its next turn."]
   }
 }

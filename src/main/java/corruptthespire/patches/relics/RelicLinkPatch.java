@@ -9,10 +9,7 @@ import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import corruptthespire.relics.chaotic.HarbingersClaw;
-import corruptthespire.relics.chaotic.HarbingersSkull;
-import corruptthespire.relics.chaotic.TranscendentEye;
-import corruptthespire.relics.chaotic.TranscendentPet;
+import corruptthespire.relics.elite.*;
 import javassist.CtBehavior;
 
 import java.util.ArrayList;
@@ -20,8 +17,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class RelicLinkPatch {
-    private static final List<String> firstRelicIds = Arrays.asList(HarbingersClaw.ID, TranscendentEye.ID);
-    private static final List<String> secondRelicIds = Arrays.asList(HarbingersSkull.ID, TranscendentPet.ID);
+    private static final List<String> firstRelicIds = Arrays.asList(HarbingersClaw.ID, TranscendentEye.ID, DoomSight.ID);
+    private static final List<String> secondRelicIds = Arrays.asList(HarbingersSkull.ID, TranscendentPet.ID, DoomWing.ID);
 
     @SpirePatch(clz = RewardItem.class, method = "render")
     public static class RenderRelicLinkPatch {
