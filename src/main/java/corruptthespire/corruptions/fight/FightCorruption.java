@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.monsters.beyond.Repulsor;
 import com.megacrit.cardcrawl.monsters.beyond.SnakeDagger;
 import com.megacrit.cardcrawl.monsters.exordium.Cultist;
 import com.megacrit.cardcrawl.monsters.exordium.GremlinThief;
@@ -194,8 +193,8 @@ public class FightCorruption {
                 return new SpikeSlime_S(x, y, 0);
             case GremlinMinion:
                 return new GremlinThief(x, y);
-            case RepulsorMinion:
-                return new Repulsor(x, y);
+            case DeliriumManifestMinion:
+                return new DeliriumManifest(x, y, getDeliriumManifestVersion());
             case SnakeDaggerMinion:
                 return new SnakeDagger(x, y);
             case CultistMinion:
@@ -218,6 +217,11 @@ public class FightCorruption {
         return actNum <= 1 ? FlameManifest.Version.Act1
                 : actNum == 2 ? FlameManifest.Version.Act2
                 : FlameManifest.Version.Act3;
+    }
+
+    private static DeliriumManifest.Version getDeliriumManifestVersion() {
+        int actNum = Cor.getActNum();
+        return actNum == 2 ? DeliriumManifest.Version.Act2 : DeliriumManifest.Version.Act3;
     }
 
     private static AbstractMonster getDevourer(float x, float y, String excludedId) {

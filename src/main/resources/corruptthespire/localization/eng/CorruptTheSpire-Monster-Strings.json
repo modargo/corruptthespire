@@ -117,5 +117,14 @@
       "Karmic Judgement"
     ],
     "NAME": "Doom"
+  },
+  "CorruptTheSpire:DeliriumManifest": {
+    "MOVES": [
+      "Lesser Confusion",
+      "Lesser Hex",
+      "Harm",
+      "Decrepify"
+    ],
+    "NAME": "Delirium Manifest"
   }
 }

@@ -105,7 +105,7 @@ public class FightCorruptionDistribution {
             || f == FightCorruptionType.FlameManifestMinion
             || f == FightCorruptionType.SlimeMinion
             || f == FightCorruptionType.GremlinMinion
-            || f == FightCorruptionType.RepulsorMinion
+            || f == FightCorruptionType.DeliriumManifestMinion
             || f == FightCorruptionType.DevourerMinion
             || f == FightCorruptionType.SnakeDaggerMinion
             || f == FightCorruptionType.CultistMinion;

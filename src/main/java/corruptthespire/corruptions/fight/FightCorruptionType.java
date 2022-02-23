@@ -15,7 +15,7 @@ public enum FightCorruptionType {
     FlameManifestMinion,
     SlimeMinion,
     GremlinMinion,
-    RepulsorMinion,
+    DeliriumManifestMinion,
     DevourerMinion,
     SnakeDaggerMinion,
     CultistMinion

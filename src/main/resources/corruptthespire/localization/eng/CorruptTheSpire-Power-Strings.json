@@ -159,5 +159,24 @@
   "CorruptTheSpire:ImpendingDoom": {
     "NAME": "Impending Doom",
     "DESCRIPTIONS": ["When brought to half HP, applies #b{0} #yVulnerable and loses this at the end of its next turn."]
+  },
+  "CorruptTheSpire:TemporaryHex": {
+    "NAME": "Temporary Hex",
+    "DESCRIPTIONS": [
+      "This turn, whenever you play a #ynon-Attack card, shuffle #b1 #yDazed into your draw pile.",
+      "For the next #b{0} turns, whenever you play a #ynon-Attack card, shuffle #b1 #yDazed into your draw pile."]
+  },
+  "CorruptTheSpire:PermanentDrawReduction": {
+    "NAME": "Draw",
+    "DESCRIPTIONS": [
+      "At the start of your turn, draw #b{0} less card.",
+      "At the start of your turn, draw #b{0} less cards."
+    ]
+  },
+  "CorruptTheSpire:TemporaryConfusion": {
+    "NAME": "Temporary Confusion",
+    "DESCRIPTIONS": [
+      "This turn, whenever you draw a card, randomize its cost."
+    ]
   }
 }
