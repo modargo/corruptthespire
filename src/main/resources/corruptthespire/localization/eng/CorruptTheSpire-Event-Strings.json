@@ -317,5 +317,18 @@
       "[Leave]",
       "Select a Card to Duplicate."
     ]
+  },
+  "CorruptTheSpire:Messenger": {
+    "NAME": "Messenger",
+    "DESCRIPTIONS": [
+      "The voice makes no sound, reaching directly into your mind. \"We come to you a #ymessenger. We know of your eternal climb.\" NL NL \"We wish to say: not all that lies beyond is #pdarkness. There are places of #border as well, and #gbeauty. There are those who watch your struggle with compassion.\" NL NL \"If you wish, we would give you some of our #rwarmth, in exchange for some of your own.\"",
+      "\"Good. We give your our ~blessing.~ All shall find the light at last.\"",
+      "\"Very well. Then until this time comes again, farewell.\""
+    ],
+    "OPTIONS": [
+      "[Accept] #gGain {0}. #rLose #r{1} #rMax #rHP.",
+      "[Decline]",
+      "[Leave]"
+    ]
   }
 }

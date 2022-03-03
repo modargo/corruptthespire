@@ -162,5 +162,14 @@
   "CorruptTheSpire:BadBreath": {
     "NAME": "Bad Breath",
     "DESCRIPTION": "Ethereal. NL Exhaust. NL At the end of your turn, gain 1 Frail."
+  },
+  "CorruptTheSpire:CelestialAegis": {
+    "NAME": "Celestial Aegis",
+    "DESCRIPTION": "Reduce corruptthespire:Corruption by !M!. NL Shuffle {0} *Boons each into your draw and discard piles. NL After playing all *Boons, gain corruptthespire:Celestial\u00a0Might."
+  },
+  "CorruptTheSpire:Boon": {
+    "NAME": "Boon",
+    "DESCRIPTION": "Gain !B! Block. NL Draw 1 card. NL Gain [E] . NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Draw !M! cards. Gain [E] .NL Exhaust."
   }
 }

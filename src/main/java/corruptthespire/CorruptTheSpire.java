@@ -201,13 +201,15 @@ public class CorruptTheSpire implements
 
     @Override
     public void receiveEditCards() {
+        addCard(new CelestialAegis());
+        addCard(new Boon());
         addCard(new Nudge());
         addCard(new ShimmeringShield());
         addCard(new WheelOfFortune());
-        addCard(new Bedeviled());
-        addCard(new Fated());
-        addCard(new Contagion());
         addCard(new BadBreath());
+        addCard(new Bedeviled());
+        addCard(new Contagion());
+        addCard(new Fated());
         ArrayList<AbstractCard> corruptedCards = CorruptedCardUtil.getAllCorruptedCardInfos(true)
                 .values()
                 .stream()

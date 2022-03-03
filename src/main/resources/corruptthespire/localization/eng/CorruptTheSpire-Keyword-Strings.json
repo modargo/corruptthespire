@@ -53,5 +53,10 @@
     "PROPER_NAME": "Lowest Reward Outcomes",
     "NAMES": ["lowest\u00a0reward\u00a0outcomes"],
     "DESCRIPTION": "Outcomes that only add #yFragments #yof #yCorruption."
+  },
+  {
+    "PROPER_NAME": "Celestial Might",
+    "NAMES": ["celestial\u00a0might"],
+    "DESCRIPTION": "At the beginning of your turn, gain #b5 #yTemporary #yHP and deal damage to ALL enemies equal to half the floor number."
   }
 ]

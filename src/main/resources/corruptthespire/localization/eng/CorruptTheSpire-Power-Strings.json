@@ -178,5 +178,17 @@
     "DESCRIPTIONS": [
       "This turn, whenever you draw a card, randomize its cost."
     ]
+  },
+  "CorruptTheSpire:Boon": {
+    "NAME": "Boon",
+    "DESCRIPTIONS": [
+      "After playing #b{0} #yBoons, gain #yCelestial #yMight."
+    ]
+  },
+  "CorruptTheSpire:CelestialMight": {
+    "NAME": "Celestial Might",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain 5 #yTemporary #yHP and deal damage to ALL enemies equal to half the floor number."
+    ]
   }
 }
