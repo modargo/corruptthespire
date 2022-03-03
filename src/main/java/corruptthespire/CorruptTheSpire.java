@@ -228,9 +228,11 @@ public class CorruptTheSpire implements
     @Override
     public void receiveEditRelics() {
         addRelic(new BurningRing(), RelicType.SHARED);
+        addRelic(new ChthonicBlessing(), RelicType.SHARED);
         addRelic(new DeckOfManyFates(), RelicType.SHARED);
         addRelic(new DoomSight(), RelicType.SHARED);
         addRelic(new DoomWing(), RelicType.SHARED);
+        addRelic(new GnosticBlessing(), RelicType.SHARED);
         addRelic(new HarbingersClaw(), RelicType.SHARED);
         addRelic(new HarbingersSkull(), RelicType.SHARED);
         addRelic(new ShimmeringFan(), RelicType.SHARED);

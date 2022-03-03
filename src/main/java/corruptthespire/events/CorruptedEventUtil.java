@@ -10,6 +10,7 @@ public class CorruptedEventUtil {
     public static Map<String, CorruptedEventInfo> getAllCorruptedEvents() {
         Map<String, CorruptedEventInfo> corruptedEvents = new HashMap<>();
         corruptedEvents.put(AStepToTheSide.ID, new CorruptedEventInfo(AStepToTheSide.class, CorruptedEventType.Chaotic));
+        corruptedEvents.put(BlessingsOfChaos.ID, new CorruptedEventInfo(BlessingsOfChaos.class, CorruptedEventType.Chaotic));
         corruptedEvents.put(Divergence.ID, new CorruptedEventInfo(Divergence.class, CorruptedEventType.Chaotic));
         corruptedEvents.put(MindsEye.ID, new CorruptedEventInfo(MindsEye.class, CorruptedEventType.Chaotic));
         corruptedEvents.put(PathsInTheSmoke.ID, new CorruptedEventInfo(PathsInTheSmoke.class, CorruptedEventType.Chaotic));

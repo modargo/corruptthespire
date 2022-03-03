@@ -147,5 +147,15 @@
     "NAME": "Doom Wing",
     "FLAVOR": "There is a future in which I can see only mist and a single shadow.",
     "DESCRIPTIONS": ["Whenever you play a #yPower card, gain #b{0} #yThorns."]
+  },
+  "CorruptTheSpire:GnosticBlessing": {
+    "NAME": "Gnostic Blessing",
+    "FLAVOR": "The pursuit of knowledge, relentless and deranged.",
+    "DESCRIPTIONS": ["At the start of your turn, draw #b{0} additional card. NL Future card rewards have #b{1} less card to choose from."]
+  },
+  "CorruptTheSpire:ChthonicBlessing": {
+    "NAME": "Chthonic Blessing",
+    "FLAVOR": "The riches of the land, accumulated and hoarded.",
+    "DESCRIPTIONS": ["Gain #b{0} #yGold after every non-Boss combat. Gain a relic after every #b{1} non-Boss combats. NL Future card rewards have #b{2} less card to choose from."]
   }
 }
