@@ -65,8 +65,8 @@
   },
   "CorruptTheSpire:ShimmeringShield": {
     "NAME": "Shimmering Shield",
-    "DESCRIPTION": "Whenever you play a card of a different color, deal !M! damage to ALL enemies and gain !M! Block.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you play a card of a different color, deal !M! damage to ALL enemies and gain !M! Block."
+    "DESCRIPTION": "Whenever you play a card of a corruptthespire:different\u00a0color, deal !M! damage to ALL enemies and gain !M! Block.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you play a card of a corruptthespire:different\u00a0color, deal !M! damage to ALL enemies and gain !M! Block."
   },
   "CorruptTheSpire:Bedeviled": {
     "NAME": "Bedeviled",
@@ -175,5 +175,9 @@
   "CorruptTheSpire:Retribution": {
     "NAME": "Retribution",
     "DESCRIPTION": "Deal !D! damage. NL For each corruptthespire:common\u00a0debuff you have, deal !D! damage again."
+  },
+  "CorruptTheSpire:Unearth": {
+    "NAME": "Unearth",
+    "DESCRIPTION": "Scry !M!. NL Put a card of a corruptthespire:different\u00a0color from your discard pile into your hand."
   }
 }
