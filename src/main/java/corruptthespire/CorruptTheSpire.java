@@ -44,6 +44,8 @@ import corruptthespire.rewards.RandomUpgradeReward;
 import corruptthespire.savables.*;
 import corruptthespire.subscribers.*;
 import corruptthespire.util.TextureLoader;
+import corruptthespire.variables.MagicNumber2Variable;
+import corruptthespire.variables.MagicNumber3Variable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -201,6 +203,9 @@ public class CorruptTheSpire implements
 
     @Override
     public void receiveEditCards() {
+        BaseMod.addDynamicVariable(new MagicNumber2Variable());
+        BaseMod.addDynamicVariable(new MagicNumber3Variable());
+
         addCard(new CelestialAegis());
         addCard(new Boon());
         addCard(new Nudge());
