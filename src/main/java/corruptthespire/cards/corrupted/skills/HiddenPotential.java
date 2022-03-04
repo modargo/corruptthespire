@@ -1,5 +1,6 @@
 package corruptthespire.cards.corrupted.skills;
 
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -14,22 +15,19 @@ public class HiddenPotential extends AbstractCorruptedCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final int COST = 1;
-    private static final int BLOCK = 9;
-    private static final int UPGRADE_BLOCK = 3;
-    private static final int DRAW = 2;
+    private static final int BLOCK = 12;
+    private static final int UPGRADE_BLOCK = 2;
+    private static final int DRAW = 1;
     private static final int UPGRADE_DRAW = 1;
     private static final int ARTIFACT = 1;
-    private static final int UPGRADE_ARTIFACT = 1;
-    private static final int ABYSSTOUCHED = 4;
-    private static final int UPGRADE_ABYSSTOUCHED = 2;
 
     public HiddenPotential() {
         super(ID, NAME, IMG, COST, DESCRIPTION, CardType.SKILL, CardTarget.ALL_ENEMY);
         this.baseBlock = BLOCK;
         this.magicNumber = this.baseMagicNumber = DRAW;
         this.magicNumber2 = this.baseMagicNumber2 = ARTIFACT;
-        this.magicNumber3 = this.baseMagicNumber3 = ABYSSTOUCHED;
         this.exhaust = true;
     }
 
@@ -38,14 +36,15 @@ public class HiddenPotential extends AbstractCorruptedCard {
         if (!this.upgraded) {
             this.upgradeBlock(UPGRADE_BLOCK);
             this.upgradeMagicNumber(UPGRADE_DRAW);
-            this.upgradeMagicNumber2(UPGRADE_ARTIFACT);
-            this.upgradeMagicNumber3(UPGRADE_ABYSSTOUCHED);
             this.upgradeName();
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster monster) {
-        this.addToBot(new HiddenPotentialAction(this.block, this.magicNumber, this.magicNumber2, this.magicNumber3));
+        this.addToBot(new GainBlockAction(p, this.block));
+        this.addToBot(new HiddenPotentialAction(this.magicNumber, this.magicNumber2));
     }
 }

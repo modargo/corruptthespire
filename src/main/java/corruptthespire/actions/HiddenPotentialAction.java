@@ -18,16 +18,12 @@ import corruptthespire.powers.PowerUtil;
 public class HiddenPotentialAction extends AbstractGameAction {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("ExhaustAction");
     public static final String[] TEXT = uiStrings.TEXT;
-    private final int block;
     private final int draw;
     private final int artifact;
-    private final int abysstouched;
 
-    public HiddenPotentialAction(int block, int draw, int artifact, int abysstouched) {
-        this.block = block;
+    public HiddenPotentialAction(int draw, int artifact) {
         this.draw = draw;
         this.artifact = artifact;
-        this.abysstouched = abysstouched;
         this.duration = this.startDuration = Settings.ACTION_DUR_FAST;
         this.actionType = ActionType.DISCARD;
     }
@@ -57,21 +53,9 @@ public class HiddenPotentialAction extends AbstractGameAction {
 
     private void fire(AbstractCard c) {
         if (c != null) {
-            if (c.color == CorruptedCardColor.CORRUPTTHESPIRE_CORRUPTED) {
-                this.addToTop(new DrawCardAction(this.draw));
-            }
-            if (c.type == AbstractCard.CardType.STATUS || c.type == AbstractCard.CardType.CURSE) {
+            if (c.color == CorruptedCardColor.CORRUPTTHESPIRE_CORRUPTED || c.type == AbstractCard.CardType.STATUS || c.type == AbstractCard.CardType.CURSE) {
                 this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ArtifactPower(AbstractDungeon.player, this.artifact)));
-            }
-            else if (c.type == AbstractCard.CardType.ATTACK) {
-                for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-                    if (!m.isDead && !m.isDying) {
-                        this.addToTop(new ApplyPowerAction(m, AbstractDungeon.player, PowerUtil.abysstouched(m, this.abysstouched)));
-                    }
-                }
-            }
-            else if (c.type == AbstractCard.CardType.SKILL || c.type == AbstractCard.CardType.POWER) {
-                this.addToTop(new GainBlockAction(AbstractDungeon.player, this.block));
+                this.addToTop(new DrawCardAction(this.draw));
             }
             this.addToTop(new DiscardSpecificCardAction(c));
         }

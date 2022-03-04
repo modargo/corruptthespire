@@ -182,7 +182,8 @@
   },
   "CorruptTheSpire:HiddenPotential": {
     "NAME": "Hidden Potential",
-    "DESCRIPTION": "Discard a card. If it was: NL An Attack: Apply !corruptthespire:M3! *Abysstouched to ALL enemies. NL A Skill or Power: Gain !B! Block. NL Corrupted: Draw !M! cards. NL A *Curse or *Status: Gain !corruptthespire:M2! *Artifact. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block. NL Discard a card. If it was corrupted, a Status, or a Curse, draw !M! card and gain !corruptthespire:M2! Artifact. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Discard a card. If it was corrupted, a Status, or a Curse, draw !M! cards and gain !corruptthespire:M2! Artifact. NL Exhaust"
   },
   "CorruptTheSpire:InfernalBargain": {
     "NAME": "Infernal Bargain",
