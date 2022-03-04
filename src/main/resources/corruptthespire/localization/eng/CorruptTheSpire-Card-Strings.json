@@ -171,5 +171,9 @@
     "NAME": "Boon",
     "DESCRIPTION": "Gain !B! Block. NL Draw 1 card. NL Gain [E] . NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Draw !M! cards. Gain [E] .NL Exhaust."
+  },
+  "CorruptTheSpire:Retribution": {
+    "NAME": "Retribution",
+    "DESCRIPTION": "Deal !D! damage. NL For each corruptthespire:common\u00a0debuff you have, deal !D! damage again."
   }
 }
