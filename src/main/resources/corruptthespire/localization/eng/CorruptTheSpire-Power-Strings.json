@@ -190,5 +190,15 @@
     "DESCRIPTIONS": [
       "At the start of your turn, gain 5 #yTemporary #yHP and deal damage to ALL enemies equal to half the floor number."
     ]
+  },
+  "CorruptTheSpire:InfernalBargain": {
+    "NAME": "Infernal Bargain",
+    "DESCRIPTIONS": [
+      "At the start of your turn, choose one:",
+      " NL Gain {0} Block.",
+      " NL Gain {0} Strength.",
+      " NL Draw {0} cards.",
+      " NL Take {0} damage at the end of your turn."
+    ]
   }
 }

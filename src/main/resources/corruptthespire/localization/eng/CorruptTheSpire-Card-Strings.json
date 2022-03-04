@@ -183,5 +183,9 @@
   "CorruptTheSpire:HiddenPotential": {
     "NAME": "Hidden Potential",
     "DESCRIPTION": "Discard a card. If it was: NL An Attack: Apply !corruptthespire:M3! *Abysstouched to ALL enemies. NL A Skill or Power: Gain !B! Block. NL Corrupted: Draw !M! cards. NL A *Curse or *Status: Gain !corruptthespire:M2! *Artifact. NL Exhaust."
+  },
+  "CorruptTheSpire:InfernalBargain": {
+    "NAME": "Infernal Bargain",
+    "DESCRIPTION": "Now and at the start of your turn, choose one that hasn''t already been chosen: NL Gain !B! Block. NL Gain !M! Strength. NL Draw !corruptthespire:M2! cards. NL Take {0} damage at the end of your turn."
   }
 }
