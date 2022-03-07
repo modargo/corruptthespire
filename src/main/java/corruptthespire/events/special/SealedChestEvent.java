@@ -94,11 +94,12 @@ public class SealedChestEvent extends MaskedBandits {
                 }
                 break;
             case 1:
+                AbstractDungeon.getCurrRoom().rewards.clear();
+
                 for (AbstractRelic r : AbstractDungeon.player.relics) {
                     r.onChestOpen(false);
                 }
 
-                AbstractDungeon.getCurrRoom().rewards.clear();
                 AbstractDungeon.getCurrRoom().addGoldToRewards(GOLD);
                 AbstractDungeon.getCurrRoom().addRelicToRewards(new FragmentOfCorruption());
                 AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.COMMON);
