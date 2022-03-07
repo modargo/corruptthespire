@@ -1,6 +1,7 @@
 package corruptthespire.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -57,7 +58,9 @@ public class HiddenPotentialAction extends AbstractGameAction {
                 this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ArtifactPower(AbstractDungeon.player, this.artifact)));
                 this.addToTop(new DrawCardAction(this.draw));
             }
-            this.addToTop(new DiscardSpecificCardAction(c));
+            AbstractDungeon.player.hand.moveToDiscardPile(c);
+            c.triggerOnManualDiscard();
+            GameActionManager.incrementDiscard(false);
         }
         this.isDone = true;
     }
