@@ -60,8 +60,8 @@
   },
   "CorruptTheSpire:Nudge": {
     "NAME": "Nudge",
-    "DESCRIPTION": "Gain 1 Dexterity. NL Gain 1 Temporary_HP. NL Scry 2. Draw 1 card. NL Draw 1 card next turn. NL Upgrade a random card in your hand. Exhaustive !stslib:ex!.",
-    "UPGRADE_DESCRIPTION": "Gain 1 Dexterity. NL Gain 2 Temporary_HP. NL Scry 3. Draw 1 card. NL Draw 2 cards next turn. NL Upgrade a random card in your hand. Exhaustive !stslib:ex!."
+    "DESCRIPTION": "Gain 1 Dexterity. NL Gain !M! Temporary_HP. NL Scry !shaman:M2!. Draw 1 card. NL Draw !shaman:M3! card next turn. NL Upgrade a random card in your hand. Exhaustive !stslib:ex!.",
+    "UPGRADE_DESCRIPTION": "Gain 1 Dexterity. NL Gain !M! Temporary_HP. NL Scry !shaman:M2!. Draw 1 card. NL Draw !shaman:M3! cards next turn. NL Upgrade a random card in your hand. Exhaustive !stslib:ex!."
   },
   "CorruptTheSpire:ShimmeringShield": {
     "NAME": "Shimmering Shield",
