@@ -61,6 +61,7 @@ public class ChooseOneCorruptedAction extends AbstractGameAction {
                 AbstractDungeon.cardRewardScreen.discoveryCard = null;
             }
             this.retrieveCard = true;
+            this.isDone = true;
         }
         tickDuration();
     }

@@ -33,9 +33,7 @@ public class CorruptedPotion extends CustomPotion {
 
     @Override
     public void use(AbstractCreature target) {
-        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-            this.addToBot(new ChooseOneCorruptedAction(this.potency, true));
-        }
+        this.addToBot(new ChooseOneCorruptedAction(this.potency, true));
     }
 
     @Override
