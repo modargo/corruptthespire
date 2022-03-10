@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import corruptthespire.CorruptTheSpire;
-import corruptthespire.actions.ExcludePlayerColorDiscardPileToHandAction;
+import corruptthespire.actions.UnearthAction;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 
 public class Unearth extends AbstractCorruptedCard {
@@ -35,6 +35,6 @@ public class Unearth extends AbstractCorruptedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster monster) {
         this.addToBot(new ScryAction(this.magicNumber));
-        this.addToBot(new ExcludePlayerColorDiscardPileToHandAction(false));
+        this.addToBot(new UnearthAction(false));
     }
 }

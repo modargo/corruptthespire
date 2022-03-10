@@ -178,7 +178,7 @@
   },
   "CorruptTheSpire:Unearth": {
     "NAME": "Unearth",
-    "DESCRIPTION": "Scry !M!. NL Put a card of a corruptthespire:different\u00a0color from your discard pile into your hand."
+    "DESCRIPTION": "Scry !M!. NL Put a card of a corruptthespire:different\u00a0color from your discard pile into your hand. NL If you cannot, draw a card."
   },
   "CorruptTheSpire:HiddenPotential": {
     "NAME": "Hidden Potential",

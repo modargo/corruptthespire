@@ -2,6 +2,7 @@ package corruptthespire.actions;
 
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,12 +12,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
 
-public class ExcludePlayerColorDiscardPileToHandAction extends AbstractGameAction {
+public class UnearthAction extends AbstractGameAction {
     public static final String[] TEXT;
     private AbstractPlayer player;
     private boolean optional;
 
-    public ExcludePlayerColorDiscardPileToHandAction(boolean optional) {
+    public UnearthAction(boolean optional) {
         this.actionType = ActionType.CARD_MANIPULATION;
         this.duration = this.startDuration = Settings.ACTION_DUR_FAST;
         this.player = AbstractDungeon.player;
@@ -51,6 +52,7 @@ public class ExcludePlayerColorDiscardPileToHandAction extends AbstractGameActio
                     this.tickDuration();
                 }
             } else {
+                this.addToTop(new DrawCardAction(1));
                 this.isDone = true;
             }
         } else {
