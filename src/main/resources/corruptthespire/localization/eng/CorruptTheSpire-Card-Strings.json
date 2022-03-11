@@ -174,7 +174,8 @@
   },
   "CorruptTheSpire:Retribution": {
     "NAME": "Retribution",
-    "DESCRIPTION": "Deal !D! damage. NL For each corruptthespire:common\u00a0debuff you have, deal !D! damage again."
+    "DESCRIPTION": "Deal !D! damage. NL For each debuff on you and the enemy, deal !D! damage again.",
+    "EXTENDED_DESCRIPTION": [" NL (Deals damage 1 time.)", " NL (Deals damage {0} times.)"]
   },
   "CorruptTheSpire:Unearth": {
     "NAME": "Unearth",

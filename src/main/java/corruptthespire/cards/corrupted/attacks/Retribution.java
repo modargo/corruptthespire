@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -12,6 +13,7 @@ import com.megacrit.cardcrawl.powers.*;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 
+import java.text.MessageFormat;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -41,27 +43,31 @@ public class Retribution extends AbstractCorruptedCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int times = this.countCommonDebuffs() + 1;
-        for (int i = 0; i < times; i++) {
+        for (int i = 0; i < this.calculateTimes(m); i++) {
             this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
         }
     }
 
-    private int countCommonDebuffs() {
-        List<String> positivePowerIds = Arrays.asList(WeakPower.POWER_ID, FrailPower.POWER_ID, VulnerablePower.POWER_ID);
-        List<String> negativePowerIds = Arrays.asList(DexterityPower.POWER_ID, FocusPower.POWER_ID);
-        List<String> numberlessPowers = Collections.singletonList(ConfusionPower.POWER_ID);
-        return AbstractDungeon.player.powers.stream().map(p -> {
-            if (positivePowerIds.contains(p.ID)) {
-                return 1;
-            }
-            else if (negativePowerIds.contains(p.ID) && p.amount < 0) {
-                return 1;
-            }
-            else if (numberlessPowers.contains(p.ID)) {
-                return 1;
-            }
-            return 0;
-        }).reduce(0, Integer::sum);
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        this.rawDescription = DESCRIPTION;
+        this.initializeDescription();
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster m) {
+        super.calculateCardDamage(m);
+        int times = this.calculateTimes(m);
+        this.rawDescription = DESCRIPTION + (times == 1 ? cardStrings.EXTENDED_DESCRIPTION[0] : MessageFormat.format(cardStrings.EXTENDED_DESCRIPTION[1], times));
+        this.initializeDescription();
+    }
+
+    private int calculateTimes(AbstractMonster m) {
+        return this.countDebuffs(AbstractDungeon.player) + this.countDebuffs(m) + 1;
+    }
+
+    private int countDebuffs(AbstractCreature creature) {
+        return (int)creature.powers.stream().filter(c -> c.type == AbstractPower.PowerType.DEBUFF).count();
     }
 }
