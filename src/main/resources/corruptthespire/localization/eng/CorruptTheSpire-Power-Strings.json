@@ -200,5 +200,9 @@
       " NL Draw {0} cards.",
       " NL Take {0} damage at the end of your turn."
     ]
+  },
+  "CorruptTheSpire:InfernalBargainDamagePower": {
+    "NAME": "Infernal Bargain Damage",
+    "DESCRIPTIONS": ["Take {0} damage at the end of your turn."]
   }
 }
