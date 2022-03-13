@@ -42,8 +42,10 @@ public class InfernalBargainDamagePower extends AbstractPower {
     public void updateDescription() {
         this.description = MessageFormat.format(DESCRIPTIONS[0], this.damage);
     }
+
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         this.addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(null, this.damage, DamageInfo.DamageType.THORNS)));
+        this.addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, this));
     }
 }
