@@ -74,11 +74,21 @@ public class InfernalBargainPower extends AbstractPower {
 
     private void trigger() {
         ArrayList<AbstractCard> choices = new ArrayList<>();
-        choices.add(new InfernalBargain.InfernalBargainBlockOption(this, this.block));
-        choices.add(new InfernalBargain.InfernalBargainStrengthOption(this, this.strength));
-        choices.add(new InfernalBargain.InfernalBargainDrawOption(this, this.draw));
-        choices.add(new InfernalBargain.InfernalBargainDamageOption(this, this.damage));
-        this.addToBot(new ChooseOneAction(choices));
+        if (!this.choices.contains(InfernalBargainChoice.Block)) {
+            choices.add(new InfernalBargain.InfernalBargainBlockOption(this, this.block));
+        }
+        if (!this.choices.contains(InfernalBargainChoice.Strength)) {
+            choices.add(new InfernalBargain.InfernalBargainStrengthOption(this, this.strength));
+        }
+        if (!this.choices.contains(InfernalBargainChoice.Draw)) {
+            choices.add(new InfernalBargain.InfernalBargainDrawOption(this, this.draw));
+        }
+        if (!this.choices.contains(InfernalBargainChoice.Damage)) {
+            choices.add(new InfernalBargain.InfernalBargainDamageOption(this, this.damage));
+        }
+        if (!choices.isEmpty()) {
+            this.addToBot(new ChooseOneAction(choices));
+        }
     }
 
     public void recordChoice(InfernalBargainChoice choice) {
