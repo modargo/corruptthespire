@@ -189,5 +189,21 @@
   "CorruptTheSpire:InfernalBargain": {
     "NAME": "Infernal Bargain",
     "DESCRIPTION": "Now and each turn, choose one that hasn''t already been chosen: NL Gain !B! Block. NL Gain !M! Strength. NL Draw !corruptthespire:M2! cards. NL Take {0} damage at the end of your turn."
+  },
+  "CorruptTheSpire:InfernalBargainBlockOption": {
+    "NAME": "Infernal Bargain",
+    "DESCRIPTION": "Gain {0} Block."
+  },
+  "CorruptTheSpire:InfernalBargainStrengthOption": {
+    "NAME": "Infernal Bargain",
+    "DESCRIPTION": "Gain {0} Strength."
+  },
+  "CorruptTheSpire:InfernalBargainDrawOption": {
+    "NAME": "Infernal Bargain",
+    "DESCRIPTION": "Draw {0} cards."
+  },
+  "CorruptTheSpire:InfernalBargainDamageOption": {
+    "NAME": "Infernal Bargain",
+    "DESCRIPTION": "Take {0} damage at the end of your turn."
   }
 }
