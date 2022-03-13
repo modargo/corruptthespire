@@ -106,7 +106,7 @@ public class InfernalBargain extends AbstractCorruptedCard {
         private final int block;
 
         public InfernalBargainBlockOption(InfernalBargainPower power, int block) {
-            super(ID, MessageFormat.format(DESCRIPTION, block), power, InfernalBargainChoice.Strength);
+            super(ID, MessageFormat.format(DESCRIPTION, block), power, InfernalBargainChoice.Block);
             this.block = block;
         }
 
@@ -158,7 +158,7 @@ public class InfernalBargain extends AbstractCorruptedCard {
         private final int draw;
 
         public InfernalBargainDrawOption(InfernalBargainPower power, int draw) {
-            super(ID, MessageFormat.format(DESCRIPTION, draw), power, InfernalBargainChoice.Strength);
+            super(ID, MessageFormat.format(DESCRIPTION, draw), power, InfernalBargainChoice.Draw);
             this.draw = draw;
         }
 
@@ -184,7 +184,7 @@ public class InfernalBargain extends AbstractCorruptedCard {
         private final int damage;
 
         public InfernalBargainDamageOption(InfernalBargainPower power, int damage) {
-            super(ID, MessageFormat.format(DESCRIPTION, damage), power, InfernalBargainChoice.Strength);
+            super(ID, MessageFormat.format(DESCRIPTION, damage), power, InfernalBargainChoice.Damage);
             this.damage = damage;
         }
 
