@@ -48,16 +48,16 @@ public class InfernalBargainPower extends AbstractPower {
     @Override
     public void updateDescription() {
         this.description = DESCRIPTIONS[0];
-        if (this.choices.contains(InfernalBargainChoice.Block)) {
+        if (!this.choices.contains(InfernalBargainChoice.Block)) {
             this.description += MessageFormat.format(DESCRIPTIONS[1], this.block);
         }
-        if (this.choices.contains(InfernalBargainChoice.Strength)) {
+        if (!this.choices.contains(InfernalBargainChoice.Strength)) {
             this.description += MessageFormat.format(DESCRIPTIONS[2], this.strength);
         }
-        if (this.choices.contains(InfernalBargainChoice.Draw)) {
+        if (!this.choices.contains(InfernalBargainChoice.Draw)) {
             this.description += MessageFormat.format(DESCRIPTIONS[3], this.draw);
         }
-        if (this.choices.contains(InfernalBargainChoice.Damage)) {
+        if (!this.choices.contains(InfernalBargainChoice.Damage)) {
             this.description += MessageFormat.format(DESCRIPTIONS[4], this.damage);
         }
     }
