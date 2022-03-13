@@ -21,8 +21,8 @@ public class Messenger extends AbstractImageEvent {
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private static final String IMG = CorruptTheSpire.eventImage(ID);
 
-    private static final float MAX_HP_PERCENT = 0.20F;
-    private static final float A15_MAX_HP_PERCENT = 0.25F;
+    private static final float MAX_HP_PERCENT = 0.16F;
+    private static final float A15_MAX_HP_PERCENT = 0.20F;
 
     private final AbstractCard card;
     private final int maxHpLoss;
