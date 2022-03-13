@@ -73,7 +73,7 @@ public class InfernalBargain extends AbstractCorruptedCard {
         protected final InfernalBargainChoice choice;
 
         public AbstractInfernalBargainOption(String id, String description, InfernalBargainPower power, InfernalBargainChoice choice) {
-            super(id, NAME, IMG, COST, description, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
+            super(id, NAME, IMG, COST, description, CardType.POWER, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
             this.power = power;
             this.choice = choice;
         }
