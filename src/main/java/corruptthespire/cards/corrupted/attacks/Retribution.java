@@ -14,9 +14,6 @@ import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 
 import java.text.MessageFormat;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 public class Retribution extends AbstractCorruptedCard {
     public static final String ID = "CorruptTheSpire:Retribution";

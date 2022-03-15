@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import corruptthespire.CorruptTheSpire;
-import corruptthespire.cards.corrupted.powers.GuidingStar;
 import corruptthespire.cards.corrupted.powers.InfernalBargain;
 import corruptthespire.cards.corrupted.powers.InfernalBargain.InfernalBargainChoice;
 

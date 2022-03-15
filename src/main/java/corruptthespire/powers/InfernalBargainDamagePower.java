@@ -2,8 +2,6 @@ package corruptthespire.powers;
 
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -11,13 +9,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import corruptthespire.CorruptTheSpire;
-import corruptthespire.cards.corrupted.powers.InfernalBargain;
-import corruptthespire.cards.corrupted.powers.InfernalBargain.InfernalBargainChoice;
 
 import java.text.MessageFormat;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 public class InfernalBargainDamagePower extends AbstractPower {
     public static final String POWER_ID = "CorruptTheSpire:InfernalBargainDamage";

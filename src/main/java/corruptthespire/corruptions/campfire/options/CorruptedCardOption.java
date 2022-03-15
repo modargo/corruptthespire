@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;
-import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.rewards.CorruptedCardReward;
 import corruptthespire.util.TextureLoader;
 

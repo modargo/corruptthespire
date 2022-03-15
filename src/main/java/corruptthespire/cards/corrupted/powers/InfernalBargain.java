@@ -17,7 +17,6 @@ import corruptthespire.powers.InfernalBargainDamagePower;
 import corruptthespire.powers.InfernalBargainPower;
 
 import java.text.MessageFormat;
-import java.util.ArrayList;
 
 public class InfernalBargain extends AbstractCorruptedCard {
     public static final String ID = "CorruptTheSpire:InfernalBargain";

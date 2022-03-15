@@ -4,12 +4,10 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
-import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;
-import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.rewards.CorruptedCardReward;
 
 import java.text.MessageFormat;
