@@ -183,8 +183,8 @@
   },
   "CorruptTheSpire:HiddenPotential": {
     "NAME": "Hidden Potential",
-    "DESCRIPTION": "Gain !B! Block. NL Discard a card. If it was corrupted, a Status, or a Curse, draw !M! card and gain !corruptthespire:M2! Artifact. NL Exhaust",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Discard a card. If it was corrupted, a Status, or a Curse, draw !M! cards and gain !corruptthespire:M2! Artifact. NL Exhaust"
+    "DESCRIPTION": "Gain !B! Block. NL Discard a card. If it was corrupted, a Status, or a Curse, draw !M! card and gain !corruptthespire:M2! Artifact. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Discard a card. If it was corrupted, a Status, or a Curse, draw !M! cards and gain !corruptthespire:M2! Artifact. NL Exhaust."
   },
   "CorruptTheSpire:InfernalBargain": {
     "NAME": "Infernal Bargain",
