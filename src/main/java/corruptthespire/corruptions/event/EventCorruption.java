@@ -13,6 +13,7 @@ import corruptthespire.events.*;
 import corruptthespire.events.chaotic.*;
 import corruptthespire.events.corrupted.*;
 import corruptthespire.events.special.DevourerEvent;
+import corruptthespire.events.special.DoomEvent;
 import corruptthespire.events.special.HarbingerEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -35,6 +36,10 @@ public class EventCorruption {
 
     public static AbstractEvent handleDevourer() {
         return new DevourerEvent();
+    }
+
+    public static AbstractEvent handleDoom() {
+        return new DoomEvent();
     }
 
     public static AbstractEvent handleCorruptedEvent(CorruptedEventType corruptedEventType) {

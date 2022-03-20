@@ -52,6 +52,10 @@ public class EventPatch {
                 event = EventCorruption.handleDevourer();
             }
 
+            if (corruptionType == EventCorruptionType.Doom) {
+                event = EventCorruption.handleDoom();
+            }
+
             if (event != null) {
                 __instance.event = event;
                 event.onEnterRoom();
