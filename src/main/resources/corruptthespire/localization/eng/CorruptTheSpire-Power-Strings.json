@@ -201,7 +201,7 @@
       " NL Take {0} damage at the end of your turn."
     ]
   },
-  "CorruptTheSpire:InfernalBargainDamagePower": {
+  "CorruptTheSpire:InfernalBargainDamage": {
     "NAME": "Infernal Bargain Damage",
     "DESCRIPTIONS": ["Take {0} damage at the end of your turn."]
   }
