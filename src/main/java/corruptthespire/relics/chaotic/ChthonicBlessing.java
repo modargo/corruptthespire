@@ -15,7 +15,7 @@ public class ChthonicBlessing extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));
     private static final int REWARDS = 1;
-    private static final int GOLD = 10;
+    private static final int GOLD = 15;
     private static final int COMBATS = 7;
 
     public ChthonicBlessing() {
