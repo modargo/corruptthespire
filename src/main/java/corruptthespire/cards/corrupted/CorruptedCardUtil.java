@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.PrismaticShard;
 import com.megacrit.cardcrawl.rewards.RewardItem;
+import corruptthespire.Cor;
 import corruptthespire.cards.corrupted.attacks.*;
 import corruptthespire.cards.corrupted.powers.*;
 import corruptthespire.cards.corrupted.skills.*;
@@ -108,6 +109,17 @@ public class CorruptedCardUtil {
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
+    //Following the pattern of the base game, the distinction is that for transform:
+    //(1) It doesn't respect card rarity
+    //(2) It uses the provided RNG
+    //(3) It always proceeds one-by-one
+    //Keeping to this pattern also helps ensure we only get a single random int, to avoid RNG instability
+    public static AbstractCard getRandomCorruptedCardForTransform(Random rng) {
+        ArrayList<CorruptedCardInfo> allCorruptedCards = new ArrayList<>(getAllCorruptedCardInfos().values());
+        allCorruptedCards.sort(Comparator.comparing(o -> o.card.cardID));
+        return allCorruptedCards.get(rng.random(allCorruptedCards.size() - 1)).card.makeCopy();
+    }
+
     public static AbstractCard getRandomCorruptedCard() {
         return getRandomCorruptedCards(1).get(0);
     }
@@ -115,8 +127,9 @@ public class CorruptedCardUtil {
     public static ArrayList<AbstractCard> getRandomCorruptedCards(int n) {
         return getRandomCorruptedCards(n, null);
     }
+
     public static ArrayList<AbstractCard> getRandomCorruptedCards(int n, AbstractCard.CardType type) {
-        return getRandomCorruptedCards(n, type, AbstractDungeon.cardRng);
+        return getRandomCorruptedCards(n, type, Cor.rng);
     }
 
     public static ArrayList<AbstractCard> getRandomCorruptedCards(int n, AbstractCard.CardType type, Random rng) {

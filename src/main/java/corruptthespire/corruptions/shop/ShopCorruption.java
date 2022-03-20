@@ -146,7 +146,7 @@ public class ShopCorruption {
 
         if (corruptionType == ShopCorruptionType.CorruptedCardAndFragment) {
             colorlessCards.clear();
-            if (AbstractDungeon.cardRng.randomBoolean()) {
+            if (Cor.rng.randomBoolean()) {
                 colorlessCards.add(AbstractDungeon.getColorlessCardFromPool(AbstractCard.CardRarity.UNCOMMON).makeCopy());
                 colorlessCards.add(CorruptedCardUtil.getRandomCorruptedCard());
             }

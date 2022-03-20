@@ -18,8 +18,9 @@ public class TransformCorruptedCardPatch {
         }
 
         AbstractCard transformedCard = null;
+
         while (transformedCard == null || transformedCard.cardID.equals(c.cardID)) {
-            transformedCard = CorruptedCardUtil.getRandomCorruptedCards(1, null, rng).get(0);
+            transformedCard = CorruptedCardUtil.getRandomCorruptedCardForTransform(rng);
         }
 
         return SpireReturn.Return(transformedCard);
