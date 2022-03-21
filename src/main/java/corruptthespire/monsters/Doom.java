@@ -33,22 +33,22 @@ public class Doom extends CustomMonster
     private static final byte DARK_CLAW_ATTACK = 1;
     private static final byte DEATHBEAM_ATTACK = 2;
     private static final byte KARMIC_JUDGEMENT_ATTACK = 3;
-    private static final int DARK_CLAW_DAMAGE = 3;
-    private static final int A3_DARK_CLAW_DAMAGE = 4;
+    private static final int DARK_CLAW_DAMAGE = 2;
+    private static final int A3_DARK_CLAW_DAMAGE = 3;
     private static final int DARK_CLAW_HITS = 3;
     private static final int DARK_CLAW_FRAIL = 1;
-    private static final int DEATHBEAM_DAMAGE = 16;
-    private static final int A3_DEATHBEAM_DAMAGE = 18;
-    private static final int KARMIC_JUDGEMENT_DAMAGE = 10;
-    private static final int A3_KARMIC_JUDGEMENT_DAMAGE = 12;
+    private static final int DEATHBEAM_DAMAGE = 12;
+    private static final int A3_DEATHBEAM_DAMAGE = 14;
+    private static final int KARMIC_JUDGEMENT_DAMAGE = 8;
+    private static final int A3_KARMIC_JUDGEMENT_DAMAGE = 9;
     private static final int KARMIC_JUDGEMENT_STRENGTH = 2;
     private static final int A18_KARMIC_JUDGEMENT_STRENGTH = 3;
     private static final int IMPENDING_DOOM_VULNERABLE = 1;
     private static final int A18_IMPENDING_DOOM_VULNERABLE = 3;
-    private static final int HP_MIN = 110;
-    private static final int HP_MAX = 110;
-    private static final int A8_HP_MIN = 120;
-    private static final int A8_HP_MAX = 120;
+    private static final int HP_MIN = 120;
+    private static final int HP_MAX = 120;
+    private static final int A8_HP_MIN = 130;
+    private static final int A8_HP_MAX = 130;
     private final int darkClawDamage;
     private final int deathbeamDamage;
     private final int karmicJudgementDamage;
@@ -127,7 +127,7 @@ public class Doom extends CustomMonster
 
     @Override
     protected void getMove(final int num) {
-        if (this.firstMove || (!this.lastMove(DARK_CLAW_ATTACK) && !this.lastMoveBefore(DARK_CLAW_ATTACK))) {
+        if (!this.lastMove(DARK_CLAW_ATTACK) && !this.lastMoveBefore(DARK_CLAW_ATTACK)) {
             this.setMove(MOVES[0], DARK_CLAW_ATTACK, Intent.ATTACK_DEBUFF, this.darkClawDamage, DARK_CLAW_HITS, true);
         }
         else if ((this.lastMove(DARK_CLAW_ATTACK) && num > 50) || this.lastMove(KARMIC_JUDGEMENT_ATTACK) && this.lastMoveBefore(DARK_CLAW_ATTACK)) {
