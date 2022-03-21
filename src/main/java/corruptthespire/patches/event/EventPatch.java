@@ -6,13 +6,18 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.rooms.EventRoom;
+import corruptthespire.Cor;
 import corruptthespire.corruptions.event.EventCorruption;
 import corruptthespire.corruptions.event.EventCorruptionDistribution;
 import corruptthespire.corruptions.event.EventCorruptionType;
 import corruptthespire.events.CorruptedEventType;
 import corruptthespire.patches.core.CorruptedField;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class EventPatch {
+    private static final Logger logger = LogManager.getLogger(EventPatch.class.getName());
+
     @SpirePatch(clz = EventRoom.class, method = "onPlayerEntry")
     public static class EventRoomOnPlayerEntry {
         @SpirePrefixPatch
@@ -60,6 +65,10 @@ public class EventPatch {
                 __instance.event = event;
                 event.onEnterRoom();
                 return SpireReturn.Return();
+            }
+
+            if (corruptionType != null) {
+                logger.warn("Failed to apply event corruption, falling back to normal event. corruptionType: " + corruptionType);
             }
 
             return SpireReturn.Continue();
