@@ -21,9 +21,5 @@ public class TriggerMonsterPowersPostDrawSubscriber implements PostDrawSubscribe
         for (AbstractPower p : powers2) {
             ((ThoughtfulPower)p).onPlayerCardDraw();
         }
-        List<AbstractPower> powers3 = MonsterUtil.getMonsterPowers(PressurePower.POWER_ID);
-        for (AbstractPower p : powers3) {
-            ((PressurePower)p).onPlayerCardDraw(card);
-        }
     }
 }
