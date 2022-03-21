@@ -17,7 +17,7 @@ public abstract class AbstractCorruptionDistribution<T extends Enum<T>> {
         distribution = this.adjustDistribution(distribution);
         int adjustedTotalWeight = distribution.stream().map(cdi -> cdi.weight).reduce(0, Integer::sum);
 
-        int roll = Cor.rng.random(adjustedTotalWeight - 1);
+        int roll = Cor.rewardRng.random(adjustedTotalWeight - 1);
         CorruptionDistributionInfo<T> option = pick(distribution, roll);
         return option.corruption;
     }

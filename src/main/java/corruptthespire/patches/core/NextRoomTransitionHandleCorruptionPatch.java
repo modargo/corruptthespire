@@ -26,7 +26,7 @@ public class NextRoomTransitionHandleCorruptionPatch {
             //Random implementation is just a wrapper and how there are conditions where requesting values can pull from
             //the underlying randomization stream more than once, this is theoretically possible, and no solution other
             //than this has been reliable.
-            Cor.rng = new Random(Settings.seed, Cor.rng.counter);
+            Cor.resetRng(Settings.seed, Cor.rng.counter);
         }
 
         private static class Locator extends SpireInsertLocator {

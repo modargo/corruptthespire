@@ -63,7 +63,7 @@ public class TheChoice extends AbstractImageEvent {
                 switch (buttonPressed) {
                     case 0: // Embrace
                         Cor.addCorruption(this.corruptionGain);
-                        ArrayList<AbstractCard> upgradedCards = CardUtil.upgradeRandomCards(UPGRADES);
+                        ArrayList<AbstractCard> upgradedCards = CardUtil.upgradeRandomCards(UPGRADES, AbstractDungeon.miscRng);
                         AbstractRelic relic = AbstractDungeon.returnRandomScreenlessRelic(AbstractDungeon.returnRandomRelicTier());
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), relic);
                         logMetric(ID, "Embrace", null, null, null, upgradedCards.stream().map(c -> c.cardID).collect(Collectors.toCollection(ArrayList::new)), Collections.singletonList(relic.relicId), null, null, 0, 0, 0, 0, 0, 0);

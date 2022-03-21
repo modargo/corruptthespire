@@ -129,7 +129,7 @@ public class CorruptedCardUtil {
     }
 
     public static ArrayList<AbstractCard> getRandomCorruptedCards(int n, AbstractCard.CardType type) {
-        return getRandomCorruptedCards(n, type, Cor.rng);
+        return getRandomCorruptedCards(n, type, Cor.rewardRng);
     }
 
     public static ArrayList<AbstractCard> getRandomCorruptedCards(int n, AbstractCard.CardType type, Random rng) {

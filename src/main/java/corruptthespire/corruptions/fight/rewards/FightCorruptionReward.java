@@ -88,6 +88,6 @@ public class FightCorruptionReward {
     }
 
     private static int fuzzGold(int gold) {
-        return Cor.rng.random((int)(gold * GOLD_FUZZ_FACTOR), gold);
+        return Cor.rewardRng.random((int)(gold * GOLD_FUZZ_FACTOR), gold);
     }
 }

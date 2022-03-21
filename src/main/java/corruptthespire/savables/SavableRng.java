@@ -21,6 +21,6 @@ public class SavableRng implements CustomSavable<Integer> {
     @Override
     public void onLoad(Integer counter) {
         logger.info("Loading RNG. Cor.rng.counter: " + counter);
-        Cor.rng = new Random(Settings.seed, counter != null ? counter : 0);
+        Cor.resetRng(Settings.seed, counter);
     }
 }

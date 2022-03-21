@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.ModHelper;
+import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
@@ -18,12 +19,12 @@ import java.util.List;
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.*;
 
 public class CardUtil {
-    public static AbstractCard upgradeRandomCard() {
-        ArrayList<AbstractCard> upgrade = upgradeRandomCards(1);
+    public static AbstractCard upgradeRandomCard(Random rng) {
+        ArrayList<AbstractCard> upgrade = upgradeRandomCards(1, rng);
         return upgrade.isEmpty() ? null : upgrade.get(0);
     }
 
-    public static ArrayList<AbstractCard> upgradeRandomCards(int n) {
+    public static ArrayList<AbstractCard> upgradeRandomCards(int n, Random rng) {
         ArrayList<AbstractCard> upgradableCards = new ArrayList<>();
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
             if (c.canUpgrade()) {
@@ -34,7 +35,7 @@ public class CardUtil {
         int cardsToUpgrade = Math.min(n, upgradableCards.size());
         ArrayList<AbstractCard> upgradedCards = new ArrayList<>();
         if (cardsToUpgrade > 0) {
-            Collections.shuffle(upgradableCards, AbstractDungeon.miscRng.random);
+            Collections.shuffle(upgradableCards, rng.random);
         }
 
         for (int i = 0; i < cardsToUpgrade; i++) {

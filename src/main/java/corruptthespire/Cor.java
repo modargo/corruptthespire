@@ -40,6 +40,7 @@ public class Cor {
     public static Boolean active;
     public static Integer corruption;
     public static Random rng;
+    public static Random rewardRng;
     public static CorruptionFlags flags;
     public static ArrayList<String> corruptedRelicPool;
     public static ArrayList<String> corruptedEventList;
@@ -93,6 +94,12 @@ public class Cor {
         Cor.corruption += corruption;
         Cor.display.update();
         Cor.display.flash();
+    }
+
+    public static void resetRng(Long seed, Integer counter) {
+        int c = counter != null ? counter : 0;
+        Cor.rng = new Random(seed, c);
+        Cor.rewardRng = new Random(seed + 43, c);
     }
 
     //Gets the act number that we want to use for most purposes

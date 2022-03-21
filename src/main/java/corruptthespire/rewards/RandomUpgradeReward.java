@@ -3,6 +3,7 @@ package corruptthespire.rewards;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import corruptthespire.Cor;
 import corruptthespire.cards.CardUtil;
 
 public class RandomUpgradeReward extends AbstractCorruptTheSpireReward {
@@ -15,7 +16,7 @@ public class RandomUpgradeReward extends AbstractCorruptTheSpireReward {
 
     @Override
     public boolean claimReward() {
-        CardUtil.upgradeRandomCard();
+        CardUtil.upgradeRandomCard(Cor.rewardRng);
         return true;
     }
 }
