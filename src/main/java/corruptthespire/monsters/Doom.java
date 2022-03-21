@@ -36,7 +36,6 @@ public class Doom extends CustomMonster
     private static final int DARK_CLAW_DAMAGE = 2;
     private static final int A3_DARK_CLAW_DAMAGE = 3;
     private static final int DARK_CLAW_HITS = 3;
-    private static final int DARK_CLAW_FRAIL = 1;
     private static final int DEATHBEAM_DAMAGE = 12;
     private static final int A3_DEATHBEAM_DAMAGE = 14;
     private static final int KARMIC_JUDGEMENT_DAMAGE = 8;
@@ -108,7 +107,6 @@ public class Doom extends CustomMonster
                     AbstractDungeon.actionManager.addToBottom(new AnimateFastAttackAction(this));
                     AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
                 }
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, DARK_CLAW_FRAIL, true)));
                 break;
             case DEATHBEAM_ATTACK:
                 AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_MAGIC_BEAM_SHORT", 0.5F));
@@ -128,7 +126,7 @@ public class Doom extends CustomMonster
     @Override
     protected void getMove(final int num) {
         if (!this.lastMove(DARK_CLAW_ATTACK) && !this.lastMoveBefore(DARK_CLAW_ATTACK)) {
-            this.setMove(MOVES[0], DARK_CLAW_ATTACK, Intent.ATTACK_DEBUFF, this.darkClawDamage, DARK_CLAW_HITS, true);
+            this.setMove(MOVES[0], DARK_CLAW_ATTACK, Intent.ATTACK, this.darkClawDamage, DARK_CLAW_HITS, true);
         }
         else if ((this.lastMove(DARK_CLAW_ATTACK) && num > 50) || this.lastMove(KARMIC_JUDGEMENT_ATTACK) && this.lastMoveBefore(DARK_CLAW_ATTACK)) {
             this.setMove(MOVES[1], DEATHBEAM_ATTACK, Intent.ATTACK, this.deathbeamDamage);
