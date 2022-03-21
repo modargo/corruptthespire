@@ -154,7 +154,7 @@
   },
   "CorruptTheSpire:Pressure": {
     "NAME": "Pressure",
-    "DESCRIPTIONS": ["You cannot play more than #b{0} cards per turn."]
+    "DESCRIPTIONS": ["Whenever you draw a card, it costs #b1 more this turn. If you keep a card in your hand without #yRetaining it, it costs #b1 more next turn. At the start of your turn, gain [E] ."]
   },
   "CorruptTheSpire:ImpendingDoom": {
     "NAME": "Impending Doom",
