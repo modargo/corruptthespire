@@ -2218,6 +2218,208 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Delirium Manifest",
+			"id": "CorruptTheSpire:DeliriumManifest",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Starts with #wConfusion, then #wHex, then #wHarm, then #wDecrepify, then cycles #wHarm -> #wConfusion.",
+					"hp": "(28 - 30 / 36 - 38 HP)",
+					"notes": "HP and move effects vary by act (act 2 / act 3).",
+					"moves": [
+						{
+							"name": "Confusion",
+							"effects": [
+								{
+									"name": "Temporary Confusion",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Hex",
+							"effects": [
+								{
+									"name": "3 / 5",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Temporary Hex 1 / 2",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Harm",
+							"effects": [
+								{
+									"name": "7 / 10",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Decrepify",
+							"effects": [
+								{
+									"name": "Draw Down 1",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 2,
+					"desc": "Starts with #wConfusion, then #wHex, then #wHarm, then #wDecrepify, then cycles #wHarm -> #wConfusion.",
+					"hp": "(28 - 30 / 36 - 38 HP)",
+					"notes": "HP and move effects vary by act (act 2 / act 3).",
+					"moves": [
+						{
+							"name": "Confusion",
+							"effects": [
+								{
+									"name": "Temporary Confusion",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Hex",
+							"effects": [
+								{
+									"name": "4 / 6",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Temporary Hex 1 / 2",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Harm",
+							"effects": [
+								{
+									"name": "8 / 12",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Decrepify",
+							"effects": [
+								{
+									"name": "Draw Down 1",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 7,
+					"desc": "Starts with #wConfusion, then #wHex, then #wHarm, then #wDecrepify, then cycles #wHarm -> #wConfusion.",
+					"hp": "(31 - 33 / 39 - 41 HP)",
+					"notes": "HP and move effects vary by act (act 2 / act 3).",
+					"moves": [
+						{
+							"name": "Confusion",
+							"effects": [
+								{
+									"name": "Temporary Confusion",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Hex",
+							"effects": [
+								{
+									"name": "4 / 6",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Temporary Hex 1 / 2",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Harm",
+							"effects": [
+								{
+									"name": "8 / 12",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Decrepify",
+							"effects": [
+								{
+									"name": "Draw Down 1",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 17,
+					"desc": "Starts with #wConfusion, then #wHex, then #wHarm, then #wDecrepify, then cycles #wHarm -> #wConfusion.",
+					"hp": "(31 - 33 / 39 - 41 HP)",
+					"notes": "HP and move effects vary by act (act 2 / act 3).",
+					"moves": [
+						{
+							"name": "Confusion",
+							"effects": [
+								{
+									"name": "Temporary Confusion",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Hex",
+							"effects": [
+								{
+									"name": "4 / 6",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Temporary Hex 2 / 3",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Harm",
+							"effects": [
+								{
+									"name": "8 / 12",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Decrepify",
+							"effects": [
+								{
+									"name": "Draw Down 1",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Temporary Draw Down 1",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				}
+			]
 		}
 	]
 }
