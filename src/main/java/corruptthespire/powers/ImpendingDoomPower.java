@@ -20,28 +20,26 @@ public class ImpendingDoomPower extends AbstractPower {
 
     private static final int HP_THRESHOLD = 50;
 
-    private final int vulnerable;
-
-    public ImpendingDoomPower(AbstractCreature owner, int vulnerable) {
+    public ImpendingDoomPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
         this.priority = 50;
         this.type = PowerType.BUFF;
-        this.vulnerable = vulnerable;
+        this.amount = amount;
         this.updateDescription();
         CorruptTheSpire.LoadPowerImage(this);
     }
 
     @Override
     public void updateDescription() {
-        this.description = MessageFormat.format(DESCRIPTIONS[0], this.vulnerable);
+        this.description = MessageFormat.format(DESCRIPTIONS[0], this.amount);
     }
 
     @Override
     public void atEndOfRound() {
         if (this.owner.currentHealth <= this.owner.maxHealth * (HP_THRESHOLD / 100.0f)) {
-            this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this.owner, new VulnerablePower(AbstractDungeon.player, vulnerable, true)));
+            this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this.owner, new VulnerablePower(AbstractDungeon.player, amount, true)));
             this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
         }
     }
