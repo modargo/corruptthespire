@@ -31,7 +31,6 @@ public class DeliriumManifest extends CustomMonster
     private static final byte HEX_ATTACK = 2;
     private static final byte HARM_ATTACK = 3;
     private static final byte DECREPIFY_DEBUFF = 4;
-    private static final int CONFUSION_CONFUSION = 1;
     private static final int[] HEX_DAMAGE = { 3, 5 };
     private static final int[] A2_HEX_DAMAGE = { 4, 6 };
     private static final int[] HEX_HEX = { 1, 2 };
