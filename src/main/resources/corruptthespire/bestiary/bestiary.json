@@ -2420,6 +2420,168 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Doom",
+			"id": "CorruptTheSpire:Doom",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Cycles #wDark #wClaw -> #wDeathbeam or #wKarmic #wJudgement -> the other.",
+					"hp": "(120 HP)",
+					"notes": "Innate #uPressure, #uImpending #uDoom 1",
+					"moves": [
+						{
+							"name": "Dark Claw",
+							"effects": [
+								{
+									"name": "2x3",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Deathbeam",
+							"effects": [
+								{
+									"name": "12",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Karmic Judgement",
+							"effects": [
+								{
+									"name": "8",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 2",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 3,
+					"desc": "Cycles #wDark #wClaw -> #wDeathbeam or #wKarmic #wJudgement -> the other.",
+					"hp": "(120 HP)",
+					"notes": "Innate #uPressure, #uImpending #uDoom 1",
+					"moves": [
+						{
+							"name": "Dark Claw",
+							"effects": [
+								{
+									"name": "3x3",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Deathbeam",
+							"effects": [
+								{
+									"name": "14",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Karmic Judgement",
+							"effects": [
+								{
+									"name": "9",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 2",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 8,
+					"desc": "Cycles #wDark #wClaw -> #wDeathbeam or #wKarmic #wJudgement -> the other.",
+					"hp": "(130 HP)",
+					"notes": "Innate #uPressure, #uImpending #uDoom 1",
+					"moves": [
+						{
+							"name": "Dark Claw",
+							"effects": [
+								{
+									"name": "3x3",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Deathbeam",
+							"effects": [
+								{
+									"name": "14",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Karmic Judgement",
+							"effects": [
+								{
+									"name": "9",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 2",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 18,
+					"desc": "Cycles #wDark #wClaw -> #wDeathbeam or #wKarmic #wJudgement -> the other.",
+					"hp": "(130 HP)",
+					"notes": "Innate #uPressure, #uImpending #uDoom 3",
+					"moves": [
+						{
+							"name": "Dark Claw",
+							"effects": [
+								{
+									"name": "3x3",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Deathbeam",
+							"effects": [
+								{
+									"name": "14",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Karmic Judgement",
+							"effects": [
+								{
+									"name": "9",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Strength 3",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				}
+			]
 		}
 	]
 }
