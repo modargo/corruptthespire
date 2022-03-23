@@ -158,7 +158,10 @@
   },
   "CorruptTheSpire:ImpendingDoom": {
     "NAME": "Impending Doom",
-    "DESCRIPTIONS": ["When brought to half HP, applies #b{0} #yVulnerable and loses this at the end of its next turn."]
+    "DESCRIPTIONS": [
+      "When brought to half HP, applies #b1 #yVulnerable and loses this at the end of its next turn.",
+      "When brought to half HP, applies #b1 #yVulnerable #b{0} times and loses this at the end of its next turn."
+    ]
   },
   "CorruptTheSpire:TemporaryHex": {
     "NAME": "Temporary Hex",

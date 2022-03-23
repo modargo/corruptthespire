@@ -33,13 +33,16 @@ public class ImpendingDoomPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        this.description = MessageFormat.format(DESCRIPTIONS[0], this.amount);
+        this.description = this.amount == 1 ? DESCRIPTIONS[0] : MessageFormat.format(DESCRIPTIONS[1], this.amount);
     }
 
     @Override
     public void atEndOfRound() {
         if (this.owner.currentHealth <= this.owner.maxHealth * (HP_THRESHOLD / 100.0f)) {
-            this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this.owner, new VulnerablePower(AbstractDungeon.player, amount, true)));
+            for (int i = 0; i < this.amount; i++) {
+                this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this.owner, new VulnerablePower(AbstractDungeon.player, 1, true)));
+
+            }
             this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
         }
     }
