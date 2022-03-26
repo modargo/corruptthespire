@@ -197,7 +197,7 @@ public class ShopPatch {
     }
 
     @SpirePatch(clz = ShopScreen.class, method = "purchasePurge")
-    public static class PurchaseTransformPatch {
+    public static class PurchaseTransformResetServicePatch {
         @SpirePrefixPatch
         public static SpireReturn<Void> purchaseTransform(ShopScreen __instance) {
             ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && AbstractDungeon.getCurrRoom() instanceof ShopRoom
@@ -213,6 +213,10 @@ public class ShopPatch {
                     __instance.createSpeech(ShopScreen.getCantBuyMsg());
                 }
                 return SpireReturn.Return();
+            }
+            else if (corruptionType == ShopCorruptionType.Service) {
+                ShopScreenServiceInfo screenInfo = ShopScreenServiceInfoField.serviceInfo.get(__instance);
+                screenInfo.currentService = null;
             }
 
             return SpireReturn.Continue();
