@@ -29,7 +29,7 @@ public class Nudge extends AbstractModCard {
     private static final int UPGRADE_SCRY = 1;
     private static final int DRAW_NEXT_TURN = 1;
     private static final int UPGRADE_DRAW_NEXT_TURN = 1;
-    private static final int EXHAUSTIVE = 3;
+    private static final int EXHAUSTIVE = 2;
 
     public Nudge() {
         super(ID, NAME, IMG, COST, DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF);
