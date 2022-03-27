@@ -41,8 +41,8 @@ public class CelestialMightPower extends AbstractPower {
     public void atStartOfTurnPostDraw() {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flash();
-            this.addToBot(new AddTemporaryHPAction(this.owner, this.owner, TEMPORARY_HP));
-            this.addToBot(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(AbstractDungeon.floorNum / 2, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE, true));
+            this.addToTop(new AddTemporaryHPAction(this.owner, this.owner, TEMPORARY_HP));
+            this.addToTop(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(AbstractDungeon.floorNum / 2, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE, true));
             AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.WHITE));
         }
     }
