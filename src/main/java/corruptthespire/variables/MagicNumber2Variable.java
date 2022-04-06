@@ -2,7 +2,7 @@ package corruptthespire.variables;
 
 import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import corruptthespire.cards.corrupted.AbstractCorruptedCard;
+import corruptthespire.cards.AbstractModCard;
 
 public class MagicNumber2Variable extends DynamicVariable {
     @Override
@@ -12,21 +12,21 @@ public class MagicNumber2Variable extends DynamicVariable {
 
     @Override
     public boolean isModified(AbstractCard card) {
-        return ((AbstractCorruptedCard)card).isMagicNumber2Modified;
+        return ((AbstractModCard)card).isMagicNumber2Modified;
     }
 
     @Override
     public int value(AbstractCard card) {
-        return ((AbstractCorruptedCard)card).magicNumber2;
+        return ((AbstractModCard)card).magicNumber2;
     }
 
     @Override
     public int baseValue(AbstractCard card) {
-        return ((AbstractCorruptedCard)card).baseMagicNumber2;
+        return ((AbstractModCard)card).baseMagicNumber2;
     }
 
     @Override
     public boolean upgraded(AbstractCard card) {
-        return ((AbstractCorruptedCard)card).upgradedMagicNumber2;
+        return ((AbstractModCard)card).upgradedMagicNumber2;
     }
 }
