@@ -31,6 +31,5 @@ public class ColorTabPatch {
             Matcher matcher = new Matcher.MethodCallMatcher(FontHelper.class, "renderFontCentered");
             return LineFinder.findInOrder(ctMethodToPatch, matcher);
         }
-
     }
 }
