@@ -21,9 +21,9 @@ public class Retribution extends AbstractCorruptedCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final int COST = 1;
     private static final int DAMAGE = 8;
-    private static final int UPGRADE_DAMAGE = 2;
 
     public Retribution() {
         super(ID, NAME, IMG, COST, DESCRIPTION, CardType.ATTACK, CardTarget.ENEMY);
@@ -33,8 +33,9 @@ public class Retribution extends AbstractCorruptedCard {
     @Override
     public void upgrade() {
         if (!this.upgraded) {
-            this.upgradeDamage(UPGRADE_DAMAGE);
             this.upgradeName();
+            this.rawDescription = UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 
@@ -48,7 +49,7 @@ public class Retribution extends AbstractCorruptedCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
-        this.rawDescription = DESCRIPTION;
+        this.rawDescription = this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION;
         this.initializeDescription();
     }
 
@@ -56,12 +57,12 @@ public class Retribution extends AbstractCorruptedCard {
     public void calculateCardDamage(AbstractMonster m) {
         super.calculateCardDamage(m);
         int times = this.calculateTimes(m);
-        this.rawDescription = DESCRIPTION + (times == 1 ? cardStrings.EXTENDED_DESCRIPTION[0] : MessageFormat.format(cardStrings.EXTENDED_DESCRIPTION[1], times));
+        this.rawDescription = (this.upgraded ? UPGRADE_DESCRIPTION : DESCRIPTION) + (times == 1 ? cardStrings.EXTENDED_DESCRIPTION[0] : MessageFormat.format(cardStrings.EXTENDED_DESCRIPTION[1], times));
         this.initializeDescription();
     }
 
     private int calculateTimes(AbstractMonster m) {
-        return this.countDebuffs(AbstractDungeon.player) + this.countDebuffs(m) + 1;
+        return this.countDebuffs(AbstractDungeon.player) + (this.upgraded ? this.countDebuffs(m) : 0) + 1;
     }
 
     private int countDebuffs(AbstractCreature creature) {
