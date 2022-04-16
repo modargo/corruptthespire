@@ -20,7 +20,7 @@ public class CelestialMightPower extends AbstractPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    private static final int TEMPORARY_HP = 3;
+    private static final int TEMPORARY_HP = 2;
     private static final int FLOORS_PER_DAMAGE = 3;
 
     public CelestialMightPower(AbstractCreature owner) {
@@ -35,7 +35,7 @@ public class CelestialMightPower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        this.description = MessageFormat.format(DESCRIPTIONS[0], FLOORS_PER_DAMAGE);
+        this.description = MessageFormat.format(DESCRIPTIONS[0], TEMPORARY_HP, FLOORS_PER_DAMAGE);
     }
 
     @Override

@@ -191,7 +191,7 @@
   "CorruptTheSpire:CelestialMight": {
     "NAME": "Celestial Might",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain 5 #yTemporary #yHP and deal damage to ALL enemies equal to the floor number divided by #b{0}."
+      "At the start of your turn, gain #b{0} #yTemporary #yHP and deal damage to ALL enemies equal to the floor number divided by #b{1}."
     ]
   },
   "CorruptTheSpire:InfernalBargain": {

@@ -57,7 +57,7 @@
   {
     "PROPER_NAME": "Celestial Might",
     "NAMES": ["celestial\u00a0might"],
-    "DESCRIPTION": "At the beginning of your turn, gain #b5 #yTemporary #yHP and deal damage to ALL enemies equal to half the floor number."
+    "DESCRIPTION": "At the beginning of your turn, gain #b2 #yTemporary #yHP and deal damage to ALL enemies equal the floor number divided by #b3."
   },
   {
     "PROPER_NAME": "Different Color",
