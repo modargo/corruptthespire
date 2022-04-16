@@ -69,6 +69,7 @@ public class PriceOfKnowledgePower extends AbstractPower {
 
     @Override
     public void atEndOfRound() {
+        this.active = false;
         if (this.justApplied) {
             this.justApplied = false;
         } else {
