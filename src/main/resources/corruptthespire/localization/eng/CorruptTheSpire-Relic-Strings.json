@@ -156,6 +156,6 @@
   "CorruptTheSpire:ChthonicBlessing": {
     "NAME": "Chthonic Blessing",
     "FLAVOR": "The riches of the land, accumulated and hoarded.",
-    "DESCRIPTIONS": ["Gain #b{0} #yGold after every non-Boss combat. Gain a relic after every #b{1} non-Boss combats. NL Future card rewards have #b{2} less card to choose from."]
+    "DESCRIPTIONS": ["Gain #b{0} #yGold after every non-Boss combat. NL Gain a relic after every #b{1} non-Boss combats. NL Future card rewards have #b{2} less card to choose from."]
   }
 }
