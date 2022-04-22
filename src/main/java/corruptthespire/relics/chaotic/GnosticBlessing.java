@@ -16,7 +16,7 @@ public class GnosticBlessing extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));
     private static final int DRAW = 1;
-    private static final int METALLICIZE = 1;
+    private static final int METALLICIZE = 2;
     private static final int REWARDS = 1;
 
     public GnosticBlessing() {
