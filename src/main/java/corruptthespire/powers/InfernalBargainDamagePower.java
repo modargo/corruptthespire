@@ -18,13 +18,11 @@ public class InfernalBargainDamagePower extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private final int damage;
-
-    public InfernalBargainDamagePower(AbstractCreature owner, int damage) {
+    public InfernalBargainDamagePower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        this.damage = damage;
+        this.amount = amount;
         this.updateDescription();
         this.priority = 50;
         this.type = PowerType.BUFF;
@@ -33,12 +31,12 @@ public class InfernalBargainDamagePower extends AbstractPower {
 
     @Override
     public void updateDescription() {
-        this.description = MessageFormat.format(DESCRIPTIONS[0], this.damage);
+        this.description = MessageFormat.format(DESCRIPTIONS[0], this.amount);
     }
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        this.addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(null, this.damage, DamageInfo.DamageType.THORNS)));
+        this.addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(null, this.amount, DamageInfo.DamageType.THORNS)));
         this.addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, this));
     }
 }
