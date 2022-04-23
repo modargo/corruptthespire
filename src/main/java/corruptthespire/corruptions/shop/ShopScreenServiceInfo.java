@@ -11,4 +11,5 @@ public class ShopScreenServiceInfo {
     public ShopServiceType currentService = null;
     public List<ShopServiceType> usedServices = new ArrayList<>();
     public Map<ShopServiceType, Float> serviceScales = new HashMap<>();
+    public float serviceMultiplier = 1.0F;
 }

@@ -273,7 +273,8 @@ public class ShopCorruption {
 
         for (ShopServiceInfo info : getShopServiceInfos()) {
             float scale = screenInfo.serviceScales.containsKey(info.type) ? screenInfo.serviceScales.get(info.type) : getBaseServiceScale();
-            renderService(shopScreen, sb, info.img, info.x, purgeCardY, scale, info.cost, !screenInfo.usedServices.contains(info.type));
+            int cost = MathUtils.round(info.cost * screenInfo.serviceMultiplier);
+            renderService(shopScreen, sb, info.img, info.x, purgeCardY, scale, cost, !screenInfo.usedServices.contains(info.type));
         }
     }
 

@@ -38,7 +38,7 @@ public class ShopPatch {
 
     @SpirePatch(clz = ShopScreen.class, method = "init")
     public static class InitFieldsPatch {
-        @SpirePostfixPatch
+        @SpirePrefixPatch
         public static void initFields(ShopScreen __instance, ArrayList<AbstractCard> coloredCards, ArrayList<AbstractCard> colorlessCards) {
             ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && AbstractDungeon.getCurrRoom() instanceof ShopRoom
                     ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
@@ -284,6 +284,20 @@ public class ShopPatch {
         @SpireInstrumentPatch
         public static ExprEditor getPriceForCorruptedCards() {
             return new GetPriceForCorruptedCardsExprEditor();
+        }
+    }
+
+    @SpirePatch(clz = ShopScreen.class, method = "applyDiscount")
+    public static class ServiceApplyDiscountPatch {
+        @SpirePostfixPatch
+        public static void serviceApplyDiscountPatch(ShopScreen __instance, float multiplier, boolean affectPurge) {
+            ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && AbstractDungeon.getCurrRoom() instanceof ShopRoom
+                    ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
+                    : null;
+            if (corruptionType == ShopCorruptionType.Service && affectPurge) {
+                ShopScreenServiceInfo screenInfo = ShopScreenServiceInfoField.serviceInfo.get(__instance);
+                screenInfo.serviceMultiplier *= multiplier;
+            }
         }
     }
 
