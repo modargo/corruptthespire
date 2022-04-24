@@ -22,7 +22,7 @@ public class BlessingsOfChaos extends AbstractImageEvent {
     private static final String IMG = CorruptTheSpire.eventImage(ID);
 
     private static final float HP_PERCENT = 0.20F;
-    private static final float A15_HP_PERCENT = 0.27F;
+    private static final float A15_HP_PERCENT = 0.28F;
 
     private final AbstractRelic relic1;
     private final AbstractRelic relic2;
