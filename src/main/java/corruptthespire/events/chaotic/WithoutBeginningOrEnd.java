@@ -74,7 +74,7 @@ public class WithoutBeginningOrEnd extends AbstractImageEvent {
                     case 1: // Turn Away
                         AbstractDungeon.player.gainGold(this.gold);
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(this.curse, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
-                        logMetricGainGold(ID, "Turn Away", this.gold);
+                        logMetricGainGoldAndCard(ID, "Turn Away", this.curse, this.gold);
 
                         this.imageEventText.updateBodyText(DESCRIPTIONS[4]);
                         this.screenNum = 3;
