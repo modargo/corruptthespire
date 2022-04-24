@@ -63,6 +63,12 @@ public class EventCorruption {
 
     private static ArrayList<String> filterEvents(ArrayList<String> corruptedEventList, CorruptedEventType corruptedEventType) {
         Map<String, CorruptedEventInfo> allEvents = CorruptedEventUtil.getAllCorruptedEvents();
+        logger.info("corruptedEventList.contains(BlessingsOfChaos.ID): " + corruptedEventList.contains(BlessingsOfChaos.ID));
+        if (corruptedEventList.contains(BlessingsOfChaos.ID)) {
+            return corruptedEventList.stream()
+                .filter(e -> e.equals(BlessingsOfChaos.ID))
+                .collect(Collectors.toCollection(ArrayList::new));
+        }
         return corruptedEventList.stream()
             .filter(EventCorruption::keepEvent)
             .filter(e -> allEvents.get(e).corruptedEventType == corruptedEventType)
