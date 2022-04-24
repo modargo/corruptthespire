@@ -6,7 +6,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.rooms.EventRoom;
-import corruptthespire.Cor;
 import corruptthespire.corruptions.event.EventCorruption;
 import corruptthespire.corruptions.event.EventCorruptionDistribution;
 import corruptthespire.corruptions.event.EventCorruptionType;
