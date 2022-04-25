@@ -239,6 +239,7 @@ public class CorruptTheSpire implements
         addRelic(new DoomSight(), RelicType.SHARED);
         addRelic(new DoomWing(), RelicType.SHARED);
         addRelic(new GnosticBlessing(), RelicType.SHARED);
+        addRelic(new HandOfMidas(), RelicType.SHARED);
         addRelic(new HarbingersClaw(), RelicType.SHARED);
         addRelic(new HarbingersSkull(), RelicType.SHARED);
         addRelic(new ShimmeringFan(), RelicType.SHARED);

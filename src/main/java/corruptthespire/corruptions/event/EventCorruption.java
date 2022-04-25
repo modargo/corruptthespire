@@ -1,5 +1,6 @@
 package corruptthespire.corruptions.event;
 
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.daily.mods.Diverse;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractEvent;
@@ -125,6 +126,10 @@ public class EventCorruption {
 
         if (e.equals(Messenger.ID) || e.equals(BlessingsOfChaos.ID)) {
             return actNum == 1;
+        }
+
+        if (e.equals(GoldenVision.ID)) {
+            return GoldenVision.getBossRelicToLose() != null;
         }
 
         return true;

@@ -157,5 +157,10 @@
     "NAME": "Chthonic Blessing",
     "FLAVOR": "The riches of the land, accumulated and hoarded.",
     "DESCRIPTIONS": ["Gain #b{0} #yGold after every non-Boss combat. NL Gain a relic after every #b{1} non-Boss combats. NL Future card rewards have #b{2} less card to choose from."]
+  },
+  "CorruptTheSpire:HandOfMidas": {
+    "NAME": "Hand of Midas",
+    "FLAVOR": "Makes it hard to eat and drink.",
+    "DESCRIPTIONS": ["Gain [E] at the start of your turn. Elites drop #b{0} #yGold instead of a relic."]
   }
 }

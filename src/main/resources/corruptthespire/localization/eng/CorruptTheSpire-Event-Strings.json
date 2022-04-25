@@ -345,5 +345,18 @@
       "[Decline] #rLose #r{0} #rHP.",
       "[Leave]"
     ]
+  },
+  "CorruptTheSpire:GoldenVision": {
+    "NAME": "Golden Vision",
+    "DESCRIPTIONS": [
+      "A vision of a land of #ygold. Majestic, beautiful, lifeless. NL NL Something ~made~ it this way. A #bman. A #bking. A #gblessing that was also a #pcurse, brought down upon the land by #rgreed. NL NL Grasp the power, and it could be yours.",
+      "The #ypower #g@floods@ through you, and for a moment your vision is overwhelmed by a #g~golden~ #g~radiance.~ NL NL As your vision returns, you can feel the #ypower settle within you, bringing with it the mad king's #pcurse.",
+      "You ignore the vision, and it soon fades, vanishing into memory just as the great kingdom itself did."
+    ],
+    "OPTIONS": [
+      "[Grasp] #gGain {0}. #rLose {1}.",
+      "[Ignore]",
+      "[Leave]"
+    ]
   }
 }

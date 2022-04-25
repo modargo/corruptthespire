@@ -2,6 +2,7 @@ package corruptthespire.events;
 
 import corruptthespire.events.chaotic.*;
 import corruptthespire.events.corrupted.*;
+import corruptthespire.relics.chaotic.HandOfMidas;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,6 +13,7 @@ public class CorruptedEventUtil {
         corruptedEvents.put(AStepToTheSide.ID, new CorruptedEventInfo(AStepToTheSide.class, CorruptedEventType.Chaotic));
         corruptedEvents.put(BlessingsOfChaos.ID, new CorruptedEventInfo(BlessingsOfChaos.class, CorruptedEventType.Chaotic));
         corruptedEvents.put(Divergence.ID, new CorruptedEventInfo(Divergence.class, CorruptedEventType.Chaotic));
+        corruptedEvents.put(GoldenVision.ID, new CorruptedEventInfo(GoldenVision.class, CorruptedEventType.Chaotic));
         corruptedEvents.put(MindsEye.ID, new CorruptedEventInfo(MindsEye.class, CorruptedEventType.Chaotic));
         corruptedEvents.put(PathsInTheSmoke.ID, new CorruptedEventInfo(PathsInTheSmoke.class, CorruptedEventType.Chaotic));
         corruptedEvents.put(TreeOfSwords.ID, new CorruptedEventInfo(TreeOfSwords.class, CorruptedEventType.Chaotic));
