@@ -119,6 +119,10 @@ public class EventCorruption {
             return AbstractDungeon.floorNum > 6;
         }
 
+        if (e.equals(AncientLaboratory.ID)) {
+            return AbstractDungeon.player.currentHealth > (AbstractDungeon.ascensionLevel >= 15 ? AncientLaboratory.A15_DAMAGE : AncientLaboratory.DAMAGE);
+        }
+
         if (e.equals(Messenger.ID) || e.equals(BlessingsOfChaos.ID)) {
             return actNum == 1;
         }
