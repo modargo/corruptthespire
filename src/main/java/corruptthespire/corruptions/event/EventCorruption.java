@@ -132,6 +132,10 @@ public class EventCorruption {
             return GoldenVision.getBossRelicToLose() != null;
         }
 
+        if (e.equals(FutureSight.ID)) {
+            return AbstractDungeon.bossRelicPool.size() > 2 && actNum < 3;
+        }
+
         return true;
     }
 }

@@ -24,6 +24,7 @@ public class CorruptedEventUtil {
         corruptedEvents.put(AncientLaboratory.ID, new CorruptedEventInfo(AncientLaboratory.class, CorruptedEventType.Corrupted));
         corruptedEvents.put(CorruptedShrine.ID, new CorruptedEventInfo(CorruptedShrine.class, CorruptedEventType.Corrupted));
         corruptedEvents.put(ForbiddenLibrary.ID, new CorruptedEventInfo(ForbiddenLibrary.class, CorruptedEventType.Corrupted));
+        corruptedEvents.put(FutureSight.ID, new CorruptedEventInfo(FutureSight.class, CorruptedEventType.Corrupted));
         corruptedEvents.put(IncantationOfCorruption.ID, new CorruptedEventInfo(IncantationOfCorruption.class, CorruptedEventType.Corrupted));
         corruptedEvents.put(Messenger.ID, new CorruptedEventInfo(Messenger.class, CorruptedEventType.Corrupted));
         corruptedEvents.put(NightmareBloom.ID, new CorruptedEventInfo(NightmareBloom.class, CorruptedEventType.Corrupted));

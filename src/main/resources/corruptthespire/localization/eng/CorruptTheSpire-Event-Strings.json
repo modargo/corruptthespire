@@ -358,5 +358,22 @@
       "[Ignore]",
       "[Leave]"
     ]
+  },
+  "CorruptTheSpire:FutureSight": {
+    "NAME": "Future Sight",
+    "DESCRIPTIONS": [
+      "As you look ahead, your perception of the Spire becomes... ~distorted.~ Your sight is filled with something entirely different, a #btorrent of images that you gradually understand show your own future in the Spire. NL NL By concentrating on the images you may learn of your destiny, but to meddle with #pfate is to invite #rdoom.",
+      "You focus on a key moment: the #gpowerful #grelics you will find after defeating a deadly foe. In a flash of insight, you understand that parts of your future are #palready #pdetermined, set by forces beyond your control. But you have a chance to #gchange that by replacing the future you see with a different one... though you won't be able to control what the new future is. NL NL Focusing again on the #yrelics, you see that your choice will be between {0}, {1}, and {2}.",
+      "You reach out your hand and #r@thrust@ away the image you saw, exerting your influence upon the fates through #bsheer #bwillpower, insisting that the chest in the image is not what you will find. NL NL As the image crumbles, a different image of a chest takes it place, and you revel in #gtriumph. NL NL Yet your triumph is tempered by a deep feeling of unease. You have meddled with #p~forces~ #p~beyond~ #p~mortal~ #p~knowledge.~ Will your hubris be your #rdoom?",
+      "Having seen what will come is enough. NL NL You ease your concentration and let the images dissolve, thinking of the #ytreasure you will find.",
+      "You close your eyes to shut out the confusing mess of the future. NL NL When you open them again, you see the Spire of the present in front of you once more."
+    ],
+    "OPTIONS": [
+      "[Concentrate] #gPreview #gand #goptionally #gchange #gthe #gnext #gboss #grelics. #rGain {0}.",
+      "[Close your eyes]",
+      "[Change] #gRandomize #gthe #grelics #gin #gthe #gnext #gboss #gchest. #rGain #r{0} #rCorruption.",
+      "[Accept] Do not change the relics in the next boss chest.",
+      "[Leave]"
+    ]
   }
 }
