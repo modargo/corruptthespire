@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
@@ -55,7 +56,7 @@ public class FutureSight extends AbstractImageEvent {
                         String bossRelic1 = RelicLibrary.getRelic(AbstractDungeon.bossRelicPool.get(0)).name;
                         String bossRelic2 = RelicLibrary.getRelic(AbstractDungeon.bossRelicPool.get(1)).name;
                         String bossRelic3 = RelicLibrary.getRelic(AbstractDungeon.bossRelicPool.get(2)).name;
-                        String description = DESCRIPTIONS[1].replace("{0}", bossRelic1).replace("{1}", bossRelic2).replace("{2}", bossRelic3);
+                        String description = DESCRIPTIONS[1].replace("{0}", FontHelper.colorString(bossRelic1, "b")).replace("{1}", FontHelper.colorString(bossRelic2, "b")).replace("{2}", FontHelper.colorString(bossRelic3, "b"));
                         this.imageEventText.updateBodyText(description);
                         this.screenNum = 1;
                         this.imageEventText.clearAllDialogs();
