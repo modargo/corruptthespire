@@ -162,5 +162,10 @@
     "NAME": "Hand of Midas",
     "FLAVOR": "Makes it hard to eat and drink.",
     "DESCRIPTIONS": ["Gain [E] at the start of your turn. Elites drop #b{0} #yGold instead of a relic."]
+  },
+  "CorruptTheSpire:BottomlessMeadHorn": {
+    "NAME": "Bottomless Mead Horn",
+    "FLAVOR": "Drink the sea.",
+    "DESCRIPTIONS": ["Based on the size of your deck: NL #b{0}+: At the start of combat, gain #b{1} #yStrength and #b{1} #yDexterity. NL #b{2}+: At the start of combat, #yExhaust #b{3} #yStrike\u00a0and #b{3} #yDefend in your draw pile. NL #b{4}+: At the start of your turn, draw #b{5} additional card."]
   }
 }

@@ -255,6 +255,7 @@ public class Cor {
         corruptedRelics.add(new BlackCard());
         corruptedRelics.add(new BlightedSpirefruit());
         corruptedRelics.add(new BottledPrism());
+        corruptedRelics.add(new BottomlessMeadHorn());
         corruptedRelics.add(new CorruptedEgg());
         corruptedRelics.add(new CorruptedToolbox());
         corruptedRelics.add(new Gohei());
