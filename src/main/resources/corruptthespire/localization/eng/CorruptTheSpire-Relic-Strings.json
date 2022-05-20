@@ -167,5 +167,10 @@
     "NAME": "Bottomless Mead Horn",
     "FLAVOR": "Drink the sea.",
     "DESCRIPTIONS": ["Based on the size of your deck: NL #b{0}+: At the start of combat, gain #b{1} #yStrength and #b{1} #yDexterity. NL #b{2}+: At the start of combat, #yExhaust #b{3} #yStrike\u00a0and #b{3} #yDefend in your draw pile. NL #b{4}+: At the start of your turn, draw #b{5} additional card."]
+  },
+  "CorruptTheSpire:BeanSprouts": {
+    "NAME": "Bean Sprouts",
+    "FLAVOR": "They go well with everything.",
+    "DESCRIPTIONS": ["Whenever you gain #yFrail or #yVulnerable, or lose #yDexterity due to an enemy, gain #b{0} Strength and #b{1} #yBlock. NL You gain this even if #yTurnip prevents the #yFrail."]
   }
 }
