@@ -24,7 +24,7 @@ public class HiddenPotential extends AbstractCorruptedCard {
     private static final int ARTIFACT = 1;
 
     public HiddenPotential() {
-        super(ID, NAME, IMG, COST, DESCRIPTION, CardType.SKILL, CardTarget.ALL_ENEMY);
+        super(ID, NAME, IMG, COST, DESCRIPTION, CardType.SKILL, CardTarget.SELF);
         this.baseBlock = BLOCK;
         this.magicNumber = this.baseMagicNumber = DRAW;
         this.magicNumber2 = this.baseMagicNumber2 = ARTIFACT;
