@@ -38,6 +38,11 @@ public class UnnaturalOrderPower extends AbstractPower {
     @Override
     public void onInitialApplication() {
         for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            AbstractPower poisonPower = m.getPower(PoisonPower.POWER_ID);
+            if (poisonPower != null) {
+                poisonPower.updateDescription();
+            }
+
             AbstractPower power = m.getPower(AbysstouchedPower.POWER_ID);
             if (power == null) {
                 power = m.getPower(PowerUtil.AbysstouchedPowerId);

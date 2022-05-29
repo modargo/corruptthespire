@@ -13,11 +13,14 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import corruptthespire.cards.corrupted.powers.UnnaturalOrder;
 import corruptthespire.powers.AbysstouchedPower;
 import corruptthespire.powers.PowerUtil;
 import corruptthespire.powers.UnnaturalOrderPower;
 import corruptthespire.relics.corrupted.AbyssalOrb;
 import javassist.*;
+
+import java.text.MessageFormat;
 
 public class UnnaturalOrderAndAbyssalOrbPatch {
     @SpirePatch(
@@ -81,6 +84,16 @@ public class UnnaturalOrderAndAbyssalOrbPatch {
             CtMethod atDamageReceive = CtNewMethod.make(methodSource, poisonPower);
 
             poisonPower.addMethod(atDamageReceive);
+        }
+    }
+
+    @SpirePatch(clz = PoisonPower.class, method = "updateDescription")
+    public static class PoisonPowerUpdateDescriptionPatch {
+        @SpirePostfixPatch
+        public static void changeDescriptionForUnnaturalOrder(PoisonPower __instance) {
+            if (__instance.owner != null && !__instance.owner.isPlayer && AbstractDungeon.player != null && AbstractDungeon.player.hasPower(UnnaturalOrderPower.POWER_ID)) {
+                __instance.description = MessageFormat.format(AbysstouchedPower.DESCRIPTIONS[1] + " " + UnnaturalOrderPower.DESCRIPTIONS[1], __instance.amount);
+            }
         }
     }
 
