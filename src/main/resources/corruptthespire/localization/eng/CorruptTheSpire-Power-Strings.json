@@ -207,5 +207,9 @@
   "CorruptTheSpire:InfernalBargainDamage": {
     "NAME": "Infernal Bargain Damage",
     "DESCRIPTIONS": ["Take {0} damage at the end of your turn."]
+  },
+  "CorruptTheSpire:ElementalBarrier": {
+    "NAME": "Elemental Barrier",
+    "DESCRIPTIONS": ["Whenever you play an #yElemental card, gain #b{0} #yBlock for each #yElement it has."]
   }
 }

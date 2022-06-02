@@ -1,5 +1,6 @@
 package corruptthespire.cards.corrupted;
 
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.daily.mods.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -77,6 +78,11 @@ public class CorruptedCardUtil {
         }
         if (ignoreClass || AbstractDungeon.player.hasRelic(PrismaticShard.ID) || AbstractDungeon.player.getCardColor() == AbstractCard.CardColor.PURPLE || ModHelper.isModEnabled(PurpleCards.ID) || ModHelper.isModEnabled(Diverse.ID)) {
             corruptedCardInfos.add(new CorruptedCardInfo(new DivineStrike(), AbstractCard.CardRarity.COMMON));
+        }
+        if (Loader.isModLoaded("Shaman")) {
+            if (ignoreClass || AbstractDungeon.player.hasRelic(PrismaticShard.ID) || AbstractDungeon.player.getCardColor().name().equals("SHAMAN_COLOR") || ModHelper.isModEnabled(Diverse.ID)) {
+                corruptedCardInfos.add(new CorruptedCardInfo(new ElementalBarrier(), AbstractCard.CardRarity.COMMON));
+            }
         }
 
         return corruptedCardInfos.stream()

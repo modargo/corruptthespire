@@ -206,5 +206,9 @@
   "CorruptTheSpire:InfernalBargainDamageOption": {
     "NAME": "Infernal Bargain",
     "DESCRIPTION": "Take {0} damage at the end of your turn."
+  },
+  "CorruptTheSpire:ElementalBarrier": {
+    "NAME": "Elemental Barrier",
+    "DESCRIPTION": "Whenever you play an shaman:Elemental card, gain Block equal to the number of shaman:Elements it has."
   }
 }
