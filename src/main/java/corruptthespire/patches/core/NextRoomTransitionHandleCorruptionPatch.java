@@ -11,10 +11,14 @@ import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import corruptthespire.Cor;
 import corruptthespire.map.CorruptMap;
+import corruptthespire.patches.event.PathsInTheSmokePatch;
 import corruptthespire.relics.corrupted.MaskOfNightmares;
 import javassist.CtBehavior;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class NextRoomTransitionHandleCorruptionPatch {
+    private static final Logger logger = LogManager.getLogger(NextRoomTransitionHandleCorruptionPatch.class.getName());
     @SpirePatch(clz = AbstractDungeon.class, method = "nextRoomTransition", paramtypez = {SaveFile.class})
     public static class NextRoomTransitionResetRngPatch {
         @SpireInsertPatch(locator = Locator.class)
@@ -27,6 +31,11 @@ public class NextRoomTransitionHandleCorruptionPatch {
             //the underlying randomization stream more than once, this is theoretically possible, and no solution other
             //than this has been reliable.
             Cor.resetRng(Settings.seed, Cor.rng.counter);
+
+            if (PathsInTheSmokePatch.isActive) {
+                logger.warn("PathsInSmokePatch.isActive was true. Resetting it to false.");
+                PathsInTheSmokePatch.isActive = false;
+            }
         }
 
         private static class Locator extends SpireInsertLocator {
