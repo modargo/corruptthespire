@@ -92,7 +92,10 @@ public class UnnaturalOrderAndAbyssalOrbPatch {
         @SpirePostfixPatch
         public static void changeDescriptionForUnnaturalOrder(PoisonPower __instance) {
             if (__instance.owner != null && !__instance.owner.isPlayer && AbstractDungeon.player != null && AbstractDungeon.player.hasPower(UnnaturalOrderPower.POWER_ID)) {
-                __instance.description = MessageFormat.format(AbysstouchedPower.DESCRIPTIONS[1] + " " + UnnaturalOrderPower.DESCRIPTIONS[1], __instance.amount);
+                //There's at least one translation that missed this entry, so we just skip doing this if it isn't there
+                if (UnnaturalOrderPower.DESCRIPTIONS.length > 1) {
+                    __instance.description = MessageFormat.format(AbysstouchedPower.DESCRIPTIONS[1] + " " + UnnaturalOrderPower.DESCRIPTIONS[1], __instance.amount);
+                }
             }
         }
     }

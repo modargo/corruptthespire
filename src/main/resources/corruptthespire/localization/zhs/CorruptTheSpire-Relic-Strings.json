@@ -157,5 +157,20 @@
     "NAME": "冥界祝福",
     "FLAVOR": "财富……积累……堆积如山……",
     "DESCRIPTIONS": ["在每场非首领战后，获得 #b{0} #y金币。 NL 在每 #b{1} 场非首领战后，获得一个遗物。 NL 未卡牌奖励将减少 {2} 张。"]
+  },
+  "CorruptTheSpire:HandOfMidas": {
+    "NAME": "练金手套",
+    "FLAVOR": "戴上它连吃喝都变得困难……",
+    "DESCRIPTIONS": ["每场战斗开始时，获得 [E] 。精英敌人掉落 #b{0} #y金币 。不再掉落遗物。"]
+  },
+  "CorruptTheSpire:BottomlessMeadHorn": {
+    "NAME": "无底蜜罐",
+    "FLAVOR": "来口海水吧……",
+    "DESCRIPTIONS": ["根据你的牌组数量： NL #b{0}+: 在战斗开始时，获得 #b{1} 点 #y力量 和 #b{1} 点 #y敏捷 。 NL #b{2}+: 在战斗开始时， #y消耗 在抽牌堆的 #b{3} 张 #y打击 和 #b{3} 张 #y防御 。 NL #b{4}+: 在你的回合开始时，抽 #b{5} 张牌。"]
+  },
+  "CorruptTheSpire:BeanSprouts": {
+    "NAME": "豆芽",
+    "FLAVOR": "They go well with everything.",
+    "DESCRIPTIONS": ["每当获得 #y脆弱 或 #y易伤 ，或因敌人而失去 #y敏捷 时，获得 #b{0} 点 #y力量 和 #b{1} 点 #y格挡 。 NL 即使因 #y萝卜（遗物） 未获得 #y脆弱 ，也将获得增益。"]
   }
 }
