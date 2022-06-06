@@ -39,11 +39,14 @@ import corruptthespire.patches.shop.ShopCorruptionTypeField;
 import corruptthespire.patches.shop.ShopScreenServiceInfoField;
 import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.util.TextureLoader;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class ShopCorruption {
+    private static final Logger logger = LogManager.getLogger(ShopCorruption.class.getName());
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:ShopCorruption");
     private static final UIStrings serviceUiStrings = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:ShopService");
     private static final String[] TEXT = uiStrings.TEXT;
@@ -197,12 +200,22 @@ public class ShopCorruption {
                     }
                 }
 
-                StoreRelic relic = new StoreRelic(tempRelic, i, shopScreen);
-                if (!Settings.isDailyRun) {
-                    relic.price = MathUtils.round((float)relic.price * AbstractDungeon.merchantRng.random(0.95F, 1.05F));
+                boolean error = false;
+                try {
+                    tempRelic.getPrice();
+                }
+                catch (Exception e) {
+                    logger.error("Error getting price for relic: " + tempRelic.relicId, e);
+                    error = true;
                 }
 
-                relics.add(relic);
+                if (!error) {
+                    StoreRelic relic = new StoreRelic(tempRelic, i, shopScreen);
+                    if (!Settings.isDailyRun) {
+                        relic.price = MathUtils.round((float)relic.price * AbstractDungeon.merchantRng.random(0.95F, 1.05F));
+                    }
+                    relics.add(relic);
+                }
             }
             return true;
         }
