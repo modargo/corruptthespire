@@ -16,9 +16,9 @@ public class ElementalBarrier extends AbstractCorruptedCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    private static final int COST = 2;
-    private static final int UPGRADE_COST = 1;
+    private static final int COST = 1;
     private static final int BLOCK = 1;
+    private static final int UPGRADE_BLOCK = 1;
 
     public ElementalBarrier() {
         super(ID, NAME, IMG, COST, DESCRIPTION, CardType.POWER, CardTarget.SELF);
@@ -28,7 +28,7 @@ public class ElementalBarrier extends AbstractCorruptedCard {
     @Override
     public void upgrade() {
         if (!this.upgraded) {
-            this.upgradeBaseCost(UPGRADE_COST);
+            this.upgradeMagicNumber(UPGRADE_BLOCK);
             this.upgradeName();
         }
     }

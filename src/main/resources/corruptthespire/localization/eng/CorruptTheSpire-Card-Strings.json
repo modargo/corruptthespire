@@ -209,6 +209,6 @@
   },
   "CorruptTheSpire:ElementalBarrier": {
     "NAME": "Elemental Barrier",
-    "DESCRIPTION": "Whenever you play an shaman:Elemental card, gain Block equal to the number of shaman:Elements it has."
+    "DESCRIPTION": "Whenever you play an shaman:Elemental card, gain !M! Block for each shaman:Element it has."
   }
 }
