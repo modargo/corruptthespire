@@ -1,0 +1,130 @@
+{
+  "CorruptTheSpire:MasterOfTimeAndSpace": {
+    "MOVES": [
+      "混沌地带",
+      "大雨滂沱",
+      "黑暗意志",
+      "暗焰之拥"
+    ],
+    "NAME": "时空之主"
+  },
+  "CorruptTheSpire:SpatialPhantasm": {
+    "MOVES": [
+      "空间撕裂",
+      "修复",
+      "次元破坏"
+    ],
+    "NAME": "空间幻影"
+  },
+  "CorruptTheSpire:TemporalPhantasm": {
+    "MOVES": [
+      "喜怒无常",
+      "渐衰",
+      "时间扭曲"
+    ],
+    "NAME": "时间幻象"
+  },
+  "CorruptTheSpire:TreasureWardenWhite": {
+    "MOVES": [
+      "大漩涡",
+      "雷霆",
+      "灼烧"
+    ],
+    "NAME": "宝藏守卫"
+  },
+  "CorruptTheSpire:TreasureWardenBlack": {
+    "MOVES": [
+      "灼热之息",
+      "酸性呼吸",
+      "暗息"
+    ],
+    "NAME": "宝藏守卫"
+  },
+  "CorruptTheSpire:PandemoniumArchfiend": {
+    "MOVES": [
+      "心碎",
+      "四臂打击",
+      "折磨镣铐",
+      "地狱之力",
+      "地狱烈焰"
+    ],
+    "NAME": "魔尊",
+    "DIALOG": [
+      "我将摧毁你！打开地狱之门！",
+      "是你释放了我！我将给你的世界带来毁灭！",
+      "我比你所知道的要多得多。",
+      "地狱烈焰和永恒的折磨！"
+    ]
+  },
+  "CorruptTheSpire:CorruptionManifest": {
+    "MOVES": [
+      "腐化",
+      "魔魇"
+    ],
+    "NAME": "腐化魔魇"
+  },
+  "CorruptTheSpire:Harbinger": {
+    "MOVES": [
+      "宇宙爆裂",
+      "异形之爪"
+    ],
+    "NAME": "先驱"
+  },
+  "CorruptTheSpire:TranscendentDevourer": {
+    "MOVES": [
+      "垂涎三尺",
+      "蚕食",
+      "暴食"
+    ],
+    "NAME": "超凡吞噬者"
+  },
+  "CorruptTheSpire:LesserDevourerBlue": {
+    "MOVES": [
+      "剁碎",
+      "口臭",
+      "消化"
+    ],
+    "NAME": "吞噬者"
+  },
+  "CorruptTheSpire:LesserDevourerBrown": {
+    "MOVES": [
+      "剁碎",
+      "口臭",
+      "消化"
+    ],
+    "NAME": "吞噬者"
+  },
+  "CorruptTheSpire:LesserDevourerGreen": {
+    "MOVES": [
+      "剁碎",
+      "口臭",
+      "消化"
+    ],
+    "NAME": "吞噬者"
+  },
+  "CorruptTheSpire:FlameManifest": {
+    "MOVES": [
+      "烈火",
+      "点火",
+      "爆裂"
+    ],
+    "NAME": "火焰魔魇"
+  },
+  "CorruptTheSpire:Doom": {
+    "MOVES": [
+      "黑暗之爪",
+      "死亡光束",
+      "业力审判"
+    ],
+    "NAME": "末日"
+  },
+  "CorruptTheSpire:DeliriumManifest": {
+    "MOVES": [
+      "迷惑",
+      "六边轮",
+      "伤害",
+      "衰老"
+    ],
+    "NAME": "谵妄魔魇"
+  }
+}

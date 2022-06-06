@@ -1,0 +1,67 @@
+[
+  {
+    "NAMES": ["腐化","corruption"],
+    "PROPER_NAME": "腐化",
+    "DESCRIPTION": "腐化，在右上角显示。"
+  },
+  {
+    "NAMES": ["蠕动","abysstouched"],
+    "PROPER_NAME": "蠕动",
+    "DESCRIPTION": "增加受到的攻击伤害，每回合造成伤害。"
+  },
+  {
+    "NAMES": ["普通减益效果","common\u00a0debuff"],
+    "PROPER_NAME": "普通减益效果",
+    "DESCRIPTION": "#y虚弱, #y脆弱, #y易伤， #y敏捷下降, #y集中下降, #y混乱 。"
+  },
+  {
+    "NAMES": ["金属化","metallicize"],
+    "PROPER_NAME": "金属化",
+    "DESCRIPTION": "在你的回合结束时获得 #y格挡 。"
+  },
+  {
+    "NAMES": ["多层护甲","plated\u00a0armor"],
+    "PROPER_NAME": "多层护甲",
+    "DESCRIPTION": "在你的回合结束时获得 #y格挡 。受到攻击伤害而失去生命时，降低多层护甲层数。"
+  },
+  {
+    "NAMES": ["缠绕","constricted"],
+    "PROPER_NAME": "缠绕",
+    "DESCRIPTION": "在你的回合结束时，受到伤害。"
+  },
+  {
+    "NAMES": ["深渊之手","hand\u00a0of\u00a0the\u00a0abyss"],
+    "PROPER_NAME": "深渊之手",
+    "DESCRIPTION": "每当你造成未被格挡的伤害，施加 #y蠕动 。"
+  },
+  {
+    "NAMES": ["腐化碎片","fragment\u00a0of\u00a0corruption"],
+    "PROPER_NAME": "腐化碎片",
+    "DESCRIPTION": "被腐化的尖塔石块碎片，可以在腐化休息处使用。"
+  },
+  {
+    "NAMES": ["余像","after\u00a0image"],
+    "PROPER_NAME": "余像",
+    "DESCRIPTION": "你每打出一张牌，得到 #y格挡 。"
+  },
+  {
+    "NAMES": ["缓冲","buffer"],
+    "PROPER_NAME": "缓冲",
+    "DESCRIPTION": "阻止下一次你受到的生命值损伤。"
+  },
+  {
+    "NAMES": ["最低奖励","lowest\u00a0reward\u00a0outcomes"],
+    "PROPER_NAME": "最低奖励",
+    "DESCRIPTION": "奖励仅获得 #y腐化碎片 。"
+  },
+  {
+    "NAMES": ["天神之力","celestial\u00a0might"],
+    "PROPER_NAME": "天神之力",
+    "DESCRIPTION": "你的回合开始时，获得 #b2 #y临时生命 ，并对所有敌人造成等同于楼层数除以 #b3 的伤害。"
+  },
+  {
+    "NAMES": ["不同颜色的牌","different\u00a0color"],
+    "PROPER_NAME": "不同颜色的牌",
+    "DESCRIPTION": "除了你的角色牌以外的其他颜色牌。"
+  }
+]

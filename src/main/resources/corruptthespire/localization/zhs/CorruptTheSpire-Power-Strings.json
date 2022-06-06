@@ -1,0 +1,211 @@
+{
+  "CorruptTheSpire:CorruptedForm": {
+    "NAME": "腐化清单",
+    "DESCRIPTIONS": [
+      "回合结束时，对所有敌人造成等同 #y腐化 #b{0}% 的伤害。"
+    ]
+  },
+  "CorruptTheSpire:FatedCard": {
+    "NAME": "命运卡牌",
+    "DESCRIPTIONS": [
+      "下回合开始时，向手牌添加一张 #y普通牌 。",
+      "下回合开始时，向手牌添加一张 #y罕见牌 。",
+      "下回合开始时，向手牌添加一张 #y稀有牌 。",
+      "从现在开始， #b{0} 回合内，向手牌添加一张 #y普通牌 。",
+      "从现在开始， #b{0} 回合内，向手牌添加一张 #y罕见牌 。",
+      "从现在开始， #b{0} 回合内，向手牌添加一张 #y稀有牌 。"
+    ]
+  },
+  "CorruptTheSpire:ShimmeringShield": {
+    "NAME": "闪光之盾",
+    "DESCRIPTIONS": [
+      "当打出一张不同颜色的牌时，对所有敌人造成 #b{0} 点伤害并获得 #b{0} 点格挡。"
+    ]
+  },
+  "CorruptTheSpire:DragonsHeart": {
+    "NAME": "龙之心",
+    "DESCRIPTIONS": [
+      "当该敌人死亡时，其他所有敌人获得 #b{0} 点 #y力量 和 #b{0} 点 #y金属化 。"
+    ]
+  },
+  "CorruptTheSpire:DevilsDue": {
+    "NAME": "恶魔应许",
+    "DESCRIPTIONS": [
+      "战斗开始时，将所有除 #y基础牌 #y普通牌 和 #y诅咒牌 以外的其他牌置入弃牌堆。 NL 然后向抽牌堆添加 #b{0} 张困扰。",
+      "战斗开始时，将所有除 #y基础牌 #y普通牌 和 #y诅咒牌 以外的其他牌置入弃牌堆。 NL 然后向抽牌堆和弃牌堆添加 #b{0} 张困扰。"
+    ]
+  },
+  "CorruptTheSpire:PriceOfKnowledge": {
+    "NAME": "知识的代价",
+    "DESCRIPTIONS": [
+      "每当你回合内抽一张牌而非初始牌时，丢弃一张牌。 NL 如果手牌中没有手牌，本回合无法再抽牌。"
+    ]
+  },
+  "CorruptTheSpire:TormentingShackles": {
+    "NAME": "折磨镣铐",
+    "DESCRIPTIONS": [
+      "每当抽一张牌， #b{0}% 几率在本回合增加 #b1 耗费。"
+    ]
+  },
+  "CorruptTheSpire:BlackOmen": {
+    "NAME": "黑色预兆",
+    "DESCRIPTIONS": [
+      "回合开始时，向所有敌人施加 #b{0} 层 #y蠕动 。"
+    ]
+  },
+  "CorruptTheSpire:NightmareKnowledge": {
+    "NAME": "梦魇知识",
+    "DESCRIPTIONS": [
+      "每当抽一张腐化牌，抽 #b1 张牌。",
+      "每当抽一张腐化牌，抽 #b{0} 张牌。"
+    ]
+  },
+  "CorruptTheSpire:NightmareDefense": {
+    "NAME": "梦魇防御",
+    "DESCRIPTIONS": [
+      "每当打出一张腐化牌，获得 #b{0} 点格挡值。"
+    ]
+  },
+  "CorruptTheSpire:Abysstouched": {
+    "NAME": "蠕动",
+    "DESCRIPTIONS": ["从攻击牌受到的伤害增加 #b{0}% 。回合结束时，受到 #b{0}% 伤害。", "从攻击中受到的伤害增加 #b{0}% 。回合开始时，受到 #b{0} 点伤害。"]
+  },
+  "CorruptTheSpire:AstralCore": {
+    "NAME": "星界核心",
+    "DESCRIPTIONS": ["该敌人每受到 #b{0} 点伤害，获得 #b{1} 点 #y力量 。敌人回合结束时，如果敌人力量为正，失去 #b{2} 点力量。"]
+  },
+  "CorruptTheSpire:AstralCoreCounter": {
+    "NAME": "星界核心计数器",
+    "DESCRIPTIONS": ["受到 #b{0} 额外伤害后，触发 #y星界核心 。"]
+  },
+  "CorruptTheSpire:EldritchGrasp": {
+    "NAME": "诡异之握",
+    "DESCRIPTIONS": ["每回合结束时，施加 #b{0} 层 #y缠绕 。"]
+  },
+  "CorruptTheSpire:UnnaturalOrder": {
+    "NAME": "无序之令",
+    "DESCRIPTIONS": ["#y中毒 获得 #y蠕动 的效果。 NL 将所有的 #y蠕动 转化为 #y中毒 。 NL 。每当你给予敌人 #y蠕动 或 #y中毒 时，额外给予 #b{0} 层。"]
+  },
+  "CorruptTheSpire:DelayedNoDraw": {
+    "NAME": "延迟：无法抽牌",
+    "DESCRIPTIONS": ["回合开始时，抽完牌后，无法再抽牌。"]
+  },
+  "CorruptTheSpire:ThoughtStealer": {
+    "NAME": "思维窃取",
+    "DESCRIPTIONS": ["每回合抽出的第 #b{0} 张牌都会获得充能。在 #b{1} 充能时，所有敌人获得 #b{2} 点 #y力量 。"]
+  },
+  "CorruptTheSpire:SpacetimeMastery": {
+    "NAME": "时空掌握",
+    "DESCRIPTIONS": [
+      "回合内，在打出攻击牌获得 #b1 点 #y力量 ，抽牌，打出技能牌，获得能量之间轮换。",
+      "回合内，在打出攻击牌获得 #b1 点 #y力量 ，抽牌，打出技能牌，获得能量之间轮换。 #r将同时激活两个增益效果 。"
+    ]
+  },
+  "CorruptTheSpire:Wary": {
+    "NAME": "警惕",
+    "DESCRIPTIONS": ["每当打出一张 #y攻击牌 ，获得 #b{0} 点力量。"]
+  },
+  "CorruptTheSpire:Thoughtful": {
+    "NAME": "周到",
+    "DESCRIPTIONS": ["每当抽一张牌，获得 #b{0} 点力量。"]
+  },
+  "CorruptTheSpire:Restless": {
+    "NAME": "焦急",
+    "DESCRIPTIONS": ["每当获得一点能量，获得 #b{0} 点力量。"]
+  },
+  "CorruptTheSpire:Cleanse": {
+    "NAME": "纯净",
+    "DESCRIPTIONS": ["每回合结束时，降低所有减益效果 #b{0} 层。", "此回合后消失。"]
+  },
+  "CorruptTheSpire:WarpAura": {
+    "NAME": "扭曲光环",
+    "DESCRIPTIONS": ["当敌人受到 #b{0} 或更多伤害时，向弃牌堆添加一张 #y晕眩 。"]
+  },
+  "CorruptTheSpire:TemporalFissure": {
+    "NAME": "裂时",
+    "DESCRIPTIONS": ["当该敌人死亡时， #p时空之主 获得 #b{0} 层 #y纯净 ，你获得 #b{1} 层 #y脆弱 。"]
+  },
+  "CorruptTheSpire:SpatialFissure": {
+    "NAME": "断空",
+    "DESCRIPTIONS": ["当该敌人死亡时， #p时空之主 在每回合结束时，向你的手牌洗入一张 #y灼烧 。所有敌人回复 #b{0} 。"]
+  },
+  "CorruptTheSpire:WorldAblaze": {
+    "NAME": "燃烧的世界",
+    "DESCRIPTIONS": ["每回合结束时，向抽牌堆洗入 #b{0} 张 #y灼烧 。"]
+  },
+  "CorruptTheSpire:ProtectiveMaw": {
+    "NAME": "吞噬之护",
+    "DESCRIPTIONS": ["少受到 #b{0}% 点伤害，杀死 #y吞噬者 时将降低该效果。"]
+  },
+  "CorruptTheSpire:FetidBody": {
+    "NAME": "恶臭之躯",
+    "DESCRIPTIONS": [
+      "该敌人每受到 #b{0} 点伤害，向抽牌堆洗入一张 #y黏液 。",
+      "该敌人每受到 #b{0} 点伤害，向抽牌堆顶部洗入一张 #y黏液 。"
+    ]
+  },
+  "CorruptTheSpire:FieryDemise": {
+    "NAME": "炽热寂灭",
+    "DESCRIPTIONS": ["死亡时，将 #b{0} 张 #灼烧 置入你的抽牌堆。"]
+  },
+  "CorruptTheSpire:HandOfTheAbyss": {
+    "NAME": "深渊之手",
+    "DESCRIPTIONS": ["每当造成未被格挡的伤害。施加 #b{0} 层 #y蠕动 。"]
+  },
+  "CorruptTheSpire:Pressure": {
+    "NAME": "压力",
+    "DESCRIPTIONS": ["每当抽一张牌，本回合耗能增加 #b1 。 NL 如果在非 #y保留 的情况下将牌保留在手牌中。下回合耗能增加 #b1 。回合开始时，获得 [E] 。"]
+  },
+  "CorruptTheSpire:ImpendingDoom": {
+    "NAME": "末日来临",
+    "DESCRIPTIONS": [
+      "当生命值降低到一半后，施加 #b1 层 #y易伤 ，并在下回合结束时失去。",
+      "当生命值降低到一半后，施加 #b1 层 #y易伤  #b{0} 次，并在下回合结束时失去。"
+    ]
+  },
+  "CorruptTheSpire:TemporaryHex": {
+    "NAME": "临时邪咒",
+    "DESCRIPTIONS": [
+      "本回合，每当打出一张 #y非攻击 牌， 向抽牌堆洗入 #b1 张 #y晕眩 。",
+      "下 #b{0} 回合，每当打出一张 #y非攻击 牌， 向抽牌堆洗入 #b1 张 #y晕眩 。"]
+  },
+  "CorruptTheSpire:PermanentDrawReduction": {
+    "NAME": "抽牌",
+    "DESCRIPTIONS": [
+      "回合开始时，少抽 #b{0} 张牌。",
+      "回合开始时，少抽 #b{0} 张牌。"
+    ]
+  },
+  "CorruptTheSpire:TemporaryConfusion": {
+    "NAME": "暂时性混乱",
+    "DESCRIPTIONS": [
+      "本回合，每当抽一张牌，混淆该牌的耗能。."
+    ]
+  },
+  "CorruptTheSpire:Boon": {
+    "NAME": "恩赐",
+    "DESCRIPTIONS": [
+      "在打出 #b{0} 张 #y恩赐 后，获得 #y天神之力 。"
+    ]
+  },
+  "CorruptTheSpire:CelestialMight": {
+    "NAME": "天神之力",
+    "DESCRIPTIONS": [
+      "回合开始时， NL 获得 #b{0} #y临时生命 。 NL 并对所有敌人造成等同于楼层数除以 #b{1} 的伤害。"
+    ]
+  },
+  "CorruptTheSpire:InfernalBargain": {
+    "NAME": "炼狱之痕",
+    "DESCRIPTIONS": [
+      "回合开始时：选择:",
+      " NL 获得 {0} 点格挡。",
+      " NL 获得 {0} 点力量。",
+      " NL 抽 {0} 张牌。",
+      " NL 回合结束时，受到 {0} 点伤害。"
+    ]
+  },
+  "CorruptTheSpire:InfernalBargainDamage": {
+    "NAME": "炼狱之痕·代价",
+    "DESCRIPTIONS": ["回合结束时，受到 {0} 点伤害。"]
+  }
+}

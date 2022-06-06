@@ -1,0 +1,99 @@
+{
+  "CorruptTheSpire:Corruption": {
+    "TEXT": [
+      "腐化",
+      "通过进入腐化房间获得腐化值，越强大的房间将获得更多的腐化。 NL 根据当前的腐化值，敌人的生命值和伤害将增加 {0}% 。"
+    ]
+  },
+  "CorruptTheSpire:CorruptedColor": {
+    "TEXT": [
+      "腐化"
+    ]
+  },
+  "CorruptTheSpire:CorruptedRelic": {
+    "TEXT": [
+      "腐化"
+    ]
+  },
+  "CorruptTheSpire:CharacterSelectScreen": {
+    "TEXT": [
+      "腐化尖塔",
+      "向尖塔添加腐化房间。这将带来全新的奖励和挑战。"
+    ]
+  },
+  "CorruptTheSpire:RelicViewScreen": {
+    "TEXT": [
+      "腐化:",
+      "只能通过腐化房间获得的遗物。"
+    ]
+  },
+  "CorruptTheSpire:PotionViewScreen": {
+    "TEXT": [
+      "腐化:",
+      "只能通过腐化房间获得的药水。"
+    ]
+  },
+  "CorruptTheSpire:RunHistory": {
+    "TEXT": [
+      "#b祭祀 {0}"
+    ]
+  },
+  "CorruptTheSpire:Rewards": {
+    "TEXT": ["获得 {0} 点最大生命。", "升级一张随机牌。", "向牌组添加一张腐化牌。", "选择一张腐化牌。"]
+  },
+  "CorruptTheSpire:TreasureCorruption": {
+    "TEXT": ["金币 (腐化遗物)", "金币", "掠夺更多", "更多的宝箱将被腐化....", "每开启一个箱子，腐化将变得更强....", "腐化显现", "腐化加强了"]
+  },
+  "CorruptTheSpire:VaultChest": {
+    "TEXT": ["遗物！", "什么都没有……", "金币!", "奇怪的碎片……", "一种技术!", "生命值!", "一件不同寻常的遗物!", "一种不同寻常的技术!", "一次升级!", "一种腐化技术。", "奇怪的药水。"]
+  },
+  "CorruptTheSpire:CampfireCorruption": {
+    "TEXT": ["在休息之前……腐化……"]
+  },
+  "CorruptTheSpire:FireRitualOption": {
+    "TEXT": ["祭祀", "                                   通过 {1} 的最大生命值和所有的腐化碎片，降低 {0} 腐化。"]
+  },
+  "CorruptTheSpire:GainFragmentOption": {
+    "TEXT": ["获得腐化碎片", "获得一个腐化碎片"]
+  },
+  "CorruptTheSpire:CommonRelicOption": {
+    "TEXT": ["普通遗物", "花费 {0} 腐化碎片获得一个普通遗物。"]
+  },
+  "CorruptTheSpire:UncommonRelicOption": {
+    "TEXT": ["罕见遗物", "花费 {0} 腐化碎片获得一个罕见遗物。"]
+  },
+  "CorruptTheSpire:RareRelicOption": {
+    "TEXT": ["稀有遗物", "花费 {0} 腐化碎片获得一个稀有遗物。"]
+  },
+  "CorruptTheSpire:CorruptedCardOption": {
+    "TEXT": ["腐化牌", "花费 {0} 腐化碎片选择一张腐化牌。", "腐化"]
+  },
+  "CorruptTheSpire:RareCardOption": {
+    "TEXT": ["稀有牌", "花费 {0} 腐化碎片选择一张稀有牌。", "强大"]
+  },
+  "CorruptTheSpire:CorruptedRelicOption": {
+    "TEXT": ["腐化遗物", "花费 {1} 腐化碎片获得一个腐化遗物和 {0} 腐化。"]
+  },
+  "CorruptTheSpire:ShopCorruption": {
+    "TEXT": ["选择一张牌进行变化。", "卡牌变化服务", "变化牌组中一张卡牌，接下来卡牌移除和变化成本将增加 #b{0} 。"]
+  },
+  "CorruptTheSpire:DevilsBargainAction": {
+    "TEXT": ["选择一张牌返回手牌。", "选择 {0} 张牌返回手牌。"]
+  },
+  "CorruptTheSpire:ShopService" : {
+    "TEXT": [
+      "卡牌变化服务",
+      "变化牌组中一张卡牌",
+      "选择一张牌进行变化",
+      "卡牌升级服务",
+      "升级牌组中一张卡牌",
+      "选择一张牌进行升级",
+      "卡牌复制服务",
+      "复制牌组中一张卡牌",
+      "选择一张牌进行复制",
+      "卡牌腐化服务",
+      "变化牌组中一张卡牌为腐化牌。",
+      "选择一张牌进行腐化"
+    ]
+  }
+}

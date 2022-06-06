@@ -1,0 +1,25 @@
+{
+  "CorruptTheSpire:AbyssalBrew": {
+    "NAME": "深渊邪酒",
+    "DESCRIPTIONS": ["向所有敌人施加 #b{0} #y蠕动 。"]
+  },
+  "CorruptTheSpire:CorruptedPotion": {
+    "NAME": "腐化药剂",
+    "DESCRIPTIONS": [
+      "从 #b3 张随机腐化牌中选择 #b1 张加入你的手牌。这张牌在本回合耗能变为 #b0 。",
+      "从 #b3 张随机腐化牌中选择 #b1 张，将其加入你的手牌 #b{0} 次。这些牌在本回合耗能变为 #b0 。"
+    ]
+  },
+  "CorruptTheSpire:VoidBomb": {
+    "NAME": "虚空炸弹",
+    "DESCRIPTIONS": ["造成 #b{0}% #y腐化 伤害。"]
+  },
+  "CorruptTheSpire:DarkElixir": {
+    "NAME": "绝望之种",
+    "DESCRIPTIONS": ["获得 #b{0} 点 #y力量 和 #b{0} 点 #y敏捷 。获得 #b{0} 层 #y腐化。"]
+  },
+  "CorruptTheSpire:ProfaneMixture": {
+    "NAME": "亵渎之力",
+    "DESCRIPTIONS": ["获得 #b{0} 层 #y深渊之手 。"]
+  }
+}

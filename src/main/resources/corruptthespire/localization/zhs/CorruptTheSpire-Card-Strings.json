@@ -1,0 +1,210 @@
+{
+  "CorruptTheSpire:BlazeFromBeyond": {
+    "NAME": "彼岸烈焰",
+    "DESCRIPTION": "造成 {0} 点伤害。 NL corruptthespire:腐化 {1} ：对所有敌人 NL 造成 !M! 点伤害。",
+    "EXTENDED_DESCRIPTION": [" NL (造成 !D! 点伤害。)"]
+  },
+  "CorruptTheSpire:EssenceRip": {
+    "NAME": "本质解剖",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL corruptthespire:腐化 {0}+: 两次。 NL corruptthespire:腐化 {1}+: 三次。 NL corruptthespire:腐化 {2}+: 四次。"
+  },
+  "CorruptTheSpire:Condemn": {
+    "NAME": "谴责",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 敌人失去最大生命值 !M!% 的生命。 NL 获得 {0} 点 corruptthespire:腐化 。"
+  },
+  "CorruptTheSpire:ShadowAndFlame": {
+    "NAME": "暗影烈焰",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 施加 !M! 层 易伤 。 NL 施加 !M! 层 corruptthespire:蠕动 。 NL 获得 {0} 层 脆弱 。"
+  },
+  "CorruptTheSpire:DrainLife": {
+    "NAME": "回光返照",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 回复 !M! 点生命。 NL 获得 {0} 点 corruptthespire:腐化 。"
+  },
+  "CorruptTheSpire:Fragmentize": {
+    "NAME": "碎片袭杀",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 斩杀 时， NL 若 corruptthespire:腐化碎片 少于 {0} , NL 获得一个 corruptthespire:腐化碎片 。 NL 消耗。"
+  },
+  "CorruptTheSpire:WickedWard": {
+    "NAME": "邪恶守卫",
+    "DESCRIPTION": "获得 !B! 点格挡。 NL corruptthespire:腐化 {0}+: 获得 !M! 点格挡。"
+  },
+  "CorruptTheSpire:ProfaneShield": {
+    "NAME": "亵渎之盾",
+    "DESCRIPTION": "获得 corruptthespire:腐化 值 !M!% 的格挡。 NL 消耗。",
+    "EXTENDED_DESCRIPTION": [" NL (获得 !B! 点格挡。)"]
+  },
+  "CorruptTheSpire:VoidArmor": {
+    "NAME": "虚空护甲",
+    "DESCRIPTION": "获得 !B! 点格挡。 NL 对所有敌人， NL 施加 !M! 层 虚弱 。 NL 向抽牌堆添加一张虚空。"
+  },
+  "CorruptTheSpire:DarkLore": {
+    "NAME": "黑暗学识",
+    "DESCRIPTION": "抽 !M! 张牌。 NL 获得 {0} 点 corruptthespire:腐化 。 NL 消耗。"
+  },
+  "CorruptTheSpire:NightsWhisper": {
+    "NAME": "暗夜耳语",
+    "DESCRIPTION": "施加 !M! 层 虚弱 。 NL corruptthespire:腐化 : NL {0}+: 敌人失去 !M! 点 力量 。 NL {1}+: 向敌人施加 !M! 层 易伤 。 NL {2}+: 双倍施加减益效果。 NL {3}+: 三倍施加减益效果。 NL 消耗。"
+  },
+  "CorruptTheSpire:CorruptedForm": {
+    "NAME": "腐化清单",
+    "DESCRIPTION": "虚无。 NL 获得 {0} 点 corruptthespire:腐化 。 NL 回合结束时， 对所有敌人造成 corruptthespire:腐化 !M!% 的伤害。",
+    "UPGRADE_DESCRIPTION": "获得 {0} 点 corruptthespire:腐化 。 NL 回合结束时， 对所有敌人造成 corruptthespire:腐化 !M!% 的伤害。"
+  },
+  "CorruptTheSpire:Fated": {
+    "NAME": "命定",
+    "DESCRIPTION": "无法打出。 NL 当你再赢得 {0} 场战斗后移除该牌。 (你需要再赢得 !M! 场战斗。)"
+  },
+  "CorruptTheSpire:WheelOfFortune": {
+    "NAME": "命运之轮",
+    "DESCRIPTION": "向手牌添加 !M! 张随机牌。 NL 消耗。"
+  },
+  "CorruptTheSpire:Nudge": {
+    "NAME": "微调",
+    "DESCRIPTION": "获得 1 点敏捷。 NL 获得 !M! 点临时生命。 NL 预见 !corruptthespire:M2! 。抽 1 张牌。 NL 下回合抽 !corruptthespire:M3! 张牌。 NL 随机升级手牌中的 1 张牌。消耗性： !stslib:ex! 。",
+    "UPGRADE_DESCRIPTION": "获得 1 点敏捷。 NL 获得 !M! 点临时生命。 NL 预见 !corruptthespire:M2! 。抽 1 张牌。 NL 下回合抽 !corruptthespire:M3! 张牌。 NL 随机升级手牌中的 1 张牌。消耗性： !stslib:ex! 。"
+  },
+  "CorruptTheSpire:ShimmeringShield": {
+    "NAME": "闪光之盾",
+    "DESCRIPTION": "每当打出一张 corruptthespire:不同颜色的牌 ,对所有敌人造成 !M! 点伤害，并获得 !M! 点格挡。",
+    "UPGRADE_DESCRIPTION": "固有。 NL 每当打出一张 corruptthespire:不同颜色的牌 ,对所有敌人造成 !M! 点伤害，并获得 !M! 点格挡。"
+  },
+  "CorruptTheSpire:Bedeviled": {
+    "NAME": "困扰",
+    "DESCRIPTION": "消耗。"
+  },
+  "CorruptTheSpire:DeathTouch": {
+    "NAME": "死亡之触",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 施加 !M! 层 corruptthespire:蠕动 。"
+  },
+  "CorruptTheSpire:BlackOmen": {
+    "NAME": "黑色预兆",
+    "DESCRIPTION": "在回合开始时， NL 对所有敌人施加 !M! 层 corruptthespire:蠕动 。"
+  },
+  "CorruptTheSpire:LordOfNightmare": {
+    "NAME": "梦魇之王",
+    "DESCRIPTION": "每当抽到一张腐化牌，抽一张牌。 NL 每当打出一张腐化牌，获得 !M! 点格挡。"
+  },
+  "CorruptTheSpire:EldritchInsight": {
+    "NAME": "诡异目光",
+    "DESCRIPTION": "抽牌堆 3 张随机牌中， NL 选择 1 张放入手牌 !M! 次。 NL 获得 {0} 点 corruptthespire:腐化 。"
+  },
+  "CorruptTheSpire:DevilsBargain": {
+    "NAME": "恶魔交易",
+    "DESCRIPTION": "将弃牌堆 !M! 张牌， NL 放入你的手牌。 NL 丢弃其他所有牌。 NL 获得 {0} 点 corruptthespire:腐化 。 NL 消耗。"
+  },
+  "CorruptTheSpire:BlasphemousHymn": {
+    "NAME": "亵渎赞歌",
+    "DESCRIPTION": "虚无。 NL 对所有敌人， NL 施加 !M! 层 虚弱 。 NL 每 {1} 点 corruptthespire:腐化 ， NL 对所有敌人， NL 施加 {0} 层 corruptthespire:蠕动 。 NL 消耗。",
+    "UPGRADE_DESCRIPTION": "虚无。 NL 对所有敌人， NL 施加 !M! 层 虚弱 。 NL 每 {1} 点 corruptthespire:腐化 ， NL 对所有敌人， NL 施加 {0} 层 corruptthespire:蠕动 。"
+  },
+  "CorruptTheSpire:EldritchFire": {
+    "NAME": "诡异之火",
+    "DESCRIPTION": "失去 X 生命值。 NL 对所有敌人， NL 造成 !D! 点伤害 X 次。 NL 本回合所有敌人， NL 失去 X 点 力量 !M! 次。 NL 消耗。"
+  },
+  "CorruptTheSpire:ManiacalRage": {
+    "NAME": "狂怒", 
+    "DESCRIPTION": "获得 !M! 点临时生命。 NL 获得同抽牌堆与弃牌堆状态牌数量和 corruptthespire:普通减益效果 中数值较大的 力量 。 NL corruptthespire:腐化 {1}+: 获得 {2} 临时生命。",
+    "EXTENDED_DESCRIPTION": ["获得 !M! 点临时生命。 NL 获得同抽牌堆与弃牌堆状态牌数量和 corruptthespire:普通减益效果 中数值较大的 力量 。 ({3} 力量)。 NL corruptthespire:腐化 {1}+: 获得 {2} 临时生命"]
+  },
+  "CorruptTheSpire:InnerFlame": {
+    "NAME": "内在烈焰",
+    "DESCRIPTION": "获得 !M! 点 力量 和 敏捷 。 NL 获得 {0} 点 corruptthespire:腐化 。"
+  },
+  "CorruptTheSpire:MaskOfShards": {
+    "NAME": "破碎面具",
+    "DESCRIPTION": "失去 {0} 点生命。 NL 每 {2} 点 corruptthespire:腐化 增加 !M! 点格挡，获得 {1} 点格挡。",
+    "EXTENDED_DESCRIPTION": [" NL (获得 !B! 点格挡。)"]
+  },
+  "CorruptTheSpire:AnnihilationRay": {
+    "NAME": "歼灭射线",
+    "DESCRIPTION": "虚无。 NL 造成 !D! 点伤害。 NL 获得 !M! 点临时生命。 NL 本牌被消耗时，随机添加一张腐化牌至手牌。"
+  },
+  "CorruptTheSpire:LightningBlood": {
+    "NAME": "涌电之血",
+    "DESCRIPTION": "失去 {0} 点生命。 NL 获得 !M! 点 力量 。 NL 获得 !M! corruptthespire:金属化 。 NL 消耗。",
+    "UPGRADE_DESCRIPTION": "失去 {0} 点生命。 NL 获得 !M! 点 力量 。 NL 获得 !M! corruptthespire:金属化 。"
+  },
+  "CorruptTheSpire:UnnaturalOrder": {
+    "NAME": "无序之令",
+    "DESCRIPTION": " 中毒 获得 corruptthespire:蠕动 的效果。 NL 将 corruptthespire:蠕动 转化为 中毒 。 NL 当施加 中毒 或 corruptthespire:蠕动 时， NL 额外施加 !M! 层。",
+    "UPGRADE_DESCRIPTION": "固有。 NL 中毒 获得 corruptthespire:蠕动 的效果。 NL 将 corruptthespire:蠕动 转化为 中毒 。 NL 当施加 中毒 或 corruptthespire:蠕动 时， NL 额外施加 !M! 层。"
+  },
+  "CorruptTheSpire:GuidingStar": {
+    "NAME": "星导",
+    "DESCRIPTION": "获得 !M! 点 集中 。 NL 获得 1 个充能球栏位。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点 集中 。 NL 获得 1 个充能球栏位。 NL 选择： 生成 1 个闪电，冰霜或黑暗充能球。"
+  },
+  "CorruptTheSpire:GuidingStarLightningOption": {
+    "NAME": "星导·闪电",
+    "DESCRIPTION": "生成 !M! 闪电充能球。"
+  },
+  "CorruptTheSpire:GuidingStarFrostOption": {
+    "NAME": "星导·冰霜",
+    "DESCRIPTION": "生成 !M! 冰霜充能球。"
+  },
+  "CorruptTheSpire:GuidingStarDarkOption": {
+    "NAME": "星导·黑暗",
+    "DESCRIPTION": "生成 !M! 黑暗充能球。"
+  },
+  "CorruptTheSpire:DivineStrike": {
+    "NAME": "神圣打击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 真言 。 NL 打出后洗入抽牌堆。"
+  },
+  "CorruptTheSpire:JourneyBeyond": {
+    "NAME": "超越之旅",
+    "DESCRIPTION": "获得 !M! 点 敏捷 。 NL 从 3 张随机牌中， NL 选择 1 张加入手牌。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点 敏捷 。 NL 从 3 张随机牌中， NL 选择 1 张加入手牌。 NL 本场战斗耗费降低 {0} 。"
+  },
+  "CorruptTheSpire:Contagion": {
+    "NAME": "传染",
+    "DESCRIPTION": "消耗。 NL 在你的回合结束时，向弃牌堆添加一张传染。"
+  },
+  "CorruptTheSpire:BadBreath": {
+    "NAME": "口臭",
+    "DESCRIPTION": "虚无。 NL 消耗。 NL 在你的回合结束时，获得 1 层脆弱。"
+  },
+  "CorruptTheSpire:CelestialAegis": {
+    "NAME": "天神之力",
+    "DESCRIPTION": "减少 !M! corruptthespire:腐化 。 NL 向抽牌堆和弃牌堆洗入 {0} 张恩赐。 NL 打出所有恩赐后，获得 corruptthespire:天神之力 。"
+  },
+  "CorruptTheSpire:Boon": {
+    "NAME": "恩赐",
+    "DESCRIPTION": "获得 !B! 点格挡。 NL 抽 1 张牌。 NL 获得 [E] 。 NL 消耗。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡。 NL 抽 !M! 张牌。 NL 获得 [E] 。 NL 消耗。"
+  },
+  "CorruptTheSpire:Retribution": {
+    "NAME": "报应",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 你每有一种减益效果， NL 再造成 !D! 点伤害。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 你和敌人每有一种减益效果， NL 再造成 !D! 点伤害。",
+    "EXTENDED_DESCRIPTION": [" NL (造成伤害 1 次。)", " NL (造成伤害 {0} 次。)"]
+  },
+  "CorruptTheSpire:Unearth": {
+    "NAME": "挖掘",
+    "DESCRIPTION": "预见 !M!。 NL 将一张 corruptthespire:不同颜色的牌 ， NL 从弃牌堆放入手牌。 NL 若无则抽一张牌。"
+  },
+  "CorruptTheSpire:HiddenPotential": {
+    "NAME": "隐藏潜能",
+    "DESCRIPTION": "获得 !B! 点格挡。 NL 丢弃一张牌。 NL 若该牌是腐化牌，状态牌 NL 或诅咒牌，抽 !M! 张牌。 NL 获得 !corruptthespire:M2! 层 人工制品 。 NL 消耗。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡。 NL 丢弃一张牌。 NL 若该牌是腐化牌，状态牌 NL 或诅咒牌，抽 !M! 张牌。 NL 获得 !corruptthespire:M2! 层 人工制品 。 NL 消耗。"
+  },
+  "CorruptTheSpire:InfernalBargain": {
+    "NAME": "炼狱之痕",
+    "DESCRIPTION": "现在起每一回合，选择一种未选择的炼狱之痕： NL 获得 !B! 点格挡。 NL 获得 !M! 点 力量 。 NL 抽 !corruptthespire:M2! 张牌。 NL 回合结束时，受到 {0} 点伤害。"
+  },
+  "CorruptTheSpire:InfernalBargainBlockOption": {
+    "NAME": "炼狱之痕",
+    "DESCRIPTION": "获得 {0} 点格挡。"
+  },
+  "CorruptTheSpire:InfernalBargainStrengthOption": {
+    "NAME": "炼狱之痕",
+    "DESCRIPTION": "获得 {0} 点力量。"
+  },
+  "CorruptTheSpire:InfernalBargainDrawOption": {
+    "NAME": "炼狱之痕",
+    "DESCRIPTION": "抽 {0} 张牌。"
+  },
+  "CorruptTheSpire:InfernalBargainDamageOption": {
+    "NAME": "炼狱之痕",
+    "DESCRIPTION": "回合结束时，受到 {0} 点伤害。"
+  }
+}

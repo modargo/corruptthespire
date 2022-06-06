@@ -1,0 +1,161 @@
+{
+  "CorruptTheSpire:FragmentOfCorruption": {
+    "NAME": "腐化碎片",
+    "FLAVOR": "危险与机遇并存",
+    "DESCRIPTIONS": ["被腐化的尖塔石块碎片，可以在腐化休息处使用。"]
+  },
+  "CorruptTheSpire:BlightedSpirefruit": {
+    "NAME": "腐化水果",
+    "FLAVOR": "被腐化了的尖塔水果，但也许还是该吃掉它？",
+    "DESCRIPTIONS": ["拾起后，降低你最大生命值 #b{0} 点。每场战斗开始时获得 #b{1} 点 #y力量 。"]
+  },
+  "CorruptTheSpire:BagOfTricks": {
+    "NAME": "玩闹背包",
+    "FLAVOR": "不给糖就捣蛋！",
+    "DESCRIPTIONS": ["每场战斗开始时，获得 #b{0} 点 #y余像 。每场战斗的第一回合，少抽 #b{1} 张牌。"]
+  },
+  "CorruptTheSpire:UnreliableCharm": {
+    "NAME": "无用戏法",
+    "FLAVOR": "有时候……总会有用的。",
+    "DESCRIPTIONS": ["每场战斗开始时， NL 如果是偶数层，获得 #b{0} 点 #y力量 和 #b{1} 层 #y缓冲 。 NL 如果是奇数层，获得 #b{2} 点 #y敏捷 和 #b{3} 层 #y荆棘 。"]
+  },
+  "CorruptTheSpire:RustedOrichalcum": {
+    "NAME": "生锈山铜",
+    "FLAVOR": "这种金属应该是坚不可摧的......",
+    "DESCRIPTIONS": ["在你的前 #b{0} 回合内，获得 #b{1} 点 #y格挡。 NL 每场战斗开始时，获得 #b{2} 层 #y缠绕 。"]
+  },
+  "CorruptTheSpire:ObsidianShovel": {
+    "NAME": "黑曜石铲子",
+    "FLAVOR": "虽然被腐化了，但应该还能挖出东西来……",
+    "DESCRIPTIONS": ["你可以再腐化休息处获得腐化遗物。"]
+  },
+  "CorruptTheSpire:CorruptedEgg": {
+    "NAME": "腐化的蛋",
+    "FLAVOR": "生命已经腐化……枯朽……",
+    "DESCRIPTIONS": ["卡牌奖励中的卡牌将有 #b+{0}% 机率 #y被升级 。每当你获得 #y升级卡牌 时，获得 #b{1} #y腐化 。"]
+  },
+  "CorruptTheSpire:MaskOfNightmares": {
+    "NAME": "梦魇面具",
+    "FLAVOR": "每次都在变化，每次见到都令人不安。",
+    "DESCRIPTIONS": ["每当你进入腐化房间时,将最大生命值提升 #b{0} 点。"]
+  },
+  "CorruptTheSpire:DeckOfManyFates": {
+    "NAME": "命运卡组",
+    "FLAVOR": "命运女神在微笑~。",
+    "DESCRIPTIONS": ["每场战斗的前三回合，从三张随机牌种，随机向手牌加入一张。 NL 第一回合为普通牌。 NL 第二回合为罕见牌。 NL 第三回合为稀有牌。"]
+  },
+  "CorruptTheSpire:BurningRing": {
+    "NAME": "火蛇戒指",
+    "FLAVOR": "蛇形戒指中……源源不断的能量……流动……翻滚……",
+    "DESCRIPTIONS": ["每场战斗开始时，抽 #b{0} 张额外牌。每场战斗结束时，回复 #b{1} 点生命值。"]
+  },
+  "CorruptTheSpire:CorruptedOmamori": {
+    "NAME": "腐化御守",
+    "FLAVOR": "保护你免受一种伤害，但是……",
+    "DESCRIPTIONS": ["移除牌组中的所有 #r诅咒牌 。每移除一张， 获得 #b{0} 张 #y腐化牌 。"]
+  },
+  "CorruptTheSpire:OminousBracelet": {
+    "NAME": "不祥手镯",
+    "FLAVOR": "戴上它吧！我主将赞美你！",
+    "DESCRIPTIONS": ["减少进入房间获得的 #y腐化值 #b{0} 点。腐化事件、腐化宝箱、腐化商店将不再提供 #y最低奖励"]
+  },
+  "CorruptTheSpire:CorruptedToolbox": {
+    "NAME": "腐化魔箱",
+    "FLAVOR": "命运早都标好了价格……",
+    "DESCRIPTIONS": ["每场战斗开始时，从 #b3 张随机腐化牌中选择 #b1 张加入你的手牌。"]
+  },
+  "CorruptTheSpire:ShimmeringFan": {
+    "NAME": "闪光风扇",
+    "FLAVOR": "这个风扇……好独特啊！",
+    "DESCRIPTIONS": ["当在一个回合中打出 #b{0} 张不同颜色的牌，获得 #b{1} 点 #y格挡 。"]
+  },
+  "CorruptTheSpire:BottledPrism": {
+    "NAME": "瓶装棱镜",
+    "FLAVOR": "瓶子里面有彩虹！",
+    "DESCRIPTIONS": [
+      "拾起后，选择一张不同颜色的牌。 NL 每场战斗开始时，将这张牌置入手牌。",
+      "选择一张 {0} 。",
+      "每场战斗开始时，将 {0} 置入手牌。"
+    ]
+  },
+  "CorruptTheSpire:BlackCard": {
+    "NAME": "黑卡",
+    "FLAVOR": "只有真正的精英方可拥有。",
+    "DESCRIPTIONS": ["商店价格降低 #b{0}% 。每当进入一个商店，获得 #b{1} #y腐化 。"]
+  },
+  "CorruptTheSpire:MystifyingTimepiece": {
+    "NAME": "神秘时钟",
+    "FLAVOR": "它保持的时间与您知道的任何系统都不对应。",
+    "DESCRIPTIONS": ["如果在你的回合，未打出任何费用为 #b{0} 的牌。 NL 在下回合开始后，额外抽 #b{1} 张牌。"]
+  },
+  "CorruptTheSpire:OozingHeart": {
+    "NAME": "渗血之心",
+    "FLAVOR": "慢慢渗血，但在危机临近时快速跳动。",
+    "DESCRIPTIONS": ["在每场精英战斗开始时，回复 #b{0} 点生命。每当你攀爬一层，如果你拥有超过 #b{1} 点生命。失去 #b{1} 点生命。"]
+  },
+  "CorruptTheSpire:Gohei": {
+    "NAME": "注连绳",
+    "FLAVOR": "清洁和庇护。",
+    "DESCRIPTIONS": ["每当受到 #b{0} 或更多的未被格挡的伤害，减少受到 #b{1} 点伤害。并向弃牌堆添加一张 #y伤口 。"]
+  },
+  "CorruptTheSpire:HarbingersClaw": {
+    "NAME": "先知之爪",
+    "FLAVOR": "超乎寻常的恐怖指爪。",
+    "DESCRIPTIONS": ["根据 #y腐化值 ，将你的攻击伤害增加至与敌人攻击伤害相同的百分比。"]
+  },
+  "CorruptTheSpire:HarbingersSkull": {
+    "NAME": "先知之颅",
+    "FLAVOR": "超乎寻常的恐怖骷髅。",
+    "DESCRIPTIONS": ["如果本回合未打出任何 #y能力牌 ，在回合结束时，获得 #b{0} 点 #y格挡 ，并在下回合开始时，额外抽 #b{1} 张牌。"]
+  },
+  "CorruptTheSpire:AbyssalOrb": {
+    "NAME": "深渊宝珠",
+    "FLAVOR": "它回头看着你。这……这是活的！",
+    "DESCRIPTIONS": ["回合开始时，向一名随机敌人施加 #b{0} 层 #y蠕动 。每当你给予敌人 #y蠕动 时，额外给予 #b{1} 层 #y蠕动 。"]
+  },
+  "CorruptTheSpire:TranscendentPet": {
+    "NAME": "罪孽宠物",
+    "FLAVOR": "小东西，真别致。",
+    "DESCRIPTIONS": ["在你的第 2 回合开始时。对所有敌人施加 #b{0} #y易伤 和 #b{1} #y蠕动 。"]
+  },
+  "CorruptTheSpire:TranscendentEye": {
+    "NAME": "罪孽之眼",
+    "FLAVOR": "这正注视着你……",
+    "DESCRIPTIONS": ["在你的第 2 回合开始时， #y预见 #b{0} 并抽 #b{1} 张牌。"]
+  },
+  "CorruptTheSpire:HideousStatue": {
+    "NAME": "丑陋雕像",
+    "FLAVOR": "但愿永远别看清它的真实面貌。",
+    "DESCRIPTIONS": ["每 #b{0} 战斗后，奖励中获得腐化药水。"]
+  },
+  "CorruptTheSpire:HeavySword": {
+    "NAME": "重剑",
+    "FLAVOR": "这太重了……很难被称作是一把重剑，就像是一块废铁。",
+    "DESCRIPTIONS": ["在你的第 4 回合开始时，获得 #b{0} 点 #y力量 。"]
+  },
+  "CorruptTheSpire:SlimeShield": {
+    "NAME": "黏液护盾",
+    "FLAVOR": "黏稠……但有效的防御。",
+    "DESCRIPTIONS": ["每场战斗开始时，获得 #b{0} 层 #y人工制品 ， #b{1} 层 #y金属化 ，和 #b{2} #y多层护甲 ， NL 向抽牌堆洗入 #b{3} 张 #y黏液 。"]
+  },
+  "CorruptTheSpire:DoomSight": {
+    "NAME": "末日之眼",
+    "FLAVOR": "未来……迷雾和影子……",
+    "DESCRIPTIONS": ["在你的第 3 回合开始时，抽 #b{0} 张牌，向所有敌人施加 #b{0} 层 #y虚弱 。"]
+  },
+  "CorruptTheSpire:DoomWing": {
+    "NAME": "末日之翼",
+    "FLAVOR": "未来……迷雾和影子……",
+    "DESCRIPTIONS": ["每当你打出一张 #y能力牌 ，获得 #b{0} #y荆棘 。"]
+  },
+  "CorruptTheSpire:GnosticBlessing": {
+    "NAME": "诺斯替祝福",
+    "FLAVOR": "对知识的追求，无情而疯狂。",
+    "DESCRIPTIONS": ["回合开始时，额外抽 #b{0} 张牌。 NL 每场战斗开始时，获得 #b{1} 层 #y金属化 。 NL 未卡牌奖励将减少 {2} 张。"]
+  },
+  "CorruptTheSpire:ChthonicBlessing": {
+    "NAME": "冥界祝福",
+    "FLAVOR": "财富……积累……堆积如山……",
+    "DESCRIPTIONS": ["在每场非首领战后，获得 #b{0} #y金币。 NL 在每 #b{1} 场非首领战后，获得一个遗物。 NL 未卡牌奖励将减少 {2} 张。"]
+  }
+}
