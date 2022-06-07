@@ -27,7 +27,6 @@ public class GoldenVision extends AbstractImageEvent {
     private static final int MAX_HEALTH = 2;
     private static final int A15_MAX_HEALTH = 1;
 
-    private final int maxHealth;
     private final AbstractRelic relic;
     private final AbstractRelic bossRelic;
 
@@ -73,7 +72,6 @@ public class GoldenVision extends AbstractImageEvent {
     public GoldenVision() {
         super(NAME, DESCRIPTIONS[0], IMG);
 
-        this.maxHealth = AbstractDungeon.ascensionLevel >= 15 ? A15_MAX_HEALTH : MAX_HEALTH;
         this.relic = new HandOfMidas();
         this.bossRelic = getBossRelicToLose();
         if (this.bossRelic == null) {
