@@ -2,7 +2,6 @@ package corruptthespire.events;
 
 import corruptthespire.events.chaotic.*;
 import corruptthespire.events.corrupted.*;
-import corruptthespire.relics.chaotic.HandOfMidas;
 
 import java.util.HashMap;
 import java.util.Map;

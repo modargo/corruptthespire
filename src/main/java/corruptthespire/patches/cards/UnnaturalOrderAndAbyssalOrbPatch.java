@@ -13,7 +13,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import corruptthespire.cards.corrupted.powers.UnnaturalOrder;
 import corruptthespire.powers.AbysstouchedPower;
 import corruptthespire.powers.PowerUtil;
 import corruptthespire.powers.UnnaturalOrderPower;
