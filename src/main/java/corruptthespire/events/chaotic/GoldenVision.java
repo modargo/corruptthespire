@@ -21,9 +21,6 @@ public class GoldenVision extends AbstractImageEvent {
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private static final String IMG = CorruptTheSpire.eventImage(ID);
 
-    private static final int MAX_HEALTH = 2;
-    private static final int A15_MAX_HEALTH = 1;
-
     private final AbstractRelic relic;
     private final AbstractRelic bossRelic;
 
