@@ -61,7 +61,7 @@ public class GoldenVision extends AbstractImageEvent {
             "hubris:BlackHole", "hubris:CrackedHourglass", "hubris:GrandSneckoEye", "hubris:HollowSoul", "hubris:RunicObelisk", "hubris:VirtuousBlindfold",
             // Downfall
             // In between: Clasped Locket, Lucky Horseshoe
-            "hermit:BartenderGlass", "hermit:DentedPlate", "bronze:ElectromagneticCoil", "Guardian:ModeShifterPlus", "downfall:Hecktoplasm", "sneckomod:SneckoTalon", "bronze:MakeshiftBattery", "sneckomod:CrystallizedMud", "Gremlin:GremlinKnobUpgrade", "bronze:PlatinumCore", "champ:PowerAmor", "Gremlin:ShortStature", "sneckomod:SuperSneckoSoul", "Slimebound:TarBlob", "expansioncontent:StudyCardRelic", "hexamod:UnbrokenSoul", "champ:ChampionCrownUpgraded", "Guardian:StasisSlotReductionRelic", "hexamod:IceCube",
+            "hermit:BartenderGlass", "hermit:DentedPlate", "bronze:ElectromagneticCoil", "Guardian:ModeShifterPlus", "downfall:Hecktoplasm", "sneckomod:SneckoTalon", "bronze:MakeshiftBattery", "sneckomod:CrystallizedMud", "Gremlin:GremlinKnobUpgrade", "bronze:PlatinumCore", "champ:PowerArmor", "Gremlin:ShortStature", "sneckomod:SuperSneckoSoul", "Slimebound:TarBlob", "expansioncontent:StudyCardRelic", "hexamod:UnbrokenSoul", "champ:ChampionCrownUpgraded", "Guardian:StasisSlotReductionRelic", "hexamod:IceCube",
             // Aspiration
             // In between: all skillbooks
             "aspiration:BursterCore", "aspiration:FutureDiary", "aspiration:Mageblood", "aspiration:MechanicalEye", "aspiration:PoetsPen", "aspiration:PoetsPen_weak", "aspiration:RandomNobGenerator", "aspiration:RunicSpoon", "aspiration:SecretTechniqueScroll", "aspiration:Stellarator"
