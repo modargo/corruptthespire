@@ -37,7 +37,6 @@ public class EventCorruptionDistribution extends AbstractCorruptionDistribution<
 
     @Override
     protected int getTotalWeight() {
-        int TOTAL_WEIGHT = 300;
-        return TOTAL_WEIGHT;
+        return 300;
     }
 }
