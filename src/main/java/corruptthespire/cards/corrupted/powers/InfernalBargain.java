@@ -64,8 +64,6 @@ public class InfernalBargain extends AbstractCorruptedCard {
 
     public static abstract class AbstractInfernalBargainOption extends CustomCard {
         public static final String IMG = InfernalBargain.IMG;
-        private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-        public static final String DESCRIPTION = cardStrings.DESCRIPTION;
         private static final int COST = -2;
 
         protected final InfernalBargainPower power;
