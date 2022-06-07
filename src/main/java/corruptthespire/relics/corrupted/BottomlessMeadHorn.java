@@ -20,9 +20,9 @@ public class BottomlessMeadHorn extends AbstractCorruptedRelic {
     public static final String ID = "CorruptTheSpire:BottomlessMeadHorn";
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));
-    private static final int THRESHOLD_1 = 25;
-    private static final int THRESHOLD_2 = 35;
-    private static final int THRESHOLD_3 = 45;
+    private static final int THRESHOLD_1 = 20;
+    private static final int THRESHOLD_2 = 30;
+    private static final int THRESHOLD_3 = 40;
     private static final int STATS = 1;
     private static final int EXHAUST = 1;
     private static final int DRAW = 1;
