@@ -233,26 +233,26 @@ public class CorruptTheSpire implements
 
     @Override
     public void receiveEditRelics() {
-        addRelic(new BurningRing(), RelicType.SHARED);
-        addRelic(new ChthonicBlessing(), RelicType.SHARED);
-        addRelic(new DeckOfManyFates(), RelicType.SHARED);
-        addRelic(new DoomSight(), RelicType.SHARED);
-        addRelic(new DoomWing(), RelicType.SHARED);
-        addRelic(new GnosticBlessing(), RelicType.SHARED);
-        addRelic(new HandOfMidas(), RelicType.SHARED);
-        addRelic(new HarbingersClaw(), RelicType.SHARED);
-        addRelic(new HarbingersSkull(), RelicType.SHARED);
-        addRelic(new ShimmeringFan(), RelicType.SHARED);
-        addRelic(new TranscendentEye(), RelicType.SHARED);
-        addRelic(new TranscendentPet(), RelicType.SHARED);
-        addRelic(new FragmentOfCorruption(), RelicType.SHARED);
+        addRelic(new BurningRing());
+        addRelic(new ChthonicBlessing());
+        addRelic(new DeckOfManyFates());
+        addRelic(new DoomSight());
+        addRelic(new DoomWing());
+        addRelic(new GnosticBlessing());
+        addRelic(new HandOfMidas());
+        addRelic(new HarbingersClaw());
+        addRelic(new HarbingersSkull());
+        addRelic(new ShimmeringFan());
+        addRelic(new TranscendentEye());
+        addRelic(new TranscendentPet());
+        addRelic(new FragmentOfCorruption());
         for (AbstractRelic r : Cor.getAllCorruptedRelics()) {
-            addRelic(r, RelicType.SHARED);
+            addRelic(r);
         }
     }
 
-    private void addRelic(AbstractRelic relic, RelicType type) {
-        BaseMod.addRelic(relic, type);
+    private void addRelic(AbstractRelic relic) {
+        BaseMod.addRelic(relic, RelicType.SHARED);
         UnlockTracker.markRelicAsSeen(relic.relicId);
     }
 
