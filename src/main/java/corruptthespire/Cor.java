@@ -194,10 +194,7 @@ public class Cor {
     }
 
     private static String returnRandomCorruptedRelicKey() {
-        if (Cor.corruptedRelicPool.isEmpty()) {
-            fillCorruptedRelicPool(true);
-        }
-        if (Cor.corruptedRelicPool.isEmpty()) {
+        if (checkCorruptedRelicPool()) {
             return Circlet.ID;
         }
         String relicKey = Cor.corruptedRelicPool.remove(0);
@@ -208,10 +205,7 @@ public class Cor {
     }
 
     private static String returnEndRandomCorruptedRelicKey() {
-        if (Cor.corruptedRelicPool.isEmpty()) {
-            fillCorruptedRelicPool(true);
-        }
-        if (Cor.corruptedRelicPool.isEmpty()) {
+        if (checkCorruptedRelicPool()) {
             return Circlet.ID;
         }
         String relicKey = Cor.corruptedRelicPool.remove(Cor.corruptedRelicPool.size() - 1);
@@ -219,6 +213,24 @@ public class Cor {
             return returnEndRandomCorruptedRelicKey();
         }
         return relicKey;
+    }
+
+    private static boolean checkCorruptedRelicPool() {
+        if (Cor.corruptedRelicPool.isEmpty()) {
+            fillCorruptedRelicPool(true);
+            if (Cor.corruptedRelicPool.isEmpty()) {
+                logger.info("No corrupted relics left");
+            }
+            else if (!canSpawnCorruptedRelic()) {
+                logger.info("No corrupted relics eligible to spawn");
+                Cor.corruptedRelicPool = new ArrayList<>();
+            }
+        }
+        return Cor.corruptedRelicPool.isEmpty();
+    }
+
+    private static boolean canSpawnCorruptedRelic() {
+        return Cor.corruptedRelicPool.stream().anyMatch(r -> RelicLibrary.getRelic(r).canSpawn());
     }
 
     public static void fillCorruptedRelicPool(boolean checkPlayerRelics) {
