@@ -3,7 +3,7 @@
   "name": "Corrupt the Spire",
   "author_list": ["modargo"],
   "description": "Adds corrupted rooms to the Spire, which have increased rewards and new encounters, at the cost of increasing the corruption of the Spire and making all enemies more dangerous.",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "sts_version": "03-07-2022",
   "mts_version": "3.15.0",
   "dependencies": ["basemod", "stslib"]
