@@ -27,16 +27,18 @@ public class FragmentizeAction extends AbstractGameAction {
                 this.target != null) {
             AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AbstractGameAction.AttackEffect.NONE));
             this.target.damage(this.info);
-            if ((((AbstractMonster)this.target).isDying || this.target.currentHealth <= 0)
-                    && !this.target.halfDead
-                    && !this.target.hasPower(MinionPower.POWER_ID)) {
-                AbstractRelic fragment = AbstractDungeon.player.getRelic(FragmentOfCorruption.ID);
-                if (fragment == null || fragment.counter < Fragmentize.FRAGMENT_LIMIT) {
-                    AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), new FragmentOfCorruption());
+            if (this.target instanceof AbstractMonster) {
+                if ((((AbstractMonster)this.target).isDying || this.target.currentHealth <= 0)
+                        && !this.target.halfDead
+                        && !this.target.hasPower(MinionPower.POWER_ID)) {
+                    AbstractRelic fragment = AbstractDungeon.player.getRelic(FragmentOfCorruption.ID);
+                    if (fragment == null || fragment.counter < Fragmentize.FRAGMENT_LIMIT) {
+                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), new FragmentOfCorruption());
+                    }
                 }
-            }
-            if ((AbstractDungeon.getCurrRoom()).monsters.areMonstersBasicallyDead()) {
-                AbstractDungeon.actionManager.clearPostCombatActions();
+                if ((AbstractDungeon.getCurrRoom()).monsters.areMonstersBasicallyDead()) {
+                    AbstractDungeon.actionManager.clearPostCombatActions();
+                }
             }
         }
         tickDuration();
