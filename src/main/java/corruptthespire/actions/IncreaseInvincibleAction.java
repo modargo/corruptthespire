@@ -9,7 +9,14 @@ import com.megacrit.cardcrawl.powers.InvinciblePower;
 import corruptthespire.Cor;
 
 public class IncreaseInvincibleAction extends AbstractGameAction {
+    private final AbstractMonster monster;
+
     public IncreaseInvincibleAction() {
+        this(null);
+    }
+
+    public IncreaseInvincibleAction(AbstractMonster monster) {
+        this.monster = monster;
         this.startDuration = this.duration = 0.0F;
         this.actionType = ActionType.SPECIAL;
     }
@@ -17,18 +24,28 @@ public class IncreaseInvincibleAction extends AbstractGameAction {
     @Override
     public void update() {
         if (this.duration == this.startDuration) {
-            for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                AbstractPower power = m.getPower(InvinciblePower.POWER_ID);
-                if (power != null) {
-                    int maxAmt = ReflectionHacks.getPrivate(power, InvinciblePower.class, "maxAmt");
-                    int newMaxAmt = maxAmt + (maxAmt * Cor.getCorruptionDamageMultiplierPercent()) / 100;
-                    ReflectionHacks.setPrivate(power, InvinciblePower.class, "maxAmt", newMaxAmt);
-                    power.amount = newMaxAmt;
-                    power.updateDescription();
+            if (this.monster == null) {
+                for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                    increaseInvincible(m);
                 }
+            }
+            else {
+                increaseInvincible(this.monster);
             }
         }
 
         this.tickDuration();
     }
+
+    private void increaseInvincible(AbstractMonster m) {
+        AbstractPower power = m.getPower(InvinciblePower.POWER_ID);
+        if (power != null) {
+            int maxAmt = ReflectionHacks.getPrivate(power, InvinciblePower.class, "maxAmt");
+            int newMaxAmt = maxAmt + (maxAmt * Cor.getCorruptionDamageMultiplierPercent()) / 100;
+            ReflectionHacks.setPrivate(power, InvinciblePower.class, "maxAmt", newMaxAmt);
+            power.amount = newMaxAmt;
+            power.updateDescription();
+        }
+    }
+
 }
