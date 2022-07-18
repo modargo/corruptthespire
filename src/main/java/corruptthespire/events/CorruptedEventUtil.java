@@ -1,8 +1,11 @@
 package corruptthespire.events;
 
+import com.evacipated.cardcrawl.modthespire.Loader;
 import corruptthespire.events.chaotic.*;
 import corruptthespire.events.corrupted.*;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,6 +34,31 @@ public class CorruptedEventUtil {
         corruptedEvents.put(StrangeMarketplace.ID, new CorruptedEventInfo(StrangeMarketplace.class, CorruptedEventType.Corrupted));
         corruptedEvents.put(TheChoice.ID, new CorruptedEventInfo(TheChoice.class, CorruptedEventType.Corrupted));
         corruptedEvents.put(TheDevice.ID, new CorruptedEventInfo(TheDevice.class, CorruptedEventType.Corrupted));
+        return corruptedEvents;
+    }
+
+    public static Map<String, CorruptedEventInfo> getEnabledCorruptedEvents() {
+        if (!Loader.isModLoaded("eventfilter")) {
+            return getAllCorruptedEvents();
+        }
+        Map<String, CorruptedEventInfo> corruptedEvents = new HashMap<>();
+        Method m = null;
+        try {
+            m = Class.forName("eventfilter.EventFilter").getMethod("enabled", String.class);
+        } catch (NoSuchMethodException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        for (Map.Entry<String, CorruptedEventInfo> kvp : getAllCorruptedEvents().entrySet()) {
+            boolean enabled = true;
+            try {
+                enabled = m == null || (boolean)m.invoke(null, kvp.getValue().cls.getName());
+            } catch (IllegalAccessException | InvocationTargetException e) {
+                e.printStackTrace();
+            }
+            if (enabled) {
+                corruptedEvents.put(kvp.getKey(), kvp.getValue());
+            }
+        }
         return corruptedEvents;
     }
 }
