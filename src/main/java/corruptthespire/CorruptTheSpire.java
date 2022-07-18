@@ -154,7 +154,8 @@ public class CorruptTheSpire implements
 
     private static void addEvents() {
         // These events are only encountered through our own special logic, but we register them all here for ease of
-        // debugging (thus the conditions that make them never show up)
+        // debugging (thus the conditions that make them never show up) and to have the corrupted events show up for
+        // Event Filter (using EventFilterSkipSpecialEventsPatch to prevent it from seeing Harbinger/Devourer/Doom)
         addEvent(HarbingerEvent.ID, HarbingerEvent.class);
         addEvent(DevourerEvent.ID, DevourerEvent.class);
         addEvent(DoomEvent.ID, DoomEvent.class);
