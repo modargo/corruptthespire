@@ -111,7 +111,11 @@
   "CorruptTheSpire:AbyssalOrb": {
     "NAME": "Abyssal Orb",
     "FLAVOR": "It gazes back at you.",
-    "DESCRIPTIONS": ["At the start of your turn, apply #b{0} #yAbysstouched to a random enemy. Whenever you apply #yAbysstouched, apply #b{1} additional #yAbysstouched."]
+    "DESCRIPTIONS": [
+      "At the start of your turn, apply #b{0} #yAbysstouched to a random enemy. Whenever you apply #yAbysstouched, apply #b{1} additional #yAbysstouched.",
+      "Abysstouched applied: #b{0}",
+      " NL Per turn: #b{0} NL Per combat: #b{1}"
+    ]
   },
   "CorruptTheSpire:TranscendentPet": {
     "NAME": "Transcendent Pet",

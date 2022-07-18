@@ -39,6 +39,7 @@ public class UnnaturalOrderAndAbyssalOrbPatch {
 
             AbstractRelic abyssalOrb = AbstractDungeon.player.getRelic(AbyssalOrb.ID);
             if (abyssalOrb != null && source != null && source.isPlayer && target != source && isAbysstouched(powerToApply[0].ID)) {
+                AbyssalOrb.incrementAbysstouchedStat(AbyssalOrb.ABYSSTOUCHED_INCREASE);
                 abyssalOrb.flash();
                 powerToApply[0].amount += AbyssalOrb.ABYSSTOUCHED_INCREASE;
                 __instance.amount = powerToApply[0].amount;
