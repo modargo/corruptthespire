@@ -175,6 +175,10 @@
   "CorruptTheSpire:BeanSprouts": {
     "NAME": "Bean Sprouts",
     "FLAVOR": "They go well with everything.",
-    "DESCRIPTIONS": ["Whenever you gain #yFrail or #yVulnerable, or lose #yDexterity due to an enemy, gain #b{0} Strength and #b{1} #yBlock. NL You gain this even if #yTurnip prevents the #yFrail."]
+    "DESCRIPTIONS": [
+      "Whenever you gain #yFrail or #yVulnerable, or lose #yDexterity due to an enemy, gain #b{0} Strength and #b{1} #yBlock. NL You gain this even if #yTurnip prevents the #yFrail.",
+      "Strength gained: #b{0} NL Block gained: #b{1}",
+      " NL Strength per turn: #b{0} NL Block per turn: #b{1} NL Strength per combat: #b{2} NL Block per combat: #b{3}"
+    ]
   }
 }
