@@ -32,7 +32,10 @@
   "CorruptTheSpire:CorruptedEgg": {
     "NAME": "Corrupted Egg",
     "FLAVOR": "Whatever life there once was here has been overtaken by corruption.",
-    "DESCRIPTIONS": ["Cards in rewards have #b+{0}% chance to be #yupgraded. Gain #b{1} #yCorruption every time you gain an #yupgraded card."]
+    "DESCRIPTIONS": [
+      "Cards in rewards have #b+{0}% chance to be #yupgraded. Gain #b{1} #yCorruption every time you gain an #yupgraded card.",
+      "Corruption gained: #b{0}"
+    ]
   },
   "CorruptTheSpire:MaskOfNightmares": {
     "NAME": "Mask of Nightmares",
