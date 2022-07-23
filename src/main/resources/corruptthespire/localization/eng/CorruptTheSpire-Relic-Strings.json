@@ -92,7 +92,11 @@
   "CorruptTheSpire:MystifyingTimepiece": {
     "NAME": "Mystifying Timepiece",
     "FLAVOR": "The time it keeps doesn't correspond to any system you know.",
-    "DESCRIPTIONS": ["If you do not play any cards that cost #b{0} during your turn, draw #b{1} additional card at the start of your next turn."]
+    "DESCRIPTIONS": [
+      "If you do not play any cards that cost #b{0} during your turn, draw #b{1} additional card at the start of your next turn.",
+      "Cards drawn: #b{0}",
+      " NL Per turn: #b{0} NL Per combat: #b{1}"
+    ]
   },
   "CorruptTheSpire:OozingHeart": {
     "NAME": "Oozing Heart",
