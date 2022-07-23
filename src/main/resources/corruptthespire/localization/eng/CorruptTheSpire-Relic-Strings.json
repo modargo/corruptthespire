@@ -138,7 +138,11 @@
   "CorruptTheSpire:HeavySword": {
     "NAME": "Heavy Sword",
     "FLAVOR": "It was too big to be called a sword. Massive, thick, heavy, and far too rough. Indeed, it was a heap of raw iron.",
-    "DESCRIPTIONS": ["At the start of your 4th turn, gain #b{0} #yStrength."]
+    "DESCRIPTIONS": [
+      "At the start of your 4th turn, gain #b{0} #yStrength.",
+      "Strength gained: #b{0}",
+      " NL Per combat: #b{0}"
+    ]
   },
   "CorruptTheSpire:SlimeShield": {
     "NAME": "Slime Shield",
