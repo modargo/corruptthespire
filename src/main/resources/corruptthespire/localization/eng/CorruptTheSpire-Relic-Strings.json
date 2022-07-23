@@ -133,7 +133,10 @@
   "CorruptTheSpire:HideousStatue": {
     "NAME": "Hideous Statue",
     "FLAVOR": "A large stone statue of a creature you hope to never see.",
-    "DESCRIPTIONS": ["After every #b{0} combats, receive a corrupted potion reward."]
+    "DESCRIPTIONS": [
+      "After every #b{0} combats, receive a corrupted potion reward.",
+      "Potions gained: #b{0}"
+    ]
   },
   "CorruptTheSpire:HeavySword": {
     "NAME": "Heavy Sword",
