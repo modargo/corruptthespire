@@ -40,7 +40,10 @@
   "CorruptTheSpire:MaskOfNightmares": {
     "NAME": "Mask of Nightmares",
     "FLAVOR": "Every glimpse is disturbing, in new way each time.",
-    "DESCRIPTIONS": ["Whenever you enter a corrupted room, raise your Max HP by #b{0}."]
+    "DESCRIPTIONS": [
+      "Whenever you enter a corrupted room, raise your Max HP by #b{0}.",
+      "Max HP gained: #b{0}"
+    ]
   },
   "CorruptTheSpire:DeckOfManyFates": {
     "NAME": "Deck of Many Fates",
