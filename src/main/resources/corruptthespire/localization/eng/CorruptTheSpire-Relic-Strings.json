@@ -27,7 +27,10 @@
   "CorruptTheSpire:ObsidianShovel": {
     "NAME": "Obsidian Shovel",
     "FLAVOR": "Made of a special material that absorbs corruption.",
-    "DESCRIPTIONS": ["You can now gain corrupted relics at corrupted Rest Sites."]
+    "DESCRIPTIONS": [
+      "You can now gain corrupted relics at corrupted Rest Sites.",
+      "Relics gained: #b{0}"
+    ]
   },
   "CorruptTheSpire:CorruptedEgg": {
     "NAME": "Corrupted Egg",

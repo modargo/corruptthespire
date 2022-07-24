@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import corruptthespire.relics.corrupted.ObsidianShovel;
 
 public class CorruptedCampfireGainRelicEffect extends AbstractGameEffect {
     private static final float DUR = 2.0F;
@@ -40,6 +41,7 @@ public class CorruptedCampfireGainRelicEffect extends AbstractGameEffect {
         this.duration -= Gdx.graphics.getDeltaTime();
         this.updateBlackScreenColor();
         if (this.duration < 1.0F && !this.hasDug) {
+            ObsidianShovel.incrementRelicsStat();
             this.hasDug = true;
             CardCrawlGame.sound.play("SHOVEL");
             AbstractDungeon.getCurrRoom().rewards.clear();
