@@ -52,7 +52,7 @@ public class FlameManifest extends CustomMonster
     public FlameManifest(final float x, final float y, Version version) {
         super(FlameManifest.NAME, ID, HP_MAX[0], -5.0F, 0, 155.0f, 180.0f, IMG, x, y);
         this.version = version;
-        this.type = EnemyType.ELITE;
+        this.type = EnemyType.NORMAL;
         if (AbstractDungeon.ascensionLevel >= 7) {
             this.setHp(this.v(A7_HP_MIN), this.v(A7_HP_MAX));
         } else {

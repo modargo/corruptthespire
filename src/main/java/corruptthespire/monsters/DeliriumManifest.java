@@ -57,7 +57,7 @@ public class DeliriumManifest extends CustomMonster
     public DeliriumManifest(final float x, final float y, Version version) {
         super(DeliriumManifest.NAME, ID, HP_MAX[0], -5.0F, 0, 170.0f, 145.0f, IMG, x, y);
         this.version = version;
-        this.type = EnemyType.ELITE;
+        this.type = EnemyType.NORMAL;
         if (AbstractDungeon.ascensionLevel >= 7) {
             this.setHp(this.v(A7_HP_MIN), this.v(A7_HP_MAX));
         } else {
