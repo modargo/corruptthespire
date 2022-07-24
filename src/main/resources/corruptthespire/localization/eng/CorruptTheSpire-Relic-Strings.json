@@ -107,7 +107,10 @@
   "CorruptTheSpire:OozingHeart": {
     "NAME": "Oozing Heart",
     "FLAVOR": "Slowly leaks, but beats rapidly when danger is near.",
-    "DESCRIPTIONS": ["At the start of elite combats, heal #b{0} HP. Whenever you climb a floor, if you are above #b{1} HP, lose #b{1} HP."]
+    "DESCRIPTIONS": [
+      "At the start of elite combats, heal #b{0} HP. Whenever you climb a floor, if you are above #b{1} HP, lose #b{1} HP.",
+      "HP healed: #b{0} NL Damage taken: #b{1}"
+    ]
   },
   "CorruptTheSpire:Gohei": {
     "NAME": "Gohei",
