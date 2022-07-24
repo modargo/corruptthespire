@@ -180,7 +180,11 @@
   "CorruptTheSpire:DoomWing": {
     "NAME": "Doom Wing",
     "FLAVOR": "There is a future in which I can see only mist and a single shadow.",
-    "DESCRIPTIONS": ["Whenever you play a #yPower card, gain #b{0} #yThorns."]
+    "DESCRIPTIONS": [
+      "Whenever you play a #yPower card, gain #b{0} #yThorns.",
+      "Thorns gained: #b{0}",
+      " NL Per turn: #b{0} NL Per combat: #b{1}"
+    ]
   },
   "CorruptTheSpire:GnosticBlessing": {
     "NAME": "Gnostic Blessing",
