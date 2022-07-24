@@ -97,7 +97,10 @@
   "CorruptTheSpire:BlackCard": {
     "NAME": "Black Card",
     "FLAVOR": "For the truly elite, by invitation only.",
-    "DESCRIPTIONS": ["Shop prices are reduced by #b{0}%. Whenever you enter a shop room, gain #b{1} #yCorruption."]
+    "DESCRIPTIONS": [
+      "Shop prices are reduced by #b{0}%. Whenever you enter a shop room, gain #b{1} #yCorruption.",
+      "Corruption gained: #b{0}"
+    ]
   },
   "CorruptTheSpire:MystifyingTimepiece": {
     "NAME": "Mystifying Timepiece",

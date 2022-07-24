@@ -28,6 +28,7 @@ public class BlackCardPatch {
         @SpirePrefixPatch
         public static void addCorruption(ShopRoom __instance) {
             if (AbstractDungeon.player.hasRelic(BlackCard.ID)) {
+                BlackCard.incrementCorruptionStat();
                 Cor.addCorruption(BlackCard.CORRUPTION);
             }
         }
