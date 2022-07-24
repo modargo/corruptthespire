@@ -79,7 +79,11 @@
   "CorruptTheSpire:ShimmeringFan": {
     "NAME": "Shimmering Fan",
     "FLAVOR": "The fan responds to a mix of energies in air around it by defending its bearer.",
-    "DESCRIPTIONS": ["When you play cards of #b{0} different colors in a turn, gain #b{1} #yBlock."]
+    "DESCRIPTIONS": [
+      "When you play cards of #b{0} different colors in a turn, gain #b{1} #yBlock.",
+      "Block gained: #b{0}",
+      " NL Per turn: #b{0} NL Per combat: #b{1}"
+    ]
   },
   "CorruptTheSpire:BottledPrism": {
     "NAME": "Bottled Prism",
