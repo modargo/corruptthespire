@@ -17,18 +17,20 @@ public class ElementalBarrier extends AbstractCorruptedCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 1;
     private static final int BLOCK = 1;
-    private static final int UPGRADE_BLOCK = 1;
 
     public ElementalBarrier() {
         super(ID, NAME, IMG, COST, DESCRIPTION, CardType.POWER, CardTarget.SELF);
         this.magicNumber = this.baseMagicNumber = BLOCK;
+        this.isEthereal = true;
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
-            this.upgradeMagicNumber(UPGRADE_BLOCK);
+            this.isEthereal = false;
             this.upgradeName();
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 
