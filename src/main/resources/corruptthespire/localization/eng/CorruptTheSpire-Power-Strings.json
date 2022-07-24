@@ -211,5 +211,9 @@
   "CorruptTheSpire:ElementalBarrier": {
     "NAME": "Elemental Barrier",
     "DESCRIPTIONS": ["Whenever you play an #yElemental card, gain #b{0} #yBlock for each #yElement it has."]
+  },
+  "CorruptTheSpire:BagOfTricksAfterImage": {
+    "NAME": "After Image",
+    "DESCRIPTIONS": ["Whenever you play a card, gain #b{0} #yBlock."]
   }
 }
