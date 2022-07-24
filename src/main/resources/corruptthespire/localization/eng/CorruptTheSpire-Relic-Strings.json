@@ -205,7 +205,10 @@
   "CorruptTheSpire:HandOfMidas": {
     "NAME": "Hand of Midas",
     "FLAVOR": "Makes it hard to eat and drink.",
-    "DESCRIPTIONS": ["Gain [E] at the start of your turn. Elites drop #b{0} #yGold instead of a relic."]
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. Elites drop #b{0} #yGold instead of a relic.",
+      "Relics turned to gold: #b{0}"
+    ]
   },
   "CorruptTheSpire:BottomlessMeadHorn": {
     "NAME": "Bottomless Mead Horn",
