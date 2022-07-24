@@ -129,7 +129,11 @@
   "CorruptTheSpire:HarbingersSkull": {
     "NAME": "Harbinger's Skull",
     "FLAVOR": "The skull of an otherworldly horror.",
-    "DESCRIPTIONS": ["If you do not play any #yPowers during your turn, gain #b{0} #yBlock at the end of your turn and draw #b{1} additional card at the start of your next turn."]
+    "DESCRIPTIONS": [
+      "If you do not play any #yPowers during your turn, gain #b{0} #yBlock at the end of your turn and draw #b{1} additional card at the start of your next turn.",
+      "Block gained: #b{0} NL Cards drawn: #b{1}",
+      " NL Block per turn: #b{0} NL Draw per turn: #b{1} NL Block per combat: #b{2} NL Draw per combat: #b{3}"
+    ]
   },
   "CorruptTheSpire:AbyssalOrb": {
     "NAME": "Abyssal Orb",
