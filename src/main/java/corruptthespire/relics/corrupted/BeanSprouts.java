@@ -25,7 +25,7 @@ public class BeanSprouts extends AbstractCorruptedRelic {
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.relicImage(ID));
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));
     public static final int STRENGTH = 1;
-    public static final int BLOCK = 3;
+    public static final int BLOCK = 5;
 
     private static final Map<String, Integer> stats = new HashMap<>();
     private static final String STRENGTH_STAT = "strength";
