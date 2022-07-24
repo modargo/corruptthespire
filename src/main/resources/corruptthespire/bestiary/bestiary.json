@@ -2220,6 +2220,184 @@
 			]
 		},
 		{
+			"name": "Strife Manifest",
+			"id": "CorruptTheSpire:StrifeManifest",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Starts with #wAnimosity, then #wStruggle, then #wStrife, then cycles #wAnimosity -> #wStruggle.",
+					"hp": "(10 / 14 / 19 HP)",
+					"notes": "Innate #uThorns 1 / 2 / 3. NL NL HP and move effects vary by act (act 1 / act 2 / act 3).",
+					"moves": [
+						{
+							"name": "Animosity",
+							"effects": [
+								{
+									"name": "2 / 3 / 4",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Party Strength 1 / 1 / 2",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Struggle",
+							"effects": [
+								{
+									"name": "3 / 6 / 9",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Strife",
+							"effects": [
+								{
+									"name": "Vulnerable 1 / 1 / 2",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Party Weak 1 / 1 / 2",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 2,
+					"desc": "Starts with #wAnimosity, then #wStruggle, then #wStrife, then cycles #wAnimosity -> #wStruggle.",
+					"hp": "(10 / 14 / 19 HP)",
+					"notes": "Innate #uThorns 1 / 2 / 3. NL NL HP and move effects vary by act (act 1 / act 2 / act 3).",
+					"moves": [
+						{
+							"name": "Animosity",
+							"effects": [
+								{
+									"name": "3 / 4 / 5",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Party Strength 1 / 1 / 2",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Struggle",
+							"effects": [
+								{
+									"name": "4 / 7 / 10",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Strife",
+							"effects": [
+								{
+									"name": "Vulnerable 1 / 1 / 2",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Party Weak 1 / 1 / 2",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 7,
+					"desc": "Starts with #wAnimosity, then #wStruggle, then #wStrife, then cycles #wAnimosity -> #wStruggle.",
+					"hp": "(11 / 15 / 21 HP)",
+					"notes": "Innate #uThorns 1 / 2 / 3. NL NL HP and move effects vary by act (act 1 / act 2 / act 3).",
+					"moves": [
+						{
+							"name": "Animosity",
+							"effects": [
+								{
+									"name": "3 / 4 / 5",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Party Strength 1 / 1 / 2",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Struggle",
+							"effects": [
+								{
+									"name": "4 / 7 / 10",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Strife",
+							"effects": [
+								{
+									"name": "Vulnerable 1 / 1 / 2",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Party Weak 1 / 1 / 2",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 17,
+					"desc": "Starts with #wAnimosity, then #wStruggle, then #wStrife, then cycles #wAnimosity -> #wStruggle.",
+					"hp": "(11 / 15 / 21 HP)",
+					"notes": "Innate #uThorns 2 / 3 / 4. NL NL HP and move effects vary by act (act 1 / act 2 / act 3).",
+					"moves": [
+						{
+							"name": "Animosity",
+							"effects": [
+								{
+									"name": "3 / 4 / 5",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Party Strength 1 / 1 / 2",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Struggle",
+							"effects": [
+								{
+									"name": "4 / 7 / 10",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Strife",
+							"effects": [
+								{
+									"name": "Vulnerable 2 / 2 / 3",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Party Weak 2 / 2 / 3",
+									"color": "DEBUFF"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "Delirium Manifest",
 			"id": "CorruptTheSpire:DeliriumManifest",
 			"ai": [

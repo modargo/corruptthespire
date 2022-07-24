@@ -215,5 +215,13 @@
   "CorruptTheSpire:BagOfTricksAfterImage": {
     "NAME": "After Image",
     "DESCRIPTIONS": ["Whenever you play a card, gain #b{0} #yBlock."]
+  },
+  "CorruptTheSpire:DelayedVulnerable": {
+    "NAME": "Delayed Vulnerable",
+    "DESCRIPTIONS": ["Applies #yVulnerable at the end of the round."]
+  },
+  "CorruptTheSpire:DelayedWeak": {
+    "NAME": "Delayed Weak",
+    "DESCRIPTIONS": ["Applies #yWeak at the end of the round."]
   }
 }

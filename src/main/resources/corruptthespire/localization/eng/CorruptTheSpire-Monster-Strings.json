@@ -126,5 +126,13 @@
       "Decrepify"
     ],
     "NAME": "Delirium Manifest"
+  },
+  "CorruptTheSpire:StrifeManifest": {
+    "MOVES": [
+      "Animosity",
+      "Struggle",
+      "Strife"
+    ],
+    "NAME": "Strife Manifest"
   }
 }

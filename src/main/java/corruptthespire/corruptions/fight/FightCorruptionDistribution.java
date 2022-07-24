@@ -103,8 +103,7 @@ public class FightCorruptionDistribution {
     private static boolean isMinionCorruption(FightCorruptionType f) {
         return f == FightCorruptionType.CorruptionManifestMinion
             || f == FightCorruptionType.FlameManifestMinion
-            || f == FightCorruptionType.SlimeMinion
-            || f == FightCorruptionType.GremlinMinion
+            || f == FightCorruptionType.StrifeManifestMinion
             || f == FightCorruptionType.DeliriumManifestMinion
             || f == FightCorruptionType.DevourerMinion
             || f == FightCorruptionType.SnakeDaggerMinion

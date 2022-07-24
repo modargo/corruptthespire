@@ -147,6 +147,7 @@ public class CorruptTheSpire implements
                 }));
         BaseMod.addMonster(CorruptionManifest.ID, (BaseMod.GetMonster) CorruptionManifest::new);
         BaseMod.addMonster(FlameManifest.ID, (BaseMod.GetMonster) FlameManifest::new);
+        BaseMod.addMonster(StrifeManifest.ID, (BaseMod.GetMonster) StrifeManifest::new);
         BaseMod.addMonster(DeliriumManifest.ID, (BaseMod.GetMonster) DeliriumManifest::new);
         BaseMod.addMonster(Harbinger.ID, (BaseMod.GetMonster) Harbinger::new);
         BaseMod.addMonster(Doom.ID, () -> new Doom(0.0F, 150.0F));

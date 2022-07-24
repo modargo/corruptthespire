@@ -6,8 +6,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.SnakeDagger;
 import com.megacrit.cardcrawl.monsters.exordium.Cultist;
-import com.megacrit.cardcrawl.monsters.exordium.GremlinThief;
-import com.megacrit.cardcrawl.monsters.exordium.SpikeSlime_S;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -189,10 +187,8 @@ public class FightCorruption {
                 return new CorruptionManifest(x, y, getCorruptionManifestVersion());
             case FlameManifestMinion:
                 return new FlameManifest(x, y, getFlameManifestVersion());
-            case SlimeMinion:
-                return new SpikeSlime_S(x, y, 0);
-            case GremlinMinion:
-                return new GremlinThief(x, y);
+            case StrifeManifestMinion:
+                return new StrifeManifest(x, y, getStrifeManifestVersion());
             case DeliriumManifestMinion:
                 return new DeliriumManifest(x, y, getDeliriumManifestVersion());
             case SnakeDaggerMinion:
@@ -217,6 +213,13 @@ public class FightCorruption {
         return actNum <= 1 ? FlameManifest.Version.Act1
                 : actNum == 2 ? FlameManifest.Version.Act2
                 : FlameManifest.Version.Act3;
+    }
+
+    private static StrifeManifest.Version getStrifeManifestVersion() {
+        int actNum = Cor.getActNum();
+        return actNum <= 1 ? StrifeManifest.Version.Act1
+                : actNum == 2 ? StrifeManifest.Version.Act2
+                : StrifeManifest.Version.Act3;
     }
 
     private static DeliriumManifest.Version getDeliriumManifestVersion() {
