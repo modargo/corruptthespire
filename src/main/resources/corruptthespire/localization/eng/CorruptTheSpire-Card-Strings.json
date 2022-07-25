@@ -211,5 +211,9 @@
     "NAME": "Elemental Barrier",
     "DESCRIPTION": "Ethereal. NL Whenever you play an shaman:Elemental card, gain !M! Block for each shaman:Element it has.",
     "UPGRADE_DESCRIPTION": "NL Whenever you play an shaman:Elemental card, gain !M! Block for each shaman:Element it has."
+  },
+  "CorruptTheSpire:DiabolicForce": {
+    "NAME": "Diabolic Force",
+    "DESCRIPTION": "channeler:Force applies !M!% of NL its amount as corruptthespire:Abysstouched."
   }
 }

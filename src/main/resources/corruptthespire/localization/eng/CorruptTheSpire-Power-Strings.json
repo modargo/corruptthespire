@@ -223,5 +223,9 @@
   "CorruptTheSpire:DelayedWeak": {
     "NAME": "Delayed Weak",
     "DESCRIPTIONS": ["Applies #yWeak at the end of the round."]
+  },
+  "CorruptTheSpire:DiabolicForce": {
+    "NAME": "Diabolic Force",
+    "DESCRIPTIONS": ["#yForce applies #b{0}% of its amount as #yAbysstouched."]
   }
 }

@@ -84,6 +84,11 @@ public class CorruptedCardUtil {
                 corruptedCardInfos.add(new CorruptedCardInfo(new ElementalBarrier(), AbstractCard.CardRarity.COMMON));
             }
         }
+        if (Loader.isModLoaded("Channeler")) {
+            if (ignoreClass || AbstractDungeon.player.hasRelic(PrismaticShard.ID) || AbstractDungeon.player.getCardColor().name().equals("CHANNELER_COLOR") || ModHelper.isModEnabled(Diverse.ID)) {
+                corruptedCardInfos.add(new CorruptedCardInfo(new DiabolicForce(), AbstractCard.CardRarity.COMMON));
+            }
+        }
 
         return corruptedCardInfos.stream()
             .collect(Collectors.toMap(cci -> cci.card.cardID, cci -> cci));
