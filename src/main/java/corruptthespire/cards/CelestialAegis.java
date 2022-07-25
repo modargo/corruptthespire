@@ -29,6 +29,7 @@ public class CelestialAegis extends CustomCard {
         super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, CARDS_IN_DECK_AND_DISCARD), CardType.POWER, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF);
         this.baseMagicNumber = CORRUPTION;
         this.magicNumber = this.baseMagicNumber;
+        this.tags.add(CardTags.HEALING);
         this.cardsToPreview = new Boon();
     }
 
