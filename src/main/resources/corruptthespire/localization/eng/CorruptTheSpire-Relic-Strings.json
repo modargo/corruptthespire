@@ -190,7 +190,7 @@
   "CorruptTheSpire:DoomSight": {
     "NAME": "Doom Sight",
     "FLAVOR": "There is a future in which I can see only mist and a single shadow.",
-    "DESCRIPTIONS": ["At the start of your 3rd turn, draw #b{0} card and apply #b{0} #yWeak to ALL enemies."]
+    "DESCRIPTIONS": ["At the start of your 3rd turn, draw #b{0} card and apply #b{1} #yWeak to ALL enemies."]
   },
   "CorruptTheSpire:DoomWing": {
     "NAME": "Doom Wing",

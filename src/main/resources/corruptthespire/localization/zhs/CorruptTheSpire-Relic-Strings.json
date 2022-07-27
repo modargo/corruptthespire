@@ -141,7 +141,7 @@
   "CorruptTheSpire:DoomSight": {
     "NAME": "末日之眼",
     "FLAVOR": "未来……迷雾和影子……",
-    "DESCRIPTIONS": ["在你的第 3 回合开始时，抽 #b{0} 张牌，向所有敌人施加 #b{0} 层 #y虚弱 。"]
+    "DESCRIPTIONS": ["在你的第 3 回合开始时，抽 #b{0} 张牌，向所有敌人施加 #b{1} 层 #y虚弱 。"]
   },
   "CorruptTheSpire:DoomWing": {
     "NAME": "末日之翼",
