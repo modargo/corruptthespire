@@ -44,10 +44,8 @@ public class GoldenVision extends AbstractImageEvent {
             "animator:VividPicture", "animator:CrumblingOrb", "animator:CursedBlade",
             // Replay
             // In between: Honey Jar, Ring of Chaos
-            //  Hamster Wheel, Ooze Armor
             "Abe's Treasure", "Replay:Bronze Core", "ChewingGum", "ReplayTheSpireMod:DimensionalGlitch", "Electric Blood", "ReplayTheSpireMod:Onyx Gauntlets", "Ooze Armor", "Replay:Drink Me", "Snecko Heart", "Snecko Scales", "Painkiller Herb", "Replay:Wanted Poster",
             // Conspire
-            // Royal Goblet, Runic Octahedron, Severed Torchhead, Slow Cooker, Special Sausage
             "conspire:RoyalGoblet", "conspire:RunicOctahedron", "conspire:SeveredTorchhead", "conspire:SlowCooker", "conspire:SpecialSausage",
             // Hubris
             // In between: Scarier Mask, Stopwatch
