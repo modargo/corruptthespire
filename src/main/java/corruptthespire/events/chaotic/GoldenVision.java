@@ -39,6 +39,9 @@ public class GoldenVision extends AbstractImageEvent {
             // Shaman
             // Too good: Twig of the World Tree
             "Shaman:EternalTotem", "Shaman:ShiningOrb",
+            // Channeler
+            // Too good: Kitsune Mask
+            "Channeler:CeremonialKhopesh", "Channeler:HollowVessel",
             // Animator
             // In between: Ancient Chalice
             "animator:VividPicture", "animator:CrumblingOrb", "animator:CursedBlade",
