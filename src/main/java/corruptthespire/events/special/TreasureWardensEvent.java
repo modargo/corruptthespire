@@ -54,10 +54,6 @@ public class TreasureWardensEvent extends MaskedBandits {
 
     @Override
     protected void buttonEffect(int buttonPressed) {
-        //This is here so that it has to happen, but only happens after the room has fully loaded
-        //This is because if we set this when entering the room, it will be immediately saved, and saving and reloading
-        //won't work correctly, because it will reroll the corruption (and filter this out as an option)
-        Cor.flags.seenTreasureWardens = true;
         switch(this.screen) {
             case 0:
                 switch(buttonPressed) {
