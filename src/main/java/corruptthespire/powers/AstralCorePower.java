@@ -3,8 +3,10 @@ package corruptthespire.powers;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.monsters.Harbinger;
@@ -45,6 +47,13 @@ public class AstralCorePower extends AbstractPower {
 
     public void trigger() {
         this.flash();
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.amount)));
+        if (AbstractDungeon.actionManager.turnHasEnded) {
+            AbstractPower gainStrengthPower = new GainStrengthPower(this.owner, this.amount);
+            gainStrengthPower.type = AbstractPower.PowerType.BUFF;
+            this.addToBot(new ApplyPowerAction(this.owner, this.owner, gainStrengthPower));
+        }
+        else {
+            this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.amount), this.amount));
+        }
     }
 }
