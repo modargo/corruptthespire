@@ -84,7 +84,7 @@
   },
   "CorruptTheSpire:UnnaturalOrder": {
     "NAME": "Unnatural Order",
-    "DESCRIPTIONS": ["#yPoison gains all the benefits of #yAbysstouched. NL Convert all #yAbysstouched to #yPoison. NL When you apply #yPoison or #yAbysstouched, apply #b{0} more.", "(Has the benefits of #yAbysstouched due to #yUnnatural #yOrder.)"]
+    "DESCRIPTIONS": ["#yPoison gains all the benefits of #yAbysstouched. NL Convert all #yAbysstouched to #yPoison. NL When you apply #yPoison or #yAbysstouched, apply #b{0} more.", "Has the benefits of #yAbysstouched due to #yUnnatural #yOrder."]
   },
   "CorruptTheSpire:DelayedNoDraw": {
     "NAME": "Delayed No Draw",
