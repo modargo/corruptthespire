@@ -42,7 +42,9 @@ public class DragonsHeartPower extends AbstractPower {
         for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (m != this.owner && !m.isDying && !m.halfDead && !m.isDeadOrEscaped()) {
                 if (AbstractDungeon.actionManager.turnHasEnded) {
-                    this.addToBot(new ApplyPowerAction(m, m, new GainStrengthPower(m, this.amount), this.amount));
+                    AbstractPower gainStrengthPower = new GainStrengthPower(m, this.amount);
+                    gainStrengthPower.type = AbstractPower.PowerType.BUFF;
+                    this.addToBot(new ApplyPowerAction(m, m, gainStrengthPower));
                 }
                 else {
                     this.addToBot(new ApplyPowerAction(m, m, new StrengthPower(m, this.amount), this.amount));
