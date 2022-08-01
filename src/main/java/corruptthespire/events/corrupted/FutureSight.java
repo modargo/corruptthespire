@@ -23,8 +23,8 @@ public class FutureSight extends AbstractImageEvent {
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private static final String IMG = CorruptTheSpire.eventImage(ID);
 
-    private static final int CORRUPTION = 12;
-    private static final int A15_CORRUPTION = 15;
+    private static final int CORRUPTION = 10;
+    private static final int A15_CORRUPTION = 12;
 
     private final AbstractCard curse;
     private final int corruption;
