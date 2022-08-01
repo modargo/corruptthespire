@@ -214,7 +214,7 @@
     "FLAVOR": "The riches of the land, accumulated and hoarded.",
     "DESCRIPTIONS": [
       "Gain #b{0} #yGold after every non-Boss combat. NL Gain a relic after every #b{1} non-Boss combats. NL Future card rewards have #b{2} less card to choose from.",
-      "Gold gained: #b{0} NL Relics gained: #b{1} NL Card options lost: #b{2}"
+      "Gold earned: #b{0} NL Relics gained: #b{1} NL Card options lost: #b{2}"
     ]
   },
   "CorruptTheSpire:HandOfMidas": {
