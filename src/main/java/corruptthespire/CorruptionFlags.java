@@ -7,6 +7,7 @@ public class CorruptionFlags {
     public boolean seenVault = false;
     public boolean seenHarbinger = false;
     public boolean brokeDevice = false;
+    public boolean seenServiceShop = false;
 
     public boolean foughtArchfiend = false;
     public boolean foughtMaster = false;

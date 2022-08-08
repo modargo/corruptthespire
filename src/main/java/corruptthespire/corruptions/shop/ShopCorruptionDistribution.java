@@ -1,6 +1,7 @@
 package corruptthespire.corruptions.shop;
 
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import corruptthespire.Cor;
 import corruptthespire.corruptions.AbstractCorruptionDistribution;
 import corruptthespire.corruptions.CorruptionDistributionInfo;
 import corruptthespire.relics.corrupted.OminousBracelet;
@@ -27,6 +28,9 @@ public class ShopCorruptionDistribution extends AbstractCorruptionDistribution<S
     protected List<CorruptionDistributionInfo<ShopCorruptionType>> adjustDistribution(List<CorruptionDistributionInfo<ShopCorruptionType>> distribution) {
         if (AbstractDungeon.player.hasRelic(OminousBracelet.ID)) {
             distribution.removeIf(di -> di.corruption == ShopCorruptionType.CorruptedCardAndFragment);
+        }
+        if (Cor.flags.seenServiceShop) {
+            distribution.removeIf(di -> di.corruption == ShopCorruptionType.Service);
         }
         return distribution;
     }
