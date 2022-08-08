@@ -25,7 +25,7 @@ public class Nudge extends AbstractModCard {
     private static final int COST = 1;
     private static final int TEMP_HP = 1;
     private static final int UPGRADE_TEMP_HP = 1;
-    private static final int SCRY = 2;
+    private static final int SCRY = 1;
     private static final int UPGRADE_SCRY = 1;
     private static final int DRAW_NEXT_TURN = 1;
     private static final int UPGRADE_DRAW_NEXT_TURN = 1;
