@@ -15,7 +15,6 @@ import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.util.TextureLoader;
 
-import java.text.DecimalFormat;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
