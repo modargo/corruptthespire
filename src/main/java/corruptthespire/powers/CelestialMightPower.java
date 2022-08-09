@@ -21,7 +21,7 @@ public class CelestialMightPower extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private static final int TEMPORARY_HP = 2;
-    private static final int FLOORS_PER_DAMAGE = 3;
+    private static final int FLOORS_PER_DAMAGE = 4;
 
     public CelestialMightPower(AbstractCreature owner) {
         this.name = NAME;

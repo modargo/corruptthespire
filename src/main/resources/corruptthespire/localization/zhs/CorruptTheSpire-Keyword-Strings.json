@@ -57,7 +57,7 @@
   {
     "NAMES": ["天神之力","celestial\u00a0might"],
     "PROPER_NAME": "天神之力",
-    "DESCRIPTION": "你的回合开始时，获得 #b2 #y临时生命 ，并对所有敌人造成等同于楼层数除以 #b3 的伤害。"
+    "DESCRIPTION": "你的回合开始时，获得 #b2 #y临时生命 ，并对所有敌人造成等同于楼层数除以 #b4 的伤害。"
   },
   {
     "NAMES": ["不同颜色的牌","different\u00a0color"],
