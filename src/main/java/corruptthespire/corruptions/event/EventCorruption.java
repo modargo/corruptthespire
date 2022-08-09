@@ -132,7 +132,7 @@ public class EventCorruption {
         }
 
         if (e.equals(FutureSight.ID)) {
-            return AbstractDungeon.bossRelicPool.size() > 2 && actNum < 3;
+            return AbstractDungeon.bossRelicPool.size() > 5 && actNum < 3;
         }
 
         return true;
