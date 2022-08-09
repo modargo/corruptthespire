@@ -22,7 +22,7 @@ public class FallingBlazeEffect extends AbstractGameEffect {
     private float y;
     private float vX;
     private float vY;
-    private float floorY;
+    private final float floorY;
     private final Texture img;
     private final int blazeCount;
 

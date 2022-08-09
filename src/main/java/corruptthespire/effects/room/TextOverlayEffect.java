@@ -9,11 +9,11 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class TextOverlayEffect extends AbstractGameEffect {
-    private String name;
-    private String levelNum;
+    private final String name;
+    private final String levelNum;
     private static final float DUR = 5.0F;
-    private Color c1;
-    private Color c2;
+    private final Color c1;
+    private final Color c2;
     private boolean higher;
 
     public TextOverlayEffect(String name, String levelNum, boolean higher, Color c1, Color c2) {

@@ -35,7 +35,7 @@ public class SealedChestEvent extends MaskedBandits {
 
     private int screen = 0;
     private Texture chestImg;
-    private Texture sealImg;
+    private final Texture sealImg;
     private float shinyTimer = 0.0f;
 
     public SealedChestEvent() {

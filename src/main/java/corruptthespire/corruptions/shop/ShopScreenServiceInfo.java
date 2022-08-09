@@ -9,7 +9,7 @@ public class ShopScreenServiceInfo {
     public ShopServiceType hoveredService = null;
     public ShopServiceType touchedService = null;
     public ShopServiceType currentService = null;
-    public List<ShopServiceType> usedServices = new ArrayList<>();
-    public Map<ShopServiceType, Float> serviceScales = new HashMap<>();
+    public final List<ShopServiceType> usedServices = new ArrayList<>();
+    public final Map<ShopServiceType, Float> serviceScales = new HashMap<>();
     public float serviceMultiplier = 1.0F;
 }

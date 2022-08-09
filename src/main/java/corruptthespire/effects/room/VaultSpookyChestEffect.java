@@ -14,11 +14,11 @@ public class VaultSpookyChestEffect extends AbstractGameEffect {
     private float x;
     private float y;
     private float vX;
-    private float vY;
-    private float aV;
-    private boolean flipX = MathUtils.randomBoolean();
-    private boolean flipY = MathUtils.randomBoolean();
-    private TextureAtlas.AtlasRegion img;
+    private final float vY;
+    private final float aV;
+    private final boolean flipX = MathUtils.randomBoolean();
+    private final boolean flipY = MathUtils.randomBoolean();
+    private final TextureAtlas.AtlasRegion img;
 
     public VaultSpookyChestEffect(float x, float y, boolean corrupted) {
         this.duration = MathUtils.random(4.0F, 7.0F);

@@ -14,8 +14,8 @@ import java.util.ArrayList;
 
 public class FlexibleCostDiscoveryAction extends AbstractGameAction {
     private boolean retrieveCard = false;
-    private CardType cardType = null;
-    private Integer costReduction;
+    private final CardType cardType = null;
+    private final Integer costReduction;
 
     public FlexibleCostDiscoveryAction(Integer costReduction) {
         this.actionType = ActionType.CARD_MANIPULATION;

@@ -11,13 +11,13 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class VaultChestShineEffect extends AbstractGameEffect {
-    private float effectDuration;
-    private float x;
+    private final float effectDuration;
+    private final float x;
     private float y;
     private float vY;
-    private float alpha;
-    private float targetScale;
-    private TextureAtlas.AtlasRegion img;
+    private final float alpha;
+    private final float targetScale;
+    private final TextureAtlas.AtlasRegion img;
 
     public VaultChestShineEffect(float x, float y, boolean corrupted) {
         this.img = ImageMaster.ROOM_SHINE_2;

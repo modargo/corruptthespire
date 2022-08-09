@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 public class BlazeShatterEffect extends AbstractGameEffect {
     private float x;
     private float y;
-    private float vX;
+    private final float vX;
     private float vY;
     private final Texture img;
 

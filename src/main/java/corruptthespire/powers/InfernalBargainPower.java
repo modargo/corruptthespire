@@ -27,7 +27,7 @@ public class InfernalBargainPower extends AbstractPower {
     private final int draw;
     private final int damage;
 
-    private Set<InfernalBargainChoice> choices;
+    private final Set<InfernalBargainChoice> choices;
 
     public InfernalBargainPower(AbstractCreature owner, int block, int strength, int draw, int damage) {
         this.name = NAME;

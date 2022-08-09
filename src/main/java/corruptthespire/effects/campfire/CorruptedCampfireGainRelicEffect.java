@@ -19,7 +19,7 @@ public class CorruptedCampfireGainRelicEffect extends AbstractGameEffect {
     private boolean hasDug = false;
     private AbstractRelic relic;
     private AbstractRelic.RelicTier tier;
-    private Color screenColor;
+    private final Color screenColor;
 
     public CorruptedCampfireGainRelicEffect(AbstractRelic relic) {
         this.relic = relic;
