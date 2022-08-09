@@ -27,6 +27,7 @@ public class WorldsUponWorlds extends AbstractImageEvent {
 
     public static final int CORRUPTION_REDUCTION = 5;
     public static final int A15_CORRUPTION_REDUCTION = 3;
+    private static final int NUM_REWARDS = 1;
 
     private final AbstractRelic relic;
     private final int corruptionReduction;
@@ -90,7 +91,7 @@ public class WorldsUponWorlds extends AbstractImageEvent {
                         this.imageEventText.clearRemainingOptions();
                         break;
                     case 2: // Third
-                        this.showCardReward(1);
+                        this.showCardReward();
                         logMetric(ID, "Third");
 
                         this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
@@ -106,9 +107,9 @@ public class WorldsUponWorlds extends AbstractImageEvent {
         }
     }
 
-    private void showCardReward(int numRewards) {
+    private void showCardReward() {
         AbstractDungeon.getCurrRoom().rewards.clear();
-        for(int i = 0; i < numRewards; ++i) {
+        for(int i = 0; i < NUM_REWARDS; ++i) {
             AbstractDungeon.getCurrRoom().rewards.add(new CorruptedCardReward());
         }
 
