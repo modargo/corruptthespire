@@ -64,7 +64,7 @@ public class TheFool extends AbstractModCard {
         private static final int COST = -2;
 
         public TheFoolNowOption() {
-            super(ID, NAME, IMG, COST, DESCRIPTION, CardType.POWER, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF);
+            super(ID, NAME, IMG, COST, DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF);
             this.magicNumber = this.baseMagicNumber = DRAW;
             this.magicNumber2 = this.baseMagicNumber2 = REDUCED_DRAW_NEXT_TURN;
         }
@@ -98,7 +98,7 @@ public class TheFool extends AbstractModCard {
         private static final int COST = -2;
 
         public TheFoolLaterOption() {
-            super(ID, NAME, IMG, COST, DESCRIPTION, CardType.POWER, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF);
+            super(ID, NAME, IMG, COST, DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF);
             this.magicNumber = this.baseMagicNumber = DRAW;
         }
 
@@ -117,7 +117,7 @@ public class TheFool extends AbstractModCard {
 
         @Override
         public AbstractCard makeCopy() {
-            return new TheFoolNowOption();
+            return new TheFoolLaterOption();
         }
     }
 }
