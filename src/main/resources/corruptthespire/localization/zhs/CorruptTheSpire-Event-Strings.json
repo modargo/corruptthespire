@@ -67,10 +67,12 @@
     "DESCRIPTIONS": [
       "这张牌……这张牌是命运的恩赐",
       "你手中的这张牌……将把你带向何方？",
+      "Things are not always as they seem. You reach ~beyond~ the card you see, past the boundaries of this #bSpire, and in that tangled place you feel another card. Pulling it out, you examine it. NL NL A truth as real as the #ywheel. For every ending, a new beginning. Even in this #paccursed cycle, #ghope and #gjoy can be found.",
       "你抵御了这强大的诱惑~"
     ],
     "OPTIONS": [
       "[触碰] #g获得 {0} 。 #g获得 #g{1} #g最大生命 。",
+      "[超越] #g获得 {0} 。 #r失去 #r{1} #r点最大生命值 。",
       "[离开]"
     ]
   },

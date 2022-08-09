@@ -213,6 +213,7 @@ public class CorruptTheSpire implements
         addCard(new Boon());
         addCard(new Nudge());
         addCard(new ShimmeringShield());
+        addCard(new TheFool());
         addCard(new WheelOfFortune());
         addCard(new BadBreath());
         addCard(new Bedeviled());

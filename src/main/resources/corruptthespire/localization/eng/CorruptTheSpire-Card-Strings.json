@@ -215,5 +215,17 @@
   "CorruptTheSpire:DiabolicForce": {
     "NAME": "Diabolic Force",
     "DESCRIPTION": "channeler:Force applies !M!% of NL its amount as corruptthespire:Abysstouched."
+  },
+  "CorruptTheSpire:TheFool": {
+    "NAME": "The Fool",
+    "DESCRIPTION": "Choose one: Draw !M! cards and draw !corruptthespire:M2! less card next turn, or draw !M! cards next turn. NL Exhaust."
+  },
+  "CorruptTheSpire:TheFoolNowOption": {
+    "NAME": "Now",
+    "DESCRIPTION": "Draw !M! cards and draw !corruptthespire:M2! less card next turn."
+  },
+  "CorruptTheSpire:TheFoolLaterOption": {
+    "NAME": "Later",
+    "DESCRIPTION": "Draw !M! cards next turn."
   }
 }

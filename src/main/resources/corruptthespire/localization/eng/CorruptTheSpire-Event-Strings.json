@@ -67,10 +67,12 @@
     "DESCRIPTIONS": [
       "Seeing a #ycard in front of you, you stop in your tracks. You can't pinpoint why, but something is familiar about it. NL NL Perhaps you've seen it before... or will see it, or were someone who saw it, or will be someone who sees it. NL NL The longer you try to think about it, the more your head #rhurts. But if you believe that somewhere out there, someone is sympathetic to your quest, this card might be a #gboon.",
       "You touch the card. For a moment, there are more directions to the world than normal. You see #ryourself and #gyourself and #byourself and #pyourself, and know that even that is only a small part of the whole. NL NL Vision or hallucination? You aren't sure. You take the card with you, hoping that its power will smooth your path.",
+      "Things are not always as they seem. You reach ~beyond~ the card you see, past the boundaries of this #bSpire, and in that tangled place you feel another card. Pulling it out, you examine it. NL NL A truth as real as the #ywheel. For every ending, a new beginning. Even in this #paccursed cycle, #ghope and #gjoy can be found.",
       "You resist the temptation to touch the card. You will win free of this place using your own power."
     ],
     "OPTIONS": [
       "[Touch the Card] #gGain {0}. #gGain #g{1} #gMax #gHP.",
+      "[Reach Beyond] #gGain {0}. #rLose #r{1} #rMax #rHP.",
       "[Leave]"
     ]
   },
