@@ -4,6 +4,7 @@ import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import corruptthespire.cards.corrupted.CorruptedCardColor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,19 +16,17 @@ import java.lang.reflect.Field;
 @SpirePatch(clz = CardGroup.class, method = SpirePatch.CONSTRUCTOR, paramtypez = { CardGroup.CardGroupType.class })
 public class DownfallSneckoNoCorruptedColorPatch {
     private static final Logger logger = LogManager.getLogger(DownfallSneckoNoCorruptedColorPatch.class.getName());
-    private static CardGroup colorChoices = null;
 
     @SpirePostfixPatch
     public static void noCorruptedColor(CardGroup cardGroup) {
-        if (Loader.isModLoaded("downfall")) {
-            if (colorChoices == null) {
-                try {
-                    Class<?> clz = Class.forName("sneckomod.SneckoMod");
-                    Field f = clz.getField("colorChoices");
-                    colorChoices = (CardGroup)f.get(null);
-                } catch (ClassNotFoundException | NoSuchFieldException | IllegalAccessException e) {
-                    e.printStackTrace();
-                }
+        if (Loader.isModLoaded("downfall") && AbstractDungeon.player != null && AbstractDungeon.player.chosenClass.name().equals("THE_SNECKO")) {
+            CardGroup colorChoices = null;
+            try {
+                Class<?> clz = Class.forName("sneckomod.SneckoMod");
+                Field f = clz.getField("colorChoices");
+                colorChoices = (CardGroup)f.get(null);
+            } catch (ClassNotFoundException | NoSuchFieldException | IllegalAccessException e) {
+                e.printStackTrace();
             }
 
             if (colorChoices != null) {
