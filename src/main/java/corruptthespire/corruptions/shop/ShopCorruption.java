@@ -383,6 +383,7 @@ public class ShopCorruption {
         ShopScreenServiceInfo screenInfo = ShopScreenServiceInfoField.serviceInfo.get(shopScreen);
         screenInfo.hoveredService = null;
         if (AbstractDungeon.player.gold >= info.cost) {
+            logger.info("Purchasing service: " + info.type.name());
             AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.SHOP;
             CardGroup group;
             switch (info.type) {
@@ -410,6 +411,7 @@ public class ShopCorruption {
     public static void performService(ShopScreen shopScreen, ShopServiceType type) {
         ShopScreenServiceInfo screenInfo = ShopScreenServiceInfoField.serviceInfo.get(shopScreen);
         if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
+            logger.info("Performing service: " + type.name());
             AbstractDungeon.player.loseGold(getShopServiceInfo(type).cost);
             for (AbstractCard card : AbstractDungeon.gridSelectScreen.selectedCards) {
                 switch (type) {
