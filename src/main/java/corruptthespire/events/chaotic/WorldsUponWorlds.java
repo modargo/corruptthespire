@@ -64,7 +64,7 @@ public class WorldsUponWorlds extends AbstractImageEvent {
                 this.screenNum = 1;
                 this.imageEventText.clearAllDialogs();
                 this.imageEventText.setDialogOption(MessageFormat.format(OPTIONS[1], this.relic.name, this.corruptionReduction), this.relic);
-                this.imageEventText.setDialogOption(OPTIONS[2]);
+                this.imageEventText.setDialogOption(OPTIONS[2], CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()).size() == 0);
                 this.imageEventText.setDialogOption(OPTIONS[3]);
                 break;
             case 1:
@@ -80,7 +80,6 @@ public class WorldsUponWorlds extends AbstractImageEvent {
                         this.imageEventText.clearRemainingOptions();
                         break;
                     case 1: // Second
-                        logMetricIgnored(ID);
                         if (CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()).size() > 0) {
                             AbstractDungeon.gridSelectScreen.open(CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()), 1, OPTIONS[4], false, false, false, true);
                         }
