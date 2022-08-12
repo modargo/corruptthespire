@@ -1,29 +1,22 @@
 package corruptthespire.patches.run;
 
-import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.screens.runHistory.RunHistoryPath;
 import com.megacrit.cardcrawl.screens.runHistory.RunPathElement;
-import com.megacrit.cardcrawl.screens.stats.CampfireChoice;
 import com.megacrit.cardcrawl.screens.stats.RunData;
-import corruptthespire.corruptions.campfire.FireRitualOption;
 import javassist.*;
-import javassist.expr.ExprEditor;
-import javassist.expr.FieldAccess;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.lang.reflect.Field;
-import java.text.MessageFormat;
 import java.util.Collections;
 import java.util.List;
 
-public class RunHistoryPatch {
-    private static final Logger logger = LogManager.getLogger(RunHistoryPatch.class.getName());
+public class CorruptionPerFloorRunHistoryPatch {
+    private static final Logger logger = LogManager.getLogger(CorruptionPerFloorRunHistoryPatch.class.getName());
     private static final String CORRUPTION_TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:Corruption").TEXT[0];
-    private static final String FIRE_RITUAL_TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:RunHistory").TEXT[0];
 
     @SpirePatch(clz = CardCrawlGame.class, method = SpirePatch.CONSTRUCTOR)
     public static class CorruptionPerFloorField {
@@ -94,42 +87,6 @@ public class RunHistoryPatch {
                 Matcher matcher = new Matcher.FieldAccessMatcher(RunPathElement.class, "eventStats");
                 return LineFinder.findInOrder(ctMethodToPatch, matcher);
             }
-        }
-    }
-
-    @SpirePatch(clz = RunPathElement.class, method = "getTipDescriptionText")
-    public static class DisplayFireRitualCampfireChoiceDataPatch {
-        @SpireInsertPatch(locator = Locator.class, localvars = { "sb" })
-        public static void displayCorruptionData(RunPathElement __instance, StringBuilder sb) {
-            CampfireChoice campfireChoice = ReflectionHacks.getPrivate(__instance, RunPathElement.class, "campfireChoice");
-            if (campfireChoice != null && campfireChoice.key.equals(FireRitualOption.METRIC_KEY)) {
-                if (sb.length() > 0) {
-                    sb.append(" NL ");
-                }
-                sb.append(MessageFormat.format(FIRE_RITUAL_TEXT, campfireChoice.data));
-            }
-        }
-
-        public static class Locator extends SpireInsertLocator {
-            public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
-                Matcher matcher = new Matcher.FieldAccessMatcher(RunPathElement.class, "campfireChoice");
-                return LineFinder.findInOrder(ctMethodToPatch, matcher);
-            }
-        }
-    }
-
-    @SpirePatch(clz = RunPathElement.class, method = "getTipDescriptionText")
-    public static class SkipExitingCampfireChoiceLogicPatch extends ExprEditor {
-        @Override
-        public void edit(FieldAccess fieldAccess) throws CannotCompileException {
-            if (fieldAccess.getClassName().equals(RunPathElement.class.getName()) && fieldAccess.getFieldName().equals("campfireChoice")) {
-                fieldAccess.replace(String.format("{ $_ = this.campfireChoice != null && this.campfireChoice.key.equals(\"%1$s\") ? null : this.campfireChoice; }", FireRitualOption.METRIC_KEY));
-            }
-        }
-
-        @SpireInstrumentPatch
-        public static ExprEditor initializeCorruptedCampfireButtons() {
-            return new SkipExitingCampfireChoiceLogicPatch();
         }
     }
 }
