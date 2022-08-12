@@ -24,6 +24,7 @@ import corruptthespire.corruptions.shop.ShopCorruptionType;
 import corruptthespire.corruptions.shop.ShopScreenServiceInfo;
 import corruptthespire.corruptions.shop.ShopServiceType;
 import corruptthespire.patches.core.CorruptedField;
+import corruptthespire.savables.logs.ShopServiceLog;
 import corruptthespire.util.TextureLoader;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
@@ -45,6 +46,11 @@ public class ShopPatch {
                     : null;
             if (corruptionType == ShopCorruptionType.Service) {
                 ShopScreenServiceInfoField.serviceInfo.set(__instance, new ShopScreenServiceInfo());
+                if (ShopServiceLog.shopServiceLog.stream().noneMatch(l -> l.floor == AbstractDungeon.floorNum)) {
+                    ShopServiceLog log = new ShopServiceLog();
+                    log.floor = AbstractDungeon.floorNum;
+                    ShopServiceLog.shopServiceLog.add(log);
+                }
             }
         }
     }

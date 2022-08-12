@@ -38,6 +38,7 @@ import corruptthespire.patches.relics.BottledPrismPatch;
 import corruptthespire.patches.shop.ShopCorruptionTypeField;
 import corruptthespire.patches.shop.ShopScreenServiceInfoField;
 import corruptthespire.relics.FragmentOfCorruption;
+import corruptthespire.savables.logs.ShopServiceLog;
 import corruptthespire.util.TextureLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -412,20 +413,23 @@ public class ShopCorruption {
         ShopScreenServiceInfo screenInfo = ShopScreenServiceInfoField.serviceInfo.get(shopScreen);
         if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             logger.info("Performing service: " + type.name());
+            ShopServiceLog log = ShopServiceLog.shopServiceLog.stream().filter(l -> l.floor == AbstractDungeon.floorNum).collect(Collectors.toList()).get(0);
             AbstractDungeon.player.loseGold(getShopServiceInfo(type).cost);
             for (AbstractCard card : AbstractDungeon.gridSelectScreen.selectedCards) {
                 switch (type) {
                     case Transform:
-                        CardCrawlGame.metricData.addPurgedItem(card.getMetricID());
                         AbstractDungeon.player.masterDeck.removeCard(card);
                         AbstractDungeon.transformCard(card, false, AbstractDungeon.miscRng);
                         AbstractDungeon.topLevelEffectsQueue.add(new ShowCardAndObtainEffect(AbstractDungeon.transformedCard, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+                        log.cardsTransformed.add(card.getMetricID());
+                        log.cardsGained.add(AbstractDungeon.transformedCard.getMetricID());
                         break;
                     case Upgrade:
                         card.upgrade();
                         AbstractDungeon.player.bottledCardUpgradeCheck(card);
                         AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(card.makeStatEquivalentCopy()));
                         AbstractDungeon.topLevelEffects.add(new UpgradeShineEffect((float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+                        log.cardsUpgraded.add(card.getMetricID());
                         break;
                     case Duplicate:
                         AbstractCard newCard = card.makeStatEquivalentCopy();
@@ -434,12 +438,15 @@ public class ShopCorruption {
                         newCard.inBottleTornado = false;
                         BottledPrismPatch.InBottledPrismField.inBottlePrism.set(newCard, false);
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(newCard, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+                        log.cardsDuplicated.add(card.getMetricID());
+                        log.cardsGained.add(card.getMetricID());
                         break;
                     case Corrupt:
-                        CardCrawlGame.metricData.addPurgedItem(card.getMetricID());
                         AbstractDungeon.player.masterDeck.removeCard(card);
                         AbstractCard corruptedCard = CorruptedCardUtil.getRandomCorruptedCard();
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(corruptedCard, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+                        log.cardsCorrupted.add(card.getMetricID());
+                        log.cardsGained.add(corruptedCard.getMetricID());
                         break;
                     default:
                         throw new RuntimeException("Unrecognized shop service type " + type.name());

@@ -33,9 +33,17 @@
       "Potions that can only be obtained through corrupted rooms."
     ]
   },
-  "CorruptTheSpire:RunHistory": {
+  "CorruptTheSpire:FireRitualRunHistory": {
     "TEXT": [
       "#bFire #bRitual {0}"
+    ]
+  },
+  "CorruptTheSpire:ShopServiceRunHistory": {
+    "TEXT": [
+      "#bCorrupted {0}",
+      "#bDuplicated {0}",
+      "#bUpgraded {0}",
+      "#bTransformed {0}"
     ]
   },
   "CorruptTheSpire:Rewards": {

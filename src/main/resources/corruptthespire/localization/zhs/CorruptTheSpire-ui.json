@@ -33,9 +33,17 @@
       "只能通过腐化房间获得的药水。"
     ]
   },
-  "CorruptTheSpire:RunHistory": {
+  "CorruptTheSpire:FireRitualRunHistory": {
     "TEXT": [
       "#b祭祀 {0}"
+    ]
+  },
+  "CorruptTheSpire:ShopServiceRunHistory": {
+    "TEXT": [
+      "#bCorrupted {0}",
+      "#bDuplicated {0}",
+      "#bUpgraded {0}",
+      "#bTransformed {0}"
     ]
   },
   "CorruptTheSpire:Rewards": {

@@ -42,6 +42,7 @@ import corruptthespire.rewards.CustomRewardTypes;
 import corruptthespire.rewards.MaxHealthReward;
 import corruptthespire.rewards.RandomUpgradeReward;
 import corruptthespire.savables.*;
+import corruptthespire.savables.logs.ShopServiceLog;
 import corruptthespire.subscribers.*;
 import corruptthespire.util.TextureLoader;
 import corruptthespire.variables.MagicNumber2Variable;
@@ -99,6 +100,8 @@ public class CorruptTheSpire implements
         BaseMod.addSaveField(SavableCorruptionFlags.SaveKey, new SavableCorruptionFlags());
         BaseMod.addSaveField(SavableEventList.SaveKey, new SavableEventList());
         BaseMod.addSaveField(SavableRng.SaveKey, new SavableRng());
+
+        BaseMod.addSaveField(ShopServiceLog.SaveKey, new ShopServiceLog());
 
         BaseMod.subscribe(new ApplyCorruptionHealthIncreaseOnStartBattleSubscriber());
         BaseMod.subscribe(new ApplyCorruptionsOnStartBattleSubscriber());

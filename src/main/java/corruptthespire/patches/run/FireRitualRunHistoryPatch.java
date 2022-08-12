@@ -15,7 +15,7 @@ import javassist.expr.FieldAccess;
 import java.text.MessageFormat;
 
 public class FireRitualRunHistoryPatch {
-    private static final String FIRE_RITUAL_TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:RunHistory").TEXT[0];
+    private static final String FIRE_RITUAL_TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:FireRitualRunHistory").TEXT[0];
 
     @SpirePatch(clz = RunPathElement.class, method = "getTipDescriptionText")
     public static class DisplayFireRitualCampfireChoiceDataPatch {
