@@ -33,6 +33,7 @@ import corruptthespire.events.special.DevourerEvent;
 import corruptthespire.events.special.DoomEvent;
 import corruptthespire.events.special.HarbingerEvent;
 import corruptthespire.monsters.*;
+import corruptthespire.patches.run.CorruptionTypePerFloorRunHistoryPatch;
 import corruptthespire.potions.*;
 import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.relics.chaotic.*;
@@ -42,6 +43,8 @@ import corruptthespire.rewards.CustomRewardTypes;
 import corruptthespire.rewards.MaxHealthReward;
 import corruptthespire.rewards.RandomUpgradeReward;
 import corruptthespire.savables.*;
+import corruptthespire.savables.logs.CorruptionPerFloorLog;
+import corruptthespire.savables.logs.CorruptionTypePerFloorLog;
 import corruptthespire.savables.logs.ShopServiceLog;
 import corruptthespire.subscribers.*;
 import corruptthespire.util.TextureLoader;
@@ -96,11 +99,12 @@ public class CorruptTheSpire implements
         BaseMod.addSaveField(SavableActive.SaveKey, new SavableActive());
         BaseMod.addSaveField(SavableCorruptedRelicPool.SaveKey, new SavableCorruptedRelicPool());
         BaseMod.addSaveField(SavableCorruption.SaveKey, new SavableCorruption());
-        BaseMod.addSaveField(SavableCorruptionPerFloor.SaveKey, new SavableCorruptionPerFloor());
         BaseMod.addSaveField(SavableCorruptionFlags.SaveKey, new SavableCorruptionFlags());
         BaseMod.addSaveField(SavableEventList.SaveKey, new SavableEventList());
         BaseMod.addSaveField(SavableRng.SaveKey, new SavableRng());
 
+        BaseMod.addSaveField(CorruptionPerFloorLog.SaveKey, new CorruptionPerFloorLog());
+        BaseMod.addSaveField(CorruptionTypePerFloorLog.SaveKey, new CorruptionTypePerFloorLog());
         BaseMod.addSaveField(ShopServiceLog.SaveKey, new ShopServiceLog());
 
         BaseMod.subscribe(new ApplyCorruptionHealthIncreaseOnStartBattleSubscriber());
@@ -116,6 +120,8 @@ public class CorruptTheSpire implements
 
         Cor.display = new CorruptionDisplay();
         BaseMod.addTopPanelItem(Cor.display);
+
+        CorruptionTypePerFloorRunHistoryPatch.buildCorruptionTypeMapping();
     }
 
     private static void addMonsters() {

@@ -1,11 +1,17 @@
 package corruptthespire.patches.run;
 
+import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.metrics.Metrics;
+import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.screens.runHistory.RunHistoryPath;
 import com.megacrit.cardcrawl.screens.runHistory.RunPathElement;
 import com.megacrit.cardcrawl.screens.stats.RunData;
+import corruptthespire.Cor;
+import corruptthespire.savables.logs.CorruptionPerFloorLog;
 import javassist.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -29,6 +35,20 @@ public class CorruptionPerFloorRunHistoryPatch {
             CtField field = CtField.make(fieldSource, runData);
 
             runData.addField(field);
+        }
+    }
+
+    @SpirePatch(clz = Metrics.class, method = "gatherAllData")
+    public static class GatherAllDataPatch {
+        @SpirePostfixPatch
+        public static void gatherAllDataPatch(Metrics __instance, boolean death, boolean trueVictor, MonsterGroup monsters) {
+            if (Cor.active) {
+                if (death) {
+                    CorruptionPerFloorLog.corruptionPerFloorLog.add(Cor.corruption);
+                }
+                ReflectionHacks.privateMethod(Metrics.class, "addData", Object.class, Object.class)
+                        .invoke(__instance, "corruption_per_floor", CorruptionPerFloorLog.corruptionPerFloorLog);
+            }
         }
     }
 
@@ -86,6 +106,16 @@ public class CorruptionPerFloorRunHistoryPatch {
             public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
                 Matcher matcher = new Matcher.FieldAccessMatcher(RunPathElement.class, "eventStats");
                 return LineFinder.findInOrder(ctMethodToPatch, matcher);
+            }
+        }
+    }
+
+    @SpirePatch(clz = AbstractDungeon.class, method = "incrementFloorBasedMetrics")
+    public static class CorruptionPerFloorAddLoggingPatch {
+        @SpirePostfixPatch
+        public static void incrementFloorBasedMetricsPatch(AbstractDungeon __instance) {
+            if (AbstractDungeon.floorNum != 0 && Cor.active) {
+                CorruptionPerFloorLog.corruptionPerFloorLog.add(Cor.corruption);
             }
         }
     }

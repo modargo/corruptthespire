@@ -1,7 +1,7 @@
 package corruptthespire.corruptions.treasure;
 
 public enum TreasureCorruptionType {
-    Fragment,
+    FragmentTreasure,
     Money,
     Extra,
     Vault,

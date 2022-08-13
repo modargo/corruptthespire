@@ -45,7 +45,6 @@ public class Cor {
     public static ArrayList<String> corruptedRelicPool;
     public static ArrayList<String> corruptedEventList;
     public static CorruptionDisplay display;
-    public static ArrayList<Integer> corruptionPerFloor;
 
     public static Integer getCorruptionDamageMultiplierPercent() {
         return corruption / CORRUPTION_PER_DAMAGE_INCREASE;

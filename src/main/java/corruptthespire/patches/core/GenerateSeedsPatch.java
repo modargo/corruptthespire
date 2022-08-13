@@ -8,6 +8,8 @@ import corruptthespire.Config;
 import corruptthespire.Cor;
 import corruptthespire.CorruptionFlags;
 import corruptthespire.events.CorruptedEventUtil;
+import corruptthespire.savables.logs.CorruptionPerFloorLog;
+import corruptthespire.savables.logs.CorruptionTypePerFloorLog;
 import corruptthespire.savables.logs.ShopServiceLog;
 
 import java.util.ArrayList;
@@ -26,8 +28,9 @@ public class GenerateSeedsPatch {
         Cor.flags = new CorruptionFlags();
         Cor.corruptedEventList = new ArrayList<>(CorruptedEventUtil.getEnabledCorruptedEvents().keySet());
         Cor.corruptedEventList.sort(String::compareTo);
-        Cor.corruptionPerFloor = new ArrayList<>();
         // This is also a good place for initializing log fields we track for run history
+        CorruptionPerFloorLog.corruptionPerFloorLog = new ArrayList<>();
+        CorruptionTypePerFloorLog.corruptionTypePerFloorLog = new ArrayList<>();
         ShopServiceLog.shopServiceLog = new ArrayList<>();
     }
 }

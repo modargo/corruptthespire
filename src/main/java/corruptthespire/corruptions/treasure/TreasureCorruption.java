@@ -57,7 +57,7 @@ public class TreasureCorruption {
                 ? TreasureCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
                 : null;
 
-        if (corruptionType == TreasureCorruptionType.Fragment) {
+        if (corruptionType == TreasureCorruptionType.FragmentTreasure) {
             AbstractDungeon.getCurrRoom().addRelicToRewards(new FragmentOfCorruption());
         }
 
