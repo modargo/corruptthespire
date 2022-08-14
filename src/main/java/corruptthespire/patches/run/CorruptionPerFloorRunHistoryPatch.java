@@ -99,6 +99,7 @@ public class CorruptionPerFloorRunHistoryPatch {
                     sb.append(" NL ");
                 }
                 sb.append("#p").append(corruption).append(" #p").append(CORRUPTION_TEXT);
+                CorruptionTypePerFloorRunHistoryPatch.displayCorruptionTypeData(__instance, sb);
             }
         }
 

@@ -33,6 +33,51 @@
       "Potions that can only be obtained through corrupted rooms."
     ]
   },
+  "CorruptTheSpire:CorruptionType": {
+    "TEXT_DICT": {
+      "Fragment": "#pBonus #pfragment",
+      "Corrupted": "#pCorrupted #pevent",
+      "Chaotic": "#pChaotic #pevent",
+      "Harbinger": "#pHarbinger",
+      "Devourer": "#pDevourer",
+      "Doom": "#pDoom",
+
+      "Metallicize": "#pMetallicize",
+      "Malleable": "#pMalleable",
+      "Artifact": "#pArtifact",
+      "Thorns": "#pThorns",
+      "Strength": "#pStrength",
+      "Buffer": "#pBuffer",
+      "Ritual": "#pRitual",
+      "BeatOfDeath": "#pBeat #pof #pDeath",
+      "ThoughtStealer": "#pThought #pStealer",
+      "Curiosity": "#pCuriosity",
+      "CorruptionManifestMinion": "#pCorruption #pManifest",
+      "FlameManifestMinion": "#pFlame #pManifest",
+      "StrifeManifestMinion": "#pStrife #pManifest",
+      "DeliriumManifestMinion": "#pDelirium #pManifest",
+      "DevourerMinion": "#pDevourer",
+      "SnakeDaggerMinion": "#pSnake #pDagger",
+      "CultistMinion": "#pCultist",
+
+      "CorruptedCardAndFragment": "#pCorrupted #pcard #pand #pfragment",
+      "Prismatic": "#pPrismatic",
+      "Rare": "#pAll #prares",
+      "CorruptedRelicsReplacePotions": "#pCorrupted #prelics #preplace #ppotions",
+      "TransformReplacesRemove": "#pTransform #preplaces #premove",
+      "CorruptedCards": "#pAll #pcorrupted",
+      "CorruptedRelics": "#pCorrupted #prelics",
+      "Service": "#pServices",
+
+      "FragmentTreasure": "#pFragment",
+      "Money": "#pMoney",
+      "Extra": "#pRelic",
+      "Vault": "#pTreasure #pvault",
+      "CorruptedRelic": "#pCorrupted #prelic",
+      "Wardens": "#pTreasure #pwardens",
+      "Sealed": "#pSealed #pchest"
+    }
+  },
   "CorruptTheSpire:FireRitualRunHistory": {
     "TEXT": [
       "#bFire #bRitual {0}"

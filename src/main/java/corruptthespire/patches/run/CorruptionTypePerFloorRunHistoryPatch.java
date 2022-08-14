@@ -34,7 +34,7 @@ import java.util.stream.Collectors;
 
 public class CorruptionTypePerFloorRunHistoryPatch {
     private static final Logger logger = LogManager.getLogger(CorruptionTypePerFloorRunHistoryPatch.class.getName());
-    private static final String CORRUPTION_TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:Corruption").TEXT[0];
+    private static final Map<String, String> TEXT_DICT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:CorruptionType").TEXT_DICT;
 
     @SpirePatch(clz = CardCrawlGame.class, method = SpirePatch.CONSTRUCTOR)
     public static class CorruptionTypePerFloorField {
@@ -66,7 +66,7 @@ public class CorruptionTypePerFloorRunHistoryPatch {
 
     @SpirePatch(clz = RunPathElement.class, method = SpirePatch.CLASS)
     public static class CorruptionTypeField {
-        public static final SpireField<Integer> corruptionType = new SpireField<>(() -> null);
+        public static final SpireField<String> corruptionType = new SpireField<>(() -> null);
     }
 
     @SpirePatch(clz = RunHistoryPath.class, method = "setRunData")
@@ -77,18 +77,15 @@ public class CorruptionTypePerFloorRunHistoryPatch {
             Field field = newData.getClass().getField("corruption_type_per_floor");
             List corruption_type_per_floor = (List)field.get(newData);
             if (corruption_type_per_floor != null && i < corruption_type_per_floor.size()) {
-                Object corruption = corruption_type_per_floor.get(i);
-                Integer c = null;
-                if (corruption instanceof Double) {
-                    c = ((Double) corruption).intValue();
-                }
-                else if (corruption instanceof Integer) {
-                    c = (Integer) corruption;
+                Object corruptionType = corruption_type_per_floor.get(i);
+                String s = null;
+                if (corruptionType instanceof String) {
+                    s = (String)corruptionType;
                 }
                 else {
-                    logger.warn("Unrecognized corruption_type_per_floor data: " + corruption);
+                    logger.warn("Unrecognized corruption_type_per_floor data: " + corruptionType);
                 }
-                CorruptionTypeField.corruptionType.set(element, c);
+                CorruptionTypeField.corruptionType.set(element, s);
             }
         }
 
@@ -101,24 +98,10 @@ public class CorruptionTypePerFloorRunHistoryPatch {
         }
     }
 
-    @SpirePatch(clz = RunPathElement.class, method = "getTipDescriptionText")
-    public static class DisplayCorruptionDataPatch {
-        @SpireInsertPatch(locator = Locator.class, localvars = { "sb" })
-        public static void displayCorruptionData(RunPathElement __instance, StringBuilder sb) {
-            Integer corruption = CorruptionTypeField.corruptionType.get(__instance);
-            if (corruption != null) {
-                if (sb.length() > 0) {
-                    sb.append(" NL ");
-                }
-                sb.append("#p").append(corruption).append(" #p").append(CORRUPTION_TEXT);
-            }
-        }
-
-        public static class Locator extends SpireInsertLocator {
-            public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
-                Matcher matcher = new Matcher.FieldAccessMatcher(RunPathElement.class, "eventStats");
-                return LineFinder.findInOrder(ctMethodToPatch, matcher);
-            }
+    public static void displayCorruptionTypeData(RunPathElement element, StringBuilder sb) {
+        String corruptionType = CorruptionTypeField.corruptionType.get(element);
+        if (corruptionType != null) {
+            sb.append(" NL TAB ").append(TEXT_DICT.get(corruptionType));
         }
     }
 
