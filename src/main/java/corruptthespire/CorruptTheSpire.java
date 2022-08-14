@@ -45,6 +45,7 @@ import corruptthespire.rewards.RandomUpgradeReward;
 import corruptthespire.savables.*;
 import corruptthespire.savables.logs.CorruptionPerFloorLog;
 import corruptthespire.savables.logs.CorruptionTypePerFloorLog;
+import corruptthespire.savables.logs.RandomUpgradeRewardPerFloorLog;
 import corruptthespire.savables.logs.ShopServiceLog;
 import corruptthespire.subscribers.*;
 import corruptthespire.util.TextureLoader;
@@ -105,6 +106,7 @@ public class CorruptTheSpire implements
 
         BaseMod.addSaveField(CorruptionPerFloorLog.SaveKey, new CorruptionPerFloorLog());
         BaseMod.addSaveField(CorruptionTypePerFloorLog.SaveKey, new CorruptionTypePerFloorLog());
+        BaseMod.addSaveField(RandomUpgradeRewardPerFloorLog.SaveKey, new RandomUpgradeRewardPerFloorLog());
         BaseMod.addSaveField(ShopServiceLog.SaveKey, new ShopServiceLog());
 
         BaseMod.subscribe(new ApplyCorruptionHealthIncreaseOnStartBattleSubscriber());
