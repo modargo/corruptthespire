@@ -70,10 +70,10 @@ public class RandomUpgradeRewardRunHistoryPatch {
     }
 
     @SpirePatch(clz = RunHistoryPath.class, method = "setRunData")
-    public static class AddLessonLearnedDataPatch {
+    public static class AddRandomUpgradeRewardDataPatch {
         @SuppressWarnings({"rawtypes", "unchecked"})
         @SpireInsertPatch(locator = Locator.class, localvars = { "element", "i" })
-        public static void addLessonLearnedData(RunHistoryPath __instance, RunData newData, RunPathElement element, int i) throws NoSuchFieldException, IllegalAccessException {
+        public static void addRandomUpgradeRewardData(RunHistoryPath __instance, RunData newData, RunPathElement element, int i) throws NoSuchFieldException, IllegalAccessException {
             Field field = newData.getClass().getField("random_upgrade_reward_per_floor");
             List random_upgrade_reward_per_floor = (List)field.get(newData);
             if (random_upgrade_reward_per_floor != null && i < random_upgrade_reward_per_floor.size()) {
