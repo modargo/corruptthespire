@@ -18,6 +18,8 @@ import corruptthespire.corruptions.fight.FightCorruptionInfo;
 import corruptthespire.corruptions.fight.FightCorruptionType;
 import corruptthespire.corruptions.shop.ShopCorruptionType;
 import corruptthespire.corruptions.treasure.TreasureCorruptionType;
+import corruptthespire.events.special.SealedChestEvent;
+import corruptthespire.events.special.TreasureWardensEventRoom;
 import corruptthespire.patches.core.CorruptedField;
 import corruptthespire.patches.event.EventCorruptionTypeField;
 import corruptthespire.patches.fight.FightCorruptionInfosField;
@@ -122,7 +124,13 @@ public class CorruptionTypePerFloorRunHistoryPatch {
         }
         String corruptionType;
         AbstractRoom room = node.room;
-        if (room instanceof EventRoom) {
+        if (room instanceof TreasureWardensEventRoom) {
+            corruptionType = TreasureCorruptionType.Wardens.name();
+        }
+        else if (room instanceof EventRoom && ((EventRoom)room).event instanceof SealedChestEvent) {
+            corruptionType = TreasureCorruptionType.Sealed.name();
+        }
+        else if (room instanceof EventRoom) {
             EventCorruptionType eventCorruptionType = EventCorruptionTypeField.corruptionType.get(room);
             corruptionType = eventCorruptionType != null ? eventCorruptionType.name() : null;
         }
