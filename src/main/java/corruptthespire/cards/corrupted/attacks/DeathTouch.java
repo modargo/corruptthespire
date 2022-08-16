@@ -20,7 +20,7 @@ public class DeathTouch extends AbstractCorruptedCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 1;
     private static final int DAMAGE = 1;
-    private static final int ABYSSTOUCHED = 10;
+    private static final int ABYSSTOUCHED = 9;
     private static final int UPGRADE_ABYSSTOUCHED = 3;
 
     public DeathTouch() {
