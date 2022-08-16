@@ -36,6 +36,7 @@ import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.patches.core.CorruptedField;
 import corruptthespire.patches.relics.BottledPrismPatch;
 import corruptthespire.patches.shop.ShopCorruptionTypeField;
+import corruptthespire.patches.shop.ShopPatch;
 import corruptthespire.patches.shop.ShopScreenServiceInfoField;
 import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.savables.logs.ShopServiceLog;
@@ -413,7 +414,7 @@ public class ShopCorruption {
         ShopScreenServiceInfo screenInfo = ShopScreenServiceInfoField.serviceInfo.get(shopScreen);
         if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             logger.info("Performing service: " + type.name());
-            ShopServiceLog log = ShopServiceLog.shopServiceLog.stream().filter(l -> l.floor == AbstractDungeon.floorNum).collect(Collectors.toList()).get(0);
+            ShopServiceLog log = getShopServiceLog();
             AbstractDungeon.player.loseGold(getShopServiceInfo(type).cost);
             for (AbstractCard card : AbstractDungeon.gridSelectScreen.selectedCards) {
                 switch (type) {
@@ -548,5 +549,19 @@ public class ShopCorruption {
         c.target_x = c.current_x;
         c.target_y = c.current_y;
         return c;
+    }
+
+    public static ShopServiceLog getShopServiceLog() {
+        ShopServiceLog log;
+        Optional<ShopServiceLog> firstLog = ShopServiceLog.shopServiceLog.stream().filter(l -> l.floor == AbstractDungeon.floorNum).findFirst();
+        if (firstLog.isPresent()) {
+            log = firstLog.get();
+        }
+        else {
+            log = new ShopServiceLog();
+            log.floor = AbstractDungeon.floorNum;
+            ShopServiceLog.shopServiceLog.add(log);
+        }
+        return log;
     }
 }

@@ -33,6 +33,8 @@ import javassist.expr.MethodCall;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class ShopPatch {
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:ShopCorruption").TEXT;
@@ -46,11 +48,6 @@ public class ShopPatch {
                     : null;
             if (corruptionType == ShopCorruptionType.Service) {
                 ShopScreenServiceInfoField.serviceInfo.set(__instance, new ShopScreenServiceInfo());
-                if (ShopServiceLog.shopServiceLog.stream().noneMatch(l -> l.floor == AbstractDungeon.floorNum)) {
-                    ShopServiceLog log = new ShopServiceLog();
-                    log.floor = AbstractDungeon.floorNum;
-                    ShopServiceLog.shopServiceLog.add(log);
-                }
             }
         }
     }
@@ -238,12 +235,14 @@ public class ShopPatch {
                     : null;
             if (corruptionType == ShopCorruptionType.TransformReplacesRemove) {
                 if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
+                    ShopServiceLog log = ShopCorruption.getShopServiceLog();
                     ShopScreen.purgeCard();
                     for (AbstractCard card : AbstractDungeon.gridSelectScreen.selectedCards) {
-                        CardCrawlGame.metricData.addPurgedItem(card.getMetricID());
                         AbstractDungeon.player.masterDeck.removeCard(card);
                         AbstractDungeon.transformCard(card, false, AbstractDungeon.miscRng);
                         AbstractDungeon.topLevelEffectsQueue.add(new ShowCardAndObtainEffect(AbstractDungeon.transformedCard, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+                        log.cardsTransformed.add(card.getMetricID());
+                        log.cardsGained.add(AbstractDungeon.transformedCard.getMetricID());
                     }
 
                     AbstractDungeon.gridSelectScreen.selectedCards.clear();
