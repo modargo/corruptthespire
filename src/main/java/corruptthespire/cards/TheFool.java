@@ -37,8 +37,8 @@ public class TheFool extends AbstractModCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         ArrayList<AbstractCard> choices = new ArrayList<>();
-        choices.add(new TheFoolNowOption());
-        choices.add(new TheFoolLaterOption());
+        choices.add(new TheFoolNowOption(this.magicNumber, this.magicNumber2));
+        choices.add(new TheFoolLaterOption(this.magicNumber));
         this.addToBot(new ChooseOneAction(choices));
     }
 
@@ -63,10 +63,10 @@ public class TheFool extends AbstractModCard {
         public static final String DESCRIPTION = cardStrings.DESCRIPTION;
         private static final int COST = -2;
 
-        public TheFoolNowOption() {
+        public TheFoolNowOption(int draw, int reducedDrawNextTurn) {
             super(ID, NAME, IMG, COST, DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF);
-            this.magicNumber = this.baseMagicNumber = DRAW;
-            this.magicNumber2 = this.baseMagicNumber2 = REDUCED_DRAW_NEXT_TURN;
+            this.magicNumber = this.baseMagicNumber = draw;
+            this.magicNumber2 = this.baseMagicNumber2 = reducedDrawNextTurn;
         }
 
         @Override
@@ -85,7 +85,7 @@ public class TheFool extends AbstractModCard {
 
         @Override
         public AbstractCard makeCopy() {
-            return new TheFoolNowOption();
+            return new TheFoolNowOption(this.magicNumber, this.magicNumber2);
         }
     }
 
@@ -97,9 +97,9 @@ public class TheFool extends AbstractModCard {
         public static final String DESCRIPTION = cardStrings.DESCRIPTION;
         private static final int COST = -2;
 
-        public TheFoolLaterOption() {
+        public TheFoolLaterOption(int draw) {
             super(ID, NAME, IMG, COST, DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF);
-            this.magicNumber = this.baseMagicNumber = DRAW;
+            this.magicNumber = this.baseMagicNumber = draw;
         }
 
         @Override
@@ -117,7 +117,7 @@ public class TheFool extends AbstractModCard {
 
         @Override
         public AbstractCard makeCopy() {
-            return new TheFoolLaterOption();
+            return new TheFoolLaterOption(this.magicNumber);
         }
     }
 }
