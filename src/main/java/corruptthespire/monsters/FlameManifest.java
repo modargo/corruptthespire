@@ -5,10 +5,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateShakeAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateSlowAttackAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.common.RollMoveAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -90,7 +87,10 @@ public class FlameManifest extends CustomMonster
         switch (this.nextMove) {
             case BIG_BURN_DEBUFF:
                 this.addToBot(new AnimateShakeAction(this, 0.3F, 0.1F));
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Burn(), this.bigBurnBurns, true, true));
+                int drawBurns = this.bigBurnBurns / 2;
+                int discardBurns = (this.bigBurnBurns + 1) / 2;
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Burn(), drawBurns, true, true));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new Burn(), discardBurns));
                 break;
             case SMALL_BURN_ATTACK:
                 this.addToBot(new AnimateFastAttackAction(this));

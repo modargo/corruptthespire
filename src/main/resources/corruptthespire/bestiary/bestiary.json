@@ -2081,7 +2081,7 @@
 					"min_asc": 0,
 					"desc": "Starts with #wBig #wBurn, then cycles #wSmall #wBurn -> #wFierce #wBurn.",
 					"hp": "(13 - 15 / 20 - 22 / 27 - 29 HP)",
-					"notes": "Innate #uFiery #uDemise 1. NL NL Burn status cards go into the draw pile. NL NL HP and move effects vary by act (act 1 / act 2 / act 3).",
+					"notes": "Innate #uFiery #uDemise 1. NL NL Burn status cards are split between the draw and discard piles. NL NL HP and move effects vary by act (act 1 / act 2 / act 3).",
 					"moves": [
 						{
 							"name": "Big Burn",
@@ -2116,7 +2116,7 @@
 					"min_asc": 2,
 					"desc": "Starts with #wBig #wBurn, then cycles #wSmall #wBurn -> #wFierce #wBurn.",
 					"hp": "(13 - 15 / 20 - 22 / 27 - 29 HP)",
-					"notes": "Innate #uFiery #uDemise 1. NL NL Burn status cards go into the draw pile. NL NL HP and move effects vary by act (act 1 / act 2 / act 3).",
+					"notes": "Innate #uFiery #uDemise 1. NL NL Burn status cards are split between the draw and discard piles. NL NL HP and move effects vary by act (act 1 / act 2 / act 3).",
 					"moves": [
 						{
 							"name": "Big Burn",
@@ -2151,7 +2151,7 @@
 					"min_asc": 7,
 					"desc": "Starts with #wBig #wBurn, then cycles #wSmall #wBurn -> #wFierce #wBurn.",
 					"hp": "(14 - 16 / 22 - 24 / 30 - 32 HP)",
-					"notes": "Innate #uFiery #uDemise 1. NL NL Burn status cards go into the draw pile. NL NL HP and move effects vary by act (act 1 / act 2 / act 3).",
+					"notes": "Innate #uFiery #uDemise 1. NL NL Burn status cards are split between the draw and discard piles. NL NL HP and move effects vary by act (act 1 / act 2 / act 3).",
 					"moves": [
 						{
 							"name": "Big Burn",
@@ -2186,7 +2186,7 @@
 					"min_asc": 17,
 					"desc": "Starts with #wBig #wBurn, then cycles #wSmall #wBurn -> #wFierce #wBurn.",
 					"hp": "(14 - 16 / 22 - 24 / 30 - 32 HP)",
-					"notes": "Innate #uFiery #uDemise 1. NL NL Burn status cards go into the draw pile. NL NL HP and move effects vary by act (act 1 / act 2 / act 3).",
+					"notes": "Innate #uFiery #uDemise 1. NL NL Burn status cards are split between the draw and discard piles. NL NL HP and move effects vary by act (act 1 / act 2 / act 3).",
 					"moves": [
 						{
 							"name": "Big Burn",
