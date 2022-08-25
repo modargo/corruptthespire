@@ -14,8 +14,8 @@
     "FLAVOR": "Trick or treat!",
     "DESCRIPTIONS": [
       "At the start of each combat, gain #b{0} #yAfter #yImage. Draw #b{1} less card on the first turn of each combat.",
-      "Block gained: #b{0}",
-      " NL Per turn: #b{0} NL Per combat: #b{1}"
+      "Block gained: {0}",
+      " NL Per turn: {0} NL Per combat: {1}"
     ]
   },
   "CorruptTheSpire:UnreliableCharm": {
@@ -33,7 +33,7 @@
     "FLAVOR": "Made of a special material that absorbs corruption.",
     "DESCRIPTIONS": [
       "You can now gain corrupted relics at corrupted Rest Sites.",
-      "Relics gained: #b{0}"
+      "Relics gained: {0}"
     ]
   },
   "CorruptTheSpire:CorruptedEgg": {
@@ -41,7 +41,7 @@
     "FLAVOR": "Whatever life there once was here has been overtaken by corruption.",
     "DESCRIPTIONS": [
       "Cards in rewards have #b+{0}% chance to be #yupgraded. Gain #b{1} #yCorruption every time you gain an #yupgraded card.",
-      "Corruption gained: #b{0}"
+      "Corruption gained: {0}"
     ]
   },
   "CorruptTheSpire:MaskOfNightmares": {
@@ -49,7 +49,7 @@
     "FLAVOR": "Every glimpse is disturbing, in new way each time.",
     "DESCRIPTIONS": [
       "Whenever you enter a corrupted room, raise your Max HP by #b{0}.",
-      "Max HP gained: #b{0}"
+      "Max HP gained: {0}"
     ]
   },
   "CorruptTheSpire:DeckOfManyFates": {
@@ -72,7 +72,7 @@
     "FLAVOR": "A ward that guides its bearer to greatness.",
     "DESCRIPTIONS": [
       "Reduce #yCorruption gained from entering rooms by #b{0}. Corrupted events, treasures, and shops no longer give the #ylowest #yreward #youtcomes.",
-      "Corruption reduced: #b{0}"
+      "Corruption reduced: {0}"
     ]
   },
   "CorruptTheSpire:CorruptedToolbox": {
@@ -85,8 +85,8 @@
     "FLAVOR": "The fan responds to a mix of energies in air around it by defending its bearer.",
     "DESCRIPTIONS": [
       "When you play cards of #b{0} different colors in a turn, gain #b{1} #yBlock.",
-      "Block gained: #b{0}",
-      " NL Per turn: #b{0} NL Per combat: #b{1}"
+      "Block gained: {0}",
+      " NL Per turn: {0} NL Per combat: {1}"
     ]
   },
   "CorruptTheSpire:BottledPrism": {
@@ -103,7 +103,7 @@
     "FLAVOR": "For the truly elite, by invitation only.",
     "DESCRIPTIONS": [
       "Shop prices are reduced by #b{0}%. Whenever you enter a shop room, gain #b{1} #yCorruption.",
-      "Corruption gained: #b{0}"
+      "Corruption gained: {0}"
     ]
   },
   "CorruptTheSpire:MystifyingTimepiece": {
@@ -111,8 +111,8 @@
     "FLAVOR": "The time it keeps doesn't correspond to any system you know.",
     "DESCRIPTIONS": [
       "If you do not play any cards that cost #b{0} during your turn, draw #b{1} additional card at the start of your next turn.",
-      "Cards drawn: #b{0}",
-      " NL Per turn: #b{0} NL Per combat: #b{1}"
+      "Cards drawn: {0}",
+      " NL Per turn: {0} NL Per combat: {1}"
     ]
   },
   "CorruptTheSpire:OozingHeart": {
@@ -120,7 +120,7 @@
     "FLAVOR": "Slowly leaks, but beats rapidly when danger is near.",
     "DESCRIPTIONS": [
       "At the start of elite combats, heal #b{0} HP. Whenever you climb a floor, if you are above #b{1} HP, lose #b{1} HP.",
-      "HP healed: #b{0} NL Damage taken: #b{1}"
+      "HP healed: {0} NL Damage taken: {1}"
     ]
   },
   "CorruptTheSpire:Gohei": {
@@ -128,8 +128,8 @@
     "FLAVOR": "This tasseled rod cleanses and protects.",
     "DESCRIPTIONS": [
       "Whenever you would receive #b{0} or more unblocked Attack damage, receive #b{1} less and add a #yWound to your discard pile.",
-      "Damage prevented: #b{0} NL Wounds: #b{1}",
-      " NL Damage prevented per turn: #b{0} NL Wounds per turn: #b{1} NL Damage prevented per combat: #b{2} NL Wounds per combat: #b{3}"
+      "Damage prevented: {0} NL Wounds: {1}",
+      " NL Damage prevented per turn: {0} NL Wounds per turn: {1} NL Damage prevented per combat: {2} NL Wounds per combat: {3}"
     ]
   },
   "CorruptTheSpire:HarbingersClaw": {
@@ -142,8 +142,8 @@
     "FLAVOR": "The skull of an otherworldly horror.",
     "DESCRIPTIONS": [
       "If you do not play any #yPowers during your turn, gain #b{0} #yBlock at the end of your turn and draw #b{1} additional card at the start of your next turn.",
-      "Block gained: #b{0} NL Cards drawn: #b{1}",
-      " NL Block per turn: #b{0} NL Draw per turn: #b{1} NL Block per combat: #b{2} NL Draw per combat: #b{3}"
+      "Block gained: {0} NL Cards drawn: {1}",
+      " NL Block per turn: {0} NL Draw per turn: {1} NL Block per combat: {2} NL Draw per combat: {3}"
     ]
   },
   "CorruptTheSpire:AbyssalOrb": {
@@ -151,8 +151,8 @@
     "FLAVOR": "It gazes back at you.",
     "DESCRIPTIONS": [
       "At the start of your turn, apply #b{0} #yAbysstouched to a random enemy. Whenever you apply #yAbysstouched, apply #b{1} additional #yAbysstouched.",
-      "Abysstouched applied: #b{0}",
-      " NL Per turn: #b{0} NL Per combat: #b{1}"
+      "Abysstouched applied: {0}",
+      " NL Per turn: {0} NL Per combat: {1}"
     ]
   },
   "CorruptTheSpire:TranscendentPet": {
@@ -170,7 +170,7 @@
     "FLAVOR": "A large stone statue of a creature you hope to never see.",
     "DESCRIPTIONS": [
       "After every #b{0} combats, receive a corrupted potion reward.",
-      "Potions gained: #b{0}"
+      "Potions gained: {0}"
     ]
   },
   "CorruptTheSpire:HeavySword": {
@@ -178,8 +178,8 @@
     "FLAVOR": "It was too big to be called a sword. Massive, thick, heavy, and far too rough. Indeed, it was a heap of raw iron.",
     "DESCRIPTIONS": [
       "At the start of your 4th turn, gain #b{0} #yStrength.",
-      "Strength gained: #b{0}",
-      " NL Per combat: #b{0}"
+      "Strength gained: {0}",
+      " NL Per combat: {0}"
     ]
   },
   "CorruptTheSpire:SlimeShield": {
@@ -197,8 +197,8 @@
     "FLAVOR": "There is a future in which I can see only mist and a single shadow.",
     "DESCRIPTIONS": [
       "Whenever you play a #yPower card, gain #b{0} #yThorns.",
-      "Thorns gained: #b{0}",
-      " NL Per turn: #b{0} NL Per combat: #b{1}"
+      "Thorns gained: {0}",
+      " NL Per turn: {0} NL Per combat: {1}"
     ]
   },
   "CorruptTheSpire:GnosticBlessing": {
@@ -206,7 +206,7 @@
     "FLAVOR": "The pursuit of knowledge, relentless and deranged.",
     "DESCRIPTIONS": [
       "At the start of your turn, draw #b{0} additional card. NL At the start of each combat, gain #b{1} #yMetallicize. NL Future card rewards have #b{2} less card to choose from.",
-      "Card options lost: #b{0}"
+      "Card options lost: {0}"
     ]
   },
   "CorruptTheSpire:ChthonicBlessing": {
@@ -214,7 +214,7 @@
     "FLAVOR": "The riches of the land, accumulated and hoarded.",
     "DESCRIPTIONS": [
       "Gain #b{0} #yGold after every non-Boss combat. NL Gain a relic after every #b{1} non-Boss combats. NL Future card rewards have #b{2} less card to choose from.",
-      "Gold earned: #b{0} NL Relics gained: #b{1} NL Card options lost: #b{2}"
+      "Gold earned: {0} NL Relics gained: {1} NL Card options lost: {2}"
     ]
   },
   "CorruptTheSpire:HandOfMidas": {
@@ -222,7 +222,7 @@
     "FLAVOR": "Makes it hard to eat and drink.",
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. Elites drop #b{0} #yGold instead of a relic.",
-      "Relics turned to gold: #b{0}"
+      "Relics turned to gold: {0}"
     ]
   },
   "CorruptTheSpire:BottomlessMeadHorn": {
@@ -230,7 +230,7 @@
     "FLAVOR": "Drink the sea.",
     "DESCRIPTIONS": [
       "Based on the size of your deck: NL #b{0}+: At the start of combat, gain #b{1} #yStrength and #b{1} #yDexterity. NL #b{2}+: At the start of combat, #yExhaust #b{3} #yStrike\u00a0and #b{3} #yDefend in your draw pile. NL #b{4}+: At the start of your turn, draw #b{5} additional card.",
-      "Combats with {0}+ cards: #b{1} NL Combats with {2}+ cards: #b{3} NL Combats with {4}+ cards: #b{5}"
+      "Combats with {0}+ cards: {1} NL Combats with {2}+ cards: {3} NL Combats with {4}+ cards: {5}"
     ]
   },
   "CorruptTheSpire:BeanSprouts": {
@@ -238,8 +238,8 @@
     "FLAVOR": "They go well with everything.",
     "DESCRIPTIONS": [
       "Whenever you gain #yFrail or #yVulnerable, or lose #yDexterity due to an enemy, gain #b{0} Strength and #b{1} #yBlock. NL You gain this even if #yTurnip prevents the #yFrail.",
-      "Strength gained: #b{0} NL Block gained: #b{1}",
-      " NL Strength per turn: #b{0} NL Block per turn: #b{1} NL Strength per combat: #b{2} NL Block per combat: #b{3}"
+      "Strength gained: {0} NL Block gained: {1}",
+      " NL Strength per turn: {0} NL Block per turn: {1} NL Strength per combat: {2} NL Block per combat: {3}"
     ]
   }
 }
