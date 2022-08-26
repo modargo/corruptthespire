@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
+import com.megacrit.cardcrawl.screens.select.GridCardSelectScreen;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.corrupted.CorruptedCardUtil;
@@ -31,6 +32,7 @@ public class ForbiddenLibrary extends AbstractImageEvent {
     private final int heal;
 
     private int screenNum = 0;
+    private boolean choosingCard = false;
 
     public ForbiddenLibrary() {
         super(NAME, DESCRIPTIONS[0], IMG);
@@ -45,11 +47,17 @@ public class ForbiddenLibrary extends AbstractImageEvent {
     @Override
     public void update() {
         super.update();
-        if (!AbstractDungeon.isScreenUp && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
-            AbstractCard c = AbstractDungeon.gridSelectScreen.selectedCards.get(0).makeCopy();
-            AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
-            AbstractDungeon.gridSelectScreen.selectedCards.clear();
-            logMetricObtainCard(ID, "Study", c);
+        if (this.choosingCard && !AbstractDungeon.isScreenUp) {
+            if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
+                AbstractCard c = AbstractDungeon.gridSelectScreen.selectedCards.get(0).makeCopy();
+                AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+                AbstractDungeon.gridSelectScreen.selectedCards.clear();
+                logMetricObtainCard(ID, "Study", c);
+            }
+            else {
+                logMetricIgnored(ID);
+            }
+            this.choosingCard = false;
         }
     }
 
@@ -86,6 +94,8 @@ public class ForbiddenLibrary extends AbstractImageEvent {
     private void getCardsAndOpenSelectScreen(int cards) {
         CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         group.group = CorruptedCardUtil.getRandomCorruptedCards(cards);
-        AbstractDungeon.gridSelectScreen.open(group, 1, OPTIONS[3], false);
+        AbstractDungeon.gridSelectScreen.open(group, 1, OPTIONS[3], false, false, true, false);
+        AbstractDungeon.overlayMenu.cancelButton.show(GridCardSelectScreen.TEXT[1]);
+        this.choosingCard = true;
     }
 }
