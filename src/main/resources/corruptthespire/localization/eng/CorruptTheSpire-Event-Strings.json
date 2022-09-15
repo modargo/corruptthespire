@@ -280,7 +280,7 @@
       "The books speak of a play that drives any reader mad by the second act, which shares its name with its horrific master. Terrifying.",
       "The books tell of a being older than the world who lies dreaming beneath the ocean, waiting for when the stars are right. Chilling.",
       "The books advise of a fertility deity who births hideous tentacled young, worshipped by vast multitudes who seek her favor. Sickening.",
-      "For a ruined library of corrupted magic, it's a pretty comfortable to sleep. You wake up ~very~ refreshed."
+      "For a ruined library of corrupted magic, it's a pretty comfortable place to sleep. You wake up ~very~ refreshed."
     ],
     "OPTIONS": [
       "[Study] #gChoose #g1 #gof #g{0} #gcorrupted #gcards #gto #gadd #gto #gyour #gdeck.",
