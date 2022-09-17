@@ -11,7 +11,7 @@ import corruptthespire.events.special.HarbingerEvent;
 import java.util.Arrays;
 import java.util.List;
 
-@SpirePatch(cls = "eventfilter.patches.AddEventPatch", method = "Postfix", optional = true)
+@SpirePatch(cls = "eventfilter.patches.AddEventPatch", method = "Prefix", optional = true)
 public class EventFilterSkipSpecialEventsPatch {
     @SpirePrefixPatch
     public static SpireReturn<Void> eventFilterSkipSpecialEvents(AddEventParams params) {
