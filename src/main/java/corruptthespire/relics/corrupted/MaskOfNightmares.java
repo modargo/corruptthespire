@@ -6,6 +6,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.util.TextureLoader;
 
@@ -35,7 +36,20 @@ public class MaskOfNightmares extends AbstractCorruptedRelic {
 
     public void onEnterCorruptedRoom() {
         incrementMaxHpStat();
+        // Some modded relics check for combat by checking the room phase, which isn't actually enough to ensure that
+        // doing things like ApplyPowerAction is safe -- to confirm that the fight has been initialized, checking that
+        // AbstractDungeon.getMonsters() is non-null is also necessary.
+        // Healing from Mask of Nightmares is intended to be non-combat healing anyway, so to enforce that and guard
+        // against relics that try to do invalid things, we manipulate the room phase here.
+        boolean needToReset = false;
+        if (AbstractDungeon.getCurrMapNode() != null && AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.INCOMPLETE;
+            needToReset = true;
+        }
         AbstractDungeon.player.increaseMaxHp(MAX_HP, true);
+        if (needToReset) {
+            AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
+        }
     }
 
     @Override
