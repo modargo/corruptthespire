@@ -2760,6 +2760,168 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Rotting Shambler",
+			"id": "CorruptTheSpire:RottingShambler",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Starts with #wBash, then #wNourishing #wCorruption, then cycles #wRot #wTouch -> #wRot #wTouch -> #wBash.",
+					"hp": "(62-64 HP)",
+					"notes": "Innate #uEssence #uof #uRot 2. #rT = (Number of times Rot Touch used + 2)",
+					"moves": [
+						{
+							"name": "Bash",
+							"effects": [
+								{
+									"name": "11",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Nourishing Corruption",
+							"effects": [
+								{
+									"name": "Block 4",
+									"color": "BLOCK"
+								},
+								{
+									"name": "Ritual 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Rot Touch",
+							"effects": [
+								{
+									"name": "3xT",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 2,
+					"desc": "Starts with #wBash, then #wNourishing #wCorruption, then cycles #wRot #wTouch -> #wRot #wTouch -> #wBash.",
+					"hp": "(62-64 HP)",
+					"notes": "Innate #uEssence #uof #uRot 2. #rT = (Number of times Rot Touch used + 2)",
+					"moves": [
+						{
+							"name": "Bash",
+							"effects": [
+								{
+									"name": "12",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Nourishing Corruption",
+							"effects": [
+								{
+									"name": "Block 4",
+									"color": "BLOCK"
+								},
+								{
+									"name": "Ritual 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Rot Touch",
+							"effects": [
+								{
+									"name": "4xT",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 7,
+					"desc": "Starts with #wBash, then #wNourishing #wCorruption, then cycles #wRot #wTouch -> #wRot #wTouch -> #wBash.",
+					"hp": "(65-67 HP)",
+					"notes": "Innate #uEssence #uof #uRot 2. #rT = (Number of times Rot Touch used + 2)",
+					"moves": [
+						{
+							"name": "Bash",
+							"effects": [
+								{
+									"name": "12",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Nourishing Corruption",
+							"effects": [
+								{
+									"name": "Block 6",
+									"color": "BLOCK"
+								},
+								{
+									"name": "Ritual 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Rot Touch",
+							"effects": [
+								{
+									"name": "4xT",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 17,
+					"desc": "Starts with #wBash, then #wNourishing #wCorruption, then repeats #wRot #wTouch.",
+					"hp": "(65-67 HP)",
+					"notes": "Innate #uEssence #uof #uRot 3. #rT = (Number of times Rot Touch used + 2)",
+					"moves": [
+						{
+							"name": "Bash",
+							"effects": [
+								{
+									"name": "12",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Nourishing Corruption",
+							"effects": [
+								{
+									"name": "Block 6",
+									"color": "BLOCK"
+								},
+								{
+									"name": "Ritual 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Rot Touch",
+							"effects": [
+								{
+									"name": "4xT",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				}
+			]
 		}
 	]
 }

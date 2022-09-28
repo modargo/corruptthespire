@@ -159,6 +159,7 @@ public class CorruptTheSpire implements
         BaseMod.addMonster(DeliriumManifest.ID, (BaseMod.GetMonster) DeliriumManifest::new);
         BaseMod.addMonster(Harbinger.ID, (BaseMod.GetMonster) Harbinger::new);
         BaseMod.addMonster(Doom.ID, () -> new Doom(0.0F, 150.0F));
+        BaseMod.addMonster(RottingShambler.ID, (BaseMod.GetMonster) RottingShambler::new);
     }
 
     private static void addEvents() {
@@ -226,6 +227,7 @@ public class CorruptTheSpire implements
         addCard(new BadBreath());
         addCard(new Bedeviled());
         addCard(new Contagion());
+        addCard(new CorruptingRot());
         addCard(new Fated());
         ArrayList<AbstractCard> corruptedCards = CorruptedCardUtil.getAllCorruptedCardInfos(true)
                 .values()

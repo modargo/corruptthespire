@@ -134,5 +134,13 @@
       "Strife"
     ],
     "NAME": "Strife Manifest"
+  },
+  "CorruptTheSpire:RottingShambler": {
+    "MOVES": [
+      "Bash",
+      "Nourishing Corruption",
+      "Rot Touch"
+    ],
+    "NAME": "Rotting Shambler"
   }
 }

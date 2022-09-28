@@ -227,5 +227,9 @@
   "CorruptTheSpire:TheFoolLaterOption": {
     "NAME": "Later",
     "DESCRIPTION": "Draw !M! cards next turn."
+  },
+  "CorruptTheSpire:CorruptingRot": {
+    "NAME": "Corrupting Rot",
+    "DESCRIPTION": "At the end of your turn, gain !M! corruptthespire:Corruption."
   }
 }
