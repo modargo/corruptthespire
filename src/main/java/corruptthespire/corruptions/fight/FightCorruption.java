@@ -14,9 +14,11 @@ import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 import corruptthespire.Cor;
 import corruptthespire.corruptions.fight.rewards.FightCorruptionReward;
+import corruptthespire.corruptions.fight.room.FightRoomCorruptionType;
 import corruptthespire.monsters.*;
 import corruptthespire.patches.core.CorruptedField;
 import corruptthespire.patches.fight.FightCorruptionInfosField;
+import corruptthespire.patches.fight.room.FightRoomCorruptionTypeField;
 import corruptthespire.powers.ThoughtStealerPower;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -31,7 +33,7 @@ public class FightCorruption {
     private static final HashSet<AbstractMonster> handledMonsters = new HashSet<>();
 
     public static boolean shouldApplyCorruptions() {
-        return AbstractDungeon.getCurrRoom() instanceof MonsterRoom && CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode());
+        return AbstractDungeon.getCurrRoom() instanceof MonsterRoom && CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && FightRoomCorruptionTypeField.roomCorruptionType.get(AbstractDungeon.getCurrRoom()) == FightRoomCorruptionType.Normal;
     }
 
     public static void determineCorruptions(AbstractRoom room) {

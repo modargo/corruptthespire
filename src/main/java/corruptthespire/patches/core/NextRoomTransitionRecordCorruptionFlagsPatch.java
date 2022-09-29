@@ -1,15 +1,18 @@
-package corruptthespire.patches.treasure;
+package corruptthespire.patches.core;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import corruptthespire.Cor;
+import corruptthespire.corruptions.fight.room.FightRoomCorruptionType;
 import corruptthespire.corruptions.shop.ShopCorruptionType;
 import corruptthespire.events.special.TreasureWardensEventRoom;
 import corruptthespire.patches.core.CorruptedField;
+import corruptthespire.patches.fight.room.FightRoomCorruptionTypeField;
 import corruptthespire.patches.shop.ShopCorruptionTypeField;
 
 @SpirePatch(clz = AbstractDungeon.class, method = "nextRoomTransition", paramtypez = { SaveFile.class })
@@ -28,11 +31,19 @@ public class NextRoomTransitionRecordCorruptionFlagsPatch {
             else {
                 //This is here because there wasn't a natural place to put it in the shop corruption logic and this is
                 //a surefire way to do it
-                ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && AbstractDungeon.getCurrRoom() instanceof ShopRoom
+                ShopCorruptionType shopCorruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && AbstractDungeon.getCurrRoom() instanceof ShopRoom
                         ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
                         : null;
-                if (corruptionType == ShopCorruptionType.Service) {
+                if (shopCorruptionType == ShopCorruptionType.Service) {
                     Cor.flags.seenServiceShop = true;
+                }
+
+                //This might be able to go in the onVictory method inside RottingShambler, but this is a surefire approach
+                FightRoomCorruptionType fightRoomCorruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && AbstractDungeon.getCurrRoom() instanceof MonsterRoom
+                        ? FightRoomCorruptionTypeField.roomCorruptionType.get(AbstractDungeon.getCurrRoom())
+                        : null;
+                if (fightRoomCorruptionType == FightRoomCorruptionType.RottingShambler) {
+                    Cor.flags.foughtRottingShambler = true;
                 }
             }
         }
