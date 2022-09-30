@@ -6,4 +6,5 @@ public class Encounters {
     public static final String TREASURE_WARDENS_ACT3 = "CorruptTheSpire:TREASURE_WARDENS_ACT3";
     public static final String DEVOURER = "CorruptTheSpire:DEVOURER";
     public static final String TIME_AND_SPACE = "CorruptTheSpire:TIME_AND_SPACE";
+    public static final String WAR_AND_FEAR = "CorruptTheSpire:WAR_AND_FEAR";
 }

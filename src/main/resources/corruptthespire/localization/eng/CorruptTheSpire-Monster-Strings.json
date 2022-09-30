@@ -142,5 +142,23 @@
       "Rot Touch"
     ],
     "NAME": "Rotting Shambler"
+  },
+  "CorruptTheSpire:RelentlessWar": {
+    "MOVES": [
+      "Bloodshed",
+      "Slaughter",
+      "Malice",
+      "Challenge"
+    ],
+    "NAME": "Relentless War"
+  },
+  "CorruptTheSpire:EternalFear": {
+    "MOVES": [
+      "Dread",
+      "Despair",
+      "Horror",
+      "Panic"
+    ],
+    "NAME": "Eternal Fear"
   }
 }
