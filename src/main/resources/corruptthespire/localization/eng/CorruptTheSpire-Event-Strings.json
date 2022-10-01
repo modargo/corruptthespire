@@ -377,5 +377,20 @@
       "[Accept] Do not change the relics in the next boss chest.",
       "[Leave]"
     ]
+  },
+  "CorruptTheSpire:Ascent": {
+    "NAME": "Ascent",
+    "DESCRIPTIONS": [
+      "Unexpectedly, you come across a strange #bstaircase, massive and covered with marks of #ppower. Its twists and turns seem to defy normal geometry, even by the standards of the Spire. No matter what you do, it always seems to be in front of you, barring your path, demanding your traversal. NL NL Far above, you see what you think is a doorway atop the staircase, shining with #yfaint #ylight.",
+      "Climbing the #bstaircase, you lose sight of the rest of the Spire as your ascent continues on and on. After what feels like an eternity, you finally reach the #ylight at the top that you had glimpsed from below. Within the faint glow, you see #rdistorted #rfigures, but nothing more of what lies beyond. NL NL There's no turning back now. NL NL Yet as you pass through the threshold, you find yourself in the Spire once more. But something has changed....",
+      "Seeing that the staircase wants to take you somewhere, but unwilling to climb it, you instead seek to bargain. You will not leave the Spire; let whatever #gpowers control this anomaly come to you if they wish to meet. NL NL As you communicate your demands to the unspeaking staircase, you wonder if anything is listening... until the staircase fades from view. NL NL You'll surely encounter their response before long.",
+      "You resolutely ignore the staircase. As your path brings you back to it again and again, you continue on past it, knowing that this is only a trick. Your #pfate is greater than any meddling power. Nothing can hold you forever. The Spire must be #rconquered. NL NL Finally, the staircase stops appearing in front of you. ~Wearied~ ~and~ ~drained~ from the effort, you resume your climb."
+    ],
+    "OPTIONS": [
+      "[Ascend] #gGain #ga #grelic. #rFight #ra #rspecial #radditional #ract #r2 #rboss.",
+      "[Bargain] #rChange #rthe #ract #r2 #rboss #rto #ra #rspecial #rboss.",
+      "[Bypass] #rLose #r{0} #rHP #rand #rMax #rHP.",
+      "[Leave]"
+    ]
   }
 }

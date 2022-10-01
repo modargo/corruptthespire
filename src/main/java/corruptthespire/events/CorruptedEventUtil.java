@@ -12,6 +12,7 @@ import java.util.Map;
 public class CorruptedEventUtil {
     public static Map<String, CorruptedEventInfo> getAllCorruptedEvents() {
         Map<String, CorruptedEventInfo> corruptedEvents = new HashMap<>();
+        corruptedEvents.put(Ascent.ID, new CorruptedEventInfo(Ascent.class, CorruptedEventType.Chaotic));
         corruptedEvents.put(AStepToTheSide.ID, new CorruptedEventInfo(AStepToTheSide.class, CorruptedEventType.Chaotic));
         corruptedEvents.put(BlessingsOfChaos.ID, new CorruptedEventInfo(BlessingsOfChaos.class, CorruptedEventType.Chaotic));
         corruptedEvents.put(Divergence.ID, new CorruptedEventInfo(Divergence.class, CorruptedEventType.Chaotic));
