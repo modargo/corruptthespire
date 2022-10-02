@@ -45,6 +45,9 @@ public class NextRoomTransitionRecordCorruptionFlagsPatch {
                 if (fightRoomCorruptionType == FightRoomCorruptionType.RottingShambler) {
                     Cor.flags.foughtRottingShambler = true;
                 }
+                else if (fightRoomCorruptionType == FightRoomCorruptionType.Wisps) {
+                    Cor.flags.foughtWisps = true;
+                }
             }
         }
     }

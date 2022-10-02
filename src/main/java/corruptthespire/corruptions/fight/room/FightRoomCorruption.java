@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.helpers.MonsterHelper;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
+import corruptthespire.monsters.Encounters;
 import corruptthespire.monsters.RottingShambler;
 import corruptthespire.patches.fight.room.FightRoomCorruptionTypeField;
 import corruptthespire.relics.FragmentOfCorruption;
@@ -30,10 +31,11 @@ public class FightRoomCorruption {
         if (roomCorruptionType == null) {
             return null;
         }
-        //noinspection SwitchStatementWithTooFewBranches
         switch (roomCorruptionType) {
             case RottingShambler:
                 return RottingShambler.ID;
+            case Wisps:
+                return Encounters.WISPS;
             default:
                 return null;
         }
@@ -44,9 +46,9 @@ public class FightRoomCorruption {
             return;
         }
         AbstractRoom room = AbstractDungeon.getCurrRoom();
-        //noinspection SwitchStatementWithTooFewBranches
         switch (roomCorruptionType) {
             case RottingShambler:
+            case Wisps:
                 room.addRelicToRewards(new FragmentOfCorruption());
                 room.addRelicToRewards(new FragmentOfCorruption());
                 break;
