@@ -160,6 +160,14 @@ public class CorruptTheSpire implements
         BaseMod.addMonster(Harbinger.ID, (BaseMod.GetMonster) Harbinger::new);
         BaseMod.addMonster(Doom.ID, () -> new Doom(0.0F, 150.0F));
         BaseMod.addMonster(RottingShambler.ID, (BaseMod.GetMonster) RottingShambler::new);
+        BaseMod.addMonster(Encounters.WISPS, () -> new MonsterGroup(
+                new AbstractMonster[] {
+                        new OtherworldlyWisp(-550.0F, 100.0F),
+                        new GreaterWisp(-350.0F, 150.0F),
+                        new OtherworldlyWisp(-150.0F, 100.0F),
+                        new GreaterWisp(50.0F, 150.0F),
+                        new OtherworldlyWisp(250.0F, 100.0F)
+                }));
         BaseMod.addMonster(Encounters.WAR_AND_FEAR, () -> new MonsterGroup(
                 new AbstractMonster[] {
                         new RelentlessWar(-1000.0F, 0.0F),

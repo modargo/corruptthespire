@@ -24,6 +24,7 @@ import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.effects.combat.BlazeFromBeyondEffect;
+import corruptthespire.powers.PowerUtil;
 import corruptthespire.powers.SpacetimeMasteryPower;
 
 public class MasterOfTimeAndSpace extends CustomMonster
@@ -128,9 +129,7 @@ public class MasterOfTimeAndSpace extends CustomMonster
                             this.addToBot(new ApplyPowerAction(m, this, new StrengthPower(m, this.darkWillStrength)));
                         }
                         else {
-                            AbstractPower gainStrengthPower = new GainStrengthPower(m, this.darkWillStrength);
-                            gainStrengthPower.type = AbstractPower.PowerType.BUFF;
-                            this.addToBot(new ApplyPowerAction(m, this, gainStrengthPower));
+                            this.addToBot(new ApplyPowerAction(m, this, PowerUtil.gainStrengthBuff(m, this.darkWillStrength)));
                         }
                     }
                 }

@@ -48,9 +48,7 @@ public class AstralCorePower extends AbstractPower {
     public void trigger() {
         this.flash();
         if (AbstractDungeon.actionManager.turnHasEnded) {
-            AbstractPower gainStrengthPower = new GainStrengthPower(this.owner, this.amount);
-            gainStrengthPower.type = AbstractPower.PowerType.BUFF;
-            this.addToBot(new ApplyPowerAction(this.owner, this.owner, gainStrengthPower));
+            this.addToBot(new ApplyPowerAction(this.owner, this.owner, PowerUtil.gainStrengthBuff(this.owner, this.amount)));
         }
         else {
             this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.amount), this.amount));

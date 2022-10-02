@@ -239,5 +239,9 @@
   "CorruptTheSpire:SoulLink": {
     "NAME": "Soul Link",
     "DESCRIPTIONS": ["Shares HP with {0}."]
+  },
+  "CorruptTheSpire:Radiant": {
+    "NAME": "Radiant",
+    "DESCRIPTIONS": ["When this enemy dies, all other enemies gain #b{0} #yStrength at the end of the round and heal #b{1}."]
   }
 }

@@ -160,5 +160,21 @@
       "Panic"
     ],
     "NAME": "Eternal Fear"
+  },
+  "CorruptTheSpire:GreaterWisp": {
+    "MOVES": [
+      "Triple Ray",
+      "Ray",
+      "Soothing Light"
+    ],
+    "NAME": "Greater Wisp"
+  },
+  "CorruptTheSpire:OtherworldlyWisp": {
+    "MOVES": [
+      "Dancing Lights",
+      "Ray",
+      "Energize"
+    ],
+    "NAME": "Otherworldly Wisp"
   }
 }

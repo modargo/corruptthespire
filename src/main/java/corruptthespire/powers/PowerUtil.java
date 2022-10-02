@@ -3,6 +3,7 @@ package corruptthespire.powers;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import corruptthespire.CorruptTheSpire;
 
 import java.lang.reflect.Constructor;
@@ -42,4 +43,11 @@ public class PowerUtil {
         }
         return new HandOfTheAbyssPower(owner, amount);
     }
+
+    public static AbstractPower gainStrengthBuff(AbstractCreature owner, int amount) {
+        AbstractPower gainStrengthPower = new GainStrengthPower(owner, amount);
+        gainStrengthPower.type = AbstractPower.PowerType.BUFF;
+        return gainStrengthPower;
+    }
+
 }

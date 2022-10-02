@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.powers.ThornsPower;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.powers.DelayedVulnerablePower;
 import corruptthespire.powers.DelayedWeakPower;
+import corruptthespire.powers.PowerUtil;
 
 public class StrifeManifest extends CustomMonster
 {
@@ -110,9 +111,7 @@ public class StrifeManifest extends CustomMonster
                             this.addToBot(new ApplyPowerAction(m, this, new StrengthPower(m, this.animosityStrength)));
                         }
                         else {
-                            AbstractPower gainStrengthPower = new GainStrengthPower(m, this.animosityStrength);
-                            gainStrengthPower.type = AbstractPower.PowerType.BUFF;
-                            this.addToBot(new ApplyPowerAction(m, this, gainStrengthPower));
+                            this.addToBot(new ApplyPowerAction(m, this, PowerUtil.gainStrengthBuff(m, this.animosityStrength)));
                         }
                     }
                 }
