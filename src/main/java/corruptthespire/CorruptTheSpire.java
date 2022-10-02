@@ -165,6 +165,8 @@ public class CorruptTheSpire implements
                         new RelentlessWar(-1000.0F, 0.0F),
                         new EternalFear(70.0F, 0.0F),
                 }));
+
+        BaseMod.addBoss("", Encounters.WAR_AND_FEAR, "corruptthespire/images/map/bosses/WarAndFear.png", "corruptthespire/images/map/bosses/WarAndFearOutline.png");
     }
 
     private static void addEvents() {

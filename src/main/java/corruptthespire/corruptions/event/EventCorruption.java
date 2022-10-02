@@ -135,9 +135,8 @@ public class EventCorruption {
             return AbstractDungeon.bossRelicPool.size() > 5 && actNum < 3;
         }
 
-        //TODO Remove code that disables this
         if (e.equals(Ascent.ID)) {
-            return actNum < 3 && false;
+            return actNum < 3;
         }
 
         return true;

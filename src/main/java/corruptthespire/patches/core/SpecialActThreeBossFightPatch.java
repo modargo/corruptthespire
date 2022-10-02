@@ -44,9 +44,8 @@ public class SpecialActThreeBossFightPatch {
                 CardCrawlGame.music.fadeOutBGM();
                 CardCrawlGame.music.fadeOutTempBGM();
                 MapRoomNode node = new MapRoomNode(-1, 15);
-                String tempBossKey = AbstractDungeon.bossList.get(0);
                 node.room = new MonsterRoomBoss();
-                AbstractDungeon.bossList.add(0, tempBossKey);
+                AbstractDungeon.bossList.add(0, AbstractDungeon.bossKey);
                 AbstractDungeon.nextRoom = node;
                 AbstractDungeon.closeCurrentScreen();
                 AbstractDungeon.nextRoomTransitionStart();
