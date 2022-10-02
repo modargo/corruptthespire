@@ -7,7 +7,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;
+import corruptthespire.CorruptionFlags;
 
 import java.text.MessageFormat;
 
@@ -44,7 +46,7 @@ public class Ascent extends AbstractImageEvent {
                     case 0: // Ascend
                         AbstractRelic relic = AbstractDungeon.returnRandomScreenlessRelic(AbstractDungeon.returnRandomRelicTier());
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), relic);
-                        //TODO: Set flag
+                        Cor.flags.warAndFear = CorruptionFlags.WarAndFear.EXTRA_BOSS;
                         logMetricObtainRelic(ID, "Ascend", relic);
 
                         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
@@ -53,7 +55,7 @@ public class Ascent extends AbstractImageEvent {
                         this.imageEventText.clearRemainingOptions();
                         break;
                     case 1: // Bargain
-                        //TODO: Set flag
+                        Cor.flags.warAndFear = CorruptionFlags.WarAndFear.REPLACE_BOSS;
                         logMetric(ID, "Bargain");
 
                         this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
