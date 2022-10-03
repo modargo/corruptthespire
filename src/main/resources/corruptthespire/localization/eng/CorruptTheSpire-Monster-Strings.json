@@ -176,5 +176,13 @@
       "Energize"
     ],
     "NAME": "Otherworldly Wisp"
+  },
+  "CorruptTheSpire:HundredSouled": {
+    "MOVES": [
+      "Reveal the Hundred",
+      "Witness",
+      "Rapture"
+    ],
+    "NAME": "The Hundred-Souled"
   }
 }

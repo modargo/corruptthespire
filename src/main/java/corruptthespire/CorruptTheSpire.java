@@ -168,6 +168,7 @@ public class CorruptTheSpire implements
                         new GreaterWisp(50.0F, 150.0F),
                         new OtherworldlyWisp(250.0F, 100.0F)
                 }));
+        BaseMod.addMonster(HundredSouled.ID, (BaseMod.GetMonster) HundredSouled::new);
         BaseMod.addMonster(Encounters.WAR_AND_FEAR, () -> new MonsterGroup(
                 new AbstractMonster[] {
                         new RelentlessWar(-1000.0F, 0.0F),

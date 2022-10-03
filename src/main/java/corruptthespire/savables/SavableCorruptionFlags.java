@@ -27,6 +27,7 @@ public class SavableCorruptionFlags implements CustomSavable<CorruptionFlags> {
             logger.info("flags.seenServiceShop: " + flags.seenServiceShop);
             logger.info("flags.foughtRottingShambler: " + flags.foughtRottingShambler);
             logger.info("flags.foughtWisps: " + flags.foughtWisps);
+            logger.info("flags.foughtHundredSouled: " + flags.foughtHundredSouled);
             logger.info("flags.warAndFear: " + flags.warAndFear);
             logger.info("flags.foughtArchfiend: " + flags.foughtArchfiend);
             logger.info("flags.foughtMaster: " + flags.foughtMaster);

@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import corruptthespire.monsters.Encounters;
+import corruptthespire.monsters.HundredSouled;
 import corruptthespire.monsters.RottingShambler;
 import corruptthespire.patches.fight.room.FightRoomCorruptionTypeField;
 import corruptthespire.relics.FragmentOfCorruption;
@@ -36,6 +37,8 @@ public class FightRoomCorruption {
                 return RottingShambler.ID;
             case Wisps:
                 return Encounters.WISPS;
+            case HundredSouled:
+                return HundredSouled.ID;
             default:
                 return null;
         }
@@ -49,6 +52,7 @@ public class FightRoomCorruption {
         switch (roomCorruptionType) {
             case RottingShambler:
             case Wisps:
+            case HundredSouled:
                 room.addRelicToRewards(new FragmentOfCorruption());
                 room.addRelicToRewards(new FragmentOfCorruption());
                 break;

@@ -243,5 +243,9 @@
   "CorruptTheSpire:Radiant": {
     "NAME": "Radiant",
     "DESCRIPTIONS": ["When this enemy dies, all other enemies gain #b{0} #yStrength at the end of the round and heal #b{1}."]
+  },
+  "CorruptTheSpire:Animosity": {
+    "NAME": "Animosity",
+    "DESCRIPTIONS": ["Whenever you play a card that isn''t #yBasic or #yCommon, gains #b{0} block and deals #b{0} damage to you, then increases the block and damage by #b1. Resets to #b{1} at the end of the round."]
   }
 }

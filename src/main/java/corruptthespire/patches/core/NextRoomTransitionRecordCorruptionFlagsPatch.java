@@ -48,6 +48,9 @@ public class NextRoomTransitionRecordCorruptionFlagsPatch {
                 else if (fightRoomCorruptionType == FightRoomCorruptionType.Wisps) {
                     Cor.flags.foughtWisps = true;
                 }
+                else if (fightRoomCorruptionType == FightRoomCorruptionType.HundredSouled) {
+                    Cor.flags.foughtHundredSouled = true;
+                }
             }
         }
     }

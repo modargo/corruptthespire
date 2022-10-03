@@ -231,5 +231,9 @@
   "CorruptTheSpire:CorruptingRot": {
     "NAME": "Corrupting Rot",
     "DESCRIPTION": "At the end of your turn, gain !M! corruptthespire:Corruption."
+  },
+  "CorruptTheSpire:Revelation": {
+    "NAME": "Revelation",
+    "DESCRIPTION": "Exhaust a random card in your hand. NL Draw !M! cards."
   }
 }

@@ -10,6 +10,7 @@ public class CorruptionFlags {
     public boolean seenServiceShop = false;
     public boolean foughtRottingShambler = false;
     public boolean foughtWisps = false;
+    public boolean foughtHundredSouled = false;
 
     public int warAndFear = WarAndFear.NONE;
     public boolean foughtArchfiend = false;
