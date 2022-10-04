@@ -9,12 +9,14 @@ import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.MethodCall;
 
+import java.util.ArrayList;
+
 @SpirePatch(clz = AbstractDungeon.class, method = "nextRoomTransition", paramtypez = { SaveFile.class })
 public class DontRemoveFromMonsterListAfterChangedEncounterPatch {
     public static class DontRemoveFromMonsterListAfterChangedEncounterPatchExprEditor extends ExprEditor {
         @Override
         public void edit(MethodCall methodCall) throws CannotCompileException {
-            if (methodCall.getClassName().equals(AbstractDungeon.class.getName()) && methodCall.getMethodName().equals("getMonsterForRoomCreation")) {
+            if (methodCall.getClassName().equals(ArrayList.class.getName()) && methodCall.getMethodName().equals("remove")) {
                 methodCall.replace(String.format("{ $_ = $0 == $1%s.monsterList && $args.length == 1 && $args[0] == 0 && %2$s.shouldChangeEncounter(%1$s.getCurrRoom()) ? ($r)null : $proceed($$); }", AbstractDungeon.class.getName(), FightRoomCorruption.class.getName()));
             }
         }
