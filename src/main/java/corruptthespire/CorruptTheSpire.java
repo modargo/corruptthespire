@@ -54,6 +54,7 @@ import org.apache.logging.log4j.Logger;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 
 import static com.megacrit.cardcrawl.core.Settings.GameLanguage;
@@ -176,7 +177,73 @@ public class CorruptTheSpire implements
                 }));
 
         BaseMod.addBoss("", Encounters.WAR_AND_FEAR, "corruptthespire/images/map/bosses/WarAndFear.png", "corruptthespire/images/map/bosses/WarAndFearOutline.png");
+
+        addHordeEncounters();
     }
+
+    public static void addHordeEncounters() {
+        BiFunction<Float, Float, AbstractMonster> flameOrStrife = (Float x, Float y) ->  Cor.rng.randomBoolean() ? new FlameManifest(x, y, FlameManifest.Version.Act1)  : new StrifeManifest(x, y, StrifeManifest.Version.Act1);
+        BiFunction<Float, Float, AbstractMonster> blueOrGreen = (Float x, Float y) ->  Cor.rng.randomBoolean() ? new LesserDevourerBlue(x, y)  : new LesserDevourerGreen(x, y);
+        BaseMod.addMonster(Encounters.HORDE_1, () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        flameOrStrife.apply(-450.0F, 0.0F),
+                        new LesserDevourerBrown(-250.0F, 0.0F),
+                        new CorruptionManifest(-50.0F, 0.0F, CorruptionManifest.Version.Act1),
+                        new CorruptionManifest(150.0F, 0.0F, CorruptionManifest.Version.Act1)
+                }));
+        BaseMod.addMonster(Encounters.HORDE_2, () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        flameOrStrife.apply(-400.0F, 0.0F),
+                        new DeliriumManifest(-200.0F, 0.0F, DeliriumManifest.Version.Act2),
+                        new LesserDevourerBrown(0.0F, 0.0F)
+                }));
+        BaseMod.addMonster(Encounters.HORDE_3, () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new FlameManifest(-450.0F, 0.0F, FlameManifest.Version.Act1),
+                        new StrifeManifest(-250.0F, 0.0F, StrifeManifest.Version.Act1),
+                        new DeliriumManifest(-50.0F, 0.0F, DeliriumManifest.Version.Act2),
+                        blueOrGreen.apply(150.0F, 0.0F)
+                }));
+        BaseMod.addMonster(Encounters.HORDE_4, () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new FlameManifest(-650.0F, 0.0F, FlameManifest.Version.Act1),
+                        new FlameManifest(-450.0F, 0.0F, FlameManifest.Version.Act1),
+                        new StrifeManifest(-250.0F, 0.0F, StrifeManifest.Version.Act1),
+                        new DeliriumManifest(-50.0F, 0.0F, DeliriumManifest.Version.Act2),
+                        new CorruptionManifest(150.0F, 0.0F, CorruptionManifest.Version.Act1)
+                }));
+        BaseMod.addMonster(Encounters.HORDE_5, () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        flameOrStrife.apply(-450.0F, 0.0F),
+                        new LesserDevourerGreen(-250.0F, 0.0F),
+                        new LesserDevourerBlue(-50.0F, 0.0F),
+                        new CorruptionManifest(150.0F, 0.0F, CorruptionManifest.Version.Act1)
+                }));
+        BaseMod.addMonster(Encounters.HORDE_6, () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new DeliriumManifest(-400.0F, 0.0F, DeliriumManifest.Version.Act2),
+                        new LesserDevourerGreen(-200.0F, 0.0F),
+                        new LesserDevourerBlue(0.0F, 0.0F)
+                }));
+        BaseMod.addMonster(Encounters.HORDE_7, () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new FlameManifest(-450.0F, 0.0F, FlameManifest.Version.Act1),
+                        new FlameManifest(-250.0F, 0.0F, FlameManifest.Version.Act1),
+                        new FlameManifest(-50.0F, 0.0F, FlameManifest.Version.Act1),
+                        new LesserDevourerBrown(150.0F, 0.0F)
+                }));
+        BaseMod.addMonster(Encounters.HORDE_8, () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        flameOrStrife.apply(-400.0F, 0.0F),
+                        new RottingShambler(200.0F, 0.0F),
+                        new CorruptionManifest(0.0F, 0.0F, CorruptionManifest.Version.Act1)
+                }));
+        BaseMod.addMonster(Encounters.HORDE_9, () -> new MonsterGroup(
+                new AbstractMonster[]{
+                        new DeliriumManifest(-200.0F, 0.0F, DeliriumManifest.Version.Act2),
+                        new RottingShambler(0.0F, 0.0F)
+                }));
+        }
 
     private static void addEvents() {
         // These events are only encountered through our own special logic, but we register them all here for ease of

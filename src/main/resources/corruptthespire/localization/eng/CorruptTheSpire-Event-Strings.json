@@ -392,5 +392,17 @@
       "[Bypass] #rLose #r{0} #rHP #rand #rMax #rHP.",
       "[Leave]"
     ]
+  },
+  "CorruptTheSpire:EpicenterOfCorruption": {
+    "NAME": "Epicenter of Corruption",
+    "DESCRIPTIONS": [
+      "Hordes of corrupt monsters issue forth from deep within the Spire. As you watch, a group of the monsters move towards you. NL NL Unless you retreat, you'll have to fight your way through.",
+      "As you retreat in search of an alternate path, you sense the corruption of the Spire increase."
+    ],
+    "OPTIONS": [
+      "[Fight] A fight with extra rewards.",
+      "[Retreat] #rGain #r{0} #rCorruption.",
+      "[Leave]"
+    ]
   }
 }

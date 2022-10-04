@@ -139,6 +139,10 @@ public class EventCorruption {
             return actNum < 3;
         }
 
+        if (e.equals(EpicenterOfCorruption.ID)) {
+            return Cor.getRealActNum() == 1 && AbstractDungeon.floorNum > 6;
+        }
+
         return true;
     }
 }

@@ -2405,7 +2405,7 @@
 					"min_asc": 0,
 					"desc": "Starts with #wConfusion, then #wHex, then #wHarm, then #wDecrepify, then cycles #wHarm -> #wConfusion.",
 					"hp": "(28 - 30 / 36 - 38 HP)",
-					"notes": "HP and move effects vary by act (act 2 / act 3).",
+					"notes": "HP and move effects vary by act (act 1 or act 2 / act 3).",
 					"moves": [
 						{
 							"name": "Confusion",
@@ -2453,7 +2453,7 @@
 					"min_asc": 2,
 					"desc": "Starts with #wConfusion, then #wHex, then #wHarm, then #wDecrepify, then cycles #wHarm -> #wConfusion.",
 					"hp": "(28 - 30 / 36 - 38 HP)",
-					"notes": "HP and move effects vary by act (act 2 / act 3).",
+					"notes": "HP and move effects vary by act (act 1 or act 2 / act 3).",
 					"moves": [
 						{
 							"name": "Confusion",
@@ -2501,7 +2501,7 @@
 					"min_asc": 7,
 					"desc": "Starts with #wConfusion, then #wHex, then #wHarm, then #wDecrepify, then cycles #wHarm -> #wConfusion.",
 					"hp": "(31 - 33 / 39 - 41 HP)",
-					"notes": "HP and move effects vary by act (act 2 / act 3).",
+					"notes": "HP and move effects vary by act (act 1 or act 2 / act 3).",
 					"moves": [
 						{
 							"name": "Confusion",
@@ -2549,7 +2549,7 @@
 					"min_asc": 17,
 					"desc": "Starts with #wConfusion, then #wHex, then #wHarm, then #wDecrepify, then cycles #wHarm -> #wConfusion.",
 					"hp": "(31 - 33 / 39 - 41 HP)",
-					"notes": "HP and move effects vary by act (act 2 / act 3).",
+					"notes": "HP and move effects vary by act (act 1 or act 2 / act 3).",
 					"moves": [
 						{
 							"name": "Confusion",
