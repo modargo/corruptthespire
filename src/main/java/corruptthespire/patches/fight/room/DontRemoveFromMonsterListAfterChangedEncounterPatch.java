@@ -17,7 +17,7 @@ public class DontRemoveFromMonsterListAfterChangedEncounterPatch {
         @Override
         public void edit(MethodCall methodCall) throws CannotCompileException {
             if (methodCall.getClassName().equals(ArrayList.class.getName()) && methodCall.getMethodName().equals("remove")) {
-                methodCall.replace(String.format("{ $_ = $0 == $1%s.monsterList && $args.length == 1 && $args[0] == 0 && %2$s.shouldChangeEncounter(%1$s.getCurrRoom()) ? ($r)null : $proceed($$); }", AbstractDungeon.class.getName(), FightRoomCorruption.class.getName()));
+                methodCall.replace(String.format("{ $_ = $0 != null && $0 == monsterList && $args.length == 1 && ((Integer)$args[0]).intValue() == 0 && %2$s.shouldChangeEncounter(%1$s.getCurrRoom()) ? ($r)null : $proceed($$); }", AbstractDungeon.class.getName(), FightRoomCorruption.class.getName()));
             }
         }
     }

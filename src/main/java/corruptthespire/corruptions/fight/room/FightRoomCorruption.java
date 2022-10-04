@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.MonsterHelper;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import corruptthespire.monsters.Encounters;
 import corruptthespire.monsters.HundredSouled;
 import corruptthespire.monsters.RottingShambler;
@@ -12,13 +11,13 @@ import corruptthespire.patches.fight.room.FightRoomCorruptionTypeField;
 import corruptthespire.relics.FragmentOfCorruption;
 
 public class FightRoomCorruption {
-    public static boolean shouldChangeEncounter(MonsterRoom room) {
+    public static boolean shouldChangeEncounter(AbstractRoom room) {
         FightRoomCorruptionType roomCorruptionType = FightRoomCorruptionTypeField.roomCorruptionType.get(room);
         String changedEncounterId = getChangedEncounterId(roomCorruptionType);
         return changedEncounterId != null;
     }
 
-    public static MonsterGroup getChangedEncounter(MonsterRoom room) {
+    public static MonsterGroup getChangedEncounter(AbstractRoom room) {
         FightRoomCorruptionType roomCorruptionType = FightRoomCorruptionTypeField.roomCorruptionType.get(room);
         String changedEncounterId = getChangedEncounterId(roomCorruptionType);
         if (changedEncounterId != null) {
