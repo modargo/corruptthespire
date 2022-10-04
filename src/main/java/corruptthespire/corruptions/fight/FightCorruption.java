@@ -23,17 +23,14 @@ import corruptthespire.powers.ThoughtStealerPower;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 public class FightCorruption {
     private static final Logger logger = LogManager.getLogger(FightCorruption.class.getName());
     private static final HashSet<AbstractMonster> handledMonsters = new HashSet<>();
 
     public static boolean shouldApplyCorruptions() {
-        return AbstractDungeon.getCurrRoom() instanceof MonsterRoom && CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && FightRoomCorruptionTypeField.roomCorruptionType.get(AbstractDungeon.getCurrRoom()) == FightRoomCorruptionType.Normal;
+        return AbstractDungeon.getCurrRoom() instanceof MonsterRoom && CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && Arrays.asList(FightRoomCorruptionType.Normal, null).contains(FightRoomCorruptionTypeField.roomCorruptionType.get(AbstractDungeon.getCurrRoom()));
     }
 
     public static void determineCorruptions(AbstractRoom room) {
