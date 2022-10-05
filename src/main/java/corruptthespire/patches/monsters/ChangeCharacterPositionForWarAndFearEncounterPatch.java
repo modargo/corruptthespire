@@ -17,7 +17,7 @@ public class ChangeCharacterPositionForWarAndFearEncounterPatch {
         @Override
         public void edit(MethodCall methodCall) throws CannotCompileException {
             if (methodCall.getClassName().equals(AbstractPlayer.class.getName()) && methodCall.getMethodName().equals("movePosition")) {
-                methodCall.replace(String.format("{ if (%1$s.lastCombatMetricKey.equals(%2$s.WAR_AND_FEAR)) { $1 = %3$s.WIDTH / 2.0F; }; $proceed($$); }", AbstractDungeon.class.getName(), Encounters.class.getName(), Settings.class.getName()));
+                methodCall.replace(String.format("{ if (%1$s.lastCombatMetricKey != null && %1$s.lastCombatMetricKey.equals(%2$s.WAR_AND_FEAR)) { $1 = %3$s.WIDTH / 2.0F; }; $proceed($$); }", AbstractDungeon.class.getName(), Encounters.class.getName(), Settings.class.getName()));
             }
         }
     }
