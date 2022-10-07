@@ -11,10 +11,10 @@ public class FightRoomCorruptionDistribution extends AbstractCorruptionDistribut
     @Override
     protected List<CorruptionDistributionInfo<FightRoomCorruptionType>> getDistribution() {
         ArrayList<CorruptionDistributionInfo<FightRoomCorruptionType>> d = new ArrayList<>();
-        d.add(new CorruptionDistributionInfo<>(FightRoomCorruptionType.Normal, 70));
-        d.add(new CorruptionDistributionInfo<>(FightRoomCorruptionType.RottingShambler, 10));
-        d.add(new CorruptionDistributionInfo<>(FightRoomCorruptionType.Wisps, 10));
-        d.add(new CorruptionDistributionInfo<>(FightRoomCorruptionType.HundredSouled, 10));
+        d.add(new CorruptionDistributionInfo<>(FightRoomCorruptionType.Normal, 5));
+        d.add(new CorruptionDistributionInfo<>(FightRoomCorruptionType.RottingShambler, 1));
+        d.add(new CorruptionDistributionInfo<>(FightRoomCorruptionType.Wisps, 1));
+        d.add(new CorruptionDistributionInfo<>(FightRoomCorruptionType.HundredSouled, 1));
         return d;
     }
 
@@ -30,5 +30,10 @@ public class FightRoomCorruptionDistribution extends AbstractCorruptionDistribut
             distribution.removeIf(di -> di.corruption == FightRoomCorruptionType.HundredSouled);
         }
         return distribution;
+    }
+
+    @Override
+    protected int getTotalWeight() {
+        return 8;
     }
 }
