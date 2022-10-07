@@ -2922,6 +2922,346 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Otherworldly Wisp",
+			"id": "CorruptTheSpire:OtherworldlyWisp",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Cycles #wDancing #wLights or #wEnergize -> the other or #wRay -> the third move.",
+					"hp": "(20-21 HP)",
+					"notes": "Innate #uArtifact 1, #uRadiant 1 and 4",
+					"moves": [
+						{
+							"name": "Dancing Lights",
+							"effects": [
+								{
+									"name": "3",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "3",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Ray",
+							"effects": [
+								{
+									"name": "5",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Energize",
+							"effects": [
+								{
+									"name": "2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Party Strength 1",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 2,
+					"desc": "Cycles #wDancing #wLights or #wEnergize -> the other or #wRay -> the third move.",
+					"hp": "(20-21 HP)",
+					"notes": "Innate #uArtifact 1, #uRadiant 1 and 4",
+					"moves": [
+						{
+							"name": "Dancing Lights",
+							"effects": [
+								{
+									"name": "4",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "3",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Ray",
+							"effects": [
+								{
+									"name": "6",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Energize",
+							"effects": [
+								{
+									"name": "3",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Party Strength 1",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 7,
+					"desc": "Cycles #wDancing #wLights or #wEnergize -> the other or #wRay -> the third move.",
+					"hp": "(22-23 HP)",
+					"notes": "Innate #uArtifact 1, #uRadiant 1 and 4",
+					"moves": [
+						{
+							"name": "Dancing Lights",
+							"effects": [
+								{
+									"name": "4",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "4",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Ray",
+							"effects": [
+								{
+									"name": "6",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Energize",
+							"effects": [
+								{
+									"name": "3",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Party Strength 1",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 17,
+					"desc": "Cycles #wDancing #wLights or #wEnergize -> the other or #wRay -> the third move.",
+					"hp": "(22-23 HP)",
+					"notes": "Innate #uArtifact 2, #uRadiant 2 and 6",
+					"moves": [
+						{
+							"name": "Dancing Lights",
+							"effects": [
+								{
+									"name": "4",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "4",
+									"color": "BLOCK"
+								}
+							]
+						},
+						{
+							"name": "Ray",
+							"effects": [
+								{
+									"name": "6",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Energize",
+							"effects": [
+								{
+									"name": "3",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Party Strength 1",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Greater Wisp",
+			"id": "CorruptTheSpire:GreaterWisp",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Cycles #wTriple #wRay or #wRay -> the other or #wSoothing #wLight -> the third move. If there are 3 or fewer remaining monsters, uses #wTriple #wRay again instead of #wSoothing #wLight.",
+					"hp": "(40-41 HP)",
+					"notes": "Innate #uArtifact 1",
+					"moves": [
+						{
+							"name": "Triple Ray",
+							"effects": [
+								{
+									"name": "1x3",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Ray",
+							"effects": [
+								{
+									"name": "6",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Soothing Light",
+							"effects": [
+								{
+									"name": "Party Strength 1",
+									"color": "BUFF"
+								},
+								{
+									"name": "Party Heal 3",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 2,
+					"desc": "Cycles #wTriple #wRay or #wRay -> the other or #wSoothing #wLight -> the third move. If there are 3 or fewer remaining monsters, uses #wTriple #wRay again instead of #wSoothing #wLight.",
+					"hp": "(40-41 HP)",
+					"notes": "Innate #uArtifact 1",
+					"moves": [
+						{
+							"name": "Triple Ray",
+							"effects": [
+								{
+									"name": "2x3",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Ray",
+							"effects": [
+								{
+									"name": "7",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Soothing Light",
+							"effects": [
+								{
+									"name": "Party Strength 1",
+									"color": "BUFF"
+								},
+								{
+									"name": "Party Heal 3",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 7,
+					"desc": "Cycles #wTriple #wRay or #wRay -> the other or #wSoothing #wLight -> the third move. If there are 3 or fewer remaining monsters, uses #wTriple #wRay again instead of #wSoothing #wLight.",
+					"hp": "(42-43 HP)",
+					"notes": "Innate #uArtifact 1",
+					"moves": [
+						{
+							"name": "Triple Ray",
+							"effects": [
+								{
+									"name": "2x3",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Ray",
+							"effects": [
+								{
+									"name": "7",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Soothing Light",
+							"effects": [
+								{
+									"name": "Party Strength 1",
+									"color": "BUFF"
+								},
+								{
+									"name": "Party Heal 3",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 17,
+					"desc": "Cycles #wTriple #wRay or #wRay -> the other or #wSoothing #wLight -> the third move. If there are 3 or fewer remaining monsters, uses #wTriple #wRay again instead of #wSoothing #wLight.",
+					"hp": "(42-43 HP)",
+					"notes": "Innate #uArtifact 2",
+					"moves": [
+						{
+							"name": "Triple Ray",
+							"effects": [
+								{
+									"name": "2x3",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Ray",
+							"effects": [
+								{
+									"name": "7",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Soothing Light",
+							"effects": [
+								{
+									"name": "Party Strength 1",
+									"color": "BUFF"
+								},
+								{
+									"name": "Party Heal 3",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				}
+			]
 		}
 	]
 }
