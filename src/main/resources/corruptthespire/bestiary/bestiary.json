@@ -2931,7 +2931,7 @@
 					"min_asc": 0,
 					"desc": "Cycles #wDancing #wLights or #wEnergize -> the other or #wRay -> the third move.",
 					"hp": "(20-21 HP)",
-					"notes": "Innate #uArtifact 1, #uRadiant 1 and 4",
+					"notes": "Innate #uArtifact 1, #uRadiant 1 and 4 NL NL Energize prioritizes a Greater Wisp if any are alive.",
 					"moves": [
 						{
 							"name": "Dancing Lights",
@@ -2963,7 +2963,11 @@
 									"color": "DAMAGE"
 								},
 								{
-									"name": "Party Strength 1",
+									"name": "Strength 1",
+									"color": "BUFF"
+								},
+								{
+									"name": "Ally Strength 1",
 									"color": "BUFF"
 								}
 							]
@@ -2974,7 +2978,7 @@
 					"min_asc": 2,
 					"desc": "Cycles #wDancing #wLights or #wEnergize -> the other or #wRay -> the third move.",
 					"hp": "(20-21 HP)",
-					"notes": "Innate #uArtifact 1, #uRadiant 1 and 4",
+					"notes": "Innate #uArtifact 1, #uRadiant 1 and 4 NL NL Energize prioritizes a Greater Wisp if any are alive.",
 					"moves": [
 						{
 							"name": "Dancing Lights",
@@ -3006,7 +3010,11 @@
 									"color": "DAMAGE"
 								},
 								{
-									"name": "Party Strength 1",
+									"name": "Strength 1",
+									"color": "BUFF"
+								},
+								{
+									"name": "Ally Strength 1",
 									"color": "BUFF"
 								}
 							]
@@ -3017,7 +3025,7 @@
 					"min_asc": 7,
 					"desc": "Cycles #wDancing #wLights or #wEnergize -> the other or #wRay -> the third move.",
 					"hp": "(22-23 HP)",
-					"notes": "Innate #uArtifact 1, #uRadiant 1 and 4",
+					"notes": "Innate #uArtifact 1, #uRadiant 1 and 4 NL NL Energize prioritizes a Greater Wisp if any are alive.",
 					"moves": [
 						{
 							"name": "Dancing Lights",
@@ -3049,7 +3057,11 @@
 									"color": "DAMAGE"
 								},
 								{
-									"name": "Party Strength 1",
+									"name": "Strength 1",
+									"color": "BUFF"
+								},
+								{
+									"name": "Ally Strength 1",
 									"color": "BUFF"
 								}
 							]
@@ -3060,7 +3072,7 @@
 					"min_asc": 17,
 					"desc": "Cycles #wDancing #wLights or #wEnergize -> the other or #wRay -> the third move.",
 					"hp": "(22-23 HP)",
-					"notes": "Innate #uArtifact 2, #uRadiant 2 and 6",
+					"notes": "Innate #uArtifact 2, #uRadiant 2 and 6 NL NL Energize prioritizes a Greater Wisp if any are alive.",
 					"moves": [
 						{
 							"name": "Dancing Lights",
@@ -3092,7 +3104,11 @@
 									"color": "DAMAGE"
 								},
 								{
-									"name": "Party Strength 1",
+									"name": "Strength 1",
+									"color": "BUFF"
+								},
+								{
+									"name": "Ally Strength 1",
 									"color": "BUFF"
 								}
 							]

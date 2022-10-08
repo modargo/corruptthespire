@@ -22,6 +22,8 @@ import corruptthespire.powers.RadiantPower;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class OtherworldlyWisp extends CustomMonster
 {
@@ -126,15 +128,15 @@ public class OtherworldlyWisp extends CustomMonster
             case ENERGIZE_ATTACK:
                 this.addToBot(new AnimateFastAttackAction(this));
                 this.addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-                for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-                    if (!m.isDying && !m.halfDead && !m.isDeadOrEscaped()) {
-                        if (m == this) {
-                            this.addToBot(new ApplyPowerAction(m, this, new StrengthPower(m, ENERGIZE_STRENGTH)));
-                        }
-                        else {
-                            this.addToBot(new ApplyPowerAction(m, this, PowerUtil.gainStrengthBuff(m, ENERGIZE_STRENGTH)));
-                        }
-                    }
+                this.addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, ENERGIZE_STRENGTH)));
+
+                List<AbstractMonster> targets = AbstractDungeon.getMonsters().monsters.stream().filter(m -> m.id.equals(GreaterWisp.ID)).collect(Collectors.toList());
+                if (targets.isEmpty()) {
+                    targets = AbstractDungeon.getMonsters().monsters.stream().filter(m -> m != this).collect(Collectors.toList());
+                }
+                if (!targets.isEmpty()) {
+                    AbstractMonster target = targets.get(AbstractDungeon.aiRng.random(targets.size() - 1));
+                    this.addToBot(new ApplyPowerAction(target, this, PowerUtil.gainStrengthBuff(target, ENERGIZE_STRENGTH)));
                 }
                 break;
         }
