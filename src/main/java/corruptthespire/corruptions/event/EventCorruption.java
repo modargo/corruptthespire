@@ -1,10 +1,12 @@
 package corruptthespire.corruptions.event;
 
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.daily.mods.Diverse;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.events.beyond.MindBloom;
 import com.megacrit.cardcrawl.helpers.ModHelper;
+import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.PrismaticShard;
 import corruptthespire.Cor;
@@ -117,6 +119,10 @@ public class EventCorruption {
 
         if (e.equals(ForbiddenLibrary.ID)) {
             return AbstractDungeon.floorNum > 6;
+        }
+
+        if (e.equals(Wheel.ID)) {
+            return new Random(Settings.seed + AbstractDungeon.floorNum + 97).randomBoolean();
         }
 
         if (e.equals(AncientLaboratory.ID)) {
