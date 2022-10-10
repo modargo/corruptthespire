@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.Revelation;
-import corruptthespire.powers.AnimosityPower;
+import corruptthespire.powers.MalicePower;
 
 public class HundredSouled extends CustomMonster
 {
@@ -37,8 +37,8 @@ public class HundredSouled extends CustomMonster
     private static final int WITNESS_HITS = 2;
     private static final int RAPTURE_DAMAGE = 32;
     private static final int A2_RAPTURE_DAMAGE = 35;
-    private static final int ANIMOSITY = 1;
-    private static final int A17_ANIMOSITY = 2;
+    private static final int MALICE = 1;
+    private static final int A17_MALICE = 2;
     private static final int MIN_HP = 190;
     private static final int MAX_HP = 190;
     private static final int A7_MIN_HP = 210;
@@ -46,7 +46,7 @@ public class HundredSouled extends CustomMonster
     private final int revealTheHundredDamage;
     private final int witnessDamage;
     private final int raptureDamage;
-    private final int animosity;
+    private final int malice;
 
     public HundredSouled() {
         this(0.0f, 0.0f);
@@ -75,16 +75,16 @@ public class HundredSouled extends CustomMonster
         this.damage.add(new DamageInfo(this, this.raptureDamage));
 
         if (AbstractDungeon.ascensionLevel >= 17) {
-            this.animosity = A17_ANIMOSITY;
+            this.malice = A17_MALICE;
         }
         else {
-            this.animosity = ANIMOSITY;
+            this.malice = MALICE;
         }
     }
 
     @Override
     public void usePreBattleAction() {
-        this.addToBot(new ApplyPowerAction(this, this, new AnimosityPower(this, this.animosity)));
+        this.addToBot(new ApplyPowerAction(this, this, new MalicePower(this, this.malice)));
     }
 
     @Override

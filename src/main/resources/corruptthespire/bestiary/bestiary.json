@@ -2768,7 +2768,7 @@
 				{
 					"min_asc": 0,
 					"desc": "Starts with #wBash, then #wNourishing #wCorruption, then cycles #wRot #wTouch -> #wRot #wTouch -> #wBash.",
-					"hp": "(62-64 HP)",
+					"hp": "(62 - 64 HP)",
 					"notes": "Innate #uEssence #uof #uRot 2. #rT = (Number of times Rot Touch used + 2)",
 					"moves": [
 						{
@@ -2807,7 +2807,7 @@
 				{
 					"min_asc": 2,
 					"desc": "Starts with #wBash, then #wNourishing #wCorruption, then cycles #wRot #wTouch -> #wRot #wTouch -> #wBash.",
-					"hp": "(62-64 HP)",
+					"hp": "(62 - 64 HP)",
 					"notes": "Innate #uEssence #uof #uRot 2. #rT = (Number of times Rot Touch used + 2)",
 					"moves": [
 						{
@@ -2846,7 +2846,7 @@
 				{
 					"min_asc": 7,
 					"desc": "Starts with #wBash, then #wNourishing #wCorruption, then cycles #wRot #wTouch -> #wRot #wTouch -> #wBash.",
-					"hp": "(65-67 HP)",
+					"hp": "(65 - 67 HP)",
 					"notes": "Innate #uEssence #uof #uRot 2. #rT = (Number of times Rot Touch used + 2)",
 					"moves": [
 						{
@@ -2885,7 +2885,7 @@
 				{
 					"min_asc": 17,
 					"desc": "Starts with #wBash, then #wNourishing #wCorruption, then repeats #wRot #wTouch.",
-					"hp": "(65-67 HP)",
+					"hp": "(65 - 67 HP)",
 					"notes": "Innate #uEssence #uof #uRot 3. #rT = (Number of times Rot Touch used + 2)",
 					"moves": [
 						{
@@ -2930,7 +2930,7 @@
 				{
 					"min_asc": 0,
 					"desc": "Cycles #wDancing #wLights or #wEnergize -> the other or #wRay -> the third move.",
-					"hp": "(20-21 HP)",
+					"hp": "(20 - 21 HP)",
 					"notes": "Innate #uArtifact 1, #uRadiant 1 and 4 NL NL Energize prioritizes a Greater Wisp if any are alive.",
 					"moves": [
 						{
@@ -2977,7 +2977,7 @@
 				{
 					"min_asc": 2,
 					"desc": "Cycles #wDancing #wLights or #wEnergize -> the other or #wRay -> the third move.",
-					"hp": "(20-21 HP)",
+					"hp": "(20 - 21 HP)",
 					"notes": "Innate #uArtifact 1, #uRadiant 1 and 4 NL NL Energize prioritizes a Greater Wisp if any are alive.",
 					"moves": [
 						{
@@ -3024,7 +3024,7 @@
 				{
 					"min_asc": 7,
 					"desc": "Cycles #wDancing #wLights or #wEnergize -> the other or #wRay -> the third move.",
-					"hp": "(22-23 HP)",
+					"hp": "(22 - 23 HP)",
 					"notes": "Innate #uArtifact 1, #uRadiant 1 and 4 NL NL Energize prioritizes a Greater Wisp if any are alive.",
 					"moves": [
 						{
@@ -3071,7 +3071,7 @@
 				{
 					"min_asc": 17,
 					"desc": "Cycles #wDancing #wLights or #wEnergize -> the other or #wRay -> the third move.",
-					"hp": "(22-23 HP)",
+					"hp": "(22 - 23 HP)",
 					"notes": "Innate #uArtifact 2, #uRadiant 2 and 6 NL NL Energize prioritizes a Greater Wisp if any are alive.",
 					"moves": [
 						{
@@ -3124,7 +3124,7 @@
 				{
 					"min_asc": 0,
 					"desc": "Cycles #wTriple #wRay or #wRay -> the other or #wSoothing #wLight -> the third move. If there are 3 or fewer remaining monsters, uses #wTriple #wRay again instead of #wSoothing #wLight.",
-					"hp": "(40-41 HP)",
+					"hp": "(40 - 41 HP)",
 					"notes": "Innate #uArtifact 1",
 					"moves": [
 						{
@@ -3163,7 +3163,7 @@
 				{
 					"min_asc": 2,
 					"desc": "Cycles #wTriple #wRay or #wRay -> the other or #wSoothing #wLight -> the third move. If there are 3 or fewer remaining monsters, uses #wTriple #wRay again instead of #wSoothing #wLight.",
-					"hp": "(40-41 HP)",
+					"hp": "(40 - 41 HP)",
 					"notes": "Innate #uArtifact 1",
 					"moves": [
 						{
@@ -3202,7 +3202,7 @@
 				{
 					"min_asc": 7,
 					"desc": "Cycles #wTriple #wRay or #wRay -> the other or #wSoothing #wLight -> the third move. If there are 3 or fewer remaining monsters, uses #wTriple #wRay again instead of #wSoothing #wLight.",
-					"hp": "(42-43 HP)",
+					"hp": "(42 - 43 HP)",
 					"notes": "Innate #uArtifact 1",
 					"moves": [
 						{
@@ -3241,7 +3241,7 @@
 				{
 					"min_asc": 17,
 					"desc": "Cycles #wTriple #wRay or #wRay -> the other or #wSoothing #wLight -> the third move. If there are 3 or fewer remaining monsters, uses #wTriple #wRay again instead of #wSoothing #wLight.",
-					"hp": "(42-43 HP)",
+					"hp": "(42 - 43 HP)",
 					"notes": "Innate #uArtifact 2",
 					"moves": [
 						{
@@ -3272,6 +3272,184 @@
 								{
 									"name": "Party Heal 3",
 									"color": "BUFF"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Hundred-Souled",
+			"id": "CorruptTheSpire:HundredSouled",
+			"ai": [
+				{
+					"min_asc": 0,
+					"desc": "Cycles #wReveal #wthe #wHundred -> #wWitness -> #wRapture.",
+					"hp": "(190 HP)",
+					"notes": "Innate #uMalice 1. Status cards from #wReveal #wthe #wHundred go into the draw pile. Status cards from #wWitness go on top of the draw pile.",
+					"moves": [
+						{
+							"name": "Reveal the Hundred",
+							"effects": [
+								{
+									"name": "6x4",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Revelation 3",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Witness",
+							"effects": [
+								{
+									"name": "10x2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Revelation 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Rapture",
+							"effects": [
+								{
+									"name": "32",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 2,
+					"desc": "Cycles #wReveal #wthe #wHundred -> #wWitness -> #wRapture.",
+					"hp": "(190 HP)",
+					"notes": "Innate #uMalice 1. Status cards from #wReveal #wthe #wHundred go into the draw pile. Status cards from #wWitness go on top of the draw pile.",
+					"moves": [
+						{
+							"name": "Reveal the Hundred",
+							"effects": [
+								{
+									"name": "7x4",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Revelation 3",
+									"color": "DEBUFF"n
+								}
+							]
+						},
+						{
+							"name": "Witness",
+							"effects": [
+								{
+									"name": "12x2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Revelation 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Rapture",
+							"effects": [
+								{
+									"name": "35",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 7,
+					"desc": "Cycles #wReveal #wthe #wHundred -> #wWitness -> #wRapture.",
+					"hp": "(210 HP)",
+					"notes": "Innate #uMalice 1. Status cards from #wReveal #wthe #wHundred go into the draw pile. Status cards from #wWitness go on top of the draw pile.",
+					"moves": [
+						{
+							"name": "Reveal the Hundred",
+							"effects": [
+								{
+									"name": "7x4",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Revelation 3",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Witness",
+							"effects": [
+								{
+									"name": "12x2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Revelation 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Rapture",
+							"effects": [
+								{
+									"name": "35",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 17,
+					"desc": "Cycles #wReveal #wthe #wHundred -> #wWitness -> #wRapture.",
+					"hp": "(210 HP)",
+					"notes": "Innate #uMalice 2. Status cards from #wReveal #wthe #wHundred go into the draw pile. Status cards from #wWitness go on top of the draw pile.",
+					"moves": [
+						{
+							"name": "Reveal the Hundred",
+							"effects": [
+								{
+									"name": "7x4",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Revelation 3",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Witness",
+							"effects": [
+								{
+									"name": "12x2",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Revelation 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Rapture",
+							"effects": [
+								{
+									"name": "35",
+									"color": "DAMAGE"
 								}
 							]
 						}

@@ -15,15 +15,15 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.text.MessageFormat;
 
-public class AnimosityPower extends AbstractPower {
-    public static final String POWER_ID = "CorruptTheSpire:Animosity";
+public class MalicePower extends AbstractPower {
+    public static final String POWER_ID = "CorruptTheSpire:Malice";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     private final int baseAmount;
 
-    public AnimosityPower(AbstractCreature owner, int amount) {
+    public MalicePower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
