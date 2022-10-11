@@ -40,6 +40,7 @@ public class EternalFear extends CustomMonster
     private static final int A9_DESPAIR_BLOCK = 15;
     private static final int DESPAIR_WEAK = 2;
     private static final int DESPAIR_DRAW_DOWN = 1;
+    private static final int A19_DESPAIR_DRAW_DOWN = 2;
     private static final int HORROR_DAMAGE = 12;
     private static final int A4_HORROR_DAMAGE = 14;
     private static final int PANIC_DAMAGE = 18;
@@ -48,6 +49,7 @@ public class EternalFear extends CustomMonster
     private static final int A9_HP = 475;
     private final int dreadFrail;
     private final int despairBlock;
+    private final int despairDrawDown;
     private final int horrorDamage;
     private final int panicDamage;
 
@@ -80,9 +82,11 @@ public class EternalFear extends CustomMonster
 
         if (AbstractDungeon.ascensionLevel >= 19) {
             this.dreadFrail = A19_DREAD_FRAIL;
+            this.despairDrawDown = A19_DESPAIR_DRAW_DOWN;
         }
         else {
             this.dreadFrail = DREAD_FRAIL;
+            this.despairDrawDown = DESPAIR_DRAW_DOWN;
         }
     }
 
@@ -117,7 +121,7 @@ public class EternalFear extends CustomMonster
                 }
                 this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, DESPAIR_WEAK, true)));
                 if (this.empowered()) {
-                    this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new DrawReductionPower(AbstractDungeon.player, DESPAIR_DRAW_DOWN)));
+                    this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new DrawReductionPower(AbstractDungeon.player, this.despairDrawDown)));
                 }
                 break;
             case HORROR_ATTACK:

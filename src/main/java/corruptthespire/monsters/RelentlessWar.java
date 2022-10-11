@@ -29,30 +29,30 @@ public class RelentlessWar extends CustomMonster
     private boolean firstMove = true;
     private static final byte BLOODSHED_ATTACK = 1;
     private static final byte SLAUGHTER_ATTACK = 2;
-    private static final byte MALICE_ATTACK = 3;
+    private static final byte ENMITY_ATTACK = 3;
     private static final byte CHALLENGE_MOVE = 4;
     private static final int BLOODSHED_DAMAGE = 13;
     private static final int A4_BLOODSHED_DAMAGE = 15;
     private static final int SLAUGHTER_DAMAGE = 8;
     private static final int A4_SLAUGHTER_DAMAGE = 9;
     private static final int SLAUGHTER_HITS = 2;
-    private static final int MALICE_DAMAGE = 10;
-    private static final int A4_MALICE_DAMAGE = 12;
-    private static final int MALICE_STRENGTH = 2;
-    private static final int A19_MALICE_STRENGTH = 3;
-    private static final int MALICE_RITUAL = 1;
+    private static final int ENMITY_DAMAGE = 10;
+    private static final int A4_ENMITY_DAMAGE = 12;
+    private static final int ENMITY_STRENGTH = 2;
+    private static final int A19_ENMITY_STRENGTH = 4;
+    private static final int ENMITY_RITUAL = 1;
     private static final int CHALLENGE_BLOCK = 20;
     private static final int A9_CHALLENGE_BLOCK = 30;
     private static final int CHALLENGE_PLATED_ARMOR = 10;
     private static final int A19_CHALLENGE_PLATED_ARMOR = 10;
     private static final int CHALLENGE_ARTIFACT = 1;
-    private static final int A19_CHALLENGE_ARTIFACT = 1;
+    private static final int A19_CHALLENGE_ARTIFACT = 2;
     private static final int HP = 450;
     private static final int A9_HP = 475;
     private final int bloodshedDamage;
     private final int slaughterDamage;
-    private final int maliceDamage;
-    private final int maliceStrength;
+    private final int enmityDamage;
+    private final int enmityStrength;
     private final int challengeBlock;
     private final int challengePlatedArmor;
     private final int challengeArtifact;
@@ -77,23 +77,23 @@ public class RelentlessWar extends CustomMonster
         if (AbstractDungeon.ascensionLevel >= 4) {
             this.bloodshedDamage = A4_BLOODSHED_DAMAGE;
             this.slaughterDamage = A4_SLAUGHTER_DAMAGE;
-            this.maliceDamage = A4_MALICE_DAMAGE;
+            this.enmityDamage = A4_ENMITY_DAMAGE;
         } else {
             this.bloodshedDamage = BLOODSHED_DAMAGE;
             this.slaughterDamage = SLAUGHTER_DAMAGE;
-            this.maliceDamage = MALICE_DAMAGE;
+            this.enmityDamage = ENMITY_DAMAGE;
         }
         this.damage.add(new DamageInfo(this, this.bloodshedDamage));
         this.damage.add(new DamageInfo(this, this.slaughterDamage));
-        this.damage.add(new DamageInfo(this, this.maliceDamage));
+        this.damage.add(new DamageInfo(this, this.enmityDamage));
 
         if (AbstractDungeon.ascensionLevel >= 19) {
-            this.maliceStrength = A19_MALICE_STRENGTH;
+            this.enmityStrength = A19_ENMITY_STRENGTH;
             this.challengePlatedArmor = A19_CHALLENGE_PLATED_ARMOR;
             this.challengeArtifact = A19_CHALLENGE_ARTIFACT;
         }
         else {
-            this.maliceStrength = MALICE_STRENGTH;
+            this.enmityStrength = ENMITY_STRENGTH;
             this.challengePlatedArmor = CHALLENGE_PLATED_ARMOR;
             this.challengeArtifact = CHALLENGE_ARTIFACT;
         }
@@ -130,14 +130,14 @@ public class RelentlessWar extends CustomMonster
                     this.addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(1), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
                 }
                 break;
-            case MALICE_ATTACK:
+            case ENMITY_ATTACK:
                 this.addToBot(new AnimateSlowAttackAction(this));
                 this.addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.SLASH_HEAVY));
                 for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
                     if (!m.isDying && !m.halfDead && !m.isDeadOrEscaped()) {
-                        this.addToBot(new ApplyPowerAction(m, this, new StrengthPower(m, this.maliceStrength)));
+                        this.addToBot(new ApplyPowerAction(m, this, new StrengthPower(m, this.enmityStrength)));
                         if (this.empowered()) {
-                            this.addToBot(new ApplyPowerAction(m, this, new RitualPower(m, MALICE_RITUAL, false)));
+                            this.addToBot(new ApplyPowerAction(m, this, new RitualPower(m, ENMITY_RITUAL, false)));
                         }
                     }
                 }
@@ -170,7 +170,7 @@ public class RelentlessWar extends CustomMonster
                 move = this.lastMove(BLOODSHED_ATTACK) ? SLAUGHTER_ATTACK : BLOODSHED_ATTACK;
                 break;
             case 2:
-                move = MALICE_ATTACK;
+                move = ENMITY_ATTACK;
                 break;
             case 3:
                 move = CHALLENGE_MOVE;
@@ -186,8 +186,8 @@ public class RelentlessWar extends CustomMonster
             case SLAUGHTER_ATTACK:
                 this.setMove(MOVES[1], SLAUGHTER_ATTACK, Intent.ATTACK, this.slaughterDamage, SLAUGHTER_HITS, true);
                 break;
-            case MALICE_ATTACK:
-                this.setMove(MOVES[2], MALICE_ATTACK, Intent.ATTACK_BUFF, this.maliceDamage);
+            case ENMITY_ATTACK:
+                this.setMove(MOVES[2], ENMITY_ATTACK, Intent.ATTACK_BUFF, this.enmityDamage);
                 break;
             case CHALLENGE_MOVE:
                 this.setMove(MOVES[3], CHALLENGE_MOVE, Intent.DEFEND_BUFF);
