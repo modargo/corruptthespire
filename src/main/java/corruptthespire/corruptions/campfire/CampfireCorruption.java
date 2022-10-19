@@ -10,6 +10,7 @@ import corruptthespire.corruptions.campfire.options.*;
 import corruptthespire.patches.core.CorruptedField;
 import corruptthespire.patches.campfire.CampfireInfoField;
 import corruptthespire.relics.corrupted.ObsidianShovel;
+import corruptthespire.util.CollectionsUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -57,7 +58,7 @@ public class CampfireCorruption {
         randomOptions.add(CampfireCorruptionOption.RareRelic);
         randomOptions.add(CampfireCorruptionOption.CorruptedCard);
         randomOptions.add(CampfireCorruptionOption.RareCard);
-        Collections.shuffle(randomOptions, Cor.rng.random);
+        CollectionsUtil.shuffle(randomOptions, Cor.rng);
         for (int i = 0; i < RANDOM_OPTIONS; i++) {
             options.add(randomOptions.get(i));
         }

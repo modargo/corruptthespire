@@ -21,6 +21,7 @@ import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.Contagion;
 import corruptthespire.powers.FetidBodyPower;
 import corruptthespire.powers.ProtectiveMawPower;
+import corruptthespire.util.CollectionsUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -163,7 +164,7 @@ public class TranscendentDevourer extends CustomMonster
         }
 
         if (potentialMoves.size() != 1) {
-            Collections.shuffle(potentialMoves, AbstractDungeon.aiRng.random);
+            CollectionsUtil.shuffle(potentialMoves, AbstractDungeon.aiRng);
         }
 
         switch (potentialMoves.get(0)) {

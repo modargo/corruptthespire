@@ -17,6 +17,7 @@ import corruptthespire.patches.core.CorruptedField;
 import corruptthespire.patches.treasure.TreasureCorruptionTypeField;
 import corruptthespire.patches.treasure.VaultChestsField;
 import corruptthespire.relics.FragmentOfCorruption;
+import corruptthespire.util.CollectionsUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -93,7 +94,7 @@ public class TreasureCorruption {
         potentialVaultChestTypes.add(VaultChestType.Upgrade);
         potentialVaultChestTypes.add(VaultChestType.CorruptedCard);
         potentialVaultChestTypes.add(VaultChestType.CorruptedPotions);
-        Collections.shuffle(potentialVaultChestTypes, Cor.rng.random);
+        CollectionsUtil.shuffle(potentialVaultChestTypes, Cor.rng);
 
         int chestTypesToAdd = numChests - vaultChestTypes.size();
         for (int i = 0; i < chestTypesToAdd; i++) {
@@ -113,7 +114,7 @@ public class TreasureCorruption {
                 potentialCoordinates.add(new Coordinate(x, y));
             }
         }
-        Collections.shuffle(potentialCoordinates, random.random);
+        CollectionsUtil.shuffle(potentialCoordinates, random);
 
         List<VaultChest> vaultChests = new ArrayList<>();
         VaultChestsField.vaultChests.set(room, vaultChests);

@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
+import corruptthespire.util.CollectionsUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,7 +36,7 @@ public class CardUtil {
         int cardsToUpgrade = Math.min(n, upgradableCards.size());
         ArrayList<AbstractCard> upgradedCards = new ArrayList<>();
         if (cardsToUpgrade > 0) {
-            Collections.shuffle(upgradableCards, rng.random);
+            CollectionsUtil.shuffle(upgradableCards, rng);
         }
 
         for (int i = 0; i < cardsToUpgrade; i++) {
@@ -128,7 +129,7 @@ public class CardUtil {
         if (list.isEmpty()) {
             return null;
         } else {
-            Collections.shuffle(list, AbstractDungeon.miscRng.random);
+            CollectionsUtil.shuffle(list, AbstractDungeon.miscRng);
             return list.get(0);
         }
     }

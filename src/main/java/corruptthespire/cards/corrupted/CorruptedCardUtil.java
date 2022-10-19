@@ -13,6 +13,7 @@ import corruptthespire.Cor;
 import corruptthespire.cards.corrupted.attacks.*;
 import corruptthespire.cards.corrupted.powers.*;
 import corruptthespire.cards.corrupted.skills.*;
+import corruptthespire.util.CollectionsUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -112,7 +113,7 @@ public class CorruptedCardUtil {
     public static ArrayList<AbstractCard> getRandomCorruptedCardsInCombat(int n) {
         ArrayList<CorruptedCardInfo> allCorruptedCards = new ArrayList<>(getAllCorruptedCardInfos().values());
         allCorruptedCards.sort(Comparator.comparing(o -> o.card.cardID));
-        Collections.shuffle(allCorruptedCards, AbstractDungeon.cardRandomRng.random);
+        CollectionsUtil.shuffle(allCorruptedCards, AbstractDungeon.cardRandomRng);
         return allCorruptedCards.stream()
                 .filter(cci -> !cci.card.hasTag(AbstractCard.CardTags.HEALING))
                 .map(cci -> cci.card.makeCopy())
@@ -161,7 +162,7 @@ public class CorruptedCardUtil {
                             .filter(cci -> type == null || cci.card.type == type)
                             .map(cci -> cci.card)
                             .collect(Collectors.toCollection(ArrayList::new));
-                    Collections.shuffle(corruptedCommons, rng.random);
+                    CollectionsUtil.shuffle(corruptedCommons, rng);
                 }
                 card = corruptedCommons.remove(0);
             }
@@ -172,7 +173,7 @@ public class CorruptedCardUtil {
                             .filter(cci -> type == null || cci.card.type == type)
                             .map(cci -> cci.card)
                             .collect(Collectors.toCollection(ArrayList::new));
-                    Collections.shuffle(corruptedRares, rng.random);
+                    CollectionsUtil.shuffle(corruptedRares, rng);
                 }
                 card = corruptedRares.remove(0);
             }

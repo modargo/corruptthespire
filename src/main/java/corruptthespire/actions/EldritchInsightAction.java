@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.screens.CardRewardScreen;
+import corruptthespire.util.CollectionsUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -48,7 +49,7 @@ public class EldritchInsightAction extends AbstractGameAction {
     private ArrayList<AbstractCard> generateCardChoices() {
         ArrayList<AbstractCard> cards = new ArrayList<>(AbstractDungeon.player.drawPile.group);
 
-        Collections.shuffle(cards, AbstractDungeon.cardRandomRng.random);
+        CollectionsUtil.shuffle(cards, AbstractDungeon.cardRandomRng);
 
         return new ArrayList<>(cards.subList(0, Math.min(CARD_OPTIONS, cards.size())));
     }

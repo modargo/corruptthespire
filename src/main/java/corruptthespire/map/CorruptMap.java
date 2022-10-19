@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.rooms.TreasureRoom;
 import corruptthespire.Cor;
 import corruptthespire.patches.core.CorruptedField;
+import corruptthespire.util.CollectionsUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -73,7 +74,7 @@ public class CorruptMap {
         int numCorrupt = Math.min(potentialCorruptNodes.size(), baseCorrupt + rng.random(RANDOM_EXTRA_CORRUPT_NODES));
         logger.info("Corrupting act " + actNum + ": " + baseCorrupt + " nodes base, " + numCorrupt + " after adjustment");
 
-        Collections.shuffle(potentialCorruptNodes, rng.random);
+        CollectionsUtil.shuffle(potentialCorruptNodes, rng);
 
         for (int i = 0; i < numCorrupt; i++) {
             MapRoomNode node = potentialCorruptNodes.get(i);

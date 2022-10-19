@@ -30,6 +30,8 @@ public class NextRoomTransitionHandleCorruptionPatch {
             //Random implementation is just a wrapper and how there are conditions where requesting values can pull from
             //the underlying randomization stream more than once, this is theoretically possible, and no solution other
             //than this has been reliable.
+            //As of the changes to use CollectionsUtil.shuffle, the reload instability may no longer be an issue, but
+            //this system works fine so we haven't changed it.
             Cor.resetRng(Settings.seed, Cor.rng.counter);
 
             if (PathsInTheSmokePatch.isActive) {

@@ -20,6 +20,7 @@ import corruptthespire.patches.core.CorruptedField;
 import corruptthespire.patches.fight.FightCorruptionInfosField;
 import corruptthespire.patches.fight.room.FightRoomCorruptionTypeField;
 import corruptthespire.powers.ThoughtStealerPower;
+import corruptthespire.util.CollectionsUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -236,7 +237,7 @@ public class FightCorruption {
             options.remove(excludedId);
         }
 
-        Collections.shuffle(options, rng.random);
+        CollectionsUtil.shuffle(options, rng);
         String id = options.get(0);
         switch (id) {
             case LesserDevourerGreen.ID: return new LesserDevourerGreen(x, y);

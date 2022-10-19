@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.relics.corrupted.AbstractCorruptedRelic;
+import corruptthespire.util.CollectionsUtil;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
@@ -41,7 +42,7 @@ public class SinisterTemple extends AbstractImageEvent {
         if (commonRelics.size() < 2) {
             throw new RuntimeException("Sinister Temple event requires at least two common relics");
         }
-        Collections.shuffle(commonRelics, AbstractDungeon.miscRng.random);
+        CollectionsUtil.shuffle(commonRelics, AbstractDungeon.miscRng);
         this.relic1 = commonRelics.get(0);
         this.relic2 = commonRelics.get(1);
         float discount = AbstractDungeon.ascensionLevel >= 15 ? A15_DISCOUNT : DISCOUNT;
