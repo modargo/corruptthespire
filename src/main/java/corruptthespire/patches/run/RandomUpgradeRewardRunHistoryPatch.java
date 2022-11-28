@@ -49,7 +49,6 @@ public class RandomUpgradeRewardRunHistoryPatch {
             if (!isLoadingSave) {
                 if (RandomUpgradeRewardPerFloorLog.randomUpgradeRewardPerFloorLog != null) {
                     RandomUpgradeRewardPerFloorLog.randomUpgradeRewardPerFloorLog.add(new ArrayList<>());
-                    logger.info("New log: " + RandomUpgradeRewardPerFloorLog.randomUpgradeRewardPerFloorLog);
                 }
             }
         }
