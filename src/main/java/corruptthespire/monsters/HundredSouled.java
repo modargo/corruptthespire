@@ -29,16 +29,16 @@ public class HundredSouled extends CustomMonster
     private static final byte RAPTURE_ATTACK = 3;
     private static final int REVEAL_THE_HUNDRED_DAMAGE = 6;
     private static final int A2_REVEAL_THE_HUNDRED_DAMAGE = 7;
-    private static final int REVEAL_THE_HUNDRED_STATUSES = 3;
+    private static final int REVEAL_THE_HUNDRED_STATUSES = 2;
     private static final int REVEAL_THE_HUNDRED_HITS = 4;
     private static final int WITNESS_DAMAGE = 10;
     private static final int A2_WITNESS_DAMAGE = 12;
     private static final int WITNESS_STATUSES = 1;
     private static final int WITNESS_HITS = 2;
-    private static final int RAPTURE_DAMAGE = 32;
-    private static final int A2_RAPTURE_DAMAGE = 35;
+    private static final int RAPTURE_DAMAGE = 30;
+    private static final int A2_RAPTURE_DAMAGE = 33;
     private static final int MALICE = 1;
-    private static final int A17_MALICE = 2;
+    private static final int A17_MALICE = 1;
     private static final int MIN_HP = 190;
     private static final int MAX_HP = 190;
     private static final int A7_MIN_HP = 210;
@@ -120,7 +120,7 @@ public class HundredSouled extends CustomMonster
         if (this.firstMove || this.lastMove(RAPTURE_ATTACK)) {
             this.setMove(MOVES[0], REVEAL_THE_HUNDRED_ATTACK, Intent.ATTACK_DEBUFF, this.revealTheHundredDamage, REVEAL_THE_HUNDRED_HITS, true);
         }
-        else if (this.lastMove(REVEAL_THE_HUNDRED_ATTACK)) {
+        else if (this.lastMove(REVEAL_THE_HUNDRED_ATTACK) || (this.lastMove(WITNESS_ATTACK) && this.lastMoveBefore(REVEAL_THE_HUNDRED_ATTACK) && AbstractDungeon.ascensionLevel < 17)) {
             this.setMove(MOVES[1], WITNESS_ATTACK, Intent.ATTACK_DEBUFF, this.witnessDamage, WITNESS_HITS, true);
         }
         else {

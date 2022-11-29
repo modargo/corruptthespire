@@ -3285,7 +3285,7 @@
 			"ai": [
 				{
 					"min_asc": 0,
-					"desc": "Cycles #wReveal #wthe #wHundred -> #wWitness -> #wRapture.",
+					"desc": "Cycles #wReveal #wthe #wHundred -> #wWitness -> #wWitness -> #wRapture.",
 					"hp": "(190 HP)",
 					"notes": "Innate #uMalice 1. Status cards from #wReveal #wthe #wHundred go into the draw pile. Status cards from #wWitness go on top of the draw pile.",
 					"moves": [
@@ -3297,7 +3297,7 @@
 									"color": "DAMAGE"
 								},
 								{
-									"name": "Revelation 3",
+									"name": "Revelation 2",
 									"color": "DEBUFF"
 								}
 							]
@@ -3328,7 +3328,7 @@
 				},
 				{
 					"min_asc": 2,
-					"desc": "Cycles #wReveal #wthe #wHundred -> #wWitness -> #wRapture.",
+					"desc": "Cycles #wReveal #wthe #wHundred -> #wWitness -> #wWitness -> #wRapture.",
 					"hp": "(190 HP)",
 					"notes": "Innate #uMalice 1. Status cards from #wReveal #wthe #wHundred go into the draw pile. Status cards from #wWitness go on top of the draw pile.",
 					"moves": [
@@ -3340,7 +3340,7 @@
 									"color": "DAMAGE"
 								},
 								{
-									"name": "Revelation 3",
+									"name": "Revelation 2",
 									"color": "DEBUFF"
 								}
 							]
@@ -3371,7 +3371,7 @@
 				},
 				{
 					"min_asc": 7,
-					"desc": "Cycles #wReveal #wthe #wHundred -> #wWitness -> #wRapture.",
+					"desc": "Cycles #wReveal #wthe #wHundred -> #wWitness -> #wWitness -> #wRapture.",
 					"hp": "(210 HP)",
 					"notes": "Innate #uMalice 1. Status cards from #wReveal #wthe #wHundred go into the draw pile. Status cards from #wWitness go on top of the draw pile.",
 					"moves": [
@@ -3383,7 +3383,7 @@
 									"color": "DAMAGE"
 								},
 								{
-									"name": "Revelation 3",
+									"name": "Revelation 2",
 									"color": "DEBUFF"
 								}
 							]
@@ -3416,7 +3416,7 @@
 					"min_asc": 17,
 					"desc": "Cycles #wReveal #wthe #wHundred -> #wWitness -> #wRapture.",
 					"hp": "(210 HP)",
-					"notes": "Innate #uMalice 2. Status cards from #wReveal #wthe #wHundred go into the draw pile. Status cards from #wWitness go on top of the draw pile.",
+					"notes": "Innate #uMalice 1. Status cards from #wReveal #wthe #wHundred go into the draw pile. Status cards from #wWitness go on top of the draw pile.",
 					"moves": [
 						{
 							"name": "Reveal the Hundred",
@@ -3426,7 +3426,7 @@
 									"color": "DAMAGE"
 								},
 								{
-									"name": "Revelation 3",
+									"name": "Revelation 2",
 									"color": "DEBUFF"
 								}
 							]
