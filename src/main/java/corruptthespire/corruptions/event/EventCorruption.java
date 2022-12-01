@@ -22,6 +22,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -51,7 +52,7 @@ public class EventCorruption {
             return null;
         }
 
-        String eventId = possibleEvents.remove(Cor.rng.random(possibleEvents.size() - 1));
+        String eventId = getEvent(possibleEvents);
         Cor.corruptedEventList.remove(eventId);
         Class<? extends AbstractEvent> eventClass = CorruptedEventUtil.getAllCorruptedEvents().get(eventId).cls;
         try {
@@ -61,6 +62,15 @@ public class EventCorruption {
             e.printStackTrace();
         }
         return null;
+    }
+
+    private static String getEvent(List<String> eventIds) {
+        // The Ascent event shows up twice as often as other events
+        if (eventIds.contains(Ascent.ID)) {
+            eventIds.add(Ascent.ID);
+        }
+
+        return eventIds.get(Cor.rng.random(eventIds.size() - 1));
     }
 
     private static ArrayList<String> filterEvents(ArrayList<String> corruptedEventList, CorruptedEventType corruptedEventType) {
