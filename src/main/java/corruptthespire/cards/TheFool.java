@@ -10,11 +10,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 import com.megacrit.cardcrawl.powers.DrawReductionPower;
 import corruptthespire.CorruptTheSpire;
-import corruptthespire.cards.corrupted.powers.GuidingStar;
 
 import java.util.ArrayList;
 

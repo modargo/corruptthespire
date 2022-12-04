@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import corruptthespire.util.CollectionsUtil;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.*;

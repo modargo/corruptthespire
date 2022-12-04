@@ -3,9 +3,7 @@ package corruptthespire.patches.fight.room;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
-import corruptthespire.corruptions.fight.FightCorruption;
 import corruptthespire.corruptions.fight.room.FightRoomCorruption;
-import corruptthespire.corruptions.fight.room.FightRoomCorruptionType;
 import javassist.CtBehavior;
 
 @SpirePatch(clz = AbstractRoom.class, method = "update")

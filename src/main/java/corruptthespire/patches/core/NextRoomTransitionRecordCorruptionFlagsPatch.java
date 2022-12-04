@@ -11,7 +11,6 @@ import corruptthespire.Cor;
 import corruptthespire.corruptions.fight.room.FightRoomCorruptionType;
 import corruptthespire.corruptions.shop.ShopCorruptionType;
 import corruptthespire.events.special.TreasureWardensEventRoom;
-import corruptthespire.patches.core.CorruptedField;
 import corruptthespire.patches.fight.room.FightRoomCorruptionTypeField;
 import corruptthespire.patches.shop.ShopCorruptionTypeField;
 

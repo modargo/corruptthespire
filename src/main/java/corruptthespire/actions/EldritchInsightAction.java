@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.screens.CardRewardScreen;
 import corruptthespire.util.CollectionsUtil;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class EldritchInsightAction extends AbstractGameAction {
     private static final int CARD_OPTIONS = 3;

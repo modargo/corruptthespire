@@ -13,7 +13,6 @@ import corruptthespire.relics.corrupted.ObsidianShovel;
 import corruptthespire.util.CollectionsUtil;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class CampfireCorruption {
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:CampfireCorruption").TEXT;

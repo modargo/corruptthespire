@@ -36,7 +36,6 @@ import corruptthespire.cards.corrupted.CorruptedCardUtil;
 import corruptthespire.patches.core.CorruptedField;
 import corruptthespire.patches.relics.BottledPrismPatch;
 import corruptthespire.patches.shop.ShopCorruptionTypeField;
-import corruptthespire.patches.shop.ShopPatch;
 import corruptthespire.patches.shop.ShopScreenServiceInfoField;
 import corruptthespire.relics.FragmentOfCorruption;
 import corruptthespire.savables.logs.ShopServiceLog;

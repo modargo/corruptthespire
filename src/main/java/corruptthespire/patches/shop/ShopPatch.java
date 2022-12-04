@@ -33,8 +33,6 @@ import javassist.expr.MethodCall;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 public class ShopPatch {
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:ShopCorruption").TEXT;
