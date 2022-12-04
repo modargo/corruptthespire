@@ -246,6 +246,6 @@
   },
   "CorruptTheSpire:Malice": {
     "NAME": "Malice",
-    "DESCRIPTIONS": ["Whenever you play an #yUncommon, #yRare, or #yRevelation #yStatus card, gains #b{0} block and deals #b{0} damage to you, then increases the block and damage by #b1. Resets to #b{1} at the end of the round."]
+    "DESCRIPTIONS": ["Whenever you play an #yRevelation #yStatus card, #yUncommon, or #yRare, gains #b{0} block and deals #b{0} damage to you, then increases the block and damage by #b1. Resets to #b{1} at the end of the round."]
   }
 }

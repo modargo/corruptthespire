@@ -65,9 +65,15 @@ public class EventCorruption {
     }
 
     private static String getEvent(List<String> eventIds) {
-        // The Ascent event shows up twice as often as other events
+        // The Ascent event shows up twice as often as other events of its type
         if (eventIds.contains(Ascent.ID)) {
             eventIds.add(Ascent.ID);
+        }
+
+        //TODO: remove this
+        //For testing, you always get Ascent if its a possibility
+        if (eventIds.contains(Ascent.ID)) {
+            return Ascent.ID;
         }
 
         return eventIds.get(Cor.rng.random(eventIds.size() - 1));
