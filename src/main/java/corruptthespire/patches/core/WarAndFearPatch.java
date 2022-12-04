@@ -2,7 +2,6 @@ package corruptthespire.patches.core;
 
 import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.modthespire.lib.*;
-import com.megacrit.cardcrawl.cards.red.Corruption;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -14,6 +13,8 @@ import corruptthespire.Cor;
 import corruptthespire.CorruptionFlags;
 import corruptthespire.monsters.Encounters;
 import javassist.CtBehavior;
+
+import java.lang.reflect.InvocationTargetException;
 
 public class WarAndFearPatch {
     @SpirePatch2(clz = CardCrawlGame.class, method = "getDungeon", paramtypez = { String.class, AbstractPlayer.class })
@@ -36,10 +37,19 @@ public class WarAndFearPatch {
     )
     public static class SpecialActTwoBossFightPatch {
         @SpireInsertPatch(locator = Locator.class)
-        public static SpireReturn<Void> SpecialActTwoBossFight(ProceedButton __instance) {
-            if (shouldFightSpecialBoss()) {
-                AbstractDungeon.bossKey = getSpecialBoss();
+        public static SpireReturn<Void> SpecialActTwoBossFight(ProceedButton __instance) throws InvocationTargetException, IllegalAccessException {
+            if (justFoughtSpecialBoss()) {
+                // It would also be natural for this to go in NextRoomTransitionRecordCorruptionFlagsPatch,
+                // but the logic in this method executes first, and in the extra boss case we need to catch
+                // that we already fought War and Fear before we override the next room to be War and Fear
                 Cor.flags.warAndFear = CorruptionFlags.WarAndFear.FOUGHT;
+                // We also need to go to the treasure room ourselves, since this call is normally in a check
+                // for being on the combat reward screen. We could also patch that logic in ProceedButton but
+                // this seemed easier
+                ReflectionHacks.getCachedMethod(ProceedButton.class, "goToTreasureRoom").invoke(__instance);
+            }
+            else if (shouldFightSpecialExtraBoss()) {
+                AbstractDungeon.bossKey = getSpecialBoss();
                 CardCrawlGame.music.fadeOutBGM();
                 CardCrawlGame.music.fadeOutTempBGM();
                 MapRoomNode node = new MapRoomNode(-1, 15);
@@ -54,7 +64,11 @@ public class WarAndFearPatch {
             return SpireReturn.Continue();
         }
 
-        private static boolean shouldFightSpecialBoss() {
+        private static boolean justFoughtSpecialBoss() {
+            return AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && AbstractDungeon.lastCombatMetricKey.equals(Encounters.WAR_AND_FEAR);
+        }
+
+        private static boolean shouldFightSpecialExtraBoss() {
             return AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && Cor.flags.warAndFear == CorruptionFlags.WarAndFear.EXTRA_BOSS && Cor.getRealActNum() == 2;
         }
 
