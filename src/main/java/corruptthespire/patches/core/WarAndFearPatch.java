@@ -35,7 +35,7 @@ public class WarAndFearPatch {
             method = "update"
     )
     public static class SpecialActTwoBossFightPatch {
-        @SpireInsertPatch(locator = SpecialActTwoBossFightPatch.Locator.class)
+        @SpireInsertPatch(locator = Locator.class)
         public static SpireReturn<Void> SpecialActTwoBossFight(ProceedButton __instance) {
             if (shouldFightSpecialBoss()) {
                 AbstractDungeon.bossKey = getSpecialBoss();
