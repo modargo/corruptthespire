@@ -55,7 +55,7 @@ public class WarAndFearPatch {
         }
 
         private static boolean shouldFightSpecialBoss() {
-            return AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && Cor.flags.warAndFear == CorruptionFlags.WarAndFear.REPLACE_BOSS && Cor.getRealActNum() == 2;
+            return AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && Cor.flags.warAndFear == CorruptionFlags.WarAndFear.EXTRA_BOSS && Cor.getRealActNum() == 2;
         }
 
         private static String getSpecialBoss() {
