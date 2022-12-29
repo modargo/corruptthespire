@@ -11,7 +11,7 @@ public abstract class AbstractCorruptionDistribution<T extends Enum<T>> {
         List<CorruptionDistributionInfo<T>> distribution = this.getDistribution();
         int totalWeight = distribution.stream().map(cdi -> cdi.weight).reduce(0, Integer::sum);
         if (totalWeight != this.getTotalWeight()) {
-            throw new RuntimeException("Expected total weight to be 100, was " + totalWeight);
+            throw new RuntimeException("Expected total weight to be " + this.getTotalWeight() + ", was " + totalWeight);
         }
 
         distribution = this.adjustDistribution(distribution);
