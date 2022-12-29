@@ -70,12 +70,6 @@ public class EventCorruption {
             eventIds.add(Ascent.ID);
         }
 
-        //TODO: remove this
-        //For testing, you always get Ascent if its a possibility
-        if (eventIds.contains(Ascent.ID)) {
-            return Ascent.ID;
-        }
-
         return eventIds.get(Cor.rng.random(eventIds.size() - 1));
     }
 
