@@ -45,7 +45,7 @@ public class UnnaturalOrderAndAbyssalOrbPatch {
                 __instance.amount = powerToApply[0].amount;
             }
 
-            if (AbstractDungeon.player.hasPower(UnnaturalOrderPower.POWER_ID) && source != null && source.isPlayer && isAbysstouched(powerToApply[0].ID)) {
+            if (AbstractDungeon.player.hasPower(UnnaturalOrderPower.POWER_ID) && source != null && source.isPlayer && target != source && isAbysstouched(powerToApply[0].ID)) {
                 PoisonPower p = new PoisonPower(target, source, powerToApply[0].amount);
                 ReflectionHacks.setPrivate(__instance, ApplyPowerAction.class, "powerToApply", p);
                 powerToApply[0] = p;
