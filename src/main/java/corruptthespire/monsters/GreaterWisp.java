@@ -38,8 +38,8 @@ public class GreaterWisp extends CustomMonster
     private static final int TRIPLE_RAY_DAMAGE = 1;
     private static final int A2_TRIPLE_RAY_DAMAGE = 2;
     private static final int TRIPLE_RAY_HITS = 3;
-    private static final int RAY_DAMAGE = 6;
-    private static final int A2_RAY_DAMAGE = 7;
+    private static final int RAY_DAMAGE = 5;
+    private static final int A2_RAY_DAMAGE = 6;
     private static final int SOOTHING_LIGHT_STRENGTH = 1;
     private static final int SOOTHING_LIGHT_HEAL = 3;
     private static final int A17_SOOTHING_LIGHT_HEAL = 3;
