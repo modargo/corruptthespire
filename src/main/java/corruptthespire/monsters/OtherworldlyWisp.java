@@ -46,7 +46,7 @@ public class OtherworldlyWisp extends CustomMonster
     private static final int A2_ENERGIZE_DAMAGE = 3;
     private static final int ENERGIZE_STRENGTH = 1;
     private static final int ARTIFACT = 1;
-    private static final int A17_ARTIFACT = 2;
+    private static final int A17_ARTIFACT = 1;
     private static final int RADIANT_STRENGTH = 1;
     private static final int A17_RADIANT_STRENGTH = 2;
     private static final int RADIANT_HEAL = 4;

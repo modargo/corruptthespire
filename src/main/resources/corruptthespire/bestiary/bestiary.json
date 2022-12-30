@@ -3072,7 +3072,7 @@
 					"min_asc": 17,
 					"desc": "Cycles #wDancing #wLights or #wEnergize -> the other or #wRay -> the third move.",
 					"hp": "(22 - 23 HP)",
-					"notes": "Innate #uArtifact 2, #uRadiant 2 and 6 NL NL Energize prioritizes a Greater Wisp if any are alive.",
+					"notes": "Innate #uArtifact 1, #uRadiant 2 and 6 NL NL Energize prioritizes a Greater Wisp if any are alive.",
 					"moves": [
 						{
 							"name": "Dancing Lights",
