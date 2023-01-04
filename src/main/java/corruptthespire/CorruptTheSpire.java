@@ -66,7 +66,8 @@ public class CorruptTheSpire implements
         EditCardsSubscriber,
         EditRelicsSubscriber,
         EditStringsSubscriber,
-        EditKeywordsSubscriber {
+        EditKeywordsSubscriber,
+        StartGameSubscriber {
     private static final Logger logger = LogManager.getLogger(CorruptTheSpire.class.getName());
 
     public static final String AbyssModId = "Abyss";
@@ -119,7 +120,6 @@ public class CorruptTheSpire implements
         this.registerCustomRewards();
 
         Cor.display = new CorruptionDisplay();
-        BaseMod.addTopPanelItem(Cor.display);
 
         CorruptionTypePerFloorRunHistoryPatch.buildCorruptionTypeMapping();
     }
@@ -397,6 +397,14 @@ public class CorruptTheSpire implements
                 //The modID here must be lowercase
                 BaseMod.addKeyword("corruptthespire", keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
             }
+        }
+    }
+
+    @Override
+    public void receiveStartGame() {
+        BaseMod.removeTopPanelItem(Cor.display);
+        if (Cor.active) {
+            BaseMod.addTopPanelItem(Cor.display);
         }
     }
 
