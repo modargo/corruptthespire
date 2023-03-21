@@ -90,6 +90,12 @@ public class CorruptedCardUtil {
             }
         }
 
+        if (Loader.isModLoaded("anniv5")) {
+            if (ignoreClass || AbstractDungeon.player.hasRelic(PrismaticShard.ID) || AbstractDungeon.player.getCardColor().name().equals("PACKMASTER_RAINBOW") || ModHelper.isModEnabled(Diverse.ID)) {
+                corruptedCardInfos.add(new CorruptedCardInfo(new OtherworldlyPack(), AbstractCard.CardRarity.COMMON));
+            }
+        }
+
         return corruptedCardInfos.stream()
             .collect(Collectors.toMap(cci -> cci.card.cardID, cci -> cci));
     }

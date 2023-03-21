@@ -228,6 +228,14 @@
     "NAME": "Diabolic Force",
     "DESCRIPTIONS": ["#yForce applies #b{0}% of its amount as #yAbysstouched."]
   },
+  "CorruptTheSpire:OtherworldlyPack": {
+    "NAME": "Otherworldly Pack",
+    "DESCRIPTIONS": [
+      "Once per turn, after you play cards from #b{0} different Packs, gain #b{1} Block and apply #b{1} #yAbysstouched to ALL enemies.",
+      "Packs played this turn: NL ",
+      "Has triggered this turn."
+    ]
+  },
   "CorruptTheSpire:EssenceOfRot": {
     "NAME": "EssenceOfRot",
     "DESCRIPTIONS": ["At the start of combat, shuffle #b{0} #yCorrupting #yRot into your draw pile."]

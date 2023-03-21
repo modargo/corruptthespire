@@ -216,6 +216,10 @@
     "NAME": "Diabolic Force",
     "DESCRIPTION": "channeler:Force applies !M!% of NL its amount as corruptthespire:Abysstouched."
   },
+  "CorruptTheSpire:OtherworldlyPack": {
+    "NAME": "Otherworldly Pack",
+    "DESCRIPTION": "Once per turn, after you play cards from 4 different Packs, gain !M! Block and apply !M! corruptthespire:Abysstouched to ALL enemies."
+  },
   "CorruptTheSpire:TheFool": {
     "NAME": "The Fool",
     "DESCRIPTION": "Choose one: Draw !M! cards and draw !corruptthespire:M2! less card next turn, or draw !M! cards next turn. NL Exhaust."
