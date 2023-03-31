@@ -40,6 +40,7 @@ public class CorruptedCardUtil {
         corruptedCardInfos.add(new CorruptedCardInfo(new EssenceRip(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new Retribution(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new ShadowAndFlame(), AbstractCard.CardRarity.COMMON));
+        corruptedCardInfos.add(new CorruptedCardInfo(new AstralGust(), AbstractCard.CardRarity.RARE));
         corruptedCardInfos.add(new CorruptedCardInfo(new DrainLife(), AbstractCard.CardRarity.RARE));
         corruptedCardInfos.add(new CorruptedCardInfo(new EldritchFire(), AbstractCard.CardRarity.RARE));
         corruptedCardInfos.add(new CorruptedCardInfo(new Fragmentize(), AbstractCard.CardRarity.RARE));

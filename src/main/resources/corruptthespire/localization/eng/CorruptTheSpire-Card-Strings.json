@@ -248,5 +248,10 @@
     "NAME": "Occult Machine",
     "DESCRIPTION": "Gain !B! Block. NL Apply !M! corruptthespire:Abysstouched. NL Draw !corruptthespire:M2! card.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Apply !M! corruptthespire:Abysstouched. NL Draw !corruptthespire:M2! cards."
+  },
+  "CorruptTheSpire:AstralGust": {
+    "NAME": "Astral Gust",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Shuffle 1 *Apparition, *Miracle, and *Slimed into your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. NL Shuffle 1 *Apparition+, *Miracle+, and *Slimed into your draw pile. NL Exhaust."
   }
 }
