@@ -243,5 +243,10 @@
   "CorruptTheSpire:Irradiate": {
     "NAME": "Irradiate",
     "DESCRIPTION": "Apply !M! corruptthespire:Abysstouched. NL Gain [E] ."
+  },
+  "CorruptTheSpire:OccultMachine": {
+    "NAME": "Occult Machine",
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! corruptthespire:Abysstouched. NL Draw !corruptthespire:M2! card.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Apply !M! corruptthespire:Abysstouched. NL Draw !corruptthespire:M2! cards."
   }
 }

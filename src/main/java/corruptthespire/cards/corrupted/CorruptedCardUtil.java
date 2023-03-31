@@ -49,6 +49,7 @@ public class CorruptedCardUtil {
         corruptedCardInfos.add(new CorruptedCardInfo(new EldritchInsight(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new HiddenPotential(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new Irradiate(), AbstractCard.CardRarity.COMMON));
+        corruptedCardInfos.add(new CorruptedCardInfo(new OccultMachine(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new ProfaneShield(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new Unearth(), AbstractCard.CardRarity.COMMON));
         corruptedCardInfos.add(new CorruptedCardInfo(new VoidArmor(), AbstractCard.CardRarity.COMMON));
