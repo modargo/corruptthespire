@@ -59,6 +59,7 @@ public class CorruptedCardUtil {
         corruptedCardInfos.add(new CorruptedCardInfo(new DevilsBargain(), AbstractCard.CardRarity.RARE));
         corruptedCardInfos.add(new CorruptedCardInfo(new MaskOfShards(), AbstractCard.CardRarity.RARE));
         corruptedCardInfos.add(new CorruptedCardInfo(new NightsWhisper(), AbstractCard.CardRarity.RARE));
+        corruptedCardInfos.add(new CorruptedCardInfo(new Secundus(), AbstractCard.CardRarity.RARE));
 
         //Powers
         corruptedCardInfos.add(new CorruptedCardInfo(new BlackOmen(), AbstractCard.CardRarity.COMMON));

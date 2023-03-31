@@ -253,5 +253,10 @@
     "NAME": "Astral Gust",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Shuffle 1 *Apparition, *Miracle, and *Slimed into your draw pile. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. NL Shuffle 1 *Apparition+, *Miracle+, and *Slimed into your draw pile. NL Exhaust."
+  },
+  "CorruptTheSpire:Secundus": {
+    "NAME": "Secundus",
+    "DESCRIPTION": "Ethereal. NL This turn, your next card is played twice.",
+    "UPGRADE_DESCRIPTION": "This turn, your next card is played twice."
   }
 }
