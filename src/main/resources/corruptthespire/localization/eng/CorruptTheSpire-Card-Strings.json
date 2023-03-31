@@ -239,5 +239,9 @@
   "CorruptTheSpire:Revelation": {
     "NAME": "Revelation",
     "DESCRIPTION": "Exhaust a random card in your hand. NL Draw !M! cards."
+  },
+  "CorruptTheSpire:Irradiate": {
+    "NAME": "Irradiate",
+    "DESCRIPTION": "Apply !M! corruptthespire:Abysstouched. NL Gain [E] ."
   }
 }
