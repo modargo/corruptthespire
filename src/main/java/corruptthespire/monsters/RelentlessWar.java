@@ -144,7 +144,6 @@ public class RelentlessWar extends CustomMonster
                 break;
             case CHALLENGE_MOVE:
                 this.addToBot(new FastShakeAction(this, 0.5F, 0.2F));
-                this.addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
                 for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
                     if (!m.isDying && !m.halfDead && !m.isDeadOrEscaped()) {
                         this.addToBot(new GainBlockAction(m, this.challengeBlock));
