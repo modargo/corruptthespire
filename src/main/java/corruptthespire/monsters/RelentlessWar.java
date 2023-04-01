@@ -39,8 +39,8 @@ public class RelentlessWar extends CustomMonster
     private static final int SLAUGHTER_HITS = 2;
     private static final int ENMITY_DAMAGE = 8;
     private static final int A4_ENMITY_DAMAGE = 10;
-    private static final int ENMITY_STRENGTH = 2;
-    private static final int A19_ENMITY_STRENGTH = 4;
+    private static final int ENMITY_STRENGTH = 1;
+    private static final int A19_ENMITY_STRENGTH = 2;
     private static final int ENMITY_RITUAL = 1;
     private static final int CHALLENGE_BLOCK = 15;
     private static final int A9_CHALLENGE_BLOCK = 20;
