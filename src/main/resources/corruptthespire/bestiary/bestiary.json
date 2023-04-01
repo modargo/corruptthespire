@@ -3471,7 +3471,67 @@
 							"name": "Bloodshed",
 							"effects": [
 								{
-									"name": "11",
+									"name": "10",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Slaughter",
+							"effects": [
+								{
+									"name": "6x2",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Enmity",
+							"effects": [
+								{
+									"name": "7",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Party Strength 1",
+									"color": "BUFF"
+								},
+								{
+									"name": "(*) Party Ritual 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Challenge",
+							"effects": [
+								{
+									"name": "Party Block 15",
+									"color": "BLOCK"
+								},
+								{
+									"name": "Party Artifact 1",
+									"color": "BUFF"
+								},
+								{
+									"name": "(*) Party Plated Armor 5",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 4,
+					"desc": "Cycles #wBloodshed or #wSlaughter -> the other -> #wEnmity -> #wChallenge.",
+					"hp": "(375 HP)",
+					"notes": "Innate #uSoul #uLink. Additional effects when buffing or debuffing from behind the player are indicated by #w(*).",
+					"moves": [
+						{
+							"name": "Bloodshed",
+							"effects": [
+								{
+									"name": "12",
 									"color": "DAMAGE"
 								}
 							]
@@ -3522,66 +3582,6 @@
 					]
 				},
 				{
-					"min_asc": 4,
-					"desc": "Cycles #wBloodshed or #wSlaughter -> the other -> #wEnmity -> #wChallenge.",
-					"hp": "(375 HP)",
-					"notes": "Innate #uSoul #uLink. Additional effects when buffing or debuffing from behind the player are indicated by #w(*).",
-					"moves": [
-						{
-							"name": "Bloodshed",
-							"effects": [
-								{
-									"name": "13",
-									"color": "DAMAGE"
-								}
-							]
-						},
-						{
-							"name": "Slaughter",
-							"effects": [
-								{
-									"name": "8x2",
-									"color": "DAMAGE"
-								}
-							]
-						},
-						{
-							"name": "Enmity",
-							"effects": [
-								{
-									"name": "10",
-									"color": "DAMAGE"
-								},
-								{
-									"name": "Party Strength 1",
-									"color": "BUFF"
-								},
-								{
-									"name": "(*) Party Ritual 1",
-									"color": "BUFF"
-								}
-							]
-						},
-						{
-							"name": "Challenge",
-							"effects": [
-								{
-									"name": "Party Block 15",
-									"color": "BLOCK"
-								},
-								{
-									"name": "Party Artifact 1",
-									"color": "BUFF"
-								},
-								{
-									"name": "(*) Party Plated Armor 5",
-									"color": "BUFF"
-								}
-							]
-						}
-					]
-				},
-				{
 					"min_asc": 9,
 					"desc": "Cycles #wBloodshed or #wSlaughter -> the other -> #wEnmity -> #wChallenge.",
 					"hp": "(400 HP)",
@@ -3591,7 +3591,7 @@
 							"name": "Bloodshed",
 							"effects": [
 								{
-									"name": "13",
+									"name": "12",
 									"color": "DAMAGE"
 								}
 							]
@@ -3600,7 +3600,7 @@
 							"name": "Slaughter",
 							"effects": [
 								{
-									"name": "8x2",
+									"name": "7x2",
 									"color": "DAMAGE"
 								}
 							]
@@ -3609,7 +3609,7 @@
 							"name": "Enmity",
 							"effects": [
 								{
-									"name": "10",
+									"name": "8",
 									"color": "DAMAGE"
 								},
 								{
@@ -3651,7 +3651,7 @@
 							"name": "Bloodshed",
 							"effects": [
 								{
-									"name": "13",
+									"name": "12",
 									"color": "DAMAGE"
 								}
 							]
@@ -3660,7 +3660,7 @@
 							"name": "Slaughter",
 							"effects": [
 								{
-									"name": "8x2",
+									"name": "7x2",
 									"color": "DAMAGE"
 								}
 							]
@@ -3669,7 +3669,7 @@
 							"name": "Enmity",
 							"effects": [
 								{
-									"name": "10",
+									"name": "8",
 									"color": "DAMAGE"
 								},
 								{
@@ -3747,7 +3747,7 @@
 							"name": "Horror",
 							"effects": [
 								{
-									"name": "9",
+									"name": "8",
 									"color": "DAMAGE"
 								},
 								{
@@ -3760,7 +3760,7 @@
 							"name": "Panic",
 							"effects": [
 								{
-									"name": "14",
+									"name": "11",
 									"color": "DAMAGE"
 								}
 							]
@@ -3807,7 +3807,7 @@
 							"name": "Horror",
 							"effects": [
 								{
-									"name": "11",
+									"name": "10",
 									"color": "DAMAGE"
 								},
 								{
@@ -3820,7 +3820,7 @@
 							"name": "Panic",
 							"effects": [
 								{
-									"name": "16",
+									"name": "13",
 									"color": "DAMAGE"
 								}
 							]
@@ -3867,7 +3867,7 @@
 							"name": "Horror",
 							"effects": [
 								{
-									"name": "11",
+									"name": "10",
 									"color": "DAMAGE"
 								},
 								{
@@ -3880,7 +3880,7 @@
 							"name": "Panic",
 							"effects": [
 								{
-									"name": "16",
+									"name": "13",
 									"color": "DAMAGE"
 								}
 							]
@@ -3927,7 +3927,7 @@
 							"name": "Horror",
 							"effects": [
 								{
-									"name": "11",
+									"name": "10",
 									"color": "DAMAGE"
 								},
 								{
@@ -3940,7 +3940,7 @@
 							"name": "Panic",
 							"effects": [
 								{
-									"name": "16",
+									"name": "13",
 									"color": "DAMAGE"
 								}
 							]
