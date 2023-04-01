@@ -3751,7 +3751,7 @@
 									"color": "DAMAGE"
 								},
 								{
-									"name": "Dazed 1, Slimed 1, (*) Void 1",
+									"name": "Dazed 1 (*) Void 1 instead",
 									"color": "DEBUFF"
 								}
 							]
@@ -3811,7 +3811,7 @@
 									"color": "DAMAGE"
 								},
 								{
-									"name": "Dazed 1, Slimed 1, (*) Void 1",
+									"name": "Dazed 1 (*) Void 1 instead",
 									"color": "DEBUFF"
 								}
 							]
@@ -3871,7 +3871,7 @@
 									"color": "DAMAGE"
 								},
 								{
-									"name": "Dazed 1, Slimed 1, (*) Void 1",
+									"name": "Dazed 1 (*) Void 1 instead",
 									"color": "DEBUFF"
 								}
 							]
@@ -3931,7 +3931,7 @@
 									"color": "DAMAGE"
 								},
 								{
-									"name": "Dazed 1, Slimed 1, Wound 1, (*) Void 1",
+									"name": "Dazed 2, (*) Dazed 1 and Void 1 instead",
 									"color": "DEBUFF"
 								}
 							]

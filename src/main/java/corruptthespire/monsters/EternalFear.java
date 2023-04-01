@@ -127,13 +127,14 @@ public class EternalFear extends CustomMonster
             case HORROR_ATTACK:
                 this.addToBot(new AnimateFastAttackAction(this));
                 this.addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(0), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-                this.addToBot(new MakeTempCardInDiscardAction(new Dazed(), 1));
-                this.addToBot(new MakeTempCardInDiscardAction(new Slimed(), 1));
-                if (AbstractDungeon.ascensionLevel >= 19) {
-                    this.addToBot(new MakeTempCardInDiscardAction(new Wound(), 1));
-                }
                 if (this.empowered()) {
                     this.addToBot(new MakeTempCardInDiscardAction(new VoidCard(), 1));
+                }
+                else {
+                    this.addToBot(new MakeTempCardInDiscardAction(new Dazed(), 1));
+                }
+                if (AbstractDungeon.ascensionLevel >= 19) {
+                    this.addToBot(new MakeTempCardInDiscardAction(new Dazed(), 1));
                 }
                 break;
             case PANIC_ATTACK:
