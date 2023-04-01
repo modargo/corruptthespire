@@ -3747,7 +3747,7 @@
 							"name": "Horror",
 							"effects": [
 								{
-									"name": "10",
+									"name": "9",
 									"color": "DAMAGE"
 								},
 								{
@@ -3760,7 +3760,7 @@
 							"name": "Panic",
 							"effects": [
 								{
-									"name": "16",
+									"name": "14",
 									"color": "DAMAGE"
 								}
 							]
@@ -3807,7 +3807,7 @@
 							"name": "Horror",
 							"effects": [
 								{
-									"name": "12",
+									"name": "11",
 									"color": "DAMAGE"
 								},
 								{
@@ -3820,7 +3820,7 @@
 							"name": "Panic",
 							"effects": [
 								{
-									"name": "18",
+									"name": "16",
 									"color": "DAMAGE"
 								}
 							]
@@ -3867,7 +3867,7 @@
 							"name": "Horror",
 							"effects": [
 								{
-									"name": "12",
+									"name": "11",
 									"color": "DAMAGE"
 								},
 								{
@@ -3880,7 +3880,7 @@
 							"name": "Panic",
 							"effects": [
 								{
-									"name": "18",
+									"name": "16",
 									"color": "DAMAGE"
 								}
 							]
@@ -3927,7 +3927,7 @@
 							"name": "Horror",
 							"effects": [
 								{
-									"name": "12",
+									"name": "11",
 									"color": "DAMAGE"
 								},
 								{
@@ -3940,7 +3940,7 @@
 							"name": "Panic",
 							"effects": [
 								{
-									"name": "18",
+									"name": "16",
 									"color": "DAMAGE"
 								}
 							]
