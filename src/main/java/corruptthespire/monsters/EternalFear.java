@@ -45,8 +45,8 @@ public class EternalFear extends CustomMonster
     private static final int A4_HORROR_DAMAGE = 14;
     private static final int PANIC_DAMAGE = 18;
     private static final int A4_PANIC_DAMAGE = 20;
-    private static final int HP = 450;
-    private static final int A9_HP = 475;
+    private static final int HP = 375;
+    private static final int A9_HP = 400;
     private final int dreadFrail;
     private final int despairBlock;
     private final int despairDrawDown;

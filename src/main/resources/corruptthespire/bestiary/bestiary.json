@@ -3464,7 +3464,7 @@
 				{
 					"min_asc": 0,
 					"desc": "Cycles #wBloodshed or #wSlaughter -> the other -> #wEnmity -> #wChallenge.",
-					"hp": "(450 HP)",
+					"hp": "(375 HP)",
 					"notes": "Innate #uSoul #uLink. Additional effects when buffing or debuffing from behind the player are indicated by #w(*).",
 					"moves": [
 						{
@@ -3524,7 +3524,7 @@
 				{
 					"min_asc": 4,
 					"desc": "Cycles #wBloodshed or #wSlaughter -> the other -> #wEnmity -> #wChallenge.",
-					"hp": "(450 HP)",
+					"hp": "(375 HP)",
 					"notes": "Innate #uSoul #uLink. Additional effects when buffing or debuffing from behind the player are indicated by #w(*).",
 					"moves": [
 						{
@@ -3584,7 +3584,7 @@
 				{
 					"min_asc": 9,
 					"desc": "Cycles #wBloodshed or #wSlaughter -> the other -> #wEnmity -> #wChallenge.",
-					"hp": "(475 HP)",
+					"hp": "(400 HP)",
 					"notes": "Innate #uSoul #uLink. Additional effects when buffing or debuffing from behind the player are indicated by #w(*).",
 					"moves": [
 						{
@@ -3644,7 +3644,7 @@
 				{
 					"min_asc": 19,
 					"desc": "Cycles #wBloodshed or #wSlaughter -> the other -> #wEnmity -> #wChallenge.",
-					"hp": "(475 HP)",
+					"hp": "(400 HP)",
 					"notes": "Innate #uSoul #uLink. Additional effects when buffing or debuffing from behind the player are indicated by #w(*).",
 					"moves": [
 						{
@@ -3710,7 +3710,7 @@
 				{
 					"min_asc": 0,
 					"desc": "Cycles #wDread or #wDespair -> the other -> #wHorror -> #wPanic.",
-					"hp": "(450 HP)",
+					"hp": "(375 HP)",
 					"notes": "Innate #uSoul #uLink. Additional effects when buffing or debuffing from behind the player are indicated by #w(*). Status cards go into the discard pile.",
 					"moves": [
 						{
@@ -3770,7 +3770,7 @@
 				{
 					"min_asc": 4,
 					"desc": "Cycles #wDread or #wDespair -> the other -> #wHorror -> #wPanic.",
-					"hp": "(450 HP)",
+					"hp": "(375 HP)",
 					"notes": "Innate #uSoul #uLink. Additional effects when buffing or debuffing from behind the player are indicated by #w(*). Status cards go into the discard pile.",
 					"moves": [
 						{
@@ -3830,7 +3830,7 @@
 				{
 					"min_asc": 9,
 					"desc": "Cycles #wDread or #wDespair -> the other -> #wHorror -> #wPanic.",
-					"hp": "(475 HP)",
+					"hp": "(400 HP)",
 					"notes": "Innate #uSoul #uLink. Additional effects when buffing or debuffing from behind the player are indicated by #w(*). Status cards go into the discard pile.",
 					"moves": [
 						{
@@ -3890,7 +3890,7 @@
 				{
 					"min_asc": 19,
 					"desc": "Cycles #wDread or #wDespair -> the other -> #wHorror -> #wPanic.",
-					"hp": "(475 HP)",
+					"hp": "(400 HP)",
 					"notes": "Innate #uSoul #uLink. Additional effects when buffing or debuffing from behind the player are indicated by #w(*). Status cards go into the discard pile.",
 					"moves": [
 						{
