@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
 import corruptthespire.CorruptTheSpire;
+import corruptthespire.powers.PowerUtil;
 import corruptthespire.powers.SoulLinkPower;
 import corruptthespire.powers.ThreatenedPower;
 
@@ -135,7 +136,12 @@ public class RelentlessWar extends CustomMonster
                 this.addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.SLASH_HEAVY));
                 for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
                     if (!m.isDying && !m.halfDead && !m.isDeadOrEscaped()) {
-                        this.addToBot(new ApplyPowerAction(m, this, new StrengthPower(m, this.enmityStrength)));
+                        if (m == this || m.drawX < this.drawX || m.getIntentDmg() == -1) {
+                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new StrengthPower(m, this.enmityStrength)));
+                        }
+                        else {
+                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, PowerUtil.gainStrengthBuff(m, this.enmityStrength)));
+                        }
                         if (this.empowered()) {
                             this.addToBot(new ApplyPowerAction(m, this, new RitualPower(m, ENMITY_RITUAL, false)));
                         }
