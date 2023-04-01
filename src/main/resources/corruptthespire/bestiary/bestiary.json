@@ -3471,6 +3471,126 @@
 							"name": "Bloodshed",
 							"effects": [
 								{
+									"name": "11",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Slaughter",
+							"effects": [
+								{
+									"name": "7x2",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Enmity",
+							"effects": [
+								{
+									"name": "8",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Party Strength 2",
+									"color": "BUFF"
+								},
+								{
+									"name": "(*) Party Ritual 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Challenge",
+							"effects": [
+								{
+									"name": "Party Block 15",
+									"color": "BLOCK"
+								},
+								{
+									"name": "Party Artifact 1",
+									"color": "BUFF"
+								},
+								{
+									"name": "(*) Party Plated Armor 5",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 4,
+					"desc": "Cycles #wBloodshed or #wSlaughter -> the other -> #wEnmity -> #wChallenge.",
+					"hp": "(375 HP)",
+					"notes": "Innate #uSoul #uLink. Additional effects when buffing or debuffing from behind the player are indicated by #w(*).",
+					"moves": [
+						{
+							"name": "Bloodshed",
+							"effects": [
+								{
+									"name": "13",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Slaughter",
+							"effects": [
+								{
+									"name": "8x2",
+									"color": "DAMAGE"
+								}
+							]
+						},
+						{
+							"name": "Enmity",
+							"effects": [
+								{
+									"name": "10",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Party Strength 2",
+									"color": "BUFF"
+								},
+								{
+									"name": "(*) Party Ritual 1",
+									"color": "BUFF"
+								}
+							]
+						},
+						{
+							"name": "Challenge",
+							"effects": [
+								{
+									"name": "Party Block 15",
+									"color": "BLOCK"
+								},
+								{
+									"name": "Party Artifact 1",
+									"color": "BUFF"
+								},
+								{
+									"name": "(*) Party Plated Armor 5",
+									"color": "BUFF"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 9,
+					"desc": "Cycles #wBloodshed or #wSlaughter -> the other -> #wEnmity -> #wChallenge.",
+					"hp": "(400 HP)",
+					"notes": "Innate #uSoul #uLink. Additional effects when buffing or debuffing from behind the player are indicated by #w(*).",
+					"moves": [
+						{
+							"name": "Bloodshed",
+							"effects": [
+								{
 									"name": "13",
 									"color": "DAMAGE"
 								}
@@ -3514,127 +3634,7 @@
 									"color": "BUFF"
 								},
 								{
-									"name": "(*) Party Plated Armor 10",
-									"color": "BUFF"
-								}
-							]
-						}
-					]
-				},
-				{
-					"min_asc": 4,
-					"desc": "Cycles #wBloodshed or #wSlaughter -> the other -> #wEnmity -> #wChallenge.",
-					"hp": "(375 HP)",
-					"notes": "Innate #uSoul #uLink. Additional effects when buffing or debuffing from behind the player are indicated by #w(*).",
-					"moves": [
-						{
-							"name": "Bloodshed",
-							"effects": [
-								{
-									"name": "15",
-									"color": "DAMAGE"
-								}
-							]
-						},
-						{
-							"name": "Slaughter",
-							"effects": [
-								{
-									"name": "9x2",
-									"color": "DAMAGE"
-								}
-							]
-						},
-						{
-							"name": "Enmity",
-							"effects": [
-								{
-									"name": "12",
-									"color": "DAMAGE"
-								},
-								{
-									"name": "Party Strength 2",
-									"color": "BUFF"
-								},
-								{
-									"name": "(*) Party Ritual 1",
-									"color": "BUFF"
-								}
-							]
-						},
-						{
-							"name": "Challenge",
-							"effects": [
-								{
-									"name": "Party Block 20",
-									"color": "BLOCK"
-								},
-								{
-									"name": "Party Artifact 1",
-									"color": "BUFF"
-								},
-								{
-									"name": "(*) Party Plated Armor 10",
-									"color": "BUFF"
-								}
-							]
-						}
-					]
-				},
-				{
-					"min_asc": 9,
-					"desc": "Cycles #wBloodshed or #wSlaughter -> the other -> #wEnmity -> #wChallenge.",
-					"hp": "(400 HP)",
-					"notes": "Innate #uSoul #uLink. Additional effects when buffing or debuffing from behind the player are indicated by #w(*).",
-					"moves": [
-						{
-							"name": "Bloodshed",
-							"effects": [
-								{
-									"name": "15",
-									"color": "DAMAGE"
-								}
-							]
-						},
-						{
-							"name": "Slaughter",
-							"effects": [
-								{
-									"name": "9x2",
-									"color": "DAMAGE"
-								}
-							]
-						},
-						{
-							"name": "Enmity",
-							"effects": [
-								{
-									"name": "12",
-									"color": "DAMAGE"
-								},
-								{
-									"name": "Party Strength 2",
-									"color": "BUFF"
-								},
-								{
-									"name": "(*) Party Ritual 1",
-									"color": "BUFF"
-								}
-							]
-						},
-						{
-							"name": "Challenge",
-							"effects": [
-								{
-									"name": "Party Block 30",
-									"color": "BLOCK"
-								},
-								{
-									"name": "Party Artifact 1",
-									"color": "BUFF"
-								},
-								{
-									"name": "(*) Party Plated Armor 10",
+									"name": "(*) Party Plated Armor 5",
 									"color": "BUFF"
 								}
 							]
@@ -3651,7 +3651,7 @@
 							"name": "Bloodshed",
 							"effects": [
 								{
-									"name": "15",
+									"name": "13",
 									"color": "DAMAGE"
 								}
 							]
@@ -3660,7 +3660,7 @@
 							"name": "Slaughter",
 							"effects": [
 								{
-									"name": "9x2",
+									"name": "8x2",
 									"color": "DAMAGE"
 								}
 							]
@@ -3669,7 +3669,7 @@
 							"name": "Enmity",
 							"effects": [
 								{
-									"name": "12",
+									"name": "10",
 									"color": "DAMAGE"
 								},
 								{
@@ -3686,7 +3686,7 @@
 							"name": "Challenge",
 							"effects": [
 								{
-									"name": "Party Block 30",
+									"name": "Party Block 20",
 									"color": "BLOCK"
 								},
 								{
@@ -3711,6 +3711,126 @@
 					"min_asc": 0,
 					"desc": "Cycles #wDread or #wDespair -> the other -> #wHorror -> #wPanic.",
 					"hp": "(375 HP)",
+					"notes": "Innate #uSoul #uLink. Additional effects when buffing or debuffing from behind the player are indicated by #w(*). Status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Dread",
+							"effects": [
+								{
+									"name": "Frail 1 (*) +1",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Vulnerable 1 (*) +1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Despair",
+							"effects": [
+								{
+									"name": "Party Block 5",
+									"color": "BLOCK"
+								},
+								{
+									"name": "Weak 2",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "(*) Draw Down 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Horror",
+							"effects": [
+								{
+									"name": "10",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Dazed 1, Slimed 1, (*) Void 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Panic",
+							"effects": [
+								{
+									"name": "16",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 4,
+					"desc": "Cycles #wDread or #wDespair -> the other -> #wHorror -> #wPanic.",
+					"hp": "(375 HP)",
+					"notes": "Innate #uSoul #uLink. Additional effects when buffing or debuffing from behind the player are indicated by #w(*). Status cards go into the discard pile.",
+					"moves": [
+						{
+							"name": "Dread",
+							"effects": [
+								{
+									"name": "Frail 1 (*) +1",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "Vulnerable 1 (*) +1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Despair",
+							"effects": [
+								{
+									"name": "Party Block 5",
+									"color": "BLOCK"
+								},
+								{
+									"name": "Weak 2",
+									"color": "DEBUFF"
+								},
+								{
+									"name": "(*) Draw Down 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Horror",
+							"effects": [
+								{
+									"name": "12",
+									"color": "DAMAGE"
+								},
+								{
+									"name": "Dazed 1, Slimed 1, (*) Void 1",
+									"color": "DEBUFF"
+								}
+							]
+						},
+						{
+							"name": "Panic",
+							"effects": [
+								{
+									"name": "18",
+									"color": "DAMAGE"
+								}
+							]
+						}
+					]
+				},
+				{
+					"min_asc": 9,
+					"desc": "Cycles #wDread or #wDespair -> the other -> #wHorror -> #wPanic.",
+					"hp": "(400 HP)",
 					"notes": "Innate #uSoul #uLink. Additional effects when buffing or debuffing from behind the player are indicated by #w(*). Status cards go into the discard pile.",
 					"moves": [
 						{
@@ -3768,126 +3888,6 @@
 					]
 				},
 				{
-					"min_asc": 4,
-					"desc": "Cycles #wDread or #wDespair -> the other -> #wHorror -> #wPanic.",
-					"hp": "(375 HP)",
-					"notes": "Innate #uSoul #uLink. Additional effects when buffing or debuffing from behind the player are indicated by #w(*). Status cards go into the discard pile.",
-					"moves": [
-						{
-							"name": "Dread",
-							"effects": [
-								{
-									"name": "Frail 1 (*) +1",
-									"color": "DEBUFF"
-								},
-								{
-									"name": "Vulnerable 1 (*) +1",
-									"color": "DEBUFF"
-								}
-							]
-						},
-						{
-							"name": "Despair",
-							"effects": [
-								{
-									"name": "Party Block 10",
-									"color": "BLOCK"
-								},
-								{
-									"name": "Weak 2",
-									"color": "DEBUFF"
-								},
-								{
-									"name": "(*) Draw Down 1",
-									"color": "DEBUFF"
-								}
-							]
-						},
-						{
-							"name": "Horror",
-							"effects": [
-								{
-									"name": "14",
-									"color": "DAMAGE"
-								},
-								{
-									"name": "Dazed 1, Slimed 1, (*) Void 1",
-									"color": "DEBUFF"
-								}
-							]
-						},
-						{
-							"name": "Panic",
-							"effects": [
-								{
-									"name": "20",
-									"color": "DAMAGE"
-								}
-							]
-						}
-					]
-				},
-				{
-					"min_asc": 9,
-					"desc": "Cycles #wDread or #wDespair -> the other -> #wHorror -> #wPanic.",
-					"hp": "(400 HP)",
-					"notes": "Innate #uSoul #uLink. Additional effects when buffing or debuffing from behind the player are indicated by #w(*). Status cards go into the discard pile.",
-					"moves": [
-						{
-							"name": "Dread",
-							"effects": [
-								{
-									"name": "Frail 1 (*) +1",
-									"color": "DEBUFF"
-								},
-								{
-									"name": "Vulnerable 1 (*) +1",
-									"color": "DEBUFF"
-								}
-							]
-						},
-						{
-							"name": "Despair",
-							"effects": [
-								{
-									"name": "Party Block 15",
-									"color": "BLOCK"
-								},
-								{
-									"name": "Weak 2",
-									"color": "DEBUFF"
-								},
-								{
-									"name": "(*) Draw Down 1",
-									"color": "DEBUFF"
-								}
-							]
-						},
-						{
-							"name": "Horror",
-							"effects": [
-								{
-									"name": "14",
-									"color": "DAMAGE"
-								},
-								{
-									"name": "Dazed 1, Slimed 1, (*) Void 1",
-									"color": "DEBUFF"
-								}
-							]
-						},
-						{
-							"name": "Panic",
-							"effects": [
-								{
-									"name": "20",
-									"color": "DAMAGE"
-								}
-							]
-						}
-					]
-				},
-				{
 					"min_asc": 19,
 					"desc": "Cycles #wDread or #wDespair -> the other -> #wHorror -> #wPanic.",
 					"hp": "(400 HP)",
@@ -3910,7 +3910,7 @@
 							"name": "Despair",
 							"effects": [
 								{
-									"name": "Party Block 15",
+									"name": "Party Block 1",
 									"color": "BLOCK"
 								},
 								{
@@ -3918,7 +3918,7 @@
 									"color": "DEBUFF"
 								},
 								{
-									"name": "(*) Draw Down 2",
+									"name": "(*) Draw Down 1",
 									"color": "DEBUFF"
 								}
 							]
@@ -3927,7 +3927,7 @@
 							"name": "Horror",
 							"effects": [
 								{
-									"name": "14",
+									"name": "12",
 									"color": "DAMAGE"
 								},
 								{
@@ -3940,7 +3940,7 @@
 							"name": "Panic",
 							"effects": [
 								{
-									"name": "20",
+									"name": "18",
 									"color": "DAMAGE"
 								}
 							]
