@@ -31,8 +31,8 @@ public class EternalFear extends CustomMonster
     private static final byte DESPAIR_DEBUFF = 2;
     private static final byte HORROR_ATTACK = 3;
     private static final byte PANIC_ATTACK = 4;
-    private static final int DREAD_FRAIL = 1;
-    private static final int A19_DREAD_FRAIL = 2;
+    private static final int DREAD_FRAIL = 0;
+    private static final int A19_DREAD_FRAIL = 1;
     private static final int DREAD_FRAIL_EXTRA = 1;
     private static final int DREAD_VULNERABLE = 1;
     private static final int DREAD_VULNERABLE_EXTRA = 1;
@@ -109,7 +109,9 @@ public class EternalFear extends CustomMonster
                 this.addToBot(new FastShakeAction(this, 0.5F, 0.2F));
                 int frail = this.dreadFrail + (this.empowered() ? DREAD_FRAIL_EXTRA : 0);
                 int vulnerable = DREAD_VULNERABLE + (this.empowered() ? DREAD_VULNERABLE_EXTRA : 0);
-                this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, frail, true)));
+                if (frail > 0) {
+                    this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, frail, true)));
+                }
                 this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, vulnerable, true)));
                 break;
             case DESPAIR_DEBUFF:

@@ -3717,7 +3717,7 @@
 							"name": "Dread",
 							"effects": [
 								{
-									"name": "Frail 1 (*) +1",
+									"name": "(*) Frail 1",
 									"color": "DEBUFF"
 								},
 								{
@@ -3777,7 +3777,7 @@
 							"name": "Dread",
 							"effects": [
 								{
-									"name": "Frail 1 (*) +1",
+									"name": "(*) Frail 1",
 									"color": "DEBUFF"
 								},
 								{
@@ -3837,7 +3837,7 @@
 							"name": "Dread",
 							"effects": [
 								{
-									"name": "Frail 1 (*) +1",
+									"name": "(*) Frail 1",
 									"color": "DEBUFF"
 								},
 								{
@@ -3897,7 +3897,7 @@
 							"name": "Dread",
 							"effects": [
 								{
-									"name": "Frail 2 (*) +1",
+									"name": "Frail 1 (*) +1",
 									"color": "DEBUFF"
 								},
 								{
