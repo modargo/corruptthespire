@@ -47,7 +47,7 @@ public class RelentlessWar extends CustomMonster
     private static final int CHALLENGE_PLATED_ARMOR = 5;
     private static final int A19_CHALLENGE_PLATED_ARMOR = 10;
     private static final int CHALLENGE_ARTIFACT = 1;
-    private static final int A19_CHALLENGE_ARTIFACT = 2;
+    private static final int A19_CHALLENGE_ARTIFACT = 1;
     private static final int HP = 375;
     private static final int A9_HP = 400;
     private final int bloodshedDamage;
