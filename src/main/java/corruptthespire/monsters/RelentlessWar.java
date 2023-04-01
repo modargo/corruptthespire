@@ -41,7 +41,8 @@ public class RelentlessWar extends CustomMonster
     private static final int A4_ENMITY_DAMAGE = 8;
     private static final int ENMITY_STRENGTH = 1;
     private static final int A19_ENMITY_STRENGTH = 2;
-    private static final int ENMITY_RITUAL = 1;
+    private static final int ENMITY_EXTRA_STRENGTH = 1;
+    private static final int A19_ENMITY_EXTRA_STRENGTH = 2;
     private static final int CHALLENGE_BLOCK = 15;
     private static final int A9_CHALLENGE_BLOCK = 20;
     private static final int CHALLENGE_PLATED_ARMOR = 5;
@@ -54,6 +55,7 @@ public class RelentlessWar extends CustomMonster
     private final int slaughterDamage;
     private final int enmityDamage;
     private final int enmityStrength;
+    private final int enmityExtraStrength;
     private final int challengeBlock;
     private final int challengePlatedArmor;
     private final int challengeArtifact;
@@ -90,11 +92,13 @@ public class RelentlessWar extends CustomMonster
 
         if (AbstractDungeon.ascensionLevel >= 19) {
             this.enmityStrength = A19_ENMITY_STRENGTH;
+            this.enmityExtraStrength = A19_ENMITY_EXTRA_STRENGTH;
             this.challengePlatedArmor = A19_CHALLENGE_PLATED_ARMOR;
             this.challengeArtifact = A19_CHALLENGE_ARTIFACT;
         }
         else {
             this.enmityStrength = ENMITY_STRENGTH;
+            this.enmityExtraStrength = ENMITY_EXTRA_STRENGTH;
             this.challengePlatedArmor = CHALLENGE_PLATED_ARMOR;
             this.challengeArtifact = CHALLENGE_ARTIFACT;
         }
@@ -134,16 +138,14 @@ public class RelentlessWar extends CustomMonster
             case ENMITY_ATTACK:
                 this.addToBot(new AnimateSlowAttackAction(this));
                 this.addToBot(new DamageAction(AbstractDungeon.player, this.damage.get(2), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+                int strength = this.enmityStrength + (this.empowered() ? this.enmityExtraStrength : 0);
                 for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
                     if (!m.isDying && !m.halfDead && !m.isDeadOrEscaped()) {
                         if (m == this || m.drawX < this.drawX || m.getIntentDmg() == -1) {
-                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new StrengthPower(m, this.enmityStrength)));
+                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new StrengthPower(m, strength)));
                         }
                         else {
-                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, PowerUtil.gainStrengthBuff(m, this.enmityStrength)));
-                        }
-                        if (this.empowered()) {
-                            this.addToBot(new ApplyPowerAction(m, this, new RitualPower(m, ENMITY_RITUAL, false)));
+                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, PowerUtil.gainStrengthBuff(m, strength)));
                         }
                     }
                 }
