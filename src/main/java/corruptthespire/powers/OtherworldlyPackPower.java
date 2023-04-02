@@ -19,6 +19,8 @@ import java.lang.reflect.Field;
 import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class OtherworldlyPackPower extends AbstractPower {
     public static final String POWER_ID = "CorruptTheSpire:OtherworldlyPack";
@@ -27,6 +29,7 @@ public class OtherworldlyPackPower extends AbstractPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     private static HashMap<String, String> cardParentMap;
+    private static HashMap<String, String> packNameMap;
 
     private HashSet<String> usedPacks = new HashSet<>();
     private boolean triggered = false;
@@ -45,13 +48,14 @@ public class OtherworldlyPackPower extends AbstractPower {
     @Override
     public void updateDescription() {
         this.description = MessageFormat.format(DESCRIPTIONS[0], OtherworldlyPack.THRESHOLD, this.amount)
-                + " NL NL " + (this.triggered ? DESCRIPTIONS[2] : MessageFormat.format(DESCRIPTIONS[1], String.join(" NL ", this.usedPacks)));
+                + " NL NL " + (this.triggered ? DESCRIPTIONS[3] : MessageFormat.format(DESCRIPTIONS[1], this.usedPacks.size() > 0 ? this.usedPacks.stream().map(this::getPackName).collect(Collectors.joining(" NL ")) : DESCRIPTIONS[2]));
     }
 
     @Override
     public void atStartOfTurn() {
         this.usedPacks.clear();
         this.triggered = false;
+        this.updateDescription();
     }
 
     @Override
@@ -60,7 +64,7 @@ public class OtherworldlyPackPower extends AbstractPower {
             return;
         }
         String packID = getPackID(card);
-        if (packID != null) {
+        if (packID != null && !this.usedPacks.contains(packID)) {
             this.usedPacks.add(packID);
             if (this.usedPacks.size() >= OtherworldlyPack.THRESHOLD) {
                 this.addToBot(new GainBlockAction(this.owner, this.amount));
@@ -70,16 +74,17 @@ public class OtherworldlyPackPower extends AbstractPower {
                         this.addToBot(new ApplyPowerAction(m, this.owner, PowerUtil.abysstouched(m, this.amount)));
                     }
                 }
+                this.triggered = true;
             }
+            this.updateDescription();
         }
     }
 
     @SuppressWarnings("unchecked")
     private String getPackID(AbstractCard card) {
         if (cardParentMap == null) {
-            Class<?> clz = null;
             try {
-                clz = Class.forName("thePackmaster.SpireAnniversary5Mod");
+                Class<?> clz = Class.forName("thePackmaster.SpireAnniversary5Mod");
                 Field field = clz.getField("cardParentMap");
                 cardParentMap = (HashMap<String, String>)field.get(null);
             } catch (ClassNotFoundException | NoSuchFieldException | IllegalAccessException e) {
@@ -89,5 +94,27 @@ public class OtherworldlyPackPower extends AbstractPower {
         }
 
         return cardParentMap.getOrDefault(card.cardID, null);
+    }
+
+    @SuppressWarnings("unchecked")
+    private String getPackName(String packID) {
+        if (packNameMap == null) {
+            try {
+                Class<?> clz = Class.forName("thePackmaster.SpireAnniversary5Mod");
+                Field field = clz.getField("packsByID");
+                HashMap<String, Object> packsByID = (HashMap<String, Object>)field.get(null);
+                packNameMap = new HashMap<>();
+                Class<?> packClz = Class.forName("thePackmaster.packs.AbstractCardPack");
+                Field nameField = packClz.getField("name");
+                for (Map.Entry<String, Object> entry : packsByID.entrySet()) {
+                    packNameMap.put(entry.getKey(), (String)nameField.get(entry.getValue()));
+                }
+            } catch (ClassNotFoundException | NoSuchFieldException | IllegalAccessException e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
+
+        return packNameMap.get(packID);
     }
 }

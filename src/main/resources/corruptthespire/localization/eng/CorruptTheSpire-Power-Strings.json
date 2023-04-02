@@ -232,7 +232,8 @@
     "NAME": "Otherworldly Pack",
     "DESCRIPTIONS": [
       "Once per turn, after you play cards from #b{0} different Packs, gain #b{1} Block and apply #b{1} #yAbysstouched to ALL enemies.",
-      "Packs played this turn: NL ",
+      "Packs played this turn: NL {0}",
+      "None",
       "Has triggered this turn."
     ]
   },

@@ -19,7 +19,7 @@ public class OtherworldlyPackEffect extends AbstractGameEffect {
         this.tX = tX;
         this.tY = tY;
         this.scale = 0.12F;
-        this.duration = 0.5F;
+        this.duration = 0.25F;
     }
 
     public void update() {
