@@ -2,7 +2,11 @@
   "CorruptTheSpire:Corruption": {
     "TEXT": [
       "Corruption",
-      "Corruption is gained by entering corrupted rooms, based on the type of the room (the more powerful the room, the more corruption). NL At the current level of corruption, enemy HP and damage is increased by #b{0}%."
+      "Corruption is gained by entering corrupted rooms, based on the type of the room (the more powerful the room, the more corruption). NL At the current level of corruption, enemy HP and damage is increased by #b{0}%.",
+      "You will fight a special additional act 2 boss.",
+      "The act 2 boss has been changed to a special boss.",
+      "You will fight a special additional act 3 boss.",
+      "You will fight {0} special additional act 3 bosses."
     ]
   },
   "CorruptTheSpire:CorruptedColor": {

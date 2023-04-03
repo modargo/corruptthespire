@@ -57,10 +57,14 @@ public class SpecialActThreeBossFightPatch {
     }
 
     private static boolean shouldFightSpecialBoss() {
+        return getExtraBossLeftCount() > 0;
+    }
+
+    public static int getExtraBossLeftCount() {
         int extraBossLeftCount = (Cor.flags.openedSealedChest ? 1 : 0) + (Cor.flags.brokeDevice ? 1 : 0);
         extraBossLeftCount -= (Cor.flags.foughtArchfiend ? 1 : 0);
         extraBossLeftCount -= (Cor.flags.foughtMaster ? 1 : 0);
-        return extraBossLeftCount > 0;
+        return extraBossLeftCount;
     }
 
     private static String getSpecialBoss() {

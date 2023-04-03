@@ -13,6 +13,8 @@ import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;
+import corruptthespire.CorruptionFlags;
+import corruptthespire.patches.core.SpecialActThreeBossFightPatch;
 import corruptthespire.util.TextureLoader;
 
 import java.text.MessageFormat;
@@ -22,7 +24,7 @@ public class CorruptionDisplay extends TopPanelItem {
     private static final float FLASH_ANIM_TIME = 2.0F;
 
     private static final Texture IMAGE = TextureLoader.getTexture(CorruptTheSpire.uiImage("CorruptTheSpire:Corruption"));
-    private static final UIStrings STRINGS = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:Corruption");
+    private static final String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:Corruption").TEXT;
     public static final String ID = "CorruptTheSpire:CorruptionItem";
 
     public float flashTimer;
@@ -73,8 +75,7 @@ public class CorruptionDisplay extends TopPanelItem {
 
         if (this.getHitbox().hovered) {
             float xPos = this.x - this.hb_w;
-            String text = MessageFormat.format(STRINGS.TEXT[1], Cor.getCorruptionDamageMultiplierPercent());
-            TipHelper.renderGenericTip(xPos, tipYpos, STRINGS.TEXT[0], text);
+            TipHelper.renderGenericTip(xPos, tipYpos, TEXT[0], this.getTooltip());
         }
     }
 
@@ -90,5 +91,34 @@ public class CorruptionDisplay extends TopPanelItem {
         sb.draw(this.image, this.x - halfWidth + halfHeight * Settings.scale, this.y - halfHeight + halfHeight * Settings.scale, halfWidth, halfHeight, (float)this.image.getWidth(), (float)this.image.getHeight(), Settings.scale+tmp/ 3.0F, Settings.scale+tmp/ 3.0F, this.angle, 0, 0, this.image.getWidth(), this.image.getHeight(), false, false);
 
         sb.setBlendFunction(770, 771);
+    }
+
+    private String getTooltip() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(MessageFormat.format(TEXT[1], Cor.getCorruptionDamageMultiplierPercent()));
+        boolean replaceAct2Boss = Cor.flags.warAndFear == CorruptionFlags.WarAndFear.REPLACE_BOSS;
+        boolean extraAct2Boss = Cor.flags.warAndFear == CorruptionFlags.WarAndFear.EXTRA_BOSS;
+        int extraAct3BossCount = SpecialActThreeBossFightPatch.getExtraBossLeftCount();
+        if (replaceAct2Boss || extraAct2Boss || extraAct3BossCount > 0) {
+            sb.append(" NL ");
+        }
+        if (replaceAct2Boss) {
+            sb.append(" NL ");
+            sb.append(TEXT[2]);
+        }
+        else if (extraAct2Boss) {
+            sb.append(" NL ");
+            sb.append(TEXT[3]);
+        }
+        if (extraAct3BossCount == 1) {
+            sb.append(" NL ");
+            sb.append(TEXT[4]);
+        }
+        else if (extraAct3BossCount > 1) {
+            sb.append(" NL ");
+            sb.append(TEXT[4].replace("{0}", extraAct3BossCount + ""));
+        }
+
+        return sb.toString();
     }
 }
