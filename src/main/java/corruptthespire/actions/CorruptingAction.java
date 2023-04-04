@@ -4,6 +4,9 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import corruptthespire.Cor;
 
 public class CorruptingAction extends AbstractGameAction {
+    private static final int MAX_CARDS = 5;
+    private static final int CORRUPTION_PER_CARD = 50;
+
     public static int CorruptingCardCount = 0;
 
     public CorruptingAction(int amount) {
@@ -25,8 +28,6 @@ public class CorruptingAction extends AbstractGameAction {
     }
 
     private static int getThreshold() {
-        return Cor.corruption > 200 ? 3
-                : Cor.corruption > 100 ? 2 :
-                1;
+        return Math.min((Cor.corruption / CORRUPTION_PER_CARD) + 1, MAX_CARDS);
     }
 }
