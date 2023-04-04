@@ -23,7 +23,7 @@ public class AstralGust extends AbstractCorruptedCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final int COST = 1;
-    private static final int DAMAGE = 10;
+    private static final int DAMAGE = 11;
 
     public AstralGust() {
         super(ID, NAME, IMG, COST, DESCRIPTION, CardType.ATTACK, CardTarget.ALL_ENEMY);
