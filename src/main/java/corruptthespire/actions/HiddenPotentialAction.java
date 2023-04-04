@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.powers.ArtifactPower;
 import corruptthespire.cards.corrupted.CorruptedCardColor;
 
 public class HiddenPotentialAction extends AbstractGameAction {
-    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("ExhaustAction");
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("DiscardAction");
     public static final String[] TEXT = uiStrings.TEXT;
     private final int draw;
     private final int artifact;
