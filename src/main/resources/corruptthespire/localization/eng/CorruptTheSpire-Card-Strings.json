@@ -252,7 +252,7 @@
   "CorruptTheSpire:AstralGust": {
     "NAME": "Astral Gust",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Shuffle 1 *Apparition, *Miracle, and *Slimed into your draw pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. NL Shuffle 1 *Apparition+, *Miracle+, and *Slimed into your draw pile. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. NL Shuffle 1 *Apparition+, *Miracle+, and *Dazed into your draw pile. NL Exhaust."
   },
   "CorruptTheSpire:Secundus": {
     "NAME": "Secundus",

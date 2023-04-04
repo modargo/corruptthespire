@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.colorless.Apparition;
+import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.cards.status.Slimed;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,6 +15,9 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AstralGust extends AbstractCorruptedCard {
     public static final String ID = "CorruptTheSpire:AstralGust";
@@ -30,7 +34,7 @@ public class AstralGust extends AbstractCorruptedCard {
         this.baseDamage = DAMAGE;
         this.exhaust = true;
         this.isMultiDamage = true;
-        MultiCardPreview.add(this, new Apparition(), new Miracle(), new Slimed());
+        MultiCardPreview.multiCardPreview.get(this).addAll(getCards(this.upgraded));
     }
 
     @Override
@@ -39,26 +43,30 @@ public class AstralGust extends AbstractCorruptedCard {
             this.upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
-            for (AbstractCard c : MultiCardPreview.multiCardPreview.get(this)) {
-                if (c.type != CardType.STATUS) {
-                    c.upgrade();
-                }
-            }
+            List<AbstractCard> previews = MultiCardPreview.multiCardPreview.get(this);
+            previews.clear();
+            previews.addAll(getCards(true));
         }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
+        getCards(this.upgraded).forEach(c -> new MakeTempCardInDrawPileAction(c, 1, true, true));
+    }
+
+    private static List<AbstractCard> getCards(boolean upgraded) {
         AbstractCard card1 = new Apparition();
         AbstractCard card2 = new Miracle();
-        AbstractCard card3 = new Slimed();
-        if (this.upgraded) {
+        AbstractCard card3 = upgraded ? new Dazed() : new Slimed();
+        if (upgraded) {
             card1.upgrade();
             card2.upgrade();
         }
-        this.addToBot(new MakeTempCardInDrawPileAction(card1, 1, true, true));
-        this.addToBot(new MakeTempCardInDrawPileAction(card2, 1, true, true));
-        this.addToBot(new MakeTempCardInDrawPileAction(card3, 1, true, true));
+        List<AbstractCard> cards = new ArrayList<>();
+        cards.add(card1);
+        cards.add(card2);
+        cards.add(card3);
+        return cards;
     }
 }
