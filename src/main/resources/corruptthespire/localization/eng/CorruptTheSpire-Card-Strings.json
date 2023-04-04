@@ -218,7 +218,7 @@
   },
   "CorruptTheSpire:OtherworldlyPack": {
     "NAME": "Otherworldly Pack",
-    "DESCRIPTION": "Once per turn, after you play cards from 4 different Packs, gain !M! Block and apply !M! corruptthespire:Abysstouched to ALL enemies."
+    "DESCRIPTION": "Once per turn, after you play cards from 3 different Packs, gain !M! Block and apply !M! corruptthespire:Abysstouched to ALL enemies."
   },
   "CorruptTheSpire:TheFool": {
     "NAME": "The Fool",

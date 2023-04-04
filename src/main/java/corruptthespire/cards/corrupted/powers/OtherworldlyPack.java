@@ -16,9 +16,9 @@ public class OtherworldlyPack extends AbstractCorruptedCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 2;
-    private static final int AMOUNT = 6;
+    private static final int AMOUNT = 4;
     private static final int UPGRADE_AMOUNT = 2;
-    public static final int THRESHOLD = 4;
+    public static final int THRESHOLD = 3;
 
     public OtherworldlyPack() {
         super(ID, NAME, IMG, COST, DESCRIPTION, CardType.POWER, CardTarget.SELF);
