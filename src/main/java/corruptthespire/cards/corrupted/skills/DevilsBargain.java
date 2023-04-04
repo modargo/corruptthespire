@@ -1,15 +1,20 @@
 package corruptthespire.cards.corrupted.skills;
 
+import basemod.BaseMod;
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import corruptthespire.CorruptTheSpire;
+import corruptthespire.actions.CorruptingAction;
 import corruptthespire.actions.DevilsBargainAction;
-import corruptthespire.actions.GainCorruptionAction;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 
 import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DevilsBargain extends AbstractCorruptedCard {
     public static final String ID = "CorruptTheSpire:DevilsBargain";
@@ -39,6 +44,13 @@ public class DevilsBargain extends AbstractCorruptedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DevilsBargainAction(this.magicNumber, false));
-        this.addToBot(new GainCorruptionAction(CORRUPTION));
+        this.addToBot(new CorruptingAction(CORRUPTION));
+    }
+
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        ArrayList<TooltipInfo> list = new ArrayList<>();
+        list.add(new TooltipInfo(TipHelper.capitalize(BaseMod.getKeywordTitle("corruptthespire:corruption")), BaseMod.getKeywordDescription("corruptthespire:corruption")));
+        return  list;
     }
 }

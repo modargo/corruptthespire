@@ -5,6 +5,11 @@
     "DESCRIPTION": "Corruption, tracked in the upper right."
   },
   {
+    "PROPER_NAME": "Corrupting",
+    "NAMES": ["corrupting"],
+    "DESCRIPTION": "Gain #yCorruption unless this is the first Corrupting card played this combat. #yCorruption #b100+/200+: Or the second/third."
+  },
+  {
     "PROPER_NAME": "Abysstouched",
     "NAMES": ["abysstouched"],
     "DESCRIPTION": "Increases attack damage taken and deals damage every turn."

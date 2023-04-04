@@ -112,6 +112,7 @@ public class CorruptTheSpire implements
         BaseMod.subscribe(new ApplyCorruptionsOnStartBattleSubscriber());
         BaseMod.subscribe(new CheckFatedPostBattleSubscriber());
         BaseMod.subscribe(new IncreaseInvincibleOnStartBattleSubscriber());
+        BaseMod.subscribe(new ResetCorruptingCardCountOnStartBattleSubscriber());
         BaseMod.subscribe(new ResetIsBossCorruptedSubscriber());
         BaseMod.subscribe(new ResetNormalMonsterCountSubscriber());
         BaseMod.subscribe(new ResetPathsInSmokeSubscriber());

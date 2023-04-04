@@ -10,7 +10,7 @@
   },
   "CorruptTheSpire:Condemn": {
     "NAME": "Condemn",
-    "DESCRIPTION": "Deal !D! damage. NL Enemy loses HP equal to !M!% of their Max HP. NL Gain {0} corruptthespire:Corruption."
+    "DESCRIPTION": "Deal !D! damage. NL Enemy loses HP equal to !M!% of their Max HP. NL corruptthespire:Corrupting {0}."
   },
   "CorruptTheSpire:ShadowAndFlame": {
     "NAME": "Shadow and Flame",
@@ -18,7 +18,7 @@
   },
   "CorruptTheSpire:DrainLife": {
     "NAME": "Drain Life",
-    "DESCRIPTION": "Deal !D! damage. NL Heal !M! HP. NL Gain {0} corruptthespire:Corruption."
+    "DESCRIPTION": "Deal !D! damage. NL Heal !M! HP. NL corruptthespire:Corrupting {0}."
   },
   "CorruptTheSpire:Fragmentize": {
     "NAME": "Fragmentize",
@@ -39,7 +39,7 @@
   },
   "CorruptTheSpire:DarkLore": {
     "NAME": "Dark Lore",
-    "DESCRIPTION": "Draw !M! cards. NL Gain {0} corruptthespire:Corruption."
+    "DESCRIPTION": "Draw !M! cards. NL corruptthespire:Corrupting {0}."
   },
   "CorruptTheSpire:NightsWhisper": {
     "NAME": "Night's Whisper",
@@ -86,11 +86,11 @@
   },
   "CorruptTheSpire:EldritchInsight": {
     "NAME": "Eldritch Insight",
-    "DESCRIPTION": "Choose 1 of 3 random cards from your draw pile and put it into your hand, !M! times. NL Gain {0} corruptthespire:Corruption."
+    "DESCRIPTION": "Choose 1 of 3 random cards from your draw pile and put it into your hand, !M! times. NL corruptthespire:Corrupting {0}."
   },
   "CorruptTheSpire:DevilsBargain": {
     "NAME": "Devil's Bargain",
-    "DESCRIPTION": "Put !M! cards from your discard pile into your hand. Discard all other cards. NL Gain {0} corruptthespire:Corruption. NL Exhaust."
+    "DESCRIPTION": "Put !M! cards from your discard pile into your hand. Discard all other cards. NL corruptthespire:Corrupting {0}. NL Exhaust."
   },
   "CorruptTheSpire:BlasphemousHymn": {
     "NAME": "Blasphemous Hymn",
@@ -108,7 +108,7 @@
   },
   "CorruptTheSpire:InnerFlame": {
     "NAME": "Inner Flame",
-    "DESCRIPTION": "Gain !M! Strength and !M! Dexterity. NL Gain {0} corruptthespire:Corruption."
+    "DESCRIPTION": "Gain !M! Strength and !M! Dexterity. NL corruptthespire:Corrupting {0}."
   },
   "CorruptTheSpire:MaskOfShards": {
     "NAME": "Mask of Shards",

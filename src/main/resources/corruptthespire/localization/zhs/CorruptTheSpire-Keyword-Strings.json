@@ -5,6 +5,11 @@
     "DESCRIPTION": "腐化，在右上角显示。"
   },
   {
+    "PROPER_NAME": "Corrupting",
+    "NAMES": ["corrupting"],
+    "DESCRIPTION": "Gain #yCorruption unless this is the first Corrupting card played this combat. #yCorruption #b100+/200+: Or the second/third."
+  },
+  {
     "NAMES": ["蠕动","abysstouched"],
     "PROPER_NAME": "蠕动",
     "DESCRIPTION": "增加受到的攻击伤害，每回合造成伤害。"

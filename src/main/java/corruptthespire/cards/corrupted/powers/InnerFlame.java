@@ -1,17 +1,22 @@
 package corruptthespire.cards.corrupted.powers;
 
+import basemod.BaseMod;
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import corruptthespire.CorruptTheSpire;
-import corruptthespire.actions.GainCorruptionAction;
+import corruptthespire.actions.CorruptingAction;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;
 
 import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 public class InnerFlame extends AbstractCorruptedCard {
     public static final String ID = "CorruptTheSpire:InnerFlame";
@@ -41,6 +46,13 @@ public class InnerFlame extends AbstractCorruptedCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
         this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
-        this.addToBot(new GainCorruptionAction(CORRUPTION));
+        this.addToBot(new CorruptingAction(CORRUPTION));
+    }
+
+    @Override
+    public List<TooltipInfo> getCustomTooltips() {
+        ArrayList<TooltipInfo> list = new ArrayList<>();
+        list.add(new TooltipInfo(TipHelper.capitalize(BaseMod.getKeywordTitle("corruptthespire:corruption")), BaseMod.getKeywordDescription("corruptthespire:corruption")));
+        return  list;
     }
 }
