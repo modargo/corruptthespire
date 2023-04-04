@@ -7,7 +7,7 @@
   {
     "PROPER_NAME": "Corrupting",
     "NAMES": ["corrupting"],
-    "DESCRIPTION": "Gain #yCorruption unless this is the first Corrupting card played this combat. #yCorruption #b100+/200+: Or the second/third."
+    "DESCRIPTION": "Gain #yCorruption unless this is the first Corrupting card played this combat, #b+1 card for every #b50 #yCorruption (max #b5 cards)."
   },
   {
     "NAMES": ["蠕动","abysstouched"],
