@@ -52,7 +52,7 @@ public class AstralGust extends AbstractCorruptedCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
-        getCards(this.upgraded).forEach(c -> new MakeTempCardInDrawPileAction(c, 1, true, true));
+        getCards(this.upgraded).forEach(c -> this.addToBot(new MakeTempCardInDrawPileAction(c, 1, true, true)));
     }
 
     private static List<AbstractCard> getCards(boolean upgraded) {
