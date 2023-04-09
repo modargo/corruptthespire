@@ -18,7 +18,7 @@ public class Irradiate extends AbstractCorruptedCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 0;
     private static final int ABYSSTOUCHED = 2;
-    private static final int UPGRADE_ABYSSTOUCHED = 1;
+    private static final int UPGRADE_ABYSSTOUCHED = 2;
     private static final int ENERGY = 1;
 
     public Irradiate() {
