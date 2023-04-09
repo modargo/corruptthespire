@@ -47,6 +47,7 @@ public class InnerFlame extends AbstractCorruptedCard {
         this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
         this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
         this.addToBot(new CorruptingAction(CORRUPTION));
+        this.addToBot(new CorruptingAction(CORRUPTION));
     }
 
     @Override

@@ -108,7 +108,7 @@
   },
   "CorruptTheSpire:InnerFlame": {
     "NAME": "Inner Flame",
-    "DESCRIPTION": "Gain !M! Strength and !M! Dexterity. NL corruptthespire:Corrupting {0}."
+    "DESCRIPTION": "Gain !M! Strength and !M! Dexterity. NL corruptthespire:Corrupting {0} twice."
   },
   "CorruptTheSpire:MaskOfShards": {
     "NAME": "Mask of Shards",
