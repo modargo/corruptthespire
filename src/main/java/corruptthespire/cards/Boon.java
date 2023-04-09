@@ -58,6 +58,11 @@ public class Boon extends CustomCard {
     }
 
     @Override
+    public boolean canUpgrade() {
+        return !this.upgraded;
+    }
+
+    @Override
     public AbstractCard makeCopy() {
         return new Boon();
     }

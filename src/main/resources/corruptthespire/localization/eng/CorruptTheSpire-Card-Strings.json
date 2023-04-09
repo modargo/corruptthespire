@@ -170,7 +170,7 @@
   "CorruptTheSpire:Boon": {
     "NAME": "Boon",
     "DESCRIPTION": "Gain !B! Block. NL Draw 1 card. NL Gain [E] . NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Draw !M! cards. Gain [E] .NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Draw !M! cards. Gain [E] . NL Exhaust."
   },
   "CorruptTheSpire:Retribution": {
     "NAME": "Retribution",
