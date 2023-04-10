@@ -23,7 +23,7 @@ public class ShadowAndFlame extends AbstractCorruptedCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 1;
-    private static final int DAMAGE = 10;
+    private static final int DAMAGE = 11;
     private static final int UPGRADE_DAMAGE = 2;
     private static final int DEBUFFS_AMOUNT = 2;
     private static final int UPGRADE_DEBUFFS_AMOUNT = 1;
