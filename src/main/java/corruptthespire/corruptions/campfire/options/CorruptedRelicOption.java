@@ -17,7 +17,7 @@ public class CorruptedRelicOption extends AbstractCorruptedCampfireOption {
     private static final Texture IMG = TextureLoader.getTexture(CorruptTheSpire.campfireImage(ID));
     public static final String[] TEXT = uiStrings.TEXT;
 
-    private static final int CORRUPTION = 3;
+    private static final int CORRUPTION = 1;
 
     @Override
     public int getFragmentCost() {
