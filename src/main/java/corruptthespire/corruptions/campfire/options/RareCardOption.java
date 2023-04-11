@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import corruptthespire.Cor;
@@ -58,6 +59,12 @@ public class RareCardOption extends AbstractCorruptedCampfireOption {
             AbstractCard card = AbstractDungeon.getCard(AbstractCard.CardRarity.RARE).makeCopy();
             if (cards.stream().noneMatch(c -> c.cardID.equals(card.cardID))) {
                 cards.add(card);
+            }
+        }
+
+        for (AbstractCard c : cards) {
+            for (AbstractRelic r : AbstractDungeon.player.relics) {
+                r.onPreviewObtainCard(c);
             }
         }
 

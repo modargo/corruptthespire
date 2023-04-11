@@ -1,9 +1,11 @@
 package corruptthespire.corruptions.campfire.options;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;
@@ -43,8 +45,16 @@ public class CorruptedCardOption extends AbstractCorruptedCampfireOption {
         Cor.reduceFragments(this.getFragmentCost());
         //TODO Should I put this in an effect? If so can share with RareCardOption
         AbstractDungeon.getCurrRoom().rewards.clear();
-        AbstractDungeon.getCurrRoom().rewards.add(new CorruptedCardReward());
+        CorruptedCardReward reward = new CorruptedCardReward();
+        AbstractDungeon.getCurrRoom().rewards.add(reward);
         AbstractDungeon.combatRewardScreen.open();
+
+        for (AbstractCard c : reward.cards) {
+            for (AbstractRelic r : AbstractDungeon.player.relics) {
+                r.onPreviewObtainCard(c);
+            }
+        }
+
         ((RestRoom)AbstractDungeon.getCurrRoom()).fadeIn();
     }
 }
