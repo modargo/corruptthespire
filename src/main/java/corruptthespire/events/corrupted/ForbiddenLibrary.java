@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.screens.select.GridCardSelectScreen;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import corruptthespire.CorruptTheSpire;
@@ -94,6 +95,13 @@ public class ForbiddenLibrary extends AbstractImageEvent {
     private void getCardsAndOpenSelectScreen(int cards) {
         CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         group.group = CorruptedCardUtil.getRandomCorruptedCards(cards);
+
+        for (AbstractCard c : group.group) {
+            for (AbstractRelic r : AbstractDungeon.player.relics) {
+                r.onPreviewObtainCard(c);
+            }
+        }
+
         AbstractDungeon.gridSelectScreen.open(group, 1, OPTIONS[3], false, false, true, false);
         AbstractDungeon.overlayMenu.cancelButton.show(GridCardSelectScreen.TEXT[1]);
         this.choosingCard = true;
