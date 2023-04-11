@@ -141,7 +141,7 @@ public class VaultChest extends AbstractChest {
             case ShopRelic:
                 String shopRelicKey = AbstractDungeon.returnRandomRelicKey(AbstractRelic.RelicTier.SHOP);
                 //Orrery and Cauldron cause crashes when picked in the treasure vault rewards screen
-                while (shopRelicKey.equals(Orrery.ID) || shopRelicKey.equals(Cauldron.ID)) {
+                while (shopRelicKey.equals(Orrery.ID) || shopRelicKey.equals(Cauldron.ID) || shopRelicKey.equals("anniv5:PMCollection")) {
                     shopRelicKey = AbstractDungeon.returnRandomRelicKey(AbstractRelic.RelicTier.SHOP);
                 }
                 AbstractDungeon.getCurrRoom().addRelicToRewards(RelicLibrary.getRelic(shopRelicKey));
