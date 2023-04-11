@@ -159,6 +159,11 @@ public class VaultChest extends AbstractChest {
             case CorruptedCard:
                 RewardItem corruptedCardReward = new RewardItem(null, RewardItem.RewardType.CARD);
                 corruptedCardReward.cards = CorruptedCardUtil.getRandomCorruptedCards(CardUtil.getNumCardsForRewards(), null);
+                for (AbstractCard c : corruptedCardReward.cards) {
+                    for (AbstractRelic r : AbstractDungeon.player.relics) {
+                        r.onPreviewObtainCard(c);
+                    }
+                }
                 AbstractDungeon.getCurrRoom().rewards.add(corruptedCardReward);
                 text = TEXT[9];
                 break;
