@@ -116,27 +116,35 @@ public class ShopCorruption {
 
         if (corruptionType == ShopCorruptionType.Rare) {
             coloredCards.clear();
-            //Copied directly from Merchant.cs, just changing every AbstractDungeon.rollRarity() to AbstractCard.CardRarity.RARE
-            AbstractCard c = AbstractDungeon.getCardFromPool(AbstractCard.CardRarity.RARE, AbstractCard.CardType.ATTACK, true).makeCopy();
-            while (c.color == AbstractCard.CardColor.COLORLESS)
-                c = AbstractDungeon.getCardFromPool(AbstractCard.CardRarity.RARE, AbstractCard.CardType.ATTACK, true).makeCopy();
-            coloredCards.add(c);
-            c = AbstractDungeon.getCardFromPool(AbstractCard.CardRarity.RARE, AbstractCard.CardType.ATTACK, true).makeCopy();
-            while (Objects.equals(c.cardID, (coloredCards.get(coloredCards.size() - 1)).cardID) || c.color == AbstractCard.CardColor.COLORLESS)
-                c = AbstractDungeon.getCardFromPool(AbstractCard.CardRarity.RARE, AbstractCard.CardType.ATTACK, true).makeCopy();
-            coloredCards.add(c);
-            c = AbstractDungeon.getCardFromPool(AbstractCard.CardRarity.RARE, AbstractCard.CardType.SKILL, true).makeCopy();
-            while (c.color == AbstractCard.CardColor.COLORLESS)
-                c = AbstractDungeon.getCardFromPool(AbstractCard.CardRarity.RARE, AbstractCard.CardType.SKILL, true).makeCopy();
-            coloredCards.add(c);
-            c = AbstractDungeon.getCardFromPool(AbstractCard.CardRarity.RARE, AbstractCard.CardType.SKILL, true).makeCopy();
-            while (Objects.equals(c.cardID, (coloredCards.get(coloredCards.size() - 1)).cardID) || c.color == AbstractCard.CardColor.COLORLESS)
-                c = AbstractDungeon.getCardFromPool(AbstractCard.CardRarity.RARE, AbstractCard.CardType.SKILL, true).makeCopy();
-            coloredCards.add(c);
-            c = AbstractDungeon.getCardFromPool(AbstractCard.CardRarity.RARE, AbstractCard.CardType.POWER, true).makeCopy();
-            while (c.color == AbstractCard.CardColor.COLORLESS)
-                c = AbstractDungeon.getCardFromPool(AbstractCard.CardRarity.RARE, AbstractCard.CardType.POWER, true).makeCopy();
-            coloredCards.add(c);
+            List<AbstractCard> rareAttacks = AbstractDungeon.rareCardPool.group.stream()
+                    .filter(c -> c.rarity == AbstractCard.CardRarity.RARE && c.type == AbstractCard.CardType.ATTACK && c.color != AbstractCard.CardColor.COLORLESS)
+                    .collect(Collectors.toList());
+            List<AbstractCard> rareSkills = AbstractDungeon.rareCardPool.group.stream()
+                    .filter(c -> c.rarity == AbstractCard.CardRarity.RARE && c.type == AbstractCard.CardType.SKILL && c.color != AbstractCard.CardColor.COLORLESS)
+                    .collect(Collectors.toList());
+            List<AbstractCard> rarePowers = AbstractDungeon.rareCardPool.group.stream()
+                    .filter(c -> c.rarity == AbstractCard.CardRarity.RARE && c.type == AbstractCard.CardType.POWER && c.color != AbstractCard.CardColor.COLORLESS)
+                    .collect(Collectors.toList());
+
+            // Some characters may not have enough rares of a certain type (e.g. certain sets of Packmaster packs that
+            // don't have rare attacks). We fall back to other types if so.
+            for (int i = 0; i < 5; i++) {
+                List<AbstractCard> list = null;
+                if (i < 2 && !rareAttacks.isEmpty()) {
+                    list = rareAttacks;
+                }
+                else if (i < 4 && !rareSkills.isEmpty()) {
+                    list = rareSkills;
+                }
+                else if (!rarePowers.isEmpty()) {
+                    list = rarePowers;
+                }
+
+                if (list != null) {
+                    int index = AbstractDungeon.cardRng.random(list.size() - 1);
+                    coloredCards.add(list.remove(index).makeCopy());
+                }
+            }
 
             colorlessCards.clear();
         }
