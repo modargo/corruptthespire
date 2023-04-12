@@ -33,6 +33,8 @@ import javassist.expr.MethodCall;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class ShopPatch {
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString("CorruptTheSpire:ShopCorruption").TEXT;
@@ -83,6 +85,21 @@ public class ShopPatch {
                 Matcher finalMatcher = new Matcher.MethodCallMatcher(ShopScreen.class, "init");
                 return LineFinder.findInOrder(ctMethodToPatch, finalMatcher);
             }
+        }
+    }
+
+    @SpirePatch(cls = "ruina.patches.ShopEgoPatch", method = "SellEgo", paramtypez = {Merchant.class, float.class, float.class, int.class, ArrayList.class}, optional = true)
+    public static class RuinaHandleEgoCardsPatch {
+        @SpirePrefixPatch
+        public static SpireReturn<Void> changeCards(Merchant merchant, float x, float y, int newShopScreen, ArrayList<AbstractCard> cards2) {
+            ShopCorruptionType corruptionType = CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && AbstractDungeon.getCurrRoom() instanceof ShopRoom
+                    ? ShopCorruptionTypeField.corruptionType.get(AbstractDungeon.getCurrRoom())
+                    : null;
+            List<ShopCorruptionType> shopCorruptionTypes = Arrays.asList(ShopCorruptionType.Prismatic, ShopCorruptionType.Rare, ShopCorruptionType.CorruptedCardAndFragment, ShopCorruptionType.Service);
+            if (shopCorruptionTypes.contains(corruptionType)) {
+                return SpireReturn.Return();
+            }
+            return SpireReturn.Continue();
         }
     }
 
