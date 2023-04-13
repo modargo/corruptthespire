@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
 import com.megacrit.cardcrawl.monsters.beyond.Donu;
 import com.megacrit.cardcrawl.monsters.beyond.Nemesis;
+import com.megacrit.cardcrawl.monsters.city.BookOfStabbing;
 import com.megacrit.cardcrawl.monsters.city.Byrd;
 import com.megacrit.cardcrawl.monsters.ending.CorruptHeart;
 import com.megacrit.cardcrawl.monsters.exordium.Cultist;
@@ -54,6 +55,9 @@ public class FightCorruptionDistribution {
         }
         if (AbstractDungeon.getCurrRoom().monsters.monsters.size() >= 3 || hasMonster("Elementarium:ElementalPortal") || hasMonster("Abyss:PrimevalQueen")) {
             distribution.removeIf(d -> isMinionCorruption(d.corruptionType));
+        }
+        if (hasMonster(BookOfStabbing.ID)) {
+            distribution.removeIf(d -> d.corruptionType == FightCorruptionType.Ritual);
         }
         if (hasMonster(Nemesis.ID)) {
             distribution.removeIf(d -> d.corruptionType == FightCorruptionType.FlameManifestMinion);
