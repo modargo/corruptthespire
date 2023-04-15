@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import corruptthespire.Cor;
 import corruptthespire.CorruptTheSpire;
-import corruptthespire.relics.elite.ShimmeringFan;
+import corruptthespire.relics.chaotic.ShimmeringFan;
 import corruptthespire.rewards.CorruptedCardReward;
 
 import java.text.MessageFormat;
