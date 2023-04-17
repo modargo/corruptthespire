@@ -17,9 +17,9 @@ public class LordOfNightmare extends AbstractCorruptedCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 1;
-    private static final int UPGRADE_COST = 1;
     private static final int DRAW = 1;
     private static final int BLOCK = 6;
+    private static final int UPGRADE_BLOCK = 2;
 
     public LordOfNightmare() {
         super(ID, NAME, IMG, COST, DESCRIPTION, CardType.POWER, CardTarget.SELF);
@@ -29,7 +29,7 @@ public class LordOfNightmare extends AbstractCorruptedCard {
     @Override
     public void upgrade() {
         if (!this.upgraded) {
-            this.upgradeBaseCost(UPGRADE_COST);
+            this.upgradeBlock(UPGRADE_BLOCK);
             this.upgradeName();
         }
     }
