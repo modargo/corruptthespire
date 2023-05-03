@@ -31,7 +31,6 @@ public class DarkLore extends AbstractCorruptedCard {
         super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, CORRUPTION), CardType.SKILL, CardTarget.SELF);
         this.baseMagicNumber = DRAW;
         this.magicNumber = this.baseMagicNumber;
-        this.exhaust = true;
     }
 
     @Override
