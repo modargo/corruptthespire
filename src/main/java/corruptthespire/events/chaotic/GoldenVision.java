@@ -42,6 +42,8 @@ public class GoldenVision extends AbstractImageEvent {
             // Channeler
             // Too good: Kitsune Mask
             "Channeler:CeremonialKhopesh", "Channeler:HollowVessel",
+            // Packmaster
+            "anniv5:BagOfHolding", "anniv5:CollectorBadge",
             // Animator
             // In between: Ancient Chalice
             "animator:VividPicture", "animator:CrumblingOrb", "animator:CursedBlade",
