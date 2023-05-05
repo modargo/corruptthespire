@@ -357,7 +357,7 @@ public class ShopCorruption {
                             CInputActionSet.select.unpress();
                             purchaseService(shopScreen, info);
                         } else if (info.type != screenInfo.touchedService) {
-                            if (AbstractDungeon.player.gold < info.cost) {
+                            if (AbstractDungeon.player.gold < MathUtils.round(info.cost * screenInfo.serviceMultiplier)) {
                                 shopScreen.playCantBuySfx();
                                 shopScreen.createSpeech(ShopScreen.getCantBuyMsg());
                             } else {
@@ -391,7 +391,7 @@ public class ShopCorruption {
     private static void purchaseService(ShopScreen shopScreen, ShopServiceInfo info) {
         ShopScreenServiceInfo screenInfo = ShopScreenServiceInfoField.serviceInfo.get(shopScreen);
         screenInfo.hoveredService = null;
-        if (AbstractDungeon.player.gold >= info.cost) {
+        if (AbstractDungeon.player.gold >= MathUtils.round(info.cost * screenInfo.serviceMultiplier)) {
             logger.info("Purchasing service: " + info.type.name());
             AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.SHOP;
             CardGroup group;
@@ -422,7 +422,7 @@ public class ShopCorruption {
         if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             logger.info("Performing service: " + type.name());
             ShopServiceLog log = getShopServiceLog();
-            AbstractDungeon.player.loseGold(getShopServiceInfo(type).cost);
+            AbstractDungeon.player.loseGold(MathUtils.round(getShopServiceInfo(type).cost * screenInfo.serviceMultiplier));
             for (AbstractCard card : AbstractDungeon.gridSelectScreen.selectedCards) {
                 switch (type) {
                     case Transform:
