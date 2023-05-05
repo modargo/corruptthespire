@@ -23,7 +23,7 @@ public class ChthonicBlessing extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(CorruptTheSpire.relicOutlineImage(ID));
     private static final int REWARDS = 1;
     private static final int GOLD = 15;
-    private static final int COMBATS = 7;
+    private static final int COMBATS = 6;
 
     private static final Map<String, Integer> stats = new HashMap<>();
     private static final String GOLD_GAINED_STAT = "goldGained";
