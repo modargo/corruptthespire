@@ -33,6 +33,7 @@ public class NextRoomTransitionHandleCorruptionPatch {
             //As of the changes to use CollectionsUtil.shuffle, the reload instability may no longer be an issue, but
             //this system works fine so we haven't changed it.
             Cor.resetRng(Settings.seed, Cor.rng.counter);
+            Cor.resetRewardRng(Settings.seed, Cor.rewardRng.counter);
 
             if (PathsInTheSmokePatch.isActive) {
                 logger.warn("PathsInSmokePatch.isActive was true. Resetting it to false.");

@@ -99,6 +99,10 @@ public class Cor {
     public static void resetRng(Long seed, Integer counter) {
         int c = counter != null ? counter : 0;
         Cor.rng = new Random(seed, c);
+    }
+
+    public static void resetRewardRng(Long seed, Integer counter) {
+        int c = counter != null ? counter : 0;
         Cor.rewardRng = new Random(seed + 43, c);
     }
 

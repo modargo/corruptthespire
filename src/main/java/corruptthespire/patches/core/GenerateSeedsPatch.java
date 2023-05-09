@@ -24,6 +24,7 @@ public class GenerateSeedsPatch {
     public static void InitializeCorruptionRng() {
         Cor.active = Config.active();
         Cor.resetRng(Settings.seed, null);
+        Cor.resetRewardRng(Settings.seed, null);
         // These could go somewhere else, but this is as good a place as any to put it
         Cor.corruption = 0;
         Cor.flags = new CorruptionFlags();

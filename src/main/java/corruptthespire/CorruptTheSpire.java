@@ -101,6 +101,7 @@ public class CorruptTheSpire implements
         BaseMod.addSaveField(SavableCorruption.SaveKey, new SavableCorruption());
         BaseMod.addSaveField(SavableCorruptionFlags.SaveKey, new SavableCorruptionFlags());
         BaseMod.addSaveField(SavableEventList.SaveKey, new SavableEventList());
+        BaseMod.addSaveField(SavableRewardRng.SaveKey, new SavableRewardRng());
         BaseMod.addSaveField(SavableRng.SaveKey, new SavableRng());
 
         BaseMod.addSaveField(CorruptionPerFloorLog.SaveKey, new CorruptionPerFloorLog());
