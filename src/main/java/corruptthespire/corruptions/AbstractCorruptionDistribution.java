@@ -1,5 +1,6 @@
 package corruptthespire.corruptions;
 
+import com.megacrit.cardcrawl.random.Random;
 import corruptthespire.Cor;
 
 import java.util.List;
@@ -17,12 +18,16 @@ public abstract class AbstractCorruptionDistribution<T extends Enum<T>> {
         distribution = this.adjustDistribution(distribution);
         int adjustedTotalWeight = distribution.stream().map(cdi -> cdi.weight).reduce(0, Integer::sum);
 
-        int roll = Cor.rewardRng.random(adjustedTotalWeight - 1);
+        int roll = this.getRng().random(adjustedTotalWeight - 1);
         CorruptionDistributionInfo<T> option = pick(distribution, roll);
         return option.corruption;
     }
 
     protected abstract List<CorruptionDistributionInfo<T>> getDistribution();
+
+    protected Random getRng() {
+        return Cor.rng;
+    }
 
     protected int getTotalWeight() {
         return DEFAULT_TOTAL_WEIGHT;

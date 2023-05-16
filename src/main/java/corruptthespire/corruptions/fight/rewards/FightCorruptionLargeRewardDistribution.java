@@ -1,5 +1,7 @@
 package corruptthespire.corruptions.fight.rewards;
 
+import com.megacrit.cardcrawl.random.Random;
+import corruptthespire.Cor;
 import corruptthespire.corruptions.AbstractCorruptionDistribution;
 import corruptthespire.corruptions.CorruptionDistributionInfo;
 
@@ -13,5 +15,10 @@ public class FightCorruptionLargeRewardDistribution extends AbstractCorruptionDi
         d.add(new CorruptionDistributionInfo<>(FightCorruptionRewardTypes.Large.CorruptedCardAndRelic, 50));
         d.add(new CorruptionDistributionInfo<>(FightCorruptionRewardTypes.Large.CorruptedRelic, 50));
         return d;
+    }
+
+    @Override
+    protected Random getRng() {
+        return Cor.rewardRng;
     }
 }

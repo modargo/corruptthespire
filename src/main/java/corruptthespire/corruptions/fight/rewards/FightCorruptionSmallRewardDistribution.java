@@ -1,5 +1,6 @@
 package corruptthespire.corruptions.fight.rewards;
 
+import com.megacrit.cardcrawl.random.Random;
 import corruptthespire.Cor;
 import corruptthespire.corruptions.AbstractCorruptionDistribution;
 import corruptthespire.corruptions.CorruptionDistributionInfo;
@@ -28,5 +29,10 @@ public class FightCorruptionSmallRewardDistribution extends AbstractCorruptionDi
             distribution.removeIf(d -> d.corruption == FightCorruptionRewardTypes.Small.Fragment || d.corruption == FightCorruptionRewardTypes.Small.Gold);
         }
         return distribution;
+    }
+
+    @Override
+    protected Random getRng() {
+        return Cor.rewardRng;
     }
 }
