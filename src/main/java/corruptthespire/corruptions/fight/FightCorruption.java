@@ -1,6 +1,7 @@
 package corruptthespire.corruptions.fight;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -19,6 +20,7 @@ import corruptthespire.monsters.*;
 import corruptthespire.patches.core.CorruptedField;
 import corruptthespire.patches.fight.FightCorruptionInfosField;
 import corruptthespire.patches.fight.room.FightRoomCorruptionTypeField;
+import corruptthespire.patches.misc.TrackLoadingPostCombatSavePatch;
 import corruptthespire.powers.ThoughtStealerPower;
 import corruptthespire.util.CollectionsUtil;
 import org.apache.logging.log4j.LogManager;
@@ -31,7 +33,10 @@ public class FightCorruption {
     private static final HashSet<AbstractMonster> handledMonsters = new HashSet<>();
 
     public static boolean shouldApplyCorruptions() {
-        return AbstractDungeon.getCurrRoom() instanceof MonsterRoom && CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode()) && Arrays.asList(FightRoomCorruptionType.Normal, null).contains(FightRoomCorruptionTypeField.roomCorruptionType.get(AbstractDungeon.getCurrRoom()));
+        return AbstractDungeon.getCurrRoom() instanceof MonsterRoom
+                && !TrackLoadingPostCombatSavePatch.isLoadingPostCombatSave
+                && CorruptedField.corrupted.get(AbstractDungeon.getCurrMapNode())
+                && Arrays.asList(FightRoomCorruptionType.Normal, null).contains(FightRoomCorruptionTypeField.roomCorruptionType.get(AbstractDungeon.getCurrRoom()));
     }
 
     public static void determineCorruptions(AbstractRoom room) {
