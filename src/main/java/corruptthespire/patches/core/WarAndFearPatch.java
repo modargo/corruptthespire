@@ -24,7 +24,7 @@ public class WarAndFearPatch {
     public static class ReplaceActTwoBossFightPatch {
         @SpirePostfixPatch
         public static AbstractDungeon ReplaceActTwoBossFight(AbstractDungeon __result) {
-            if (Cor.flags.warAndFear == CorruptionFlags.WarAndFear.REPLACE_BOSS) {
+            if (Cor.flags.warAndFear == CorruptionFlags.WarAndFear.REPLACE_BOSS && __result != null) {
                 ReflectionHacks.privateMethod(AbstractDungeon.class, "setBoss", String.class).invoke(__result, Encounters.WAR_AND_FEAR);
             }
             return __result;
