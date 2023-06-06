@@ -29,7 +29,7 @@ public class LordOfNightmare extends AbstractCorruptedCard {
     @Override
     public void upgrade() {
         if (!this.upgraded) {
-            this.upgradeBlock(UPGRADE_BLOCK);
+            this.upgradeMagicNumber(UPGRADE_BLOCK);
             this.upgradeName();
         }
     }
