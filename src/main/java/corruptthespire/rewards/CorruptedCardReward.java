@@ -33,6 +33,7 @@ public class CorruptedCardReward extends AbstractCorruptTheSpireReward {
     @Override
     public boolean claimReward() {
         if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.COMBAT_REWARD) {
+            this.populateCards();
             AbstractDungeon.cardRewardScreen.open(this.cards, this, TEXT[3]);
             AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.COMBAT_REWARD;
         }
