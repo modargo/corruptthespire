@@ -46,6 +46,7 @@ public class CorruptedCardOption extends AbstractCorruptedCampfireOption {
         //TODO Should I put this in an effect? If so can share with RareCardOption
         AbstractDungeon.getCurrRoom().rewards.clear();
         CorruptedCardReward reward = new CorruptedCardReward();
+        reward.populateCards();
         AbstractDungeon.getCurrRoom().rewards.add(reward);
         AbstractDungeon.combatRewardScreen.open();
 
