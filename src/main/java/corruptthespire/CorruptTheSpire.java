@@ -45,6 +45,7 @@ import corruptthespire.rewards.RandomUpgradeReward;
 import corruptthespire.savables.*;
 import corruptthespire.savables.logs.*;
 import corruptthespire.subscribers.*;
+import corruptthespire.ui.CorruptTheSpireModPanel;
 import corruptthespire.util.TextureLoader;
 import corruptthespire.variables.MagicNumber2Variable;
 import corruptthespire.variables.MagicNumber3Variable;
@@ -90,7 +91,7 @@ public class CorruptTheSpire implements
     @Override
     public void receivePostInitialize() {
         Texture badgeTexture = new Texture("corruptthespire/images/CorruptTheSpireBadge.png");
-        BaseMod.registerModBadge(badgeTexture, "Corrupt the Spire", "modargo", "Adds corrupted rooms to the Spire, which have increased rewards and new encounters, at the cost of increasing the corruption of the Spire and making all enemies more dangerous.", new ModPanel());
+        BaseMod.registerModBadge(badgeTexture, "Corrupt the Spire", "modargo", "Adds corrupted rooms to the Spire, which have increased rewards and new encounters, at the cost of increasing the corruption of the Spire and making all enemies more dangerous.", new CorruptTheSpireModPanel());
 
         addMonsters();
         addEvents();

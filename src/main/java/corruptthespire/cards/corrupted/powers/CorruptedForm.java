@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import corruptthespire.Config;
 import corruptthespire.CorruptTheSpire;
 import corruptthespire.actions.GainCorruptionAction;
 import corruptthespire.cards.corrupted.AbstractCorruptedCard;
@@ -20,12 +21,13 @@ public class CorruptedForm extends AbstractCorruptedCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 3;
     private static final int CORRUPTION = 5;
-    private static final int PERCENT = 30;
+    public static final int PERCENT = 30;
+    public static final int NERF_PERCENT = 15;
 
     public CorruptedForm() {
         super(ID, NAME, IMG, COST, MessageFormat.format(DESCRIPTION, CORRUPTION), CardType.POWER, CardTarget.SELF);
         this.isEthereal = true;
-        this.magicNumber = this.baseMagicNumber = PERCENT;
+        this.resetMagicNumber();
     }
 
     @Override
@@ -42,5 +44,9 @@ public class CorruptedForm extends AbstractCorruptedCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new GainCorruptionAction(CORRUPTION));
         this.addToBot(new ApplyPowerAction(p, p, new CorruptedFormPower(p, this.magicNumber), this.magicNumber));
+    }
+
+    public void resetMagicNumber() {
+        this.magicNumber = this.baseMagicNumber = Config.nerfCorruptedForm() ? NERF_PERCENT : PERCENT;
     }
 }
