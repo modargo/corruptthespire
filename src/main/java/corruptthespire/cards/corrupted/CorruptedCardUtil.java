@@ -163,7 +163,7 @@ public class CorruptedCardUtil {
         ArrayList<AbstractCard> corruptedCommons = null;
         ArrayList<AbstractCard> corruptedRares = null;
         for (AbstractCard.CardRarity rarity : rarities) {
-            AbstractCard card;
+            AbstractCard card = null;
             if (rarity == AbstractCard.CardRarity.COMMON) {
                 if (corruptedCommons == null) {
                     corruptedCommons = getAllCorruptedCardInfos().values().stream()
@@ -173,7 +173,9 @@ public class CorruptedCardUtil {
                             .collect(Collectors.toCollection(ArrayList::new));
                     CollectionsUtil.shuffle(corruptedCommons, rng);
                 }
-                card = corruptedCommons.remove(0);
+                if (!corruptedCommons.isEmpty()) {
+                    card = corruptedCommons.remove(0);
+                }
             }
             else {
                 if (corruptedRares == null) {
@@ -184,9 +186,13 @@ public class CorruptedCardUtil {
                             .collect(Collectors.toCollection(ArrayList::new));
                     CollectionsUtil.shuffle(corruptedRares, rng);
                 }
-                card = corruptedRares.remove(0);
+                if (!corruptedRares.isEmpty()) {
+                    card = corruptedRares.remove(0);
+                }
             }
-            cards.add(card.makeCopy());
+            if (card != null) {
+                cards.add(card.makeCopy());
+            }
         }
 
         return cards;
