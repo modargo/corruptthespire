@@ -2,7 +2,11 @@
   "CorruptTheSpire:Corruption": {
     "TEXT": [
       "腐化",
-      "通过进入腐化房间获得腐化值，越强大的房间将获得更多的腐化。 NL 根据当前的腐化值，敌人的生命值和伤害将增加 {0}% 。"
+      "通过进入腐化房间获得腐化值，越强大的房间将获得更多的腐化。 NL 根据当前的腐化值，敌人的生命值和伤害将增加 {0}% 。",
+      "You will fight a special additional act 2 boss.",
+      "The act 2 boss has been changed to a special boss.",
+      "You will fight a special additional act 3 boss.",
+      "You will fight {0} special additional act 3 bosses."
     ]
   },
   "CorruptTheSpire:CorruptedColor": {
