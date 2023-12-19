@@ -17,7 +17,7 @@ public class CorruptedEggPatch {
         public static class GetRewardCardsPatchExprEditor extends ExprEditor {
             @Override
             public void edit(FieldAccess fieldAccess) throws CannotCompileException {
-                if (fieldAccess.getClassName().equals(AbstractDungeon.class.getName()) && fieldAccess.getFieldName().equals("cardUpgradedChance")) {
+                if (fieldAccess.getClassName().equals(AbstractDungeon.class.getName()) && fieldAccess.getFieldName().equals("cardUpgradedChance") && fieldAccess.isReader()) {
                     fieldAccess.replace(String.format("{ $_ = %1$s.modifyUpgradeChance(%2$s.cardUpgradedChance); }", CorruptedEgg.class.getName(), AbstractDungeon.class.getName()));
                 }
             }
