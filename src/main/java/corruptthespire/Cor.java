@@ -133,20 +133,11 @@ public class Cor {
                 e.printStackTrace();
                 throw new RuntimeException("Failed when trying to call BehindTheScenesActNum.getActNum()", e);
             }
-            if (realActNum != AbstractDungeon.actNum) {
-                actNumInfo.corruptionActNum = realActNum < 4 ? 3 : 4;
-            }
-            else {
-                actNumInfo.corruptionActNum = Math.min(AbstractDungeon.actNum, 4);
-            }
             actNumInfo.realActNum = realActNum;
         }
         else {
             // If ActLikeIt isn't loaded, we can safely enumerate the possible acts
-            // and use that to determine the corruption and real act numbers
-            actNumInfo.corruptionActNum = AbstractDungeon.id.equals(TheEnding.ID) ? 4
-                : AbstractDungeon.actNum < 4 ? AbstractDungeon.actNum
-                : 3;
+            // and use that to determine the real act number
             switch (AbstractDungeon.id) {
                 case Exordium.ID:
                     actNumInfo.realActNum = 1;
@@ -165,6 +156,12 @@ public class Cor {
                 default:
                     throw new RuntimeException("Unrecognized act ID: " + AbstractDungeon.id + ". When ActLikeIt isn't loaded, the only possible acts should be the vanilla four and a few special cases.");
             }
+        }
+        if (actNumInfo.realActNum != AbstractDungeon.actNum) {
+            actNumInfo.corruptionActNum = actNumInfo.realActNum < 4 ? 3 : 4;
+        }
+        else {
+            actNumInfo.corruptionActNum = Math.min(AbstractDungeon.actNum, 4);
         }
 
         return actNumInfo;
