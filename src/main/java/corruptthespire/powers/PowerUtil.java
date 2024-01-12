@@ -49,5 +49,4 @@ public class PowerUtil {
         gainStrengthPower.type = AbstractPower.PowerType.BUFF;
         return gainStrengthPower;
     }
-
 }

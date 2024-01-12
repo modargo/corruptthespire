@@ -159,10 +159,11 @@ public class Cor {
                     actNumInfo.realActNum = 3;
                     break;
                 case TheEnding.ID:
+                case "EYB:TheUnnamedReign":
                     actNumInfo.realActNum = 4;
                     break;
                 default:
-                    throw new RuntimeException("Unrecognized act ID: " + AbstractDungeon.id + ". When ActLikeIt isn't loaded, the only possible acts should be the vanilla four and The Jungle.");
+                    throw new RuntimeException("Unrecognized act ID: " + AbstractDungeon.id + ". When ActLikeIt isn't loaded, the only possible acts should be the vanilla four and a few special cases.");
             }
         }
 
