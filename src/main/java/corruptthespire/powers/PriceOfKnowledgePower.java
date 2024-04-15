@@ -79,5 +79,7 @@ public class PriceOfKnowledgePower extends AbstractPower {
                 this.addToBot(new ReducePowerAction(this.owner, this.owner, POWER_ID, 1));
             }
         }
+        // Just in case no draw lingered (which it can if other mods mess with timing stuff), get rid of it
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, NoDrawPower.POWER_ID));
     }
 }
