@@ -41,7 +41,7 @@ public class Gohei extends AbstractCorruptedRelic {
     }
 
     public int onAttackedAfterToriiBeforeTungstenRod(DamageInfo info, int damageAmount) {
-        if (info.owner != null && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount > DAMAGE_THRESHOLD) {
+        if (info.owner != null && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount >= DAMAGE_THRESHOLD) {
             incrementStats();
             this.flash();
             this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
