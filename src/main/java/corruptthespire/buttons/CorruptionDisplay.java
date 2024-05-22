@@ -116,7 +116,7 @@ public class CorruptionDisplay extends TopPanelItem {
         }
         else if (extraAct3BossCount > 1) {
             sb.append(" NL ");
-            sb.append(TEXT[4].replace("{0}", extraAct3BossCount + ""));
+            sb.append(TEXT[5].replace("{0}", extraAct3BossCount + ""));
         }
 
         return sb.toString();
