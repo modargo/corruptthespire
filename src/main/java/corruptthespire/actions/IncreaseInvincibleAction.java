@@ -39,7 +39,8 @@ public class IncreaseInvincibleAction extends AbstractGameAction {
 
     private void increaseInvincible(AbstractMonster m) {
         AbstractPower power = m.getPower(InvinciblePower.POWER_ID);
-        if (power != null) {
+        // Downfall uses the same power ID for its own distinct NeowInvinciblePower, so we need this check
+        if (power instanceof InvinciblePower) {
             int maxAmt = ReflectionHacks.getPrivate(power, InvinciblePower.class, "maxAmt");
             int newMaxAmt = maxAmt + (maxAmt * Cor.getCorruptionDamageMultiplierPercent()) / 100;
             ReflectionHacks.setPrivate(power, InvinciblePower.class, "maxAmt", newMaxAmt);
